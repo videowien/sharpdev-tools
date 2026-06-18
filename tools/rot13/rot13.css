@@ -1,0 +1,63 @@
+/* ROT13 / Caesar Cipher — styles */
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+.page label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+
+.shift-row {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  background: #141414; border: 1px solid #262626;
+  padding: 14px 18px; border-radius: 10px; margin-bottom: 22px;
+}
+.shift-row label {
+  margin: 0;
+}
+.shift-row input[type=range] {
+  flex: 1; min-width: 180px; accent-color: #ff4444;
+}
+.shift-val {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 13px; color: #fff; font-weight: 600;
+  min-width: 90px; text-align: center;
+}
+.preset-btn {
+  padding: 7px 14px;
+  background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s;
+}
+.preset-btn:hover { background: #2a2a2a; border-color: #ff4444; color: #fff; }
+
+#in, #out {
+  width: 100%; min-height: 140px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 14px; padding: 14px;
+  border-radius: 10px; font-family: 'SF Mono', Monaco, monospace;
+  resize: vertical; line-height: 1.6;
+  outline: none;
+}
+#in:focus { border-color: #ff4444; }
+#out { background: #0f0f0f; margin-bottom: 10px; }
+.out-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: 16px; margin-bottom: 8px;
+}
+.out-head label { margin: 0; }
+.copy-btn {
+  padding: 6px 14px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .shift-row { gap: 10px; }
+  .shift-row input[type=range] { flex-basis: 100%; }
+}

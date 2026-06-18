@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Base64 Image Converter — Convert Image to Base64 (Encode + Decode) | SharpDev.Tools</title>
+<meta content="Base64 image converter — convert image to Base64 or decode a Base64 data URL back to an image. PNG, JPG, WebP, GIF, SVG. Copy as Data URL, CSS background or HTML img. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/image-base64/" rel="canonical"/>
+<meta content="Base64 Image Converter — Convert Image to Base64 (Encode + Decode) | SharpDev.Tools" property="og:title"/>
+<meta content="Base64 image converter — convert image to Base64 or decode a Base64 data URL back to an image. PNG, JPG, WebP, GIF, SVG. Copy as Data URL, CSS background or HTML img. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-base64/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Base64 Image Converter — Convert Image to Base64 (Encode + Decode) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Base64 image converter — convert image to Base64 or decode a Base64 data URL back to an image. PNG, JPG, WebP, GIF, SVG. Copy as Data URL, CSS background or HTML img. Free, no upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Images & Media",
+        "item": "https://sharpdev.tools/#images-media"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Image → Base64",
+        "item": "https://sharpdev.tools/tools/image-base64/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert an image to Base64?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Drag your image onto the drop zone (or paste from clipboard / browse a file). The Base64 data URL appears instantly and can be copied as a Data URL, CSS background-image, HTML img src, CSS variable or JSON string. Everything runs in your browser — the image never leaves your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I decode a Base64 string back to an image?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Switch to Decode mode and paste your Base64 data URL (the string starting with 'data:image/...;base64,'). The image preview appears immediately and you can download the original PNG, JPG, WebP, GIF or SVG file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Base64 encoded image data URL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Base64 encoded image is a string that begins with 'data:image/png;base64,' (or jpeg, webp, gif, svg+xml) followed by the image bytes encoded as plain text. You can paste it directly into HTML img src, CSS background-image, or a JSON payload and the image renders without a separate HTTP request."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which image formats can this Base64 image converter handle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PNG, JPG/JPEG, WebP, GIF and SVG are all supported for both encode and decode. The encoder can also re-encode to JPG (quality 85) or WebP (quality 85) on the fly to shrink the Base64 output string."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the Base64 image converter free and is my image uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completely free, no ads, no account, no usage limits. Encoding and decoding happen locally via the browser's FileReader API — the image never leaves your device, so even sensitive or private images are safe to convert."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image → Base64 — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/image-base64/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-base64/image-base64.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-base64');</script>
+<div class="page">
+<h1>Base64 Image Converter</h1>
+<p class="subtitle">Convert image to Base64, or decode a Base64 data URL back to an image. Drop, paste or upload PNG, JPG, WebP, GIF or SVG. Free, instant, runs locally in your browser.</p>
+<div class="mode-row">
+<button class="mode-btn active" data-mode="encode">Encode (image → data URL)</button>
+<button class="mode-btn" data-mode="decode">Decode (data URL → image)</button>
+</div>
+<div id="encode-panel">
+<div class="card">
+<div class="drop-zone" id="drop">
+<input accept="image/*" hidden="" id="file" type="file"/>
+<svg class="drop-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop image here, paste, or <span class="link">click to browse</span></p>
+<p class="hint">JPG, PNG, WebP, GIF, SVG</p>
+</div>
+</div>
+<div id="result" style="display:none">
+<div class="card preview-card">
+<img alt="" id="preview"/>
+<div class="preview-info" id="preview-info"></div>
+</div>
+<div class="stats-grid" id="stats"></div>
+<div class="warn-box" id="warn-big" style="display:none">
+        Large data URLs slow down page rendering. Consider hosting the image instead.
+      </div>
+<div class="card">
+<h2 class="sec-title">Re-encode</h2>
+<div class="reencode-row">
+<label class="toggle"><input checked="" name="fmt" type="radio" value="orig"/><span>Original</span></label>
+<label class="toggle"><input name="fmt" type="radio" value="jpg"/><span>JPG q85</span></label>
+<label class="toggle"><input name="fmt" type="radio" value="webp"/><span>WebP q85</span></label>
+</div>
+</div>
+<div class="card">
+<h2 class="sec-title">Output</h2>
+<div class="format-row">
+<label class="toggle"><input checked="" name="outfmt" type="radio" value="data"/><span>Data URL</span></label>
+<label class="toggle"><input name="outfmt" type="radio" value="css"/><span>CSS background</span></label>
+<label class="toggle"><input name="outfmt" type="radio" value="html"/><span>HTML &lt;img&gt;</span></label>
+<label class="toggle"><input name="outfmt" type="radio" value="cssvar"/><span>CSS variable</span></label>
+<label class="toggle"><input name="outfmt" type="radio" value="json"/><span>JSON string</span></label>
+</div>
+<textarea id="output" readonly="" spellcheck="false"></textarea>
+<div class="actions">
+<button class="btn btn-primary" id="copy-btn">Copy</button>
+<button class="btn btn-secondary" id="dl-btn">Download .txt</button>
+</div>
+</div>
+</div>
+</div>
+<div id="decode-panel" style="display:none">
+<div class="card">
+<label for="decode-in">Paste a data URL</label>
+<textarea id="decode-in" placeholder="data:image/png;base64,iVBORw0KGgo..." spellcheck="false"></textarea>
+<div class="actions">
+<button class="btn btn-secondary" id="decode-dl">Download image</button>
+</div>
+</div>
+<div class="card preview-card" id="decode-preview-card" style="display:none">
+<img alt="" id="decode-preview"/>
+<div class="preview-info" id="decode-info"></div>
+</div>
+</div>
+</div>
+<section class="info-block">
+<h2>What does this Base64 image converter do?</h2>
+<p>This is a bidirectional <strong>Base64 image converter</strong>: it converts an image to Base64 (encode) or decodes a Base64-encoded image string back into a downloadable file (decode). Supported formats for both directions: <strong>PNG, JPG, WebP, GIF and SVG</strong>. The encoder returns a <em>Base64 data URL</em> that starts with <code>data:image/png;base64,</code> followed by the image bytes as plain text — paste it directly into an HTML <code>&lt;img src="..."&gt;</code> tag, a CSS <code>background-image: url(...)</code> declaration, a CSS variable, or a JSON payload, and the image renders without a separate HTTP request.</p>
+<h2>Common use cases for Base64-encoded images</h2>
+<ul>
+<li><strong>Inline icons in HTML emails</strong> where external images get blocked by clients.</li>
+<li><strong>Tiny placeholder images in CSS</strong> — e.g. a 1×1 transparent pixel or a dotted divider.</li>
+<li><strong>Embedding logos in standalone HTML files</strong> that need to work offline.</li>
+<li><strong>Including images in JSON API responses</strong> when you can't link to a separate URL.</li>
+<li><strong>Storing favicons or small UI assets in localStorage</strong> for instant rendering.</li>
+<li><strong>Decoding a Base64 image string</strong> from an API response back into a viewable file.</li>
+</ul>
+<p>Base64 data URLs are roughly <strong>33 % larger</strong> than the binary file, so they're best for small images (under ~10 KB). For anything bigger, host the image on your CDN and link to it normally — the tool will warn you when the output is too large to be useful.</p>
+<h2>How to convert an image to Base64 (step by step)</h2>
+<ol>
+<li>Make sure <em>Encode</em> mode is selected (default).</li>
+<li>Drop your image onto the drop zone, paste from clipboard (Cmd/Ctrl-V), or click to browse.</li>
+<li>Pick the output format you want: Data URL, CSS <code>background-image</code>, HTML <code>&lt;img&gt;</code> tag, CSS variable, or JSON string.</li>
+<li>Optionally re-encode to JPG q85 or WebP q85 to shrink the Base64 output.</li>
+<li>Click <em>Copy</em> — the Base64 string is now on your clipboard.</li>
+</ol>
+<h2>How to decode a Base64 image back to a file</h2>
+<ol>
+<li>Switch to <em>Decode</em> mode.</li>
+<li>Paste the full Base64 data URL (the string starting with <code>data:image/...;base64,</code>).</li>
+<li>The image preview appears immediately.</li>
+<li>Click <em>Download image</em> to save the original PNG, JPG, WebP, GIF or SVG file.</li>
+</ol>
+<h2>Privacy and how it works</h2>
+<p>Every byte of conversion happens locally in your browser via the <code>FileReader</code> API. Your image never leaves your device, so even private screenshots, internal mockups or sensitive design assets are safe to convert here. Nothing is uploaded, logged or cached server-side.</p>
+</section>
+<script src="/tools/image-base64/image-base64.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

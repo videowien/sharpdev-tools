@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Savings Goal Calculator — Monthly Amount or Months Required | SharpDev.Tools</title>
+<meta content="Calculate how much to save monthly to reach a goal, or how long it takes at your current rate. Compound interest, starting balance, multi-currency. Free, runs in browser." name="description"/>
+<link href="https://sharpdev.tools/tools/savings-goal/" rel="canonical"/>
+<meta content="Savings Goal Calculator — Monthly Amount or Months | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate monthly savings to reach a goal, or how long at your current rate. Compound interest, starting balance." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/savings-goal/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Savings Goal Calculator — Monthly Amount or Months | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate monthly savings or duration to reach any goal." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/money-finance/"},
+    {"@type":"ListItem","position":3,"name":"Savings Goal Calculator","item":"https://sharpdev.tools/tools/savings-goal/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How does compound interest affect savings?","acceptedAnswer":{"@type":"Answer","text":"Compounded monthly at 5% APY, $500/month becomes ~$33,800 after 5 years instead of $30,000 without interest — about $3,800 of free growth. The earlier you start, the bigger the compound effect."}},
+    {"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The math happens in your browser."}},
+    {"@type":"Question","name":"Should I include inflation?","acceptedAnswer":{"@type":"Answer","text":"Yes — your target value loses purchasing power over time. A €10,000 goal in 10 years is really €13,400 in today's money at 3% inflation. Add an inflation-adjusted target to the goal field for realistic planning."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Savings Goal Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/savings-goal/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/savings-goal/savings-goal.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('savings-goal');</script>
+<div class="page">
+<h1>Savings Goal Calculator</h1>
+<p class="subtitle">How much to save monthly — or how long it takes at your current rate.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Mode</label>
+<div class="seg">
+<button class="seg-btn active" data-mode="monthly" type="button">Find monthly amount</button>
+<button class="seg-btn" data-mode="months" type="button">Find months required</button>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Currency</label>
+<select id="currency">
+<option value="€">€</option>
+<option value="$" selected>$</option>
+<option value="£">£</option>
+<option value="¥">¥</option>
+<option value="₹">₹</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid">
+<div class="form-row">
+<label class="opt-label">Target amount</label>
+<input id="target" type="number" min="0" step="100" value="50000"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Starting balance</label>
+<input id="start" type="number" min="0" step="100" value="5000"/>
+</div>
+<div class="form-row mode-monthly">
+<label class="opt-label">Time horizon (months)</label>
+<input id="months-in" type="number" min="1" step="1" value="60"/>
+</div>
+<div class="form-row mode-months" style="display:none">
+<label class="opt-label">Monthly contribution</label>
+<input id="monthly-in" type="number" min="0" step="50" value="500"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Annual interest (%)</label>
+<input id="rate" type="number" min="0" step="0.1" value="4"/>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="result-row">
+<div class="result-block highlight">
+<div class="result-label" id="result-label">Monthly amount needed</div>
+<div class="result-value" id="r-primary">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Total contributions</div>
+<div class="result-value" id="r-total-contrib">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Interest earned</div>
+<div class="result-value" id="r-interest">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>The maths</h2>
+<p>Monthly compounding with regular contributions:</p>
+<ul>
+<li><strong>Future value</strong> — FV = P × (1 + r)<sup>n</sup> + PMT × [((1 + r)<sup>n</sup> - 1) / r]</li>
+<li><strong>P</strong> = starting balance, <strong>PMT</strong> = monthly contribution, <strong>r</strong> = monthly rate (annual ÷ 12), <strong>n</strong> = months</li>
+<li>Solve for PMT to find required monthly amount; solve for n to find months required.</li>
+</ul>
+
+<h2>Common savings goals</h2>
+<table class="goal-table">
+<tr><th>Goal</th><th>Typical target</th></tr>
+<tr><td>Emergency fund</td><td>3-6 months of expenses</td></tr>
+<tr><td>House deposit</td><td>20% of property price</td></tr>
+<tr><td>Wedding</td><td>$25-50k mid-range</td></tr>
+<tr><td>Travel year</td><td>$15-30k for 12 months</td></tr>
+<tr><td>Sabbatical</td><td>1× annual salary</td></tr>
+<tr><td>F.I. retirement</td><td>25× annual expenses</td></tr>
+</table>
+
+<h2>Privacy</h2>
+<p>All math happens in your browser.</p>
+</section>
+
+<script src="/tools/savings-goal/savings-goal.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

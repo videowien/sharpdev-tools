@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>50/30/20 Budget Calculator | SharpDev.Tools</title>
+<meta content="Free 50/30/20 budget calculator. Enter your monthly take-home pay and instantly see how much to put toward needs (50%), wants (30%) and savings or debt (20%). Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/budget/" rel="canonical"/>
+<meta content="50/30/20 Budget Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free 50/30/20 budget calculator. Enter your monthly take-home pay and instantly see how much to put toward needs (50%), wants (30%) and savings or debt (20%). Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/budget/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="50/30/20 Budget Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free 50/30/20 budget calculator. Enter your monthly take-home pay and instantly see how much to put toward needs (50%), wants (30%) and savings or debt (20%). Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"50/30/20 Budget Calculator","item":"https://sharpdev.tools/tools/budget/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the 50/30/20 rule?","acceptedAnswer":{"@type":"Answer","text":"A simple budgeting guideline: spend about 50% of your after-tax income on needs, 30% on wants, and 20% on savings and paying down debt."}},{"@type":"Question","name":"Should I use gross or take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Take-home (after-tax) pay. The rule is based on the money that actually lands in your account."}},{"@type":"Question","name":"What if my needs are over 50%?","acceptedAnswer":{"@type":"Answer","text":"That's common in high-cost areas. Treat the split as a target \u2014 trim wants first, and aim to grow the savings share over time."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"50/30/20 Budget Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/budget/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/budget/budget.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('budget');</script>
+<div class="page">
+<h1>50/30/20 Budget Calculator</h1>
+<p class="subtitle">Split your take-home pay into needs, wants and savings with the popular 50/30/20 rule.</p>
+<div class="row"><div class="field"><label for="inc">Monthly take-home pay</label><input type="number" id="inc" value="3000"></div></div>
+<div class="result-cards"><div class="result-card"><div class="label">Needs · 50%</div><div class="value" id="needs">—</div></div><div class="result-card"><div class="label">Wants · 30%</div><div class="value" id="wants">—</div></div><div class="result-card hl"><div class="label">Savings · 20%</div><div class="value" id="save">—</div></div></div>
+<p class="note">Needs = rent, food, utilities, minimum debt payments. Wants = dining out, subscriptions, hobbies. Savings = emergency fund, investing, extra debt payoff.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the 50/30/20 rule?</summary><p>A simple budgeting guideline: spend about 50% of your after-tax income on needs, 30% on wants, and 20% on savings and paying down debt.</p></details>
+<details><summary>Should I use gross or take-home pay?</summary><p>Take-home (after-tax) pay. The rule is based on the money that actually lands in your account.</p></details>
+<details><summary>What if my needs are over 50%?</summary><p>That's common in high-cost areas. Treat the split as a target — trim wants first, and aim to grow the savings share over time.</p></details>
+</section>
+<script src="/tools/budget/budget.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

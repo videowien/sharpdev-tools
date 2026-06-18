@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Glassmorphism CSS Generator — Frosted Glass | SharpDev.Tools</title>
+<meta content="Trendy frosted-glass CSS generator. Tune backdrop blur, tint, border and radius with live preview. Copy the CSS rule. Free, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/glass/" rel="canonical"/>
+<meta content="Glassmorphism CSS Generator — Frosted Glass | SharpDev.Tools" property="og:title"/>
+<meta content="Trendy frosted-glass CSS generator. Tune backdrop blur, tint, border and radius with live preview. Copy the CSS rule. Free, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/glass/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Glassmorphism CSS Generator — Frosted Glass | SharpDev.Tools" name="twitter:title"/>
+<meta content="Trendy frosted-glass CSS generator. Tune backdrop blur, tint, border and radius with live preview. Copy the CSS rule. Free, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"Glassmorphism","item":"https://sharpdev.tools/tools/glass/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why doesn't the glass look blurry in my page?","acceptedAnswer":{"@type":"Answer","text":"backdrop-filter requires a background behind the element to blur. If the element sits on a solid colour the effect is invisible. Place it over a photo, gradient, or busy pattern."}},
+    {"@type":"Question","name":"Is backdrop-filter supported everywhere?","acceptedAnswer":{"@type":"Answer","text":"Modern browsers (Chrome, Edge, Safari, Firefox 103+) support it. Older Firefox versions may need the -webkit- prefix as a fallback, which the tool emits automatically."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Glassmorphism Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/glass/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/glass/glass.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('glass');</script>
+<div class="page">
+<h1>Glassmorphism Generator</h1>
+<p class="subtitle">Frosted-glass card with live preview. Drop your own background image if you like.</p>
+<div class="gl-stage" id="gl-stage">
+<div class="gl-card" id="gl-card">
+<div class="gl-card-title">Glass card</div>
+<div class="gl-card-body">Live preview. Looks its best over busy, colourful backgrounds.</div>
+</div>
+</div>
+<div class="gl-bg-row">
+<button type="button" class="gl-bg-btn active" data-bg="grad1">Sunset</button>
+<button type="button" class="gl-bg-btn" data-bg="grad2">Ocean</button>
+<button type="button" class="gl-bg-btn" data-bg="grad3">Meadow</button>
+<input type="file" id="gl-file" accept="image/*" hidden>
+<button type="button" class="gl-bg-btn upload-btn" id="upload-bg">Upload</button>
+</div>
+<div class="gl-controls" id="gl-controls"></div>
+<div class="code-panel">
+<div class="code-head"><span>Generated CSS</span><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<pre id="code-out"></pre>
+</div>
+</div>
+<script src="/tools/glass/glass.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

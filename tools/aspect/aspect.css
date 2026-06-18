@@ -1,0 +1,70 @@
+.page { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 24px; font-size: 14px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card {
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 12px; padding: 20px;
+}
+
+.group-label {
+  display: block; font-size: 11px; font-weight: 600; color: #666;
+  margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.ratio-row {
+  display: flex; align-items: flex-end; gap: 10px; margin-bottom: 4px;
+}
+.field { flex: 1; }
+.field label {
+  display: block; font-size: 11px; color: #888; margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.field input {
+  width: 100%; padding: 12px 14px; background: #141414; border: 1px solid #2a2a2a;
+  border-radius: 8px; color: #fff; font-size: 16px; outline: none;
+  font-family: 'SF Mono', Monaco, monospace; font-weight: 600;
+}
+.field input:focus { border-color: #ff4444; }
+.sep { color: #666; font-size: 20px; padding-bottom: 14px; }
+
+.simplified {
+  margin-top: 10px; padding: 8px 12px; background: #141414; border-radius: 6px;
+  color: #888; font-size: 12px; text-align: center; min-height: 18px;
+}
+
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.preset {
+  padding: 8px 12px; background: #141414; border: 1px solid #333;
+  color: #ccc; border-radius: 6px; font-size: 12px; cursor: pointer; transition: all 0.15s;
+}
+.preset:hover { border-color: #ff4444; color: #fff; }
+
+.preview-card { display: flex; flex-direction: column; }
+.preview-label {
+  font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;
+}
+.preview-stage {
+  flex: 1; background: #141414; border-radius: 8px; min-height: 280px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; position: relative;
+}
+.preview-box {
+  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+  border: 2px dashed #ff4444; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  transition: width 0.3s, height 0.3s;
+}
+.preview-text {
+  color: #ff4444; font-weight: 700; font-family: 'SF Mono', Monaco, monospace;
+  font-size: 16px;
+}
+.preview-info {
+  margin-top: 12px; color: #888; font-size: 12px;
+  font-family: 'SF Mono', Monaco, monospace; text-align: center;
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .preview-stage { min-height: 200px; }
+}

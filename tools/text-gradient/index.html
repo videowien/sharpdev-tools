@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Gradient Text Generator | SharpDev.Tools</title>
+<meta content="Free CSS gradient text generator. Fill text with a color gradient using background-clip, with a live preview and copy-ready CSS. Pick two colors and an angle. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/text-gradient/" rel="canonical"/>
+<meta content="CSS Gradient Text Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free CSS gradient text generator. Fill text with a color gradient using background-clip, with a live preview and copy-ready CSS. Pick two colors and an angle. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/text-gradient/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Gradient Text Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free CSS gradient text generator. Fill text with a color gradient using background-clip, with a live preview and copy-ready CSS. Pick two colors and an angle. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Gradient Text Generator","item":"https://sharpdev.tools/tools/text-gradient/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does gradient text work?","acceptedAnswer":{"@type":"Answer","text":"A gradient background is clipped to the shape of the text with background-clip:text, and the text's own fill is made transparent so the gradient shows through."}},{"@type":"Question","name":"Do I need the -webkit- prefix?","acceptedAnswer":{"@type":"Answer","text":"Yes, for the widest support. The generated CSS includes both the prefixed and standard properties so it works across browsers."}},{"@type":"Question","name":"Can I use more than two colors?","acceptedAnswer":{"@type":"Answer","text":"This tool uses two for simplicity. You can add more color stops manually in the generated linear-gradient."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Gradient Text Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/text-gradient/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/text-gradient/text-gradient.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('text-gradient');</script>
+<div class="page">
+<h1>CSS Gradient Text Generator</h1>
+<p class="subtitle">Create gradient-filled text — two colors and an angle — with a live preview and copyable CSS.</p>
+<div class="row"><div class="field"><label for="txt">Text</label><input type="text" id="txt" value="Gradient"></div><div class="field"><label for="c1">Color 1</label><input type="color" id="c1" value="#ff4444"></div><div class="field"><label for="c2">Color 2</label><input type="color" id="c2" value="#9b5cff"></div><div class="field"><label for="ang">Angle</label><input type="number" id="ang" value="90"></div></div>
+<div class="out-head"><label>Preview</label></div>
+<div class="sd-prev"><span id="prev" style="font-size:42px;font-weight:800;">Gradient</span></div>
+<div class="out-head"><label>CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="out" readonly style="min-height:150px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does gradient text work?</summary><p>A gradient background is clipped to the shape of the text with background-clip:text, and the text's own fill is made transparent so the gradient shows through.</p></details>
+<details><summary>Do I need the -webkit- prefix?</summary><p>Yes, for the widest support. The generated CSS includes both the prefixed and standard properties so it works across browsers.</p></details>
+<details><summary>Can I use more than two colors?</summary><p>This tool uses two for simplicity. You can add more color stops manually in the generated linear-gradient.</p></details>
+</section>
+<script src="/tools/text-gradient/text-gradient.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

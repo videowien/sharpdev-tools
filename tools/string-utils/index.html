@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>String Utilities — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Repeat, pad, reverse, split, join, find and replace, and count substrings — all in one place. Free online string utilities toolkit, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/string-utils/" rel="canonical"/>
+<meta content="String Utilities — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Repeat, pad, reverse, split, join, find and replace, and count substrings — all in one place. Free online string utilities toolkit, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/string-utils/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="String Utilities — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Repeat, pad, reverse, split, join, find and replace, and count substrings — all in one place. Free online string utilities toolkit, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "String Utilities",
+        "item": "https://sharpdev.tools/tools/string-utils/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the String Utilities tool include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A collection of small string operations: repeat, pad-left/right, reverse, split and join, find/replace with optional regex, and substring counting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free to use with no ads and no account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my text leave my browser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All operations run locally in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "String Utilities — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/string-utils/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/string-utils/string-utils.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('string-utils');</script>
+<div class="page">
+<h1>String Utilities</h1>
+<p class="subtitle">Repeat, pad, reverse, split, join, find/replace, count. The little string operations all in one place.</p>
+<div class="io-wrap">
+<label for="input">Input</label>
+<textarea id="input" spellcheck="false"></textarea>
+<div class="stats-row">
+<span class="stats" id="stats-in">0 chars</span>
+</div>
+</div>
+<div class="ops">
+<div class="op-pills" id="op-pills">
+<button class="op-pill active" data-op="repeat">Repeat</button>
+<button class="op-pill" data-op="pad">Pad</button>
+<button class="op-pill" data-op="reverse">Reverse</button>
+<button class="op-pill" data-op="replace">Find &amp; Replace</button>
+<button class="op-pill" data-op="splitjoin">Split &amp; Join</button>
+<button class="op-pill" data-op="wrap">Wrap</button>
+<button class="op-pill" data-op="truncate">Truncate</button>
+<button class="op-pill" data-op="count">Count</button>
+<button class="op-pill" data-op="substring">Substring</button>
+</div>
+<div class="op-panel active" data-panel="repeat">
+<div class="field"><label>Count</label><input id="repeat-count" max="10000" min="0" type="number" value="3"/></div>
+<div class="field"><label>Separator</label><input id="repeat-sep" type="text" value=""/></div>
+</div>
+<div class="op-panel" data-panel="pad">
+<div class="field"><label>Target length</label><input id="pad-len" min="0" type="number" value="10"/></div>
+<div class="field"><label>Pad character</label><input id="pad-char" maxlength="4" type="text" value=" "/></div>
+<div class="field">
+<label>Side</label>
+<div class="seg" id="pad-side">
+<button class="seg-btn active" data-v="left">left</button>
+<button class="seg-btn" data-v="right">right</button>
+<button class="seg-btn" data-v="both">both</button>
+</div>
+</div>
+</div>
+<div class="op-panel" data-panel="reverse">
+<div class="field">
+<label>Unit</label>
+<div class="seg" id="reverse-unit">
+<button class="seg-btn active" data-v="chars">characters</button>
+<button class="seg-btn" data-v="words">words</button>
+<button class="seg-btn" data-v="lines">lines</button>
+</div>
+</div>
+</div>
+<div class="op-panel" data-panel="replace">
+<div class="field"><label>Find</label><input id="replace-find" type="text" value=""/></div>
+<div class="field"><label>Replace</label><input id="replace-with" type="text" value=""/></div>
+<div class="field chk-row">
+<label class="chk"><input checked="" id="replace-cs" type="checkbox"/> Case sensitive</label>
+<label class="chk"><input id="replace-regex" type="checkbox"/> Regex</label>
+<label class="chk"><input checked="" id="replace-all" type="checkbox"/> Replace all</label>
+</div>
+</div>
+<div class="op-panel" data-panel="splitjoin">
+<div class="field"><label>Split by</label><input id="sj-split" type="text" value=","/></div>
+<div class="field"><label>Join with</label><input id="sj-join" type="text" value="\n"/></div>
+<div class="field chk-row">
+<label class="chk"><input checked="" id="sj-trim" type="checkbox"/> Trim parts</label>
+<label class="chk"><input id="sj-empty" type="checkbox"/> Keep empty parts</label>
+</div>
+<div class="hint">Use <code>\n</code> for newline, <code>\t</code> for tab.</div>
+</div>
+<div class="op-panel" data-panel="wrap">
+<div class="field"><label>Prefix</label><input id="wrap-pre" type="text" value='"'/></div>
+<div class="field"><label>Suffix</label><input id="wrap-suf" type="text" value='"'/></div>
+<div class="field">
+<label>Mode</label>
+<div class="seg" id="wrap-mode">
+<button class="seg-btn active" data-v="line">per line</button>
+<button class="seg-btn" data-v="once">once</button>
+</div>
+</div>
+</div>
+<div class="op-panel" data-panel="truncate">
+<div class="field"><label>Max length</label><input id="trunc-len" min="0" type="number" value="40"/></div>
+<div class="field"><label>Ellipsis</label><input id="trunc-ell" type="text" value="…"/></div>
+<div class="field chk-row">
+<label class="chk"><input id="trunc-word" type="checkbox"/> Break on word</label>
+</div>
+</div>
+<div class="op-panel" data-panel="count">
+<div class="field"><label>Search term</label><input id="count-term" type="text" value=""/></div>
+<div class="field chk-row">
+<label class="chk"><input id="count-cs" type="checkbox"/> Case sensitive</label>
+<label class="chk"><input id="count-regex" type="checkbox"/> Regex</label>
+</div>
+<div class="count-results" id="count-results"></div>
+</div>
+<div class="op-panel" data-panel="substring">
+<div class="field"><label>Start</label><input id="sub-start" type="number" value="0"/></div>
+<div class="field">
+<label>Mode</label>
+<div class="seg" id="sub-mode">
+<button class="seg-btn active" data-v="len">length</button>
+<button class="seg-btn" data-v="end">end index</button>
+</div>
+</div>
+<div class="field"><label id="sub-lbl">Length</label><input id="sub-len" type="number" value="10"/></div>
+</div>
+</div>
+<div class="io-wrap">
+<label for="output">Output</label>
+<textarea id="output" readonly="" spellcheck="false"></textarea>
+<div class="stats-row">
+<span class="stats" id="stats-out">0 chars</span>
+<div class="small-actions">
+<button class="small-btn" id="copy-btn">Copy</button>
+<button class="small-btn" id="use-btn">Use as input</button>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/string-utils/string-utils.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

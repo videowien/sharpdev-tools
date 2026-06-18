@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sunrise / Sunset Calculator — Any Location, Any Date | SharpDev.Tools</title>
+<meta content="Calculate sunrise and sunset times for any latitude / longitude / date. Plus day length, solar noon, civil + nautical + astronomical twilight. NOAA algorithm. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/sunrise/" rel="canonical"/>
+<meta content="Sunrise / Sunset Calculator — Any Location, Any Date | SharpDev.Tools" property="og:title"/>
+<meta content="Sunrise, sunset, day length, twilight times for any lat/lng + date. NOAA algorithm." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/sunrise/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Sunrise / Sunset Calculator — Any Location, Any Date | SharpDev.Tools" name="twitter:title"/>
+<meta content="Sunrise, sunset, day length, twilight times for any lat/lng + date." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/time-date/"},
+    {"@type":"ListItem","position":3,"name":"Sunrise / Sunset Calculator","item":"https://sharpdev.tools/tools/sunrise/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate is this?","acceptedAnswer":{"@type":"Answer","text":"Within 1-2 minutes of the published NOAA values. Uses the standard astronomical algorithm without atmospheric refraction adjustment beyond the standard 0.833° correction. For sub-minute precision (e.g. astronomy), use a dedicated ephemeris service."}},
+    {"@type":"Question","name":"What are the twilight phases?","acceptedAnswer":{"@type":"Answer","text":"Civil (sun 0-6° below horizon, can still read outside), Nautical (6-12°, horizon still visible), Astronomical (12-18°, sky fully dark to the eye)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All math runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Sunrise Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/sunrise/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/sunrise/sunrise.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('sunrise');</script>
+<div class="page">
+<h1>Sunrise / Sunset Calculator</h1>
+<p class="subtitle">Times for any lat / lng / date. Solar noon + civil, nautical, astronomical twilight.</p>
+
+<div class="card">
+<div class="form-grid">
+<div class="form-row">
+<label class="opt-label">Latitude</label>
+<input id="lat" type="number" step="0.0001" min="-90" max="90" value="48.2082"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Longitude</label>
+<input id="lng" type="number" step="0.0001" min="-180" max="180" value="16.3738"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Date</label>
+<input id="date" type="date"/>
+</div>
+</div>
+
+<div class="preset-row">
+<span class="preset-hint">Quick presets:</span>
+<button class="preset" data-lat="48.2082" data-lng="16.3738" type="button">Vienna</button>
+<button class="preset" data-lat="52.52" data-lng="13.405" type="button">Berlin</button>
+<button class="preset" data-lat="51.5074" data-lng="-0.1278" type="button">London</button>
+<button class="preset" data-lat="40.7128" data-lng="-74.006" type="button">New York</button>
+<button class="preset" data-lat="34.0522" data-lng="-118.2437" type="button">Los Angeles</button>
+<button class="preset" data-lat="35.6762" data-lng="139.6503" type="button">Tokyo</button>
+<button class="preset" data-lat="-33.8688" data-lng="151.2093" type="button">Sydney</button>
+<button class="preset" id="geo" type="button">📍 My location</button>
+</div>
+</div>
+
+<div class="card">
+<div class="result-grid">
+<div class="result-block highlight">
+<div class="result-label">☀ Sunrise</div>
+<div class="result-value" id="r-rise">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Solar noon</div>
+<div class="result-value" id="r-noon">—</div>
+</div>
+<div class="result-block highlight">
+<div class="result-label">🌅 Sunset</div>
+<div class="result-value" id="r-set">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Day length</div>
+<div class="result-value" id="r-length">—</div>
+</div>
+</div>
+
+<table class="twilight-table">
+<thead><tr><th>Twilight phase</th><th>Begins (morning)</th><th>Ends (evening)</th></tr></thead>
+<tbody>
+<tr><td>Civil (-6°)</td><td id="t-civ-m">—</td><td id="t-civ-e">—</td></tr>
+<tr><td>Nautical (-12°)</td><td id="t-nau-m">—</td><td id="t-nau-e">—</td></tr>
+<tr><td>Astronomical (-18°)</td><td id="t-ast-m">—</td><td id="t-ast-e">—</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Twilight phases explained</h2>
+<ul>
+<li><strong>Civil twilight</strong> — sun 0 to 6° below horizon. Bright enough to do outdoor activities. Streetlights start turning on.</li>
+<li><strong>Nautical twilight</strong> — 6 to 12° below. Horizon still visible at sea (hence the name). The brightest stars become visible.</li>
+<li><strong>Astronomical twilight</strong> — 12 to 18° below. Sky appears fully dark to the eye; faint stars and deep-sky objects start being observable.</li>
+</ul>
+
+<h2>Use cases</h2>
+<ul>
+<li><strong>Photography</strong> — "golden hour" = ~1h before sunset / after sunrise. "Blue hour" = civil twilight</li>
+<li><strong>Outdoor activities</strong> — when does it get dark enough to need a head torch</li>
+<li><strong>Astronomy</strong> — astronomical twilight is when serious observing starts</li>
+<li><strong>Travel planning</strong> — daylight hours at your destination during your visit</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All math runs in your browser. The "My location" button uses your device's geolocation only after you grant permission — the coordinates aren't sent anywhere.</p>
+</section>
+
+<script src="/tools/sunrise/sunrise.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Extract Color Palette from Image — Dominant Colors | SharpDev.Tools</title>
+<meta content="Upload any image, get the dominant 5-8 colors as a palette. HEX, RGB, HSL output. Median-cut algorithm. Browser-only — no upload. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/color-from-image/" rel="canonical"/>
+<meta content="Extract Color Palette from Image — Dominant Colors | SharpDev.Tools" property="og:title"/>
+<meta content="Get dominant 5-8 colors from any image. HEX / RGB / HSL. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/color-from-image/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Extract Color Palette from Image — Dominant Colors | SharpDev.Tools" name="twitter:title"/>
+<meta content="Get dominant colors from any image." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/images-media/"},
+    {"@type":"ListItem","position":3,"name":"Color Palette from Image","item":"https://sharpdev.tools/tools/color-from-image/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How is this different from the Color Picker tool?","acceptedAnswer":{"@type":"Answer","text":"Color Picker = click one pixel to get one color. This tool analyses the whole image and returns the most-used colors automatically using median-cut quantization."}},
+    {"@type":"Question","name":"What algorithm is used?","acceptedAnswer":{"@type":"Answer","text":"Median-cut quantization (the same approach used by GIF encoders to reduce to 256 colors). It recursively splits the RGB color space along the longest axis until you have N buckets, then averages each bucket."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Color Palette from Image — SharpDev.Tools","url":"https://sharpdev.tools/tools/color-from-image/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/color-from-image/color-from-image.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('color-from-image');</script>
+<div class="page">
+<h1>Color Palette from Image</h1>
+<p class="subtitle">Auto-extract dominant colors from any image. Median-cut quantization, browser-only.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop an image here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP — runs in your browser</p>
+</div>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<div class="preview-row">
+<img id="preview" alt="Source image"/>
+<div class="opt-group">
+<label class="opt-label">Colors to extract</label>
+<select id="count">
+<option value="3">3</option>
+<option value="5">5</option>
+<option value="6" selected>6</option>
+<option value="8">8</option>
+<option value="12">12</option>
+</select>
+<label class="opt-label" style="margin-top:14px">Format</label>
+<div class="seg">
+<button class="seg-btn active" data-fmt="hex" type="button">HEX</button>
+<button class="seg-btn" data-fmt="rgb" type="button">RGB</button>
+<button class="seg-btn" data-fmt="hsl" type="button">HSL</button>
+</div>
+</div>
+</div>
+
+<div class="palette" id="palette"></div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="copy-css" type="button">Copy CSS variables</button>
+<button class="btn btn-secondary" id="copy-list" type="button">Copy list</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick different image</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Use cases</h2>
+<ul>
+<li><strong>Design from a moodboard</strong> — extract palette from a reference photo</li>
+<li><strong>Brand colors from a logo</strong> — get exact hex codes</li>
+<li><strong>Theme color from a hero image</strong> — pick a fitting accent color</li>
+<li><strong>Album / book cover palettes</strong> — vibe-match a design to existing visuals</li>
+</ul>
+
+<h2>How median-cut works</h2>
+<p>The algorithm bins all the image's pixels into a 3D RGB cube. It repeatedly splits the most-populous bucket along its longest axis until you have N buckets, then averages the colors in each. It's fast, deterministic, and gives well-distributed palettes.</p>
+
+<h2>Privacy</h2>
+<p>Everything runs in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/color-from-image/color-from-image.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

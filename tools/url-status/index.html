@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>URL Status Checker — HTTP Status Code &amp; Redirect Chain | SharpDev.Tools</title>
+<meta content="Check the HTTP status code of any URL and see the full redirect chain (301, 302, 200) hop by hop. Find broken links and redirect loops. Free, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/url-status/" rel="canonical"/>
+<meta content="URL Status Checker — HTTP Status Code &amp; Redirect Chain | SharpDev.Tools" property="og:title"/>
+<meta content="Check the HTTP status code of any URL and see the full redirect chain (301, 302, 200) hop by hop. Find broken links and redirect loops. Free, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/url-status/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="URL Status Checker — HTTP Status Code &amp; Redirect Chain | SharpDev.Tools" name="twitter:title"/>
+<meta content="Check the HTTP status code of any URL and see the full redirect chain (301, 302, 200) hop by hop. Find broken links and redirect loops. Free, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"URL Status Checker","item":"https://sharpdev.tools/tools/url-status/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the URL status checker show?","acceptedAnswer":{"@type":"Answer","text":"It requests your URL and reports the HTTP status code of every hop: each redirect (301, 302, 307, 308) with its target, and the final response (200 OK, 404 Not Found, 500 errors and so on), plus how many redirects were followed and how long the whole chain took."}},{"@type":"Question","name":"Why do redirect chains matter for SEO?","acceptedAnswer":{"@type":"Answer","text":"Every extra redirect hop wastes crawl budget and dilutes link equity, and chains longer than 2-3 hops or redirect loops can stop search engines from reaching the destination at all. This tool makes the whole chain visible so you can flatten it."}},{"@type":"Question","name":"Why does the check go through a server?","acceptedAnswer":{"@type":"Answer","text":"Browsers hide cross-origin response details for security, so a purely client-side checker can't read another site's status codes. The check runs through this site's small proxy function; private and internal addresses are blocked, and response bodies are never downloaded."}},{"@type":"Question","name":"What does 'Too many redirects' mean?","acceptedAnswer":{"@type":"Answer","text":"The chain exceeded 10 hops, which almost always means a redirect loop (A redirects to B, B back to A). The tool shows the hops it followed so you can spot the loop."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"URL Status Checker \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/url-status/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/url-status/url-status.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('url-status');</script>
+<div class="page">
+<h1>URL Status Checker</h1>
+<p class="subtitle">Enter a URL, get its HTTP status code and the full redirect chain, hop by hop.</p>
+<div class="row">
+<div class="field"><label for="url">URL</label><input type="text" id="url" placeholder="example.com or https://example.com/page"></div>
+<div class="actions"><button class="btn btn-primary" id="check" style="margin-top:18px">Check status</button></div>
+</div>
+<div id="summary" class="result-cards"></div>
+<div id="chain" style="margin-top:16px"></div>
+<div id="err" class="note" style="display:none"></div>
+<p class="note">The check runs through this site's server (your browser can't read cross-origin statuses directly), so the target sees one request from Cloudflare's network. Internal/private addresses are blocked.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the URL status checker show?</summary><p>It requests your URL and reports the HTTP status code of every hop: each redirect (301, 302, 307, 308) with its target, and the final response (200 OK, 404 Not Found, 500 errors and so on), plus how many redirects were followed and how long the whole chain took.</p></details>
+<details><summary>Why do redirect chains matter for SEO?</summary><p>Every extra redirect hop wastes crawl budget and dilutes link equity, and chains longer than 2-3 hops or redirect loops can stop search engines from reaching the destination at all. This tool makes the whole chain visible so you can flatten it.</p></details>
+<details><summary>Why does the check go through a server?</summary><p>Browsers hide cross-origin response details for security, so a purely client-side checker can't read another site's status codes. The check runs through this site's small proxy function; private and internal addresses are blocked, and response bodies are never downloaded.</p></details>
+<details><summary>What does 'Too many redirects' mean?</summary><p>The chain exceeded 10 hops, which almost always means a redirect loop (A redirects to B, B back to A). The tool shows the hops it followed so you can spot the loop.</p></details>
+</section>
+<script src="/tools/url-status/url-status.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

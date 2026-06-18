@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Rotate PDF Online — Rotate Pages 90, 180, 270 Degrees | SharpDev.Tools</title>
+<meta content="Rotate PDF pages online — free, instant, runs in your browser. Rotate every page or pick specific ones to flip 90°, 180° or 270°. Click thumbnails to rotate individually. Nothing uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-rotate/" rel="canonical"/>
+<meta content="Rotate PDF Online — Rotate Pages 90, 180, 270 Degrees | SharpDev.Tools" property="og:title"/>
+<meta content="Rotate PDF pages online — free, instant, runs in your browser. Rotate every page or pick specific ones to flip 90°, 180° or 270°. Click thumbnails to rotate individually. Nothing uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-rotate/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Rotate PDF Online — Rotate Pages 90, 180, 270 Degrees | SharpDev.Tools" name="twitter:title"/>
+<meta content="Rotate PDF pages online — free, instant, runs in your browser. Rotate every page or pick specific ones to flip 90°, 180° or 270°. Click thumbnails to rotate individually. Nothing uploaded." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF", "item": "https://sharpdev.tools/#pdf" },
+      { "@type": "ListItem", "position": 3, "name": "Rotate PDF", "item": "https://sharpdev.tools/tools/pdf-rotate/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I rotate PDF pages online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Drop your PDF. The tool renders every page as a thumbnail. Click a thumbnail to rotate that page 90° clockwise (click again for 180°, again for 270°). Use the bulk buttons to apply a rotation to every page at once. Then click Save Rotated PDF." } },
+      { "@type": "Question", "name": "Can I rotate just one page in a PDF?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — click the specific thumbnail to rotate only that page. The bulk-rotate buttons apply to all pages at once, but per-page clicks override them for individual pages." } },
+      { "@type": "Question", "name": "Are my PDFs uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Rotation happens entirely in your browser via pdf-lib. Your PDF never touches a server." } },
+      { "@type": "Question", "name": "Why is my scanned PDF upside down or sideways?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Scanners and phone cameras often save pages in landscape orientation even when the document is meant to be portrait, or vice versa. Use this tool to flip them to the right orientation before sending the PDF on." } },
+      { "@type": "Question", "name": "Is the PDF rotate tool free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no page limit." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Rotate PDF — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/pdf-rotate/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-rotate/pdf-rotate.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-rotate');</script>
+<div class="page">
+<h1>Rotate PDF</h1>
+<p class="subtitle">Rotate every page or click individual pages to flip them. Runs in your browser — your PDF never leaves your device.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">PDF only. Processed in your browser.</p>
+</div>
+</div>
+</div>
+
+<div class="progress-area" id="progress-area" style="display:none">
+<div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-bar"></div></div>
+<div class="progress-text" id="progress-text">Rendering thumbnails...</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="editor-header">
+<div class="file-info" id="file-info"></div>
+<div class="bulk-actions">
+<span class="bulk-label">Apply to all:</span>
+<button class="btn-rotate" data-rot="90" type="button">↻ 90°</button>
+<button class="btn-rotate" data-rot="180" type="button">180°</button>
+<button class="btn-rotate" data-rot="270" type="button">↺ 90°</button>
+<button class="btn-rotate btn-reset-rot" data-rot="0" type="button">Reset</button>
+</div>
+</div>
+<div class="thumbs-grid" id="thumbs-grid"></div>
+<div class="action-row">
+<button class="btn btn-primary" id="save-btn" type="button">Save Rotated PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How does PDF rotation work?</h2>
+<p>This tool reads your PDF with <code>pdf.js</code> to render preview thumbnails, then uses <code>pdf-lib</code> to set the rotation metadata on each page when you save. The pages themselves aren't re-rendered or re-saved as images — only the rotation flag changes, so quality and file size stay identical.</p>
+
+<h2>Click thumbnails to rotate individual pages</h2>
+<p>Each click on a thumbnail rotates that single page 90° clockwise. Click multiple times to reach 180° or 270°. The bulk "Apply to all" buttons override every page at once with the chosen rotation.</p>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Fixing scanned pages that came out sideways</li>
+<li>Correcting phone-photo PDFs where some pages are upside-down</li>
+<li>Rotating a landscape title page in an otherwise portrait document</li>
+<li>Flipping every page 180° on a PDF that was scanned upside-down</li>
+</ul>
+</section>
+
+<script src="/tools/pdf-rotate/pdf-rotate.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

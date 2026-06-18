@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Newsletter Counter — Title (150) + Body (110000) | SharpDev.Tools</title>
+<meta content="LinkedIn Newsletter character counters: 150-char title, 110000-char body. Live word count, reading-time estimate, hook-line preview. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-newsletter/" rel="canonical"/>
+<meta content="LinkedIn Newsletter Counter — Title + Body | SharpDev.Tools" property="og:title"/>
+<meta content="LinkedIn Newsletter counters: 150-char title + 110000-char body. Reading time + hook-line preview. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-newsletter/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn Newsletter Counter — Title + Body | SharpDev.Tools" name="twitter:title"/>
+<meta content="LinkedIn Newsletter counters: 150-char title + 110000-char body. Reading time + hook-line preview." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"LinkedIn","item":"https://sharpdev.tools/linkedin/"},
+    {"@type":"ListItem","position":3,"name":"LinkedIn Newsletter Counter","item":"https://sharpdev.tools/tools/linkedin-newsletter/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What are LinkedIn newsletter character limits?","acceptedAnswer":{"@type":"Answer","text":"Article title: 150 characters. Article body: 110,000 characters (about 22 standard pages). The subtitle / description preview shows the first ~200 characters of the body in the feed."}},
+    {"@type":"Question","name":"How is reading time calculated?","acceptedAnswer":{"@type":"Answer","text":"Reading time uses 200 words per minute — LinkedIn's own estimate and the standard for English non-technical content. Technical material typically reads slower (150 wpm), light material faster (250 wpm)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Counting happens entirely in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"LinkedIn Newsletter Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/linkedin-newsletter/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-newsletter/linkedin-newsletter.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-newsletter');</script>
+<div class="page">
+<h1>LinkedIn Newsletter Counter</h1>
+<p class="subtitle">Title (150 chars) + body (110000 chars) + reading-time estimate.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="title">Title <span class="hint">(shows in the feed + email subject)</span></label>
+<input id="title" type="text" maxlength="200" placeholder="How I shipped 155 free tools in 8 months"/>
+<div class="counter-row">
+<span id="title-counter" class="counter">0 / 150</span>
+<span class="counter-bar"><span id="title-fill" class="counter-fill"></span></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="form-row">
+<label for="body">Body</label>
+<textarea id="body" rows="14" placeholder="Drop your article body here…"></textarea>
+<div class="counter-row">
+<span id="body-counter" class="counter">0 / 110000</span>
+<span class="counter-bar"><span id="body-fill" class="counter-fill"></span></span>
+</div>
+</div>
+
+<div class="stats-row">
+<div class="stat">
+<div class="stat-label">Words</div>
+<div class="stat-val" id="s-words">0</div>
+</div>
+<div class="stat">
+<div class="stat-label">Paragraphs</div>
+<div class="stat-val" id="s-paragraphs">0</div>
+</div>
+<div class="stat">
+<div class="stat-label">Reading time</div>
+<div class="stat-val" id="s-time">0 min</div>
+</div>
+<div class="stat">
+<div class="stat-label">Preview cutoff</div>
+<div class="stat-val" id="s-preview">~200c</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Feed preview</label>
+<div class="preview-newsletter">
+<div class="preview-label">📬 NEWSLETTER · weekly</div>
+<div class="preview-title" id="p-title">—</div>
+<div class="preview-snippet" id="p-snippet">—</div>
+<div class="preview-cta">Read more →</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>LinkedIn Newsletter limits at a glance</h2>
+<table class="lk-table">
+<tr><th>Field</th><th>Limit</th></tr>
+<tr><td>Title</td><td>150 characters</td></tr>
+<tr><td>Subtitle / description</td><td>200 characters</td></tr>
+<tr><td>Body</td><td>110,000 characters (≈22 pages)</td></tr>
+<tr><td>Cover image</td><td>1280 × 720 px recommended</td></tr>
+<tr><td>Publishing cadence</td><td>Daily / Weekly / Monthly (lock in at creation)</td></tr>
+</table>
+
+<h2>Title patterns that work</h2>
+<ul>
+<li><strong>Number-led</strong> — "7 things I learned launching 100 tools"</li>
+<li><strong>Lesson-from-failure</strong> — "I spent $5k on the wrong domain — here's what saved me"</li>
+<li><strong>Counterintuitive claim</strong> — "Why I deleted 80% of my homepage"</li>
+<li><strong>Specific question</strong> — "Does SEO still beat paid in 2026?"</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All counting and parsing runs in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/linkedin-newsletter/linkedin-newsletter.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twitter / X Poll Composer — 25-Char Options + Live Preview | SharpDev.Tools</title>
+<meta content="Plan a Twitter / X poll before posting. 25-char limit per option (2-4 options), choose duration, see exactly how the poll will render. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-poll/" rel="canonical"/>
+<meta content="Twitter / X Poll Composer — 25-Char Options + Live Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Plan a Twitter / X poll. 25-char per option (2-4 options), duration picker, live preview." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-poll/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Twitter / X Poll Composer — 25-Char Options + Live Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Plan a Twitter / X poll. 25-char per option, duration picker, live preview." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Twitter","item":"https://sharpdev.tools/twitter/"},
+    {"@type":"ListItem","position":3,"name":"Twitter Poll Composer","item":"https://sharpdev.tools/tools/twitter-poll/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What are Twitter / X poll limits?","acceptedAnswer":{"@type":"Answer","text":"2-4 options, each up to 25 characters. Polls run for 5 minutes minimum and 7 days maximum. Duration is locked once the poll is posted."}},
+    {"@type":"Question","name":"Can I add an image to a poll?","acceptedAnswer":{"@type":"Answer","text":"Polls and media are mutually exclusive on Twitter / X — you cannot attach an image, GIF, or video to a tweet that contains a poll."}},
+    {"@type":"Question","name":"Is the poll uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. This tool is just a composer — you copy the question + options into Twitter manually."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Twitter Poll Composer — SharpDev.Tools","url":"https://sharpdev.tools/tools/twitter-poll/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-poll/twitter-poll.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-poll');</script>
+<div class="page">
+<h1>Twitter / X Poll Composer</h1>
+<p class="subtitle">Plan polls before posting — 25-char limit per option, live preview.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="question">Question / tweet text (280 chars)</label>
+<textarea id="question" rows="3" maxlength="280" placeholder="What should I build next?"></textarea>
+<div class="counter-row"><span id="q-counter" class="counter">0 / 280</span></div>
+</div>
+
+<div class="form-row">
+<label>Poll options (2-4)</label>
+<div class="poll-options" id="poll-options"></div>
+<button class="add-option" id="add-option" type="button">+ Add option</button>
+</div>
+
+<div class="form-row">
+<label for="duration">Poll duration</label>
+<select id="duration">
+<option value="30m">30 minutes</option>
+<option value="1h">1 hour</option>
+<option value="6h">6 hours</option>
+<option value="24h" selected>1 day</option>
+<option value="3d">3 days</option>
+<option value="7d">7 days (max)</option>
+</select>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Live preview</label>
+<div class="tweet-preview">
+<div class="tw-header">
+<div class="tw-avatar">SD</div>
+<div>
+<div class="tw-name">SharpDev <span class="tw-handle">@sharpdevtools · now</span></div>
+</div>
+</div>
+<div class="tw-body" id="tw-body">What should I build next?</div>
+<div class="tw-poll" id="tw-poll"></div>
+<div class="tw-meta" id="tw-meta">0 votes · 1 day left</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy poll text</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Twitter / X poll best practices</h2>
+<ul>
+<li><strong>Two options outperform four</strong> — binary choices feel decisive and get more votes</li>
+<li><strong>Keep options short</strong> — even though you have 25 chars, 5-10 char options are visually cleaner</li>
+<li><strong>End with an "Other → reply" option</strong> when you want comments. People reply to disagree</li>
+<li><strong>24-hour or 3-day duration</strong> hits the sweet spot — short enough to feel urgent, long enough to gather meaningful sample size</li>
+<li><strong>The question matters more than the options</strong> — frame as a real dilemma, not a leading question</li>
+</ul>
+
+<h2>What polls are good for</h2>
+<ul>
+<li><strong>Audience research</strong> — what topic, format, or product variant resonates</li>
+<li><strong>Engagement bait (light)</strong> — polls boost reach because they keep users on Twitter longer</li>
+<li><strong>Settle internal debates</strong> — "should the button be left or right?"</li>
+<li><strong>Lazy content</strong> — polls take 30 seconds to write and trigger discussion in replies</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Everything stays in your browser. No data is uploaded.</p>
+</section>
+
+<script src="/tools/twitter-poll/twitter-poll.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JSONPath Tester — Query JSON Data Visually | SharpDev.Tools</title>
+<meta content="Paste JSON, write a JSONPath query like $.store.book[*].author, see the matched values. Live evaluation. Browser-only — no upload. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/json-path/" rel="canonical"/>
+<meta content="JSONPath Tester — Query JSON Data Visually | SharpDev.Tools" property="og:title"/>
+<meta content="Paste JSON, write a JSONPath query, see the matched values. Live evaluation. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json-path/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="JSONPath Tester — Query JSON Data Visually | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste JSON, write a JSONPath query, see matched values." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/developers/"},
+    {"@type":"ListItem","position":3,"name":"JSONPath Tester","item":"https://sharpdev.tools/tools/json-path/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What syntax is supported?","acceptedAnswer":{"@type":"Answer","text":"Core JSONPath: $ root, .property dot access, [n] array index, [*] wildcard, .. recursive descent, [?(filter)] filter expressions with comparison operators."}},
+    {"@type":"Question","name":"Is this RFC 9535-compliant?","acceptedAnswer":{"@type":"Answer","text":"This implementation covers the common subset of JSONPath used in 95% of queries. Edge-case filter syntax may differ slightly from the RFC. For mission-critical pipelines, validate with jq or a dedicated library."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"JSONPath Tester — SharpDev.Tools","url":"https://sharpdev.tools/tools/json-path/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json-path/json-path.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json-path');</script>
+<div class="page">
+<h1>JSONPath Tester</h1>
+<p class="subtitle">Paste JSON, write a path, see matches. Live evaluation in your browser.</p>
+
+<div class="card">
+<div class="form-row">
+<label class="opt-label">JSONPath query</label>
+<input id="query" type="text" value="$.store.book[*].title"/>
+</div>
+
+<div class="preset-row">
+<span class="preset-hint">Examples:</span>
+<button class="preset" data-q="$.store.book[*].title">All book titles</button>
+<button class="preset" data-q="$.store.book[?(@.price < 10)]">Cheap books</button>
+<button class="preset" data-q="$..author">All authors anywhere</button>
+<button class="preset" data-q="$.store.book[0]">First book</button>
+<button class="preset" data-q="$.store.book.length">Book count</button>
+</div>
+</div>
+
+<div class="card">
+<div class="split">
+<div>
+<label class="opt-label">JSON input</label>
+<textarea id="input" rows="14"></textarea>
+</div>
+<div>
+<label class="opt-label">Result <span class="muted" id="result-count"></span></label>
+<pre class="output" id="output">—</pre>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy result</button>
+<button class="btn btn-secondary" id="format-btn" type="button">Format JSON</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>JSONPath syntax</h2>
+<table class="ref-table">
+<tr><th>Syntax</th><th>Meaning</th></tr>
+<tr><td><code>$</code></td><td>Root</td></tr>
+<tr><td><code>.foo</code> or <code>['foo']</code></td><td>Child property</td></tr>
+<tr><td><code>..foo</code></td><td>Recursive descent — find foo anywhere in the tree</td></tr>
+<tr><td><code>*</code> or <code>[*]</code></td><td>Wildcard — all properties / all array items</td></tr>
+<tr><td><code>[0]</code> <code>[-1]</code></td><td>Array index (negative counts from end)</td></tr>
+<tr><td><code>[0:3]</code> <code>[::2]</code></td><td>Array slice with optional step</td></tr>
+<tr><td><code>[?(@.price &lt; 10)]</code></td><td>Filter — items where the condition holds</td></tr>
+</table>
+
+<h2>Common patterns</h2>
+<ul>
+<li><code>$.data[*].id</code> — extract IDs from an array of objects</li>
+<li><code>$..price</code> — every price anywhere in the doc</li>
+<li><code>$.users[?(@.active == true)].email</code> — emails of active users</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Query evaluation runs in your browser.</p>
+</section>
+
+<script src="/tools/json-path/json-path.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

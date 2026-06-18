@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speech-to-Text — Free Online Voice Typing | SharpDev.Tools</title>
+<meta content="Speak into your mic, watch text appear. Web Speech API recognition — works in Chrome and Edge, 60+ languages. Free, no account needed." name="description"/>
+<link href="https://sharpdev.tools/tools/stt/" rel="canonical"/>
+<meta content="Speech-to-Text — Free Online Voice Typing | SharpDev.Tools" property="og:title"/>
+<meta content="Speak, watch text appear. Web Speech recognition, Chrome / Edge, 60+ languages. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/stt/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Speech-to-Text — Free Online Voice Typing | SharpDev.Tools" name="twitter:title"/>
+<meta content="Speak, watch text appear. Free, browser-based." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Speech-to-Text","item":"https://sharpdev.tools/tools/stt/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which browsers does this work in?","acceptedAnswer":{"@type":"Answer","text":"Chrome, Edge, and most Chromium browsers (Brave, Opera) on desktop and Android. Safari has partial support on iOS / macOS. Firefox does not support the API. If recognition isn't available you'll see a warning."}},
+    {"@type":"Question","name":"Is my voice uploaded?","acceptedAnswer":{"@type":"Answer","text":"The browser sends audio to Google's recognition servers (in Chrome / Edge) for processing — that's how the Web Speech API works. The recognition itself happens server-side, but text doesn't get stored. For fully-offline STT you'd need a native app with Whisper or similar models."}},
+    {"@type":"Question","name":"What languages?","acceptedAnswer":{"@type":"Answer","text":"60+ — English variants, German, Spanish, French, Italian, Portuguese, Russian, Japanese, Korean, Chinese, Hindi, Arabic, Dutch, Polish, Turkish, and more."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Speech-to-Text — SharpDev.Tools","url":"https://sharpdev.tools/tools/stt/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires Chromium-based browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/stt/stt.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('stt');</script>
+<div class="page">
+<h1>Speech-to-Text</h1>
+<p class="subtitle">Click record, speak — watch the text appear. Chrome / Edge / Chromium browsers.</p>
+
+<div class="card" id="warn-card" style="display:none">
+<p class="warn">⚠ Your browser doesn't support speech recognition. Try Chrome, Edge, Brave, or any Chromium-based browser.</p>
+</div>
+
+<div class="card" id="main-card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Language</label>
+<select id="lang">
+<option value="en-US" selected>English (US)</option>
+<option value="en-GB">English (UK)</option>
+<option value="de-DE">German</option>
+<option value="es-ES">Spanish (Spain)</option>
+<option value="es-MX">Spanish (Mexico)</option>
+<option value="fr-FR">French</option>
+<option value="it-IT">Italian</option>
+<option value="pt-BR">Portuguese (Brazil)</option>
+<option value="pt-PT">Portuguese (Portugal)</option>
+<option value="nl-NL">Dutch</option>
+<option value="pl-PL">Polish</option>
+<option value="ru-RU">Russian</option>
+<option value="tr-TR">Turkish</option>
+<option value="ar-SA">Arabic</option>
+<option value="hi-IN">Hindi</option>
+<option value="ja-JP">Japanese</option>
+<option value="ko-KR">Korean</option>
+<option value="zh-CN">Chinese (Simplified)</option>
+<option value="zh-TW">Chinese (Traditional)</option>
+</select>
+</div>
+<button class="record-btn" id="record-btn" type="button">🎤 Start recording</button>
+</div>
+
+<div class="form-row">
+<label class="opt-label">Transcript</label>
+<textarea id="output" rows="10" placeholder="Click record and start speaking…"></textarea>
+</div>
+
+<div class="action-row">
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy text</button>
+<button class="btn btn-secondary" id="dl-btn" type="button">Download .txt</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Tips for accuracy</h2>
+<ul>
+<li><strong>Quiet environment</strong> — background noise drops accuracy fast</li>
+<li><strong>Speak naturally</strong>, not too slow — recognition models train on natural speech</li>
+<li><strong>Headset / external mic</strong> beats laptop built-in mic by a lot</li>
+<li><strong>Punctuation by voice</strong> — say "comma", "period", "question mark", "new line"</li>
+<li><strong>Match language exactly</strong> — Spanish (Spain) vs (Mexico) differ in vocabulary</li>
+</ul>
+
+<h2>Privacy note</h2>
+<p>The Web Speech API in Chromium browsers sends audio to Google's cloud servers for recognition. The audio isn't stored, but it does leave the browser. For fully-offline transcription, you'd need a native app with Whisper or similar.</p>
+</section>
+
+<script src="/tools/stt/stt.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>XOR Cipher (Text ↔ Hex) | SharpDev.Tools</title>
+<meta content="Free XOR cipher tool. Encrypt text with a repeating-key XOR and get hex output, or decrypt hex back to text. UTF-8 aware, runs entirely in your browser — keys and data never leave your device." name="description"/>
+<link href="https://sharpdev.tools/tools/xor-cipher/" rel="canonical"/>
+<meta content="XOR Cipher (Text ↔ Hex) | SharpDev.Tools" property="og:title"/>
+<meta content="Free XOR cipher tool. Encrypt text with a repeating-key XOR and get hex output, or decrypt hex back to text. UTF-8 aware, runs entirely in your browser — keys and data never leave your device." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/xor-cipher/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="XOR Cipher (Text ↔ Hex) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free XOR cipher tool. Encrypt text with a repeating-key XOR and get hex output, or decrypt hex back to text. UTF-8 aware, runs entirely in your browser — keys and data never leave your device." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"XOR Cipher Encrypt / Decrypt","item":"https://sharpdev.tools/tools/xor-cipher/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the XOR cipher work?","acceptedAnswer":{"@type":"Answer","text":"Each byte of your text is combined with a byte of the key using a bitwise XOR, repeating the key as needed. XORing again with the same key restores the original \u2014 so encrypt and decrypt use the same operation."}},{"@type":"Question","name":"Why is the output in hex?","acceptedAnswer":{"@type":"Answer","text":"XOR produces raw bytes that aren't all printable, so the result is shown as hexadecimal. Paste that hex back with the same key and hit \u2018Decrypt\u2019 to recover the text."}},{"@type":"Question","name":"Is repeating-key XOR secure?","acceptedAnswer":{"@type":"Answer","text":"No. With a short, reused key it's easily broken and is meant for learning and CTFs. For real encryption use AES."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"XOR Cipher Encrypt / Decrypt \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/xor-cipher/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/xor-cipher/xor-cipher.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('xor-cipher');</script>
+<div class="page">
+<h1>XOR Cipher Encrypt / Decrypt</h1>
+<p class="subtitle">XOR text with a repeating key. Encrypt to hex, decrypt hex back to text. Runs in your browser.</p>
+<div class="field"><label for="in">Text (or hex when decrypting)</label><textarea id="in" placeholder="Secret message">Secret message</textarea></div>
+<div class="field"><label for="key">Key</label><input type="text" id="key" value="key"></div>
+<div class="actions"><button class="small-btn" id="enc">Encrypt → hex</button><button class="small-btn" id="dec">Decrypt hex →</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does the XOR cipher work?</summary><p>Each byte of your text is combined with a byte of the key using a bitwise XOR, repeating the key as needed. XORing again with the same key restores the original — so encrypt and decrypt use the same operation.</p></details>
+<details><summary>Why is the output in hex?</summary><p>XOR produces raw bytes that aren't all printable, so the result is shown as hexadecimal. Paste that hex back with the same key and hit ‘Decrypt’ to recover the text.</p></details>
+<details><summary>Is repeating-key XOR secure?</summary><p>No. With a short, reused key it's easily broken and is meant for learning and CTFs. For real encryption use AES.</p></details>
+</section>
+<script src="/tools/xor-cipher/xor-cipher.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

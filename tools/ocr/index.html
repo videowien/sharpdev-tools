@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OCR Online — Image to Text in Your Browser | SharpDev.Tools</title>
+<meta content="Extract text from any image. Tesseract.js OCR runs entirely in your browser — your image is never uploaded. 100+ languages, drag-and-drop. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/ocr/" rel="canonical"/>
+<meta content="OCR Online — Image to Text in Your Browser | SharpDev.Tools" property="og:title"/>
+<meta content="Extract text from images. Tesseract.js, 100+ languages, runs in your browser. No upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ocr/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="OCR Online — Image to Text in Your Browser | SharpDev.Tools" name="twitter:title"/>
+<meta content="Extract text from images. Tesseract.js, 100+ languages, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/images-media/"},
+    {"@type":"ListItem","position":3,"name":"Image to Text (OCR)","item":"https://sharpdev.tools/tools/ocr/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate is browser OCR?","acceptedAnswer":{"@type":"Answer","text":"Tesseract is one of the most widely-used open-source OCR engines (developed by Google). On clean, high-contrast text (screenshots, scans of printed docs) accuracy is 90-99%. Handwritten text, low-resolution images, or stylised fonts may give weaker results."}},
+    {"@type":"Question","name":"What languages are supported?","acceptedAnswer":{"@type":"Answer","text":"100+ languages. The most common ones (English, German, Spanish, French, Italian, Portuguese, Russian, Chinese, Japanese, Korean) are in the picker. The first run downloads the language data (~10-30 MB per language) — subsequent OCR is fast."}},
+    {"@type":"Question","name":"Is the image uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Tesseract.js runs entirely in your browser via WebAssembly. The image and text never leave the page."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"OCR — SharpDev.Tools","url":"https://sharpdev.tools/tools/ocr/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ocr/ocr.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ocr');</script>
+<div class="page">
+<h1>Image to Text (OCR)</h1>
+<p class="subtitle">Extract text from screenshots, photos, scans. Tesseract.js runs in your browser.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Language</label>
+<select id="lang">
+<option value="eng" selected>English</option>
+<option value="deu">German (Deutsch)</option>
+<option value="spa">Spanish (Español)</option>
+<option value="fra">French (Français)</option>
+<option value="ita">Italian (Italiano)</option>
+<option value="por">Portuguese</option>
+<option value="rus">Russian (Русский)</option>
+<option value="chi_sim">Chinese (Simplified)</option>
+<option value="jpn">Japanese (日本語)</option>
+<option value="kor">Korean (한국어)</option>
+<option value="ara">Arabic (العربية)</option>
+<option value="hin">Hindi (हिन्दी)</option>
+<option value="nld">Dutch</option>
+<option value="pol">Polish</option>
+<option value="tur">Turkish</option>
+</select>
+</div>
+</div>
+
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop an image here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">PNG / JPG / WebP — first run downloads language data (~10-30 MB)</p>
+</div>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<div class="preview-row">
+<img id="preview-img" alt="OCR source preview"/>
+<div class="progress-wrap">
+<div class="progress-label" id="progress-label">Waiting…</div>
+<div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+</div>
+</div>
+
+<div class="form-row">
+<label class="opt-label">Extracted text</label>
+<textarea id="output" rows="10" placeholder="Text will appear here…"></textarea>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy text</button>
+<button class="btn btn-secondary" id="dl-btn" type="button">Download .txt</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different image</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What OCR is good at</h2>
+<ul>
+<li><strong>Printed text screenshots</strong> — emails, articles, slides</li>
+<li><strong>Clean document scans</strong> — books, papers, forms</li>
+<li><strong>Receipts</strong> — though OCR-only output needs manual cleanup for fields</li>
+<li><strong>Subtitles / captions in screenshots</strong></li>
+</ul>
+
+<h2>Where OCR struggles</h2>
+<ul>
+<li><strong>Handwriting</strong> — accuracy drops below 60%</li>
+<li><strong>Low-resolution / blurry images</strong> — preprocess (sharpen, upscale) first</li>
+<li><strong>Decorative / display fonts</strong> — Tesseract is trained on common text fonts</li>
+<li><strong>Coloured backgrounds with low contrast</strong> — convert to grayscale + boost contrast first</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Tesseract.js runs entirely in your browser via WebAssembly. The image, OCR'd text, and language data all stay on your device. The language files are fetched from <code>jsdelivr</code> on first run (one-time per language).</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js"></script>
+<script src="/tools/ocr/ocr.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

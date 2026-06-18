@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tone Generator — Hz Frequency Tone with Sine, Square, Triangle, Sawtooth | SharpDev.Tools</title>
+<meta content="Generate pure sine, square, triangle, sawtooth tones at any Hz. Speaker test, hearing test, ear training, tuning reference. Free, runs in your browser via Web Audio." name="description"/>
+<link href="https://sharpdev.tools/tools/tone/" rel="canonical"/>
+<meta content="Tone Generator — Hz Frequency Tone | SharpDev.Tools" property="og:title"/>
+<meta content="Generate sine / square / triangle / sawtooth tones at any Hz. Speaker test, hearing test, tuning reference." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/tone/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Tone Generator — Hz Frequency Tone | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate sine / square / triangle / sawtooth tones at any Hz." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Tone Generator","item":"https://sharpdev.tools/tools/tone/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What frequency range can I generate?","acceptedAnswer":{"@type":"Answer","text":"20 Hz to 20,000 Hz — the standard human hearing range. Most adults lose sensitivity above ~16 kHz with age. Set carefully — high-frequency or loud tones can damage your hearing."}},
+    {"@type":"Question","name":"What's the difference between waveforms?","acceptedAnswer":{"@type":"Answer","text":"Sine = pure tone, no harmonics, smooth. Square = rich in odd harmonics, buzzy. Triangle = softer square. Sawtooth = bright, harsh, all harmonics. Sine is the default for tests."}},
+    {"@type":"Question","name":"Is the audio uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Sound is generated in your browser via Web Audio API. Nothing is uploaded."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Tone Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/tone/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/tone/tone.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('tone');</script>
+<div class="page">
+<h1>Tone Generator</h1>
+<p class="subtitle">Pure tones at any Hz. Speaker test, ear training, tuning reference, hearing test.</p>
+
+<div class="card">
+<div class="warning">⚠ Turn your volume <strong>down</strong> before pressing play. High frequencies and high volumes can damage hearing.</div>
+
+<div class="form-row">
+<label class="opt-label">Frequency</label>
+<div class="freq-row">
+<input id="freq-slider" type="range" min="20" max="20000" step="1" value="440"/>
+<input id="freq-num" type="number" min="20" max="20000" step="1" value="440"/>
+<span class="unit">Hz</span>
+</div>
+<div class="preset-row">
+<button class="preset" data-freq="20" type="button">20 Hz (sub-bass)</button>
+<button class="preset" data-freq="100" type="button">100 Hz</button>
+<button class="preset" data-freq="440" type="button">440 Hz (A4)</button>
+<button class="preset" data-freq="1000" type="button">1 kHz</button>
+<button class="preset" data-freq="4000" type="button">4 kHz (clarity)</button>
+<button class="preset" data-freq="10000" type="button">10 kHz</button>
+<button class="preset" data-freq="15000" type="button">15 kHz (high)</button>
+<button class="preset" data-freq="20000" type="button">20 kHz (ceiling)</button>
+</div>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Waveform</label>
+<select id="wave">
+<option value="sine" selected>Sine (pure)</option>
+<option value="triangle">Triangle</option>
+<option value="square">Square</option>
+<option value="sawtooth">Sawtooth</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Volume</label>
+<input id="vol" type="range" min="0" max="100" value="20"/>
+<span class="opt-value" id="vol-val">20%</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Channel</label>
+<select id="channel">
+<option value="both" selected>Both</option>
+<option value="left">Left only</option>
+<option value="right">Right only</option>
+</select>
+</div>
+</div>
+
+<button class="play-btn" id="play-btn" type="button">▶ Play</button>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What this is good for</h2>
+<ul>
+<li><strong>Speaker / headphone test</strong> — confirm both channels work, check frequency response</li>
+<li><strong>Hearing range test</strong> — sweep upward, see where you stop hearing it (most adults lose hearing above 15-17 kHz)</li>
+<li><strong>Tuning reference</strong> — 440 Hz is concert A; many tuners reference this</li>
+<li><strong>Tinnitus matching</strong> — find the frequency that matches your tinnitus tone (use carefully)</li>
+<li><strong>Ear training</strong> — interval identification, pitch recognition</li>
+</ul>
+
+<h2>Be careful</h2>
+<p>Pure tones at high volume can cause hearing damage faster than music. Start at 10-20% volume and raise gradually. Avoid prolonged exposure to single frequencies above 8 kHz.</p>
+
+<h2>Privacy</h2>
+<p>Sound is generated locally via the Web Audio API. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/tone/tone.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

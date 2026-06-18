@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Salary Converter — Hourly to Yearly &amp; Back | SharpDev.Tools</title>
+<meta content="Convert salary between hourly, daily, weekly, monthly, and yearly rates. Configurable hours per week and paid weeks off. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/salary/" rel="canonical"/>
+<meta content="Salary Converter — Hourly to Yearly &amp; Back | SharpDev.Tools" property="og:title"/>
+<meta content="Convert salary between hourly, daily, weekly, monthly, and yearly rates. Configurable hours per week and paid weeks off. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/salary/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Salary Converter — Hourly to Yearly &amp; Back | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert salary between hourly, daily, weekly, monthly, and yearly rates. Configurable hours per week and paid weeks off. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Money & Finance",
+        "item": "https://sharpdev.tools/#money-finance"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Salary Converter",
+        "item": "https://sharpdev.tools/tools/salary/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the salary converter do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It converts a wage between hourly, daily, weekly, monthly and annual figures using your hours per week and working days, so you can compare offers on the same basis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it gross or net pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It converts gross pay before tax. Take-home pay depends on your country and tax situation, which this tool does not model."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Salary Converter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/salary/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/salary/salary.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('salary');</script>
+<div class="page">
+<h1>Salary Converter</h1>
+<p class="subtitle">Type any rate and the others update. Tweak hours per week and weeks off to match your setup.</p>
+<div class="sl-config">
+<label>Hours / week <input type="number" id="hpw" value="40" min="1" max="168" step="0.5"></label>
+<label>Working weeks / year <input type="number" id="wpy" value="50" min="1" max="52" step="1"></label>
+</div>
+<div class="sl-grid" id="sl-grid"></div>
+</div>
+<script src="/tools/salary/salary.js"></script>
+<script>renderFooter();</script>
+</body></html>

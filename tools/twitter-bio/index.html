@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twitter / X Bio Counter — 160 Character Limit + Profile Preview | SharpDev.Tools</title>
+<meta content="Live 160-character Twitter / X bio counter. Profile mockup preview so you see exactly how your bio looks. Emoji-safe character counting. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-bio/" rel="canonical"/>
+<meta content="Twitter / X Bio Counter — 160 Characters + Live Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Live 160-char Twitter bio counter with profile mockup preview. Emoji-safe. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-bio/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Twitter / X Bio Counter — 160 Characters + Live Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live 160-char Twitter bio counter with profile mockup preview. Emoji-safe." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Twitter","item":"https://sharpdev.tools/twitter/"},
+    {"@type":"ListItem","position":3,"name":"Twitter Bio Counter","item":"https://sharpdev.tools/tools/twitter-bio/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the Twitter bio character limit?","acceptedAnswer":{"@type":"Answer","text":"160 characters. URLs are counted at their full length (not shortened like in tweets). Each emoji counts as 1 character with this tool's emoji-safe counter."}},
+    {"@type":"Question","name":"How are emojis counted?","acceptedAnswer":{"@type":"Answer","text":"Twitter counts each emoji as 1 character (regardless of how many UTF-16 code units it uses). This tool uses Intl.Segmenter for accurate Twitter-like counting — '👩‍💻' counts as 1, not 5."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The bio stays in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Twitter Bio Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/twitter-bio/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-bio/twitter-bio.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-bio');</script>
+<div class="page">
+<h1>Twitter / X Bio Counter</h1>
+<p class="subtitle">160-character limit, emoji-safe counter, live profile preview.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="bio">Your bio</label>
+<textarea id="bio" rows="5" placeholder="Builder. Writer. Coffee enjoyer. → sharpdev.tools"></textarea>
+<div class="counter-row">
+<span id="counter" class="counter">0 / 160</span>
+<span class="counter-bar"><span id="counter-fill" class="counter-fill"></span></span>
+</div>
+</div>
+
+<div class="form-row preview-controls">
+<label for="display-name">Display name (preview only)</label>
+<input id="display-name" type="text" maxlength="50" value="Gillian"/>
+<label for="handle">Handle (preview only)</label>
+<input id="handle" type="text" maxlength="15" value="sharpdevtools"/>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Profile preview</label>
+<div class="preview-box">
+<div class="preview-cover"></div>
+<div class="preview-avatar">SD</div>
+<div class="preview-content">
+<div class="preview-name" id="p-name">Gillian</div>
+<div class="preview-handle" id="p-handle">@sharpdevtools</div>
+<div class="preview-bio" id="p-bio">Your bio will appear here…</div>
+<div class="preview-meta">📅 Joined May 2026</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Twitter / X bio cheat sheet</h2>
+<ul>
+<li><strong>160 characters total</strong> — URLs count at their <strong>full length</strong> (not shortened the way they are inside tweets)</li>
+<li><strong>The first ~100 characters carry the weight</strong> — mobile previews truncate before "more"</li>
+<li><strong>Front-load value</strong> — what do you do? Why should someone follow? Cleverness can come second</li>
+<li><strong>Use an active CTA</strong> — "→ free guide" or "↓ latest project" outperforms passive descriptions</li>
+</ul>
+
+<h2>What works in 160 chars</h2>
+<ul>
+<li><strong>Identity + one verb</strong> — "Backend dev. Writing about Rust." (32 chars)</li>
+<li><strong>Three nouns</strong> — "Builder · Writer · Coffee enjoyer · sharpdev.tools" (51 chars)</li>
+<li><strong>Question-as-bio</strong> — "What if every dev tool was free?" (33 chars) — provokes engagement</li>
+<li><strong>List with separators</strong> — "✏️ writing · 🛠 building · 🚀 shipping" (43 chars)</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The bio stays in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/twitter-bio/twitter-bio.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF to Markdown — Convert PDF Text with Headings | SharpDev.Tools</title>
+<meta content="Convert PDF text to Markdown. Heading detection via font-size heuristics. Best for text-heavy documents (articles, reports, books). Browser-only, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-to-md/" rel="canonical"/>
+<meta content="PDF to Markdown — Convert PDF Text with Headings | SharpDev.Tools" property="og:title"/>
+<meta content="Convert PDF to Markdown with heading detection. Best for text-heavy docs. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-to-md/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF to Markdown — Convert PDF Text with Headings | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert PDF to Markdown with heading detection." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF to Markdown","item":"https://sharpdev.tools/tools/pdf-to-md/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate is heading detection?","acceptedAnswer":{"@type":"Answer","text":"Best for documents with clear typographic hierarchy (academic papers, books, reports). The tool clusters font sizes and assigns the largest cluster as H1, next as H2, etc. Mixed-format documents may need manual cleanup."}},
+    {"@type":"Question","name":"Does it preserve images / tables?","acceptedAnswer":{"@type":"Answer","text":"Images are replaced with [image] placeholders. Tables become tab-separated text (Markdown table syntax is complex to infer reliably). For tables specifically, use a dedicated PDF table extractor."}},
+    {"@type":"Question","name":"Is the file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. pdf.js parses the document entirely in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF to Markdown — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-to-md/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-to-md/pdf-to-md.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-to-md');</script>
+<div class="page">
+<h1>PDF to Markdown</h1>
+<p class="subtitle">Extract PDF text with heading detection. Best for text-heavy documents.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+</div>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<div class="opt-row">
+<label class="checkbox-label"><input id="detect-bold" type="checkbox" checked/> <span>Detect bold as inline emphasis</span></label>
+<label class="checkbox-label"><input id="detect-lists" type="checkbox" checked/> <span>Detect bullet lists</span></label>
+</div>
+
+<label class="opt-label">Markdown output</label>
+<textarea id="output" rows="22" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="dl-btn" type="button">Download .md</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How heading detection works</h2>
+<p>pdf.js exposes the font size of every text run. The tool clusters sizes:</p>
+<ol>
+<li>Find the most common (modal) size — that's body text</li>
+<li>Sizes ~1.4× larger → H2, ~1.8× → H1, ~1.2× → H3</li>
+<li>Anything below body size → footnotes / small text</li>
+</ol>
+<p>This works well for documents with consistent typographic hierarchy. Magazines, decorative layouts, and PDFs exported from inconsistent sources may need cleanup.</p>
+
+<h2>What's preserved</h2>
+<ul>
+<li>Paragraph breaks</li>
+<li>Heading hierarchy (H1-H3)</li>
+<li>Inline bold (if it's encoded in font name)</li>
+<li>Bullet-list indentation</li>
+</ul>
+
+<h2>What's not</h2>
+<ul>
+<li>Images (replaced with <code>[image]</code>)</li>
+<li>Complex tables (becomes flat text)</li>
+<li>Two-column layouts (text may interleave)</li>
+<li>Footnotes (mixed into body text)</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The PDF is parsed in your browser via pdf.js. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/pdf-to-md/pdf-to-md.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

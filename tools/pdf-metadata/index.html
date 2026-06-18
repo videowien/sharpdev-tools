@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Metadata Editor — Edit Title, Author, Subject, Keywords | SharpDev.Tools</title>
+<meta content="View and edit a PDF's metadata — title, author, subject, keywords, creator. Useful for SEO, archiving, and stripping author info before sharing. No upload." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-metadata/" rel="canonical"/>
+<meta content="PDF Metadata Editor — Title, Author, Subject, Keywords | SharpDev.Tools" property="og:title"/>
+<meta content="View and edit a PDF's metadata. Useful for SEO, archiving, stripping author info. No upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-metadata/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF Metadata Editor — Title, Author, Subject, Keywords | SharpDev.Tools" name="twitter:title"/>
+<meta content="View and edit a PDF's metadata. No upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF Metadata Editor","item":"https://sharpdev.tools/tools/pdf-metadata/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why edit PDF metadata?","acceptedAnswer":{"@type":"Answer","text":"Three common reasons: 1) SEO — PDFs ranked by Google use the title metadata. 2) Privacy — Word and InDesign embed your real name as Author by default; strip before sharing. 3) Archiving — consistent metadata makes large PDF collections searchable."}},
+    {"@type":"Question","name":"Does this remove all metadata?","acceptedAnswer":{"@type":"Answer","text":"You can clear individual fields to blank or replace them. Some PDF software also embeds XMP metadata streams — those are also overwritten when you set or clear the standard fields."}},
+    {"@type":"Question","name":"Is the PDF uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is parsed and rewritten in your browser via pdf-lib."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Metadata Editor — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-metadata/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-metadata/pdf-metadata.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-metadata');</script>
+<div class="page">
+<h1>PDF Metadata Editor</h1>
+<p class="subtitle">View + edit Title / Author / Subject / Keywords. Strip personal info before sharing.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">Reads + rewrites locally — never uploaded</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="form-grid">
+<div class="form-row full">
+<label class="opt-label">Title</label>
+<input id="m-title" type="text" maxlength="500"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Author</label>
+<input id="m-author" type="text" maxlength="200"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Subject</label>
+<input id="m-subject" type="text" maxlength="500"/>
+</div>
+<div class="form-row full">
+<label class="opt-label">Keywords (comma-separated)</label>
+<input id="m-keywords" type="text" maxlength="500"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Creator</label>
+<input id="m-creator" type="text" maxlength="200"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Producer</label>
+<input id="m-producer" type="text" maxlength="200"/>
+</div>
+</div>
+
+<div class="read-only">
+<label class="opt-label">Read-only fields</label>
+<table class="ro-table">
+<tr><td>Page count</td><td id="r-pages">—</td></tr>
+<tr><td>Created</td><td id="r-created">—</td></tr>
+<tr><td>Modified</td><td id="r-modified">—</td></tr>
+<tr><td>File size</td><td id="r-size">—</td></tr>
+</table>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="save-btn" type="button">Download with new metadata</button>
+<button class="btn btn-secondary" id="strip-btn" type="button">Strip all metadata</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What each field is for</h2>
+<table class="meta-table">
+<tr><th>Field</th><th>Visible in</th></tr>
+<tr><td>Title</td><td>Browser tab when PDF opens in-browser; Google search result for PDFs</td></tr>
+<tr><td>Author</td><td>Document properties dialog; metadata indexes</td></tr>
+<tr><td>Subject</td><td>Often used as the description for in-app PDF search</td></tr>
+<tr><td>Keywords</td><td>Some search engines / DMS use this for ranking</td></tr>
+<tr><td>Creator</td><td>The app that originally created the document (Word, InDesign, …)</td></tr>
+<tr><td>Producer</td><td>The PDF library that wrote the final file</td></tr>
+</table>
+
+<h2>Privacy: strip before sharing</h2>
+<p>If you've ever opened a PDF and seen your colleague's full name + their internal app version in the file metadata — that's because most authoring apps embed it by default. Click <strong>Strip all metadata</strong> to clear every field before sharing externally.</p>
+
+<h2>SEO for PDFs</h2>
+<p>Google indexes PDFs and shows the <strong>Title metadata</strong> as the search result link (falling back to filename if missing). Set a clean, keyword-rich title — same SEO rules as web pages.</p>
+
+<h2>Privacy</h2>
+<p>The PDF is parsed and rewritten in your browser via pdf-lib. Nothing is uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-metadata/pdf-metadata.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

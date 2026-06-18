@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Reading Level — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Score text with Flesch, Gunning Fog, SMOG, Coleman-Liau and ARI to see its grade level and ease. Free online reading level tool, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/reading-level/" rel="canonical"/>
+<meta content="Reading Level — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Score text with Flesch, Gunning Fog, SMOG, Coleman-Liau and ARI to see its grade level and ease. Free online reading level tool, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/reading-level/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Reading Level — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Score text with Flesch, Gunning Fog, SMOG, Coleman-Liau and ARI to see its grade level and ease. Free online reading level tool, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Reading Level",
+        "item": "https://sharpdev.tools/tools/reading-level/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which readability formulas does the Reading Level tool compute?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flesch Reading Ease, Flesch-Kincaid Grade, Gunning Fog, SMOG, Coleman-Liau and the Automated Readability Index (ARI)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my text uploaded anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every score is calculated locally in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, unlimited and free with no ads or account."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Reading Level — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/reading-level/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/reading-level/reading-level.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('reading-level');</script>
+<div class="page">
+<h1>Reading Level Scorer</h1>
+<p class="subtitle">Score your text's readability. Flesch, Gunning Fog, SMOG, Coleman-Liau, ARI — and what each grade level means.</p>
+<div class="card">
+<label for="text">Paste your text</label>
+<textarea id="text" placeholder="Start typing or paste your text here..."></textarea>
+<div class="toggles">
+<label class="toggle"><input id="hl-long" type="checkbox"/><span>Highlight long sentences (&gt;25 words)</span></label>
+<label class="toggle"><input id="hl-complex" type="checkbox"/><span>Highlight complex words (3+ syllables)</span></label>
+</div>
+<div class="hl-preview" id="hl-preview" style="display:none"></div>
+</div>
+<div class="summary-card">
+<div class="summary-label">Average grade level</div>
+<div class="summary-val" id="avg-grade">—</div>
+<div class="summary-sub" id="avg-desc"></div>
+</div>
+<div class="card stats-card">
+<h2 class="sec-title">Text Stats</h2>
+<div class="stats-grid" id="stats"></div>
+</div>
+<h2 class="section-title">Scores</h2>
+<div class="scores-grid" id="scores"></div>
+<div class="info-card">
+<h3>Reference grade levels</h3>
+<p>Hemingway ≈ grade 4 · Harry Potter ≈ grade 5 · NYT ≈ grade 9 · Scientific paper ≈ grade 14+</p>
+</div>
+</div>
+<script src="/tools/reading-level/reading-level.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

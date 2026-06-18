@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Image Rotate &amp; Flip — 90°, 180°, 270°, Horizontal, Vertical | SharpDev.Tools</title>
+<meta content="Rotate any image 90°, 180°, 270° or flip horizontally / vertically. PNG, JPG, WebP supported. Browser-only — your file never leaves your device. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/image-rotate/" rel="canonical"/>
+<meta content="Image Rotate &amp; Flip — 90°, 180°, 270°, Horizontal, Vertical | SharpDev.Tools" property="og:title"/>
+<meta content="Rotate images 90/180/270° or flip horizontally / vertically. PNG, JPG, WebP. Browser-only — never uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-rotate/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Image Rotate &amp; Flip — 90°, 180°, 270°, Horizontal, Vertical | SharpDev.Tools" name="twitter:title"/>
+<meta content="Rotate images 90/180/270° or flip horizontally / vertically." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/images-media/"},
+    {"@type":"ListItem","position":3,"name":"Image Rotate &amp; Flip","item":"https://sharpdev.tools/tools/image-rotate/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between rotate and flip?","acceptedAnswer":{"@type":"Answer","text":"Rotation spins the image around its center — text becomes sideways or upside-down but still readable mirror-style. Flip is a mirror reflection — text becomes mirror-image. Use rotate to correct orientation; use flip when the subject should face the other way."}},
+    {"@type":"Question","name":"Does rotation lose quality?","acceptedAnswer":{"@type":"Answer","text":"Multiples of 90° (90, 180, 270) are lossless — pixels just move to new positions. Arbitrary angles (e.g. 17°) require interpolation, which slightly softens the image."}},
+    {"@type":"Question","name":"Is my image uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The image is drawn onto a canvas in your browser and re-exported locally. Nothing is sent to a server."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Image Rotate &amp; Flip — SharpDev.Tools","url":"https://sharpdev.tools/tools/image-rotate/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-rotate/image-rotate.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-rotate');</script>
+<div class="page">
+<h1>Image Rotate &amp; Flip</h1>
+<p class="subtitle">Rotate any image 90°, 180°, 270° or flip horizontally / vertically. Lossless at right angles.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop an image here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP — runs in your browser</p>
+</div>
+</div>
+</div>
+
+<div class="card" id="editor-card" style="display:none">
+<div class="canvas-wrap">
+<canvas id="display"></canvas>
+</div>
+
+<div class="action-row">
+<button class="op-btn" data-op="rot-left" type="button" title="Rotate 90° left">↺ 90°</button>
+<button class="op-btn" data-op="rot-right" type="button" title="Rotate 90° right">↻ 90°</button>
+<button class="op-btn" data-op="rot-180" type="button" title="Rotate 180°">⤴ 180°</button>
+<button class="op-btn" data-op="flip-h" type="button" title="Flip horizontally">⇄ Flip H</button>
+<button class="op-btn" data-op="flip-v" type="button" title="Flip vertically">⇅ Flip V</button>
+<button class="op-btn" data-op="reset" type="button">Reset</button>
+</div>
+
+<div class="form-row" style="margin-top:18px">
+<label class="opt-label">Custom rotation</label>
+<div class="custom-row">
+<input id="custom-angle" type="range" min="0" max="360" step="1" value="0"/>
+<span class="opt-value" id="angle-val">0°</span>
+</div>
+</div>
+
+<div class="action-row" style="margin-top:18px">
+<button class="btn btn-primary" id="dl-png" type="button">Download PNG</button>
+<button class="btn btn-secondary" id="dl-jpg" type="button">Download JPG</button>
+<button class="btn btn-secondary" id="reset-file-btn" type="button">Pick different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>When you need rotation</h2>
+<ul>
+<li><strong>Photos with wrong EXIF orientation</strong> — phone photos sometimes display sideways depending on the app. Re-saving fixes the orientation</li>
+<li><strong>Scanned documents</strong> — flatbed scans rarely match the desired orientation</li>
+<li><strong>Stickers / patterns</strong> — flip to make mirror-image variants for design layouts</li>
+<li><strong>Print prep</strong> — rotate landscape photos to portrait for specific layouts</li>
+</ul>
+
+<h2>Lossless vs lossy</h2>
+<p>Rotations of 90°, 180°, 270° are lossless — every original pixel is preserved, just at a new position. Arbitrary angles (1-89°) require interpolation, which slightly softens edges. The custom-angle slider uses bilinear interpolation.</p>
+
+<h2>Privacy</h2>
+<p>Image manipulation is purely Canvas-based. Nothing leaves your browser.</p>
+</section>
+
+<script src="/tools/image-rotate/image-rotate.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

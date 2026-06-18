@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Username / Handle Format Checker — Multi-Platform Validation | SharpDev.Tools</title>
+<meta content="Validate username format across Twitter / X, Instagram, TikTok, GitHub, LinkedIn, YouTube, Reddit, Bluesky, Mastodon, Discord. Length, allowed characters, restrictions. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/handle-checker/" rel="canonical"/>
+<meta content="Username / Handle Format Checker — Multi-Platform | SharpDev.Tools" property="og:title"/>
+<meta content="Validate username format across Twitter, Instagram, TikTok, GitHub, LinkedIn, Reddit, Bluesky, Mastodon, Discord." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/handle-checker/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Username / Handle Format Checker — Multi-Platform | SharpDev.Tools" name="twitter:title"/>
+<meta content="Validate username format across all major platforms." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Social Media","item":"https://sharpdev.tools/social-media/"},
+    {"@type":"ListItem","position":3,"name":"Handle Format Checker","item":"https://sharpdev.tools/tools/handle-checker/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does this check if a username is actually available?","acceptedAnswer":{"@type":"Answer","text":"No — this checks only whether the format is valid (length, allowed characters). To check actual availability you'd need to visit each platform. This tool tells you in advance whether the name COULD be used on each platform."}},
+    {"@type":"Question","name":"Why do platforms have different rules?","acceptedAnswer":{"@type":"Answer","text":"Historical reasons + URL safety. Twitter inherited from SMS (15 chars to fit @handle + message), Instagram allows periods for natural handles, GitHub allows hyphens for project-style names. None of them allow leading numbers (mostly)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All validation happens in your browser via regex."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Handle Format Checker — SharpDev.Tools","url":"https://sharpdev.tools/tools/handle-checker/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/handle-checker/handle-checker.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('handle-checker');</script>
+<div class="page">
+<h1>Username / Handle Format Checker</h1>
+<p class="subtitle">Tells you whether your chosen handle is even <em>allowed</em> on each platform — before you go check availability.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="handle">Your desired handle</label>
+<input id="handle" type="text" placeholder="e.g. sharpdev_tools" value="sharpdev_tools"/>
+<p class="hint">No need to add @ — just the handle text.</p>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Platform-by-platform validation</label>
+<div class="platform-list" id="platform-list"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common gotchas</h2>
+<ul>
+<li><strong>Leading numbers</strong> — banned on Twitter, GitHub, LinkedIn. Allowed on Instagram (mostly) and TikTok.</li>
+<li><strong>Periods (.)</strong> — only Instagram + TikTok allow them. Useful for first.last style</li>
+<li><strong>Hyphens (-)</strong> — only GitHub and Bluesky (in domains). Banned elsewhere</li>
+<li><strong>Length</strong> — Twitter is the strictest (15 chars max). LinkedIn allows the longest custom URLs (100 chars)</li>
+<li><strong>Case</strong> — handles are technically case-insensitive everywhere, but display preserves the case you registered</li>
+</ul>
+
+<h2>Choosing a cross-platform handle</h2>
+<p>If you want the same handle on every platform, optimize for the strictest rules — that's Twitter / X. Stick to <strong>letters, digits and underscores, no leading number, 4-15 characters</strong> and you're safe everywhere.</p>
+
+<h2>Privacy</h2>
+<p>Validation happens in your browser via regex. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/handle-checker/handle-checker.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

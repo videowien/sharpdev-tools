@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HMAC Generator — HMAC-SHA1, SHA-256, SHA-384, SHA-512 | SharpDev.Tools</title>
+<meta content="Generate HMAC signatures for any message + key. Algorithms: HMAC-SHA1, SHA-256, SHA-384, SHA-512. Hex or Base64 output. Free, runs in your browser via SubtleCrypto." name="description"/>
+<link href="https://sharpdev.tools/tools/hmac/" rel="canonical"/>
+<meta content="HMAC Generator — HMAC-SHA1 / SHA-256 / SHA-384 / SHA-512 | SharpDev.Tools" property="og:title"/>
+<meta content="HMAC signatures for message + key. SHA-1, SHA-256, SHA-384, SHA-512. Hex or Base64. Runs in browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hmac/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="HMAC Generator — HMAC-SHA1 / SHA-256 / SHA-384 / SHA-512 | SharpDev.Tools" name="twitter:title"/>
+<meta content="HMAC signatures for message + key. SHA-1, SHA-256, SHA-384, SHA-512." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/security-crypto/"},
+    {"@type":"ListItem","position":3,"name":"HMAC Generator","item":"https://sharpdev.tools/tools/hmac/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is HMAC?","acceptedAnswer":{"@type":"Answer","text":"HMAC (Hash-based Message Authentication Code) combines a secret key with a message and a hash function to produce a tag that proves the message hasn't been tampered with AND came from someone who knows the secret. Used in JWT signing, API request signing (AWS, Stripe), TLS, and PBKDF2."}},
+    {"@type":"Question","name":"Which algorithm should I use?","acceptedAnswer":{"@type":"Answer","text":"HMAC-SHA256 is the modern default — used by AWS Signature v4, JWT HS256, and most API authentication. SHA-1 is deprecated for new systems. SHA-384/512 only when explicitly required by a spec."}},
+    {"@type":"Question","name":"Is the key uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. HMAC computation runs in your browser via the SubtleCrypto API. The key never leaves the page."}},
+    {"@type":"Question","name":"What's the difference between hex and base64 output?","acceptedAnswer":{"@type":"Answer","text":"Same bytes, different encoding. Hex (a-f, 0-9) is ~2× longer but human-readable. Base64 is more compact and is what JWT, AWS Signature, and most APIs use. Pick whichever matches your target format."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"HMAC Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/hmac/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hmac/hmac.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hmac');</script>
+<div class="page">
+<h1>HMAC Generator</h1>
+<p class="subtitle">HMAC-SHA1, SHA-256, SHA-384, SHA-512 — for API signing, JWT, message authentication.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="key">Secret key</label>
+<input id="key" type="text" placeholder="your-secret-key" value="my-secret-key"/>
+</div>
+<div class="form-row">
+<label for="message">Message</label>
+<textarea id="message" rows="5" placeholder="The message to authenticate">The quick brown fox jumps over the lazy dog</textarea>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Algorithm</label>
+<select id="algorithm">
+<option value="SHA-1">HMAC-SHA1</option>
+<option value="SHA-256" selected>HMAC-SHA256</option>
+<option value="SHA-384">HMAC-SHA384</option>
+<option value="SHA-512">HMAC-SHA512</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Output</label>
+<div class="seg">
+<button class="seg-btn active" data-output="hex" type="button">Hex</button>
+<button class="seg-btn" data-output="base64" type="button">Base64</button>
+<button class="seg-btn" data-output="base64url" type="button">Base64URL</button>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Key encoding</label>
+<div class="seg">
+<button class="seg-btn active" data-keyenc="utf8" type="button">UTF-8</button>
+<button class="seg-btn" data-keyenc="hex" type="button">Hex</button>
+<button class="seg-btn" data-keyenc="base64" type="button">Base64</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">HMAC output</label>
+<div class="hmac-output" id="hmac-out">—</div>
+<div class="action-row">
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common HMAC uses</h2>
+<ul>
+<li><strong>API request signing</strong> — AWS Signature v4 (HMAC-SHA256), GitHub webhooks (HMAC-SHA256), Stripe (HMAC-SHA256)</li>
+<li><strong>JWT signing</strong> — HS256 = HMAC-SHA256, HS384 = HMAC-SHA384, HS512 = HMAC-SHA512</li>
+<li><strong>TLS</strong> — record MAC for legacy cipher suites</li>
+<li><strong>PBKDF2 + HKDF</strong> — both use HMAC internally as a pseudo-random function</li>
+</ul>
+
+<h2>Algorithm picker cheatsheet</h2>
+<ul>
+<li><strong>HMAC-SHA1</strong> — only when an old spec requires it. Considered deprecated for new systems since 2017.</li>
+<li><strong>HMAC-SHA256</strong> — modern default. Used by AWS, Stripe, GitHub, Square, almost every API.</li>
+<li><strong>HMAC-SHA384 / SHA-512</strong> — only when an explicit spec or compliance requirement demands it. SHA-256 is fine for nearly all use cases.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>HMAC computation uses the browser's SubtleCrypto API. The key and message never leave your browser.</p>
+</section>
+
+<script src="/tools/hmac/hmac.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

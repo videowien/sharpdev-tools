@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Hex to Text Converter — Hex ⇄ ASCII / UTF-8 | SharpDev.Tools</title>
+<meta content="Convert text to hexadecimal and hex back to text (UTF-8 aware). Free online hex to text and text to hex converter, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/hex-to-text/" rel="canonical"/>
+<meta content="Hex to Text Converter — Hex ⇄ ASCII / UTF-8 | SharpDev.Tools" property="og:title"/>
+<meta content="Convert text to hexadecimal and hex back to text (UTF-8 aware). Free online hex to text and text to hex converter, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hex-to-text/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hex to Text Converter — Hex ⇄ ASCII / UTF-8 | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert text to hexadecimal and hex back to text (UTF-8 aware). Free online hex to text and text to hex converter, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Hex to Text Converter","item":"https://sharpdev.tools/tools/hex-to-text/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert text to hex?","acceptedAnswer":{"@type":"Answer","text":"Type your text and press 'Text \u2192 Hex'. Each byte (UTF-8 encoded) is shown as a two-digit hex value, space separated, so emoji and accented characters convert correctly."}},{"@type":"Question","name":"How do I decode hex back to text?","acceptedAnswer":{"@type":"Answer","text":"Paste the hex (spaces, 0x prefixes and other separators are ignored) and press 'Hex \u2192 Text'. The bytes are decoded as UTF-8."}},{"@type":"Question","name":"Does it handle non-ASCII characters?","acceptedAnswer":{"@type":"Answer","text":"Yes, it uses UTF-8 encoding, so multi-byte characters round-trip correctly in both directions."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Hex to Text Converter \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/hex-to-text/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hex-to-text/hex-to-text.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hex-to-text');</script>
+<div class="page">
+<h1>Hex to Text Converter</h1>
+<p class="subtitle">Text to hex bytes, or hex back to text. UTF-8 aware, both directions.</p>
+<div class="actions"><button class="small-btn" id="enc">Text → Hex &#8595;</button><button class="small-btn" id="dec">Hex → Text &#8593;</button></div>
+<div class="field"><label for="in">Input</label><textarea id="in" placeholder="Type text, or paste hex like 48 65 6c 6c 6f"></textarea></div>
+<div class="out-head"><label for="out">Output</label><button class="copy-btn" id="copy">Copy</button></div><div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert text to hex?</summary><p>Type your text and press 'Text → Hex'. Each byte (UTF-8 encoded) is shown as a two-digit hex value, space separated, so emoji and accented characters convert correctly.</p></details>
+<details><summary>How do I decode hex back to text?</summary><p>Paste the hex (spaces, 0x prefixes and other separators are ignored) and press 'Hex → Text'. The bytes are decoded as UTF-8.</p></details>
+<details><summary>Does it handle non-ASCII characters?</summary><p>Yes, it uses UTF-8 encoding, so multi-byte characters round-trip correctly in both directions.</p></details>
+</section>
+<script src="/tools/hex-to-text/hex-to-text.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

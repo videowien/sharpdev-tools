@@ -1,0 +1,14 @@
+.page { max-width: 720px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+.sl-config { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; padding: 14px 18px; background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 10px; }
+.sl-config label { display: flex; flex-direction: column; font-size: 11px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; gap: 4px; flex: 1; min-width: 160px; }
+.sl-config input { padding: 8px 10px; background: #141414; border: 1px solid #262626; color: #fff; font-size: 14px; border-radius: 6px; outline: none; font-variant-numeric: tabular-nums; }
+.sl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sl-field { background: #141414; border: 1px solid #262626; border-radius: 12px; padding: 16px 18px; transition: border-color 0.15s; }
+.sl-field.active { border-color: #ff4444; }
+.sl-field label { display: block; font-size: 11px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.sl-input-wrap { display: flex; align-items: center; gap: 6px; }
+.sl-input-wrap .cur { color: #888; font-family: 'SF Mono', Monaco, monospace; font-size: 18px; }
+.sl-input-wrap input { flex: 1; padding: 6px 4px; background: transparent; border: none; color: #fff; font-size: 20px; font-weight: 600; outline: none; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) { .page h1 { font-size: 28px; } .sl-grid { grid-template-columns: 1fr; } }

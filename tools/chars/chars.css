@@ -1,0 +1,57 @@
+.page { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 24px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+textarea {
+  width: 100%; min-height: 180px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 10px;
+  color: #e1e1e1; font-size: 15px; padding: 14px; outline: none;
+  font-family: inherit; line-height: 1.5; transition: border-color 0.2s;
+  margin-bottom: 16px;
+}
+textarea:focus { border-color: #ff4444; }
+
+.quick-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;
+  margin-bottom: 32px;
+}
+.stat-chip {
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 8px; padding: 12px 14px;
+}
+.stat-val { color: #fff; font-size: 22px; font-weight: 700; font-family: 'SF Mono', Monaco, monospace; }
+.stat-label { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+.platforms h2 { color: #fff; font-size: 18px; margin-bottom: 16px; font-weight: 600; }
+
+.platform-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;
+}
+.platform {
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 10px;
+  padding: 14px 16px; transition: border-color 0.15s;
+}
+.platform.over { border-color: #f87171; }
+.platform.warn { border-color: #facc15; }
+.platform.ok { border-color: #262626; }
+
+.p-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.p-name { color: #e1e1e1; font-weight: 600; font-size: 14px; }
+.p-note { color: #666; font-size: 11px; margin-left: 8px; }
+.p-count {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 13px; color: #888;
+}
+.p-count .used { color: #ccc; font-weight: 600; }
+.platform.over .p-count .used { color: #f87171; }
+.platform.warn .p-count .used { color: #facc15; }
+.platform.ok .p-count .used { color: #4ade80; }
+
+.p-bar { height: 4px; background: #1a1a1a; border-radius: 2px; overflow: hidden; }
+.p-fill { height: 100%; transition: width 0.2s, background 0.2s; }
+.platform.ok .p-fill { background: #4ade80; }
+.platform.warn .p-fill { background: #facc15; }
+.platform.over .p-fill { background: #f87171; }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>GCD &amp; LCM Calculator — Greatest Common Divisor, Least Common Multiple | SharpDev.Tools</title>
+<meta content="Find the greatest common divisor (GCD/HCF) and least common multiple (LCM) of two or more numbers. Free online GCD LCM calculator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/gcd-lcm/" rel="canonical"/>
+<meta content="GCD &amp; LCM Calculator — Greatest Common Divisor, Least Common Multiple | SharpDev.Tools" property="og:title"/>
+<meta content="Find the greatest common divisor (GCD/HCF) and least common multiple (LCM) of two or more numbers. Free online GCD LCM calculator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/gcd-lcm/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="GCD &amp; LCM Calculator — Greatest Common Divisor, Least Common Multiple | SharpDev.Tools" name="twitter:title"/>
+<meta content="Find the greatest common divisor (GCD/HCF) and least common multiple (LCM) of two or more numbers. Free online GCD LCM calculator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"GCD & LCM Calculator","item":"https://sharpdev.tools/tools/gcd-lcm/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between GCD and LCM?","acceptedAnswer":{"@type":"Answer","text":"The GCD (greatest common divisor, also called HCF) is the largest number that divides all your numbers evenly. The LCM (least common multiple) is the smallest number that all of them divide into."}},{"@type":"Question","name":"Can it handle more than two numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter any list separated by spaces, commas or new lines and it computes the GCD and LCM across the whole set."}},{"@type":"Question","name":"How is it computed?","acceptedAnswer":{"@type":"Answer","text":"GCD uses the Euclidean algorithm pairwise across the list; LCM uses the identity lcm(a,b) = a*b/gcd(a,b), folded across all numbers."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"GCD & LCM Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/gcd-lcm/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/gcd-lcm/gcd-lcm.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('gcd-lcm');</script>
+<div class="page">
+<h1>GCD & LCM Calculator</h1>
+<p class="subtitle">Greatest common divisor and least common multiple of any list of whole numbers.</p>
+<div class="field"><label for="in">Numbers (space, comma or new line separated)</label><textarea id="in" style="min-height:70px" placeholder="e.g. 12, 18, 24"></textarea></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between GCD and LCM?</summary><p>The GCD (greatest common divisor, also called HCF) is the largest number that divides all your numbers evenly. The LCM (least common multiple) is the smallest number that all of them divide into.</p></details>
+<details><summary>Can it handle more than two numbers?</summary><p>Yes. Enter any list separated by spaces, commas or new lines and it computes the GCD and LCM across the whole set.</p></details>
+<details><summary>How is it computed?</summary><p>GCD uses the Euclidean algorithm pairwise across the list; LCM uses the identity lcm(a,b) = a*b/gcd(a,b), folded across all numbers.</p></details>
+</section>
+<script src="/tools/gcd-lcm/gcd-lcm.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

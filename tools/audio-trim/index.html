@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Audio Trimmer (Cut Audio Online) | SharpDev.Tools</title>
+<meta content="Free online audio trimmer. Load an audio file, set a start and end time, preview, and download the trimmed clip as a WAV — entirely in your browser. Nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/audio-trim/" rel="canonical"/>
+<meta content="Audio Trimmer (Cut Audio Online) | SharpDev.Tools" property="og:title"/>
+<meta content="Free online audio trimmer. Load an audio file, set a start and end time, preview, and download the trimmed clip as a WAV — entirely in your browser. Nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/audio-trim/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Audio Trimmer (Cut Audio Online) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free online audio trimmer. Load an audio file, set a start and end time, preview, and download the trimmed clip as a WAV — entirely in your browser. Nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Audio Trimmer","item":"https://sharpdev.tools/tools/audio-trim/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What formats can I load?","acceptedAnswer":{"@type":"Answer","text":"Any audio your browser can decode \u2014 typically MP3, WAV, OGG, M4A and FLAC. The trimmed clip is exported as WAV (uncompressed, lossless)."}},{"@type":"Question","name":"Is my audio uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The file is decoded and trimmed entirely in your browser using the Web Audio API; nothing is sent to a server."}},{"@type":"Question","name":"Why WAV and not MP3?","acceptedAnswer":{"@type":"Answer","text":"WAV needs no extra encoder and is lossless. If you need MP3, convert the downloaded WAV with an audio converter afterwards."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Audio Trimmer \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/audio-trim/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/audio-trim/audio-trim.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('audio-trim');</script>
+<div class="page">
+<h1>Audio Trimmer</h1>
+<p class="subtitle">Cut a clip from an audio file by start and end time and download it as WAV. Runs in your browser.</p>
+<label class="sd-drop" for="file">Click or drop an audio file here<input type="file" id="file" accept="audio/*"></label>
+<div id="info" class="note" style="display:none;"></div>
+<div class="row"><div class="field"><label for="start">Start (seconds)</label><input type="number" id="start" value="0" step="0.1" min="0"></div><div class="field"><label for="end">End (seconds)</label><input type="number" id="end" value="0" step="0.1" min="0"></div></div>
+<div class="actions"><button class="small-btn" id="prev">Preview clip</button><a class="copy-btn" id="dl" style="display:none;">Download WAV</a></div>
+<audio id="player" controls style="width:100%;margin-top:10px;display:none;"></audio>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What formats can I load?</summary><p>Any audio your browser can decode — typically MP3, WAV, OGG, M4A and FLAC. The trimmed clip is exported as WAV (uncompressed, lossless).</p></details>
+<details><summary>Is my audio uploaded?</summary><p>No. The file is decoded and trimmed entirely in your browser using the Web Audio API; nothing is sent to a server.</p></details>
+<details><summary>Why WAV and not MP3?</summary><p>WAV needs no extra encoder and is lossless. If you need MP3, convert the downloaded WAV with an audio converter afterwards.</p></details>
+</section>
+<script src="/tools/audio-trim/audio-trim.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

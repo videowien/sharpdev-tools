@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CSS Flexbox Generator — Visual Builder + Live Preview | SharpDev.Tools</title>
+<meta content="Build CSS Flexbox layouts visually. Toggle direction, justify, align, wrap, gap — see live preview, copy CSS. The fastest way to remember which property does what." name="description"/>
+<link href="https://sharpdev.tools/tools/css-flexbox/" rel="canonical"/>
+<meta content="CSS Flexbox Generator — Visual Builder + Live Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Visual CSS Flexbox builder with live preview. Toggle direction, justify, align, wrap, gap." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-flexbox/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="CSS Flexbox Generator — Visual Builder + Live Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Visual CSS Flexbox builder with live preview." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/design-css/"},
+    {"@type":"ListItem","position":3,"name":"Flexbox Generator","item":"https://sharpdev.tools/tools/css-flexbox/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"When to use Flexbox vs Grid?","acceptedAnswer":{"@type":"Answer","text":"Flexbox = 1-dimensional layout (row OR column). Grid = 2-dimensional (rows AND columns at once). For nav bars, button rows, alignment within a card — Flexbox. For page-level layouts, dashboards — Grid."}},
+    {"@type":"Question","name":"What's the difference between justify-content and align-items?","acceptedAnswer":{"@type":"Answer","text":"justify-content controls the MAIN axis (usually horizontal). align-items controls the CROSS axis (usually vertical). If flex-direction is column, the two axes swap."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"CSS Flexbox Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/css-flexbox/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-flexbox/css-flexbox.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-flexbox');</script>
+<div class="page">
+<h1>CSS Flexbox Generator</h1>
+<p class="subtitle">Visual builder + live preview. Adjust controls — see the layout + copy the CSS.</p>
+
+<div class="card">
+<div class="ctrl-grid">
+<div class="ctrl">
+<label class="opt-label">flex-direction</label>
+<select id="direction">
+<option value="row" selected>row</option>
+<option value="row-reverse">row-reverse</option>
+<option value="column">column</option>
+<option value="column-reverse">column-reverse</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">justify-content</label>
+<select id="justify">
+<option value="flex-start" selected>flex-start</option>
+<option value="flex-end">flex-end</option>
+<option value="center">center</option>
+<option value="space-between">space-between</option>
+<option value="space-around">space-around</option>
+<option value="space-evenly">space-evenly</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">align-items</label>
+<select id="align">
+<option value="stretch" selected>stretch</option>
+<option value="flex-start">flex-start</option>
+<option value="flex-end">flex-end</option>
+<option value="center">center</option>
+<option value="baseline">baseline</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">flex-wrap</label>
+<select id="wrap">
+<option value="nowrap" selected>nowrap</option>
+<option value="wrap">wrap</option>
+<option value="wrap-reverse">wrap-reverse</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">gap</label>
+<input id="gap" type="range" min="0" max="60" value="12"/>
+<span class="opt-value" id="gap-val">12 px</span>
+</div>
+<div class="ctrl">
+<label class="opt-label">Items</label>
+<input id="items" type="range" min="2" max="10" value="5"/>
+<span class="opt-value" id="items-val">5</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Preview</label>
+<div class="preview" id="preview"></div>
+</div>
+
+<div class="card">
+<label class="opt-label">CSS</label>
+<pre class="output" id="output"></pre>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy CSS</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Flexbox property cheatsheet</h2>
+<table class="ref-table">
+<tr><th>Property</th><th>Effect</th></tr>
+<tr><td><code>flex-direction</code></td><td>Main axis: row (horizontal) or column (vertical)</td></tr>
+<tr><td><code>justify-content</code></td><td>Distribution along the main axis</td></tr>
+<tr><td><code>align-items</code></td><td>Distribution along the cross axis</td></tr>
+<tr><td><code>flex-wrap</code></td><td>Wrap items onto multiple lines if needed</td></tr>
+<tr><td><code>gap</code></td><td>Spacing between items (replaces margin tricks)</td></tr>
+</table>
+
+<h2>Common patterns</h2>
+<ul>
+<li><strong>Centered modal:</strong> <code>justify-content: center; align-items: center;</code></li>
+<li><strong>Nav with logo + menu separated:</strong> <code>justify-content: space-between;</code></li>
+<li><strong>Card grid with wrap:</strong> <code>flex-wrap: wrap; gap: 16px;</code></li>
+</ul>
+</section>
+
+<script src="/tools/css-flexbox/css-flexbox.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

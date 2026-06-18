@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Printable Calendar Generator | SharpDev.Tools</title>
+<meta content="Free printable calendar generator. Make a clean monthly calendar for any month and year, choose a Monday or Sunday week start, and print it. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/calendar/" rel="canonical"/>
+<meta content="Printable Calendar Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free printable calendar generator. Make a clean monthly calendar for any month and year, choose a Monday or Sunday week start, and print it. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/calendar/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Printable Calendar Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free printable calendar generator. Make a clean monthly calendar for any month and year, choose a Monday or Sunday week start, and print it. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Printable Calendar Generator","item":"https://sharpdev.tools/tools/calendar/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I print the calendar?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click Print (or use your browser's print). A print stylesheet hides the site chrome so only the calendar prints, in black on white."}},{"@type":"Question","name":"Can I start the week on Sunday?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 switch the \u2018Week starts\u2019 option between Monday and Sunday."}},{"@type":"Question","name":"Does it work for any year?","acceptedAnswer":{"@type":"Answer","text":"Yes, for any month and year you enter, using the standard Gregorian calendar."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Printable Calendar Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/calendar/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/calendar/calendar.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('calendar');</script>
+<div class="page">
+<h1>Printable Calendar Generator</h1>
+<p class="subtitle">Generate a clean monthly calendar for any month and year, with Monday or Sunday start — ready to print.</p>
+<div class="row">
+<div class="field"><label for="m">Month</label><select id="m"></select></div>
+<div class="field"><label for="y">Year</label><input type="number" id="y" value="2026"></div>
+<div class="field"><label for="start">Week starts</label><select id="start"><option value="1">Monday</option><option value="0">Sunday</option></select></div></div>
+<div class="actions"><button class="small-btn" id="print">Print</button></div>
+<div id="cal"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Can I print the calendar?</summary><p>Yes. Click Print (or use your browser's print). A print stylesheet hides the site chrome so only the calendar prints, in black on white.</p></details>
+<details><summary>Can I start the week on Sunday?</summary><p>Yes — switch the ‘Week starts’ option between Monday and Sunday.</p></details>
+<details><summary>Does it work for any year?</summary><p>Yes, for any month and year you enter, using the standard Gregorian calendar.</p></details>
+</section>
+<script src="/tools/calendar/calendar.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twitter / X URL Cleaner — Remove Tracking Params | SharpDev.Tools</title>
+<meta content="Clean Twitter / X URLs by stripping tracking parameters like ?s=20, ?t=, &ref_src and others. Paste a URL, get a clean shareable link. Free, instant, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-clean/" rel="canonical"/>
+<meta content="Twitter / X URL Cleaner — Remove Tracking Params | SharpDev.Tools" property="og:title"/>
+<meta content="Clean Twitter / X URLs by stripping tracking parameters like ?s=20, ?t=, &ref_src and others. Paste a URL, get a clean shareable link. Free, instant, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-clean/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Twitter / X URL Cleaner — Remove Tracking Params | SharpDev.Tools" name="twitter:title"/>
+<meta content="Clean Twitter / X URLs by stripping tracking parameters like ?s=20, ?t=, &ref_src and others. Paste a URL, get a clean shareable link. Free, instant, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Twitter", "item": "https://sharpdev.tools/#twitter" },
+      { "@type": "ListItem", "position": 3, "name": "Twitter URL Cleaner", "item": "https://sharpdev.tools/tools/twitter-clean/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does ?s=20 mean in a Twitter URL?",
+        "acceptedAnswer": { "@type": "Answer", "text": "?s=20 is a referral tracking parameter that Twitter / X appends when you share a tweet via the share button. It tells Twitter which source (mobile, web, etc.) you shared from. It does not affect the tweet content but it does leak the fact that you shared it from a particular surface." } },
+      { "@type": "Question", "name": "Which Twitter tracking parameters does this tool remove?",
+        "acceptedAnswer": { "@type": "Answer", "text": "?s=, ?t=, ?ref_src=, ?ref_url=, ?cn=, &utm_source=, &utm_medium=, &utm_campaign=, &mx=, and any other &-prefixed param starting with ref, src, utm or tracking-related names." } },
+      { "@type": "Question", "name": "Is this tool free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no usage limits." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Twitter / X URL Cleaner — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/twitter-clean/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-clean/twitter-clean.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-clean');</script>
+<div class="page">
+<h1>Twitter / X URL Cleaner</h1>
+<p class="subtitle">Strip tracking parameters (?s=20, ?t=, ref_src and friends) from Twitter / X URLs. Paste, copy clean.</p>
+
+<div class="card">
+<label for="input-url">Paste Twitter / X URL</label>
+<textarea id="input-url" placeholder="https://twitter.com/example/status/1234567890?s=20&amp;t=xxxxx"></textarea>
+
+<div class="result-row">
+<label for="output-url">Cleaned URL</label>
+<textarea id="output-url" readonly placeholder="Cleaned link will appear here"></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+<div class="info-row" id="info-row" style="display:none">
+<span class="info-label">Removed:</span>
+<span class="info-value" id="removed-list"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why clean Twitter URLs?</h2>
+<p>When you tap Twitter's share button, it appends a referral parameter like <code>?s=20</code> that leaks the device + UI surface you shared from. Some Twitter / X embeds also pick up <code>&ref_src=twsrc%5Etfw</code> or third-party UTM parameters from analytics tools. None of these change which tweet the link points to — they're just metadata you usually don't want to forward.</p>
+
+<h2>What gets stripped</h2>
+<ul>
+<li><code>?s=</code>, <code>?t=</code> — Twitter share-source identifiers</li>
+<li><code>?ref_src=</code>, <code>?ref_url=</code> — Twitter embed referer</li>
+<li><code>?cn=</code>, <code>?mx=</code> — campaign / tracking shortcodes</li>
+<li><code>&utm_source=</code>, <code>&utm_medium=</code>, <code>&utm_campaign=</code>, <code>&utm_content=</code>, <code>&utm_term=</code> — Google-style UTM tracking</li>
+<li>Any other parameter starting with <code>ref</code>, <code>src</code>, <code>utm</code> or <code>tracking</code></li>
+</ul>
+
+<h2>What stays</h2>
+<p>The actual path (<code>/username/status/12345</code>) and any meaningful query params (very few Twitter URLs use them) are kept intact. Both <code>twitter.com</code> and <code>x.com</code> work — the tool doesn't change the host.</p>
+</section>
+
+<script src="/tools/twitter-clean/twitter-clean.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>HTML Entities — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Encode special characters to HTML entities and decode them back — named, numeric, safe or full modes. Free online, no ads, no sign-up required." name="description"/>
+<link href="https://sharpdev.tools/tools/html-entities/" rel="canonical"/>
+<meta content="HTML Entities — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Encode special characters to HTML entities and decode them back — named, numeric, safe or full modes. Free online, no ads, no sign-up required." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/html-entities/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="HTML Entities — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Encode special characters to HTML entities and decode them back — named, numeric, safe or full modes. Free online, no ads, no sign-up required." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developers", "item": "https://sharpdev.tools/#developers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "HTML Entities",
+        "item": "https://sharpdev.tools/tools/html-entities/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kinds of HTML entity encoding are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Named entities, decimal and hexadecimal numeric entities, plus \"safe\" and \"full\" modes that let you pick how aggressive the escaping is."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, entirely free with no ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my text get uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Encoding and decoding run entirely in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HTML Entities — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/html-entities/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/html-entities/html-entities.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('html-entities');</script>
+<div class="page">
+<h1>HTML Entity Encoder/Decoder</h1>
+<p class="subtitle">Encode special characters to HTML entities and back. Safe HTML, named, or numeric.</p>
+<div class="actions">
+<button class="btn" onclick="enc('safe')">Encode (safe)</button>
+<button class="btn" onclick="enc('named')">Encode all (named)</button>
+<button class="btn" onclick="enc('dec')">Encode all (numeric)</button>
+<button class="btn" onclick="enc('hex')">Encode all (hex)</button>
+<button class="btn" onclick="dec()">Decode</button>
+<button class="btn" onclick="swap()">Swap</button>
+<button class="btn" onclick="copyOut()">Copy</button>
+<button class="btn btn-reset" onclick="clearAll()">Clear</button>
+</div>
+<div class="grid">
+<div class="col">
+<label for="input">Input</label>
+<textarea id="input" placeholder="Type or paste text here..." spellcheck="false"></textarea>
+<div class="stats" id="stats-in">0 chars</div>
+</div>
+<div class="col">
+<label for="output">Output</label>
+<textarea id="output" placeholder="Result will appear here..." readonly="" spellcheck="false"></textarea>
+<div class="stats" id="stats-out">0 chars</div>
+</div>
+</div>
+<div class="preview-card">
+<label>Rendered preview</label>
+<div class="preview" id="preview"></div>
+</div>
+</div>
+<script src="/tools/html-entities/html-entities.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

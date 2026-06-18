@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Generator — Gradient, Box Shadow &amp; Border Radius Generator | SharpDev.Tools</title>
+<meta content="Free online CSS generator for linear/radial/conic gradients, layered box shadows, and border radius. Live preview, copy code instantly. Also a CSS background generator." name="description"/>
+<link href="https://sharpdev.tools/tools/css-gen/" rel="canonical"/>
+<meta content="CSS Generator — Gradient, Box Shadow &amp; Border Radius Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free online CSS generator for linear/radial/conic gradients, layered box shadows, and border radius. Live preview, copy code instantly. Also a CSS background generator." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-gen/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="CSS Generator — Gradient, Box Shadow &amp; Border Radius Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free online CSS generator for linear/radial/conic gradients, layered box shadows, and border radius. Live preview, copy code instantly. Also a CSS background generator." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Design & CSS",
+        "item": "https://sharpdev.tools/#design-css"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "CSS Generator",
+        "item": "https://sharpdev.tools/tools/css-gen/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I generate a CSS gradient?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the Gradient tab, pick linear, radial or conic, set the angle/shape/position, then add color stops. The live preview updates as you change values. Click Copy to grab the CSS background-image rule — paste it directly into your stylesheet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the CSS background generator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Gradient tab is effectively a CSS background generator — gradients are applied to elements via background-image: linear-gradient(...) (or radial/conic). Build the gradient visually with the color-stop UI and copy the ready-to-paste CSS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I generate a CSS box shadow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the Box Shadow tab and add one or more shadow layers. Each layer has offset-x, offset-y, blur, spread, color, opacity and an optional inset toggle. Combine multiple layers to build complex depth effects (e.g. soft + sharp drop shadow). The generated box-shadow CSS supports unlimited layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I create CSS rounded corners (border-radius)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the Border Radius tab. Use the slider for uniform corners, or switch to per-corner mode for elliptical (x/y) values on each of the four corners — perfect for blob shapes, asymmetric cards and pill buttons."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What gradient types does the CSS gradient generator support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Linear gradients (with custom angle), radial gradients (circle or ellipse, with size and position controls) and conic gradients (with from-angle and center-position). Each supports unlimited color stops with hex/rgba values and percentage positions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completely free, no ads, no sign-up, no account, no usage limits. Everything runs in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSS Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/css-gen/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-gen/css-gen.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-gen');</script>
+<div class="page">
+<h1>CSS Generator</h1>
+<p class="subtitle">Visual builders for CSS gradients, box shadows, and border radius. Live preview, copy code.</p>
+<div class="tabs">
+<button class="tab active" data-tab="gradient">Gradient</button>
+<button class="tab" data-tab="shadow">Box Shadow</button>
+<button class="tab" data-tab="radius">Border Radius</button>
+</div>
+<!-- GRADIENT -->
+<div class="panel active" id="panel-gradient">
+<div class="builder">
+<div class="preview-col">
+<div class="preview-box" id="grad-preview"></div>
+</div>
+<div class="controls-col">
+<label>Type</label>
+<div class="seg">
+<button class="seg-btn active" data-gtype="linear">linear</button>
+<button class="seg-btn" data-gtype="radial">radial</button>
+<button class="seg-btn" data-gtype="conic">conic</button>
+</div>
+<div id="grad-linear-opts">
+<label style="margin-top:14px">Angle: <span id="grad-angle-val">90deg</span></label>
+<input id="grad-angle" max="360" min="0" type="range" value="90"/>
+</div>
+<div id="grad-radial-opts" style="display:none">
+<label style="margin-top:14px">Shape</label>
+<select id="grad-radial-shape">
+<option value="ellipse">ellipse</option>
+<option value="circle">circle</option>
+</select>
+<label style="margin-top:14px">Size</label>
+<select id="grad-radial-size">
+<option value="farthest-corner">farthest-corner</option>
+<option value="closest-side">closest-side</option>
+<option value="closest-corner">closest-corner</option>
+<option value="farthest-side">farthest-side</option>
+</select>
+<label style="margin-top:14px">Position</label>
+<select id="grad-radial-pos">
+<option value="center">center</option>
+<option value="top left">top left</option>
+<option value="top right">top right</option>
+<option value="bottom left">bottom left</option>
+<option value="bottom right">bottom right</option>
+<option value="top">top</option>
+<option value="bottom">bottom</option>
+</select>
+</div>
+<div id="grad-conic-opts" style="display:none">
+<label style="margin-top:14px">From: <span id="grad-from-val">0deg</span></label>
+<input id="grad-from" max="360" min="0" type="range" value="0"/>
+<label style="margin-top:14px">Position</label>
+<select id="grad-conic-pos">
+<option value="center">center</option>
+<option value="top left">top left</option>
+<option value="top right">top right</option>
+<option value="bottom left">bottom left</option>
+<option value="bottom right">bottom right</option>
+</select>
+</div>
+<label style="margin-top:14px">Color stops</label>
+<div class="stops" id="grad-stops"></div>
+<button class="small-btn" onclick="addStop()" style="margin-top:6px">+ Add stop</button>
+</div>
+</div>
+<div class="code-wrap">
+<label>CSS</label>
+<pre class="code-block" id="grad-code"></pre>
+<button class="small-btn copy-code" onclick="copyCode('grad-code')">Copy</button>
+</div>
+</div>
+<!-- BOX SHADOW -->
+<div class="panel" id="panel-shadow">
+<div class="builder">
+<div class="preview-col">
+<div class="preview-box shadow-preview" id="shadow-preview-wrap">
+<div class="shadow-card" id="shadow-card"></div>
+</div>
+<div style="margin-top:14px">
+<label>Preview background</label>
+<input id="shadow-bg" type="color" value="#1a1a1a"/>
+</div>
+</div>
+<div class="controls-col">
+<label>Shadows</label>
+<div id="shadow-list"></div>
+<button class="small-btn" onclick="addShadow()" style="margin-top:6px">+ Add shadow</button>
+</div>
+</div>
+<div class="code-wrap">
+<label>CSS</label>
+<pre class="code-block" id="shadow-code"></pre>
+<button class="small-btn copy-code" onclick="copyCode('shadow-code')">Copy</button>
+</div>
+</div>
+<!-- BORDER RADIUS -->
+<div class="panel" id="panel-radius">
+<div class="builder">
+<div class="preview-col">
+<div class="preview-box radius-wrap">
+<div class="radius-shape" id="radius-shape"></div>
+</div>
+</div>
+<div class="controls-col">
+<div class="seg">
+<button class="seg-btn active" data-rmode="simple">All corners same</button>
+<button class="seg-btn" data-rmode="advanced">Per-corner (elliptical)</button>
+</div>
+<div id="radius-simple-opts" style="margin-top:14px">
+<label>Radius: <span id="r-all-val">24px</span></label>
+<input id="r-all" max="200" min="0" type="range" value="24"/>
+</div>
+<div id="radius-advanced-opts" style="display:none; margin-top:14px">
+<div class="r-grid">
+<div>
+<label>TL-x: <span id="r-tl-x-val">10px</span></label>
+<input class="r-adv" id="r-tl-x" max="200" min="0" type="range" value="10"/>
+<label>TL-y: <span id="r-tl-y-val">10px</span></label>
+<input class="r-adv" id="r-tl-y" max="200" min="0" type="range" value="10"/>
+</div>
+<div>
+<label>TR-x: <span id="r-tr-x-val">10px</span></label>
+<input class="r-adv" id="r-tr-x" max="200" min="0" type="range" value="10"/>
+<label>TR-y: <span id="r-tr-y-val">10px</span></label>
+<input class="r-adv" id="r-tr-y" max="200" min="0" type="range" value="10"/>
+</div>
+<div>
+<label>BR-x: <span id="r-br-x-val">10px</span></label>
+<input class="r-adv" id="r-br-x" max="200" min="0" type="range" value="10"/>
+<label>BR-y: <span id="r-br-y-val">10px</span></label>
+<input class="r-adv" id="r-br-y" max="200" min="0" type="range" value="10"/>
+</div>
+<div>
+<label>BL-x: <span id="r-bl-x-val">10px</span></label>
+<input class="r-adv" id="r-bl-x" max="200" min="0" type="range" value="10"/>
+<label>BL-y: <span id="r-bl-y-val">10px</span></label>
+<input class="r-adv" id="r-bl-y" max="200" min="0" type="range" value="10"/>
+</div>
+</div>
+</div>
+<label style="margin-top:14px">Shape color</label>
+<input id="r-color" type="color" value="#ff4444"/>
+</div>
+</div>
+<div class="code-wrap">
+<label>CSS</label>
+<pre class="code-block" id="radius-code"></pre>
+<button class="small-btn copy-code" onclick="copyCode('radius-code')">Copy</button>
+</div>
+</div>
+</div>
+
+<section class="info-block">
+<h2>CSS Generator — three visual builders in one</h2>
+<p>The CSS Generator combines three visual code builders behind a single tab interface: a <strong>gradient generator</strong>, a <strong>box shadow generator</strong>, and a <strong>border radius generator</strong>. Each one previews the result live as you drag sliders, picks colors and adds layers — no refresh, no compile step. Copy the generated CSS with one click and paste it into your stylesheet.</p>
+
+<h2>CSS Gradient Generator (also: CSS background generator)</h2>
+<p>The <em>Gradient</em> tab handles all three gradient types: <strong>linear, radial and conic</strong>. Add unlimited color stops, drag them to position, switch between hex and rgba. Linear gradients take an angle (0–360°); radial gradients let you pick shape (circle/ellipse), size and origin; conic gradients let you set a from-angle and center. Because gradients are applied via <code>background-image: linear-gradient(...)</code>, this tab doubles as a <strong>CSS background generator</strong> for any element. Pair it with the <a href="/tools/gradient/">standalone Gradient tool</a> for quick one-off picks, the <a href="/tools/colors/">Color Palette tool</a> for cohesive stop colors, or the <a href="/tools/color-shades/">Color Shades generator</a> for tonal ramps.</p>
+
+<h2>CSS Box Shadow Generator</h2>
+<p>The <em>Box Shadow</em> tab supports <strong>layered shadows</strong> — combine multiple shadow rules into one element to build the kind of layered depth you see on premium UI components. Each layer has offset-x, offset-y, blur, spread, color, opacity and an inset toggle. For typography depth, use the dedicated <a href="/tools/text-shadow/">CSS Text Shadow generator</a>. For drop-shadow filters that respect alpha channels, see the <a href="/tools/css-filter/">CSS Filter generator</a>.</p>
+
+<h2>CSS Border Radius Generator</h2>
+<p>The <em>Border Radius</em> tab has two modes: simple (all four corners share one value) and advanced (per-corner elliptical x/y — eight values total). Advanced mode is how you build organic blob shapes, asymmetric pill buttons or speech-bubble cards. For more extreme shapes that go beyond what border-radius can express (stars, polygons, custom outlines), use the <a href="/tools/clip-path/">CSS Clip Path generator</a>.</p>
+
+<h2>More CSS tools at SharpDev.Tools</h2>
+<p>The CSS Generator is the hub — for narrower or more specialized jobs, these companions cover the rest of the CSS surface:</p>
+<ul>
+<li><a href="/tools/gradient/"><strong>Gradient</strong></a> — quick standalone gradient picker</li>
+<li><a href="/tools/text-shadow/"><strong>Text Shadow</strong></a> — typography-specific shadow generator</li>
+<li><a href="/tools/clip-path/"><strong>Clip Path</strong></a> — non-rectangular shape masks</li>
+<li><a href="/tools/css-filter/"><strong>CSS Filter</strong></a> — blur, contrast, brightness, drop-shadow, hue-rotate, etc.</li>
+<li><a href="/tools/css-anim/"><strong>CSS Animation</strong></a> — keyframe + transition builder</li>
+<li><a href="/tools/css-grid/"><strong>CSS Grid</strong></a> — visual grid-template-areas layout</li>
+<li><a href="/tools/css-flexbox/"><strong>CSS Flexbox</strong></a> — flex container playground</li>
+<li><a href="/tools/glass/"><strong>Glassmorphism</strong></a> — frosted-glass backdrop-filter generator</li>
+<li><a href="/tools/css-mini/"><strong>CSS Minifier</strong></a> — strip whitespace + comments from finished CSS</li>
+<li><a href="/tools/colors/"><strong>Color Palette</strong></a> — pick coordinated colors</li>
+<li><a href="/tools/color-shades/"><strong>Color Shades</strong></a> — generate tonal ramps</li>
+<li><a href="/tools/color-convert/"><strong>Color Converter</strong></a> — hex ↔ rgb ↔ hsl ↔ hsla</li>
+</ul>
+
+<h2>Privacy &amp; how it runs</h2>
+<p>Everything runs locally in your browser. No upload, no server-side code generation, no tracking cookies. The CSS you build is yours.</p>
+</section>
+
+<script src="/tools/css-gen/css-gen.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

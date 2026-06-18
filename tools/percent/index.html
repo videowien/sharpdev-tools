@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Percentage Calculator — 3-in-1 | SharpDev.Tools</title>
+<meta content="Calculate X% of a value, what percentage one number is of another, or the percent increase/decrease between two numbers. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/percent/" rel="canonical"/>
+<meta content="Percentage Calculator — 3-in-1 | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate X% of a value, what percentage one number is of another, or the percent increase/decrease between two numbers. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/percent/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Percentage Calculator — 3-in-1 | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate X% of a value, what percentage one number is of another, or the percent increase/decrease between two numbers. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://sharpdev.tools/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Percentage",
+        "item": "https://sharpdev.tools/tools/percent/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can the percentage calculator do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three things: find X percent of a number, work out what percentage one number is of another, and calculate the percentage increase or decrease between two numbers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate percentage change?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter the old and new values and the tool returns the percentage increase or decrease between them, handling negatives correctly."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Percentage Calculator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/percent/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/percent/percent.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('percent');</script>
+<div class="page">
+<h1>Percentage Calculator</h1>
+<p class="subtitle">Three most-common percentage calculations in one tool.</p>
+<div class="pc-row">
+<div class="pc-card">
+<h2>What is X% of Y?</h2>
+<div class="pc-inputs">
+<input type="number" id="a-x" step="any" placeholder="20"><span>% of</span>
+<input type="number" id="a-y" step="any" placeholder="150"><span>=</span>
+<span class="pc-result" id="a-r">—</span>
+</div>
+</div>
+<div class="pc-card">
+<h2>X is what % of Y?</h2>
+<div class="pc-inputs">
+<input type="number" id="b-x" step="any" placeholder="30"><span>is</span>
+<span class="pc-result" id="b-r">—</span><span>% of</span>
+<input type="number" id="b-y" step="any" placeholder="150">
+</div>
+</div>
+<div class="pc-card">
+<h2>% change from X to Y</h2>
+<div class="pc-inputs">
+<input type="number" id="c-x" step="any" placeholder="100"><span>to</span>
+<input type="number" id="c-y" step="any" placeholder="125"><span>=</span>
+<span class="pc-result" id="c-r">—</span><span>%</span>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/percent/percent.js"></script>
+<script>renderFooter();</script>
+</body></html>

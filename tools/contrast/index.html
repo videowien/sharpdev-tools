@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>WCAG Contrast Checker — AA &amp; AAA | SharpDev.Tools</title>
+<meta content="Check color pair contrast against WCAG 2.1 AA and AAA thresholds for normal and large text. Live preview. Free online, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/contrast/" rel="canonical"/>
+<meta content="WCAG Contrast Checker — AA &amp; AAA | SharpDev.Tools" property="og:title"/>
+<meta content="Check color pair contrast against WCAG 2.1 AA and AAA thresholds for normal and large text. Live preview. Free online, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/contrast/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="WCAG Contrast Checker — AA &amp; AAA | SharpDev.Tools" name="twitter:title"/>
+<meta content="Check color pair contrast against WCAG 2.1 AA and AAA thresholds for normal and large text. Live preview. Free online, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"WCAG Contrast","item":"https://sharpdev.tools/tools/contrast/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What are the WCAG contrast thresholds?","acceptedAnswer":{"@type":"Answer","text":"WCAG 2.1 requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text (18pt regular / 14pt bold and up) at level AA. Level AAA raises these to 7:1 and 4.5:1 respectively."}},
+    {"@type":"Question","name":"Does the checker pick up colors with alpha?","acceptedAnswer":{"@type":"Answer","text":"No. WCAG only defines contrast for opaque colors. If you need to test semi-transparent text, composite it against its real background first (the tool will test any two opaque colors you give it)."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"WCAG Contrast Checker — SharpDev.Tools","url":"https://sharpdev.tools/tools/contrast/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/contrast/contrast.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('contrast');</script>
+<div class="page">
+<h1>WCAG Contrast Checker</h1>
+<p class="subtitle">Test a text colour against its background. Updates live as you adjust either colour.</p>
+<div class="color-inputs">
+<div class="color-field">
+<label for="fg-color">Foreground</label>
+<div class="color-input-row">
+<input type="color" id="fg-color" value="#111111">
+<input type="text" id="fg-hex" value="#111111" maxlength="9" spellcheck="false">
+</div>
+</div>
+<div class="color-field">
+<label for="bg-color">Background</label>
+<div class="color-input-row">
+<input type="color" id="bg-color" value="#ffffff">
+<input type="text" id="bg-hex" value="#ffffff" maxlength="9" spellcheck="false">
+</div>
+</div>
+<button type="button" class="swap-btn" id="swap-btn" title="Swap foreground and background">⇅</button>
+</div>
+<div class="ratio-card" id="ratio-card">
+<div class="ratio-value" id="ratio-value">21.00</div>
+<div class="ratio-label">contrast ratio</div>
+</div>
+<div class="wcag-grid">
+<div class="wcag-item" id="aa-normal"><div class="wcag-name">AA Normal</div><div class="wcag-req">&#8805; 4.5:1</div><div class="wcag-verdict">—</div></div>
+<div class="wcag-item" id="aa-large"><div class="wcag-name">AA Large</div><div class="wcag-req">&#8805; 3:1</div><div class="wcag-verdict">—</div></div>
+<div class="wcag-item" id="aaa-normal"><div class="wcag-name">AAA Normal</div><div class="wcag-req">&#8805; 7:1</div><div class="wcag-verdict">—</div></div>
+<div class="wcag-item" id="aaa-large"><div class="wcag-name">AAA Large</div><div class="wcag-req">&#8805; 4.5:1</div><div class="wcag-verdict">—</div></div>
+</div>
+<div class="preview" id="preview">
+<p class="preview-large">The quick brown fox jumps over the lazy dog.</p>
+<p class="preview-normal">The quick brown fox jumps over the lazy dog — in 18 px normal text for contrast baseline comparison.</p>
+<p class="preview-small">The quick brown fox jumps over the lazy dog — 14 px small body text, where contrast matters most.</p>
+</div>
+</div>
+<script src="/tools/contrast/contrast.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

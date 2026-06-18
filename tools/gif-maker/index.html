@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GIF Maker — Combine Images into Animated GIF | SharpDev.Tools</title>
+<meta content="Combine 2-30 images into an animated GIF. Set frame delay, dimensions, quality. Drag to reorder, browser-only — no upload. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/gif-maker/" rel="canonical"/>
+<meta content="GIF Maker — Combine Images into Animated GIF | SharpDev.Tools" property="og:title"/>
+<meta content="Combine images into an animated GIF. Set delay, size, quality. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/gif-maker/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="GIF Maker — Combine Images into Animated GIF | SharpDev.Tools" name="twitter:title"/>
+<meta content="Combine images into an animated GIF." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/images-media/"},
+    {"@type":"ListItem","position":3,"name":"GIF Maker","item":"https://sharpdev.tools/tools/gif-maker/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How many images can I combine?","acceptedAnswer":{"@type":"Answer","text":"Up to 30 — beyond that the encoder slows down significantly in the browser. For shorter GIFs (5-10 frames) encoding is near-instant."}},
+    {"@type":"Question","name":"What's a good frame delay?","acceptedAnswer":{"@type":"Answer","text":"100ms = 10 fps (smooth motion). 200ms = 5 fps (slideshow feel). 500ms = 2 fps (slow comparison). Choose by content — short loop animations want 50-100ms, before/after comparisons want 1000ms+."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"GIF Maker — SharpDev.Tools","url":"https://sharpdev.tools/tools/gif-maker/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/gif-maker/gif-maker.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('gif-maker');</script>
+<div class="page">
+<h1>GIF Maker</h1>
+<p class="subtitle">Combine images into an animated GIF. Drag to reorder, set delay + size, download.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" multiple type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop images here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">2-30 images. Drag to reorder after upload.</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Frame delay</label>
+<select id="delay">
+<option value="50">50ms (20 fps — smooth)</option>
+<option value="100" selected>100ms (10 fps — standard)</option>
+<option value="200">200ms (5 fps — slideshow)</option>
+<option value="500">500ms (slow comparison)</option>
+<option value="1000">1000ms (very slow)</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Max dimension</label>
+<select id="size">
+<option value="320">320 px (small)</option>
+<option value="480" selected>480 px (medium)</option>
+<option value="640">640 px (large)</option>
+<option value="800">800 px (HD)</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Quality</label>
+<select id="quality">
+<option value="20">Best (slowest)</option>
+<option value="10" selected>Good</option>
+<option value="5">Faster</option>
+<option value="1">Fastest</option>
+</select>
+</div>
+</div>
+
+<div class="thumbs" id="thumbs"></div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="make-btn" type="button">Make GIF</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear images</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+
+<div id="output-row" style="display:none">
+<label class="opt-label" style="margin-top:14px">Preview</label>
+<img id="output-gif" alt="Generated GIF"/>
+<div class="action-row">
+<button class="btn btn-primary" id="dl-btn" type="button">Download GIF</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Before/after comparisons</strong> — renovation, design iterations (500-1000ms delay)</li>
+<li><strong>Tutorial animations</strong> — show a sequence of UI steps (200-300ms)</li>
+<li><strong>Product showcases</strong> — multiple angles of a product (300-500ms)</li>
+<li><strong>Memes / reactions</strong> — fast-cut funny sequences (50-100ms)</li>
+</ul>
+
+<h2>Tips for smaller files</h2>
+<ul>
+<li><strong>Reduce dimensions</strong> — file size scales with width × height</li>
+<li><strong>Fewer frames</strong> — 5 well-chosen frames beat 20 incremental ones</li>
+<li><strong>Lower quality</strong> — "Faster" or "Fastest" trades visual quality for smaller files</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Images and the resulting GIF stay in your browser. Encoding via gif.js (Web Worker).</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+<script src="/tools/gif-maker/gif-maker.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

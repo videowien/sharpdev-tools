@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compress PDF — Reduce File Size in Your Browser | SharpDev.Tools</title>
+<meta content="Compress any PDF by rasterizing + JPEG-recompressing each page. Best for scanned documents and image-heavy PDFs. Quality slider + before/after size. Browser-only — no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-compress/" rel="canonical"/>
+<meta content="Compress PDF — Reduce File Size in Browser | SharpDev.Tools" property="og:title"/>
+<meta content="Compress any PDF in your browser. Best for scans and image-heavy PDFs. No upload. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-compress/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Compress PDF — Reduce File Size in Browser | SharpDev.Tools" name="twitter:title"/>
+<meta content="Compress any PDF in your browser. No upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"Compress PDF","item":"https://sharpdev.tools/tools/pdf-compress/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How does the compression work?","acceptedAnswer":{"@type":"Answer","text":"Each PDF page is rasterized to an image at your chosen DPI, then re-encoded as a JPEG at your chosen quality, then placed into a new PDF. This is the same approach most online PDF compressors use — extremely effective for scans and image-heavy PDFs, less effective for text-only PDFs."}},
+    {"@type":"Question","name":"Does it lose text? Are PDFs still searchable?","acceptedAnswer":{"@type":"Answer","text":"Yes — text becomes a rendered image, so the result is NOT searchable. For text-heavy PDFs where searchability matters, don't compress, or run OCR afterwards. For image-only PDFs (scans, slides, photo decks) the text is already pixels anyway, so there's no loss."}},
+    {"@type":"Question","name":"What compression to choose?","acceptedAnswer":{"@type":"Answer","text":"High quality + 150 DPI = best for screen viewing. Medium + 100 DPI = good for emailing. Low + 72 DPI = max compression for archival. The preview shows before / after size."}},
+    {"@type":"Question","name":"Is the PDF uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs in your browser via pdf.js (render) + pdf-lib (re-pack)."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Compress PDF — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-compress/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-compress/pdf-compress.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-compress');</script>
+<div class="page">
+<h1>Compress PDF</h1>
+<p class="subtitle">Rasterize + re-encode. Best for scans + image-heavy PDFs (slides, photos). Text becomes non-searchable.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">Best for scans, slides, photo PDFs — runs in your browser</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Quality preset</label>
+<select id="preset">
+<option value="high">High quality (150 DPI, q=0.85)</option>
+<option value="medium" selected>Medium (100 DPI, q=0.75)</option>
+<option value="low">Low (72 DPI, q=0.6) — max compression</option>
+<option value="custom">Custom</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">DPI</label>
+<input id="dpi" type="number" min="36" max="300" value="100"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">JPEG quality</label>
+<input id="quality" type="range" min="0.3" max="0.95" step="0.05" value="0.75"/>
+<span class="opt-value" id="quality-val">0.75</span>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="compress-btn" type="button">Compress + download</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+
+<div class="result-card" id="result-card" style="display:none">
+<div class="size-row">
+<div class="size-block">
+<div class="size-label">Original</div>
+<div class="size-value" id="size-before">—</div>
+</div>
+<div class="size-arrow">→</div>
+<div class="size-block highlight">
+<div class="size-label">Compressed</div>
+<div class="size-value" id="size-after">—</div>
+</div>
+<div class="size-block">
+<div class="size-label">Saved</div>
+<div class="size-value" id="size-saved">—</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How rasterize + recompress works</h2>
+<ol>
+<li><strong>Render</strong> — each page becomes a raster image (pdf.js)</li>
+<li><strong>Re-encode</strong> — image is saved as JPEG at chosen quality (Canvas <code>toBlob</code>)</li>
+<li><strong>Repack</strong> — JPEGs become pages in a fresh PDF (pdf-lib)</li>
+</ol>
+<p>The result: extremely effective for image-heavy PDFs (scans, slides, photo books). Less effective for text-only PDFs — they were already small, and now lose searchability without saving much space.</p>
+
+<h2>When NOT to use this</h2>
+<ul>
+<li><strong>Text-heavy PDFs</strong> — they get larger after rasterization. Lossy. Use as-is or run OCR if you've already lost text</li>
+<li><strong>Forms / fillable PDFs</strong> — fields become flat images, lose interactivity</li>
+<li><strong>Documents requiring accessibility</strong> — screen readers can't read rasterized text</li>
+<li><strong>Legal / archival</strong> — original PDFs preserve embedded fonts + structure</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Everything runs in your browser. No upload.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-compress/pdf-compress.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

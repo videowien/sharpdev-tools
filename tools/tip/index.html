@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Tip Calculator — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Calculate tips and split any bill between any number of people in multiple currencies, instantly. Free online tip calculator, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/tip/" rel="canonical"/>
+<meta content="Tip Calculator — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate tips and split any bill between any number of people in multiple currencies, instantly. Free online tip calculator, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/tip/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Tip Calculator — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate tips and split any bill between any number of people in multiple currencies, instantly. Free online tip calculator, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Money & Finance", "item": "https://sharpdev.tools/#money-finance"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Tip Calculator",
+        "item": "https://sharpdev.tools/tools/tip/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the Tip Calculator split the bill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter the total, tip percent and number of people — it shows per-person tip, per-person total and the rounded-up amount, in your chosen currency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, once loaded the calculator runs in your browser, so it keeps working with no connection."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tip Calculator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/tip/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/tip/tip.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('tip');</script>
+<div class="page">
+<h1>Tip Calculator</h1>
+<p class="subtitle">Figure out the tip and split the bill.</p>
+<div class="tip-grid">
+<div class="card">
+<label for="bill">Bill amount</label>
+<div class="input-with-prefix">
+<span class="prefix" id="currency-symbol">$</span>
+<input id="bill" min="0" oninput="calculate()" step="0.01" type="number" value="50"/>
+</div>
+<label for="currency" style="margin-top:16px">Currency</label>
+<select id="currency" onchange="updateCurrency(); calculate()">
+<option selected="" value="$">$ USD</option>
+<option value="€">€ EUR</option>
+<option value="£">£ GBP</option>
+<option value="CHF">CHF</option>
+<option value="¥">¥ JPY</option>
+</select>
+<label for="tip-pct" style="margin-top:16px">Tip: <span id="tip-val">18%</span></label>
+<input id="tip-pct" max="30" min="0" oninput="document.getElementById('tip-val').textContent = this.value + '%'; calculate()" step="1" type="range" value="18"/>
+<div class="tip-presets">
+<button class="preset" onclick="setTip(10)">10%</button>
+<button class="preset" onclick="setTip(15)">15%</button>
+<button class="preset" onclick="setTip(18)">18%</button>
+<button class="preset" onclick="setTip(20)">20%</button>
+<button class="preset" onclick="setTip(25)">25%</button>
+</div>
+<label for="people" style="margin-top:16px">Split between</label>
+<div class="people-row">
+<button class="step-btn" onclick="changePeople(-1)">−</button>
+<input id="people" min="1" oninput="calculate()" type="number" value="1"/>
+<button class="step-btn" onclick="changePeople(1)">+</button>
+<span class="people-label">people</span>
+</div>
+</div>
+<div class="card results">
+<div class="result-row">
+<span class="result-label">Tip amount</span>
+<span class="result-val" id="res-tip">$9.00</span>
+</div>
+<div class="result-row">
+<span class="result-label">Total bill</span>
+<span class="result-val" id="res-total">$59.00</span>
+</div>
+<div class="result-divider"></div>
+<div class="result-row big">
+<span class="result-label">Per person</span>
+<span class="result-val" id="res-per-person">$59.00</span>
+</div>
+<div class="result-row small">
+<span class="result-label">Each person's tip</span>
+<span class="result-val" id="res-tip-per-person">$9.00</span>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/tip/tip.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

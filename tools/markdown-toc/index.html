@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Markdown TOC Generator — Table of Contents from Headings | SharpDev.Tools</title>
+<meta content="Paste Markdown — get a Table of Contents with auto-generated GitHub-compatible anchor links. Configurable depth, lazy paste-and-go. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/markdown-toc/" rel="canonical"/>
+<meta content="Markdown TOC Generator — Table of Contents from Headings | SharpDev.Tools" property="og:title"/>
+<meta content="Paste Markdown, get a TOC with GitHub-compatible anchor links. Configurable depth." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/markdown-toc/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Markdown TOC Generator — Table of Contents from Headings | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste Markdown, get a TOC with GitHub-compatible anchor links." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/developers/"},
+    {"@type":"ListItem","position":3,"name":"Markdown TOC Generator","item":"https://sharpdev.tools/tools/markdown-toc/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What anchor format is used?","acceptedAnswer":{"@type":"Answer","text":"GitHub-style — lowercase, spaces become hyphens, special characters stripped, duplicate headings get a -1, -2, ... suffix. Compatible with GitHub README rendering."}},
+    {"@type":"Question","name":"Will the TOC update automatically?","acceptedAnswer":{"@type":"Answer","text":"No — paste your Markdown, copy the TOC, paste it back into your doc. Manual refresh whenever you add/remove headings. For auto-TOC in tools, plugins like markdown-it-toc exist for build pipelines."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Markdown TOC Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/markdown-toc/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/markdown-toc/markdown-toc.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('markdown-toc');</script>
+<div class="page">
+<h1>Markdown TOC Generator</h1>
+<p class="subtitle">Paste your Markdown — get a copy-paste table of contents with GitHub-style anchor links.</p>
+
+<div class="card">
+<div class="form-row">
+<label class="opt-label">Markdown</label>
+<textarea id="input" rows="12" placeholder="Paste your Markdown here…"># Project README
+
+Quick intro paragraph.
+
+## Installation
+
+Step-by-step setup.
+
+### Prerequisites
+
+Need Node, etc.
+
+### Installation steps
+
+\`\`\`bash
+npm install
+\`\`\`
+
+## Usage
+
+How to use the thing.
+
+### Basic example
+
+Code.
+
+### Advanced
+
+More code.
+
+## License
+
+MIT</textarea>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Min depth (H1=1, H2=2, …)</label>
+<input id="min-depth" type="number" min="1" max="6" value="2"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Max depth</label>
+<input id="max-depth" type="number" min="1" max="6" value="4"/>
+</div>
+<label class="checkbox-label">
+<input id="ordered" type="checkbox"/>
+<span>Numbered list (1., 2., 3.)</span>
+</label>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Generated TOC</label>
+<pre class="output" id="output"></pre>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy TOC</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>GitHub anchor rules</h2>
+<ul>
+<li>Headings are slugified to lowercase</li>
+<li>Spaces become hyphens</li>
+<li>Apostrophes, dots, and other punctuation are removed</li>
+<li>Duplicate slugs get -1, -2, … suffixes</li>
+<li>Emojis are stripped</li>
+</ul>
+
+<h2>Common patterns</h2>
+<ul>
+<li><strong>README files</strong> — min 2 (skip the H1 = title), max 3 — keeps the TOC short</li>
+<li><strong>Long technical docs</strong> — min 2, max 4 — captures detail</li>
+<li><strong>Quick reference</strong> — min 2, max 2 — only top-level sections</li>
+</ul>
+</section>
+
+<script src="/tools/markdown-toc/markdown-toc.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

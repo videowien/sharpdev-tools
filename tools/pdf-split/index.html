@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Split PDF Online — Extract Pages or Split Every Page | SharpDev.Tools</title>
+<meta content="Split PDF online — free, instant, runs in your browser so your PDF never gets uploaded. Extract specific page ranges or split each page into its own PDF. Download as ZIP." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-split/" rel="canonical"/>
+<meta content="Split PDF Online — Extract Pages or Split Every Page | SharpDev.Tools" property="og:title"/>
+<meta content="Split PDF online — free, instant, runs in your browser so your PDF never gets uploaded. Extract specific page ranges or split each page into its own PDF. Download as ZIP." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-split/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Split PDF Online — Extract Pages or Split Every Page | SharpDev.Tools" name="twitter:title"/>
+<meta content="Split PDF online — free, instant, runs in your browser so your PDF never gets uploaded. Extract specific page ranges or split each page into its own PDF. Download as ZIP." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF", "item": "https://sharpdev.tools/#pdf" },
+      { "@type": "ListItem", "position": 3, "name": "Split PDF", "item": "https://sharpdev.tools/tools/pdf-split/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I split a PDF online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Drop your PDF onto the upload area. Choose 'Extract pages' to pick a custom range (e.g. 1-5, 8, 10-12) or 'Split every page' to break the PDF into single-page files. Click Split. The resulting PDFs download as a ZIP." } },
+      { "@type": "Question", "name": "Can I extract specific pages from a PDF?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the range input — type pages separated by commas (e.g. 1, 3, 5) or dashes for ranges (e.g. 1-5, 8-10). The tool builds a single PDF containing only the pages you specify." } },
+      { "@type": "Question", "name": "Are my PDFs uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Splitting happens entirely in your browser via pdf-lib. Your PDF never touches a server, so confidential contracts and reports stay local." } },
+      { "@type": "Question", "name": "How many PDFs do I get back?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Range mode: one PDF containing the selected pages. Each-page mode: as many PDFs as the original had pages. All are bundled into a single ZIP for convenience." } },
+      { "@type": "Question", "name": "Is the PDF split tool free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no page limit." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Split PDF — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/pdf-split/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-split/pdf-split.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/shared/zip.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-split');</script>
+<div class="page">
+<h1>Split PDF</h1>
+<p class="subtitle">Extract specific pages or break every page into its own file. Runs in your browser — your PDF never leaves your device.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">PDF only. Processed in your browser.</p>
+</div>
+</div>
+</div>
+
+<div class="card options-card" id="options-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+<div class="opt-group">
+<label class="opt-label">Mode</label>
+<div class="toggle-row">
+<label class="toggle"><input checked name="mode" type="radio" value="range"/><span>Extract pages</span></label>
+<label class="toggle"><input name="mode" type="radio" value="each"/><span>Split every page</span></label>
+</div>
+</div>
+<div class="opt-group" id="range-group">
+<label class="opt-label" for="range-input">Pages to extract</label>
+<input id="range-input" placeholder="e.g. 1-5, 8, 10-12" type="text" value="1"/>
+<p class="opt-hint">Use commas to separate pages, dashes for ranges. Page numbers start at 1.</p>
+</div>
+<div class="action-row">
+<button class="btn btn-primary" id="split-btn" type="button">Split PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How do I split a PDF online?</h2>
+<p>This tool uses <code>pdf-lib</code> running in your browser to copy selected pages from your source PDF into one or more new PDFs. Nothing is uploaded — confidential documents stay on your device.</p>
+
+<h2>Range syntax</h2>
+<ul>
+<li><code>5</code> — only page 5</li>
+<li><code>1-5</code> — pages 1 through 5</li>
+<li><code>1, 3, 5</code> — pages 1, 3 and 5 only</li>
+<li><code>1-5, 8, 10-12</code> — combined ranges and individual pages</li>
+</ul>
+
+<h2>Range mode vs Each-page mode</h2>
+<ul>
+<li><strong>Extract pages</strong> — produces <em>one</em> PDF containing the pages you specified, in the order they appear in the source.</li>
+<li><strong>Split every page</strong> — produces <em>N</em> single-page PDFs (one per page in the source), bundled as a ZIP for convenient download.</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Extracting just the signature page from a contract</li>
+<li>Sending only chapter 3 of a long report</li>
+<li>Splitting a scanned multi-page document into individual files for indexing</li>
+<li>Pulling out a single page to share via email or chat without exposing the rest</li>
+</ul>
+</section>
+
+<script src="/tools/pdf-split/pdf-split.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

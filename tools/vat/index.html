@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VAT / Sales Tax Calculator — Net ↔ Gross, Any Rate | SharpDev.Tools</title>
+<meta content="Calculate VAT or sales tax both directions: net to gross, gross to net. Any rate (DE 19%, UK 20%, US state rates). Shows tax amount, net, and gross. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/vat/" rel="canonical"/>
+<meta content="VAT / Sales Tax Calculator — Net ↔ Gross, Any Rate | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate VAT or sales tax both directions: net to gross, gross to net. Any rate (DE 19%, UK 20%, US state rates). Shows tax amount, net, and gross. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/vat/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="VAT / Sales Tax Calculator — Net ↔ Gross, Any Rate | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate VAT or sales tax both directions: net to gross, gross to net. Any rate (DE 19%, UK 20%, US state rates). Shows tax amount, net, and gross. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},
+    {"@type":"ListItem","position":3,"name":"VAT Calculator","item":"https://sharpdev.tools/tools/vat/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I add VAT to a net price?","acceptedAnswer":{"@type":"Answer","text":"Multiply the net price by (1 + rate/100). For example: 100 × (1 + 19/100) = 119. So a 100 € net becomes 119 € gross at 19% VAT."}},
+    {"@type":"Question","name":"How do I extract VAT from a gross price?","acceptedAnswer":{"@type":"Answer","text":"Divide the gross by (1 + rate/100). For example at 19%: 119 / 1.19 = 100 € net. The VAT amount is gross - net = 19 €."}},
+    {"@type":"Question","name":"What rates are preset?","acceptedAnswer":{"@type":"Answer","text":"Germany 19% (standard) and 7% (reduced), UK 20%, Austria 20%, France 20%, Netherlands 21%, Spain 21%, Italy 22%, Switzerland 7.7%, plus 0% (export) and common US sales tax rates. You can also enter any custom rate."}},
+    {"@type":"Question","name":"Is the calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"VAT Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/vat/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/vat/vat.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('vat');</script>
+<div class="page">
+<h1>VAT / Sales Tax Calculator</h1>
+<p class="subtitle">Net ↔ Gross calculation at any rate. Type any field — the others update live.</p>
+
+<div class="card">
+<div class="rate-row">
+<label for="rate">VAT / sales tax rate (%)</label>
+<input id="rate" type="number" step="0.1" min="0" max="100" value="19"/>
+</div>
+<div class="presets">
+<button class="preset-btn" data-rate="19" data-label="DE 19%">DE 19%</button>
+<button class="preset-btn" data-rate="7" data-label="DE 7%">DE 7% reduced</button>
+<button class="preset-btn" data-rate="20" data-label="UK/AT/FR 20%">UK/AT/FR 20%</button>
+<button class="preset-btn" data-rate="21" data-label="NL/ES 21%">NL/ES 21%</button>
+<button class="preset-btn" data-rate="22" data-label="IT 22%">IT 22%</button>
+<button class="preset-btn" data-rate="7.7" data-label="CH 7.7%">CH 7.7%</button>
+<button class="preset-btn" data-rate="0" data-label="0% export">0% export</button>
+</div>
+
+<div class="amounts-row">
+<div class="amount-input">
+<label for="net">Net (without VAT)</label>
+<input id="net" type="number" step="0.01" min="0" placeholder="100.00"/>
+</div>
+<div class="amount-input">
+<label for="vat-amt">VAT amount</label>
+<input id="vat-amt" type="number" step="0.01" min="0" readonly placeholder="19.00"/>
+</div>
+<div class="amount-input">
+<label for="gross">Gross (with VAT)</label>
+<input id="gross" type="number" step="0.01" min="0" placeholder="119.00"/>
+</div>
+</div>
+
+<div class="hint" id="hint">Type into the Net OR Gross field. The other two update live.</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How the math works</h2>
+<ul>
+<li><strong>Net → Gross:</strong> <code>gross = net × (1 + rate/100)</code></li>
+<li><strong>Gross → Net:</strong> <code>net = gross / (1 + rate/100)</code></li>
+<li><strong>VAT amount:</strong> <code>vat = gross − net</code></li>
+</ul>
+
+<h2>Standard VAT rates (Europe)</h2>
+<table>
+<thead><tr><th>Country</th><th>Standard</th><th>Reduced</th></tr></thead>
+<tbody>
+<tr><td>🇩🇪 Germany</td><td>19%</td><td>7%</td></tr>
+<tr><td>🇦🇹 Austria</td><td>20%</td><td>10% / 13%</td></tr>
+<tr><td>🇬🇧 UK</td><td>20%</td><td>5%</td></tr>
+<tr><td>🇫🇷 France</td><td>20%</td><td>5.5% / 10%</td></tr>
+<tr><td>🇳🇱 Netherlands</td><td>21%</td><td>9%</td></tr>
+<tr><td>🇪🇸 Spain</td><td>21%</td><td>10%</td></tr>
+<tr><td>🇮🇹 Italy</td><td>22%</td><td>10%</td></tr>
+<tr><td>🇨🇭 Switzerland</td><td>8.1%</td><td>2.6% / 3.8%</td></tr>
+</tbody>
+</table>
+<p style="font-size:12px;color:#888">Rates change occasionally — always verify against current tax authority publications before invoicing.</p>
+
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Invoice writing</strong> — calculate VAT to add line-by-line</li>
+<li><strong>Receipt parsing</strong> — extract net from a gross receipt total</li>
+<li><strong>Cross-border sales</strong> — switch between rates for EU customers in different countries</li>
+<li><strong>Price quoting</strong> — show both net and gross to B2B/B2C buyers</li>
+</ul>
+</section>
+
+<script src="/tools/vat/vat.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

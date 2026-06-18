@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>HTML Preview — Live HTML Viewer &amp; Renderer | SharpDev.Tools</title>
+<meta content="Paste HTML and see it rendered live in a sandboxed preview. Great for testing snippets and email markup. Free online HTML viewer, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/html-preview/" rel="canonical"/>
+<meta content="HTML Preview — Live HTML Viewer &amp; Renderer | SharpDev.Tools" property="og:title"/>
+<meta content="Paste HTML and see it rendered live in a sandboxed preview. Great for testing snippets and email markup. Free online HTML viewer, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/html-preview/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="HTML Preview — Live HTML Viewer &amp; Renderer | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste HTML and see it rendered live in a sandboxed preview. Great for testing snippets and email markup. Free online HTML viewer, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"HTML Preview","item":"https://sharpdev.tools/tools/html-preview/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the HTML preview for?","acceptedAnswer":{"@type":"Answer","text":"Paste any HTML and see it rendered immediately, without creating a file or opening an editor. Handy for checking a snippet, email markup, or how some pasted HTML actually looks."}},{"@type":"Question","name":"Why are scripts disabled?","acceptedAnswer":{"@type":"Answer","text":"The preview runs in a sandboxed iframe without script execution, so pasted HTML cannot run JavaScript against your browser. Layout, text and CSS render fully; only scripts are blocked."}},{"@type":"Question","name":"Is my HTML uploaded?","acceptedAnswer":{"@type":"Answer","text":"No, it renders locally via the iframe srcdoc attribute. Nothing leaves your browser."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"HTML Preview \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/html-preview/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/html-preview/html-preview.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('html-preview');</script>
+<div class="page">
+<h1>HTML Preview</h1>
+<p class="subtitle">Paste HTML, see it rendered live in a safe sandbox. Scripts are disabled for safety.</p>
+<div class="field"><label for="in">HTML</label><textarea id="in" placeholder="<h1>Hello</h1><p style='color:teal'>Live preview</p>"><h1>Hello world</h1>
+<p style="color:#c00">This renders live as you type.</p>
+<ul><li>One</li><li>Two</li></ul></textarea></div>
+<div class="out-head"><label>Preview</label></div>
+<iframe id="frame" style="width:100%;height:300px;background:#fff;border:1px solid #2a2a2a;border-radius:8px" sandbox="allow-same-origin"></iframe>
+<p class="note">Scripts are disabled in the preview for safety, layout and CSS render fully.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the HTML preview for?</summary><p>Paste any HTML and see it rendered immediately, without creating a file or opening an editor. Handy for checking a snippet, email markup, or how some pasted HTML actually looks.</p></details>
+<details><summary>Why are scripts disabled?</summary><p>The preview runs in a sandboxed iframe without script execution, so pasted HTML cannot run JavaScript against your browser. Layout, text and CSS render fully; only scripts are blocked.</p></details>
+<details><summary>Is my HTML uploaded?</summary><p>No, it renders locally via the iframe srcdoc attribute. Nothing leaves your browser.</p></details>
+</section>
+<script src="/tools/html-preview/html-preview.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

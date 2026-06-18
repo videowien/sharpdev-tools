@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Insert Pages — Insert PDF into Another at Position N | SharpDev.Tools</title>
+<meta content="Insert one PDF into another at a specific page position. Cover, appendix, or middle insertions. Browser-only — your files never leave your device. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-insert/" rel="canonical"/>
+<meta content="PDF Insert Pages — Insert PDF into Another at Position N | SharpDev.Tools" property="og:title"/>
+<meta content="Insert one PDF into another at a specific page position. Browser-only. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-insert/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF Insert Pages — Insert PDF into Another at Position N | SharpDev.Tools" name="twitter:title"/>
+<meta content="Insert one PDF into another at a specific position." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF Insert Pages","item":"https://sharpdev.tools/tools/pdf-insert/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How is this different from Merge PDF?","acceptedAnswer":{"@type":"Answer","text":"Merge joins two PDFs end-to-end (A then B). Insert places PDF B at a specific position inside PDF A — useful for adding a cover, prepending a TOC, or slotting in a new section in the middle."}},
+    {"@type":"Question","name":"Can I insert only some pages of PDF B?","acceptedAnswer":{"@type":"Answer","text":"Yes — specify a page range like '1-3' or '5,7,9' to insert just those pages. Leave blank to insert all of PDF B."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Both PDFs are processed in your browser via pdf-lib."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Insert — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-insert/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-insert/pdf-insert.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-insert');</script>
+<div class="page">
+<h1>PDF Insert Pages</h1>
+<p class="subtitle">Insert pages from one PDF into another at any position.</p>
+
+<div class="card">
+<div class="upload-grid">
+<div class="upload-slot" id="slot-base">
+<label class="opt-label">Base PDF (target)</label>
+<div class="upload-area" data-target="base">
+<input accept="application/pdf,.pdf" hidden id="file-base" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop base PDF here<br/>or <span class="upload-link">click</span></p>
+</div>
+</div>
+<p class="info" id="info-base"></p>
+</div>
+
+<div class="upload-slot" id="slot-insert">
+<label class="opt-label">Insert PDF (source)</label>
+<div class="upload-area" data-target="insert">
+<input accept="application/pdf,.pdf" hidden id="file-insert" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop insert PDF here<br/>or <span class="upload-link">click</span></p>
+</div>
+</div>
+<p class="info" id="info-insert"></p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Insert after page</label>
+<input id="position" type="number" min="0" value="0"/>
+<span class="hint" id="position-hint">(0 = at the very beginning)</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Pages from insert PDF (optional)</label>
+<input id="range" type="text" placeholder="e.g. 1-3, 5, 8-10 (blank = all)"/>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="insert-btn" type="button">Insert + download</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How position works</h2>
+<ul>
+<li><strong>0</strong> — insert at the very start (insert PDF becomes the new first page(s))</li>
+<li><strong>N</strong> — insert after page N (so insert appears between page N and page N+1 of the base)</li>
+<li><strong>Total pages of base</strong> — insert at the very end (same as Merge)</li>
+</ul>
+
+<h2>Page-range syntax</h2>
+<p>Same as PDF Split: <code>1-3</code> for a range, <code>5,7,9</code> for specific pages, <code>1-3,5,8-10</code> for combinations. Blank = all pages.</p>
+
+<h2>Privacy</h2>
+<p>Both PDFs are processed in your browser via pdf-lib. Nothing is uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-insert/pdf-insert.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

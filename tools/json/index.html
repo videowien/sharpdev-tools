@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSON Formatter — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Format, validate, minify and sort JSON with error messages that include line numbers, plus escape/unescape. Free online, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/json/" rel="canonical"/>
+<meta content="JSON Formatter — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Format, validate, minify and sort JSON with error messages that include line numbers, plus escape/unescape. Free online, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="JSON Formatter — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Format, validate, minify and sort JSON with error messages that include line numbers, plus escape/unescape. Free online, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Data & Files",
+        "item": "https://sharpdev.tools/#data-files"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "JSON Formatter",
+        "item": "https://sharpdev.tools/tools/json/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can the JSON Formatter do besides pretty-printing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It validates, minifies, sorts keys alphabetically, escapes JSON as a string and unescapes string-wrapped JSON, all with clear line-numbered error messages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my JSON uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All parsing and formatting happens in your browser — your data never leaves your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, completely free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "JSON Formatter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/json/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json/json.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json');</script>
+<div class="page">
+<h1>JSON Formatter</h1>
+<p class="subtitle">Format, validate, and clean up JSON. Paste messy API output, get readable structure.</p>
+<div class="actions">
+<button class="btn" onclick="format(2)">Pretty (2-space)</button>
+<button class="btn" onclick="format(4)">Pretty (4-space)</button>
+<button class="btn" onclick="minify()">Minify</button>
+<button class="btn" onclick="sortKeys()">Sort keys</button>
+<button class="btn" onclick="jsonEscape()">Escape as string</button>
+<button class="btn" onclick="jsonUnescape()">Unescape string</button>
+<button class="btn btn-reset" onclick="clearAll()">Clear</button>
+</div>
+<div class="grid">
+<div class="col">
+<label for="input">Input</label>
+<textarea id="input" oninput="autoFormat()" placeholder='{"name":"example","values":[1,2,3]}' spellcheck="false"></textarea>
+<div class="stats" id="stats-in">0 chars</div>
+</div>
+<div class="col">
+<label for="output">Output</label>
+<textarea id="output" placeholder="Formatted JSON will appear here..." readonly="" spellcheck="false"></textarea>
+<div class="stats-row">
+<span class="stats" id="stats-out">0 chars</span>
+<div class="small-actions">
+<button class="small-btn" onclick="copyOutput()">Copy</button>
+<button class="small-btn" onclick="useAsInput()">Use as input</button>
+</div>
+</div>
+</div>
+</div>
+<div class="error-box" id="error-box" style="display:none"></div>
+<div class="success-box" id="success-box" style="display:none"></div>
+</div>
+<script src="/tools/json/json.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

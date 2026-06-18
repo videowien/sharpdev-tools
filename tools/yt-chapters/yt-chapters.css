@@ -1,0 +1,40 @@
+/* YouTube Chapters Generator — Tool-specific styles */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.card label { display: block; font-size: 13px; color: #aaa; margin: 0 0 8px; font-weight: 500; }
+#input-text, #output-text {
+  width: 100%; min-height: 150px; padding: 12px 14px;
+  background: #0d0d0d; color: #eee;
+  border: 1px solid #2a2a2a; border-radius: 8px;
+  font-size: 13px; line-height: 1.55;
+  font-family: 'SF Mono', Menlo, monospace; resize: vertical;
+}
+#input-text:focus, #output-text:focus { border-color: #ff4444; outline: none; }
+#output-text { background: #161616; color: #4caf50; }
+
+.result-row { margin-top: 18px; }
+.action-row { display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+
+.validation { margin-top: 14px; font-size: 13px; }
+.val-ok {
+  padding: 10px 14px; background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.35);
+  border-radius: 6px; color: #4caf50;
+}
+.val-bad {
+  padding: 10px 14px; background: rgba(255, 102, 102, 0.08);
+  border: 1px solid rgba(255, 102, 102, 0.3);
+  border-radius: 6px; color: #ff9999;
+}
+.val-bad strong { color: #ff6666; display: block; margin-bottom: 4px; }
+.val-bad ul { margin: 4px 0 0; padding-left: 22px; font-size: 12px; }
+.val-bad li { margin-bottom: 2px; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

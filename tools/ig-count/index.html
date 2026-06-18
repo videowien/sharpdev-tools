@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Instagram Caption Counter (2200) &amp; Hashtag Extractor | SharpDev.Tools</title>
+<meta content="Live 2200-char Instagram caption counter with feed preview and hashtag extraction. Warns at 30 hashtags. Free online, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-count/" rel="canonical"/>
+<meta content="Instagram Caption Counter (2200) &amp; Hashtag Extractor | SharpDev.Tools" property="og:title"/>
+<meta content="Live 2200-char Instagram caption counter with feed preview and hashtag extraction. Warns at 30 hashtags. Free online, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-count/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Caption Counter (2200) &amp; Hashtag Extractor | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live 2200-char Instagram caption counter with feed preview and hashtag extraction. Warns at 30 hashtags. Free online, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name": "Instagram", "item": "https://sharpdev.tools/#instagram"},
+    {"@type":"ListItem","position":3,"name":"Instagram Caption Counter","item":"https://sharpdev.tools/tools/ig-count/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the Instagram caption character limit?","acceptedAnswer":{"@type":"Answer","text":"2,200 characters. Instagram truncates captions in the feed with \u201c\u2026more\u201d after roughly 125 characters or the first line break, whichever comes first."}},
+    {"@type":"Question","name":"Is there really a hashtag limit?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instagram allows up to 30 hashtags per post and up to 10 per story. The tool warns you if you exceed it so the post doesn't silently fail to publish."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Instagram Caption Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/ig-count/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-count/ig-count.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-count');</script>
+<div class="page">
+<h1>Instagram Caption Counter</h1>
+<p class="subtitle">2200-char limit, with feed-view preview and a live hashtag extractor.</p>
+<label for="text-in">Your caption</label>
+<textarea id="text-in" oninput="igGo()" placeholder="Start typing or paste your Instagram caption..."></textarea>
+<div class="ig-meter" id="ig-meter">
+<div class="ig-bar-wrap">
+<div class="ig-bar" id="ig-bar"></div>
+</div>
+<div class="ig-stats">
+<span id="ig-count">0</span> / 2200
+<span class="ig-sep">•</span>
+<span id="ig-tags">0 / 30 hashtags</span>
+</div>
+</div>
+<div class="ig-preview" id="ig-preview">
+<div class="ig-preview-head">Feed preview (before "…more")</div>
+<div class="ig-preview-body" id="ig-preview-body">—</div>
+<div class="ig-preview-meta" id="ig-preview-meta"></div>
+</div>
+<div class="ig-hashtags" id="ig-hashtags" style="display:none;">
+<div class="ig-hashtags-head">
+<h2>Hashtags</h2>
+<button type="button" class="copy-btn" id="copy-tags">Copy all</button>
+</div>
+<div class="ig-hashtags-list" id="ig-hashtags-list"></div>
+</div>
+</div>
+<script src="/tools/ig-count/ig-count.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

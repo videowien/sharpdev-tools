@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Countdown Timer — Days, Hours, Minutes to Any Date | SharpDev.Tools</title>
+<meta content="Live countdown to any future date. New Year, Christmas, your birthday, product launch — days, hours, minutes, seconds remaining. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/countdown/" rel="canonical"/>
+<meta content="Countdown Timer — Days, Hours, Minutes to Any Date | SharpDev.Tools" property="og:title"/>
+<meta content="Live countdown to any future date. Presets for New Year, Christmas, custom date. Free, browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/countdown/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Countdown Timer — Days, Hours, Minutes to Any Date | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live countdown to any future date. Presets for New Year, Christmas, custom date." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/time-date/"},
+    {"@type":"ListItem","position":3,"name":"Countdown Timer","item":"https://sharpdev.tools/tools/countdown/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can I countdown to a specific time, not just a date?","acceptedAnswer":{"@type":"Answer","text":"Yes — pick the time portion of the date input. The countdown then runs to that exact moment."}},
+    {"@type":"Question","name":"Does this work across timezones?","acceptedAnswer":{"@type":"Answer","text":"The date+time you pick is interpreted in your local timezone. If you need a fixed UTC moment, set your system clock to UTC or use the Time Zone Converter to translate first."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The countdown runs entirely in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Countdown Timer — SharpDev.Tools","url":"https://sharpdev.tools/tools/countdown/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/countdown/countdown.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('countdown');</script>
+<div class="page">
+<h1>Countdown Timer</h1>
+<p class="subtitle">Live countdown to any future date and time.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="target">Target date &amp; time</label>
+<input id="target" type="datetime-local"/>
+</div>
+<div class="form-row">
+<label for="label">Label (optional)</label>
+<input id="label" type="text" maxlength="80" placeholder="New Year, product launch, …"/>
+</div>
+<div class="preset-row">
+<span class="preset-hint">Quick presets:</span>
+<button class="preset-btn" data-preset="newyear" type="button">Next New Year</button>
+<button class="preset-btn" data-preset="christmas" type="button">Christmas</button>
+<button class="preset-btn" data-preset="midyear" type="button">Halfway through year</button>
+<button class="preset-btn" data-preset="weekend" type="button">Next weekend</button>
+</div>
+</div>
+
+<div class="card countdown-display">
+<div class="countdown-label" id="cd-label">—</div>
+<div class="countdown-row">
+<div class="cd-unit">
+<div class="cd-val" id="cd-days">—</div>
+<div class="cd-key">days</div>
+</div>
+<div class="cd-unit">
+<div class="cd-val" id="cd-hours">—</div>
+<div class="cd-key">hours</div>
+</div>
+<div class="cd-unit">
+<div class="cd-val" id="cd-mins">—</div>
+<div class="cd-key">min</div>
+</div>
+<div class="cd-unit">
+<div class="cd-val" id="cd-secs">—</div>
+<div class="cd-key">sec</div>
+</div>
+</div>
+<div class="countdown-target" id="cd-target"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common countdown use cases</h2>
+<ul>
+<li><strong>Product launches</strong> — "47 days until ship date" creates urgency</li>
+<li><strong>Birthdays / anniversaries</strong> — pin to a tab for awareness</li>
+<li><strong>Holidays / events</strong> — Christmas, New Year, your trip</li>
+<li><strong>Personal deadlines</strong> — exam dates, project hand-ins, end of quarter</li>
+<li><strong>Page widget</strong> — copy the URL with prefilled target as a permalink</li>
+</ul>
+
+<h2>How precise is the countdown?</h2>
+<p>The timer ticks every 250ms — accurate to within a second. The target moment is interpreted in your local timezone (whatever your computer says). If you need fixed UTC, translate first with the Time Zone Converter.</p>
+
+<h2>Privacy</h2>
+<p>The countdown runs entirely in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/countdown/countdown.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Extract URLs From Text Online | SharpDev.Tools</title>
+<meta content="Pull every link out of a block of text. Deduplicate and sort. Free online URL extractor, runs entirely in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/extract-urls/" rel="canonical"/>
+<meta content="Extract URLs From Text Online | SharpDev.Tools" property="og:title"/>
+<meta content="Pull every link out of a block of text. Deduplicate and sort. Free online URL extractor, runs entirely in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/extract-urls/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Extract URLs From Text Online | SharpDev.Tools" name="twitter:title"/>
+<meta content="Pull every link out of a block of text. Deduplicate and sort. Free online URL extractor, runs entirely in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Extract URLs","item":"https://sharpdev.tools/tools/extract-urls/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What counts as a URL?","acceptedAnswer":{"@type":"Answer","text":"Anything starting with http://, https:// or www. is matched. Trailing punctuation like a period or comma at the end of a sentence is trimmed off."}},{"@type":"Question","name":"Can it dedupe and sort?","acceptedAnswer":{"@type":"Answer","text":"Yes, duplicate removal is on by default and you can sort the list alphabetically."}},{"@type":"Question","name":"Does it run locally?","acceptedAnswer":{"@type":"Answer","text":"Yes, entirely in your browser, nothing is uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Extract URLs \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/extract-urls/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/extract-urls/extract-urls.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('extract-urls');</script>
+<div class="page">
+<h1>Extract URLs</h1>
+<p class="subtitle">Find and list every link in a block of text. Dedupe and sort optional.</p>
+<div class="actions"><label class="small-btn"><input type="checkbox" id="dedupe" checked> remove duplicates</label><label class="small-btn"><input type="checkbox" id="sort"> sort A-Z</label></div>
+<div class="field"><label for="in">Paste text</label><textarea id="in" placeholder="Paste any text containing links..."></textarea></div>
+<div class="out-head"><label for="out">URLs (<span id="cnt">0</span>)</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What counts as a URL?</summary><p>Anything starting with http://, https:// or www. is matched. Trailing punctuation like a period or comma at the end of a sentence is trimmed off.</p></details>
+<details><summary>Can it dedupe and sort?</summary><p>Yes, duplicate removal is on by default and you can sort the list alphabetically.</p></details>
+<details><summary>Does it run locally?</summary><p>Yes, entirely in your browser, nothing is uploaded.</p></details>
+</section>
+<script src="/tools/extract-urls/extract-urls.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

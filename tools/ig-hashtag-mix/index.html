@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Hashtag Mix Optimizer — Tier Distribution Analyzer | SharpDev.Tools</title>
+<meta content="Analyze your Instagram hashtag mix by popularity tier. Paste your hashtags + post counts, see whether you have the right balance of mega / large / medium / niche / micro tags." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-hashtag-mix/" rel="canonical"/>
+<meta content="Instagram Hashtag Mix Optimizer — Tier Distribution | SharpDev.Tools" property="og:title"/>
+<meta content="Analyze your Instagram hashtag mix by popularity tier. Recommended balance of mega / large / medium / niche tags." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-hashtag-mix/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Hashtag Mix Optimizer — Tier Distribution | SharpDev.Tools" name="twitter:title"/>
+<meta content="Analyze your Instagram hashtag mix by popularity tier." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Instagram","item":"https://sharpdev.tools/instagram/"},
+    {"@type":"ListItem","position":3,"name":"Hashtag Mix Optimizer","item":"https://sharpdev.tools/tools/ig-hashtag-mix/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What are hashtag tiers?","acceptedAnswer":{"@type":"Answer","text":"Hashtag popularity tiers — tags with millions of posts (mega) are too competitive for small accounts to rank in. Tags with hundreds to low-thousands of posts (micro / niche) are easier to rank in but reach fewer people. A balanced mix between tiers performs best."}},
+    {"@type":"Question","name":"What's the ideal mix?","acceptedAnswer":{"@type":"Answer","text":"Common guidance: 5-10 niche (under 100k posts), 10-15 medium (100k-1M), 5-10 large (1M-10M), 0-3 mega (10M+). The exact ratio depends on your account size — smaller accounts benefit from more niche tags."}},
+    {"@type":"Question","name":"How does the post count get used?","acceptedAnswer":{"@type":"Answer","text":"You provide the post count for each hashtag (look it up on Instagram). The tool buckets each tag into a tier and shows the distribution. You can paste the data however you have it."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Instagram Hashtag Mix Optimizer — SharpDev.Tools","url":"https://sharpdev.tools/tools/ig-hashtag-mix/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-hashtag-mix/ig-hashtag-mix.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-hashtag-mix');</script>
+<div class="page">
+<h1>Instagram Hashtag Mix Optimizer</h1>
+<p class="subtitle">Drop your hashtags + post counts. See the tier distribution.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="input">Hashtags with post counts</label>
+<textarea id="input" rows="10" placeholder="Paste one hashtag + count per line. Examples:&#10;#travel 600M&#10;#travelphotography 180M&#10;#wandermore 1.2M&#10;#viennatravel 45K&#10;#yourbrandname 800"></textarea>
+<p class="hint">Format: <code>#tag count</code> per line — count can include K / M / B (e.g. 1.5M, 800k). Find post counts by searching the tag on Instagram.</p>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<label class="opt-label">Tier distribution</label>
+<div class="tier-list" id="tier-list"></div>
+<div class="summary" id="summary"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>The popularity tier system</h2>
+<table class="tier-table">
+<tr><th>Tier</th><th>Post count</th><th>Best for</th></tr>
+<tr><td><span class="badge mega">Mega</span></td><td>10M+</td><td>Established accounts (50k+); won't rank with smaller accounts</td></tr>
+<tr><td><span class="badge large">Large</span></td><td>1M – 10M</td><td>Mid-size accounts (10k-50k); some impressions from feed discovery</td></tr>
+<tr><td><span class="badge medium">Medium</span></td><td>100K – 1M</td><td>Sweet spot for most accounts; rankable, discoverable</td></tr>
+<tr><td><span class="badge niche">Niche</span></td><td>10K – 100K</td><td>Highly engaged audiences; great for new accounts</td></tr>
+<tr><td><span class="badge micro">Micro</span></td><td>under 10K</td><td>Branded / community / unique tags; rankable but small reach</td></tr>
+</table>
+
+<h2>Recommended mix by account size</h2>
+<ul>
+<li><strong>Under 1k followers</strong> — 60% micro/niche, 30% medium, 10% large</li>
+<li><strong>1k-10k followers</strong> — 40% niche, 40% medium, 20% large</li>
+<li><strong>10k-50k followers</strong> — 25% niche, 40% medium, 30% large, 5% mega</li>
+<li><strong>50k+ followers</strong> — 20% medium, 50% large, 30% mega</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The data stays in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/ig-hashtag-mix/ig-hashtag-mix.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

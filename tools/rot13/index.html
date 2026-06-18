@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>ROT13 &amp; Caesar Cipher Encoder/Decoder | SharpDev.Tools</title>
+<meta content="Classic letter-shift cipher with live preview. Any shift from 1 to 25 plus the ROT13 default. Encode and decode in one field. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/rot13/" rel="canonical"/>
+<meta content="ROT13 &amp; Caesar Cipher Encoder/Decoder | SharpDev.Tools" property="og:title"/>
+<meta content="Classic letter-shift cipher with live preview. Any shift from 1 to 25 plus the ROT13 default. Encode and decode in one field. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/rot13/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="ROT13 &amp; Caesar Cipher Encoder/Decoder | SharpDev.Tools" name="twitter:title"/>
+<meta content="Classic letter-shift cipher with live preview. Any shift from 1 to 25 plus the ROT13 default. Encode and decode in one field. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name": "Security & Crypto", "item": "https://sharpdev.tools/#security-crypto"},
+    {"@type":"ListItem","position":3,"name":"ROT13 / Caesar Cipher","item":"https://sharpdev.tools/tools/rot13/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between ROT13 and Caesar cipher?","acceptedAnswer":{"@type":"Answer","text":"ROT13 is a specific Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying ROT13 twice returns the original text — so it's its own inverse and frequently used to obfuscate spoilers online."}},
+    {"@type":"Question","name":"Is Caesar cipher secure?","acceptedAnswer":{"@type":"Answer","text":"No. It's a classical cipher broken trivially by frequency analysis and was used in antiquity for light obscuring, not real security. Use it for puzzles, spoilers or teaching — never for sensitive data."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ROT13 / Caesar Cipher — SharpDev.Tools","url":"https://sharpdev.tools/tools/rot13/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/rot13/rot13.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('rot13');</script>
+<div class="page">
+<h1>ROT13 / Caesar Cipher</h1>
+<p class="subtitle">Classic letter-shift cipher. Adjust the slider to see the text transform live.</p>
+<div class="shift-row">
+<label for="shift">Shift</label>
+<input type="range" id="shift" min="1" max="25" value="13">
+<span class="shift-val" id="shift-val">13 (ROT13)</span>
+<button type="button" class="preset-btn" id="rot13-btn">ROT13</button>
+<button type="button" class="preset-btn" id="swap-btn" title="Swap input and output">↕ Swap</button>
+</div>
+<label for="in">Input</label>
+<textarea id="in" oninput="rotGo()" placeholder="Type or paste text..."></textarea>
+<div class="out-head">
+<label for="out">Output</label>
+<button class="copy-btn" id="copy-btn" type="button">Copy</button>
+</div>
+<textarea id="out" readonly></textarea>
+</div>
+<script src="/tools/rot13/rot13.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

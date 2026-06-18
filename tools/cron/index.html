@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Cron Explainer — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Paste any cron expression and see it in plain English with the next five scheduled run times. Free online cron explainer, no ads, no sign-up needed." name="description"/>
+<link href="https://sharpdev.tools/tools/cron/" rel="canonical"/>
+<meta content="Cron Explainer — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Paste any cron expression and see it in plain English with the next five scheduled run times. Free online cron explainer, no ads, no sign-up needed." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/cron/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Cron Explainer — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste any cron expression and see it in plain English with the next five scheduled run times. Free online cron explainer, no ads, no sign-up needed." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Time & Date", "item": "https://sharpdev.tools/#time-date"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Cron Explainer",
+        "item": "https://sharpdev.tools/tools/cron/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which cron syntax does the Cron Explainer support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard five-field cron and common extensions (ranges, steps, lists, named days and months), plus the next five scheduled run times."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, completely free with no ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my cron expression uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — parsing happens entirely in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Cron Explainer — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/cron/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/cron/cron.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('cron');</script>
+<div class="page">
+<h1>Cron Expression Explainer</h1>
+<p class="subtitle">Paste any cron expression, see what it means in plain English, and the next 5 times it will run.</p>
+<label for="cron-input">Cron expression</label>
+<input autocomplete="off" id="cron-input" oninput="explain()" spellcheck="false" type="text" value="*/5 * * * *"/>
+<div class="presets">
+<button class="pill" onclick="setExpr('* * * * *')">Every minute</button>
+<button class="pill" onclick="setExpr('0 * * * *')">Every hour</button>
+<button class="pill" onclick="setExpr('0 0 * * *')">Daily midnight</button>
+<button class="pill" onclick="setExpr('0 9 * * 1-5')">Weekdays 9am</button>
+<button class="pill" onclick="setExpr('0 0 1 * *')">First of month</button>
+<button class="pill" onclick="setExpr('*/15 * * * *')">Every 15 minutes</button>
+</div>
+<div class="explain-box" id="explain-box"></div>
+<div class="error-box" id="error-box" style="display:none"></div>
+<div class="next-runs" id="next-runs-wrap">
+<h3>Next 5 runs</h3>
+<ul id="next-runs"></ul>
+</div>
+<div class="fields-grid" id="fields-grid"></div>
+<div class="info-card">
+<h3>Cron syntax</h3>
+<div class="cheat">
+<pre>┌── minute (0-59)
+│ ┌── hour (0-23)
+│ │ ┌── day of month (1-31)
+│ │ │ ┌── month (1-12 or JAN-DEC)
+│ │ │ │ ┌── day of week (0-6 or SUN-SAT, 0=Sunday)
+│ │ │ │ │
+* * * * *</pre>
+<ul>
+<li><code>*</code> — any value</li>
+<li><code>*/N</code> — every N steps (e.g. <code>*/15</code> for every 15)</li>
+<li><code>N-M</code> — range from N to M</li>
+<li><code>N,M,O</code> — list of specific values</li>
+<li><code>MON</code>, <code>JAN</code> — English day/month names</li>
+</ul>
+</div>
+</div>
+</div>
+<script src="/tools/cron/cron.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* WCAG Contrast Checker — styles */
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 28px; }
+
+.color-inputs {
+  display: flex; align-items: flex-end; gap: 14px;
+  margin-bottom: 24px;
+}
+.color-field { flex: 1; }
+.color-field label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.color-input-row {
+  display: flex; gap: 8px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px; padding: 6px;
+}
+.color-input-row input[type=color] {
+  width: 50px; height: 44px; border: none; padding: 0;
+  background: transparent; cursor: pointer;
+  border-radius: 6px;
+}
+.color-input-row input[type=color]::-webkit-color-swatch {
+  border: 1px solid #2a2a2a; border-radius: 6px;
+}
+.color-input-row input[type=color]::-moz-color-swatch {
+  border: 1px solid #2a2a2a; border-radius: 6px;
+}
+.color-input-row input[type=text] {
+  flex: 1; padding: 0 10px;
+  background: transparent; border: none;
+  color: #e1e1e1; font-size: 14px;
+  font-family: 'SF Mono', Monaco, monospace;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.swap-btn {
+  padding: 10px 14px;
+  background: #141414; border: 1px solid #262626;
+  color: #ccc; font-size: 18px; cursor: pointer;
+  border-radius: 10px; transition: all 0.15s;
+  align-self: flex-end;
+  height: 56px;
+}
+.swap-btn:hover { border-color: #ff4444; color: #fff; background: #1a1a1a; }
+
+.ratio-card {
+  padding: 28px 24px; margin-bottom: 20px;
+  background: #141414; border: 2px solid #262626;
+  border-radius: 14px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+.ratio-card.good { border-color: #4ade80; }
+.ratio-card.ok   { border-color: #ffce3a; }
+.ratio-card.bad  { border-color: #ff4444; }
+.ratio-value {
+  font-size: 56px; font-weight: 800; color: #fff;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1px; line-height: 1;
+}
+.ratio-card.bad .ratio-value { color: #ff4444; }
+.ratio-card.good .ratio-value { color: #4ade80; }
+.ratio-label {
+  font-size: 12px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px; margin-top: 6px;
+}
+
+.wcag-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin-bottom: 28px;
+}
+.wcag-item {
+  padding: 14px; text-align: center;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px;
+}
+.wcag-name {
+  font-size: 11px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.wcag-req {
+  font-size: 12px; color: #666;
+  font-family: 'SF Mono', Monaco, monospace;
+  margin-bottom: 10px;
+}
+.wcag-verdict {
+  font-size: 20px; font-weight: 700;
+}
+.wcag-item.pass { border-color: #4ade80; }
+.wcag-item.pass .wcag-verdict { color: #4ade80; }
+.wcag-item.fail { border-color: #ff4444; }
+.wcag-item.fail .wcag-verdict { color: #ff4444; }
+
+.preview {
+  padding: 28px; border-radius: 12px;
+  transition: background-color 0.15s, color 0.15s;
+}
+.preview-large { font-size: 28px; font-weight: 700; margin-bottom: 14px; }
+.preview-normal { font-size: 18px; margin-bottom: 12px; line-height: 1.55; }
+.preview-small { font-size: 14px; line-height: 1.6; }
+
+@media (max-width: 700px) {
+  .page h1 { font-size: 28px; }
+  .color-inputs { flex-direction: column; align-items: stretch; }
+  .swap-btn { align-self: center; height: auto; padding: 8px 14px; }
+  .wcag-grid { grid-template-columns: repeat(2, 1fr); }
+  .ratio-value { font-size: 44px; }
+}

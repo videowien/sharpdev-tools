@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Git Command Finder (Undo, Branch, Stash) | SharpDev.Tools</title>
+<meta content="Free git command finder. Choose a common task — undo a commit, unstage a file, create a branch, stash, revert, force-push safely — and get the exact git command with a clear explanation. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/git-command/" rel="canonical"/>
+<meta content="Git Command Finder (Undo, Branch, Stash) | SharpDev.Tools" property="og:title"/>
+<meta content="Free git command finder. Choose a common task — undo a commit, unstage a file, create a branch, stash, revert, force-push safely — and get the exact git command with a clear explanation. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/git-command/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Git Command Finder (Undo, Branch, Stash) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free git command finder. Choose a common task — undo a commit, unstage a file, create a branch, stash, revert, force-push safely — and get the exact git command with a clear explanation. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Git Command Finder","item":"https://sharpdev.tools/tools/git-command/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the <angle brackets>?","acceptedAnswer":{"@type":"Answer","text":"Placeholders you replace with your own value \u2014 <branch> with a branch name, <file> with a path, <commit> with a commit hash."}},{"@type":"Question","name":"What's the difference between reset and revert?","acceptedAnswer":{"@type":"Answer","text":"reset rewrites history by moving the branch pointer (fine for local, unpushed work). revert adds a new commit that undoes an old one, which is safe to use on commits others have already pulled."}},{"@type":"Question","name":"Why use --force-with-lease instead of --force?","acceptedAnswer":{"@type":"Answer","text":"It force-pushes only if your view of the remote is up to date, so you won't accidentally overwrite a teammate's commits."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Git Command Finder \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/git-command/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/git-command/git-command.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('git-command');</script>
+<div class="page">
+<h1>Git Command Finder</h1>
+<p class="subtitle">Pick what you want to do and get the exact git command, with a plain-English explanation.</p>
+<div class="field"><label for="task">What do you want to do?</label><select id="task"></select></div>
+<div class="out-head"><label>Command</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out" style="font-family:'SF Mono',Menlo,monospace;"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are the <angle brackets>?</summary><p>Placeholders you replace with your own value — <branch> with a branch name, <file> with a path, <commit> with a commit hash.</p></details>
+<details><summary>What's the difference between reset and revert?</summary><p>reset rewrites history by moving the branch pointer (fine for local, unpushed work). revert adds a new commit that undoes an old one, which is safe to use on commits others have already pulled.</p></details>
+<details><summary>Why use --force-with-lease instead of --force?</summary><p>It force-pushes only if your view of the remote is up to date, so you won't accidentally overwrite a teammate's commits.</p></details>
+</section>
+<script src="/tools/git-command/git-command.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

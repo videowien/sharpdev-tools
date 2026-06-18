@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSON to TypeScript — Generate Interfaces from JSON | SharpDev.Tools</title>
+<meta content="Paste JSON and instantly generate TypeScript interfaces with inferred types and nested interfaces. Free online JSON to TypeScript converter, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/json-to-ts/" rel="canonical"/>
+<meta content="JSON to TypeScript — Generate Interfaces from JSON | SharpDev.Tools" property="og:title"/>
+<meta content="Paste JSON and instantly generate TypeScript interfaces with inferred types and nested interfaces. Free online JSON to TypeScript converter, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json-to-ts/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSON to TypeScript — Generate Interfaces from JSON | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste JSON and instantly generate TypeScript interfaces with inferred types and nested interfaces. Free online JSON to TypeScript converter, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"JSON to TypeScript","item":"https://sharpdev.tools/tools/json-to-ts/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does JSON to TypeScript work?","acceptedAnswer":{"@type":"Answer","text":"Paste a JSON object and the tool walks its structure, infers a type for every field (string, number, boolean, arrays, nested objects), and emits matching TypeScript interfaces. Nested objects become their own named interfaces so the result is clean and reusable."}},{"@type":"Question","name":"Does it handle arrays and nested objects?","acceptedAnswer":{"@type":"Answer","text":"Yes. Arrays get an element type inferred from their items (merged into a union if items differ), and nested objects are extracted into separate interfaces named after their key."}},{"@type":"Question","name":"Is my JSON uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The conversion runs entirely in your browser. Nothing is sent to a server, so you can safely convert internal or sensitive payloads."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"JSON to TypeScript \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/json-to-ts/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json-to-ts/json-to-ts.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json-to-ts');</script>
+<div class="page">
+<h1>JSON to TypeScript</h1>
+<p class="subtitle">Paste JSON, get typed TypeScript interfaces. Nested objects become their own interfaces.</p>
+<div class="row">
+<div class="field" style="flex:0 0 200px"><label for="root">Root interface name</label><input type="text" id="root" value="Root"></div>
+</div>
+<div class="field"><label for="in">JSON</label><textarea id="in" placeholder='{"id": 1, "name": "Ada", "tags": ["a","b"]}'></textarea></div>
+<div class="out-head"><label for="out">TypeScript</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does JSON to TypeScript work?</summary><p>Paste a JSON object and the tool walks its structure, infers a type for every field (string, number, boolean, arrays, nested objects), and emits matching TypeScript interfaces. Nested objects become their own named interfaces so the result is clean and reusable.</p></details>
+<details><summary>Does it handle arrays and nested objects?</summary><p>Yes. Arrays get an element type inferred from their items (merged into a union if items differ), and nested objects are extracted into separate interfaces named after their key.</p></details>
+<details><summary>Is my JSON uploaded anywhere?</summary><p>No. The conversion runs entirely in your browser. Nothing is sent to a server, so you can safely convert internal or sensitive payloads.</p></details>
+</section>
+<script src="/tools/json-to-ts/json-to-ts.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

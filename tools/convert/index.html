@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Unit Converter — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Convert between length, weight, temperature, area, volume, speed, data size, time and CSS units instantly. Free online unit converter, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/convert/" rel="canonical"/>
+<meta content="Unit Converter — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Convert between length, weight, temperature, area, volume, speed, data size, time and CSS units instantly. Free online unit converter, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/convert/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Unit Converter — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert between length, weight, temperature, area, volume, speed, data size, time and CSS units instantly. Free online unit converter, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://sharpdev.tools/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Unit Converter",
+        "item": "https://sharpdev.tools/tools/convert/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which unit categories does the Unit Converter support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Length, weight, temperature, area, volume, speed, data size (bytes to terabytes), time and CSS units like px, rem, em, pt and cm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free with no ads and no account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — once loaded, conversion runs locally and works without a connection."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Unit Converter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/convert/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/convert/convert.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('convert');</script>
+<div class="page">
+<h1>Unit Converter</h1>
+<p class="subtitle">Convert between units instantly. Select a category to get started.</p>
+<div class="category-tabs" id="category-tabs"></div>
+<div class="card converter-card">
+<div class="converter-row">
+<div class="converter-side">
+<label for="from-val">From</label>
+<input id="from-val" oninput="convertFrom()" type="number" value="1"/>
+<select id="from-unit" onchange="convertFrom()"></select>
+</div>
+<div class="swap-btn" onclick="swapUnits()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px" viewbox="0 0 24 24"><path d="M7 16l-4-4 4-4M17 8l4 4-4 4M3 12h18"></path></svg>
+</div>
+<div class="converter-side">
+<label for="to-val">To</label>
+<input id="to-val" oninput="convertTo()" type="number" value=""/>
+<select id="to-unit" onchange="convertFrom()"></select>
+</div>
+</div>
+<div class="formula" id="formula"></div>
+</div>
+<div class="card all-conversions" id="all-conversions">
+<h3>All conversions</h3>
+<div class="all-list" id="all-list"></div>
+</div>
+</div>
+<script src="/tools/convert/convert.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Watermark to PDF — Text, Color, Opacity, Rotation | SharpDev.Tools</title>
+<meta content="Add a diagonal text watermark to any PDF — DRAFT, CONFIDENTIAL, copyright notice. Control color, opacity, font size and rotation. Your file never leaves the browser." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-watermark/" rel="canonical"/>
+<meta content="Add Watermark to PDF — Text, Color, Opacity, Rotation | SharpDev.Tools" property="og:title"/>
+<meta content="Add a diagonal text watermark to PDF. DRAFT / CONFIDENTIAL / copyright. Color, opacity, rotation. No upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-watermark/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Add Watermark to PDF — Text, Color, Opacity, Rotation | SharpDev.Tools" name="twitter:title"/>
+<meta content="Add a diagonal text watermark to PDF. Color, opacity, rotation. No upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF Watermark","item":"https://sharpdev.tools/tools/pdf-watermark/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What kind of watermark does this add?","acceptedAnswer":{"@type":"Answer","text":"A diagonal text watermark centered on each page. You control the text, font size, color, opacity (alpha), and rotation angle. The watermark sits on top of the original content."}},
+    {"@type":"Question","name":"Can I add an image watermark?","acceptedAnswer":{"@type":"Answer","text":"This tool handles text watermarks only — they're sharper at small sizes and don't bloat the PDF. For image-based stamps, an image-to-PDF round-trip is a workaround for now."}},
+    {"@type":"Question","name":"Is the PDF uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is parsed and rewritten in your browser via pdf-lib."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Watermark — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-watermark/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-watermark/pdf-watermark.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-watermark');</script>
+<div class="page">
+<h1>Add Watermark to PDF</h1>
+<p class="subtitle">DRAFT, CONFIDENTIAL, copyright — diagonal text watermark on every page.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">Single PDF, any size — runs in your browser</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="form-row">
+<label for="wm-text">Watermark text</label>
+<input id="wm-text" type="text" maxlength="80" value="DRAFT"/>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Color</label>
+<input id="color" type="color" value="#ff0000"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Opacity</label>
+<input id="opacity" type="range" min="5" max="100" value="20"/>
+<span class="opt-value" id="opacity-val">20%</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Font size</label>
+<input id="font-size" type="number" min="10" max="200" value="80"/>
+<span class="unit">pt</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Rotation</label>
+<input id="rotation" type="range" min="-90" max="90" value="-45"/>
+<span class="opt-value" id="rotation-val">-45°</span>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="apply-btn" type="button">Apply watermark + download</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common watermark patterns</h2>
+<ul>
+<li><strong>DRAFT</strong> — large red, low opacity (10-20%), -45° rotation. Standard for documents in review.</li>
+<li><strong>CONFIDENTIAL</strong> — grey or red, slightly bolder opacity (25-30%). For internal-only material.</li>
+<li><strong>Copyright</strong> — small footer text like "© 2026 Your Company"</li>
+<li><strong>Sample / Preview</strong> — for sales documents you don't want copied verbatim</li>
+</ul>
+
+<h2>Watermarks aren't real security</h2>
+<p>A determined recipient can edit a PDF, screenshot pages, or print-then-rescan. Watermarks deter casual copying — they're not protection. For real document security, use PDF encryption (separate tool) and digital signatures.</p>
+
+<h2>Privacy</h2>
+<p>Watermarking happens in your browser via pdf-lib. Nothing is uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-watermark/pdf-watermark.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

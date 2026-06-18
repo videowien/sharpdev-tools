@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Random Picker — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Pick random names from a list, generate numbers, flip coins and roll dice with truly random results. Free online random picker, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/picker/" rel="canonical"/>
+<meta content="Random Picker — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Pick random names from a list, generate numbers, flip coins and roll dice with truly random results. Free online random picker, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/picker/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Random Picker — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Pick random names from a list, generate numbers, flip coins and roll dice with truly random results. Free online random picker, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Generators",
+        "item": "https://sharpdev.tools/#generators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Random Picker",
+        "item": "https://sharpdev.tools/tools/picker/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How random is the Random Picker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It uses the Web Crypto API for true cryptographic randomness instead of pseudo-random numbers, so results are fair and unpredictable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my list private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The list and picks stay in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Random Picker — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/picker/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/picker/picker.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('picker');</script>
+<div class="page">
+<h1>Random Picker</h1>
+<p class="subtitle">Pick names, numbers, or make decisions. Cryptographically random, not pseudo-random.</p>
+<div class="tabs">
+<button class="tab active" data-tab="names" onclick="switchTab('names')">From a list</button>
+<button class="tab" data-tab="number" onclick="switchTab('number')">Random number</button>
+<button class="tab" data-tab="coin" onclick="switchTab('coin')">Coin / dice</button>
+</div>
+<!-- Names tab -->
+<div class="tab-panel" id="panel-names">
+<label for="names-in">Your list (one per line)</label>
+<textarea id="names-in" placeholder="Alice
+Bob
+Charlie
+Diana"></textarea>
+<div class="settings">
+<div class="setting">
+<label for="pick-count">Pick</label>
+<input id="pick-count" min="1" type="number" value="1"/>
+</div>
+<label class="toggle">
+<input checked="" id="no-repeats" type="checkbox"/>
+<span>No repeats</span>
+</label>
+</div>
+<button class="btn-big" onclick="pickNames()">Pick!</button>
+<div class="result" id="names-result"></div>
+</div>
+<!-- Number tab -->
+<div class="tab-panel" id="panel-number" style="display:none">
+<div class="num-grid">
+<div class="setting">
+<label for="num-min">Min</label>
+<input id="num-min" type="number" value="1"/>
+</div>
+<div class="setting">
+<label for="num-max">Max</label>
+<input id="num-max" type="number" value="100"/>
+</div>
+<div class="setting">
+<label for="num-count">Count</label>
+<input id="num-count" min="1" type="number" value="1"/>
+</div>
+</div>
+<label class="toggle" style="margin-top:14px">
+<input id="num-no-repeats" type="checkbox"/>
+<span>No repeats</span>
+</label>
+<button class="btn-big" onclick="pickNumber()">Generate</button>
+<div class="result" id="number-result"></div>
+</div>
+<!-- Coin / dice tab -->
+<div class="tab-panel" id="panel-coin" style="display:none">
+<div class="coin-grid">
+<button class="big-action" onclick="flipCoin()">
+<div class="big-action-icon">🪙</div>
+<div class="big-action-label">Flip a coin</div>
+</button>
+<button class="big-action" onclick="rollDice(6)">
+<div class="big-action-icon">🎲</div>
+<div class="big-action-label">Roll d6</div>
+</button>
+<button class="big-action" onclick="rollDice(20)">
+<div class="big-action-icon">🎲</div>
+<div class="big-action-label">Roll d20</div>
+</button>
+<button class="big-action" onclick="rollMultiple()">
+<div class="big-action-icon">🎲🎲</div>
+<div class="big-action-label">2d6 (sum)</div>
+</button>
+</div>
+<div class="result" id="coin-result"></div>
+</div>
+<div class="history-card" id="history-card" style="display:none">
+<div class="history-header">
+<span>Recent picks</span>
+<button class="clear-btn" onclick="clearHistory()">Clear</button>
+</div>
+<div id="history"></div>
+</div>
+</div>
+<script src="/tools/picker/picker.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

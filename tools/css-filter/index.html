@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Filter Playground — Live Image Filters | SharpDev.Tools</title>
+<meta content="Stack CSS filters on any image in real time — blur, brightness, contrast, grayscale, hue-rotate, invert, saturate, sepia. Copy the CSS rule. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/css-filter/" rel="canonical"/>
+<meta content="CSS Filter Playground — Live Image Filters | SharpDev.Tools" property="og:title"/>
+<meta content="Stack CSS filters on any image in real time — blur, brightness, contrast, grayscale, hue-rotate, invert, saturate, sepia. Copy the CSS rule. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-filter/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="CSS Filter Playground — Live Image Filters | SharpDev.Tools" name="twitter:title"/>
+<meta content="Stack CSS filters on any image in real time — blur, brightness, contrast, grayscale, hue-rotate, invert, saturate, sepia. Copy the CSS rule. Free." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"CSS Filter","item":"https://sharpdev.tools/tools/css-filter/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does the tool modify my image?","acceptedAnswer":{"@type":"Answer","text":"No. CSS filters are applied as a display effect by the browser only. Your original image file is untouched — you copy the CSS rule to apply the same effect in your own page."}},
+    {"@type":"Question","name":"Can I export the filtered image?","acceptedAnswer":{"@type":"Answer","text":"This tool outputs a CSS rule, not a new image. For exporting a filtered image as a PNG or JPG, use the Image Compressor or an image editor."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"CSS Filter Playground — SharpDev.Tools","url":"https://sharpdev.tools/tools/css-filter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-filter/css-filter.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-filter');</script>
+<div class="page">
+<h1>CSS Filter Playground</h1>
+<p class="subtitle">Stack CSS filter functions on any image. Drop your own photo or use the sample.</p>
+<div class="cf-dropzone" id="cf-dropzone">
+<input type="file" id="cf-file" accept="image/*" hidden>
+<img id="cf-image" src="" alt="Preview">
+<div class="cf-drop-hint" id="cf-drop-hint">Drop an image here or click to choose — otherwise the sample is shown.</div>
+</div>
+<div class="cf-controls" id="cf-controls"></div>
+<button type="button" class="reset-btn" id="reset-btn">Reset filters</button>
+<div class="code-panel">
+<div class="code-head"><span>Generated CSS</span><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<pre id="code-out"></pre>
+</div>
+</div>
+<script src="/tools/css-filter/css-filter.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

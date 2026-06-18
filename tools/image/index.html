@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image Compressor — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Compress and resize JPG, PNG and WebP in your browser with batch processing and target file size or quality. Free online, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/image/" rel="canonical"/>
+<meta content="Image Compressor — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Compress and resize JPG, PNG and WebP in your browser with batch processing and target file size or quality. Free online, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Image Compressor — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Compress and resize JPG, PNG and WebP in your browser with batch processing and target file size or quality. Free online, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Images & Media",
+        "item": "https://sharpdev.tools/#images-media"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Image Compressor",
+        "item": "https://sharpdev.tools/tools/image/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the Image Compressor choose quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You pick a target file size or quality level; the tool iteratively re-encodes the image in your browser until it meets the target."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my images uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All compression and resizing happens locally via the Canvas API — your images never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image Compressor — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/image/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image/image.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image');</script>
+<div class="page">
+<h1>Image Compressor &amp; Resizer</h1>
+<p class="subtitle">Compress and resize JPG, PNG, WebP. Everything runs locally in your browser. No upload.</p>
+<div class="card drop-card" id="drop-zone">
+<input accept="image/*" hidden="" id="file-input" multiple="" type="file"/>
+<div class="drop-inner">
+<svg class="drop-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop images here or <span class="link">click to browse</span></p>
+<p class="hint">JPG, PNG, WebP · batch supported</p>
+</div>
+</div>
+<div class="options-grid card">
+<div class="opt">
+<label>Max width (px)</label>
+<input id="opt-w" min="1" placeholder="auto" type="number"/>
+</div>
+<div class="opt">
+<label>Max height (px)</label>
+<input id="opt-h" min="1" placeholder="auto" type="number"/>
+</div>
+<div class="opt">
+<label>Output format</label>
+<select id="opt-format">
+<option value="keep">Keep original</option>
+<option value="image/jpeg">JPG</option>
+<option value="image/png">PNG</option>
+<option value="image/webp">WebP</option>
+</select>
+</div>
+<div class="opt opt-toggle">
+<label><input checked="" id="opt-aspect" type="checkbox"/> Keep aspect ratio</label>
+</div>
+<div class="opt opt-mode">
+<label>Mode</label>
+<div class="seg">
+<button class="seg-btn active" data-mode="quality">Quality</button>
+<button class="seg-btn" data-mode="target">Target size</button>
+</div>
+</div>
+<div class="opt" id="quality-row">
+<label>Quality <span id="q-val">80</span></label>
+<input id="opt-quality" max="100" min="1" type="range" value="80"/>
+</div>
+<div class="opt" id="target-row" style="display:none">
+<label>Target size (KB)</label>
+<input id="opt-target" min="1" type="number" value="100"/>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" disabled="" id="btn-process">Process images</button>
+<button class="btn" disabled="" id="btn-zip">Download all as .zip</button>
+<button class="btn btn-reset" id="btn-clear">Clear</button>
+</div>
+<div class="compare card" id="compare" style="display:none">
+<h3>Compare</h3>
+<div class="compare-grid">
+<div>
+<div class="compare-label">Original <span id="orig-size"></span></div>
+<img alt="original" id="orig-img"/>
+</div>
+<div>
+<div class="compare-label">Compressed <span id="new-size"></span></div>
+<img alt="compressed" id="new-img"/>
+</div>
+</div>
+</div>
+<div class="list" id="list"></div>
+</div>
+<script src="/shared/zip.js"></script>
+<script src="/tools/image/image.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

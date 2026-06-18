@@ -1,0 +1,15 @@
+# Cloudflare Pages redirects config
+# NOTE: www → apex (sharpdev.tools) is handled by a Cloudflare zone-level
+# Redirect Rule, not here. Pages _redirects only supports relative URLs.
+
+# Put specific, non-splat rules first (perf micro-optimization)
+/player       /api/player       200
+/transcript   /api/transcript   200
+/fetch        /api/fetch        200
+
+# Screenshot tool is hidden for launch — redirect direct visits back home
+/tools/screenshot   /  302
+/tools/screenshot/* /  302
+
+# Pages automatically serves /404.html for unmatched routes,
+# so no catchall rule is needed here.

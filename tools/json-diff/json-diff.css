@@ -1,0 +1,105 @@
+.page { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.btn {
+  padding: 9px 16px; background: #141414; border: 1px solid #2a2a2a;
+  color: #ccc; border-radius: 6px; font-size: 13px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.btn:hover { border-color: #ff4444; color: #fff; background: #1f1f1f; }
+.btn-primary-act { background: #cc0000; border-color: #cc0000; color: #fff; }
+.btn-primary-act:hover { background: #ff1a1a; border-color: #ff1a1a; color: #fff; }
+.btn-reset { margin-left: auto; }
+.btn-reset:hover { border-color: #f87171; color: #f87171; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+.toggle {
+  display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer; font-size: 13px; color: #bbb;
+  text-transform: none; letter-spacing: normal; font-weight: 500;
+  margin-bottom: 0;
+}
+.toggle input { accent-color: #ff4444; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.col { display: flex; flex-direction: column; }
+
+textarea {
+  width: 100%; min-height: 300px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 13px; padding: 14px; outline: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  line-height: 1.5; transition: border-color 0.2s; tab-size: 2;
+}
+textarea:focus { border-color: #ff4444; }
+
+.col-err {
+  color: #f87171; font-size: 12px; margin-top: 6px;
+  font-family: 'SF Mono', Monaco, monospace; min-height: 16px;
+}
+
+.output-wrap { margin-top: 24px; }
+
+.stats-bar {
+  background: #141414; border: 1px solid #262626; border-radius: 10px;
+  padding: 14px 18px; color: #ccc;
+  font-family: 'SF Mono', Monaco, monospace; font-size: 13px;
+  display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+}
+.stats-bar .pill { display: inline-flex; align-items: center; gap: 6px; }
+.stats-bar .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.pill.added .dot { background: #4ade80; }
+.pill.removed .dot { background: #f87171; }
+.pill.changed .dot { background: #fbbf24; }
+.pill.unchanged .dot { background: #555; }
+
+.diff-actions { display: flex; gap: 6px; margin: 10px 0; justify-content: flex-end; }
+.small-btn {
+  padding: 5px 12px; background: transparent; border: 1px solid #333;
+  color: #aaa; border-radius: 4px; font-size: 12px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.small-btn:hover { border-color: #ff4444; color: #fff; }
+
+.diff-list {
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 10px;
+  padding: 10px; max-height: 600px; overflow-y: auto;
+  font-family: 'SF Mono', Monaco, monospace; font-size: 13px;
+}
+
+.diff-row {
+  display: grid; grid-template-columns: 22px 1fr; gap: 10px;
+  padding: 7px 10px; border-radius: 6px; margin-bottom: 2px;
+  align-items: start;
+}
+.diff-row .sign { font-weight: 700; }
+.diff-row .body { word-break: break-all; white-space: pre-wrap; }
+.diff-row .path { color: #888; font-weight: 600; }
+.diff-row .val { color: #ccc; }
+.diff-row .arrow { color: #666; padding: 0 6px; }
+
+.diff-row.added { background: rgba(74, 222, 128, 0.06); }
+.diff-row.added .sign, .diff-row.added .val { color: #4ade80; }
+.diff-row.removed { background: rgba(248, 113, 113, 0.06); }
+.diff-row.removed .sign, .diff-row.removed .val { color: #f87171; }
+.diff-row.changed { background: rgba(251, 191, 36, 0.06); }
+.diff-row.changed .sign { color: #fbbf24; }
+.diff-row.changed .val-old { color: #f87171; }
+.diff-row.changed .val-new { color: #4ade80; }
+.diff-row.unchanged { opacity: 0.55; }
+.diff-row.unchanged .sign { color: #666; }
+
+.empty-msg { padding: 30px; text-align: center; color: #666; }
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+  textarea { min-height: 200px; }
+  .btn-reset { margin-left: 0; }
+}

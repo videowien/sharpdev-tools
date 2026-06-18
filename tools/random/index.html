@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Random Number Generator — Cryptographic | SharpDev.Tools</title>
+<meta content="Generate random integers in any range, singly or in batches. Cryptographically random with optional unique-only mode. Free online, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/random/" rel="canonical"/>
+<meta content="Random Number Generator — Cryptographic | SharpDev.Tools" property="og:title"/>
+<meta content="Generate random integers in any range, singly or in batches. Cryptographically random with optional unique-only mode. Free online, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/random/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Random Number Generator — Cryptographic | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate random integers in any range, singly or in batches. Cryptographically random with optional unique-only mode. Free online, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://sharpdev.tools/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Random Number",
+        "item": "https://sharpdev.tools/tools/random/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How random are the numbers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They come from the browser's cryptographically secure generator (crypto.getRandomValues), not the predictable Math.random(), so they are suitable for draws and unbiased sampling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I generate a batch or unique numbers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Set a range and a count, and optionally require all values to be unique, for example to draw lottery numbers or pick winners."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Random Number Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/random/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/random/random.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('random');</script>
+<div class="page">
+<h1>Random Number Generator</h1>
+<p class="subtitle">Cryptographically random integers in any range. Single or batch, unique mode for drawings.</p>
+<div class="rn-config">
+<div class="rn-field"><label>Min</label><input type="number" id="rn-min" value="1" step="1"></div>
+<div class="rn-field"><label>Max</label><input type="number" id="rn-max" value="100" step="1"></div>
+<div class="rn-field"><label>Count</label><input type="number" id="rn-count" value="1" min="1" max="10000" step="1"></div>
+<div class="rn-opts">
+<label class="chip"><input type="checkbox" id="rn-unique"> Unique only</label>
+<label class="chip"><input type="checkbox" id="rn-sort"> Sorted</label>
+</div>
+</div>
+<button type="button" class="btn btn-primary" id="rn-gen">Generate</button>
+<div class="err" id="rn-err"></div>
+<div class="rn-output" id="rn-output"></div>
+</div>
+<script src="/tools/random/random.js"></script>
+<script>renderFooter();</script>
+</body></html>

@@ -1,0 +1,681 @@
+# SharpDev.tools
+
+> 622 free single-purpose online tools on one domain for developers, writers, designers and creators. No ads, no sign-up, no cookies, no tracking. Every tool runs entirely in the visitor's browser; files and text are never uploaded. EU/GDPR-compliant, hosted on Cloudflare Pages.
+
+SharpDev.tools is a free utility suite. Each tool is a self-contained page that does one job well: formatting, converting, generating, calculating, or analysing. There is no account system and no premium tier; everything is free. The site is built with vanilla HTML/CSS/JS and processes everything client-side, so it works offline-friendly and keeps data private.
+
+## Text
+
+- [Word Counter](https://sharpdev.tools/tools/wordcount/): Count words, characters, sentences, paragraphs. Reading and speaking time estimates. Instant results.
+- [Case Converter](https://sharpdev.tools/tools/case/): Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more.
+- [Lorem Ipsum Generator](https://sharpdev.tools/tools/lorem/): Generate placeholder text for your designs. Paragraphs, sentences, or words. Copy as text or HTML.
+- [Text Diff Checker](https://sharpdev.tools/tools/diff/): Compare two texts side by side and see exactly what changed. Word-level highlighting, inline or split view.
+- [Line Sorter & Deduper](https://sharpdev.tools/tools/lines/): Clean up any list. Sort alphabetically, remove duplicates, reverse, trim whitespace, number lines.
+- [Character Counter](https://sharpdev.tools/tools/chars/): Check if your post fits Twitter, Instagram, SMS, or SEO limits. Live count with platform presets.
+- [Slug Generator](https://sharpdev.tools/tools/slug/): Turn any text into a clean URL slug. Handles accents, special characters, and stopwords.
+- [Markdown Preview](https://sharpdev.tools/tools/markdown/): Live Markdown preview with GitHub-flavored basics. Export to HTML or .md.
+- [Whitespace & Invisible Char Cleaner](https://sharpdev.tools/tools/whitespace/): Strip zero-width chars, normalize spaces, fix line endings, remove suspicious Unicode.
+- [Markdown ↔ HTML Converter](https://sharpdev.tools/tools/md-html/): Convert Markdown to HTML or HTML back to Markdown. Live conversion both ways.
+- [Reading Level Scorer](https://sharpdev.tools/tools/reading-level/): Flesch, Gunning Fog, SMOG, Coleman-Liau, ARI. See what grade level your text is written at.
+- [String Utilities](https://sharpdev.tools/tools/string-utils/): Repeat, pad, reverse, split, join, find/replace, count. The little string operations all in one place.
+- [Markdown Table Builder](https://sharpdev.tools/tools/md-table/): Visual editor for GitHub-flavored Markdown tables. Paste from CSV, set alignment, sort columns.
+- [Unicode Text Stylizer](https://sharpdev.tools/tools/unicode-text/): Make 𝐛𝐨𝐥𝐝, 𝑖𝑡𝑎𝑙𝑖𝑐, 𝓈𝒸𝓇𝒾𝓅𝓉, ɐlǝlǝɹǝp text using Unicode. For social bios and posts.
+- [Text Reverser](https://sharpdev.tools/tools/reverse/): Reverse any text by character, word, or line. Handles multi-byte emoji properly. Copy with one click.
+- [Find & Replace](https://sharpdev.tools/tools/find-replace/): Bulk find and replace across any text. Regex, case sensitivity, whole-word toggles. Match count as you type.
+- [HTML to Plain Text](https://sharpdev.tools/tools/html-strip/): Strip all HTML tags, decode entities, keep paragraph breaks and bullets. DOMParser-based — handles real-world HTML.
+- [Keyword Density Analyzer](https://sharpdev.tools/tools/keyword-density/): 1, 2, 3-word phrase frequency for SEO content audits. Stopword filtering, density % per phrase.
+- [WPM Typing Test](https://sharpdev.tools/tools/wpm/): Test your typing speed — words per minute, accuracy, mistakes. 15s / 30s / 60s / 2min sessions.
+- [Upside Down Text](https://sharpdev.tools/tools/flip-text/): Flip text upside down and backwards (ɐǝ) for bios and posts. Copy anywhere.
+- [Text Repeater](https://sharpdev.tools/tools/text-repeat/): Repeat text or a word N times, with optional separator, new line or numbering.
+- [Markdown Stripper](https://sharpdev.tools/tools/markdown-strip/): Remove Markdown formatting for clean plain text. Strips headings, bold, links, code, lists.
+- [Bacon / Themed Ipsum](https://sharpdev.tools/tools/bacon-ipsum/): Generate bacon, pirate, hipster or corporate placeholder text. Fun Lorem Ipsum alternative.
+- [Remove Line Breaks](https://sharpdev.tools/tools/remove-line-breaks/): Strip newlines from text. Join with spaces, delete entirely, or keep paragraph breaks.
+- [Add Line Numbers](https://sharpdev.tools/tools/add-line-numbers/): Number each line of text. Custom start number, separator and zero-padding.
+- [Remove Duplicate Words](https://sharpdev.tools/tools/remove-duplicate-words/): Delete repeated words from text, keep the first occurrence. Case-insensitive option.
+- [Email Extractor](https://sharpdev.tools/tools/extract-emails/): Pull every email address out of pasted text. Deduplicate and sort the results.
+- [URL Extractor](https://sharpdev.tools/tools/extract-urls/): Pull every link out of pasted text. Deduplicate and sort the results.
+- [Remove Emojis](https://sharpdev.tools/tools/remove-emojis/): Strip all emojis and pictographic symbols from text, leaving clean plain text.
+- [Pig Latin Translator](https://sharpdev.tools/tools/pig-latin/): Translate English to Pig Latin. Handles consonant clusters, keeps caps and punctuation.
+- [Leetspeak (1337)](https://sharpdev.tools/tools/leetspeak/): Convert text to leetspeak. Basic vowel swaps or full substitution.
+- [Palindrome Checker](https://sharpdev.tools/tools/palindrome-checker/): Check if a word, phrase or number reads the same backwards. Ignores case and punctuation.
+- [Count Occurrences](https://sharpdev.tools/tools/count-occurrences/): Count how many times a word, phrase or character appears in text. Whole-word + case options.
+- [Remove Accents](https://sharpdev.tools/tools/remove-accents/): Strip accents & diacritics — café → cafe. Handles ß, ø, æ, ł and more.
+- [Zalgo Text](https://sharpdev.tools/tools/zalgo/): Corrupt text into creepy glitch ‘zalgo’ style with adjustable intensity. Copy & paste anywhere.
+- [Invisible Text](https://sharpdev.tools/tools/invisible-text/): Copy genuinely invisible Unicode characters — blank usernames, empty messages, spacing.
+
+## YouTube
+
+- [YouTube Thumbnail Downloader](https://sharpdev.tools/tools/thumbnail/): Download YouTube video thumbnails in the highest available resolution. Batch download as ZIP.
+- [YouTube Subtitle Downloader](https://sharpdev.tools/tools/subtitles/): Download auto-generated or manual subtitles from any YouTube video. SRT or plain text. Batch processing supported.
+- [YouTube Tags Extractor](https://sharpdev.tools/tools/yt-tags/): Paste any YouTube URL and pull the video's tags. Copy individually or as a comma-separated list.
+- [YouTube URL Cleaner](https://sharpdev.tools/tools/yt-clean/): Strip ?si=, ?feature=, ?pp= and other tracking parameters from YouTube URLs. Keep just v, t and list.
+- [YouTube Embed Code Generator](https://sharpdev.tools/tools/yt-embed/): Paste a video link, toggle autoplay / mute / loop / start-time, copy the iframe. Responsive 16:9 wrapper included.
+- [YouTube Chapters Generator](https://sharpdev.tools/tools/yt-chapters/): Build clean YouTube chapters with live validation — checks 00:00 start, 3-chapter minimum, 10-second gaps.
+- [YouTube Title Counter](https://sharpdev.tools/tools/yt-title/): Live 100-char title counter with truncation marks for desktop search, mobile feed and suggested videos.
+- [YouTube Description Counter](https://sharpdev.tools/tools/yt-description/): 5000-char description counter, above-the-fold preview, auto-extract chapters / links / hashtags / mentions.
+- [YouTube Revenue Estimator](https://sharpdev.tools/tools/yt-money/): Estimate AdSense income from views × RPM. Niche presets for finance, gaming, beauty, crypto, education.
+
+## Twitter
+
+- [Twitter/X Counter & Thread Splitter](https://sharpdev.tools/tools/twitter-count/): Live 280-char counter. Paste anything longer and it auto-splits into numbered thread tweets ready to copy.
+- [Twitter Thread Builder](https://sharpdev.tools/tools/twitter-thread/): Paste long text, get a numbered Twitter / X thread auto-split into 280-char tweets at sentence boundaries.
+- [Tweet to Image](https://sharpdev.tools/tools/twitter-image/): Turn a Twitter / X post into a PNG to share on Instagram, LinkedIn or blogs. Light, dim or dark theme.
+- [Twitter URL Cleaner](https://sharpdev.tools/tools/twitter-clean/): Strip ?s=20, ?t=, ref_src and other tracking parameters from Twitter / X URLs.
+- [Twitter Bio Counter](https://sharpdev.tools/tools/twitter-bio/): Live 160-character Twitter / X bio counter with emoji-safe counting and profile mockup preview.
+- [Twitter Banner Sizer](https://sharpdev.tools/tools/twitter-banner/): Crop any photo to a Twitter / X banner (1500×500) with safe zones for the profile pic + mobile crop.
+- [Twitter Poll Composer](https://sharpdev.tools/tools/twitter-poll/): Plan polls before posting — 25-char limit per option (2-4 options), duration picker, live preview.
+
+## LinkedIn
+
+- [LinkedIn Post Counter](https://sharpdev.tools/tools/linkedin-count/): Live 3000-char counter with the "See more" truncation line marked at 210 chars so your hook lands.
+- [LinkedIn Headline Counter](https://sharpdev.tools/tools/linkedin-headline/): 220-character headline limit with live counter, profile preview, and search-result truncation preview.
+- [LinkedIn About Counter](https://sharpdev.tools/tools/linkedin-about/): 2600-character About section counter with "see more" cutoff preview at ~265 chars.
+- [LinkedIn Carousel PDF](https://sharpdev.tools/tools/linkedin-pdf/): Combine slide images into one PDF for LinkedIn Document posts. Drag to reorder, pick aspect ratio.
+- [LinkedIn URL Cleaner](https://sharpdev.tools/tools/linkedin-clean/): Strip ?trackingId=, ?lipi=, ?refId=, ?utm_* and other tracking parameters from LinkedIn URLs.
+- [LinkedIn Banner Sizer](https://sharpdev.tools/tools/linkedin-banner/): Crop any photo to exactly 1584×396 with drag-to-position. Safe zones for profile pic and mobile crop included.
+- [LinkedIn Comment Counter](https://sharpdev.tools/tools/linkedin-comment/): Live 1250-char comment counter with feed-preview cutoff at "…see more". Best practice tips inline.
+- [LinkedIn Newsletter Counter](https://sharpdev.tools/tools/linkedin-newsletter/): 150-char title + 110000-char body counter, reading-time estimate, feed snippet preview.
+- [LinkedIn Poll Composer](https://sharpdev.tools/tools/linkedin-poll/): 140-char question + 30-char options (2-4), duration picker, live LinkedIn-style poll preview.
+
+## Instagram
+
+- [Instagram Caption Counter](https://sharpdev.tools/tools/ig-count/): Live 2200-char counter with feed preview — see what appears before "…more" and pull out your hashtags.
+- [Instagram Bio Line Breaks](https://sharpdev.tools/tools/ig-bio/): Add real line breaks to your Instagram bio using an invisible-character trick that survives saving.
+- [Instagram Carousel Splitter](https://sharpdev.tools/tools/ig-carousel/): Split one wide image into 2-10 square Instagram-ready slides. Download all as ZIP.
+- [Instagram Highlight Cover](https://sharpdev.tools/tools/ig-highlight/): Make minimalist 1080×1920 Story highlight covers — pick a color, add an emoji, download PNG.
+- [Engagement Rate Calculator](https://sharpdev.tools/tools/ig-engagement/): Calculate Instagram engagement rate from followers, likes and comments. With industry benchmarks.
+- [Instagram Profile Pic Cropper](https://sharpdev.tools/tools/ig-pfp/): Drag, zoom and preview the circular crop. Export 320×320 (Instagram-native) or 1080×1080 (high-res).
+- [Instagram Grid Preview](https://sharpdev.tools/tools/ig-grid/): Plan your feed visually — drop up to 12 images, drag to reorder, see how the 3-column grid will look.
+- [Instagram Reels Cover Sizer](https://sharpdev.tools/tools/ig-reels-cover/): Crop to 1080×1920 with the 1:1 grid-thumbnail safe zone marked so your reel cover looks right on the grid too.
+- [Hashtag Mix Optimizer](https://sharpdev.tools/tools/ig-hashtag-mix/): Analyze your hashtag mix by popularity tier. Mega / large / medium / niche / micro distribution + balance feedback.
+
+## Social Media
+
+- [Hashtag Generator](https://sharpdev.tools/tools/hashtag/): Enter a topic and get a curated list of popular and long-tail hashtags. Copy the whole pack or pick individually.
+- [Emoji Finder & Picker](https://sharpdev.tools/tools/emoji/): Searchable emoji picker with 300+ emojis across 9 categories. Click any emoji to copy. Recently used pinned up top.
+- [Bio / Link-in-bio Builder](https://sharpdev.tools/tools/bio/): Build a clean bio with Unicode styling (bold, italic, script) and emoji dividers. Character counter for Instagram, Twitter, TikTok bios.
+- [OG & Twitter Card Generator](https://sharpdev.tools/tools/meta-tags/): Generate Open Graph and Twitter Card meta tags. Live preview for Facebook, Twitter, LinkedIn, Slack.
+- [Email Signature Generator](https://sharpdev.tools/tools/signature/): Build a clean HTML email signature. Four templates, live preview. Works in Gmail, Outlook, Apple Mail.
+- [UTM Link Builder](https://sharpdev.tools/tools/utm/): Build clean campaign URLs for Google Analytics. Source, medium, campaign, content, term — lowercase-normalized.
+- [Mention & Hashtag Extractor](https://sharpdev.tools/tools/mention-extractor/): Paste any text — pull every @mention, #hashtag and URL. Deduplicated, sortable, copy-ready.
+- [Multi-Platform Char Counter](https://sharpdev.tools/tools/char-counter-multi/): Paste once, see limits for Twitter, Instagram, LinkedIn, TikTok, Threads, Bluesky, Mastodon, Pinterest, Facebook.
+- [Username / Handle Checker](https://sharpdev.tools/tools/handle-checker/): Validate your handle format across Twitter, Instagram, TikTok, GitHub, Reddit, YouTube, LinkedIn, Bluesky and more.
+
+## Images & Media
+
+- [Image Compressor & Resizer](https://sharpdev.tools/tools/image/): Compress and resize JPG, PNG, WebP in your browser. Batch processing. Target file size or quality.
+- [Image Downloader](https://sharpdev.tools/tools/image-dl/): Download any image from the web. Paste a direct URL or a webpage link to find and save all its images.
+- [Image to Base64](https://sharpdev.tools/tools/image-base64/): Convert any image to a data URL for embedding in CSS, HTML, or JSON. Drop or paste.
+- [Image Format Converter](https://sharpdev.tools/tools/image-convert/): Convert PNG ↔ JPG ↔ WebP in your browser. Set quality, batch convert, download as ZIP.
+- [Image Color Picker](https://sharpdev.tools/tools/image-color/): Click any pixel in an uploaded image to get HEX, RGB, HSL. Build a palette of multiple picks.
+- [Image Rotate & Flip](https://sharpdev.tools/tools/image-rotate/): Rotate any image 90°, 180°, 270° or flip horizontally / vertically. Lossless at right angles. Custom-angle slider for arbitrary rotation.
+- [Image Crop](https://sharpdev.tools/tools/image-crop/): Free crop or aspect-lock to 1:1, 4:5, 9:16, 16:9 and more. Drag handles to size + position. PNG/JPG export.
+- [HEIC to JPG / PNG](https://sharpdev.tools/tools/heic-jpg/): Convert iPhone HEIC / HEIF photos to standard JPG or PNG. Batch convert, download as ZIP. Browser-only.
+- [Image to Text (OCR)](https://sharpdev.tools/tools/ocr/): Extract text from any image via Tesseract.js. 100+ languages, browser-only — your image never uploaded.
+- [Pixelate / Blur Image](https://sharpdev.tools/tools/pixelate/): Draw redaction boxes on an image — pixelate, blur, or solid black bar. For faces, license plates, sensitive info.
+- [Photo Collage Maker](https://sharpdev.tools/tools/photo-collage/): Combine 2-9 photos into one image. Grid layout, configurable gap + background, IG / Story output sizes.
+- [Color Palette from Image](https://sharpdev.tools/tools/color-from-image/): Auto-extract dominant 3-12 colors from any image. Median-cut quantization, HEX / RGB / HSL output.
+- [GIF Maker](https://sharpdev.tools/tools/gif-maker/): Combine 2-30 images into an animated GIF. Drag to reorder, set frame delay + size. Browser-only via gif.js.
+- [EXIF / Image Metadata Viewer](https://sharpdev.tools/tools/exif/): See camera, lens, exposure, and GPS data in your photos. Strip metadata before sharing for privacy.
+- [Favicon Generator](https://sharpdev.tools/tools/favicon/): Make favicons from an emoji, text, or image. Download PNGs at every size. Copy HTML snippet.
+- [Image Resizer](https://sharpdev.tools/tools/image-resize/): Resize images to exact pixels with aspect lock. In your browser, no upload.
+- [Image Watermark](https://sharpdev.tools/tools/image-watermark/): Overlay text on an image — position, size, color, opacity. In your browser.
+- [Avatar Crop](https://sharpdev.tools/tools/avatar-crop/): Crop a photo to a circle or square avatar at any size. Transparent PNG.
+- [Image to ASCII](https://sharpdev.tools/tools/image-ascii/): Turn a photo into text ASCII art — width, charset, invert. Copy/download.
+- [Meme Generator](https://sharpdev.tools/tools/meme/): Add classic top/bottom caption text to an image and download. In your browser.
+- [Audio Trimmer](https://sharpdev.tools/tools/audio-trim/): Cut a clip from an audio file by start/end time, download as WAV. In your browser.
+
+## PDF
+
+- [PDF to Text](https://sharpdev.tools/tools/pdf-text/): Extract text from any PDF file. Copy or download as .txt. Your file never leaves your device.
+- [PDF to JPG / PNG](https://sharpdev.tools/tools/pdf-to-image/): Convert every page of a PDF into a JPG or PNG image. Pick 72/144/300 DPI. Download single pages or all as ZIP.
+- [Image to PDF](https://sharpdev.tools/tools/image-to-pdf/): Combine multiple JPG, PNG, WebP or GIF images into a single PDF. Drag to reorder, pick page size and margin.
+- [Merge PDF](https://sharpdev.tools/tools/pdf-merge/): Combine multiple PDFs into one file. Drag to reorder. Runs entirely in your browser — your PDFs stay local.
+- [Split PDF](https://sharpdev.tools/tools/pdf-split/): Extract a page range or split every page into its own file. Download as ZIP. Range syntax: 1-5, 8, 10-12.
+- [Rotate PDF](https://sharpdev.tools/tools/pdf-rotate/): Rotate every page or click thumbnails to rotate individual pages 90, 180 or 270 degrees. Save as new PDF.
+- [Delete Pages from PDF](https://sharpdev.tools/tools/pdf-delete-pages/): Click page thumbnails to mark them for removal, then save a clean PDF without those pages.
+- [PDF Page Numbering](https://sharpdev.tools/tools/pdf-numbers/): Add page numbers to any PDF. Pick position (header / footer × left / center / right), format, start number.
+- [PDF Watermark](https://sharpdev.tools/tools/pdf-watermark/): Add a diagonal text watermark — DRAFT, CONFIDENTIAL, copyright. Color, opacity, rotation, font size.
+- [Markdown to PDF](https://sharpdev.tools/tools/md-to-pdf/): Paste Markdown, see a live preview, download a clean PDF. Tables, code blocks, lists, all supported.
+- [HTML to PDF](https://sharpdev.tools/tools/html-to-pdf/): Paste raw HTML, see a live preview, download a paginated PDF. Inline CSS and data-URL images supported.
+- [Word to PDF](https://sharpdev.tools/tools/word-to-pdf/): Convert .docx files to PDF directly in your browser via mammoth.js — your document never leaves your device. Headings, tables, lists, images preserved.
+- [PDF Metadata Editor](https://sharpdev.tools/tools/pdf-metadata/): View + edit Title, Author, Subject, Keywords, Creator. Strip personal info before sharing. SEO-friendly.
+- [Crop PDF](https://sharpdev.tools/tools/pdf-crop/): Trim margins from every page. Set top / bottom / left / right in mm or percentage. Useful for scanner output.
+- [Reorder PDF Pages](https://sharpdev.tools/tools/pdf-reorder/): Drag thumbnails to rearrange pages. Reverse all, remove pages, reset to original order. Save the new PDF.
+- [Insert PDF into Another](https://sharpdev.tools/tools/pdf-insert/): Insert pages from PDF B into PDF A at any position. Optional page-range filter. Different from Merge.
+- [Sign a PDF](https://sharpdev.tools/tools/pdf-sign/): Place a signature image on any page, drag to position, scale. PNG with transparency works best.
+- [Compress PDF](https://sharpdev.tools/tools/pdf-compress/): Reduce file size by rasterizing + JPEG-recompressing. Best for scans + slide decks. Before / after size shown.
+- [PDF Form Flatten](https://sharpdev.tools/tools/pdf-flatten/): Lock filled form values into static text — recipient can no longer edit. For signed contracts, tax forms, invoices.
+- [PDF Form Fill](https://sharpdev.tools/tools/pdf-fill/): Open any AcroForm PDF, fill every field directly in the browser, save the completed file.
+- [PDF OCR — Make Scans Searchable](https://sharpdev.tools/tools/pdf-ocr/): Run OCR on a scanned PDF via Tesseract.js. Output looks identical but has an invisible searchable text layer.
+- [PDF Redact](https://sharpdev.tools/tools/pdf-redact/): Permanent black-bar redaction — text underneath is destroyed via rasterization, not just hidden.
+- [PDF Page Size Resize](https://sharpdev.tools/tools/pdf-resize/): Convert pages between A4, Letter, Legal, A3, A5 or custom. Fit-with-margins or stretch-to-fill.
+- [PDF to Markdown](https://sharpdev.tools/tools/pdf-to-md/): Extract text with detected H1/H2/H3 headings via font-size clustering. Best for text-heavy documents.
+- [PDF to HTML](https://sharpdev.tools/tools/pdf-to-html/): Semantic h1/p tags or absolute-positioned divs. Two modes. Wrap in full HTML5 document.
+- [PDF to Word (.docx)](https://sharpdev.tools/tools/pdf-to-word/): Honest text-only conversion to editable .docx. Headings preserved. Best for articles, reports, books.
+
+## Design & CSS
+
+- [Color Palette Extractor](https://sharpdev.tools/tools/colors/): Upload an image and extract its dominant colors. HEX, RGB, HSL values. Click to copy.
+- [Color Converter](https://sharpdev.tools/tools/color-convert/): Convert between HEX, RGB, HSL, HSV, CMYK. Eyedrop or type any format. Includes complementary palettes.
+- [WCAG Contrast Checker](https://sharpdev.tools/tools/contrast/): Check foreground/background pair against WCAG AA and AAA for normal and large text. Real-time score.
+- [Gradient Generator](https://sharpdev.tools/tools/gradient/): Visual builder for linear and radial CSS gradients. Multiple color stops, live preview, copy code.
+- [Box Shadow Generator](https://sharpdev.tools/tools/shadow/): Visual builder with multiple stacked shadows, inset toggle, and full control over offset, blur, spread, colour.
+- [Text Shadow Generator](https://sharpdev.tools/tools/text-shadow/): Build polished text shadow effects with live preview and presets — glow, emboss, hard drop, neon and more.
+- [CSS Filter Playground](https://sharpdev.tools/tools/css-filter/): Stack CSS filters on any image in real time — blur, brightness, contrast, hue-rotate, saturate, invert, sepia.
+- [Glassmorphism Generator](https://sharpdev.tools/tools/glass/): Trendy frosted-glass effect builder. Backdrop-filter blur, tint, border, shadow and corner radius tuned live.
+- [Border Radius Generator](https://sharpdev.tools/tools/radius/): Control all 8 corner handles individually. Elliptical radii, live preview, copy the full CSS rule.
+- [Clip-path Generator](https://sharpdev.tools/tools/clip-path/): Visual builder for CSS clip-path polygons, circles and ellipses. Drag vertices directly in the preview.
+- [CSS Generator](https://sharpdev.tools/tools/css-gen/): Visual builders for CSS gradients, box shadows, and border radius. Live preview, copy code.
+- [CSS Animation Generator](https://sharpdev.tools/tools/css-anim/): Build keyframe animations visually. Drag timeline, edit per-frame properties, copy CSS.
+- [CSS Flexbox Generator](https://sharpdev.tools/tools/css-flexbox/): Visual Flexbox builder with live preview. Direction, justify, align, wrap, gap — copy the CSS.
+- [CSS Grid Generator](https://sharpdev.tools/tools/css-grid/): Visual CSS Grid builder. Presets for sidebar, cards, dashboard, Holy Grail. Custom templates supported.
+- [Color Mixer](https://sharpdev.tools/tools/color-mixer/): Blend two colors and get the result plus every step in between. Adjustable ratio.
+- [CSS Triangle Generator](https://sharpdev.tools/tools/css-triangle/): Pure CSS triangles in any direction, size and color via the border trick. Live preview.
+- [Cubic Bezier Editor](https://sharpdev.tools/tools/cubic-bezier/): Drag handles to design a CSS cubic-bezier easing curve. Live animation preview.
+- [Neumorphism Generator](https://sharpdev.tools/tools/neumorphism/): Soft-UI (neumorphic) shadow CSS with dual shadows and a live preview. Copy-paste ready.
+- [PX to REM Converter](https://sharpdev.tools/tools/px-rem/): Convert px, rem, em, pt and percent for CSS based on your root font size.
+- [Color Blindness Simulator](https://sharpdev.tools/tools/color-blind/): Preview colors under protanopia, deuteranopia, tritanopia and achromatopsia for accessibility.
+- [Color Name Finder](https://sharpdev.tools/tools/color-name/): Find the nearest CSS named color for any hex value, with exact-match detection.
+- [CSS Button](https://sharpdev.tools/tools/css-button/): Design a button visually, copy the CSS. Colors, radius, border, shadow, live preview.
+- [CSS Spinner](https://sharpdev.tools/tools/css-spinner/): Pure-CSS loading spinner — size, color, speed. Copy HTML + CSS, no images.
+- [CSS Scrollbar](https://sharpdev.tools/tools/css-scrollbar/): Style scrollbars — width, track & thumb colors, radius. WebKit + standard CSS.
+- [Gradient Text](https://sharpdev.tools/tools/text-gradient/): Gradient-filled text via background-clip — two colors + angle, live preview.
+- [CSS Specificity](https://sharpdev.tools/tools/css-specificity/): Score any selector's specificity (IDs, classes, elements) with a breakdown.
+- [Color Palette](https://sharpdev.tools/tools/color-palette/): Harmonious palettes from a base color — complementary, triadic, analogous & more.
+
+## Calculators
+
+- [Meeting Cost Calculator](https://sharpdev.tools/tools/meeting-cost/): Find out how much your meetings actually cost. Enter attendees, salaries, and duration.
+- [Aspect Ratio Calculator](https://sharpdev.tools/tools/aspect/): Resize images and videos keeping proportions. Presets for YouTube, Reels, Instagram, DSLR.
+- [Unit Converter](https://sharpdev.tools/tools/convert/): Convert between units instantly. Length, weight, temperature, area, volume, speed, data size, time, CSS.
+- [Number Base Converter](https://sharpdev.tools/tools/base/): Convert between binary, octal, decimal, and hex. Live-linked fields. Bitwise inspector.
+- [BMI & Body Calculator](https://sharpdev.tools/tools/bmi/): BMI, BMR, ideal weight, TDEE, and macros. Metric or imperial. US Navy body-fat method.
+- [Roman Numerals Converter](https://sharpdev.tools/tools/roman/): Convert between Roman numerals and regular numbers. Supports extended notation up to 3,999,999.
+- [Percentage Calculator](https://sharpdev.tools/tools/percent/): Three calculators in one: X % of Y, what % is X of Y, and percentage increase/decrease between two numbers.
+- [Random Number Generator](https://sharpdev.tools/tools/random/): Generate random integers in any range, one-off or in batch. Cryptographically random, unique option.
+- [Temperature Converter](https://sharpdev.tools/tools/temperature/): Convert between Celsius, Fahrenheit, Kelvin and Rankine. Live three-way conversion as you type.
+- [Number to Words](https://sharpdev.tools/tools/num-words/): Spell out any integer in English, from zero to quadrillions. Useful for cheques, legal text, and invoices.
+- [TDEE & BMR Calculator](https://sharpdev.tools/tools/tdee/): Daily calorie needs using Mifflin-St Jeor. Activity multipliers + targets for cutting, maintaining and bulking.
+- [Due Date Calculator](https://sharpdev.tools/tools/pregnancy/): Calculate due date and current pregnancy week from LMP or conception. Trimester breakdown + milestones.
+- [Running Pace Calculator](https://sharpdev.tools/tools/pace/): Pace ↔ time ↔ distance. Split tables for 5K, 10K, half-marathon, marathon at any pace you set.
+- [Cooking Measurement Converter](https://sharpdev.tools/tools/cooking/): Cups ↔ grams ↔ ml ↔ oz with per-ingredient density. Plus °C / °F / gas-mark for oven temps.
+- [Sleep Cycle Calculator](https://sharpdev.tools/tools/sleep/): Wake at the end of a 90-minute cycle (not mid-cycle). Bedtime suggestions or wake-time options.
+- [GPA Calculator](https://sharpdev.tools/tools/gpa/): Unweighted (4.0) + weighted (5.0) GPA from courses, grades, credits, and AP / honors / college flags.
+- [Gas Mileage Calculator](https://sharpdev.tools/tools/mpg/): MPG (US + UK), L/100km, km/L, cost-per-mile, full trip cost. Multi-currency.
+- [Recipe Scaler](https://sharpdev.tools/tools/recipe-scaler/): Paste any recipe, change servings — every ingredient quantity scales. Fraction-aware, decimals or pretty fractions.
+- [Average Calculator](https://sharpdev.tools/tools/average/): Mean, median, mode, range, sum and count from any list of numbers.
+- [Hours Calculator](https://sharpdev.tools/tools/hours-calculator/): Add up work time from start/end rows, subtract breaks. Total in h:mm and decimal hours.
+- [Fraction Calculator](https://sharpdev.tools/tools/fraction/): Simplify fractions, fraction to decimal and decimal to fraction, mixed numbers.
+- [Ratio Calculator](https://sharpdev.tools/tools/ratio/): Simplify ratios to lowest terms and solve proportions A:B = C:?. Scale mixes and recipes.
+- [Scientific Notation](https://sharpdev.tools/tools/scientific-notation/): Convert numbers to/from scientific, E-notation and engineering notation.
+- [Circle Calculator](https://sharpdev.tools/tools/circle-calculator/): Area, circumference, radius and diameter from any single value.
+- [Triangle Calculator](https://sharpdev.tools/tools/triangle-calculator/): Area (Heron), perimeter, type and right-angle check from three sides.
+- [Pythagorean Calculator](https://sharpdev.tools/tools/pythagorean/): Solve a² + b² = c² for the missing side of a right triangle.
+- [GCD & LCM Calculator](https://sharpdev.tools/tools/gcd-lcm/): Greatest common divisor (HCF) and least common multiple of two or more numbers.
+- [Prime Checker](https://sharpdev.tools/tools/prime-checker/): Check if a number is prime and get its prime factorization.
+- [Standard Deviation](https://sharpdev.tools/tools/standard-deviation/): Population & sample standard deviation, variance and mean from a number list.
+- [Combinations & Permutations](https://sharpdev.tools/tools/combinations/): nCr (combinations), nPr (permutations) and factorials from n and r.
+- [Unit Price Calculator](https://sharpdev.tools/tools/unit-price/): Compare products by price per unit, find the cheapest option at the shelf.
+- [Slope Calculator](https://sharpdev.tools/tools/slope/): Slope, distance, midpoint and y=mx+b from two points (x1,y1) and (x2,y2).
+- [Quadratic Solver](https://sharpdev.tools/tools/quadratic/): Solve ax²+bx+c=0: roots (real or complex), discriminant and vertex.
+- [Tally Counter](https://sharpdev.tools/tools/tally-counter/): Click counter with keyboard support & custom step. Count is saved in your browser.
+- [Fibonacci Generator](https://sharpdev.tools/tools/fibonacci/): List N Fibonacci terms from any start point, exact big-integer math, one-click copy.
+- [Prime Factorization](https://sharpdev.tools/tools/prime-factors/): Break a number into its prime factors, in exponent form (360 = 2³ × 3² × 5).
+- [Factorial Calculator](https://sharpdev.tools/tools/factorial/): Compute n! exactly with big-integer math, plus the digit count.
+- [Simple Interest](https://sharpdev.tools/tools/simple-interest/): Interest & total from principal, rate and time (I = P·r·t).
+- [Ohm's Law](https://sharpdev.tools/tools/ohms-law/): Enter any 2 of V, I, R, P → get the other two. V=I·R, P=V·I.
+
+## Converters
+
+- [Centimeters to Inches](https://sharpdev.tools/tools/cm-to-inches/): Convert centimeters to inches (1 centimeter = 0.393701 in). Live result + reference table.
+- [Inches to Centimeters](https://sharpdev.tools/tools/inches-to-cm/): Convert inches to centimeters (1 inch = 2.54 cm). Live result + reference table.
+- [Millimeters to Inches](https://sharpdev.tools/tools/mm-to-inches/): Convert millimeters to inches (1 millimeter = 0.03937 in). Live result + reference table.
+- [Inches to Millimeters](https://sharpdev.tools/tools/inches-to-mm/): Convert inches to millimeters (1 inch = 25.4 mm). Live result + reference table.
+- [Feet to Meters](https://sharpdev.tools/tools/feet-to-meters/): Convert feet to meters (1 foot = 0.3048 m). Live result + reference table.
+- [Meters to Feet](https://sharpdev.tools/tools/meters-to-feet/): Convert meters to feet (1 meter = 3.28084 ft). Live result + reference table.
+- [Kilometers to Miles](https://sharpdev.tools/tools/km-to-miles/): Convert kilometers to miles (1 kilometer = 0.621371 mi). Live result + reference table.
+- [Miles to Kilometers](https://sharpdev.tools/tools/miles-to-km/): Convert miles to kilometers (1 mile = 1.60934 km). Live result + reference table.
+- [Centimeters to Feet](https://sharpdev.tools/tools/cm-to-feet/): Convert centimeters to feet (1 centimeter = 0.032808 ft). Live result + reference table.
+- [Feet to Centimeters](https://sharpdev.tools/tools/feet-to-cm/): Convert feet to centimeters (1 foot = 30.48 cm). Live result + reference table.
+- [Meters to Yards](https://sharpdev.tools/tools/meters-to-yards/): Convert meters to yards (1 meter = 1.09361 yd). Live result + reference table.
+- [Yards to Meters](https://sharpdev.tools/tools/yards-to-meters/): Convert yards to meters (1 yard = 0.9144 m). Live result + reference table.
+- [Kilograms to Pounds](https://sharpdev.tools/tools/kg-to-lbs/): Convert kilograms to pounds (1 kilogram = 2.20462 lb). Live result + reference table.
+- [Pounds to Kilograms](https://sharpdev.tools/tools/lbs-to-kg/): Convert pounds to kilograms (1 pound = 0.453592 kg). Live result + reference table.
+- [Grams to Ounces](https://sharpdev.tools/tools/grams-to-ounces/): Convert grams to ounces (1 gram = 0.035274 oz). Live result + reference table.
+- [Ounces to Grams](https://sharpdev.tools/tools/ounces-to-grams/): Convert ounces to grams (1 ounce = 28.3495 g). Live result + reference table.
+- [Kilograms to Stone](https://sharpdev.tools/tools/kg-to-stone/): Convert kilograms to stone (1 kilogram = 0.157473 st). Live result + reference table.
+- [Stone to Kilograms](https://sharpdev.tools/tools/stone-to-kg/): Convert stone to kilograms (1 stone = 6.35029 kg). Live result + reference table.
+- [Pounds to Ounces](https://sharpdev.tools/tools/lbs-to-ounces/): Convert pounds to ounces (1 pound = 16 oz). Live result + reference table.
+- [Ounces to Pounds](https://sharpdev.tools/tools/ounces-to-lbs/): Convert ounces to pounds (1 ounce = 0.0625 lb). Live result + reference table.
+- [Liters to US gallons](https://sharpdev.tools/tools/liters-to-gallons/): Convert liters to US gallons (1 liter = 0.264172 gal). Live result + reference table.
+- [US gallons to Liters](https://sharpdev.tools/tools/gallons-to-liters/): Convert US gallons to liters (1 US gallon = 3.78541 L). Live result + reference table.
+- [Milliliters to US cups](https://sharpdev.tools/tools/ml-to-cups/): Convert milliliters to US cups (1 milliliter = 0.004227 cup). Live result + reference table.
+- [US cups to Milliliters](https://sharpdev.tools/tools/cups-to-ml/): Convert US cups to milliliters (1 US cup = 236.588 ml). Live result + reference table.
+- [Miles per hour to Kilometers per hour](https://sharpdev.tools/tools/mph-to-kmh/): Convert miles per hour to kilometers per hour (1 mile per hour = 1.60934 km/h). Live result + reference table.
+- [Kilometers per hour to Miles per hour](https://sharpdev.tools/tools/kmh-to-mph/): Convert kilometers per hour to miles per hour (1 kilometer per hour = 0.621371 mph). Live result + reference table.
+- [Megabytes to Gigabytes](https://sharpdev.tools/tools/mb-to-gb/): Convert megabytes to gigabytes (1 megabyte = 0.001 GB). Live result + reference table.
+- [Gigabytes to Megabytes](https://sharpdev.tools/tools/gb-to-mb/): Convert gigabytes to megabytes (1 gigabyte = 1000 MB). Live result + reference table.
+- [Kilobytes to Megabytes](https://sharpdev.tools/tools/kb-to-mb/): Convert kilobytes to megabytes (1 kilobyte = 0.001 MB). Live result + reference table.
+- [Megabytes to Kilobytes](https://sharpdev.tools/tools/mb-to-kb/): Convert megabytes to kilobytes (1 megabyte = 1000 KB). Live result + reference table.
+- [Celsius to Fahrenheit](https://sharpdev.tools/tools/celsius-to-fahrenheit/): Convert Celsius to Fahrenheit (multiply by 9/5 and add 32). Live result + reference table.
+- [Fahrenheit to Celsius](https://sharpdev.tools/tools/fahrenheit-to-celsius/): Convert Fahrenheit to Celsius (subtract 32, then multiply by 5/9). Live result + reference table.
+- [Celsius to Kelvin](https://sharpdev.tools/tools/celsius-to-kelvin/): Convert Celsius to Kelvin (add 273.15). Live result + reference table.
+- [Kelvin to Celsius](https://sharpdev.tools/tools/kelvin-to-celsius/): Convert Kelvin to Celsius (subtract 273.15). Live result + reference table.
+- [Millimeters to Centimeters](https://sharpdev.tools/tools/mm-to-cm/): Convert millimeters to centimeters (1 millimeter = 0.1 cm). Live result + reference table.
+- [Centimeters to Millimeters](https://sharpdev.tools/tools/cm-to-mm/): Convert centimeters to millimeters (1 centimeter = 10 mm). Live result + reference table.
+- [Kilometers to Feet](https://sharpdev.tools/tools/km-to-feet/): Convert kilometers to feet (1 kilometer = 3280.84 ft). Live result + reference table.
+- [Feet to Kilometers](https://sharpdev.tools/tools/feet-to-km/): Convert feet to kilometers (1 foot = 0.000305 km). Live result + reference table.
+- [Miles to Yards](https://sharpdev.tools/tools/miles-to-yards/): Convert miles to yards (1 mile = 1760 yd). Live result + reference table.
+- [Yards to Miles](https://sharpdev.tools/tools/yards-to-miles/): Convert yards to miles (1 yard = 0.000568 mi). Live result + reference table.
+- [Yards to Feet](https://sharpdev.tools/tools/yards-to-feet/): Convert yards to feet (1 yard = 3 ft). Live result + reference table.
+- [Feet to Yards](https://sharpdev.tools/tools/feet-to-yards/): Convert feet to yards (1 foot = 0.333333 yd). Live result + reference table.
+- [Miles to Feet](https://sharpdev.tools/tools/miles-to-feet/): Convert miles to feet (1 mile = 5280 ft). Live result + reference table.
+- [Feet to Miles](https://sharpdev.tools/tools/feet-to-miles/): Convert feet to miles (1 foot = 0.000189 mi). Live result + reference table.
+- [Milligrams to Grams](https://sharpdev.tools/tools/milligrams-to-grams/): Convert milligrams to grams (1 milligram = 0.001 g). Live result + reference table.
+- [Grams to Milligrams](https://sharpdev.tools/tools/grams-to-milligrams/): Convert grams to milligrams (1 gram = 1000 mg). Live result + reference table.
+- [Tonnes to Kilograms](https://sharpdev.tools/tools/tonnes-to-kg/): Convert tonnes to kilograms (1 tonne = 1000 kg). Live result + reference table.
+- [Kilograms to Tonnes](https://sharpdev.tools/tools/kg-to-tonnes/): Convert kilograms to tonnes (1 kilogram = 0.001 t). Live result + reference table.
+- [Grams to Pounds](https://sharpdev.tools/tools/grams-to-lbs/): Convert grams to pounds (1 gram = 0.002205 lb). Live result + reference table.
+- [Pounds to Grams](https://sharpdev.tools/tools/lbs-to-grams/): Convert pounds to grams (1 pound = 453.592 g). Live result + reference table.
+- [Ounces to Kilograms](https://sharpdev.tools/tools/ounces-to-kg/): Convert ounces to kilograms (1 ounce = 0.02835 kg). Live result + reference table.
+- [Kilograms to Ounces](https://sharpdev.tools/tools/kg-to-ounces/): Convert kilograms to ounces (1 kilogram = 35.274 oz). Live result + reference table.
+- [Tablespoons to Milliliters](https://sharpdev.tools/tools/tablespoons-to-ml/): Convert tablespoons to milliliters (1 tablespoon = 14.7868 ml). Live result + reference table.
+- [Milliliters to Tablespoons](https://sharpdev.tools/tools/ml-to-tablespoons/): Convert milliliters to tablespoons (1 milliliter = 0.067628 tbsp). Live result + reference table.
+- [Teaspoons to Milliliters](https://sharpdev.tools/tools/teaspoons-to-ml/): Convert teaspoons to milliliters (1 teaspoon = 4.92892 ml). Live result + reference table.
+- [Milliliters to Teaspoons](https://sharpdev.tools/tools/ml-to-teaspoons/): Convert milliliters to teaspoons (1 milliliter = 0.202884 tsp). Live result + reference table.
+- [US pints to Milliliters](https://sharpdev.tools/tools/pints-to-ml/): Convert US pints to milliliters (1 US pint = 473.176 ml). Live result + reference table.
+- [Milliliters to US pints](https://sharpdev.tools/tools/ml-to-pints/): Convert milliliters to US pints (1 milliliter = 0.002113 pt). Live result + reference table.
+- [US quarts to Liters](https://sharpdev.tools/tools/quarts-to-liters/): Convert US quarts to liters (1 US quart = 0.946353 L). Live result + reference table.
+- [Liters to US quarts](https://sharpdev.tools/tools/liters-to-quarts/): Convert liters to US quarts (1 liter = 1.05669 qt). Live result + reference table.
+- [US fluid ounces to Milliliters](https://sharpdev.tools/tools/fluid-ounces-to-ml/): Convert US fluid ounces to milliliters (1 US fluid ounce = 29.5735 ml). Live result + reference table.
+- [Milliliters to US fluid ounces](https://sharpdev.tools/tools/ml-to-fluid-ounces/): Convert milliliters to US fluid ounces (1 milliliter = 0.033814 fl oz). Live result + reference table.
+- [Knots to Kilometers per hour](https://sharpdev.tools/tools/knots-to-kmh/): Convert knots to kilometers per hour (1 knot = 1.852 km/h). Live result + reference table.
+- [Kilometers per hour to Knots](https://sharpdev.tools/tools/kmh-to-knots/): Convert kilometers per hour to knots (1 kilometer per hour = 0.539957 kn). Live result + reference table.
+- [Knots to Miles per hour](https://sharpdev.tools/tools/knots-to-mph/): Convert knots to miles per hour (1 knot = 1.15078 mph). Live result + reference table.
+- [Miles per hour to Knots](https://sharpdev.tools/tools/mph-to-knots/): Convert miles per hour to knots (1 mile per hour = 0.868976 kn). Live result + reference table.
+- [Meters per second to Kilometers per hour](https://sharpdev.tools/tools/meters-per-second-to-kmh/): Convert meters per second to kilometers per hour (1 meter per second = 3.6 km/h). Live result + reference table.
+- [Kilometers per hour to Meters per second](https://sharpdev.tools/tools/kmh-to-meters-per-second/): Convert kilometers per hour to meters per second (1 kilometer per hour = 0.277778 m/s). Live result + reference table.
+- [Feet per second to Miles per hour](https://sharpdev.tools/tools/feet-per-second-to-mph/): Convert feet per second to miles per hour (1 foot per second = 0.681818 mph). Live result + reference table.
+- [Miles per hour to Feet per second](https://sharpdev.tools/tools/mph-to-feet-per-second/): Convert miles per hour to feet per second (1 mile per hour = 1.46667 ft/s). Live result + reference table.
+- [Gigabytes to Terabytes](https://sharpdev.tools/tools/gb-to-tb/): Convert gigabytes to terabytes (1 gigabyte = 0.001 TB). Live result + reference table.
+- [Terabytes to Gigabytes](https://sharpdev.tools/tools/tb-to-gb/): Convert terabytes to gigabytes (1 terabyte = 1000 GB). Live result + reference table.
+- [Bytes to Kilobytes](https://sharpdev.tools/tools/bytes-to-kb/): Convert bytes to kilobytes (1 byte = 0.001 KB). Live result + reference table.
+- [Kilobytes to Bytes](https://sharpdev.tools/tools/kb-to-bytes/): Convert kilobytes to bytes (1 kilobyte = 1000 B). Live result + reference table.
+- [Bits to Bytes](https://sharpdev.tools/tools/bits-to-bytes/): Convert bits to bytes (1 bit = 0.125 B). Live result + reference table.
+- [Bytes to Bits](https://sharpdev.tools/tools/bytes-to-bits/): Convert bytes to bits (1 byte = 8 bit). Live result + reference table.
+- [Square meters to Square feet](https://sharpdev.tools/tools/square-meters-to-square-feet/): Convert square meters to square feet (1 square meter = 10.7639 ft²). Live result + reference table.
+- [Square feet to Square meters](https://sharpdev.tools/tools/square-feet-to-square-meters/): Convert square feet to square meters (1 square foot = 0.092903 m²). Live result + reference table.
+- [Acres to Hectares](https://sharpdev.tools/tools/acres-to-hectares/): Convert acres to hectares (1 acre = 0.404686 ha). Live result + reference table.
+- [Hectares to Acres](https://sharpdev.tools/tools/hectares-to-acres/): Convert hectares to acres (1 hectare = 2.47105 ac). Live result + reference table.
+- [Square kilometers to Square miles](https://sharpdev.tools/tools/square-kilometers-to-square-miles/): Convert square kilometers to square miles (1 square kilometer = 0.386102 mi²). Live result + reference table.
+- [Square miles to Square kilometers](https://sharpdev.tools/tools/square-miles-to-square-kilometers/): Convert square miles to square kilometers (1 square mile = 2.58999 km²). Live result + reference table.
+- [Square feet to Square yards](https://sharpdev.tools/tools/square-feet-to-square-yards/): Convert square feet to square yards (1 square foot = 0.111111 yd²). Live result + reference table.
+- [Square yards to Square feet](https://sharpdev.tools/tools/square-yards-to-square-feet/): Convert square yards to square feet (1 square yard = 9 ft²). Live result + reference table.
+- [Bar to Psi](https://sharpdev.tools/tools/bar-to-psi/): Convert bar to psi (1 bar = 14.5038 psi). Live result + reference table.
+- [Psi to Bar](https://sharpdev.tools/tools/psi-to-bar/): Convert psi to bar (1 psi = 0.068948 bar). Live result + reference table.
+- [Psi to Kilopascals](https://sharpdev.tools/tools/psi-to-kilopascals/): Convert psi to kilopascals (1 psi = 6.89476 kPa). Live result + reference table.
+- [Kilopascals to Psi](https://sharpdev.tools/tools/kilopascals-to-psi/): Convert kilopascals to psi (1 kilopascal = 0.145038 psi). Live result + reference table.
+- [Atmospheres to Bar](https://sharpdev.tools/tools/atmospheres-to-bar/): Convert atmospheres to bar (1 atmosphere = 1.01325 bar). Live result + reference table.
+- [Bar to Atmospheres](https://sharpdev.tools/tools/bar-to-atmospheres/): Convert bar to atmospheres (1 bar = 0.986923 atm). Live result + reference table.
+- [Kilocalories to Kilojoules](https://sharpdev.tools/tools/kilocalories-to-kilojoules/): Convert kilocalories to kilojoules (1 kilocalorie = 4.184 kJ). Live result + reference table.
+- [Kilojoules to Kilocalories](https://sharpdev.tools/tools/kilojoules-to-kilocalories/): Convert kilojoules to kilocalories (1 kilojoule = 0.239006 kcal). Live result + reference table.
+- [Calories to Joules](https://sharpdev.tools/tools/calories-to-joules/): Convert calories to joules (1 calorie = 4.184 J). Live result + reference table.
+- [Joules to Calories](https://sharpdev.tools/tools/joules-to-calories/): Convert joules to calories (1 joule = 0.239006 cal). Live result + reference table.
+- [Degrees to Radians](https://sharpdev.tools/tools/degrees-to-radians/): Convert degrees to radians (1 degree = 0.017453 rad). Live result + reference table.
+- [Radians to Degrees](https://sharpdev.tools/tools/radians-to-degrees/): Convert radians to degrees (1 radian = 57.2958 deg). Live result + reference table.
+- [Horsepower to Kilowatts](https://sharpdev.tools/tools/horsepower-to-kilowatts/): Convert horsepower to kilowatts (1 horsepower = 0.7457 kW). Live result + reference table.
+- [Kilowatts to Horsepower](https://sharpdev.tools/tools/kilowatts-to-horsepower/): Convert kilowatts to horsepower (1 kilowatt = 1.34102 hp). Live result + reference table.
+- [Meters to Centimeters](https://sharpdev.tools/tools/meters-to-cm/): Convert meters to centimeters (1 meter = 100 cm). Live result + reference table.
+- [Centimeters to Meters](https://sharpdev.tools/tools/cm-to-meters/): Convert centimeters to meters (1 centimeter = 0.01 m). Live result + reference table.
+- [Meters to Inches](https://sharpdev.tools/tools/meters-to-inches/): Convert meters to inches (1 meter = 39.3701 in). Live result + reference table.
+- [Inches to Meters](https://sharpdev.tools/tools/inches-to-meters/): Convert inches to meters (1 inch = 0.0254 m). Live result + reference table.
+- [Inches to Yards](https://sharpdev.tools/tools/inches-to-yards/): Convert inches to yards (1 inch = 0.027778 yd). Live result + reference table.
+- [Yards to Inches](https://sharpdev.tools/tools/yards-to-inches/): Convert yards to inches (1 yard = 36 in). Live result + reference table.
+- [Grams to Kilograms](https://sharpdev.tools/tools/grams-to-kg/): Convert grams to kilograms (1 gram = 0.001 kg). Live result + reference table.
+- [Kilograms to Grams](https://sharpdev.tools/tools/kg-to-grams/): Convert kilograms to grams (1 kilogram = 1000 g). Live result + reference table.
+- [Pounds to Stone](https://sharpdev.tools/tools/lbs-to-stone/): Convert pounds to stone (1 pound = 0.071429 st). Live result + reference table.
+- [Stone to Pounds](https://sharpdev.tools/tools/stone-to-lbs/): Convert stone to pounds (1 stone = 14 lb). Live result + reference table.
+- [US cups to Tablespoons](https://sharpdev.tools/tools/cups-to-tablespoons/): Convert US cups to tablespoons (1 US cup = 16 tbsp). Live result + reference table.
+- [Tablespoons to US cups](https://sharpdev.tools/tools/tablespoons-to-cups/): Convert tablespoons to US cups (1 tablespoon = 0.0625 cup). Live result + reference table.
+- [Tablespoons to Teaspoons](https://sharpdev.tools/tools/tablespoons-to-teaspoons/): Convert tablespoons to teaspoons (1 tablespoon = 3 tsp). Live result + reference table.
+- [Teaspoons to Tablespoons](https://sharpdev.tools/tools/teaspoons-to-tablespoons/): Convert teaspoons to tablespoons (1 teaspoon = 0.333333 tbsp). Live result + reference table.
+- [US gallons to US cups](https://sharpdev.tools/tools/gallons-to-cups/): Convert US gallons to US cups (1 US gallon = 16 cup). Live result + reference table.
+- [US cups to US gallons](https://sharpdev.tools/tools/cups-to-gallons/): Convert US cups to US gallons (1 US cup = 0.0625 gal). Live result + reference table.
+- [US quarts to US cups](https://sharpdev.tools/tools/quarts-to-cups/): Convert US quarts to US cups (1 US quart = 4 cup). Live result + reference table.
+- [US cups to US quarts](https://sharpdev.tools/tools/cups-to-quarts/): Convert US cups to US quarts (1 US cup = 0.25 qt). Live result + reference table.
+- [US pints to US cups](https://sharpdev.tools/tools/pints-to-cups/): Convert US pints to US cups (1 US pint = 2 cup). Live result + reference table.
+- [US cups to US pints](https://sharpdev.tools/tools/cups-to-pints/): Convert US cups to US pints (1 US cup = 0.5 pt). Live result + reference table.
+- [Liters to Milliliters](https://sharpdev.tools/tools/liters-to-ml/): Convert liters to milliliters (1 liter = 1000 ml). Live result + reference table.
+- [Milliliters to Liters](https://sharpdev.tools/tools/ml-to-liters/): Convert milliliters to liters (1 milliliter = 0.001 L). Live result + reference table.
+- [Kilobytes to Gigabytes](https://sharpdev.tools/tools/kb-to-gb/): Convert kilobytes to gigabytes (1 kilobyte = 1e-06 GB). Live result + reference table.
+- [Gigabytes to Kilobytes](https://sharpdev.tools/tools/gb-to-kb/): Convert gigabytes to kilobytes (1 gigabyte = 1e+06 KB). Live result + reference table.
+- [Megabytes to Terabytes](https://sharpdev.tools/tools/mb-to-tb/): Convert megabytes to terabytes (1 megabyte = 1e-06 TB). Live result + reference table.
+- [Terabytes to Megabytes](https://sharpdev.tools/tools/tb-to-mb/): Convert terabytes to megabytes (1 terabyte = 1e+06 MB). Live result + reference table.
+- [Square meters to Acres](https://sharpdev.tools/tools/square-meters-to-acres/): Convert square meters to acres (1 square meter = 0.000247 ac). Live result + reference table.
+- [Acres to Square meters](https://sharpdev.tools/tools/acres-to-square-meters/): Convert acres to square meters (1 acre = 4046.86 m²). Live result + reference table.
+- [Square yards to Square meters](https://sharpdev.tools/tools/square-yards-to-square-meters/): Convert square yards to square meters (1 square yard = 0.836127 m²). Live result + reference table.
+- [Square meters to Square yards](https://sharpdev.tools/tools/square-meters-to-square-yards/): Convert square meters to square yards (1 square meter = 1.19599 yd²). Live result + reference table.
+- [Kilowatt-hours to Watt-hours](https://sharpdev.tools/tools/kilowatt-hours-to-watt-hours/): Convert kilowatt-hours to watt-hours (1 kilowatt-hour = 1000 Wh). Live result + reference table.
+- [Watt-hours to Kilowatt-hours](https://sharpdev.tools/tools/watt-hours-to-kilowatt-hours/): Convert watt-hours to kilowatt-hours (1 watt-hour = 0.001 kWh). Live result + reference table.
+- [Kilocalories to Calories](https://sharpdev.tools/tools/kilocalories-to-calories/): Convert kilocalories to calories (1 kilocalorie = 1000 cal). Live result + reference table.
+- [Calories to Kilocalories](https://sharpdev.tools/tools/calories-to-kilocalories/): Convert calories to kilocalories (1 calorie = 0.001 kcal). Live result + reference table.
+- [Atmospheres to Psi](https://sharpdev.tools/tools/atmospheres-to-psi/): Convert atmospheres to psi (1 atmosphere = 14.6959 psi). Live result + reference table.
+- [Psi to Atmospheres](https://sharpdev.tools/tools/psi-to-atmospheres/): Convert psi to atmospheres (1 psi = 0.068046 atm). Live result + reference table.
+- [Horsepower to Watts](https://sharpdev.tools/tools/horsepower-to-watts/): Convert horsepower to watts (1 horsepower = 745.7 W). Live result + reference table.
+- [Watts to Horsepower](https://sharpdev.tools/tools/watts-to-horsepower/): Convert watts to horsepower (1 watt = 0.001341 hp). Live result + reference table.
+- [Seconds to Minutes](https://sharpdev.tools/tools/seconds-to-minutes/): Convert seconds to minutes (1 second = 0.016667 min). Live result + reference table.
+- [Minutes to Seconds](https://sharpdev.tools/tools/minutes-to-seconds/): Convert minutes to seconds (1 minute = 60 s). Live result + reference table.
+- [Minutes to Hours](https://sharpdev.tools/tools/minutes-to-hours/): Convert minutes to hours (1 minute = 0.016667 hr). Live result + reference table.
+- [Hours to Minutes](https://sharpdev.tools/tools/hours-to-minutes/): Convert hours to minutes (1 hour = 60 min). Live result + reference table.
+- [Hours to Days](https://sharpdev.tools/tools/hours-to-days/): Convert hours to days (1 hour = 0.041667 d). Live result + reference table.
+- [Days to Hours](https://sharpdev.tools/tools/days-to-hours/): Convert days to hours (1 day = 24 hr). Live result + reference table.
+- [Days to Weeks](https://sharpdev.tools/tools/days-to-weeks/): Convert days to weeks (1 day = 0.142857 wk). Live result + reference table.
+- [Weeks to Days](https://sharpdev.tools/tools/weeks-to-days/): Convert weeks to days (1 week = 7 d). Live result + reference table.
+- [Milliseconds to Seconds](https://sharpdev.tools/tools/milliseconds-to-seconds/): Convert milliseconds to seconds (1 millisecond = 0.001 s). Live result + reference table.
+- [Seconds to Milliseconds](https://sharpdev.tools/tools/seconds-to-milliseconds/): Convert seconds to milliseconds (1 second = 1000 ms). Live result + reference table.
+- [Megahertz to Gigahertz](https://sharpdev.tools/tools/megahertz-to-gigahertz/): Convert megahertz to gigahertz (1 megahertz = 0.001 GHz). Live result + reference table.
+- [Gigahertz to Megahertz](https://sharpdev.tools/tools/gigahertz-to-megahertz/): Convert gigahertz to megahertz (1 gigahertz = 1000 MHz). Live result + reference table.
+- [Kilohertz to Megahertz](https://sharpdev.tools/tools/kilohertz-to-megahertz/): Convert kilohertz to megahertz (1 kilohertz = 0.001 MHz). Live result + reference table.
+- [Megahertz to Kilohertz](https://sharpdev.tools/tools/megahertz-to-kilohertz/): Convert megahertz to kilohertz (1 megahertz = 1000 kHz). Live result + reference table.
+- [Hertz to Kilohertz](https://sharpdev.tools/tools/hertz-to-kilohertz/): Convert hertz to kilohertz (1 hertz = 0.001 kHz). Live result + reference table.
+- [Kilohertz to Hertz](https://sharpdev.tools/tools/kilohertz-to-hertz/): Convert kilohertz to hertz (1 kilohertz = 1000 Hz). Live result + reference table.
+- [Megabits per second to Megabytes per second](https://sharpdev.tools/tools/mbps-to-mb-per-second/): Convert megabits per second to megabytes per second (1 megabit per second = 0.125 MB/s). Live result + reference table.
+- [Megabytes per second to Megabits per second](https://sharpdev.tools/tools/mb-per-second-to-mbps/): Convert megabytes per second to megabits per second (1 megabyte per second = 8 Mbps). Live result + reference table.
+- [Gigabits per second to Megabits per second](https://sharpdev.tools/tools/gbps-to-mbps/): Convert gigabits per second to megabits per second (1 gigabit per second = 1000 Mbps). Live result + reference table.
+- [Megabits per second to Gigabits per second](https://sharpdev.tools/tools/mbps-to-gbps/): Convert megabits per second to gigabits per second (1 megabit per second = 0.001 Gbps). Live result + reference table.
+- [Megabits per second to Kilobits per second](https://sharpdev.tools/tools/mbps-to-kbps/): Convert megabits per second to kilobits per second (1 megabit per second = 1000 kbps). Live result + reference table.
+- [Kilobits per second to Megabits per second](https://sharpdev.tools/tools/kbps-to-mbps/): Convert kilobits per second to megabits per second (1 kilobit per second = 0.001 Mbps). Live result + reference table.
+- [Newton metres to Foot-pounds](https://sharpdev.tools/tools/newton-metres-to-foot-pounds/): Convert newton metres to foot-pounds (1 newton metre = 0.737562 ft·lb). Live result + reference table.
+- [Foot-pounds to Newton metres](https://sharpdev.tools/tools/foot-pounds-to-newton-metres/): Convert foot-pounds to newton metres (1 foot-pound = 1.35582 N·m). Live result + reference table.
+- [Newton metres to Inch-pounds](https://sharpdev.tools/tools/newton-metres-to-inch-pounds/): Convert newton metres to inch-pounds (1 newton metre = 8.85075 in·lb). Live result + reference table.
+- [Inch-pounds to Newton metres](https://sharpdev.tools/tools/inch-pounds-to-newton-metres/): Convert inch-pounds to newton metres (1 inch-pound = 0.112985 N·m). Live result + reference table.
+- [Foot-pounds to Inch-pounds](https://sharpdev.tools/tools/foot-pounds-to-inch-pounds/): Convert foot-pounds to inch-pounds (1 foot-pound = 12 in·lb). Live result + reference table.
+- [Inch-pounds to Foot-pounds](https://sharpdev.tools/tools/inch-pounds-to-foot-pounds/): Convert inch-pounds to foot-pounds (1 inch-pound = 0.083333 ft·lb). Live result + reference table.
+- [Newtons to Pounds-force](https://sharpdev.tools/tools/newtons-to-pounds-force/): Convert newtons to pounds-force (1 newton = 0.224809 lbf). Live result + reference table.
+- [Pounds-force to Newtons](https://sharpdev.tools/tools/pounds-force-to-newtons/): Convert pounds-force to newtons (1 pound-force = 4.44822 N). Live result + reference table.
+- [Kilograms-force to Newtons](https://sharpdev.tools/tools/kilograms-force-to-newtons/): Convert kilograms-force to newtons (1 kilogram-force = 9.80665 N). Live result + reference table.
+- [Newtons to Kilograms-force](https://sharpdev.tools/tools/newtons-to-kilograms-force/): Convert newtons to kilograms-force (1 newton = 0.101972 kgf). Live result + reference table.
+- [Kilonewtons to Newtons](https://sharpdev.tools/tools/kilonewtons-to-newtons/): Convert kilonewtons to newtons (1 kilonewton = 1000 N). Live result + reference table.
+- [Newtons to Kilonewtons](https://sharpdev.tools/tools/newtons-to-kilonewtons/): Convert newtons to kilonewtons (1 newton = 0.001 kN). Live result + reference table.
+- [US gallons to US quarts](https://sharpdev.tools/tools/gallons-to-quarts/): Convert US gallons to US quarts (1 US gallon = 4 qt). Live result + reference table.
+- [US quarts to US gallons](https://sharpdev.tools/tools/quarts-to-gallons/): Convert US quarts to US gallons (1 US quart = 0.25 gal). Live result + reference table.
+- [US gallons to US pints](https://sharpdev.tools/tools/gallons-to-pints/): Convert US gallons to US pints (1 US gallon = 8 pt). Live result + reference table.
+- [US pints to US gallons](https://sharpdev.tools/tools/pints-to-gallons/): Convert US pints to US gallons (1 US pint = 0.125 gal). Live result + reference table.
+- [US quarts to US pints](https://sharpdev.tools/tools/quarts-to-pints/): Convert US quarts to US pints (1 US quart = 2 pt). Live result + reference table.
+- [US pints to US quarts](https://sharpdev.tools/tools/pints-to-quarts/): Convert US pints to US quarts (1 US pint = 0.5 qt). Live result + reference table.
+- [US cups to US fluid ounces](https://sharpdev.tools/tools/cups-to-fluid-ounces/): Convert US cups to US fluid ounces (1 US cup = 8 fl oz). Live result + reference table.
+- [US fluid ounces to US cups](https://sharpdev.tools/tools/fluid-ounces-to-cups/): Convert US fluid ounces to US cups (1 US fluid ounce = 0.125 cup). Live result + reference table.
+- [US gallons to US fluid ounces](https://sharpdev.tools/tools/gallons-to-fluid-ounces/): Convert US gallons to US fluid ounces (1 US gallon = 128 fl oz). Live result + reference table.
+- [US fluid ounces to US gallons](https://sharpdev.tools/tools/fluid-ounces-to-gallons/): Convert US fluid ounces to US gallons (1 US fluid ounce = 0.007812 gal). Live result + reference table.
+- [Feet to Inches](https://sharpdev.tools/tools/feet-to-inches/): Convert feet to inches (1 foot = 12 in). Live result + reference table.
+- [Inches to Feet](https://sharpdev.tools/tools/inches-to-feet/): Convert inches to feet (1 inch = 0.083333 ft). Live result + reference table.
+- [Meters to Millimeters](https://sharpdev.tools/tools/meters-to-mm/): Convert meters to millimeters (1 meter = 1000 mm). Live result + reference table.
+- [Millimeters to Meters](https://sharpdev.tools/tools/mm-to-meters/): Convert millimeters to meters (1 millimeter = 0.001 m). Live result + reference table.
+- [Acres to Square feet](https://sharpdev.tools/tools/acres-to-square-feet/): Convert acres to square feet (1 acre = 43560 ft²). Live result + reference table.
+- [Square feet to Acres](https://sharpdev.tools/tools/square-feet-to-acres/): Convert square feet to acres (1 square foot = 2.3e-05 ac). Live result + reference table.
+- [Millimeters of mercury to Kilopascals](https://sharpdev.tools/tools/mmhg-to-kilopascals/): Convert millimeters of mercury to kilopascals (1 millimeter of mercury = 0.133322 kPa). Live result + reference table.
+- [Kilopascals to Millimeters of mercury](https://sharpdev.tools/tools/kilopascals-to-mmhg/): Convert kilopascals to millimeters of mercury (1 kilopascal = 7.50062 mmHg). Live result + reference table.
+- [Millimeters of mercury to Psi](https://sharpdev.tools/tools/mmhg-to-psi/): Convert millimeters of mercury to psi (1 millimeter of mercury = 0.019337 psi). Live result + reference table.
+- [Psi to Millimeters of mercury](https://sharpdev.tools/tools/psi-to-mmhg/): Convert psi to millimeters of mercury (1 psi = 51.7149 mmHg). Live result + reference table.
+- [Joules to Kilojoules](https://sharpdev.tools/tools/joules-to-kilojoules/): Convert joules to kilojoules (1 joule = 0.001 kJ). Live result + reference table.
+- [Kilojoules to Joules](https://sharpdev.tools/tools/kilojoules-to-joules/): Convert kilojoules to joules (1 kilojoule = 1000 J). Live result + reference table.
+- [Degrees to Gradians](https://sharpdev.tools/tools/degrees-to-gradians/): Convert degrees to gradians (1 degree = 1.11111 gon). Live result + reference table.
+- [Gradians to Degrees](https://sharpdev.tools/tools/gradians-to-degrees/): Convert gradians to degrees (1 gradian = 0.9 deg). Live result + reference table.
+- [Seconds to Hours](https://sharpdev.tools/tools/seconds-to-hours/): Convert seconds to hours (1 second = 0.000278 hr). Live result + reference table.
+- [Hours to Seconds](https://sharpdev.tools/tools/hours-to-seconds/): Convert hours to seconds (1 hour = 3600 s). Live result + reference table.
+- [Fahrenheit to Kelvin](https://sharpdev.tools/tools/fahrenheit-to-kelvin/): Convert Fahrenheit to Kelvin (subtract 32, multiply by 5/9, then add 273.15). Live result + reference table.
+- [Kelvin to Fahrenheit](https://sharpdev.tools/tools/kelvin-to-fahrenheit/): Convert Kelvin to Fahrenheit (multiply by 9/5, then subtract 459.67). Live result + reference table.
+- [Revolutions per minute to Hertz](https://sharpdev.tools/tools/rpm-to-hertz/): Convert revolutions per minute to hertz (1 revolution per minute = 0.016667 Hz). Live result + reference table.
+- [Hertz to Revolutions per minute](https://sharpdev.tools/tools/hertz-to-rpm/): Convert hertz to revolutions per minute (1 hertz = 60 rpm). Live result + reference table.
+- [Carats to Grams](https://sharpdev.tools/tools/carats-to-grams/): Convert carats to grams (1 carat = 0.2 g). Live result + reference table.
+- [Grams to Carats](https://sharpdev.tools/tools/grams-to-carats/): Convert grams to carats (1 gram = 5 ct). Live result + reference table.
+- [Short tons to Kilograms](https://sharpdev.tools/tools/short-tons-to-kg/): Convert short tons to kilograms (1 short ton = 907.185 kg). Live result + reference table.
+- [Kilograms to Short tons](https://sharpdev.tools/tools/kg-to-short-tons/): Convert kilograms to short tons (1 kilogram = 0.001102 ton). Live result + reference table.
+- [Short tons to Pounds](https://sharpdev.tools/tools/short-tons-to-lbs/): Convert short tons to pounds (1 short ton = 2000 lb). Live result + reference table.
+- [Pounds to Short tons](https://sharpdev.tools/tools/lbs-to-short-tons/): Convert pounds to short tons (1 pound = 0.0005 ton). Live result + reference table.
+- [Kilograms to Milligrams](https://sharpdev.tools/tools/kg-to-milligrams/): Convert kilograms to milligrams (1 kilogram = 1e+06 mg). Live result + reference table.
+- [Milligrams to Kilograms](https://sharpdev.tools/tools/milligrams-to-kg/): Convert milligrams to kilograms (1 milligram = 1e-06 kg). Live result + reference table.
+- [BTU to Kilojoules](https://sharpdev.tools/tools/btu-to-kilojoules/): Convert BTU to kilojoules (1 BTU = 1.05506 kJ). Live result + reference table.
+- [Kilojoules to BTU](https://sharpdev.tools/tools/kilojoules-to-btu/): Convert kilojoules to BTU (1 kilojoule = 0.947817 BTU). Live result + reference table.
+- [BTU to Watt-hours](https://sharpdev.tools/tools/btu-to-watt-hours/): Convert BTU to watt-hours (1 BTU = 0.293071 Wh). Live result + reference table.
+- [Watt-hours to BTU](https://sharpdev.tools/tools/watt-hours-to-btu/): Convert watt-hours to BTU (1 watt-hour = 3.41214 BTU). Live result + reference table.
+- [Terabytes to Petabytes](https://sharpdev.tools/tools/tb-to-pb/): Convert terabytes to petabytes (1 terabyte = 0.001 PB). Live result + reference table.
+- [Petabytes to Terabytes](https://sharpdev.tools/tools/pb-to-tb/): Convert petabytes to terabytes (1 petabyte = 1000 TB). Live result + reference table.
+- [Bytes to Megabytes](https://sharpdev.tools/tools/bytes-to-mb/): Convert bytes to megabytes (1 byte = 1e-06 MB). Live result + reference table.
+- [Megabytes to Bytes](https://sharpdev.tools/tools/mb-to-bytes/): Convert megabytes to bytes (1 megabyte = 1e+06 B). Live result + reference table.
+- [Bytes to Gigabytes](https://sharpdev.tools/tools/bytes-to-gb/): Convert bytes to gigabytes (1 byte = 0 GB). Live result + reference table.
+- [Gigabytes to Bytes](https://sharpdev.tools/tools/gb-to-bytes/): Convert gigabytes to bytes (1 gigabyte = 1e+09 B). Live result + reference table.
+- [Kilowatts to Watts](https://sharpdev.tools/tools/kilowatts-to-watts/): Convert kilowatts to watts (1 kilowatt = 1000 W). Live result + reference table.
+- [Watts to Kilowatts](https://sharpdev.tools/tools/watts-to-kilowatts/): Convert watts to kilowatts (1 watt = 0.001 kW). Live result + reference table.
+- [Megawatts to Kilowatts](https://sharpdev.tools/tools/megawatts-to-kilowatts/): Convert megawatts to kilowatts (1 megawatt = 1000 kW). Live result + reference table.
+- [Kilowatts to Megawatts](https://sharpdev.tools/tools/kilowatts-to-megawatts/): Convert kilowatts to megawatts (1 kilowatt = 0.001 MW). Live result + reference table.
+- [Square feet to Square inches](https://sharpdev.tools/tools/square-feet-to-square-inches/): Convert square feet to square inches (1 square foot = 144 in²). Live result + reference table.
+- [Square inches to Square feet](https://sharpdev.tools/tools/square-inches-to-square-feet/): Convert square inches to square feet (1 square inch = 0.006944 ft²). Live result + reference table.
+- [Square meters to Square centimeters](https://sharpdev.tools/tools/square-meters-to-square-centimeters/): Convert square meters to square centimeters (1 square meter = 10000 cm²). Live result + reference table.
+- [Square centimeters to Square meters](https://sharpdev.tools/tools/square-centimeters-to-square-meters/): Convert square centimeters to square meters (1 square centimeter = 0.0001 m²). Live result + reference table.
+- [Meters per second to Miles per hour](https://sharpdev.tools/tools/meters-per-second-to-mph/): Convert meters per second to miles per hour (1 meter per second = 2.23694 mph). Live result + reference table.
+- [Miles per hour to Meters per second](https://sharpdev.tools/tools/mph-to-meters-per-second/): Convert miles per hour to meters per second (1 mile per hour = 0.44704 m/s). Live result + reference table.
+- [Feet per second to Meters per second](https://sharpdev.tools/tools/feet-per-second-to-meters-per-second/): Convert feet per second to meters per second (1 foot per second = 0.3048 m/s). Live result + reference table.
+- [Meters per second to Feet per second](https://sharpdev.tools/tools/meters-per-second-to-feet-per-second/): Convert meters per second to feet per second (1 meter per second = 3.28084 ft/s). Live result + reference table.
+- [Knots to Meters per second](https://sharpdev.tools/tools/knots-to-meters-per-second/): Convert knots to meters per second (1 knot = 0.514444 m/s). Live result + reference table.
+- [Meters per second to Knots](https://sharpdev.tools/tools/meters-per-second-to-knots/): Convert meters per second to knots (1 meter per second = 1.94384 kn). Live result + reference table.
+- [Psi to Pascals](https://sharpdev.tools/tools/psi-to-pascals/): Convert psi to pascals (1 psi = 6894.76 Pa). Live result + reference table.
+- [Pascals to Psi](https://sharpdev.tools/tools/pascals-to-psi/): Convert pascals to psi (1 pascal = 0.000145 psi). Live result + reference table.
+- [Nautical miles to Kilometers](https://sharpdev.tools/tools/nautical-miles-to-km/): Convert nautical miles to kilometers (1 nautical mile = 1.852 km). Live result + reference table.
+- [Kilometers to Nautical miles](https://sharpdev.tools/tools/km-to-nautical-miles/): Convert kilometers to nautical miles (1 kilometer = 0.539957 nmi). Live result + reference table.
+- [Nautical miles to Miles](https://sharpdev.tools/tools/nautical-miles-to-miles/): Convert nautical miles to miles (1 nautical mile = 1.15078 mi). Live result + reference table.
+- [Miles to Nautical miles](https://sharpdev.tools/tools/miles-to-nautical-miles/): Convert miles to nautical miles (1 mile = 0.868976 nmi). Live result + reference table.
+- [US pints to Liters](https://sharpdev.tools/tools/pints-to-liters/): Convert US pints to liters (1 US pint = 0.473176 L). Live result + reference table.
+- [Liters to US pints](https://sharpdev.tools/tools/liters-to-pints/): Convert liters to US pints (1 liter = 2.11338 pt). Live result + reference table.
+- [US fluid ounces to Liters](https://sharpdev.tools/tools/fluid-ounces-to-liters/): Convert US fluid ounces to liters (1 US fluid ounce = 0.029574 L). Live result + reference table.
+- [Liters to US fluid ounces](https://sharpdev.tools/tools/liters-to-fluid-ounces/): Convert liters to US fluid ounces (1 liter = 33.814 fl oz). Live result + reference table.
+- [Liters to US cups](https://sharpdev.tools/tools/liters-to-cups/): Convert liters to US cups (1 liter = 4.22675 cup). Live result + reference table.
+- [US cups to Liters](https://sharpdev.tools/tools/cups-to-liters/): Convert US cups to liters (1 US cup = 0.236588 L). Live result + reference table.
+- [US gallons to Milliliters](https://sharpdev.tools/tools/gallons-to-ml/): Convert US gallons to milliliters (1 US gallon = 3785.41 ml). Live result + reference table.
+- [Milliliters to US gallons](https://sharpdev.tools/tools/ml-to-gallons/): Convert milliliters to US gallons (1 milliliter = 0.000264 gal). Live result + reference table.
+- [US quarts to Milliliters](https://sharpdev.tools/tools/quarts-to-ml/): Convert US quarts to milliliters (1 US quart = 946.353 ml). Live result + reference table.
+- [Milliliters to US quarts](https://sharpdev.tools/tools/ml-to-quarts/): Convert milliliters to US quarts (1 milliliter = 0.001057 qt). Live result + reference table.
+- [Square miles to Acres](https://sharpdev.tools/tools/square-miles-to-acres/): Convert square miles to acres (1 square mile = 640 ac). Live result + reference table.
+- [Acres to Square miles](https://sharpdev.tools/tools/acres-to-square-miles/): Convert acres to square miles (1 acre = 0.001563 mi²). Live result + reference table.
+- [Acres to Square yards](https://sharpdev.tools/tools/acres-to-square-yards/): Convert acres to square yards (1 acre = 4840 yd²). Live result + reference table.
+- [Square yards to Acres](https://sharpdev.tools/tools/square-yards-to-acres/): Convert square yards to acres (1 square yard = 0.000207 ac). Live result + reference table.
+- [Square kilometers to Hectares](https://sharpdev.tools/tools/square-kilometers-to-hectares/): Convert square kilometers to hectares (1 square kilometer = 100 ha). Live result + reference table.
+- [Hectares to Square kilometers](https://sharpdev.tools/tools/hectares-to-square-kilometers/): Convert hectares to square kilometers (1 hectare = 0.01 km²). Live result + reference table.
+- [Square meters to Square kilometers](https://sharpdev.tools/tools/square-meters-to-square-kilometers/): Convert square meters to square kilometers (1 square meter = 1e-06 km²). Live result + reference table.
+- [Square kilometers to Square meters](https://sharpdev.tools/tools/square-kilometers-to-square-meters/): Convert square kilometers to square meters (1 square kilometer = 1e+06 m²). Live result + reference table.
+- [Pascals to Kilopascals](https://sharpdev.tools/tools/pascals-to-kilopascals/): Convert pascals to kilopascals (1 pascal = 0.001 kPa). Live result + reference table.
+- [Kilopascals to Pascals](https://sharpdev.tools/tools/kilopascals-to-pascals/): Convert kilopascals to pascals (1 kilopascal = 1000 Pa). Live result + reference table.
+- [Millimeters of mercury to Atmospheres](https://sharpdev.tools/tools/mmhg-to-atmospheres/): Convert millimeters of mercury to atmospheres (1 millimeter of mercury = 0.001316 atm). Live result + reference table.
+- [Atmospheres to Millimeters of mercury](https://sharpdev.tools/tools/atmospheres-to-mmhg/): Convert atmospheres to millimeters of mercury (1 atmosphere = 760 mmHg). Live result + reference table.
+- [BTU to Kilowatt-hours](https://sharpdev.tools/tools/btu-to-kilowatt-hours/): Convert BTU to kilowatt-hours (1 BTU = 0.000293 kWh). Live result + reference table.
+- [Kilowatt-hours to BTU](https://sharpdev.tools/tools/kilowatt-hours-to-btu/): Convert kilowatt-hours to BTU (1 kilowatt-hour = 3412.14 BTU). Live result + reference table.
+- [Seconds to Days](https://sharpdev.tools/tools/seconds-to-days/): Convert seconds to days (1 second = 1.2e-05 d). Live result + reference table.
+- [Days to Seconds](https://sharpdev.tools/tools/days-to-seconds/): Convert days to seconds (1 day = 86400 s). Live result + reference table.
+- [Hours to Weeks](https://sharpdev.tools/tools/hours-to-weeks/): Convert hours to weeks (1 hour = 0.005952 wk). Live result + reference table.
+- [Weeks to Hours](https://sharpdev.tools/tools/weeks-to-hours/): Convert weeks to hours (1 week = 168 hr). Live result + reference table.
+- [Tonnes to Pounds](https://sharpdev.tools/tools/tonnes-to-lbs/): Convert tonnes to pounds (1 tonne = 2204.62 lb). Live result + reference table.
+- [Pounds to Tonnes](https://sharpdev.tools/tools/lbs-to-tonnes/): Convert pounds to tonnes (1 pound = 0.000454 t). Live result + reference table.
+- [Carats to Milligrams](https://sharpdev.tools/tools/carats-to-milligrams/): Convert carats to milligrams (1 carat = 200 mg). Live result + reference table.
+- [Milligrams to Carats](https://sharpdev.tools/tools/milligrams-to-carats/): Convert milligrams to carats (1 milligram = 0.005 ct). Live result + reference table.
+- [Knots to Feet per second](https://sharpdev.tools/tools/knots-to-feet-per-second/): Convert knots to feet per second (1 knot = 1.68781 ft/s). Live result + reference table.
+- [Feet per second to Knots](https://sharpdev.tools/tools/feet-per-second-to-knots/): Convert feet per second to knots (1 foot per second = 0.592484 kn). Live result + reference table.
+- [Radians to Gradians](https://sharpdev.tools/tools/radians-to-gradians/): Convert radians to gradians (1 radian = 63.662 gon). Live result + reference table.
+- [Gradians to Radians](https://sharpdev.tools/tools/gradians-to-radians/): Convert gradians to radians (1 gradian = 0.015708 rad). Live result + reference table.
+- [Pounds-force to Kilograms-force](https://sharpdev.tools/tools/pounds-force-to-kilograms-force/): Convert pounds-force to kilograms-force (1 pound-force = 0.453592 kgf). Live result + reference table.
+- [Kilograms-force to Pounds-force](https://sharpdev.tools/tools/kilograms-force-to-pounds-force/): Convert kilograms-force to pounds-force (1 kilogram-force = 2.20462 lbf). Live result + reference table.
+- [Gigabits per second to Megabytes per second](https://sharpdev.tools/tools/gbps-to-mb-per-second/): Convert gigabits per second to megabytes per second (1 gigabit per second = 125 MB/s). Live result + reference table.
+- [Megabytes per second to Gigabits per second](https://sharpdev.tools/tools/mb-per-second-to-gbps/): Convert megabytes per second to gigabits per second (1 megabyte per second = 0.008 Gbps). Live result + reference table.
+- [Miles to Meters](https://sharpdev.tools/tools/miles-to-meters/): Convert miles to meters (1 mile = 1609.34 m). Live result + reference table.
+- [Meters to Miles](https://sharpdev.tools/tools/meters-to-miles/): Convert meters to miles (1 meter = 0.000621 mi). Live result + reference table.
+- [Gigabytes to Petabytes](https://sharpdev.tools/tools/gb-to-pb/): Convert gigabytes to petabytes (1 gigabyte = 1e-06 PB). Live result + reference table.
+- [Petabytes to Gigabytes](https://sharpdev.tools/tools/pb-to-gb/): Convert petabytes to gigabytes (1 petabyte = 1e+06 GB). Live result + reference table.
+- [Grams per cubic centimetre to Kilograms per cubic metre](https://sharpdev.tools/tools/g-per-cm3-to-kg-per-m3/): Convert grams per cubic centimetre to kilograms per cubic metre (1 gram per cubic centimetre = 1000 kg/m³). Live result + reference table.
+- [Kilograms per cubic metre to Grams per cubic centimetre](https://sharpdev.tools/tools/kg-per-m3-to-g-per-cm3/): Convert kilograms per cubic metre to grams per cubic centimetre (1 kilogram per cubic metre = 0.001 g/cm³). Live result + reference table.
+- [Grams per cubic centimetre to Pounds per cubic foot](https://sharpdev.tools/tools/g-per-cm3-to-lb-per-ft3/): Convert grams per cubic centimetre to pounds per cubic foot (1 gram per cubic centimetre = 62.428 lb/ft³). Live result + reference table.
+- [Pounds per cubic foot to Grams per cubic centimetre](https://sharpdev.tools/tools/lb-per-ft3-to-g-per-cm3/): Convert pounds per cubic foot to grams per cubic centimetre (1 pound per cubic foot = 0.016018 g/cm³). Live result + reference table.
+- [Foot-candles to Lux](https://sharpdev.tools/tools/foot-candles-to-lux/): Convert foot-candles to lux (1 foot-candle = 10.7639 lx). Live result + reference table.
+- [Lux to Foot-candles](https://sharpdev.tools/tools/lux-to-foot-candles/): Convert lux to foot-candles (1 lux = 0.092903 fc). Live result + reference table.
+
+## Time & Date
+
+- [Age & Date Difference](https://sharpdev.tools/tools/age/): Calculate exact age or difference between two dates. Years, months, days, weeks, hours, minutes.
+- [Timer, Stopwatch & Pomodoro](https://sharpdev.tools/tools/timer/): Three timers in one. Work sessions, accurate stopwatch, countdown. Notifications for background tabs.
+- [Timestamp Converter](https://sharpdev.tools/tools/timestamp/): Unix timestamp to human date and back. Live clock, relative time, seconds or milliseconds.
+- [Cron Expression Explainer](https://sharpdev.tools/tools/cron/): Paste any cron expression and see it in plain English plus the next 5 run times.
+- [Time Zone Converter](https://sharpdev.tools/tools/timezone/): Convert times between any zones. Live world clock for your favorite cities.
+- [Working Days Calculator](https://sharpdev.tools/tools/working-days/): Count business days between two dates. Skips weekends, with optional public-holiday exclusions.
+- [Day of Year + Week Number](https://sharpdev.tools/tools/day-of-year/): Date ↔ ordinal day (1-366), ISO 8601 week number, quarter, days remaining in year, year progress %.
+- [Countdown Timer](https://sharpdev.tools/tools/countdown/): Live days / hours / minutes / seconds to any future date. Presets for New Year, Christmas, custom moment.
+- [Date Format Converter](https://sharpdev.tools/tools/date-format/): Convert between ISO 8601, US, EU, RFC 2822, Unix timestamps. Edit any field — all others update live.
+- [Add or Subtract Days](https://sharpdev.tools/tools/add-days/): Project-deadline math — add/subtract days, weeks, months, years. Business-day mode skips weekends.
+- [Sunrise / Sunset Calculator](https://sharpdev.tools/tools/sunrise/): Sunrise + sunset + day length + twilight phases for any lat / lng / date. NOAA algorithm.
+- [Moon Phase Calculator](https://sharpdev.tools/tools/moon/): Current moon phase + illumination + next full / new moon dates. Pick any date.
+- [Time Duration Calculator](https://sharpdev.tools/tools/time-duration/): Exact duration between two dates and times, broken into days/hours/minutes and totals.
+- [Leap Year Checker](https://sharpdev.tools/tools/leap-year/): Is a year a leap year? See the rule and the next leap years.
+- [Day of the Week](https://sharpdev.tools/tools/day-of-week/): What weekday is any date? ‘What day was I born’ — past or future.
+- [Week Number](https://sharpdev.tools/tools/week-number/): ISO 8601 week number for any date — Monday-start, first-Thursday rule.
+- [Zodiac Sign](https://sharpdev.tools/tools/zodiac/): Birth date → western star sign, with symbol, element and date range.
+- [Chinese Zodiac](https://sharpdev.tools/tools/chinese-zodiac/): Birth year → Chinese zodiac animal + element (Metal Rat, Wood Dragon…).
+- [Pet Age Calculator](https://sharpdev.tools/tools/pet-age/): Dog/cat age → human years, size-aware (not the ×7 myth).
+- [Printable Calendar](https://sharpdev.tools/tools/calendar/): Clean monthly calendar for any month/year, Monday or Sunday start, print-ready.
+
+## Money & Finance
+
+- [Tip Calculator](https://sharpdev.tools/tools/tip/): Calculate tips and split the bill between any number of people. Multi-currency, instant results.
+- [Mortgage & Loan Calculator](https://sharpdev.tools/tools/loan/): Monthly payment, total interest, and full amortization schedule. Multi-currency, with extra payment scenarios.
+- [Salary Converter](https://sharpdev.tools/tools/salary/): Convert between hourly, daily, weekly, monthly and yearly pay. Configurable hours per week and weeks off.
+- [Compound Interest](https://sharpdev.tools/tools/compound/): Calculate compound growth of an investment over time with optional monthly contributions and annual growth rate.
+- [Discount Calculator](https://sharpdev.tools/tools/discount/): Work out the final price after a discount, the original price from a sale price, or the discount percentage saved.
+- [VAT / Sales Tax Calculator](https://sharpdev.tools/tools/vat/): Net ↔ gross with country presets. Germany 19%, UK 20%, Austria 20%, and more. Bidirectional input.
+- [Profit Margin Calculator](https://sharpdev.tools/tools/margin/): Cost + price → margin & markup, or cost + target margin → selling price. For Etsy, Amazon, Shopify sellers.
+- [Freelance Hourly Rate](https://sharpdev.tools/tools/hourly-rate/): Calculate your minimum freelance rate from take-home goal, tax, overhead, working days and billable ratio.
+- [Savings Goal Calculator](https://sharpdev.tools/tools/savings-goal/): How much to save monthly to reach a goal, or how long it takes at your current rate. Compound interest baked in.
+- [Inflation Calculator](https://sharpdev.tools/tools/inflation/): Future or past purchasing power. What $100 in 1990 is worth now, or what $5k today buys in 20 years.
+- [ROI Calculator](https://sharpdev.tools/tools/roi/): Return on investment — ROI %, net profit, annualised %. Compare projects of different durations fairly.
+- [Net Worth Calculator](https://sharpdev.tools/tools/net-worth/): Assets minus liabilities, line-by-line. Multi-currency. Your numbers never leave the browser.
+- [Payment Fee Calculator](https://sharpdev.tools/tools/paypal-fee/): PayPal / Stripe / Wise fees and net payout, plus reverse 'charge to receive X'.
+- [Break-Even Calculator](https://sharpdev.tools/tools/break-even/): Break-even units and revenue from fixed costs, price and variable cost per unit.
+- [Down Payment](https://sharpdev.tools/tools/down-payment/): Down payment, loan amount and LTV from price and percentage.
+- [Stripe Fee](https://sharpdev.tools/tools/stripe-fee/): Fee & net from a charge, or gross-up to receive an exact amount.
+- [50/30/20 Budget](https://sharpdev.tools/tools/budget/): Split take-home pay into needs (50%), wants (30%), savings (20%).
+
+## Security & Crypto
+
+- [Password Generator](https://sharpdev.tools/tools/password/): Generate strong, random passwords. Configurable length, symbols, look-alike exclusion. Cryptographically secure.
+- [Password Strength Checker](https://sharpdev.tools/tools/password-strength/): Entropy in bits, estimated online + offline crack time, common-pattern detection. Password never leaves the browser.
+- [Diceware Passphrase](https://sharpdev.tools/tools/passphrase/): Memorable + cryptographically strong passphrases from the EFF wordlist. Entropy bits shown — runs in your browser.
+- [Hash Generator](https://sharpdev.tools/tools/hash/): MD5, SHA-1, SHA-256, SHA-512. Works on text or any file. Computed locally in your browser.
+- [HMAC Generator](https://sharpdev.tools/tools/hmac/): HMAC-SHA1/SHA-256/SHA-384/SHA-512 for API signing, JWT, webhook verification. Hex or Base64 output.
+- [JWT Decoder](https://sharpdev.tools/tools/jwt/): Decode JSON Web Tokens. See header, payload, and signature. Human-readable exp/iat timestamps.
+- [JWT Signer](https://sharpdev.tools/tools/jwt-sign/): Build and sign JSON Web Tokens with HS256/HS384/HS512 in your browser. Pairs with the existing JWT decoder.
+- [Bcrypt Generator & Verifier](https://sharpdev.tools/tools/bcrypt/): Hash passwords with bcrypt at adjustable cost, or verify a password against an existing hash. Runs locally.
+- [.htpasswd Generator](https://sharpdev.tools/tools/htpasswd/): Create Apache and Nginx .htpasswd entries. Choose bcrypt or APR1 MD5. Copy the full one-line entry.
+- [ROT13 / Caesar Cipher](https://sharpdev.tools/tools/rot13/): Classic letter-shift cipher with live preview. Any shift from 1 to 25, plus the ROT13 default. Both directions.
+- [AES Encrypt / Decrypt](https://sharpdev.tools/tools/aes/): AES-GCM-256 with PBKDF2 key derivation. Browser-native via SubtleCrypto — password + plaintext stay local.
+- [TOTP / 2FA Code Generator](https://sharpdev.tools/tools/totp/): Generate Google-Authenticator-compatible 2FA codes from a base32 secret. RFC 6238. Live countdown.
+- [Vigenere Cipher](https://sharpdev.tools/tools/vigenere/): Encode/decode text with the Vigenere keyword cipher. Two-way, live, browser-only.
+- [Random Key Generator](https://sharpdev.tools/tools/random-key/): Secure random API keys and tokens: hex, Base64, Base64URL or alphanumeric, bulk.
+- [Caesar Cipher](https://sharpdev.tools/tools/caesar/): Encrypt/decrypt by shifting letters any amount (0–25). ROT13 included, live output.
+- [Atbash Cipher](https://sharpdev.tools/tools/atbash/): Mirror the alphabet (A↔Z, B↔Y…). Self-inverse, keeps case & punctuation.
+- [XOR Cipher](https://sharpdev.tools/tools/xor-cipher/): XOR text with a repeating key → hex, and back. UTF-8 aware, fully client-side.
+
+## Generators
+
+- [QR Code Generator](https://sharpdev.tools/tools/qr/): Generate permanent QR codes for free. No redirects, no expiration, no tracking. Works forever.
+- [Random Picker](https://sharpdev.tools/tools/picker/): Pick random names from a list, generate numbers, flip coins, roll dice. Truly random, not pseudo-random.
+- [Mock Data Generator](https://sharpdev.tools/tools/mock-data/): Generate fake users, addresses, dates for prototyping. Export as JSON, CSV, NDJSON, SQL, or TypeScript.
+- [Dice Roller](https://sharpdev.tools/tools/dice/): Roll any combo of D4, D6, D8, D10, D12, D20, D100. D&D-style dice notation supported (e.g. 3d6+2).
+- [Coin Flip](https://sharpdev.tools/tools/coin/): Flip a virtual coin. Run single flips or batches of 100 and see the streak and heads/tails ratio.
+- [Morse Code Translator](https://sharpdev.tools/tools/morse/): Convert between text and Morse code instantly. International Morse alphabet, optional audio playback.
+- [Username Generator](https://sharpdev.tools/tools/username/): Themed random handles — gamer, professional, cute, dev, dark. Style (snake/camel/pascal) and number suffix.
+- [Identicon Avatar Generator](https://sharpdev.tools/tools/identicon/): GitHub-style abstract avatars from any text. Hash-derived, deterministic. Download PNG or SVG.
+- [Placeholder Image Generator](https://sharpdev.tools/tools/placeholder/): Solid-color PNG/JPG with dimension labels. Custom colors, preset sizes for HD, IG square, Story, OG image.
+- [Initials Avatar Generator](https://sharpdev.tools/tools/avatar-initials/): Letter on a colored circle / square — Gmail / Slack style. Custom colors, shapes, sizes. PNG + SVG export.
+- [Color Tints & Shades](https://sharpdev.tools/tools/color-shades/): Tailwind-style 50-900 palette from any base color. HEX / RGB / HSL, copy CSS variables or Tailwind config.
+- [Online Notepad](https://sharpdev.tools/tools/notepad/): Free browser notepad with autosave to localStorage. No account, no upload — your notes stay private.
+- [Spin the Wheel](https://sharpdev.tools/tools/wheel/): Random name picker with animation. Class raffles, giveaways, team decisions. Crypto-secure randomness.
+- [Yes / No Decision Maker](https://sharpdev.tools/tools/decision/): Random Yes / No / Maybe with one click. Plus custom options mode. The trick is noticing your reaction.
+- [Tone Generator](https://sharpdev.tools/tools/tone/): Sine / square / triangle / sawtooth tones at any Hz. Speaker test, hearing test, tuning reference.
+- [Text-to-Speech](https://sharpdev.tools/tools/tts/): Hear typed text spoken aloud via Web Speech API. Pick voice + rate + pitch + volume. Local OS voices.
+- [Speech-to-Text](https://sharpdev.tools/tools/stt/): Speak into your mic, watch text appear. 60+ languages. Chrome / Edge / Brave / Chromium browsers.
+- [Audio Recorder](https://sharpdev.tools/tools/audio-recorder/): Record from your mic, download as WebM or MP4. Pause / resume. Browser-only — no upload.
+- [ASCII Art Generator](https://sharpdev.tools/tools/ascii-art/): Type a word, get giant block-letter ASCII art. Multiple styles. Copy-paste into terminals, READMEs, banners.
+- [NATO Phonetic Alphabet](https://sharpdev.tools/tools/nato/): Spell text in Alpha-Bravo-Charlie. For reading codes and names clearly over the phone.
+- [Barcode Generator](https://sharpdev.tools/tools/barcode/): Generate Code128, EAN, UPC, Code39 barcodes. Download as PNG or SVG, browser-only.
+- [List Randomizer](https://sharpdev.tools/tools/list-shuffle/): Shuffle a list into random order, dedupe, or pick a random subset. Crypto-random.
+- [Random Color Generator](https://sharpdev.tools/tools/random-color/): Generate random colors (hex/RGB/HSL) or a whole palette. One-click copy.
+- [Random Team Generator](https://sharpdev.tools/tools/team-generator/): Split a list of names into random balanced teams. Crypto-random, fair.
+- [Secret Santa Generator](https://sharpdev.tools/tools/secret-santa/): Random gift-exchange pairings where nobody gets themselves. Paste names, draw.
+- [Tournament Bracket](https://sharpdev.tools/tools/tournament-bracket/): Single-elimination bracket from a participant list. Random seeding, auto byes.
+- [Would You Rather](https://sharpdev.tools/tools/would-you-rather/): Random 'Would You Rather' questions for parties, road trips and icebreakers.
+- [Magic 8 Ball](https://sharpdev.tools/tools/magic-8-ball/): Ask a yes/no question, get one of the classic 20 Magic 8 Ball answers.
+- [PIN Generator](https://sharpdev.tools/tools/pin/): Secure random numeric PINs of any length, generated in your browser.
+- [Random Name](https://sharpdev.tools/tools/random-name/): Generate random full names (gender + count) for test data, characters, mock-ups.
+- [Themed Ipsum](https://sharpdev.tools/tools/themed-ipsum/): Funny placeholder text — pirate, hipster or corporate-buzzword style.
+
+## Developers
+
+- [JSON Formatter](https://sharpdev.tools/tools/json/): Format, validate, minify, and sort JSON. Error messages with line numbers. Escape and unescape strings.
+- [Base64 Encoder/Decoder](https://sharpdev.tools/tools/base64/): Encode and decode Base64. Works with text and files. URL-safe variant supported.
+- [CSV ↔ JSON](https://sharpdev.tools/tools/csv-json/): Convert between CSV and JSON. Handles quoted fields, custom delimiters, auto-detects direction.
+- [SQL Formatter](https://sharpdev.tools/tools/sql/): Format messy SQL queries. Indented clauses, keyword case, comma style. Handles comments and strings correctly.
+- [JSON Diff](https://sharpdev.tools/tools/json-diff/): Compare two JSON documents structurally. See added, removed, and changed values per path.
+- [JSON Schema Generator](https://sharpdev.tools/tools/json-schema/): Paste a JSON sample, get a JSON Schema. Auto-detects types, formats, enums, required fields.
+- [YAML ↔ JSON Converter](https://sharpdev.tools/tools/yaml/): Convert YAML to JSON or JSON to YAML. Format and validate. Handles anchors, aliases, multi-line strings.
+- [XML Formatter & XML ↔ JSON](https://sharpdev.tools/tools/xml/): Format, minify, and convert XML. Handles attributes, namespaces, CDATA, processing instructions.
+- [HTTP Status Code Reference](https://sharpdev.tools/tools/http-status/): Every HTTP status code with common causes and what to do. Searchable, filterable, jump-by-code.
+- [HTML Minifier & Beautifier](https://sharpdev.tools/tools/html-mini/): Collapse whitespace, strip comments and inline CSS/JS — or beautify back with consistent indentation.
+- [CSS Minifier & Beautifier](https://sharpdev.tools/tools/css-mini/): Strip comments and whitespace for production, or re-expand minified CSS into readable indented form.
+- [JS Minifier & Beautifier](https://sharpdev.tools/tools/js-mini/): Compact JavaScript by removing comments and whitespace, or format minified JS with consistent indentation.
+- [URL Parser](https://sharpdev.tools/tools/url-parser/): Break any URL into protocol, host, port, path, query, fragment. See each query param on its own line. Decode on.
+- [User-Agent Parser](https://sharpdev.tools/tools/ua-parser/): Paste any User-Agent string to see the browser, engine, OS and device it identifies as. Detects major edge cases.
+- [URL Encoder/Decoder](https://sharpdev.tools/tools/url-encode/): Encode and decode URL components. Parse query strings into a readable table.
+- [Regex Tester](https://sharpdev.tools/tools/regex/): Test JavaScript regex with live match highlighting, capture groups, and replace.
+- [HTML Entity Encoder/Decoder](https://sharpdev.tools/tools/html-entities/): Encode special characters to HTML entities and back. Named or numeric, safe or full.
+- [Binary ↔ Text Converter](https://sharpdev.tools/tools/binary-text/): Convert text to 8-bit binary and back. UTF-8 aware so emojis and accents round-trip correctly.
+- [UUID Generator](https://sharpdev.tools/tools/uuid/): Generate cryptographically random v4 UUIDs. Batch up to 1000 at a time. Multiple formats.
+- [.gitignore Generator](https://sharpdev.tools/tools/gitignore/): Combine curated templates for languages, frameworks, IDEs, and operating systems. Inlined, no external fetches.
+- [CIDR / Subnet Calculator](https://sharpdev.tools/tools/cidr/): Calculate IPv4 subnet ranges, masks, host counts, and binary representations from any CIDR notation.
+- [chmod / Permission Calculator](https://sharpdev.tools/tools/chmod/): Convert between octal, symbolic, and chmod commands. Visual checkboxes for user/group/other.
+- [Google SERP Preview](https://sharpdev.tools/tools/serp-preview/): See how your page appears in Google — desktop + mobile snippets with title (60 char) and description (155 char) truncation.
+- [Robots.txt Generator](https://sharpdev.tools/tools/robots-txt/): Visual builder for robots.txt — user-agent rules, allow / disallow paths, sitemap link, crawl-delay. Block AI crawlers preset.
+- [Sitemap.xml Generator](https://sharpdev.tools/tools/sitemap-gen/): Paste URLs — get a valid sitemap.xml with lastmod, changefreq, priority. Download as file.
+- [Schema Markup Generator](https://sharpdev.tools/tools/schema-gen/): JSON-LD for Article, FAQ, Product, LocalBusiness, Recipe, HowTo, Event, Organization, BreadcrumbList.
+- [Markdown TOC Generator](https://sharpdev.tools/tools/markdown-toc/): Paste Markdown — get a table of contents with GitHub-style anchor links. Configurable depth.
+- [JSONPath Tester](https://sharpdev.tools/tools/json-path/): Write JSONPath queries ($.foo[*].bar), see matches live. Filter expressions + slices supported.
+- [JSON to TypeScript](https://sharpdev.tools/tools/json-to-ts/): Generate TypeScript interfaces from JSON with inferred types and nested interfaces.
+- [HTML to JSX](https://sharpdev.tools/tools/html-to-jsx/): Convert HTML to React JSX — className, style objects, self-closing tags, camelCased attributes.
+- [cURL Builder](https://sharpdev.tools/tools/curl-builder/): Build a copy-paste curl command from a form: method, URL, headers, JSON body, auth.
+- [String Escape / Unescape](https://sharpdev.tools/tools/string-escape/): Escape or unescape strings for JSON, JS, HTML, URL and backslash sequences. Two-way.
+- [Nano ID & ULID Generator](https://sharpdev.tools/tools/id-generator/): Generate Nano IDs and sortable ULIDs in bulk. Cryptographically random, URL-safe.
+- [SVG Optimizer](https://sharpdev.tools/tools/svg-optimizer/): Minify SVG, strip editor cruft + metadata, export as optimized SVG, CSS data-URI or img tag.
+- [Test Credit Card Numbers](https://sharpdev.tools/tools/credit-card-test/): Luhn-valid fake card numbers for testing payment forms. Visa/MC/Amex/Discover. Validator too.
+- [Base58 Encode / Decode](https://sharpdev.tools/tools/base58/): Bitcoin-style Base58 (no confusing 0 O I l). Encode text or decode back. Two-way.
+- [Discord Timestamp](https://sharpdev.tools/tools/discord-timestamp/): Generate dynamic Discord timestamp codes for every style. Renders in local time.
+- [HTML Table Generator](https://sharpdev.tools/tools/html-table/): Build HTML table markup: rows, columns, header row, borders, striping. Live preview.
+- [URL Status Checker](https://sharpdev.tools/tools/url-status/): HTTP status code + full redirect chain (301 → 200) for any URL. Find broken links.
+- [HTTP Header Checker](https://sharpdev.tools/tools/http-headers/): Inspect any URL's response headers + security-header checklist (HSTS, CSP, XFO).
+- [MIME Type Lookup](https://sharpdev.tools/tools/mime-types/): File extension ↔ Content-Type MIME lookup, searchable reference table.
+- [ASCII Table](https://sharpdev.tools/tools/ascii-table/): ASCII reference: decimal, hex, octal, binary and character for every code.
+- [Bitwise Calculator](https://sharpdev.tools/tools/bitwise-calculator/): AND/OR/XOR/NOT and bit shifts on two integers, shown in dec, hex and binary.
+- [IP to Binary](https://sharpdev.tools/tools/ip-to-binary/): IPv4 ↔ binary, hex and 32-bit integer.
+- [JSON to Go](https://sharpdev.tools/tools/json-to-go/): Convert JSON to Go structs with json tags and inferred types.
+- [HTML Preview](https://sharpdev.tools/tools/html-preview/): Live-render pasted HTML in a sandboxed iframe. Test snippets and markup instantly.
+- [Hex ⇄ Text](https://sharpdev.tools/tools/hex-to-text/): Convert text to hexadecimal bytes and hex back to text. UTF-8 aware.
+- [Base32](https://sharpdev.tools/tools/base32/): Encode/decode text ↔ RFC 4648 Base32, UTF-8 aware, fully client-side.
+- [.env ↔ JSON](https://sharpdev.tools/tools/env-json/): Convert dotenv files to JSON and back. Handles comments & quoted values.
+- [MAC Address](https://sharpdev.tools/tools/mac-address/): Generate random MAC addresses — pick separator, case and count.
+- [JSON to Python](https://sharpdev.tools/tools/json-to-python/): Generate Python @dataclass definitions from JSON, with nested classes & types.
+- [JSON to Rust](https://sharpdev.tools/tools/json-to-rust/): Generate serde Rust structs from JSON — inferred types, snake_case, nested.
+- [JSON to Kotlin](https://sharpdev.tools/tools/json-to-kotlin/): Generate Kotlin data classes from JSON — inferred types, nested classes.
+- [.htaccess Generator](https://sharpdev.tools/tools/htaccess/): Generate an Apache .htaccess — HTTPS, www, gzip, caching, error pages.
+- [Git Commands](https://sharpdev.tools/tools/git-command/): Pick a task → the exact git command + a plain explanation (undo, branch, stash…).
+- [GraphQL Formatter](https://sharpdev.tools/tools/graphql/): Format & indent GraphQL queries, mutations and schemas — even minified input.
+- [CSV Editor](https://sharpdev.tools/tools/csv-editor/): Edit CSV in a table — add/remove rows & columns, export. Handles quoted fields.
+
+## Site pages
+
+- [Homepage — all tools](https://sharpdev.tools/): Browse every tool by category.
+- [About](https://sharpdev.tools/about/): What SharpDev.tools is and the no-ads, no-tracking philosophy.
+- [Request a tool](https://sharpdev.tools/request/): Suggest a new tool to build.

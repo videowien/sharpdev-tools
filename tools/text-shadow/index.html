@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Text Shadow Generator with Presets | SharpDev.Tools</title>
+<meta content="Build polished CSS text-shadow effects with live preview. Presets: glow, emboss, neon, hard drop, 3D and more. Free, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/text-shadow/" rel="canonical"/>
+<meta content="Text Shadow Generator with Presets | SharpDev.Tools" property="og:title"/>
+<meta content="Build polished CSS text-shadow effects with live preview. Presets: glow, emboss, neon, hard drop, 3D and more. Free, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/text-shadow/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Text Shadow Generator with Presets | SharpDev.Tools" name="twitter:title"/>
+<meta content="Build polished CSS text-shadow effects with live preview. Presets: glow, emboss, neon, hard drop, 3D and more. Free, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"Text Shadow","item":"https://sharpdev.tools/tools/text-shadow/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can I stack multiple text shadows?","acceptedAnswer":{"@type":"Answer","text":"Yes. CSS text-shadow accepts a comma-separated list. The tool includes presets like \u201cneon\u201d and \u201c3D\u201d that use stacked shadows, and you can add your own."}},
+    {"@type":"Question","name":"Does text-shadow affect layout?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike box-shadow's spread/border, text-shadow only paints pixels and has no impact on the element's size or layout. Safe to add to headings without disturbing other elements."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Text Shadow Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/text-shadow/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/text-shadow/text-shadow.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('text-shadow');</script>
+<div class="page">
+<h1>Text Shadow Generator</h1>
+<p class="subtitle">Quick presets or tune every value. Live preview on a large sample.</p>
+<div class="ts-preview" id="ts-preview">
+<span contenteditable="true" id="ts-text">SharpDev.Tools</span>
+</div>
+<div class="ts-presets" id="ts-presets"></div>
+<div class="ts-controls">
+<div class="ts-slider"><label>Offset X</label><input type="range" id="ts-x" min="-30" max="30" value="2"><span class="val">2px</span></div>
+<div class="ts-slider"><label>Offset Y</label><input type="range" id="ts-y" min="-30" max="30" value="2"><span class="val">2px</span></div>
+<div class="ts-slider"><label>Blur</label><input type="range" id="ts-blur" min="0" max="60" value="4"><span class="val">4px</span></div>
+<div class="ts-slider"><label>Alpha</label><input type="range" id="ts-alpha" min="0" max="100" value="50"><span class="val">50%</span></div>
+<div class="ts-color-row">
+<label>Shadow color</label>
+<input type="color" id="ts-color" value="#000000">
+<input type="text" id="ts-hex" value="#000000" maxlength="7" spellcheck="false">
+</div>
+<div class="ts-color-row">
+<label>Text color</label>
+<input type="color" id="ts-text-color" value="#ffffff">
+<input type="text" id="ts-text-hex" value="#ffffff" maxlength="7" spellcheck="false">
+</div>
+</div>
+<div class="code-panel">
+<div class="code-head"><span>Generated CSS</span><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<pre id="code-out"></pre>
+</div>
+</div>
+<script src="/tools/text-shadow/text-shadow.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

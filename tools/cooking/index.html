@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cooking Measurement Converter — Cups, Grams, ML, Oz | SharpDev.Tools</title>
+<meta content="Convert any cooking measurement — cups, tablespoons, teaspoons, grams, ml, fl oz, lb. Per-ingredient density for accurate cup ↔ gram conversion. Free, browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/cooking/" rel="canonical"/>
+<meta content="Cooking Measurement Converter — Cups, Grams, ML, Oz | SharpDev.Tools" property="og:title"/>
+<meta content="Convert cooking measurements with per-ingredient density. Cups, grams, ml, oz, lb. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/cooking/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Cooking Measurement Converter — Cups, Grams, ML, Oz | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert cooking measurements with per-ingredient density." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/calculators/"},
+    {"@type":"ListItem","position":3,"name":"Cooking Measurement Converter","item":"https://sharpdev.tools/tools/cooking/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why does a cup of flour weigh differently than a cup of sugar?","acceptedAnswer":{"@type":"Answer","text":"Because of density. A US cup is 240 ml — but 240 ml of flour weighs about 125g (lots of air), while 240 ml of sugar packs to ~200g. This tool uses ingredient-specific densities for accurate cup ↔ gram conversion."}},
+    {"@type":"Question","name":"Cup sizes around the world","acceptedAnswer":{"@type":"Answer","text":"US cup = 240 ml. UK / Australia cup = 250 ml. Japan cup = 200 ml. This tool uses the US cup as default — switch to ml/g for international precision."}},
+    {"@type":"Question","name":"Is the conversion always exact?","acceptedAnswer":{"@type":"Answer","text":"Volume-to-volume (ml ↔ fl oz) is exact. Volume-to-weight depends on density and is therefore approximate — sifted vs scooped flour can differ by ~20%. For baking precision, weigh in grams."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Cooking Converter — SharpDev.Tools","url":"https://sharpdev.tools/tools/cooking/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/cooking/cooking.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('cooking');</script>
+<div class="page">
+<h1>Cooking Measurement Converter</h1>
+<p class="subtitle">Cups ↔ grams ↔ ml ↔ oz — with per-ingredient density for accuracy.</p>
+
+<div class="card">
+<div class="form-row">
+<label class="opt-label">Ingredient (for volume ↔ weight)</label>
+<select id="ingredient">
+<option value="1.0">Water / milk (density 1.00 g/ml)</option>
+<option value="0.52">Flour, all-purpose (~0.52)</option>
+<option value="0.55">Flour, bread (~0.55)</option>
+<option value="0.85">Sugar, granulated (~0.85)</option>
+<option value="0.59">Sugar, powdered (~0.59)</option>
+<option value="0.93">Sugar, brown packed (~0.93)</option>
+<option value="0.92">Butter (~0.92)</option>
+<option value="0.92">Oil (~0.92)</option>
+<option value="0.66">Honey (~1.42 — actually heavier)</option>
+<option value="1.42">Honey / Maple syrup (~1.42)</option>
+<option value="0.96">Rice, uncooked (~0.96)</option>
+<option value="0.50">Oats, rolled (~0.50)</option>
+<option value="0.66">Cocoa powder (~0.66)</option>
+<option value="0.86">Salt, fine (~1.20 — heavier)</option>
+<option value="1.20">Salt, fine (~1.20)</option>
+<option value="0.96">Baking powder / soda (~0.96)</option>
+</select>
+</div>
+
+<div class="conv-grid">
+<div class="conv-row">
+<input class="qty" data-unit="cup" type="number" step="0.01" value="1"/>
+<select class="unit" data-fixed="cup">
+<option value="cup">cup (US, 240 ml)</option>
+<option value="tbsp">tablespoon (15 ml)</option>
+<option value="tsp">teaspoon (5 ml)</option>
+</select>
+</div>
+<div class="conv-row">
+<input class="qty" data-unit="ml" type="number" step="0.01" value="240"/>
+<select class="unit" data-fixed="ml">
+<option value="ml">millilitres (ml)</option>
+<option value="l">litres (l)</option>
+<option value="floz">fluid ounces (US, 29.57 ml)</option>
+<option value="floz_uk">fluid ounces (UK, 28.41 ml)</option>
+</select>
+</div>
+<div class="conv-row">
+<input class="qty" data-unit="g" type="number" step="0.01"/>
+<select class="unit" data-fixed="g">
+<option value="g">grams (g)</option>
+<option value="kg">kilograms (kg)</option>
+<option value="oz">ounces (US, 28.35 g)</option>
+<option value="lb">pounds (lb, 453.59 g)</option>
+</select>
+</div>
+</div>
+
+<p class="hint">Edit any value — the others update. Volume ↔ weight conversion uses the selected ingredient density.</p>
+</div>
+
+<div class="card">
+<label class="opt-label">Temperature conversion</label>
+<div class="temp-row">
+<div class="opt-group">
+<input id="temp-c" type="number" step="1" value="180"/>
+<span class="unit">°C</span>
+</div>
+<div class="opt-group">
+<input id="temp-f" type="number" step="1" value="356"/>
+<span class="unit">°F</span>
+</div>
+<div class="opt-group">
+<input id="temp-gas" type="number" step="0.5" value="4"/>
+<span class="unit">Gas mark</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Standard cooking measurements</h2>
+<table class="cook-table">
+<tr><th>Unit</th><th>Volume / weight</th></tr>
+<tr><td>1 US cup</td><td>240 ml (16 tbsp = 48 tsp)</td></tr>
+<tr><td>1 tablespoon (US)</td><td>15 ml (3 tsp)</td></tr>
+<tr><td>1 teaspoon (US)</td><td>5 ml</td></tr>
+<tr><td>1 UK cup</td><td>250 ml</td></tr>
+<tr><td>1 US fl oz</td><td>29.57 ml</td></tr>
+<tr><td>1 UK fl oz</td><td>28.41 ml</td></tr>
+<tr><td>1 oz weight</td><td>28.35 g</td></tr>
+<tr><td>1 lb</td><td>453.59 g</td></tr>
+</table>
+
+<h2>For baking — weigh, don't measure</h2>
+<p>The single biggest accuracy improvement in baking is switching from cups to grams. A "cup of flour" can be 100g to 160g depending on how you scoop. Weighing eliminates that 30-60% error.</p>
+
+<h2>Gas marks (UK ovens)</h2>
+<p>Roughly: gas mark 1 = 140°C / 275°F, gas mark 4 = 180°C / 350°F, gas mark 9 = 240°C / 475°F.</p>
+
+<h2>Privacy</h2>
+<p>All conversion happens in your browser.</p>
+</section>
+
+<script src="/tools/cooking/cooking.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Roman Numerals Converter — styles */
+.page { max-width: 720px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 28px; line-height: 1.5; }
+
+.roman-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.field label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.field input {
+  width: 100%; padding: 14px 16px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 18px;
+  border-radius: 10px; font-family: inherit;
+  outline: none; transition: border-color 0.15s;
+}
+.field input:focus { border-color: #ff4444; }
+.field input.invalid { border-color: #ff4444; }
+
+.err {
+  min-height: 18px;
+  font-size: 12px; color: #ff7070; margin-top: 6px;
+}
+
+.result-box {
+  margin-top: 24px; padding: 22px 24px;
+  background: #141414; border: 1px solid #ff4444;
+  border-radius: 12px;
+  display: flex; flex-direction: column; gap: 6px;
+  position: relative;
+}
+.result-label {
+  font-size: 11px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.result-value {
+  font-size: 32px; color: #fff; font-weight: 700;
+  letter-spacing: 0.5px;
+  word-break: break-all;
+  font-family: 'SF Mono', Monaco, monospace;
+}
+.copy-btn {
+  position: absolute; top: 18px; right: 18px;
+  padding: 6px 14px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+.ref-card {
+  margin-top: 36px; padding: 22px 24px;
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.ref-card h2 {
+  font-size: 13px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+.ref-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.ref-grid > div {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 10px 14px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 8px;
+  gap: 10px;
+}
+.ref-sym {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 16px; color: #ff4444; font-weight: 700;
+  letter-spacing: 1px;
+}
+.ref-val {
+  font-size: 13px; color: #aaa;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .roman-grid { grid-template-columns: 1fr; }
+  .ref-grid { grid-template-columns: repeat(3, 1fr); }
+  .result-value { font-size: 24px; }
+  .copy-btn { position: static; margin-top: 10px; align-self: flex-start; }
+  .result-box { flex-direction: column; align-items: stretch; }
+}

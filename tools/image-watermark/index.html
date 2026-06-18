@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image Watermark Tool | SharpDev.Tools</title>
+<meta content="Free image watermark tool. Overlay custom text on any image with adjustable position, size, color and opacity, preview live and download. Everything runs in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/image-watermark/" rel="canonical"/>
+<meta content="Image Watermark Tool | SharpDev.Tools" property="og:title"/>
+<meta content="Free image watermark tool. Overlay custom text on any image with adjustable position, size, color and opacity, preview live and download. Everything runs in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-watermark/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Watermark Tool | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free image watermark tool. Overlay custom text on any image with adjustable position, size, color and opacity, preview live and download. Everything runs in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Add a Watermark to an Image","item":"https://sharpdev.tools/tools/image-watermark/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I watermark a batch of images?","acceptedAnswer":{"@type":"Answer","text":"This tool does one image at a time. Load, position the text, download, then load the next."}},{"@type":"Question","name":"Is the watermark permanent?","acceptedAnswer":{"@type":"Answer","text":"It's burned into the downloaded PNG. Keep your original if you might want a different watermark later."}},{"@type":"Question","name":"Does the image leave my device?","acceptedAnswer":{"@type":"Answer","text":"No. The watermark is drawn on a canvas in your browser; nothing is uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Add a Watermark to an Image \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/image-watermark/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-watermark/image-watermark.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-watermark');</script>
+<div class="page">
+<h1>Add a Watermark to an Image</h1>
+<p class="subtitle">Overlay text on an image — position, size, color and opacity — then download. Runs in your browser.</p>
+<label class="sd-drop" for="file">Click or drop an image here<input type="file" id="file" accept="image/*"></label>
+<div class="row"><div class="field"><label for="txt">Watermark text</label><input type="text" id="txt" value="© SharpDev"></div><div class="field"><label for="pos">Position</label><select id="pos"><option value="br">Bottom-right</option><option value="bl">Bottom-left</option><option value="tr">Top-right</option><option value="tl">Top-left</option><option value="c">Center</option></select></div></div>
+<div class="row"><div class="field"><label for="size">Size (%)</label><input type="number" id="size" value="5" min="1" max="30"></div><div class="field"><label for="col">Color</label><input type="color" id="col" value="#ffffff"></div><div class="field"><label for="op">Opacity (%)</label><input type="number" id="op" value="60" min="5" max="100"></div></div>
+<div class="out-head"><label>Preview</label><a class="copy-btn dlbtn" id="dl" style="display:none;">Download PNG</a></div>
+<canvas id="cv"></canvas>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Can I watermark a batch of images?</summary><p>This tool does one image at a time. Load, position the text, download, then load the next.</p></details>
+<details><summary>Is the watermark permanent?</summary><p>It's burned into the downloaded PNG. Keep your original if you might want a different watermark later.</p></details>
+<details><summary>Does the image leave my device?</summary><p>No. The watermark is drawn on a canvas in your browser; nothing is uploaded.</p></details>
+</section>
+<script src="/tools/image-watermark/image-watermark.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

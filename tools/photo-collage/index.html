@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photo Collage Maker — Grid Layout, Custom Size + Gap | SharpDev.Tools</title>
+<meta content="Combine 2-9 photos into one collage. Grid layout, configurable gap + background, custom output dimensions. Browser-only — your photos never leave your device." name="description"/>
+<link href="https://sharpdev.tools/tools/photo-collage/" rel="canonical"/>
+<meta content="Photo Collage Maker — Grid Layout | SharpDev.Tools" property="og:title"/>
+<meta content="Combine photos into one collage. Grid layout, gap, background, custom size. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/photo-collage/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Photo Collage Maker — Grid Layout | SharpDev.Tools" name="twitter:title"/>
+<meta content="Combine photos into one collage. Grid layout, gap, custom size." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/images-media/"},
+    {"@type":"ListItem","position":3,"name":"Photo Collage Maker","item":"https://sharpdev.tools/tools/photo-collage/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How many photos can I combine?","acceptedAnswer":{"@type":"Answer","text":"Up to 9. Grids snap to 1×2, 2×2, 2×3, 3×3 depending on count."}},
+    {"@type":"Question","name":"Are my photos uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens in your browser via Canvas. Nothing is uploaded."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Photo Collage Maker — SharpDev.Tools","url":"https://sharpdev.tools/tools/photo-collage/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/photo-collage/photo-collage.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('photo-collage');</script>
+<div class="page">
+<h1>Photo Collage Maker</h1>
+<p class="subtitle">Combine 2-9 photos into one image. Drag to reorder, set gap + background, download.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" multiple type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop photos here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">2-9 images — JPG, PNG, WebP</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Layout</label>
+<select id="layout">
+<option value="auto" selected>Auto (grid)</option>
+<option value="1xN">Single row</option>
+<option value="Nx1">Single column</option>
+<option value="2col">Two columns</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Output size</label>
+<select id="size">
+<option value="1080" selected>1080 × 1080 (IG square)</option>
+<option value="1080x1350">1080 × 1350 (IG portrait)</option>
+<option value="1080x1920">1080 × 1920 (Story / Reel)</option>
+<option value="1920">1920 × 1920 (HD square)</option>
+<option value="2048">2048 × 2048 (high-res)</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Gap</label>
+<input id="gap" type="range" min="0" max="60" value="12"/>
+<span class="opt-value" id="gap-val">12 px</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Background</label>
+<input id="bg" type="color" value="#ffffff"/>
+</div>
+</div>
+
+<div class="thumbs" id="thumbs"></div>
+<p class="hint">Drag photos to reorder. Click × to remove.</p>
+
+<div class="canvas-wrap">
+<canvas id="display"></canvas>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="dl-png" type="button">Download PNG</button>
+<button class="btn btn-secondary" id="dl-jpg" type="button">Download JPG</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick different files</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Use cases</h2>
+<ul>
+<li><strong>Travel recap</strong> — best 4 shots from a trip in one Instagram-ready square</li>
+<li><strong>Before / after comparisons</strong> — renovation, fitness, hair</li>
+<li><strong>Product mockups</strong> — multiple angles in one image</li>
+<li><strong>Event recaps</strong> — combine multiple moments into one share-worthy image</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Photos are loaded into Canvas and combined locally. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/photo-collage/photo-collage.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

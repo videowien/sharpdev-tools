@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Number to Words Converter (English) | SharpDev.Tools</title>
+<meta content="Spell out any whole number in English — from zero to quadrillions. Useful for cheques, invoices, legal text. Free online, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/num-words/" rel="canonical"/>
+<meta content="Number to Words Converter (English) | SharpDev.Tools" property="og:title"/>
+<meta content="Spell out any whole number in English — from zero to quadrillions. Useful for cheques, invoices, legal text. Free online, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/num-words/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Number to Words Converter (English) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Spell out any whole number in English — from zero to quadrillions. Useful for cheques, invoices, legal text. Free online, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name": "Calculators", "item": "https://sharpdev.tools/#calculators"},
+    {"@type":"ListItem","position":3,"name":"Number to Words","item":"https://sharpdev.tools/tools/num-words/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How large a number can I convert?","acceptedAnswer":{"@type":"Answer","text":"Integers up to 18 digits (up to 999 quadrillion). Negative numbers and zero are supported. Decimals are not — use your local currency formatter for fractional values."}},
+    {"@type":"Question","name":"Does it use the short scale (billion = 10^9)?","acceptedAnswer":{"@type":"Answer","text":"Yes — the American/modern English short scale where one billion equals one thousand million, and one trillion equals one thousand billion."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Number to Words Converter — SharpDev.Tools","url":"https://sharpdev.tools/tools/num-words/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/num-words/num-words.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('num-words');</script>
+<div class="page">
+<h1>Number to Words</h1>
+<p class="subtitle">Spell out any whole number in English. Useful for cheques, invoices, contracts.</p>
+<label for="num-in">Number</label>
+<input type="text" id="num-in" inputmode="numeric" placeholder="e.g. 1234567" oninput="nwGo()">
+<div class="err" id="err"></div>
+<label for="out" style="margin-top:16px;">Words</label>
+<div class="out-wrap">
+<div id="out" class="words-out">—</div>
+<button class="copy-btn" id="copy-btn" type="button">Copy</button>
+</div>
+<div class="variants" id="variants"></div>
+</div>
+<script src="/tools/num-words/num-words.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

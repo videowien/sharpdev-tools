@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Color Converter — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Convert colors between HEX, RGB, HSL, HSV and CMYK and generate complementary and analogous palettes instantly. Free online color converter, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/color-convert/" rel="canonical"/>
+<meta content="Color Converter — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Convert colors between HEX, RGB, HSL, HSV and CMYK and generate complementary and analogous palettes instantly. Free online color converter, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/color-convert/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Color Converter — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert colors between HEX, RGB, HSL, HSV and CMYK and generate complementary and analogous palettes instantly. Free online color converter, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Design & CSS",
+        "item": "https://sharpdev.tools/#design-css"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Color Converter",
+        "item": "https://sharpdev.tools/tools/color-convert/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which color formats can the Color Converter handle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HEX, RGB, HSL, HSV and CMYK — enter any format and see the others update live, plus a complementary and analogous palette."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free with no ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to sign up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Open the page and start converting immediately."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Color Converter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/color-convert/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/color-convert/color-convert.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('color-convert');</script>
+<div class="page">
+<h1>Color Converter</h1>
+<p class="subtitle">Convert colors between HEX, RGB, HSL, and HSV. Type any format or pick visually.</p>
+<div class="main-grid">
+<div class="swatch-col">
+<div class="swatch" id="swatch"></div>
+<div class="swatch-controls">
+<input id="picker" type="color" value="#ff4444"/>
+<label class="picker-label" for="picker">Native picker</label>
+</div>
+<div class="nearest-box">
+<div class="nearest-label">Nearest named</div>
+<div class="nearest-name" id="nearest-name">red</div>
+</div>
+</div>
+<div class="fields-col">
+<label for="parse-input">Parse any format</label>
+<input autocomplete="off" id="parse-input" placeholder="#ff4444 · rgb(255,68,68) · hsl(0,100%,63%) · red" spellcheck="false" type="text"/>
+<div class="row">
+<label>HEX</label>
+<div class="field">
+<input id="out-hex" readonly="" type="text"/>
+<button class="small-btn" onclick="copyField('out-hex')">Copy</button>
+</div>
+</div>
+<div class="row">
+<label>RGB</label>
+<div class="field">
+<input id="out-rgb" readonly="" type="text"/>
+<button class="small-btn" onclick="copyField('out-rgb')">Copy</button>
+</div>
+</div>
+<div class="row">
+<label>RGBA <span class="alpha-val" id="alpha-val">1.00</span></label>
+<div class="field">
+<input id="out-rgba" readonly="" type="text"/>
+<button class="small-btn" onclick="copyField('out-rgba')">Copy</button>
+</div>
+<input class="alpha-slider" id="alpha-slider" max="1" min="0" step="0.01" type="range" value="1"/>
+</div>
+<div class="row">
+<label>HSL</label>
+<div class="field">
+<input id="out-hsl" readonly="" type="text"/>
+<button class="small-btn" onclick="copyField('out-hsl')">Copy</button>
+</div>
+</div>
+<div class="row">
+<label>HSV</label>
+<div class="field">
+<input id="out-hsv" readonly="" type="text"/>
+<button class="small-btn" onclick="copyField('out-hsv')">Copy</button>
+</div>
+</div>
+<div class="row">
+<label>CMYK</label>
+<div class="field">
+<input id="out-cmyk" readonly="" type="text"/>
+<button class="small-btn" onclick="copyField('out-cmyk')">Copy</button>
+</div>
+</div>
+</div>
+</div>
+<div class="harmony">
+<div class="harmony-block">
+<h3>Complementary</h3>
+<div class="swatch-row" id="h-comp"></div>
+</div>
+<div class="harmony-block">
+<h3>Triadic</h3>
+<div class="swatch-row" id="h-tri"></div>
+</div>
+<div class="harmony-block">
+<h3>Analogous</h3>
+<div class="swatch-row" id="h-ana"></div>
+</div>
+</div>
+</div>
+<script src="/tools/color-convert/color-convert.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

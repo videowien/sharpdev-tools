@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Ohm's Law Calculator | SharpDev.Tools</title>
+<meta content="Free Ohm's law calculator. Enter any two of voltage (V), current (A), resistance (Ω) or power (W) and the tool computes the rest using V = I·R and P = V·I. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ohms-law/" rel="canonical"/>
+<meta content="Ohm's Law Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free Ohm's law calculator. Enter any two of voltage (V), current (A), resistance (Ω) or power (W) and the tool computes the rest using V = I·R and P = V·I. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ohms-law/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ohm's Law Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Ohm's law calculator. Enter any two of voltage (V), current (A), resistance (Ω) or power (W) and the tool computes the rest using V = I·R and P = V·I. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Ohm's Law Calculator","item":"https://sharpdev.tools/tools/ohms-law/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Ohm's law?","acceptedAnswer":{"@type":"Answer","text":"It states that voltage equals current times resistance: V = I \u00d7 R. Combined with power P = V \u00d7 I, any two of the four quantities determine the other two."}},{"@type":"Question","name":"Which two values should I enter?","acceptedAnswer":{"@type":"Answer","text":"Any two \u2014 voltage and current, current and resistance, power and voltage, and so on. The calculator detects the pair and derives the rest."}},{"@type":"Question","name":"What units does it use?","acceptedAnswer":{"@type":"Answer","text":"Volts (V), amperes (A), ohms (\u03a9) and watts (W) \u2014 the standard SI electrical units."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Ohm's Law Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/ohms-law/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ohms-law/ohms-law.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ohms-law');</script>
+<div class="page">
+<h1>Ohm's Law Calculator</h1>
+<p class="subtitle">Enter any two of voltage, current, resistance or power and get the other two. V = I × R, P = V × I.</p>
+<div class="row">
+<div class="field"><label for="v">Voltage (V)</label><input type="number" id="v" placeholder="volts" step="any"></div>
+<div class="field"><label for="i">Current (A)</label><input type="number" id="i" placeholder="amps" step="any"></div>
+<div class="field"><label for="r">Resistance (Ω)</label><input type="number" id="r" placeholder="ohms" step="any"></div>
+<div class="field"><label for="p">Power (W)</label><input type="number" id="p" placeholder="watts" step="any"></div>
+</div>
+<p class="note" id="msg">Enter any two values, then the other two are filled in automatically.</p>
+<div class="result-cards"><div class="result-card"><div class="label">Voltage</div><div class="value" id="ov">—</div></div><div class="result-card"><div class="label">Current</div><div class="value" id="oi">—</div></div><div class="result-card"><div class="label">Resistance</div><div class="value" id="or">—</div></div><div class="result-card"><div class="label">Power</div><div class="value" id="op">—</div></div></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is Ohm's law?</summary><p>It states that voltage equals current times resistance: V = I × R. Combined with power P = V × I, any two of the four quantities determine the other two.</p></details>
+<details><summary>Which two values should I enter?</summary><p>Any two — voltage and current, current and resistance, power and voltage, and so on. The calculator detects the pair and derives the rest.</p></details>
+<details><summary>What units does it use?</summary><p>Volts (V), amperes (A), ohms (Ω) and watts (W) — the standard SI electrical units.</p></details>
+</section>
+<script src="/tools/ohms-law/ohms-law.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

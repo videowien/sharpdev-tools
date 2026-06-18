@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Loading Spinner Generator | SharpDev.Tools</title>
+<meta content="Free CSS loading spinner generator. Create a pure-CSS spinner with custom size, color and speed, preview it live, and copy ready-to-use HTML and CSS. No images, no JavaScript needed. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-spinner/" rel="canonical"/>
+<meta content="CSS Loading Spinner Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free CSS loading spinner generator. Create a pure-CSS spinner with custom size, color and speed, preview it live, and copy ready-to-use HTML and CSS. No images, no JavaScript needed. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-spinner/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Loading Spinner Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free CSS loading spinner generator. Create a pure-CSS spinner with custom size, color and speed, preview it live, and copy ready-to-use HTML and CSS. No images, no JavaScript needed. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Loading Spinner Generator","item":"https://sharpdev.tools/tools/css-spinner/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the spinner need JavaScript?","acceptedAnswer":{"@type":"Answer","text":"No. It's pure CSS \u2014 a bordered circle with a CSS keyframe animation. Drop the HTML and CSS into your page and it spins on its own."}},{"@type":"Question","name":"How do I change the speed?","acceptedAnswer":{"@type":"Answer","text":"Lower the seconds value for a faster spin, raise it for slower. The number is the time for one full rotation."}},{"@type":"Question","name":"How do I center it?","acceptedAnswer":{"@type":"Answer","text":"Put the spinner in a container with display:flex; align-items:center; justify-content:center, or set margin:0 auto on a block parent."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Loading Spinner Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/css-spinner/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-spinner/css-spinner.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-spinner');</script>
+<div class="page">
+<h1>CSS Loading Spinner Generator</h1>
+<p class="subtitle">Build a pure-CSS loading spinner — size, color and speed — and copy the HTML and CSS.</p>
+<div class="row"><div class="field"><label for="size">Size (px)</label><input type="number" id="size" value="40"></div><div class="field"><label for="col">Color</label><input type="color" id="col" value="#ff4444"></div><div class="field"><label for="thick">Thickness (px)</label><input type="number" id="thick" value="4"></div><div class="field"><label for="speed">Speed (s)</label><input type="number" id="speed" value="0.8" step="0.1"></div></div>
+<div class="out-head"><label>Preview</label></div>
+<div class="sd-prev"><div id="prev"></div></div>
+<div class="out-head"><label>HTML + CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="out" readonly style="min-height:180px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Does the spinner need JavaScript?</summary><p>No. It's pure CSS — a bordered circle with a CSS keyframe animation. Drop the HTML and CSS into your page and it spins on its own.</p></details>
+<details><summary>How do I change the speed?</summary><p>Lower the seconds value for a faster spin, raise it for slower. The number is the time for one full rotation.</p></details>
+<details><summary>How do I center it?</summary><p>Put the spinner in a container with display:flex; align-items:center; justify-content:center, or set margin:0 auto on a block parent.</p></details>
+</section>
+<script src="/tools/css-spinner/css-spinner.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

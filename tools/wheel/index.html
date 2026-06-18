@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spin the Wheel — Random Name Picker with Animation | SharpDev.Tools</title>
+<meta content="Spin a wheel to pick a random name from your list. Class raffles, giveaways, decisions, team picks. Customizable colors. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/wheel/" rel="canonical"/>
+<meta content="Spin the Wheel — Random Name Picker with Animation | SharpDev.Tools" property="og:title"/>
+<meta content="Spin a wheel to pick random names. Raffles, giveaways, decisions. Customizable, free, runs in browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/wheel/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Spin the Wheel — Random Name Picker with Animation | SharpDev.Tools" name="twitter:title"/>
+<meta content="Spin a wheel to pick random names." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Spin Wheel","item":"https://sharpdev.tools/tools/wheel/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is the spin truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes — the result is picked with crypto.getRandomValues() (cryptographically secure), then the wheel animates to that pre-decided result. The animation is just visual; the outcome is fair."}},
+    {"@type":"Question","name":"How many names can I add?","acceptedAnswer":{"@type":"Answer","text":"Up to 100 names. Above that the wheel slices become too thin to read."}},
+    {"@type":"Question","name":"Can I remove the winner from the wheel?","acceptedAnswer":{"@type":"Answer","text":"Yes — after each spin you can click 'Remove winner' to draw without replacement. Useful for raffles where the same name shouldn't win twice."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Spin Wheel — SharpDev.Tools","url":"https://sharpdev.tools/tools/wheel/","applicationCategory":"GameApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/wheel/wheel.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('wheel');</script>
+<div class="page">
+<h1>Spin the Wheel</h1>
+<p class="subtitle">Random name picker with animation. Raffles, picks, decisions.</p>
+
+<div class="wheel-layout">
+<div class="wheel-stage">
+<div class="wheel-pointer"></div>
+<canvas id="wheel" width="420" height="420"></canvas>
+<button class="spin-btn" id="spin-btn" type="button">Spin</button>
+</div>
+
+<div class="wheel-controls">
+<div class="form-row">
+<label class="opt-label">Entries (one per line)</label>
+<textarea id="entries" rows="14" placeholder="Alice&#10;Bob&#10;Carol&#10;Dan&#10;Eve">Alice
+Bob
+Carol
+Dan
+Eve
+Frank
+Grace
+Henry</textarea>
+</div>
+<label class="checkbox-label">
+<input id="remove-winner" type="checkbox"/>
+<span>Remove winner after spin</span>
+</label>
+</div>
+</div>
+
+<div class="winner-banner" id="winner-banner" style="display:none">
+<div class="winner-label">Winner</div>
+<div class="winner-name" id="winner-name">—</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Classroom raffles</strong> — pick a student to answer / present</li>
+<li><strong>Giveaway draws</strong> — random winner from a list of entries</li>
+<li><strong>Team standups</strong> — who goes first today?</li>
+<li><strong>Where to eat?</strong> — list options, let the wheel decide</li>
+<li><strong>Yes/No decisions</strong> — for a binary one, the Decision Maker is faster</li>
+</ul>
+
+<h2>How fairness works</h2>
+<p>The result is picked with <code>crypto.getRandomValues()</code> — the same source browsers use for cryptography. The wheel animation just rotates to land on the pre-decided slice, with enough rotations to feel suspenseful. The outcome is fair, not the animation.</p>
+
+<h2>Privacy</h2>
+<p>Entries stay in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/wheel/wheel.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>HTTP Header Checker — Inspect Response &amp; Security Headers | SharpDev.Tools</title>
+<meta content="View the HTTP response headers of any URL and check security headers (HSTS, CSP, X-Frame-Options) at a glance. Free online header inspector, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/http-headers/" rel="canonical"/>
+<meta content="HTTP Header Checker — Inspect Response &amp; Security Headers | SharpDev.Tools" property="og:title"/>
+<meta content="View the HTTP response headers of any URL and check security headers (HSTS, CSP, X-Frame-Options) at a glance. Free online header inspector, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/http-headers/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="HTTP Header Checker — Inspect Response &amp; Security Headers | SharpDev.Tools" name="twitter:title"/>
+<meta content="View the HTTP response headers of any URL and check security headers (HSTS, CSP, X-Frame-Options) at a glance. Free online header inspector, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"HTTP Header Checker","item":"https://sharpdev.tools/tools/http-headers/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the HTTP header checker show?","acceptedAnswer":{"@type":"Answer","text":"It fetches your URL (following redirects) and lists every response header of the final response: caching, content type, server, cookies policy and more, plus a quick checklist of the six most important security headers."}},{"@type":"Question","name":"Which security headers does it check?","acceptedAnswer":{"@type":"Answer","text":"Strict-Transport-Security (HSTS), Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy. Green means the header is present on the final response, red means it's missing."}},{"@type":"Question","name":"Why can't my browser read another site's headers directly?","acceptedAnswer":{"@type":"Answer","text":"Cross-origin security rules hide most response headers from JavaScript. That's why this tool routes the request through a small server function, which can read the full header set and return it as JSON. Private and internal addresses are blocked."}},{"@type":"Question","name":"Does it download the page?","acceptedAnswer":{"@type":"Answer","text":"No. The inspector reads only the status line and headers and cancels the body, so checking a URL costs almost no bandwidth on either side."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"HTTP Header Checker \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/http-headers/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/http-headers/http-headers.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('http-headers');</script>
+<div class="page">
+<h1>HTTP Header Checker</h1>
+<p class="subtitle">See every response header a URL returns, with a security-header checklist on top.</p>
+<div class="row">
+<div class="field"><label for="url">URL</label><input type="text" id="url" placeholder="example.com or https://example.com/page"></div>
+<div class="actions"><button class="btn btn-primary" id="check" style="margin-top:18px">Inspect headers</button></div>
+</div>
+<div id="sec"></div>
+<div id="meta" class="result-cards" style="margin-top:14px"></div>
+<div id="tbl" style="margin-top:14px"></div>
+<div id="err" class="note" style="display:none"></div>
+<p class="note">Runs through this site's server (browsers hide cross-origin headers). Private/internal addresses are blocked, response bodies are never downloaded.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the HTTP header checker show?</summary><p>It fetches your URL (following redirects) and lists every response header of the final response: caching, content type, server, cookies policy and more, plus a quick checklist of the six most important security headers.</p></details>
+<details><summary>Which security headers does it check?</summary><p>Strict-Transport-Security (HSTS), Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy. Green means the header is present on the final response, red means it's missing.</p></details>
+<details><summary>Why can't my browser read another site's headers directly?</summary><p>Cross-origin security rules hide most response headers from JavaScript. That's why this tool routes the request through a small server function, which can read the full header set and return it as JSON. Private and internal addresses are blocked.</p></details>
+<details><summary>Does it download the page?</summary><p>No. The inspector reads only the status line and headers and cancels the body, so checking a URL costs almost no bandwidth on either side.</p></details>
+</section>
+<script src="/tools/http-headers/http-headers.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

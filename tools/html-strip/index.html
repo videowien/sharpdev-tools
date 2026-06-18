@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HTML Strip — Remove HTML Tags &amp; Convert HTML to Plain Text Online | SharpDev.Tools</title>
+<meta content="HTML strip online — paste any HTML and get clean plain text. Removes all tags, keeps paragraph breaks, decodes entities, normalizes whitespace. Also a htmlstrip alias. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/html-strip/" rel="canonical"/>
+<meta content="HTML Strip — Remove HTML Tags &amp; Convert HTML to Plain Text Online | SharpDev.Tools" property="og:title"/>
+<meta content="HTML strip online — paste any HTML and get clean plain text. Removes all tags, keeps paragraph breaks, decodes entities, normalizes whitespace. Also a htmlstrip alias. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/html-strip/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="HTML Strip — Remove HTML Tags &amp; Convert HTML to Plain Text Online | SharpDev.Tools" name="twitter:title"/>
+<meta content="HTML strip online — paste any HTML and get clean plain text. Removes all tags, keeps paragraph breaks. htmlstrip alias supported." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/text/"},
+    {"@type":"ListItem","position":3,"name":"HTML to Plain Text","item":"https://sharpdev.tools/tools/html-strip/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I strip HTML tags from text online?","acceptedAnswer":{"@type":"Answer","text":"Paste your HTML into the input box on this page. The tool removes all tags, decodes entities (&amp;, &lt;, &nbsp;), keeps paragraph breaks and gives you clean plain text — same logic as how a browser renders visible content but in pure text form."}},
+    {"@type":"Question","name":"Does the htmlstrip tool support all HTML?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool uses the browser's built-in DOMParser, which handles entities, malformed HTML, deeply nested tags, scripts and styles, and even legacy markup. Anything a browser can parse, this strips correctly."}},
+    {"@type":"Question","name":"How is this better than a regex HTML strip?","acceptedAnswer":{"@type":"Answer","text":"Regex can't reliably handle entities, malformed tags, comments, or nested structures. This tool uses DOMParser which gets all of those right — same robust parsing the browser itself uses to render pages."}},
+    {"@type":"Question","name":"Are scripts and styles removed?","acceptedAnswer":{"@type":"Answer","text":"Yes. <script>, <style> and HTML comments are stripped before extracting text — you only get the visible content, same as what users see when the page renders."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All parsing runs in your browser via DOMParser — the HTML you paste never leaves your device."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"HTML Strip — SharpDev.Tools","url":"https://sharpdev.tools/tools/html-strip/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/html-strip/html-strip.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('html-strip');</script>
+<div class="page">
+<h1>HTML Strip — Remove HTML Tags Online</h1>
+<p class="subtitle">Paste HTML, get clean plain text. Strip all tags, decode entities, keep paragraph breaks. DOMParser-based — handles real-world HTML.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="input">HTML input</label>
+<textarea id="input" rows="10" placeholder="Paste your HTML here…"><h1>Hello world</h1><p>This is a <strong>simple</strong> paragraph with <a href="https://example.com">a link</a>.</p>
+<ul><li>First bullet</li><li>Second bullet</li></ul>
+<script>alert('this is ignored');</script>
+<p>Bonus: entities like &amp;mdash; &amp; &amp;nbsp; are decoded.</p></textarea>
+</div>
+
+<div class="opt-row">
+<label class="checkbox-label">
+<input id="preserve-links" type="checkbox"/>
+<span>Preserve link URLs (in parentheses)</span>
+</label>
+<label class="checkbox-label">
+<input id="bullet-prefix" type="checkbox" checked/>
+<span>Prefix list items with • / 1.</span>
+</label>
+<label class="checkbox-label">
+<input id="collapse" type="checkbox" checked/>
+<span>Collapse multiple blank lines</span>
+</label>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Plain text output</label>
+<pre class="output" id="output">—</pre>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="download-btn" type="button">Download .txt</button>
+<span class="status-msg" id="status-msg"></span>
+<span class="stat" id="stat"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Extract article text</strong> — paste an article's HTML, get clean reading-ready text</li>
+<li><strong>Email body cleanup</strong> — strip rich-text formatting before reposting</li>
+<li><strong>Word count from HTML</strong> — get the actual visible word count, not the markup-bloated number</li>
+<li><strong>SEO content audit</strong> — see what crawlers actually read on a page</li>
+<li><strong>Email preview text</strong> — what an email client shows before HTML rendering</li>
+</ul>
+
+<h2>What's stripped</h2>
+<ul>
+<li><code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> and HTML comments — removed entirely</li>
+<li><code>&lt;img&gt;</code>, <code>&lt;svg&gt;</code> — removed (no alt-text fallback by default)</li>
+<li>All other tags — removed but their <strong>text content is kept</strong></li>
+<li>Entities — decoded (<code>&amp;mdash;</code> → —, <code>&amp;nbsp;</code> → space)</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Parsing happens in your browser via DOMParser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/html-strip/html-strip.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

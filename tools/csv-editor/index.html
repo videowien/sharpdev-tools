@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSV Editor (View &amp; Edit CSV Online) | SharpDev.Tools</title>
+<meta content="Free online CSV editor. Paste or upload a CSV, edit cells in a spreadsheet-style table, add or delete rows and columns, and export clean CSV. Handles quoted fields. Runs in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/csv-editor/" rel="canonical"/>
+<meta content="CSV Editor (View &amp; Edit CSV Online) | SharpDev.Tools" property="og:title"/>
+<meta content="Free online CSV editor. Paste or upload a CSV, edit cells in a spreadsheet-style table, add or delete rows and columns, and export clean CSV. Handles quoted fields. Runs in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/csv-editor/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSV Editor (View &amp; Edit CSV Online) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free online CSV editor. Paste or upload a CSV, edit cells in a spreadsheet-style table, add or delete rows and columns, and export clean CSV. Handles quoted fields. Runs in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Online CSV Editor","item":"https://sharpdev.tools/tools/csv-editor/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it handle commas inside fields?","acceptedAnswer":{"@type":"Answer","text":"Yes. Fields wrapped in double quotes can contain commas, quotes (escaped as \"\") and newlines, following the standard CSV rules \u2014 both when loading and exporting."}},{"@type":"Question","name":"How do I edit a cell?","acceptedAnswer":{"@type":"Answer","text":"Click any cell and type \u2014 it's directly editable. Use \u2018+ Row\u2019 and \u2018+ Column\u2019 to grow the table, then \u2018Export CSV\u2019 to get the result."}},{"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Parsing, editing and exporting all happen in your browser; the CSV never leaves your device."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Online CSV Editor \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/csv-editor/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/csv-editor/csv-editor.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('csv-editor');</script>
+<div class="page">
+<h1>Online CSV Editor</h1>
+<p class="subtitle">Paste or load a CSV, edit it in a table, add or remove rows and columns, then export. Runs in your browser.</p>
+<div class="field"><label for="in">Paste CSV (or load a file)</label><textarea id="in" style="min-height:90px;">name,age,city
+Ada,36,London
+Grace,40,New York</textarea></div>
+<div class="actions"><button class="small-btn" id="load">Load into table</button><label class="small-btn" style="cursor:pointer;">Upload CSV<input type="file" id="file" accept=".csv,text/csv" style="display:none;"></label><button class="small-btn" id="addrow">+ Row</button><button class="small-btn" id="addcol">+ Column</button></div>
+<div id="wrap" style="overflow:auto;"></div>
+<div class="actions"><button class="small-btn" id="exp">Export CSV</button><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Does it handle commas inside fields?</summary><p>Yes. Fields wrapped in double quotes can contain commas, quotes (escaped as "") and newlines, following the standard CSV rules — both when loading and exporting.</p></details>
+<details><summary>How do I edit a cell?</summary><p>Click any cell and type — it's directly editable. Use ‘+ Row’ and ‘+ Column’ to grow the table, then ‘Export CSV’ to get the result.</p></details>
+<details><summary>Is my data uploaded?</summary><p>No. Parsing, editing and exporting all happen in your browser; the CSV never leaves your device.</p></details>
+</section>
+<script src="/tools/csv-editor/csv-editor.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

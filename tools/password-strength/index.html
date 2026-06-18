@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Password Strength Checker — Entropy + Crack Time Estimate | SharpDev.Tools</title>
+<meta content="Check password strength locally — entropy bits, estimated crack time (online + offline), common-pattern detection. Your password never leaves the browser. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/password-strength/" rel="canonical"/>
+<meta content="Password Strength Checker — Entropy + Crack Time | SharpDev.Tools" property="og:title"/>
+<meta content="Check password strength locally — entropy, crack time estimate, common-pattern detection. Never uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/password-strength/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Password Strength Checker — Entropy + Crack Time | SharpDev.Tools" name="twitter:title"/>
+<meta content="Check password strength locally — entropy, crack time, pattern detection." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/security-crypto/"},
+    {"@type":"ListItem","position":3,"name":"Password Strength Checker","item":"https://sharpdev.tools/tools/password-strength/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is my password sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Strength estimation is computed entirely in your browser via JavaScript. The password never leaves the page — type any password without worry."}},
+    {"@type":"Question","name":"What's entropy in bits?","acceptedAnswer":{"@type":"Answer","text":"Entropy measures unpredictability. Each bit doubles the possible passwords. 60 bits means 2^60 (≈10^18) combinations to brute-force. NIST recommends ≥80 bits for important accounts, ≥128 for high-security uses."}},
+    {"@type":"Question","name":"Why does crack time vary so much?","acceptedAnswer":{"@type":"Answer","text":"Online attacks (against a login form) are limited to ~10-100 guesses per second by rate limiting. Offline attacks (if a database leaks) can do billions per second on a GPU. We show both."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Password Strength Checker — SharpDev.Tools","url":"https://sharpdev.tools/tools/password-strength/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/password-strength/password-strength.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('password-strength');</script>
+<div class="page">
+<h1>Password Strength Checker</h1>
+<p class="subtitle">Entropy, crack time estimates, common-pattern detection — runs in your browser.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="pw">Your password</label>
+<div class="pw-wrap">
+<input id="pw" type="password" placeholder="type or paste a password" autocomplete="off"/>
+<button id="toggle-pw" type="button">Show</button>
+</div>
+<p class="hint">Never uploaded. Computed locally. Try a random one if you don't want to type your real one.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="result-grid">
+<div class="result-block">
+<div class="result-label">Length</div>
+<div class="result-value" id="r-length">—</div>
+<div class="result-sub">characters</div>
+</div>
+<div class="result-block highlight">
+<div class="result-label">Entropy</div>
+<div class="result-value" id="r-entropy">—</div>
+<div class="result-sub">bits</div>
+</div>
+<div class="result-block">
+<div class="result-label">Strength</div>
+<div class="result-value"><span id="r-strength" class="strength">—</span></div>
+</div>
+</div>
+
+<div class="crack-row">
+<div class="crack-block">
+<div class="crack-label">⚡ Online attack (100 guesses/sec)</div>
+<div class="crack-time" id="r-online">—</div>
+</div>
+<div class="crack-block">
+<div class="crack-label">💀 Offline attack (10B guesses/sec)</div>
+<div class="crack-time" id="r-offline">—</div>
+</div>
+</div>
+
+<div class="findings" id="findings"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why entropy beats character-class counting</h2>
+<p>Old strength meters look for "1 uppercase, 1 number, 1 symbol" — but <code>Password1!</code> passes that check and is still terrible. Real strength is about <strong>unpredictability</strong>, not which characters appear.</p>
+
+<ul>
+<li><strong>Length wins</strong> — adding a character is worth far more than swapping <code>o</code> for <code>0</code></li>
+<li><strong>Patterns lose</strong> — dictionary words, keyboard walks (qwerty), repeated chars, dates all crash entropy</li>
+<li><strong>Diceware beats l33t</strong> — <code>correct horse battery staple</code> (44 bits) beats <code>Tr0ub4dor&3</code> (28 bits)</li>
+</ul>
+
+<h2>How to read the crack-time numbers</h2>
+<ul>
+<li><strong>Online (100/sec)</strong> — someone guessing at the login page. Rate-limiting is the main defense.</li>
+<li><strong>Offline (10B/sec)</strong> — what happens if a database leaks (your hash is now being cracked locally on someone's GPU). The "real" threat for important accounts.</li>
+<li><strong>Centuries+ offline</strong> is the target for anything important. Anything under a few years offline is weak.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The password is never sent anywhere. All calculation happens in JavaScript in your browser.</p>
+</section>
+
+<script src="/tools/password-strength/password-strength.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

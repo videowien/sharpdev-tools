@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Timer &amp; Pomodoro — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Run a Pomodoro cycle, accurate stopwatch or countdown with background-tab notifications — three timers in one. Free online, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/timer/" rel="canonical"/>
+<meta content="Timer &amp; Pomodoro — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Run a Pomodoro cycle, accurate stopwatch or countdown with background-tab notifications — three timers in one. Free online, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/timer/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Timer &amp; Pomodoro — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Run a Pomodoro cycle, accurate stopwatch or countdown with background-tab notifications — three timers in one. Free online, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Time & Date", "item": "https://sharpdev.tools/#time-date"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Timer & Pomodoro",
+        "item": "https://sharpdev.tools/tools/timer/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What timers does the Timer & Pomodoro tool include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A configurable Pomodoro work/break cycle, an accurate stopwatch with laps, and a countdown timer — all with notifications that fire even when the tab is in the background."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Once loaded, the timers run in your browser even without a connection."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Timer & Pomodoro — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/timer/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/timer/timer.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('timer');</script>
+<div class="page">
+<h1>Timer, Stopwatch &amp; Pomodoro</h1>
+<p class="subtitle">Three timers in one. Notifications fire even when the tab is in the background.</p>
+<div class="tabs">
+<button class="tab active" data-tab="pomodoro">Pomodoro</button>
+<button class="tab" data-tab="stopwatch">Stopwatch</button>
+<button class="tab" data-tab="countdown">Countdown</button>
+</div>
+<!-- Pomodoro -->
+<div class="panel active" id="panel-pomodoro">
+<div class="ring-wrap">
+<svg class="ring" viewbox="0 0 200 200">
+<circle class="ring-bg" cx="100" cy="100" r="92"></circle>
+<circle class="ring-fg" cx="100" cy="100" id="pomo-ring" r="92"></circle>
+</svg>
+<div class="ring-center">
+<div class="phase-label" id="pomo-phase">Work</div>
+<div class="time" id="pomo-time">25:00</div>
+<div class="session-label" id="pomo-session">Session 1 of 4</div>
+</div>
+</div>
+<div class="ctrl-row">
+<button class="btn btn-primary" id="pomo-start">Start</button>
+<button class="btn" id="pomo-pause">Pause</button>
+<button class="btn" id="pomo-reset">Reset</button>
+<button class="btn" id="pomo-skip">Skip</button>
+</div>
+<div class="opts">
+<label>Work <input id="pomo-work" max="120" min="1" type="number" value="25"/></label>
+<label>Short break <input id="pomo-short" max="60" min="1" type="number" value="5"/></label>
+<label>Long break <input id="pomo-long" max="60" min="1" type="number" value="15"/></label>
+<label>Sessions <input id="pomo-count" max="10" min="1" type="number" value="4"/></label>
+</div>
+</div>
+<!-- Stopwatch -->
+<div class="panel" id="panel-stopwatch">
+<div class="stop-time" id="sw-time">00:00.00</div>
+<div class="ctrl-row">
+<button class="btn btn-primary" id="sw-start">Start</button>
+<button class="btn" id="sw-pause">Pause</button>
+<button class="btn" id="sw-lap">Lap</button>
+<button class="btn" id="sw-reset">Reset</button>
+</div>
+<div class="laps" id="sw-laps"></div>
+</div>
+<!-- Countdown -->
+<div class="panel" id="panel-countdown">
+<div class="ring-wrap">
+<svg class="ring" viewbox="0 0 200 200">
+<circle class="ring-bg" cx="100" cy="100" r="92"></circle>
+<circle class="ring-fg" cx="100" cy="100" id="cd-ring" r="92"></circle>
+</svg>
+<div class="ring-center">
+<div class="phase-label">Countdown</div>
+<div class="time" id="cd-time">00:00:00</div>
+</div>
+</div>
+<div class="ctrl-row">
+<button class="btn btn-primary" id="cd-start">Start</button>
+<button class="btn" id="cd-pause">Pause</button>
+<button class="btn" id="cd-reset">Reset</button>
+</div>
+<div class="opts">
+<label>Hours <input id="cd-h" max="99" min="0" type="number" value="0"/></label>
+<label>Minutes <input id="cd-m" max="59" min="0" type="number" value="5"/></label>
+<label>Seconds <input id="cd-s" max="59" min="0" type="number" value="0"/></label>
+<label>or hh:mm:ss <input id="cd-text" placeholder="0:05:00" type="text"/></label>
+</div>
+</div>
+</div>
+<script src="/tools/timer/timer.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

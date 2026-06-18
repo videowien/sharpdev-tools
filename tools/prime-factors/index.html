@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Prime Factorization Calculator | SharpDev.Tools</title>
+<meta content="Free prime factorization calculator. Break any whole number into its prime factors, shown both expanded and in exponent form (e.g. 360 = 2³ × 3² × 5). Instant results, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/prime-factors/" rel="canonical"/>
+<meta content="Prime Factorization Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free prime factorization calculator. Break any whole number into its prime factors, shown both expanded and in exponent form (e.g. 360 = 2³ × 3² × 5). Instant results, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/prime-factors/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Prime Factorization Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free prime factorization calculator. Break any whole number into its prime factors, shown both expanded and in exponent form (e.g. 360 = 2³ × 3² × 5). Instant results, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Prime Factorization Calculator","item":"https://sharpdev.tools/tools/prime-factors/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is prime factorization?","acceptedAnswer":{"@type":"Answer","text":"It expresses a number as a product of prime numbers \u2014 for example 360 = 2 \u00d7 2 \u00d7 2 \u00d7 3 \u00d7 3 \u00d7 5, written compactly as 2\u00b3 \u00d7 3\u00b2 \u00d7 5."}},{"@type":"Question","name":"How big a number can it handle?","acceptedAnswer":{"@type":"Answer","text":"Up to 10,000,000,000,000 (10\u00b9\u00b3). It uses trial division, which is instant for numbers in this range."}},{"@type":"Question","name":"How do I know if a number is prime?","acceptedAnswer":{"@type":"Answer","text":"If the factorization is just the number itself, it has no smaller prime factors \u2014 so it's prime. The tool labels these for you."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Prime Factorization Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/prime-factors/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/prime-factors/prime-factors.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('prime-factors');</script>
+<div class="page">
+<h1>Prime Factorization Calculator</h1>
+<p class="subtitle">Break any whole number into its prime factors, shown in exponent form. Instant, in your browser.</p>
+<div class="field"><label for="n">Number (2 to 10,000,000,000,000)</label><input type="number" id="n" value="360" min="2"></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Prime factorization</label></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is prime factorization?</summary><p>It expresses a number as a product of prime numbers — for example 360 = 2 × 2 × 2 × 3 × 3 × 5, written compactly as 2³ × 3² × 5.</p></details>
+<details><summary>How big a number can it handle?</summary><p>Up to 10,000,000,000,000 (10¹³). It uses trial division, which is instant for numbers in this range.</p></details>
+<details><summary>How do I know if a number is prime?</summary><p>If the factorization is just the number itself, it has no smaller prime factors — so it's prime. The tool labels these for you.</p></details>
+</section>
+<script src="/tools/prime-factors/prime-factors.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

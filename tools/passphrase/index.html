@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diceware Passphrase Generator — Memorable + Cryptographically Strong | SharpDev.Tools</title>
+<meta content="Generate strong, memorable passphrases from the EFF wordlist. 4-8 words, optional capitalisation and digits. Entropy shown — runs in your browser, never uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/passphrase/" rel="canonical"/>
+<meta content="Diceware Passphrase Generator — Memorable + Strong | SharpDev.Tools" property="og:title"/>
+<meta content="Generate memorable passphrases from the EFF wordlist. 4-8 words, entropy shown. No upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/passphrase/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Diceware Passphrase Generator — Memorable + Strong | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate memorable passphrases from the EFF wordlist. 4-8 words, entropy shown. No upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/security-crypto/"},
+    {"@type":"ListItem","position":3,"name":"Diceware Passphrase","item":"https://sharpdev.tools/tools/passphrase/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is Diceware?","acceptedAnswer":{"@type":"Answer","text":"Diceware is a method invented by Arnold Reinhold (1995) of building passphrases by rolling dice and looking up words in a 7776-word list. The EFF later published an improved short list (1296 words, 12.9 bits/word) optimised for memorability. This tool uses crypto.getRandomValues() instead of physical dice."}},
+    {"@type":"Question","name":"How long should my passphrase be?","acceptedAnswer":{"@type":"Answer","text":"NIST recommends ≥80 bits of entropy for normal accounts, ≥128 bits for high-value (banking, encryption keys, master passwords). With the EFF short list that's 7 words for normal use, 10 for high-value."}},
+    {"@type":"Question","name":"Is anything sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The wordlist is bundled with the page and the random source is your browser's crypto.getRandomValues. Nothing is uploaded."}},
+    {"@type":"Question","name":"Why memorable passphrases instead of random characters?","acceptedAnswer":{"@type":"Answer","text":"Same entropy, easier to memorize. 'correct horse battery staple' (44 bits) is much easier to type and remember than 'Tr0ub4dor&3' (28 bits — and weaker)."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Diceware Passphrase — SharpDev.Tools","url":"https://sharpdev.tools/tools/passphrase/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/passphrase/passphrase.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('passphrase');</script>
+<div class="page">
+<h1>Diceware Passphrase Generator</h1>
+<p class="subtitle">Memorable, cryptographically strong passphrases from the EFF wordlist.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Words</label>
+<input id="word-count" type="range" min="3" max="10" value="6"/>
+<span class="opt-value" id="word-count-val">6</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Separator</label>
+<select id="separator">
+<option value="-" selected>- (hyphen)</option>
+<option value=".">. (dot)</option>
+<option value=" "> (space)</option>
+<option value="_">_ (underscore)</option>
+<option value="">no separator</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="checkbox-label">
+<input id="capitalize" type="checkbox"/>
+<span>Capitalize Each Word</span>
+</label>
+</div>
+<div class="opt-group">
+<label class="checkbox-label">
+<input id="append-digits" type="checkbox"/>
+<span>Append 2 random digits</span>
+</label>
+</div>
+</div>
+
+<div class="passphrase-box" id="passphrase-box">
+<div class="passphrase-text" id="passphrase-text">—</div>
+<div class="passphrase-meta">
+<span class="entropy" id="entropy">— bits entropy</span>
+<span class="strength" id="strength">—</span>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="gen-btn" type="button">Generate new passphrase</button>
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why passphrases beat random passwords</h2>
+<p>A 4-word Diceware passphrase from the EFF list (1296 words) has <strong>~51 bits of entropy</strong> — equivalent to a random 8-character mixed-case alphanumeric, but far easier to type and remember.</p>
+<p>Each word added contributes another <strong>12.9 bits</strong>:</p>
+<table class="entropy-table">
+<tr><th>Words</th><th>Entropy</th><th>Suitable for</th></tr>
+<tr><td>4</td><td>~51 bits</td><td>Throwaway accounts</td></tr>
+<tr><td>5</td><td>~64 bits</td><td>Regular accounts</td></tr>
+<tr><td>6</td><td>~77 bits</td><td>Most accounts (recommended)</td></tr>
+<tr><td>7</td><td>~90 bits</td><td>Email, password manager</td></tr>
+<tr><td>8</td><td>~103 bits</td><td>Master password</td></tr>
+<tr><td>10</td><td>~129 bits</td><td>Encryption keys</td></tr>
+</table>
+
+<h2>Where to use which</h2>
+<ul>
+<li><strong>Password manager master password</strong> — 7-8 words. You'll type this often, so make it memorable.</li>
+<li><strong>Full-disk encryption</strong> — 8-10 words. High value, typed rarely.</li>
+<li><strong>SSH key passphrase</strong> — 6-7 words. Balanced.</li>
+<li><strong>Random web accounts</strong> — let your password manager generate random characters instead.</li>
+</ul>
+
+<h2>Wordlist source</h2>
+<p>This tool uses the <a href="https://www.eff.org/dice" target="_blank" rel="noopener">EFF short wordlist</a> — 1296 words, 4-9 letters each, no homophones, designed for memorability. Public domain.</p>
+
+<h2>Privacy</h2>
+<p>The wordlist is bundled with the page and random bytes come from <code>crypto.getRandomValues()</code>. Nothing is sent to a server.</p>
+</section>
+
+<script src="/tools/passphrase/eff-short-wordlist.js"></script>
+<script src="/tools/passphrase/passphrase.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

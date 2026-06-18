@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Crop — Trim Margins from All Pages | SharpDev.Tools</title>
+<meta content="Crop margins off every page of a PDF. Set top / bottom / left / right trim in millimetres or as a uniform percentage. Browser-only — your file never leaves the page." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-crop/" rel="canonical"/>
+<meta content="PDF Crop — Trim Margins from All Pages | SharpDev.Tools" property="og:title"/>
+<meta content="Crop margins off PDF pages — top / bottom / left / right in mm or %. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-crop/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF Crop — Trim Margins from All Pages | SharpDev.Tools" name="twitter:title"/>
+<meta content="Crop margins off PDF pages. Browser-only." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF Crop","item":"https://sharpdev.tools/tools/pdf-crop/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How does PDF cropping work?","acceptedAnswer":{"@type":"Answer","text":"The page's MediaBox (the visible page area) is shrunk by the amount you specify. Content outside the new box is no longer rendered. The actual page content isn't deleted, just hidden — most viewers respect MediaBox as the final page size."}},
+    {"@type":"Question","name":"What's the difference between mm and percent?","acceptedAnswer":{"@type":"Answer","text":"Millimetres = absolute trim regardless of page size. Percent = proportional to each page's dimensions. Use % for mixed-size PDFs (e.g. some A4, some A5)."}},
+    {"@type":"Question","name":"Is the file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is parsed and rewritten in your browser via pdf-lib."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Crop — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-crop/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-crop/pdf-crop.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-crop');</script>
+<div class="page">
+<h1>PDF Crop</h1>
+<p class="subtitle">Trim margins off every page. Set absolute mm or percentage trim per edge.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">Single PDF — runs in your browser</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Unit</label>
+<div class="seg">
+<button class="seg-btn active" data-unit="mm" type="button">mm</button>
+<button class="seg-btn" data-unit="pct" type="button">%</button>
+</div>
+</div>
+</div>
+
+<div class="crop-vis">
+<div class="crop-page">
+<div class="crop-region" id="crop-region"></div>
+</div>
+<div class="trim-inputs">
+<div class="trim trim-top">
+<label>Top</label>
+<input id="trim-top" type="number" step="0.5" min="0" value="10"/>
+<span class="unit-label">mm</span>
+</div>
+<div class="trim trim-bottom">
+<label>Bottom</label>
+<input id="trim-bottom" type="number" step="0.5" min="0" value="10"/>
+<span class="unit-label">mm</span>
+</div>
+<div class="trim trim-left">
+<label>Left</label>
+<input id="trim-left" type="number" step="0.5" min="0" value="10"/>
+<span class="unit-label">mm</span>
+</div>
+<div class="trim trim-right">
+<label>Right</label>
+<input id="trim-right" type="number" step="0.5" min="0" value="10"/>
+<span class="unit-label">mm</span>
+</div>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="crop-btn" type="button">Crop + download PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Trim scanner margins</strong> — scanned documents often have black or white edges</li>
+<li><strong>Resize for printing</strong> — fit content into a smaller print page</li>
+<li><strong>Reading on e-readers</strong> — crop unused margins to maximise text size on a Kindle / reMarkable</li>
+<li><strong>Remove watermarks at the page edge</strong> — when the watermark is in the margin area only</li>
+</ul>
+
+<h2>How it works</h2>
+<p>Each page's <strong>MediaBox</strong> (the box that defines the visible page area) is shrunk by your trim values. The content outside the new box is still present in the file but no longer rendered. This is non-destructive — opening the file in Acrobat shows only the cropped region, but the original area is still accessible by editing MediaBox back.</p>
+
+<h2>Privacy</h2>
+<p>The PDF is parsed and rewritten in your browser via pdf-lib. Nothing is uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-crop/pdf-crop.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

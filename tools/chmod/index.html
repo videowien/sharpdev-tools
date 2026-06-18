@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>chmod / Permissions — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Convert between octal, symbolic and chmod commands with visual checkboxes for user, group and other. Free online chmod calculator, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/chmod/" rel="canonical"/>
+<meta content="chmod / Permissions — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Convert between octal, symbolic and chmod commands with visual checkboxes for user, group and other. Free online chmod calculator, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/chmod/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="chmod / Permissions — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert between octal, symbolic and chmod commands with visual checkboxes for user, group and other. Free online chmod calculator, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developers", "item": "https://sharpdev.tools/#developers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "chmod / Permissions",
+        "item": "https://sharpdev.tools/tools/chmod/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the chmod / Permission Calculator do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It converts between octal (e.g. 755), symbolic (rwxr-xr-x) and chmod command form, with visual checkboxes for user, group and other permissions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — once loaded, the calculator runs entirely in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "chmod / Permissions — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/chmod/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/chmod/chmod.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('chmod');</script>
+<div class="page">
+<h1>chmod / Unix Permission Calculator</h1>
+<p class="subtitle">Convert between octal (755), symbolic (rwxr-xr-x), and chmod commands. Visual permission grid.</p>
+<div class="card">
+<div class="field-row">
+<div class="field">
+<label for="f-octal">Octal</label>
+<input autocomplete="off" id="f-octal" spellcheck="false" type="text" value="0755"/>
+</div>
+<div class="field">
+<label for="f-symbolic">Symbolic</label>
+<input autocomplete="off" id="f-symbolic" spellcheck="false" type="text" value="rwxr-xr-x"/>
+</div>
+<div class="field">
+<label for="f-cmd">chmod command</label>
+<input autocomplete="off" id="f-cmd" spellcheck="false" type="text" value="chmod 755"/>
+</div>
+</div>
+</div>
+<div class="card">
+<h2 class="sec-title">Permission grid</h2>
+<div class="grid-wrap">
+<table class="perm-table">
+<thead>
+<tr>
+<th></th>
+<th>Read</th>
+<th>Write</th>
+<th>Execute</th>
+<th>Special</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>User (owner)</th>
+<td><label class="cell"><input data-p="ur" type="checkbox"/><span>r</span></label></td>
+<td><label class="cell"><input data-p="uw" type="checkbox"/><span>w</span></label></td>
+<td><label class="cell"><input data-p="ux" type="checkbox"/><span>x</span></label></td>
+<td><label class="cell" title="Setuid: Run with owner's permissions"><input data-p="suid" type="checkbox"/><span>setuid</span></label></td>
+</tr>
+<tr>
+<th>Group</th>
+<td><label class="cell"><input data-p="gr" type="checkbox"/><span>r</span></label></td>
+<td><label class="cell"><input data-p="gw" type="checkbox"/><span>w</span></label></td>
+<td><label class="cell"><input data-p="gx" type="checkbox"/><span>x</span></label></td>
+<td><label class="cell" title="Setgid: Run with group's permissions"><input data-p="sgid" type="checkbox"/><span>setgid</span></label></td>
+</tr>
+<tr>
+<th>Others</th>
+<td><label class="cell"><input data-p="or" type="checkbox"/><span>r</span></label></td>
+<td><label class="cell"><input data-p="ow" type="checkbox"/><span>w</span></label></td>
+<td><label class="cell"><input data-p="ox" type="checkbox"/><span>x</span></label></td>
+<td><label class="cell" title="Sticky bit: Only owner can delete files in a dir"><input data-p="sticky" type="checkbox"/><span>sticky</span></label></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="card">
+<h2 class="sec-title">Common presets</h2>
+<div class="presets">
+<button class="preset" data-oct="644">644 <span>file default</span></button>
+<button class="preset" data-oct="755">755 <span>executable / dir</span></button>
+<button class="preset" data-oct="600">600 <span>private file</span></button>
+<button class="preset" data-oct="700">700 <span>private dir</span></button>
+<button class="preset" data-oct="777">777 <span>avoid</span></button>
+<button class="preset" data-oct="444">444 <span>read-only</span></button>
+</div>
+</div>
+<div class="card">
+<h2 class="sec-title">What this means</h2>
+<p class="desc" id="desc"></p>
+</div>
+<div class="card">
+<h2 class="sec-title">Apply commands</h2>
+<div class="cmds">
+<div class="cmd-row">
+<label>Single file or directory</label>
+<div class="cmd-box"><code id="cmd-file"></code></div>
+</div>
+<div class="cmd-row">
+<label>Recursively to all files in ./path</label>
+<div class="cmd-box"><code id="cmd-files"></code></div>
+</div>
+<div class="cmd-row">
+<label>Recursively to all directories in ./path</label>
+<div class="cmd-box"><code id="cmd-dirs"></code></div>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/chmod/chmod.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

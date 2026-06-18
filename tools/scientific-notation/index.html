@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Scientific Notation Converter — Standard, E and Engineering | SharpDev.Tools</title>
+<meta content="Convert numbers to and from scientific notation, E-notation and engineering notation. Handles very large and very small numbers. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/scientific-notation/" rel="canonical"/>
+<meta content="Scientific Notation Converter — Standard, E and Engineering | SharpDev.Tools" property="og:title"/>
+<meta content="Convert numbers to and from scientific notation, E-notation and engineering notation. Handles very large and very small numbers. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/scientific-notation/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Scientific Notation Converter — Standard, E and Engineering | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert numbers to and from scientific notation, E-notation and engineering notation. Handles very large and very small numbers. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Scientific Notation Converter","item":"https://sharpdev.tools/tools/scientific-notation/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is scientific notation?","acceptedAnswer":{"@type":"Answer","text":"It writes a number as a value between 1 and 10 multiplied by a power of ten, for example 0.00042 becomes 4.2 \u00d7 10^-4. It makes very large or very small numbers compact and easy to compare."}},{"@type":"Question","name":"What is engineering notation?","acceptedAnswer":{"@type":"Answer","text":"Like scientific notation but the exponent is always a multiple of three, which lines up with metric prefixes (kilo, mega, milli, micro). 47000 becomes 47e3."}},{"@type":"Question","name":"Can it read E-notation input?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can type 6.02e23, 3.4 x 10^5 or a plain decimal and it converts to all formats at once."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Scientific Notation Converter \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/scientific-notation/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/scientific-notation/scientific-notation.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('scientific-notation');</script>
+<div class="page">
+<h1>Scientific Notation Converter</h1>
+<p class="subtitle">Convert any number to scientific, E and engineering notation, and back.</p>
+<div class="field"><label for="in">Number (e.g. 0.00042 or 6.02e23 or 3.4 x 10^5)</label><input type="text" id="in" value="0.00042"></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is scientific notation?</summary><p>It writes a number as a value between 1 and 10 multiplied by a power of ten, for example 0.00042 becomes 4.2 × 10^-4. It makes very large or very small numbers compact and easy to compare.</p></details>
+<details><summary>What is engineering notation?</summary><p>Like scientific notation but the exponent is always a multiple of three, which lines up with metric prefixes (kilo, mega, milli, micro). 47000 becomes 47e3.</p></details>
+<details><summary>Can it read E-notation input?</summary><p>Yes. You can type 6.02e23, 3.4 x 10^5 or a plain decimal and it converts to all formats at once.</p></details>
+</section>
+<script src="/tools/scientific-notation/scientific-notation.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

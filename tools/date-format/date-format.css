@@ -1,0 +1,33 @@
+/* Date Format Converter — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.format-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
+.fmt-row { display: grid; grid-template-columns: 200px 1fr; gap: 12px; align-items: center; }
+.fmt-label { font-size: 13px; color: #aaa; font-weight: 500; }
+.fmt-input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 10px 12px; border-radius: 6px; font-size: 13px;
+  font-family: 'SF Mono', monospace;
+  width: 100%;
+}
+.fmt-input.invalid { border-color: #ff4444; color: #ff8888; }
+.fmt-hint { font-size: 11px; color: #555; grid-column: 2 / 3; margin-top: -8px; }
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+
+.fmt-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.fmt-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.fmt-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.fmt-table code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .fmt-row { grid-template-columns: 1fr; gap: 4px; }
+  .fmt-hint { grid-column: 1; }
+}

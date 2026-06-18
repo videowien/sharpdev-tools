@@ -1,0 +1,132 @@
+/* Dice Roller — styles */
+.page { max-width: 720px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 28px; line-height: 1.5; }
+
+.quick-dice {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 10px; margin-bottom: 28px;
+}
+.quick-dice button {
+  padding: 16px 8px;
+  background: #141414; border: 1px solid #262626;
+  color: #ccc; font-size: 15px; font-weight: 700;
+  border-radius: 10px; cursor: pointer;
+  font-family: 'SF Mono', Monaco, monospace;
+  transition: all 0.15s;
+}
+.quick-dice button:hover {
+  border-color: #ff4444; color: #fff; background: #1a1a1a;
+  transform: translateY(-1px);
+}
+.quick-dice button:active { transform: translateY(0); }
+
+.notation-row { margin-bottom: 24px; }
+.notation-row label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.notation-input {
+  display: flex; gap: 10px;
+}
+.notation-input input {
+  flex: 1; padding: 12px 16px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 15px;
+  border-radius: 10px; font-family: 'SF Mono', Monaco, monospace;
+  outline: none; transition: border-color 0.15s;
+}
+.notation-input input:focus { border-color: #ff4444; }
+.notation-input .btn {
+  padding: 12px 24px; font-size: 14px; font-weight: 600;
+}
+
+.err {
+  min-height: 18px; margin-top: 6px;
+  font-size: 12px; color: #ff7070;
+}
+
+.result-panel {
+  padding: 22px 24px; margin-bottom: 28px;
+  background: #141414; border: 1px solid #ff4444;
+  border-radius: 12px;
+  animation: result-in 0.25s ease-out;
+}
+@keyframes result-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.result-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; margin-bottom: 14px; flex-wrap: wrap;
+}
+.result-notation {
+  font-size: 13px; color: #888;
+  font-family: 'SF Mono', Monaco, monospace;
+}
+.result-total {
+  font-size: 42px; font-weight: 800; color: #fff;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.result-dice { display: flex; flex-wrap: wrap; gap: 8px; }
+.die-chip {
+  min-width: 44px; height: 44px; padding: 0 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #0f0f0f; border: 1px solid #2a2a2a;
+  color: #e1e1e1; font-size: 17px; font-weight: 700;
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.die-chip.max { border-color: #4ade80; color: #4ade80; }
+.die-chip.min { border-color: #888; color: #888; }
+.die-chip.mod {
+  background: transparent; border: none;
+  font-size: 15px; color: #888; font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.history-panel {
+  padding: 18px 22px;
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.history-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.history-head h2 {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.clear-btn {
+  background: transparent; border: none; color: #666; cursor: pointer;
+  font-size: 12px; font-family: inherit;
+  padding: 2px 6px;
+}
+.clear-btn:hover { color: #ff4444; }
+
+.history-list { display: flex; flex-direction: column; gap: 6px; }
+.history-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px;
+  background: #141414; border: 1px solid #1f1f1f; border-radius: 8px;
+  font-size: 13px;
+}
+.history-item .h-left {
+  font-family: 'SF Mono', Monaco, monospace;
+  color: #888;
+}
+.history-item .h-right {
+  font-weight: 700; color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .quick-dice { grid-template-columns: repeat(4, 1fr); }
+  .result-total { font-size: 34px; }
+  .notation-input { flex-direction: column; }
+  .notation-input .btn { width: 100%; }
+}

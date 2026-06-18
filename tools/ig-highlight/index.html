@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Highlight Cover Maker — Solid Color + Icon | SharpDev.Tools</title>
+<meta content="Make minimalist Instagram Story Highlight covers — pick a background color, add an icon or emoji, download a 1080×1920 PNG. Free, instant, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-highlight/" rel="canonical"/>
+<meta content="Instagram Highlight Cover Maker — Solid Color + Icon | SharpDev.Tools" property="og:title"/>
+<meta content="Make minimalist Instagram Story Highlight covers — pick a background color, add an icon or emoji, download a 1080×1920 PNG. Free, instant, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-highlight/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Highlight Cover Maker — Solid Color + Icon | SharpDev.Tools" name="twitter:title"/>
+<meta content="Make minimalist Instagram Story Highlight covers — pick a background color, add an icon or emoji, download a 1080×1920 PNG. Free, instant, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Instagram", "item": "https://sharpdev.tools/#instagram" },
+      { "@type": "ListItem", "position": 3, "name": "Highlight Cover Maker", "item": "https://sharpdev.tools/tools/ig-highlight/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What size should Instagram Highlight covers be?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Instagram displays highlight covers in a small circle (~78×78 px in the app), but the source image should be a full Story format: 1080 × 1920 pixels, 9:16 aspect ratio. Instagram crops to a centered circle. This tool exports at exactly that size." } },
+      { "@type": "Question", "name": "How do I use the exported cover?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Save the PNG to your phone. Open Instagram, go to your profile, tap the highlight you want to set a cover for, tap More (...) → Edit Highlight → Edit Cover → select the image from your camera roll. Pinch-zoom so the circle covers the icon you placed." } },
+      { "@type": "Question", "name": "Can I use my own colors?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — pick any background color via the color picker or paste a hex value. The icon is centered and rendered in white (or black if the background is light) so it stays readable." } },
+      { "@type": "Question", "name": "Is the highlight cover maker free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no watermark." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram Highlight Cover Maker — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/ig-highlight/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-highlight/ig-highlight.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-highlight');</script>
+<div class="page">
+<h1>Instagram Highlight Cover Maker</h1>
+<p class="subtitle">Minimalist 1080×1920 highlight covers. Pick a color, add an emoji or icon, download PNG.</p>
+
+<div class="grid">
+
+<div class="card form-card">
+<div class="form-group">
+<label for="emoji">Icon (emoji or single char)</label>
+<input id="emoji" maxlength="4" type="text" value="📷"/>
+<p class="hint">Tip: emojis render best. You can also use one or two letters/digits.</p>
+</div>
+<div class="form-group">
+<label for="bg-color">Background color</label>
+<div class="color-row">
+<input id="bg-color" type="color" value="#1a1a1a"/>
+<input id="bg-hex" type="text" value="#1a1a1a" pattern="^#[0-9a-fA-F]{6}$"/>
+</div>
+<div class="preset-colors">
+<button class="preset-color" data-color="#1a1a1a" style="background:#1a1a1a"></button>
+<button class="preset-color" data-color="#ff4444" style="background:#ff4444"></button>
+<button class="preset-color" data-color="#ffce3a" style="background:#ffce3a"></button>
+<button class="preset-color" data-color="#4caf50" style="background:#4caf50"></button>
+<button class="preset-color" data-color="#2196f3" style="background:#2196f3"></button>
+<button class="preset-color" data-color="#9c27b0" style="background:#9c27b0"></button>
+<button class="preset-color" data-color="#f5e6d3" style="background:#f5e6d3"></button>
+<button class="preset-color" data-color="#ffffff" style="background:#ffffff"></button>
+</div>
+</div>
+<div class="form-group">
+<label for="icon-size">Icon size</label>
+<input id="icon-size" type="range" min="20" max="80" value="48"/>
+<span class="range-val"><span id="icon-size-val">48</span>%</span>
+</div>
+<div class="form-group">
+<label class="checkbox-label">
+<input id="round-preview" type="checkbox" checked/>
+<span>Show circular preview (how it looks on profile)</span>
+</label>
+</div>
+<button class="btn btn-primary" id="download-btn" type="button">Download 1080×1920 PNG</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+
+<div class="card preview-card">
+<div class="preview-label">Preview</div>
+<div class="preview-wrap">
+<canvas class="cover-canvas" height="1920" id="cover-canvas" width="1080"></canvas>
+<div class="circle-overlay" id="circle-overlay"></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<section class="info-block">
+<h2>About Instagram Story Highlights</h2>
+<p>Highlights are saved Stories that live on your profile permanently, above your feed grid. They're an underrated branding surface — the row of circular covers right under your bio is one of the first things visitors see. A consistent visual style across covers makes a profile look intentional and on-brand.</p>
+
+<h2>How Instagram crops the cover</h2>
+<p>Even though you upload a 9:16 (1080×1920) image, Instagram shows it as a circle at ~78×78px in the profile view. The crop is centered, so any icon you place should be in the dead center of the canvas. This tool does that automatically — the icon is rendered centered with appropriate sizing so it fits inside the circular crop.</p>
+
+<h2>Design tips</h2>
+<ul>
+<li><strong>Stick to one or two colors</strong> across all covers — that's what makes the row look like a set.</li>
+<li><strong>One icon per cover</strong> — emoji or a single letter. Anything more gets cropped or unreadable.</li>
+<li><strong>Match your overall feed</strong> — if your feed is warm/beige, beige cover backgrounds blend. If it's vibrant, contrast.</li>
+<li><strong>White on dark vs dark on light</strong> — the tool auto-picks readable icon color based on background luminance.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Everything renders in your browser via Canvas. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/ig-highlight/ig-highlight.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

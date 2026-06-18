@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>QR Code — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Generate permanent QR codes with no redirects, no expiration and no tracking — works forever. Free online QR code generator, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/qr/" rel="canonical"/>
+<meta content="QR Code — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Generate permanent QR codes with no redirects, no expiration and no tracking — works forever. Free online QR code generator, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/qr/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="QR Code — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate permanent QR codes with no redirects, no expiration and no tracking — works forever. Free online QR code generator, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Generators",
+        "item": "https://sharpdev.tools/#generators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "QR Code",
+        "item": "https://sharpdev.tools/tools/qr/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do the QR codes expire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. These are plain static QR codes that encode your URL or text directly — there is no redirect, no account and no expiration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free with no ads and no account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my QR data uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. QR generation runs in your browser; nothing is stored on a server."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "QR Code — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/qr/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/qr/qr.css" rel="stylesheet"/>
+<script src="/shared/vendor/qrcode-generator.min.js?v=1.4.4"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('qr');</script>
+<div class="page">
+<h1>QR Code Generator</h1>
+<p class="subtitle">Generate QR codes that work forever. No redirects, no expiration, no tracking.</p>
+<div class="qr-layout">
+<div class="card qr-input-card">
+<label for="qr-text">Content</label>
+<div class="type-tabs">
+<button class="type-tab active" data-type="url" onclick="setType('url')">URL</button>
+<button class="type-tab" data-type="text" onclick="setType('text')">Text</button>
+<button class="type-tab" data-type="email" onclick="setType('email')">Email</button>
+<button class="type-tab" data-type="wifi" onclick="setType('wifi')">WiFi</button>
+<button class="type-tab" data-type="phone" onclick="setType('phone')">Phone</button>
+</div>
+<div class="type-input" id="input-url">
+<input id="input-url-val" oninput="generate()" placeholder="https://example.com" type="text"/>
+</div>
+<div class="type-input" id="input-text" style="display:none">
+<textarea id="input-text-val" oninput="generate()" placeholder="Any text you want to encode..."></textarea>
+</div>
+<div class="type-input" id="input-email" style="display:none">
+<input id="input-email-val" oninput="generate()" placeholder="hello@example.com" type="email"/>
+</div>
+<div class="type-input" id="input-wifi" style="display:none">
+<input id="input-wifi-ssid" oninput="generate()" placeholder="Network name (SSID)" type="text"/>
+<input id="input-wifi-pass" oninput="generate()" placeholder="Password" type="text"/>
+<select id="input-wifi-enc" onchange="generate()">
+<option value="WPA">WPA/WPA2</option>
+<option value="WEP">WEP</option>
+<option value="nopass">No password</option>
+</select>
+</div>
+<div class="type-input" id="input-phone" style="display:none">
+<input id="input-phone-val" oninput="generate()" placeholder="+43 676 1234567" type="tel"/>
+</div>
+<div class="options-section">
+<div class="option-row">
+<div>
+<label for="qr-size">Size</label>
+<select id="qr-size" onchange="generate()">
+<option value="6">Small (210px)</option>
+<option selected="" value="8">Medium (280px)</option>
+<option value="12">Large (420px)</option>
+<option value="16">XL (560px)</option>
+</select>
+</div>
+<div>
+<label for="qr-errlevel">Error correction</label>
+<select id="qr-errlevel" onchange="generate()">
+<option value="L">Low (7%)</option>
+<option selected="" value="M">Medium (15%)</option>
+<option value="Q">Quartile (25%)</option>
+<option value="H">High (30%)</option>
+</select>
+</div>
+</div>
+<div class="option-row">
+<div>
+<label for="qr-fg">Foreground</label>
+<div class="color-input">
+<input id="qr-fg" onchange="generate()" type="color" value="#000000"/>
+<span id="qr-fg-hex">#000000</span>
+</div>
+</div>
+<div>
+<label for="qr-bg">Background</label>
+<div class="color-input">
+<input id="qr-bg" onchange="generate()" type="color" value="#ffffff"/>
+<span id="qr-bg-hex">#ffffff</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="qr-preview-card">
+<div class="qr-placeholder" id="qr-placeholder">
+<p>Enter content to generate a QR code</p>
+</div>
+<div class="qr-canvas-wrap" id="qr-canvas-wrap" style="display:none">
+<canvas id="qr-canvas"></canvas>
+</div>
+<div class="qr-info" id="qr-info"></div>
+<div class="download-row" id="download-row" style="display:none">
+<button class="btn btn-primary" onclick="downloadPng()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+          PNG
+        </button>
+<button class="btn btn-secondary" onclick="downloadSvg()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+          SVG
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/qr/qr.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* Twitter/X Counter & Thread Splitter — styles */
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 28px; line-height: 1.5; }
+.page label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+
+#text-in {
+  width: 100%;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 15px; padding: 16px;
+  border-radius: 10px; font-family: inherit;
+  min-height: 180px; resize: vertical; line-height: 1.55;
+  outline: none; transition: border-color 0.15s;
+}
+#text-in:focus { border-color: #ff4444; }
+
+.tw-meter {
+  margin-top: 14px; padding: 14px 18px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px;
+  display: flex; align-items: center; gap: 18px;
+}
+.tw-bar-wrap {
+  flex: 1; height: 6px; background: #222; border-radius: 999px;
+  overflow: hidden;
+}
+.tw-bar {
+  height: 100%; width: 0; background: #4ade80;
+  transition: width 0.15s, background 0.15s;
+  border-radius: 999px;
+}
+.tw-bar.warn { background: #ffce3a; }
+.tw-bar.over { background: #ff4444; }
+
+.tw-stats {
+  font-size: 14px; color: #bbb;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.tw-stats .tw-sep { margin: 0 8px; color: #444; }
+.tw-stats #tw-count { font-weight: 600; color: #fff; }
+.tw-meter.over .tw-stats #tw-count { color: #ff4444; }
+
+.thread-output {
+  margin-top: 28px; display: flex; flex-direction: column; gap: 12px;
+}
+.copy-all-btn {
+  padding: 10px 18px; background: #cc0000; border: none;
+  color: #fff; font-size: 14px; font-weight: 600;
+  border-radius: 8px; cursor: pointer; transition: background 0.15s;
+  align-self: flex-start;
+}
+.copy-all-btn:hover { background: #ff1a1a; }
+.copy-all-btn.copied { background: #2c8f4a; }
+
+.thread-tweet {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px; padding: 16px 18px;
+}
+.thread-tweet-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.thread-tweet-idx {
+  font-size: 12px; color: #ff4444; font-weight: 700;
+  font-family: 'SF Mono', Monaco, monospace;
+  letter-spacing: 0.5px;
+}
+.thread-tweet-count {
+  font-size: 12px; color: #666;
+  font-variant-numeric: tabular-nums;
+}
+.thread-tweet-text {
+  color: #e1e1e1; font-size: 14px;
+  line-height: 1.55; white-space: pre-wrap;
+  word-break: break-word;
+}
+.thread-tweet-actions { margin-top: 12px; display: flex; gap: 8px; }
+.thread-copy {
+  padding: 6px 14px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.thread-copy:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.thread-copy.copied { border-color: #4ade80; color: #4ade80; }
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .tw-meter { flex-direction: column; align-items: stretch; gap: 10px; }
+  .tw-bar-wrap { width: 100%; }
+  .tw-stats { text-align: center; }
+}

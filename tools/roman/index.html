@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Roman Numerals Converter — Free Online | SharpDev.Tools</title>
+<meta content="Convert between Roman numerals and regular numbers instantly. Both directions, live validation, up to 3,999,999 with extended overline notation. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/roman/" rel="canonical"/>
+<meta content="Roman Numerals Converter — Free Online | SharpDev.Tools" property="og:title"/>
+<meta content="Convert between Roman numerals and regular numbers instantly. Both directions, live validation, up to 3,999,999 with extended overline notation. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/roman/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Roman Numerals Converter — Free Online | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert between Roman numerals and regular numbers instantly. Both directions, live validation, up to 3,999,999 with extended overline notation. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://sharpdev.tools/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Roman Numerals",
+        "item": "https://sharpdev.tools/tools/roman/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the largest number I can convert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Up to 3,999,999. Numbers above 3,999 use extended notation with an overline (a bar over the numeral) to multiply by 1,000 — for example, V̄ represents 5,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is there no Roman numeral for zero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Roman numeral system has no symbol for zero. It was not needed for counting items and arithmetic was done on an abacus. For this reason the tool only converts positive integers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the tool accept IIII and similar non-standard forms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It expects canonical form (IV, not IIII; IX, not VIIII). If you paste a non-standard Roman numeral the tool shows an error so you know why."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Roman Numerals Converter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/roman/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/roman/roman.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('roman');</script>
+<div class="page">
+<h1>Roman Numerals Converter</h1>
+<p class="subtitle">Convert both directions. Type a number or a Roman numeral — the other side updates live. Up to 3,999,999 with extended overline notation.</p>
+<div class="roman-grid">
+<div class="field">
+<label for="num-in">Number</label>
+<input type="text" id="num-in" inputmode="numeric" oninput="fromNumber()" placeholder="e.g. 1999">
+<div class="err" id="num-err"></div>
+</div>
+<div class="field">
+<label for="rom-in">Roman numeral</label>
+<input type="text" id="rom-in" oninput="fromRoman()" placeholder="e.g. MCMXCIX" autocapitalize="characters" spellcheck="false">
+<div class="err" id="rom-err"></div>
+</div>
+</div>
+<div class="result-box" id="result-box" style="display:none;">
+<div class="result-label">Converted</div>
+<div class="result-value" id="result-value"></div>
+<button class="copy-btn" id="copy-btn">Copy</button>
+</div>
+<div class="ref-card">
+<h2>Quick reference</h2>
+<div class="ref-grid">
+<div><span class="ref-sym">I</span><span class="ref-val">1</span></div>
+<div><span class="ref-sym">V</span><span class="ref-val">5</span></div>
+<div><span class="ref-sym">X</span><span class="ref-val">10</span></div>
+<div><span class="ref-sym">L</span><span class="ref-val">50</span></div>
+<div><span class="ref-sym">C</span><span class="ref-val">100</span></div>
+<div><span class="ref-sym">D</span><span class="ref-val">500</span></div>
+<div><span class="ref-sym">M</span><span class="ref-val">1,000</span></div>
+<div><span class="ref-sym">V&#773;</span><span class="ref-val">5,000</span></div>
+<div><span class="ref-sym">X&#773;</span><span class="ref-val">10,000</span></div>
+<div><span class="ref-sym">L&#773;</span><span class="ref-val">50,000</span></div>
+<div><span class="ref-sym">C&#773;</span><span class="ref-val">100,000</span></div>
+<div><span class="ref-sym">M&#773;</span><span class="ref-val">1,000,000</span></div>
+</div>
+</div>
+</div>
+<script src="/tools/roman/roman.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

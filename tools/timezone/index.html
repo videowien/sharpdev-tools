@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Time Zones — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Convert times between any zones and watch a live world clock for your favorite cities worldwide. Free online time zone converter, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/timezone/" rel="canonical"/>
+<meta content="Time Zones — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Convert times between any zones and watch a live world clock for your favorite cities worldwide. Free online time zone converter, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/timezone/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Time Zones — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert times between any zones and watch a live world clock for your favorite cities worldwide. Free online time zone converter, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Time & Date", "item": "https://sharpdev.tools/#time-date"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Time Zones",
+        "item": "https://sharpdev.tools/tools/timezone/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the Time Zone Converter handle DST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It uses the browser's IANA time zone database, so daylight saving transitions are applied correctly for every supported city."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — once loaded, conversions and the world clock keep working without a connection."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Time Zones — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/timezone/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/timezone/timezone.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('timezone');</script>
+<div class="page">
+<h1>Time Zone Converter</h1>
+<p class="subtitle">Convert times between any zones. Live world clock for your favorite cities.</p>
+<section class="sec">
+<h2 class="sec-title">Convert</h2>
+<div class="convert-form">
+<div>
+<label>Date</label>
+<input id="c-date" type="date"/>
+</div>
+<div>
+<label>Time</label>
+<input id="c-time" type="time"/>
+</div>
+<div>
+<label>From</label>
+<div class="tz-picker" data-target="from">
+<input autocomplete="off" class="tz-search" id="from-search" placeholder="Search time zone..." type="text"/>
+<input id="from-zone" type="hidden" value="UTC"/>
+<div class="tz-dropdown" id="from-dropdown"></div>
+</div>
+</div>
+<div>
+<label>To (up to 6)</label>
+<div class="tz-picker" data-target="to">
+<input autocomplete="off" class="tz-search" id="to-search" placeholder="Add zone..." type="text"/>
+<div class="tz-dropdown" id="to-dropdown"></div>
+</div>
+<div class="chips" id="to-chips"></div>
+</div>
+</div>
+<div class="convert-results" id="convert-results"></div>
+</section>
+<section class="sec">
+<h2 class="sec-title">World Clock</h2>
+<div class="wc-add">
+<div class="tz-picker" data-target="wc">
+<input autocomplete="off" class="tz-search" id="wc-search" placeholder="Add a city..." type="text"/>
+<div class="tz-dropdown" id="wc-dropdown"></div>
+</div>
+</div>
+<div class="wc-grid" id="wc-grid"></div>
+</section>
+</div>
+<script src="/tools/timezone/timezone.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

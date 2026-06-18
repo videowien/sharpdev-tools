@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Running Pace Calculator — Pace / Time / Distance | SharpDev.Tools</title>
+<meta content="Calculate running pace, finish time, or distance. Min/km and min/mile, with splits for 5K, 10K, half-marathon and marathon at your pace. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/pace/" rel="canonical"/>
+<meta content="Running Pace Calculator — Pace / Time / Distance | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate running pace, finish time, or distance. min/km and min/mile splits for 5K, 10K, half, full marathon." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pace/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Running Pace Calculator — Pace / Time / Distance | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate running pace, finish time, or distance. Splits for 5K, 10K, half, full marathon." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/calculators/"},
+    {"@type":"ListItem","position":3,"name":"Running Pace Calculator","item":"https://sharpdev.tools/tools/pace/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What does pace mean in running?","acceptedAnswer":{"@type":"Answer","text":"Pace is the time it takes to cover a unit of distance — usually expressed as min/km or min/mile. A 5:00 min/km pace means you cover one kilometre in five minutes."}},
+    {"@type":"Question","name":"How do I convert min/km to min/mile?","acceptedAnswer":{"@type":"Answer","text":"Multiply min/km by 1.609 to get min/mile. The calculator shows both automatically — change either, the other updates."}},
+    {"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Everything is computed in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Running Pace Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/pace/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pace/pace.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pace');</script>
+<div class="page">
+<h1>Running Pace Calculator</h1>
+<p class="subtitle">Calculate pace, finish time, or distance — and see your splits for common race distances.</p>
+
+<div class="card">
+<div class="time-grid">
+<div class="block">
+<label>Distance</label>
+<div class="dist-row">
+<input id="dist-val" type="number" step="0.01" value="10"/>
+<select id="dist-unit"><option value="km">km</option><option value="mi">miles</option></select>
+</div>
+<div class="preset-row">
+<button class="preset-btn" data-dist="5" data-unit="km" type="button">5K</button>
+<button class="preset-btn" data-dist="10" data-unit="km" type="button">10K</button>
+<button class="preset-btn" data-dist="21.0975" data-unit="km" type="button">Half</button>
+<button class="preset-btn" data-dist="42.195" data-unit="km" type="button">Marathon</button>
+</div>
+</div>
+
+<div class="block">
+<label>Finish time</label>
+<div class="time-row">
+<input id="time-h" type="number" min="0" placeholder="hh" value="0"/>
+<span>:</span>
+<input id="time-m" type="number" min="0" max="59" placeholder="mm" value="50"/>
+<span>:</span>
+<input id="time-s" type="number" min="0" max="59" placeholder="ss" value="0"/>
+</div>
+</div>
+
+<div class="block">
+<label>Pace per km</label>
+<div class="time-row">
+<input id="pace-km-m" type="number" min="0" placeholder="mm" value="5"/>
+<span>:</span>
+<input id="pace-km-s" type="number" min="0" max="59" placeholder="ss" value="0"/>
+<span class="unit">min/km</span>
+</div>
+</div>
+
+<div class="block">
+<label>Pace per mile</label>
+<div class="time-row">
+<input id="pace-mi-m" type="number" min="0" placeholder="mm" value="8"/>
+<span>:</span>
+<input id="pace-mi-s" type="number" min="0" max="59" placeholder="ss" value="3"/>
+<span class="unit">min/mile</span>
+</div>
+</div>
+</div>
+
+<p class="hint">Edit any field — the others update automatically. <button class="link-btn" id="reset-btn" type="button">Reset</button></p>
+</div>
+
+<div class="card">
+<h3 class="card-title">Split times at this pace</h3>
+<table class="splits-table">
+<thead><tr><th>Distance</th><th>Time</th></tr></thead>
+<tbody id="splits-body"></tbody>
+</table>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Pace vs speed</h2>
+<p>Runners think in <strong>pace</strong> (time per distance, e.g. 5:00 min/km) — easier to gauge effort. Cyclists and drivers think in <strong>speed</strong> (distance per time, e.g. 12 km/h). They're inverse: pace = 60 ÷ speed.</p>
+
+<h2>Common training paces</h2>
+<ul>
+<li><strong>Recovery jog</strong> — 6:30-7:30 min/km</li>
+<li><strong>Easy run</strong> — 5:30-6:30 min/km</li>
+<li><strong>Tempo / threshold</strong> — 4:30-5:00 min/km</li>
+<li><strong>5K race pace (mid-pack)</strong> — 4:00-4:30 min/km</li>
+<li><strong>Marathon race pace (mid-pack)</strong> — 5:00-5:30 min/km</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All calculations happen in your browser. No data is uploaded.</p>
+</section>
+
+<script src="/tools/pace/pace.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

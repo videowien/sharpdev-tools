@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Chinese Zodiac Calculator | SharpDev.Tools</title>
+<meta content="Free Chinese zodiac calculator. Enter a birth year to find your zodiac animal (Rat, Ox, Tiger…) and its element in the 60-year cycle. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/chinese-zodiac/" rel="canonical"/>
+<meta content="Chinese Zodiac Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free Chinese zodiac calculator. Enter a birth year to find your zodiac animal (Rat, Ox, Tiger…) and its element in the 60-year cycle. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/chinese-zodiac/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Chinese Zodiac Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Chinese zodiac calculator. Enter a birth year to find your zodiac animal (Rat, Ox, Tiger…) and its element in the 60-year cycle. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Chinese Zodiac Calculator","item":"https://sharpdev.tools/tools/chinese-zodiac/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the Chinese zodiac work?","acceptedAnswer":{"@type":"Answer","text":"It cycles through 12 animals \u2014 Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig \u2014 one per year, combined with five elements over a 60-year cycle."}},{"@type":"Question","name":"Why does the birth year matter, not the date?","acceptedAnswer":{"@type":"Answer","text":"The animal is set by the lunar year. The one caveat is January / early-February births, which can fall before the lunar new year and so belong to the previous animal."}},{"@type":"Question","name":"What's my element?","acceptedAnswer":{"@type":"Answer","text":"Each animal year also carries one of five elements (Wood, Fire, Earth, Metal, Water) \u2014 for example 2000 is a Metal Dragon."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Chinese Zodiac Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/chinese-zodiac/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/chinese-zodiac/chinese-zodiac.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('chinese-zodiac');</script>
+<div class="page">
+<h1>Chinese Zodiac Calculator</h1>
+<p class="subtitle">Find your Chinese zodiac animal and its element from your birth year.</p>
+<div class="row"><div class="field"><label for="y">Birth year</label><input type="number" id="y" value="2000"></div></div>
+<div class="out-head"><label>Your sign</label></div>
+<div class="output" id="out"></div>
+<p class="note">Based on the Chinese (lunar) year. If you were born in January or early February, the lunar new year may place you in the previous year — check the exact new-year date for that year.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does the Chinese zodiac work?</summary><p>It cycles through 12 animals — Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig — one per year, combined with five elements over a 60-year cycle.</p></details>
+<details><summary>Why does the birth year matter, not the date?</summary><p>The animal is set by the lunar year. The one caveat is January / early-February births, which can fall before the lunar new year and so belong to the previous animal.</p></details>
+<details><summary>What's my element?</summary><p>Each animal year also carries one of five elements (Wood, Fire, Earth, Metal, Water) — for example 2000 is a Metal Dragon.</p></details>
+</section>
+<script src="/tools/chinese-zodiac/chinese-zodiac.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Fibonacci Sequence Generator | SharpDev.Tools</title>
+<meta content="Free Fibonacci sequence generator. List any number of Fibonacci terms starting from any position, with exact big-integer math. Copy the sequence with one click. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/fibonacci/" rel="canonical"/>
+<meta content="Fibonacci Sequence Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free Fibonacci sequence generator. List any number of Fibonacci terms starting from any position, with exact big-integer math. Copy the sequence with one click. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/fibonacci/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Fibonacci Sequence Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Fibonacci sequence generator. List any number of Fibonacci terms starting from any position, with exact big-integer math. Copy the sequence with one click. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Fibonacci Sequence Generator","item":"https://sharpdev.tools/tools/fibonacci/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Fibonacci sequence?","acceptedAnswer":{"@type":"Answer","text":"Each number is the sum of the two before it, starting 0, 1, 1, 2, 3, 5, 8, 13, \u2026 It appears throughout mathematics and nature."}},{"@type":"Question","name":"Can it handle very large terms?","acceptedAnswer":{"@type":"Answer","text":"Yes. It uses exact big-integer arithmetic, so even the 1000th Fibonacci number (over 200 digits) is computed precisely with no rounding."}},{"@type":"Question","name":"What does \u2018start at term\u2019 do?","acceptedAnswer":{"@type":"Answer","text":"It skips ahead so the list begins at the term number you choose \u2014 handy if you only want, say, terms 50 through 60."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Fibonacci Sequence Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/fibonacci/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/fibonacci/fibonacci.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('fibonacci');</script>
+<div class="page">
+<h1>Fibonacci Sequence Generator</h1>
+<p class="subtitle">Generate the Fibonacci sequence — any number of terms, starting from any position. Big numbers supported.</p>
+<div class="row">
+<div class="field"><label for="n">How many terms?</label><input type="number" id="n" value="15" min="1" max="1000"></div>
+<div class="field"><label for="start">Start at term #</label><input type="number" id="start" value="0" min="0" max="10000"></div></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy sequence</button></div>
+<div class="out-head"><label>Fibonacci sequence</label><span id="meta" style="font-size:12px;color:#888;"></span></div>
+<textarea class="output" id="out" readonly style="min-height:150px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Fibonacci sequence?</summary><p>Each number is the sum of the two before it, starting 0, 1, 1, 2, 3, 5, 8, 13, … It appears throughout mathematics and nature.</p></details>
+<details><summary>Can it handle very large terms?</summary><p>Yes. It uses exact big-integer arithmetic, so even the 1000th Fibonacci number (over 200 digits) is computed precisely with no rounding.</p></details>
+<details><summary>What does ‘start at term’ do?</summary><p>It skips ahead so the list begins at the term number you choose — handy if you only want, say, terms 50 through 60.</p></details>
+</section>
+<script src="/tools/fibonacci/fibonacci.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Average Calculator — Mean, Median, Mode and Range | SharpDev.Tools</title>
+<meta content="Calculate the mean, median, mode, range, sum and count of any list of numbers. Paste numbers separated by spaces, commas or new lines. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/average/" rel="canonical"/>
+<meta content="Average Calculator — Mean, Median, Mode and Range | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate the mean, median, mode, range, sum and count of any list of numbers. Paste numbers separated by spaces, commas or new lines. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/average/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Average Calculator — Mean, Median, Mode and Range | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate the mean, median, mode, range, sum and count of any list of numbers. Paste numbers separated by spaces, commas or new lines. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Average Calculator","item":"https://sharpdev.tools/tools/average/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between mean, median and mode?","acceptedAnswer":{"@type":"Answer","text":"Mean is the sum divided by the count (the everyday 'average'). Median is the middle value when the numbers are sorted (robust against outliers). Mode is the value that appears most often. This tool shows all three at once."}},{"@type":"Question","name":"How do I enter my numbers?","acceptedAnswer":{"@type":"Answer","text":"Paste or type them separated by spaces, commas, or new lines. The calculator extracts every number automatically and ignores other characters, so messy pasted data still works."}},{"@type":"Question","name":"Does it handle decimals and negative numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes, both. Decimals like 3.14 and negatives like -7 are parsed correctly."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Average Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/average/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/average/average.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('average');</script>
+<div class="page">
+<h1>Average Calculator</h1>
+<p class="subtitle">Mean, median, mode, range, sum and count for any list of numbers.</p>
+<div class="field">
+<label for="nums">Numbers (separate with spaces, commas or new lines)</label>
+<textarea id="nums" placeholder="e.g. 4, 8, 15, 16, 23, 42"></textarea>
+</div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between mean, median and mode?</summary><p>Mean is the sum divided by the count (the everyday 'average'). Median is the middle value when the numbers are sorted (robust against outliers). Mode is the value that appears most often. This tool shows all three at once.</p></details>
+<details><summary>How do I enter my numbers?</summary><p>Paste or type them separated by spaces, commas, or new lines. The calculator extracts every number automatically and ignores other characters, so messy pasted data still works.</p></details>
+<details><summary>Does it handle decimals and negative numbers?</summary><p>Yes, both. Decimals like 3.14 and negatives like -7 are parsed correctly.</p></details>
+</section>
+<script src="/tools/average/average.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

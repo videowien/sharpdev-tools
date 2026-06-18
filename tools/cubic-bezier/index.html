@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Cubic Bezier Generator — CSS Easing Curve Editor | SharpDev.Tools</title>
+<meta content="Visually edit a CSS cubic-bezier easing curve by dragging the control handles. Live animation preview and copy-paste timing function. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/cubic-bezier/" rel="canonical"/>
+<meta content="Cubic Bezier Generator — CSS Easing Curve Editor | SharpDev.Tools" property="og:title"/>
+<meta content="Visually edit a CSS cubic-bezier easing curve by dragging the control handles. Live animation preview and copy-paste timing function. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/cubic-bezier/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Cubic Bezier Generator — CSS Easing Curve Editor | SharpDev.Tools" name="twitter:title"/>
+<meta content="Visually edit a CSS cubic-bezier easing curve by dragging the control handles. Live animation preview and copy-paste timing function. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"Cubic Bezier Generator","item":"https://sharpdev.tools/tools/cubic-bezier/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a cubic-bezier in CSS?","acceptedAnswer":{"@type":"Answer","text":"It is a way to define a custom easing curve for transitions and animations. The four numbers are the coordinates of two control handles; they shape how speed changes over the duration. Drag the handles here to design the curve visually."}},{"@type":"Question","name":"How do I make a bounce or overshoot effect?","acceptedAnswer":{"@type":"Answer","text":"Drag a handle below 0 or above 1 on the vertical axis. That makes the curve overshoot, producing an elastic or bounce feel. The built-in 'bounce' preset is a starting point."}},{"@type":"Question","name":"Where do I paste the result?","acceptedAnswer":{"@type":"Answer","text":"Use it as the timing function in any CSS transition or animation, for example: transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);"}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Cubic Bezier Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/cubic-bezier/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/cubic-bezier/cubic-bezier.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('cubic-bezier');</script>
+<div class="page">
+<h1>Cubic Bezier Generator</h1>
+<p class="subtitle">Drag the handles to shape a CSS easing curve. Live preview, copy the cubic-bezier() value.</p>
+<div class="cb-wrap">
+<canvas id="cv" width="280" height="280"></canvas>
+<div class="cb-side">
+<div class="out-head"><label>Timing function</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out" style="min-height:auto;padding:10px 12px"></div>
+<label style="display:block;font-size:12px;color:#aaa;margin:14px 0 6px">Presets</label>
+<div class="actions" id="presets"></div>
+<div class="cb-preview"><div class="cb-ball" id="ball"></div></div>
+<button class="small-btn" id="play">&#9654; Play preview</button>
+</div>
+</div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a cubic-bezier in CSS?</summary><p>It is a way to define a custom easing curve for transitions and animations. The four numbers are the coordinates of two control handles; they shape how speed changes over the duration. Drag the handles here to design the curve visually.</p></details>
+<details><summary>How do I make a bounce or overshoot effect?</summary><p>Drag a handle below 0 or above 1 on the vertical axis. That makes the curve overshoot, producing an elastic or bounce feel. The built-in 'bounce' preset is a starting point.</p></details>
+<details><summary>Where do I paste the result?</summary><p>Use it as the timing function in any CSS transition or animation, for example: transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);</p></details>
+</section>
+<script src="/tools/cubic-bezier/cubic-bezier.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

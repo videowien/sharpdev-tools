@@ -1,0 +1,63 @@
+/* PDF Sign — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.upload-slot { display: flex; flex-direction: column; gap: 8px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  flex: 1;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-area.loaded { border-style: solid; border-color: #4caf50; background: rgba(76, 175, 80, 0.04); }
+.upload-content { padding: 28px 16px; }
+.upload-icon { width: 32px; height: 32px; color: #444; margin-bottom: 8px; }
+.upload-content p { color: #666; font-size: 13px; margin-bottom: 4px; line-height: 1.4; }
+.upload-link { color: #ff4444; cursor: pointer; }
+
+.info { font-size: 12px; color: #888; font-family: 'SF Mono', monospace; margin: 0; min-height: 16px; }
+.info .filename { color: #fff; }
+
+.editor-card { margin-top: 16px; }
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-group input[type=number] {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px; width: 80px;
+}
+.opt-group input[type=range] { accent-color: #ff4444; width: 200px; }
+.opt-value { font-size: 12px; color: #888; font-family: 'SF Mono', monospace; }
+.hint { font-size: 12px; color: #666; }
+
+.canvas-wrap {
+  position: relative;
+  background: #0a0a0a; padding: 20px;
+  border: 1px solid #2a2a2a; border-radius: 8px;
+  display: flex; justify-content: center; align-items: center;
+  margin-bottom: 8px; max-height: 540px; overflow: auto;
+}
+#display { background: #fff; max-height: 500px; max-width: 100%; }
+#sig-overlay {
+  position: absolute; cursor: move;
+  pointer-events: auto; user-select: none;
+  border: 1px dashed rgba(255, 68, 68, 0.5);
+  max-width: none;
+}
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+.status-msg.busy { color: #ffa726; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .upload-grid { grid-template-columns: 1fr; }
+}

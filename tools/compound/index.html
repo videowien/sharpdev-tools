@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Compound Interest Calculator | SharpDev.Tools</title>
+<meta content="Calculate compound growth of a principal over time with optional monthly contributions, configurable growth rate and compounding frequency. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/compound/" rel="canonical"/>
+<meta content="Compound Interest Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate compound growth of a principal over time with optional monthly contributions, configurable growth rate and compounding frequency. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/compound/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Compound Interest Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate compound growth of a principal over time with optional monthly contributions, configurable growth rate and compounding frequency. Free." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Money & Finance",
+        "item": "https://sharpdev.tools/#money-finance"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Compound Interest",
+        "item": "https://sharpdev.tools/tools/compound/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is compound interest calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compound interest applies interest to both the original principal and the interest already earned. This calculator uses the standard formula with your principal, rate, compounding frequency, time and optional regular contributions to show the final balance and total interest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does compounding frequency change?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "More frequent compounding (monthly versus yearly) earns slightly more because interest is added sooner and starts earning itself. You can compare daily, monthly, quarterly and annual compounding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this financial advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, it is an educational calculator. Real returns vary; consult a qualified advisor for decisions."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compound Interest Calculator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/compound/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/compound/compound.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('compound');</script>
+<div class="page">
+<h1>Compound Interest</h1>
+<p class="subtitle">See how an investment grows over time with regular contributions.</p>
+<div class="ci-grid">
+<div class="ci-field"><label>Principal</label><div class="ci-wrap"><span>$</span><input type="number" id="principal" value="10000" step="any"></div></div>
+<div class="ci-field"><label>Monthly deposit</label><div class="ci-wrap"><span>$</span><input type="number" id="deposit" value="200" step="any"></div></div>
+<div class="ci-field"><label>Annual rate %</label><div class="ci-wrap"><input type="number" id="rate" value="7" step="any"><span>%</span></div></div>
+<div class="ci-field"><label>Years</label><div class="ci-wrap"><input type="number" id="years" value="20" min="1" max="60" step="1"><span>yrs</span></div></div>
+<div class="ci-field"><label>Compounds / year</label><div class="ci-wrap"><select id="compounds"><option value="1">Annually</option><option value="2">Semi-annually</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option><option value="365">Daily</option></select></div></div>
+</div>
+<div class="ci-results" id="ci-results">
+<div class="ci-stat"><div class="ci-label">Final balance</div><div class="ci-value" id="r-final">—</div></div>
+<div class="ci-stat"><div class="ci-label">Total deposited</div><div class="ci-value" id="r-deposited">—</div></div>
+<div class="ci-stat"><div class="ci-label">Interest earned</div><div class="ci-value" id="r-interest">—</div></div>
+</div>
+<div class="ci-yearly" id="ci-yearly"></div>
+</div>
+<script src="/tools/compound/compound.js"></script>
+<script>renderFooter();</script>
+</body></html>

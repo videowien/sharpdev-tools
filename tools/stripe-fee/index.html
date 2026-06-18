@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Stripe Fee Calculator | SharpDev.Tools</title>
+<meta content="Free Stripe fee calculator. Enter a charge to see the processing fee and your net payout, or switch modes to find the amount to charge so you receive an exact net. Editable rate and fixed fee. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/stripe-fee/" rel="canonical"/>
+<meta content="Stripe Fee Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free Stripe fee calculator. Enter a charge to see the processing fee and your net payout, or switch modes to find the amount to charge so you receive an exact net. Editable rate and fixed fee. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/stripe-fee/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Stripe Fee Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Stripe fee calculator. Enter a charge to see the processing fee and your net payout, or switch modes to find the amount to charge so you receive an exact net. Editable rate and fixed fee. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"Stripe Fee Calculator","item":"https://sharpdev.tools/tools/stripe-fee/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Stripe's standard fees?","acceptedAnswer":{"@type":"Answer","text":"For online card payments the common US rate is 2.9% of the charge plus a fixed $0.30. Rates differ by country, currency and product, so the fields here are editable."}},{"@type":"Question","name":"How do I receive an exact amount after fees?","acceptedAnswer":{"@type":"Answer","text":"Switch to \u2018I want to receive this much\u2019. The calculator grosses the amount up so that after the percentage and fixed fee, your net equals your target."}},{"@type":"Question","name":"Is this official?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 it's an independent estimator. Always confirm the exact rate in your own Stripe dashboard."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Stripe Fee Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/stripe-fee/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/stripe-fee/stripe-fee.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('stripe-fee');</script>
+<div class="page">
+<h1>Stripe Fee Calculator</h1>
+<p class="subtitle">See the fee and your net from a charge, or work out what to charge to receive an exact amount.</p>
+<div class="row">
+<div class="field"><label for="mode">Mode</label><select id="mode"><option value="fee">I charge this amount</option><option value="net">I want to receive this much</option></select></div>
+<div class="field"><label for="amt">Amount</label><input type="number" id="amt" value="100" step="0.01"></div></div>
+<div class="row">
+<div class="field"><label for="rate">Percentage fee (%)</label><input type="number" id="rate" value="2.9" step="0.01"></div>
+<div class="field"><label for="fixed">Fixed fee</label><input type="number" id="fixed" value="0.30" step="0.01"></div></div>
+<div class="result-cards"><div class="result-card"><div class="label" id="l1">You charge</div><div class="value" id="charge">—</div></div><div class="result-card"><div class="label">Stripe fee</div><div class="value" id="fee">—</div></div><div class="result-card hl"><div class="label" id="l3">You receive</div><div class="value" id="net">—</div></div></div>
+<p class="note">Default 2.9% + $0.30 is the common US online rate. Adjust the rate and fixed fee for your country or plan.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are Stripe's standard fees?</summary><p>For online card payments the common US rate is 2.9% of the charge plus a fixed $0.30. Rates differ by country, currency and product, so the fields here are editable.</p></details>
+<details><summary>How do I receive an exact amount after fees?</summary><p>Switch to ‘I want to receive this much’. The calculator grosses the amount up so that after the percentage and fixed fee, your net equals your target.</p></details>
+<details><summary>Is this official?</summary><p>No — it's an independent estimator. Always confirm the exact rate in your own Stripe dashboard.</p></details>
+</section>
+<script src="/tools/stripe-fee/stripe-fee.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

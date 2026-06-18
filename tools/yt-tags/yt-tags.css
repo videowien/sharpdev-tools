@@ -1,0 +1,81 @@
+/* YouTube Tags Extractor — styles */
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+
+.url-row {
+  display: flex; gap: 10px;
+  margin-bottom: 10px;
+}
+.url-row input {
+  flex: 1; padding: 12px 16px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 14px;
+  border-radius: 10px; font-family: 'SF Mono', Monaco, monospace;
+  outline: none; transition: border-color 0.15s;
+}
+.url-row input:focus { border-color: #ff4444; }
+.url-row .btn { padding: 12px 24px; font-size: 14px; }
+
+.err { min-height: 18px; font-size: 12px; color: #ff7070; margin: 4px 2px 14px; }
+
+.video-card {
+  margin-top: 16px; padding: 18px 22px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 12px;
+}
+.video-title { color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.video-meta { color: #888; font-size: 13px; }
+
+.tags-panel {
+  margin-top: 16px; padding: 18px 22px;
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.tags-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.tags-head h2 {
+  font-size: 13px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.tags-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.copy-btn {
+  padding: 6px 14px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+.tags-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.yt-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.yt-tag:hover { border-color: #ff4444; color: #fff; }
+.yt-tag.copied { border-color: #4ade80; color: #4ade80; }
+
+.empty-state {
+  padding: 24px;
+  background: #0f0f0f; border: 1px dashed #262626;
+  border-radius: 12px;
+  text-align: center; color: #888; font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .url-row { flex-direction: column; }
+  .url-row .btn { width: 100%; }
+}

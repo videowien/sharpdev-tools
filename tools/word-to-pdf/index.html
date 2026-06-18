@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Word to PDF Converter — DOCX to PDF Online, No Upload | SharpDev.Tools</title>
+<meta content="Convert any Word (.docx) file to PDF in your browser. Drag, drop, download — your document never leaves your device. Headings, lists, tables, images preserved. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/word-to-pdf/" rel="canonical"/>
+<meta content="Word to PDF Converter — DOCX to PDF Online, No Upload | SharpDev.Tools" property="og:title"/>
+<meta content="Convert Word (.docx) files to PDF in your browser. Your document never leaves your device. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/word-to-pdf/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Word to PDF Converter — DOCX to PDF Online, No Upload | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert Word (.docx) files to PDF in your browser. No upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"Word to PDF","item":"https://sharpdev.tools/tools/word-to-pdf/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is my document uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The .docx is parsed and converted to PDF entirely in your browser using mammoth.js (DOCX parser) and html2pdf (PDF renderer). Nothing is sent to a server — your document stays on your device."}},
+    {"@type":"Question","name":"What formatting is preserved?","acceptedAnswer":{"@type":"Answer","text":"Headings, paragraphs, bold / italic / underline, bullet and numbered lists, tables, inline images, hyperlinks, and footnotes. Complex layouts (multi-column, headers/footers, page breaks, custom fonts) may render differently from the original — typical for browser-side conversion."}},
+    {"@type":"Question","name":"Does it work with .doc (old Word format)?","acceptedAnswer":{"@type":"Answer","text":"No — only .docx (the modern XML-based format, 2007+). For old .doc files, open in Word or LibreOffice first and save as .docx, then come back."}},
+    {"@type":"Question","name":"What's the file size limit?","acceptedAnswer":{"@type":"Answer","text":"There's no hard cap, but files above ~10 MB may take several seconds. The conversion runs in your browser so very large documents (50+ MB) may slow down older devices."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Word to PDF — SharpDev.Tools","url":"https://sharpdev.tools/tools/word-to-pdf/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/word-to-pdf/word-to-pdf.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('word-to-pdf');</script>
+<div class="page">
+<h1>Word to PDF Converter</h1>
+<p class="subtitle">Convert .docx files to PDF directly in your browser. Nothing uploaded.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a .docx file here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">.docx only — modern Word format (2007+). Your file never leaves the browser.</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Page size</label>
+<select id="page-size">
+<option value="a4" selected>A4 (210 × 297 mm)</option>
+<option value="letter">Letter (8.5 × 11 in)</option>
+<option value="legal">Legal (8.5 × 14 in)</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Orientation</label>
+<select id="orientation">
+<option value="portrait" selected>Portrait</option>
+<option value="landscape">Landscape</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Margin</label>
+<select id="margin">
+<option value="0.5">Narrow (0.5 in)</option>
+<option value="1" selected>Normal (1 in)</option>
+<option value="1.25">Wide (1.25 in)</option>
+</select>
+</div>
+</div>
+
+<div class="preview-wrap">
+<label class="opt-label">Preview (rendered HTML — exported as PDF)</label>
+<div class="preview" id="preview"></div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="dl-btn" type="button">Download PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What gets preserved</h2>
+<ul>
+<li><strong>Headings</strong> (H1-H6) with relative sizing</li>
+<li><strong>Bold, italic, underline, strikethrough</strong> inline formatting</li>
+<li><strong>Bulleted + numbered lists</strong>, including nested lists</li>
+<li><strong>Tables</strong> with cell content and basic borders</li>
+<li><strong>Hyperlinks</strong> as clickable PDF links</li>
+<li><strong>Inline images</strong> (embedded in the .docx)</li>
+<li><strong>Footnotes</strong> with reference markers</li>
+</ul>
+
+<h2>What may differ from the original</h2>
+<ul>
+<li><strong>Fonts</strong> — your system fonts replace the original Word font</li>
+<li><strong>Page breaks</strong> — re-flowed based on content + margins</li>
+<li><strong>Headers / footers</strong> — partial support, may be dropped</li>
+<li><strong>Multi-column layouts</strong> — flattened to single column</li>
+<li><strong>Text boxes / shapes</strong> — converted to inline content where possible</li>
+<li><strong>Watermarks</strong> — not preserved (use the Watermark tool to re-add)</li>
+</ul>
+
+<h2>Why no upload?</h2>
+<p>Most "free" Word-to-PDF sites upload your document to their servers. That's a privacy and security problem — confidential contracts, NDAs, internal memos shouldn't leave your device. This tool converts in your browser using <strong>mammoth.js</strong> (DOCX parser) + <strong>html2pdf</strong> (PDF renderer). Your file never touches a server.</p>
+
+<h2>Privacy</h2>
+<p>The entire conversion happens in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="/tools/word-to-pdf/word-to-pdf.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

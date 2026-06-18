@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twitter / X Banner Sizer — 1500×500 Crop with Safe Zones | SharpDev.Tools</title>
+<meta content="Crop any photo to a Twitter / X banner (1500×500). Drag to position, see safe zones for the profile pic and mobile crop. Your file never leaves the browser." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-banner/" rel="canonical"/>
+<meta content="Twitter / X Banner Sizer — 1500×500 Crop | SharpDev.Tools" property="og:title"/>
+<meta content="Crop any photo to a Twitter / X banner (1500×500). Drag to position, safe zones for profile pic + mobile. No upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-banner/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Twitter / X Banner Sizer — 1500×500 Crop | SharpDev.Tools" name="twitter:title"/>
+<meta content="Crop any photo to a Twitter / X banner. Drag to position, safe zones for profile pic + mobile." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Twitter","item":"https://sharpdev.tools/twitter/"},
+    {"@type":"ListItem","position":3,"name":"Twitter Banner Sizer","item":"https://sharpdev.tools/tools/twitter-banner/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What size is a Twitter / X banner?","acceptedAnswer":{"@type":"Answer","text":"1500 × 500 pixels (3:1 ratio). The profile picture overlays the bottom-left, and mobile crops top/bottom slightly. This tool shows both safe zones."}},
+    {"@type":"Question","name":"Where does the profile pic sit?","acceptedAnswer":{"@type":"Answer","text":"Bottom-left, with the center roughly at 145, 425 in 1500×500 coordinates, ~200px wide. Don't put crucial text or faces in that area or they'll be covered."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The image is loaded into a canvas in your browser. Nothing is sent to a server."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Twitter Banner Sizer — SharpDev.Tools","url":"https://sharpdev.tools/tools/twitter-banner/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-banner/twitter-banner.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-banner');</script>
+<div class="page">
+<h1>Twitter / X Banner Sizer</h1>
+<p class="subtitle">Crop to exactly 1500×500. Drag to position. Safe zones for profile pic + mobile.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a photo here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP — landscape works best</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Zoom</label>
+<input id="zoom" type="range" min="100" max="300" step="5" value="100"/>
+<span class="opt-value" id="zoom-val">100%</span>
+</div>
+<label class="checkbox-label">
+<input id="show-safe" type="checkbox" checked/>
+<span>Show safe zones</span>
+</label>
+</div>
+
+<div class="canvas-wrap">
+<canvas id="display" width="750" height="250"></canvas>
+<div class="zone profile-pic-zone" id="zone-pp"></div>
+<div class="zone mobile-zone" id="zone-mobile"></div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="dl-png" type="button">Download PNG (1500×500)</button>
+<button class="btn btn-secondary" id="dl-jpg" type="button">Download JPG</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Twitter / X banner spec</h2>
+<ul>
+<li><strong>Size:</strong> 1500 × 500 pixels (3:1 ratio)</li>
+<li><strong>Max file size:</strong> 5 MB (PNG, JPG, WebP)</li>
+<li><strong>Profile pic overlay:</strong> ~200px wide circle, centered at left edge ~145px in, ~425px from the top — covers the bottom-left of the banner</li>
+<li><strong>Mobile crop:</strong> Mobile shows roughly the middle 50% of the banner. Outer edges get cropped</li>
+</ul>
+
+<h2>What works in 1500×500</h2>
+<ul>
+<li><strong>Centered subject or text</strong> — survives both mobile crop and profile pic overlay</li>
+<li><strong>Gradient background</strong> — fills the whole banner without competing with the avatar</li>
+<li><strong>Single dominant color band</strong> — works as a clean stage for your @-handle</li>
+<li>Avoid faces or critical text in the bottom-left or the outer 25% on each side</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The image is loaded into a canvas in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/twitter-banner/twitter-banner.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Zalgo / Glitch Text Generator | SharpDev.Tools</title>
+<meta content="Free zalgo / glitch text generator. Turn plain text into corrupted, creepy stacked-character text for social media bios and posts. Adjustable intensity, copy with one click, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/zalgo/" rel="canonical"/>
+<meta content="Zalgo / Glitch Text Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free zalgo / glitch text generator. Turn plain text into corrupted, creepy stacked-character text for social media bios and posts. Adjustable intensity, copy with one click, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/zalgo/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Zalgo / Glitch Text Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free zalgo / glitch text generator. Turn plain text into corrupted, creepy stacked-character text for social media bios and posts. Adjustable intensity, copy with one click, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Zalgo Glitch Text Generator","item":"https://sharpdev.tools/tools/zalgo/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is zalgo text?","acceptedAnswer":{"@type":"Answer","text":"Zalgo text stacks many Unicode \u2018combining marks\u2019 on top of normal letters, making them look corrupted or glitchy. The underlying letters are unchanged \u2014 it's purely decorative."}},{"@type":"Question","name":"Will it work on Instagram, Discord and TikTok?","acceptedAnswer":{"@type":"Answer","text":"Yes on most platforms. A few apps strip combining marks or limit how tall text can render, so very high intensity may look clipped. Lower the intensity if it gets cut off."}},{"@type":"Question","name":"Is it random?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 each character gets a random set of marks, so every generation looks a little different."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Zalgo Glitch Text Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/zalgo/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/zalgo/zalgo.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('zalgo');</script>
+<div class="page">
+<h1>Zalgo Glitch Text Generator</h1>
+<p class="subtitle">Turn normal text into creepy, glitchy ‘zalgo’ text with stacked combining marks. Adjustable intensity.</p>
+<div class="field"><label for="in">Text</label><textarea id="in" placeholder="Type something…">SharpDev</textarea></div>
+<div class="row"><div class="field"><label for="lvl">Intensity (1–20)</label><input type="number" id="lvl" value="4" min="1" max="20"></div></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy zalgo text</button></div>
+<div class="out-head"><label>Zalgo output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is zalgo text?</summary><p>Zalgo text stacks many Unicode ‘combining marks’ on top of normal letters, making them look corrupted or glitchy. The underlying letters are unchanged — it's purely decorative.</p></details>
+<details><summary>Will it work on Instagram, Discord and TikTok?</summary><p>Yes on most platforms. A few apps strip combining marks or limit how tall text can render, so very high intensity may look clipped. Lower the intensity if it gets cut off.</p></details>
+<details><summary>Is it random?</summary><p>Yes — each character gets a random set of marks, so every generation looks a little different.</p></details>
+</section>
+<script src="/tools/zalgo/zalgo.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

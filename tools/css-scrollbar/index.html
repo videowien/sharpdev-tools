@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Scrollbar Styler | SharpDev.Tools</title>
+<meta content="Free CSS scrollbar styler. Customize scrollbar width, track and thumb colors and radius, preview it on a scrollable box, and copy WebKit plus standard CSS. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-scrollbar/" rel="canonical"/>
+<meta content="CSS Scrollbar Styler | SharpDev.Tools" property="og:title"/>
+<meta content="Free CSS scrollbar styler. Customize scrollbar width, track and thumb colors and radius, preview it on a scrollable box, and copy WebKit plus standard CSS. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-scrollbar/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Scrollbar Styler | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free CSS scrollbar styler. Customize scrollbar width, track and thumb colors and radius, preview it on a scrollable box, and copy WebKit plus standard CSS. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Custom Scrollbar Generator","item":"https://sharpdev.tools/tools/css-scrollbar/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which browsers does this support?","acceptedAnswer":{"@type":"Answer","text":"The ::-webkit-scrollbar rules style Chrome, Safari and Edge. The scrollbar-width and scrollbar-color properties cover Firefox. Both are included so you're covered everywhere."}},{"@type":"Question","name":"Why doesn't my scrollbar change?","acceptedAnswer":{"@type":"Answer","text":"A scrollbar only appears when content overflows. Make sure the element has a fixed height and overflow set to auto or scroll."}},{"@type":"Question","name":"Can I use it on the whole page?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 replace .scrollbox with html or body to style the main page scrollbar."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Custom Scrollbar Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/css-scrollbar/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-scrollbar/css-scrollbar.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-scrollbar');</script>
+<div class="page">
+<h1>CSS Custom Scrollbar Generator</h1>
+<p class="subtitle">Style a custom scrollbar — width, track and thumb colors, radius — with a live preview and copyable CSS.</p>
+<div class="row"><div class="field"><label for="w">Width (px)</label><input type="number" id="w" value="10"></div><div class="field"><label for="track">Track color</label><input type="color" id="track" value="#1a1a1a"></div><div class="field"><label for="thumb">Thumb color</label><input type="color" id="thumb" value="#ff4444"></div><div class="field"><label for="rad">Radius (px)</label><input type="number" id="rad" value="6"></div></div>
+<div class="out-head"><label>Preview (scroll this box)</label></div>
+<div class="sd-scroll" id="prev">Scroll me.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Sed do eiusmod tempor incididunt ut labore.<br>Ut enim ad minim veniam, quis nostrud.<br>Duis aute irure dolor in reprehenderit.<br>Excepteur sint occaecat cupidatat non proident.<br>Sunt in culpa qui officia deserunt mollit.<br>Lorem ipsum dolor sit amet again.<br>More lines to make it scroll nicely.</div>
+<div class="out-head"><label>CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="out" readonly style="min-height:200px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Which browsers does this support?</summary><p>The ::-webkit-scrollbar rules style Chrome, Safari and Edge. The scrollbar-width and scrollbar-color properties cover Firefox. Both are included so you're covered everywhere.</p></details>
+<details><summary>Why doesn't my scrollbar change?</summary><p>A scrollbar only appears when content overflows. Make sure the element has a fixed height and overflow set to auto or scroll.</p></details>
+<details><summary>Can I use it on the whole page?</summary><p>Yes — replace .scrollbox with html or body to style the main page scrollbar.</p></details>
+</section>
+<script src="/tools/css-scrollbar/css-scrollbar.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

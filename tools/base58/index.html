@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Base58 Encode / Decode — Bitcoin-Style Base58 | SharpDev.Tools</title>
+<meta content="Encode and decode Base58 (Bitcoin alphabet, no confusing 0 O I l). Two-way, instant, runs in your browser. Free Base58 converter." name="description"/>
+<link href="https://sharpdev.tools/tools/base58/" rel="canonical"/>
+<meta content="Base58 Encode / Decode — Bitcoin-Style Base58 | SharpDev.Tools" property="og:title"/>
+<meta content="Encode and decode Base58 (Bitcoin alphabet, no confusing 0 O I l). Two-way, instant, runs in your browser. Free Base58 converter." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/base58/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Base58 Encode / Decode — Bitcoin-Style Base58 | SharpDev.Tools" name="twitter:title"/>
+<meta content="Encode and decode Base58 (Bitcoin alphabet, no confusing 0 O I l). Two-way, instant, runs in your browser. Free Base58 converter." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Base58 Encode / Decode","item":"https://sharpdev.tools/tools/base58/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Base58?","acceptedAnswer":{"@type":"Answer","text":"Base58 is a binary-to-text encoding that omits the easily confused characters 0 (zero), O (capital o), I (capital i) and l (lower L), plus + and /. It is used by Bitcoin addresses and many crypto and short-ID systems for human-friendly strings."}},{"@type":"Question","name":"How is it different from Base64?","acceptedAnswer":{"@type":"Answer","text":"Base64 is more compact but includes characters that are ambiguous when read aloud or written by hand (0/O, I/l) and uses + and / which are not URL-safe. Base58 trades a little size for readability."}},{"@type":"Question","name":"Does it run locally?","acceptedAnswer":{"@type":"Answer","text":"Yes. Encoding and decoding happen entirely in your browser; nothing is uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Base58 Encode / Decode \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/base58/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/base58/base58.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('base58');</script>
+<div class="page">
+<h1>Base58 Encode / Decode</h1>
+<p class="subtitle">Bitcoin-style Base58 (no 0, O, I or l). Encode text to Base58 or decode it back.</p>
+<div class="actions"><button class="small-btn" id="enc">Encode &#8595;</button><button class="small-btn" id="dec">Decode &#8593;</button></div>
+<div class="field"><label for="in">Input</label><textarea id="in" placeholder="Text to encode, or Base58 to decode..."></textarea></div>
+<div class="out-head"><label for="out">Output</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is Base58?</summary><p>Base58 is a binary-to-text encoding that omits the easily confused characters 0 (zero), O (capital o), I (capital i) and l (lower L), plus + and /. It is used by Bitcoin addresses and many crypto and short-ID systems for human-friendly strings.</p></details>
+<details><summary>How is it different from Base64?</summary><p>Base64 is more compact but includes characters that are ambiguous when read aloud or written by hand (0/O, I/l) and uses + and / which are not URL-safe. Base58 trades a little size for readability.</p></details>
+<details><summary>Does it run locally?</summary><p>Yes. Encoding and decoding happen entirely in your browser; nothing is uploaded.</p></details>
+</section>
+<script src="/tools/base58/base58.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

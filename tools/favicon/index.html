@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Favicon — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Make favicons from an emoji, text or image, download every size as PNG and copy the HTML snippet. Free online favicon generator, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/favicon/" rel="canonical"/>
+<meta content="Favicon — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Make favicons from an emoji, text or image, download every size as PNG and copy the HTML snippet. Free online favicon generator, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/favicon/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Favicon — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Make favicons from an emoji, text or image, download every size as PNG and copy the HTML snippet. Free online favicon generator, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Images & Media", "item": "https://sharpdev.tools/#images-media"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Favicon",
+        "item": "https://sharpdev.tools/tools/favicon/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can the Favicon Generator create?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Favicons from an emoji, styled text or uploaded image, exported as PNG at every standard size (16, 32, 48, 64, 96, 180, 192, 512) with a ready-to-paste HTML snippet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my image uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Favicon creation happens entirely in your browser via Canvas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Favicon — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/favicon/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/favicon/favicon.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('favicon');</script>
+<div class="page">
+<h1>Favicon Generator</h1>
+<p class="subtitle">Make a favicon from emoji, text, or an image. Download PNGs at every size. Copy ready-to-use HTML.</p>
+<div class="tabs">
+<button class="tab active" data-tab="emoji">Emoji</button>
+<button class="tab" data-tab="text">Text</button>
+<button class="tab" data-tab="image">Image</button>
+</div>
+<div class="layout">
+<div class="controls-col">
+<!-- Emoji -->
+<div class="panel active" id="panel-emoji">
+<label>Emoji</label>
+<input id="emoji-input" maxlength="8" placeholder="Paste or type an emoji" type="text" value=""/>
+<div class="picker" id="emoji-picker"></div>
+</div>
+<!-- Text -->
+<div class="panel" id="panel-text">
+<label>Text (1-3 chars)</label>
+<input id="text-input" maxlength="3" type="text" value="SD"/>
+<label>Font family</label>
+<select id="text-font">
+<option value="system">System</option>
+<option value="serif">Serif</option>
+<option value="monospace">Monospace</option>
+<option value="cursive">Cursive</option>
+</select>
+<label>Font size (%)</label>
+<input id="text-size" max="90" min="30" type="range" value="60"/>
+<label>Text color</label>
+<input id="text-color" type="color" value="#ffffff"/>
+<label>Background color</label>
+<input id="text-bg" type="color" value="#ff4444"/>
+<label>Shape</label>
+<div class="seg">
+<button class="seg-btn active" data-shape="square">Square</button>
+<button class="seg-btn" data-shape="rounded">Rounded</button>
+<button class="seg-btn" data-shape="circle">Circle</button>
+</div>
+</div>
+<!-- Image -->
+<div class="panel" id="panel-image">
+<label>Upload image</label>
+<input accept="image/*" id="image-input" type="file"/>
+<label><input id="image-circle" type="checkbox"/> Circular mask</label>
+</div>
+</div>
+<div class="preview-col">
+<div class="preview-row">
+<div class="prev-box"><canvas height="16" id="prev-16" width="16"></canvas><div class="prev-label">16</div></div>
+<div class="prev-box"><canvas height="32" id="prev-32" width="32"></canvas><div class="prev-label">32</div></div>
+<div class="prev-box prev-big"><canvas height="256" id="prev-256" width="256"></canvas><div class="prev-label">256</div></div>
+</div>
+<div class="download-card card">
+<h3>Download</h3>
+<div class="size-list" id="size-list"></div>
+<button class="btn btn-primary" id="btn-zip">Download all as .zip</button>
+</div>
+<div class="snippet-card card">
+<h3>HTML snippet</h3>
+<textarea id="snippet" readonly="" spellcheck="false"></textarea>
+<button class="btn" id="btn-copy-snippet">Copy snippet</button>
+</div>
+<div class="snippet-card card" id="svg-card">
+<h3>favicon.svg</h3>
+<textarea id="svg-out" readonly="" spellcheck="false"></textarea>
+<button class="btn" id="btn-copy-svg">Copy SVG</button>
+</div>
+</div>
+</div>
+</div>
+<script src="/shared/zip.js"></script>
+<script src="/tools/favicon/favicon.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

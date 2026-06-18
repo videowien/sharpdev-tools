@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TOTP Generator — RFC 6238 2FA Code from Secret | SharpDev.Tools</title>
+<meta content="Generate a TOTP (Time-based One-Time Password) code from a base32 secret. RFC 6238 compatible — works with Google Authenticator, Authy, 1Password. Browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/totp/" rel="canonical"/>
+<meta content="TOTP Generator — RFC 6238 2FA Code from Secret | SharpDev.Tools" property="og:title"/>
+<meta content="Generate TOTP 2FA codes from a base32 secret. RFC 6238 compatible. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/totp/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="TOTP Generator — RFC 6238 2FA Code from Secret | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate TOTP 2FA codes from a base32 secret." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/security-crypto/"},
+    {"@type":"ListItem","position":3,"name":"TOTP Generator","item":"https://sharpdev.tools/tools/totp/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Should I use this instead of an authenticator app?","acceptedAnswer":{"@type":"Answer","text":"No. For real 2FA on important accounts, use a dedicated app (Authy, Google Authenticator, 1Password). This tool is for: testing your own implementations, generating codes when your phone is unavailable, debugging TOTP-based systems."}},
+    {"@type":"Question","name":"What's the secret format?","acceptedAnswer":{"@type":"Answer","text":"Base32 — the format that authenticator apps display under the QR code. Letters A-Z and digits 2-7. Padding (=) is optional. Spaces are ignored."}},
+    {"@type":"Question","name":"Is the secret uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The HMAC-SHA1 calculation runs entirely in your browser via SubtleCrypto. The secret never leaves the page."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"TOTP Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/totp/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/totp/totp.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('totp');</script>
+<div class="page">
+<h1>TOTP Generator</h1>
+<p class="subtitle">RFC 6238 Time-based One-Time Password. Compatible with Google Authenticator, Authy, 1Password.</p>
+
+<div class="card">
+<div class="form-row">
+<label class="opt-label">Base32 secret</label>
+<input id="secret" type="text" placeholder="JBSWY3DPEHPK3PXP" value="JBSWY3DPEHPK3PXP"/>
+<p class="hint">Same secret your authenticator app shows when you reveal the key. Spaces ignored.</p>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Digits</label>
+<select id="digits"><option>6</option><option>7</option><option>8</option></select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Period (seconds)</label>
+<select id="period"><option>30</option><option>60</option></select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Algorithm</label>
+<select id="algo"><option>SHA-1</option><option>SHA-256</option><option>SHA-512</option></select>
+</div>
+</div>
+</div>
+
+<div class="card code-card">
+<div class="code" id="code">— — — — — —</div>
+<div class="countdown">
+<div class="countdown-bar"><div class="countdown-fill" id="cd-fill"></div></div>
+<div class="countdown-label" id="cd-label">— seconds remaining</div>
+</div>
+<div class="action-row">
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy code</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What's TOTP?</h2>
+<p>Time-based One-Time Password — the 6-digit codes from authenticator apps. The server stores a shared secret per user. Both sides compute HMAC-SHA1(secret, current_time / 30) and take 6 digits from the result. As long as the clocks are roughly in sync, the codes match.</p>
+
+<h2>Common gotchas</h2>
+<ul>
+<li><strong>Clock drift</strong> — TOTP needs your device clock within ±30 seconds. NTP sync solves it.</li>
+<li><strong>SHA-256 / SHA-512 + 7-8 digits</strong> — non-standard. Most services use defaults (SHA-1 + 6 + 30s). Only change if the service explicitly says so.</li>
+<li><strong>Base32 isn't Base64</strong> — A-Z + 2-7, no lowercase. Padding (<code>=</code>) is optional.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Everything runs in your browser via SubtleCrypto. The secret is never sent anywhere.</p>
+</section>
+
+<script src="/tools/totp/totp.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

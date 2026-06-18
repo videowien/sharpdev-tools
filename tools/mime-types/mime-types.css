@@ -1,0 +1,40 @@
+.page { max-width: 760px; margin: 0 auto; padding: 36px 20px; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
+.page .subtitle { color: #888; margin-bottom: 22px; font-size: 14px; line-height: 1.5; }
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 12px; color: #aaa; margin-bottom: 6px; font-weight: 500; }
+.field input[type=text], .field input[type=number], .field textarea, .field select {
+  width: 100%; padding: 10px 12px; background: #0d0d0d; color: #fff;
+  border: 1px solid #2a2a2a; border-radius: 6px; font-size: 14px;
+  font-family: 'SF Mono', Menlo, monospace;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: #ff4444; outline: none; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
+.row .field { flex: 1; min-width: 140px; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 18px; }
+.out-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.out-head label { font-size: 12px; color: #aaa; font-weight: 500; }
+.copy-btn, .small-btn {
+  background: #1a1a1a; color: #ccc; border: 1px solid #2a2a2a; border-radius: 6px;
+  padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit;
+}
+.copy-btn:hover, .small-btn:hover { border-color: #444; color: #fff; }
+.output { width: 100%; min-height: 90px; padding: 12px; background: #0d0d0d; color: #fff;
+  border: 1px solid #2a2a2a; border-radius: 6px; font-size: 14px; white-space: pre-wrap;
+  word-break: break-word; font-family: 'SF Mono', Menlo, monospace; }
+.output[readonly] { resize: vertical; }
+.result-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 16px; }
+.result-card { padding: 14px; background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px; text-align: center; }
+.result-card.hl { border-color: #ff4444; background: rgba(255,68,68,0.05); }
+.result-card .label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.result-card .value { font-size: 22px; font-weight: 700; color: #fff; font-family: 'SF Mono', Menlo, monospace; }
+.result-card.hl .value { color: #ff6666; }
+.tool-info { max-width: 760px; margin: 8px auto 60px; padding: 0 20px; color: #ccc; line-height: 1.6; }
+.tool-info h2 { font-size: 20px; font-weight: 700; color: #fff; margin: 28px 0 12px; }
+.tool-info p, .tool-info li { font-size: 14px; }
+.tool-info details { background: #141414; border: 1px solid #262626; border-radius: 8px; margin-bottom: 8px; }
+.tool-info summary { padding: 12px 16px; cursor: pointer; font-weight: 600; color: #eee; font-size: 14px; }
+.tool-info details p { padding: 0 16px 14px; margin: 0; color: #ccc; }
+.note { font-size: 13px; color: #888; background: #111; border-left: 3px solid #ff4444; padding: 10px 14px; border-radius: 4px; margin: 14px 0; }
+.mt{width:100%;border-collapse:collapse;font-size:13px}.mt td{padding:8px 10px;border-bottom:1px solid #1e1e1e;font-family:'SF Mono',Menlo,monospace}.mt td:first-child{color:#ff8866;white-space:nowrap}.mt td:last-child{color:#ccc}

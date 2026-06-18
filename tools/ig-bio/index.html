@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Bio Line Break Generator — Format Your Bio | SharpDev.Tools</title>
+<meta content="Format your Instagram bio with real line breaks. Instagram strips normal line breaks — this tool uses an invisible character trick to preserve them. Free, instant, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-bio/" rel="canonical"/>
+<meta content="Instagram Bio Line Break Generator — Format Your Bio | SharpDev.Tools" property="og:title"/>
+<meta content="Format your Instagram bio with real line breaks. Instagram strips normal line breaks — this tool uses an invisible character trick to preserve them. Free, instant, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-bio/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Bio Line Break Generator — Format Your Bio | SharpDev.Tools" name="twitter:title"/>
+<meta content="Format your Instagram bio with real line breaks. Instagram strips normal line breaks — this tool uses an invisible character trick to preserve them. Free, instant, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Instagram", "item": "https://sharpdev.tools/#instagram" },
+      { "@type": "ListItem", "position": 3, "name": "Bio Line Break Generator", "item": "https://sharpdev.tools/tools/ig-bio/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Why does Instagram strip my bio line breaks?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Instagram's bio editor in the mobile app accepts line breaks while you type, but the backend strips them on save. Pasting from notes apps also collapses line breaks. This tool inserts an invisible Unicode character (zero-width space) on each blank line, which Instagram preserves but is invisible — giving you visual line breaks that survive saving." } },
+      { "@type": "Question", "name": "How do I use the formatted bio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Type or paste your bio in the input box, with normal line breaks between lines. Click Copy. Then paste into the Instagram bio field. The invisible characters preserve your formatting." } },
+      { "@type": "Question", "name": "Will this make my bio look weird in other apps?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The zero-width-space character is invisible in every modern client. Some search engines may index it, but for human viewers it's not visible." } },
+      { "@type": "Question", "name": "What's the Instagram bio character limit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "150 characters including spaces. The counter on this page accounts for the zero-width chars added between lines so you know exactly how much of your limit is left." } },
+      { "@type": "Question", "name": "Is the bio formatter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram Bio Line Break Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/ig-bio/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-bio/ig-bio.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-bio');</script>
+<div class="page">
+<h1>Instagram Bio Line Break Generator</h1>
+<p class="subtitle">Add real line breaks to your Instagram bio. Type normally, copy formatted, paste into the IG bio field.</p>
+
+<div class="card">
+<label for="bio-input">Your bio (use Enter for line breaks)</label>
+<textarea id="bio-input" placeholder="📷 Photographer&#10;Berlin · Vienna · Lisbon&#10;✉️ hi@example.com&#10;👇 Latest project below">📷 Photographer
+Berlin · Vienna · Lisbon
+✉️ hi@example.com
+👇 Latest project below</textarea>
+<div class="counter-row">
+<span class="char-count" id="char-count">0 / 150</span>
+</div>
+
+<div class="result-row">
+<label for="bio-output">Formatted bio (invisible chars added)</label>
+<textarea id="bio-output" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy formatted bio</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How does this work?</h2>
+<p>Instagram's bio backend ignores plain newlines but accepts most Unicode characters. The trick: insert an invisible character (specifically <code>U+200B ZERO WIDTH SPACE</code>) at the start of any empty line. Instagram now considers each line "non-empty" and preserves the line break — but the zero-width space is invisible to readers.</p>
+
+<h2>Step-by-step</h2>
+<ol>
+<li>Type or paste your bio in the input above. Press Enter normally for line breaks.</li>
+<li>The right side shows the formatted version with invisible characters inserted.</li>
+<li>Click "Copy formatted bio".</li>
+<li>Open Instagram → your profile → Edit Profile → Bio.</li>
+<li>Long-press the bio field, choose Paste. Line breaks will appear.</li>
+<li>Tap Save / Done — the breaks will persist this time.</li>
+</ol>
+
+<h2>Tips for great Instagram bios</h2>
+<ul>
+<li><strong>Keep it scannable</strong> — line breaks help readers parse your bio in 2 seconds, not 10.</li>
+<li><strong>Lead with the role</strong> — first line is what's most visible. Make it count.</li>
+<li><strong>Stick to 150 characters</strong> — including the invisible chars (this tool tracks both).</li>
+<li><strong>Use emojis as bullets</strong> — they replace bullet points and add visual interest.</li>
+<li><strong>End with a CTA</strong> — point to the link-in-bio with a 👇 or →.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Your bio is processed entirely in your browser. Nothing is uploaded or stored.</p>
+</section>
+
+<script src="/tools/ig-bio/ig-bio.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

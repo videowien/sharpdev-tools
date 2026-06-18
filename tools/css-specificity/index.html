@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Specificity Calculator | SharpDev.Tools</title>
+<meta content="Free CSS specificity calculator. Paste any CSS selector to see its specificity scored as IDs, classes/attributes/pseudo-classes and elements/pseudo-elements, with a breakdown. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-specificity/" rel="canonical"/>
+<meta content="CSS Specificity Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free CSS specificity calculator. Paste any CSS selector to see its specificity scored as IDs, classes/attributes/pseudo-classes and elements/pseudo-elements, with a breakdown. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-specificity/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Specificity Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free CSS specificity calculator. Paste any CSS selector to see its specificity scored as IDs, classes/attributes/pseudo-classes and elements/pseudo-elements, with a breakdown. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Specificity Calculator","item":"https://sharpdev.tools/tools/css-specificity/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is CSS specificity?","acceptedAnswer":{"@type":"Answer","text":"It's how browsers decide which rule wins when several target the same element. It's compared as three numbers: IDs, then classes/attributes/pseudo-classes, then elements/pseudo-elements."}},{"@type":"Question","name":"How is it read?","acceptedAnswer":{"@type":"Answer","text":"Higher beats lower, left to right. (1,0,0) \u2014 a single ID \u2014 beats (0,9,9), nine classes and nine elements. Inline styles rank even higher, and !important overrides everything."}},{"@type":"Question","name":"Why are :not() and :is() noted as simplified?","acceptedAnswer":{"@type":"Answer","text":"Their specificity comes from their most specific argument, not the pseudo-class itself. This tool counts them simply; for those, evaluate the argument's specificity."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Specificity Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/css-specificity/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-specificity/css-specificity.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-specificity');</script>
+<div class="page">
+<h1>CSS Specificity Calculator</h1>
+<p class="subtitle">Paste a CSS selector and get its specificity as (IDs, classes, elements) with a breakdown.</p>
+<div class="field"><label for="sel">CSS selector</label><input type="text" id="sel" value="#nav ul li.active a:hover"></div>
+<div class="out-head"><label>Specificity</label></div>
+<div class="output" id="out"></div>
+<p class="note">Scored as (a, b, c) = IDs, classes/attributes/pseudo-classes, elements/pseudo-elements. Inline styles outrank all selectors; !important overrides specificity. :not(), :is() and :where() are simplified here.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is CSS specificity?</summary><p>It's how browsers decide which rule wins when several target the same element. It's compared as three numbers: IDs, then classes/attributes/pseudo-classes, then elements/pseudo-elements.</p></details>
+<details><summary>How is it read?</summary><p>Higher beats lower, left to right. (1,0,0) — a single ID — beats (0,9,9), nine classes and nine elements. Inline styles rank even higher, and !important overrides everything.</p></details>
+<details><summary>Why are :not() and :is() noted as simplified?</summary><p>Their specificity comes from their most specific argument, not the pseudo-class itself. This tool counts them simply; for those, evaluate the argument's specificity.</p></details>
+</section>
+<script src="/tools/css-specificity/css-specificity.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

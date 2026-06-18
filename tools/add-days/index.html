@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add or Subtract Days from a Date — Date Math Calculator | SharpDev.Tools</title>
+<meta content="Add or subtract days, weeks, months, years from any date. Skip-weekends option for business-day math. Both directions, both calendar + business days. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/add-days/" rel="canonical"/>
+<meta content="Add or Subtract Days from a Date | SharpDev.Tools" property="og:title"/>
+<meta content="Date math — add/subtract days, weeks, months, years. Business-day mode. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/add-days/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Add or Subtract Days from a Date | SharpDev.Tools" name="twitter:title"/>
+<meta content="Date math — add/subtract days, weeks, months, years. Business-day mode." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/time-date/"},
+    {"@type":"ListItem","position":3,"name":"Add or Subtract Days","item":"https://sharpdev.tools/tools/add-days/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What does business-day mode do?","acceptedAnswer":{"@type":"Answer","text":"It skips Saturdays and Sundays when counting forward or backward. So 'today + 5 business days' lands on a weekday even if some of those days are weekends. Useful for project deadlines and shipping estimates."}},
+    {"@type":"Question","name":"How does month / year math handle short months?","acceptedAnswer":{"@type":"Answer","text":"If you add 1 month to January 31, the result is the last day of February (Feb 28 or 29). JavaScript's Date object handles this automatically."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All math runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Add or Subtract Days — SharpDev.Tools","url":"https://sharpdev.tools/tools/add-days/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/add-days/add-days.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('add-days');</script>
+<div class="page">
+<h1>Add or Subtract Days from a Date</h1>
+<p class="subtitle">Project deadline math. "+30 days from today", "−2 weeks from launch", business-day mode for skipping weekends.</p>
+
+<div class="card">
+<div class="form-grid">
+<div class="form-row">
+<label class="opt-label">Start date</label>
+<input id="start" type="date"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Operation</label>
+<div class="seg">
+<button class="seg-btn active" data-op="add" type="button">Add</button>
+<button class="seg-btn" data-op="sub" type="button">Subtract</button>
+</div>
+</div>
+<div class="form-row">
+<label class="opt-label">Amount</label>
+<input id="amount" type="number" min="0" value="30"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Unit</label>
+<select id="unit">
+<option value="days" selected>Days</option>
+<option value="weeks">Weeks</option>
+<option value="months">Months</option>
+<option value="years">Years</option>
+<option value="business-days">Business days (skip Sat/Sun)</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="card result-card">
+<div class="result-row">
+<div class="result-block highlight">
+<div class="result-label">Result date</div>
+<div class="result-value" id="r-date">—</div>
+<div class="result-sub" id="r-weekday">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Days from today</div>
+<div class="result-value" id="r-diff">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">ISO format</div>
+<div class="result-value mono" id="r-iso">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Project deadlines</strong> — "kickoff + 90 days" or "launch − 14 days" for content prep</li>
+<li><strong>Shipping estimates</strong> — order date + N business days for delivery quote</li>
+<li><strong>Trial periods</strong> — signup date + 14 days for trial expiry</li>
+<li><strong>Contracts</strong> — start + 12 months for renewal date</li>
+<li><strong>Personal</strong> — birthday + X days, "in 100 days I'll have …" challenges</li>
+</ul>
+
+<h2>Edge cases handled</h2>
+<ul>
+<li><strong>Short-month overflow</strong> — Jan 31 + 1 month = Feb 28/29 (not Mar 3)</li>
+<li><strong>Leap years</strong> — adding 1 year to Feb 29 → Feb 28</li>
+<li><strong>Business days</strong> — Saturdays and Sundays are skipped, but holidays are not (use the working-days tool for that)</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Date math runs in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/add-days/add-days.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

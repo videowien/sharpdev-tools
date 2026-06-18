@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AES Encryption Online — Encrypt &amp; Decrypt Text (AES-GCM-256) | SharpDev.Tools</title>
+<meta content="Encrypt or decrypt text with AES-GCM-256. Password-derived key via PBKDF2, authenticated encryption, browser-native SubtleCrypto. Your data never leaves the browser." name="description"/>
+<link href="https://sharpdev.tools/tools/aes/" rel="canonical"/>
+<meta content="AES Encryption Online — Encrypt &amp; Decrypt Text (AES-GCM-256) | SharpDev.Tools" property="og:title"/>
+<meta content="AES-GCM-256 encryption in your browser. PBKDF2 password key derivation. SubtleCrypto." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/aes/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="AES Encryption Online — Encrypt &amp; Decrypt Text (AES-GCM-256) | SharpDev.Tools" name="twitter:title"/>
+<meta content="AES-GCM-256 encryption in your browser. Free." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/security-crypto/"},
+    {"@type":"ListItem","position":3,"name":"AES Encrypt / Decrypt","item":"https://sharpdev.tools/tools/aes/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What AES mode is used?","acceptedAnswer":{"@type":"Answer","text":"AES-GCM with a 256-bit key. GCM provides both confidentiality AND authentication — if the ciphertext is tampered with, decryption fails. This is the modern best-practice mode."}},
+    {"@type":"Question","name":"How is the key generated from my password?","acceptedAnswer":{"@type":"Answer","text":"PBKDF2 with SHA-256 and 100,000 iterations + a random 16-byte salt embedded in the ciphertext. Strong against brute-force attacks on the password."}},
+    {"@type":"Question","name":"Where's the encryption happening?","acceptedAnswer":{"@type":"Answer","text":"100% in your browser via SubtleCrypto (the W3C-standard crypto API in every modern browser). Your password and plaintext never leave the page."}},
+    {"@type":"Question","name":"Is this format compatible with OpenSSL or other tools?","acceptedAnswer":{"@type":"Answer","text":"No — the output format (salt || iv || ciphertext) is specific to this tool. To decrypt elsewhere, you'd reimplement the same scheme. For interop, use established tools like openssl, age, or gpg."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"AES Encrypt / Decrypt — SharpDev.Tools","url":"https://sharpdev.tools/tools/aes/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/aes/aes.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('aes');</script>
+<div class="page">
+<h1>AES Encryption Online</h1>
+<p class="subtitle">AES-GCM-256 with PBKDF2 key derivation. Browser-native SubtleCrypto.</p>
+
+<div class="card">
+<div class="opt-row">
+<label class="opt-label">Mode</label>
+<div class="seg">
+<button class="seg-btn active" data-mode="encrypt" type="button">Encrypt</button>
+<button class="seg-btn" data-mode="decrypt" type="button">Decrypt</button>
+</div>
+</div>
+
+<div class="form-row">
+<label class="opt-label">Password</label>
+<div class="pw-wrap">
+<input id="password" type="password" placeholder="your-secret-password" autocomplete="off"/>
+<button id="toggle-pw" type="button">Show</button>
+</div>
+</div>
+
+<div class="form-row">
+<label class="opt-label" id="input-label">Plaintext to encrypt</label>
+<textarea id="input" rows="6" placeholder="Type or paste text…"></textarea>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="run-btn" type="button">Encrypt</button>
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy output</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+
+<div class="form-row">
+<label class="opt-label" id="output-label">Output (base64)</label>
+<textarea id="output" rows="6" readonly></textarea>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How it works</h2>
+<ol>
+<li><strong>Salt</strong> — 16 random bytes generated per encryption</li>
+<li><strong>Key derivation</strong> — PBKDF2-SHA256, 100,000 iterations, password + salt → 256-bit key</li>
+<li><strong>IV</strong> — 12 random bytes (the GCM standard)</li>
+<li><strong>Encrypt</strong> — AES-GCM with the derived key and IV</li>
+<li><strong>Output</strong> — base64-encode <code>salt || iv || ciphertext</code> as a single blob</li>
+</ol>
+<p>Decryption reverses this: pull out the salt, derive the same key, pull out the IV, decrypt. GCM's authentication tag is automatically verified — tampered ciphertext fails to decrypt rather than silently producing garbage.</p>
+
+<h2>Cipher format compatibility</h2>
+<p>This tool's output format is <strong>not</strong> compatible with OpenSSL, age, or gpg — it's a simple custom layout. To share encrypted messages with people using other tools, agree on an established format first. This tool is best for: encrypting personal notes you'll decrypt later, sharing with someone you'll send a link / instructions to, or learning how AES-GCM works.</p>
+
+<h2>Privacy</h2>
+<p>Password, plaintext, and ciphertext all stay in your browser. SubtleCrypto runs the math locally.</p>
+</section>
+
+<script src="/tools/aes/aes.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

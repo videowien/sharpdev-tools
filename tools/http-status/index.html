@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>HTTP Status Codes — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Look up every HTTP status code with common causes and what to do — searchable, filterable, jump-by-code. Free online reference, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/http-status/" rel="canonical"/>
+<meta content="HTTP Status Codes — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Look up every HTTP status code with common causes and what to do — searchable, filterable, jump-by-code. Free online reference, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/http-status/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="HTTP Status Codes — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Look up every HTTP status code with common causes and what to do — searchable, filterable, jump-by-code. Free online reference, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Data & Files",
+        "item": "https://sharpdev.tools/#data-files"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "HTTP Status Codes",
+        "item": "https://sharpdev.tools/tools/http-status/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the HTTP Status Codes reference include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every standard HTTP status code from 1xx to 5xx, with a short description, common causes and suggested fixes, plus search and jump-by-code navigation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free with no ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — all codes are bundled in the page, so it works with no connection once loaded."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HTTP Status Codes — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/http-status/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/http-status/http-status.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('http-status');</script>
+<div class="page">
+<h1>HTTP Status Code Reference</h1>
+<p class="subtitle">Searchable reference for every HTTP status code. Common causes and what to do about each.</p>
+<div class="controls-card">
+<input autocomplete="off" id="search" placeholder="Search by code or name (e.g. 404, not found)..." type="text"/>
+<div class="pills" id="pills">
+<button class="pill active" data-class="all">All</button>
+<button class="pill" data-class="1">1xx</button>
+<button class="pill" data-class="2">2xx</button>
+<button class="pill" data-class="3">3xx</button>
+<button class="pill" data-class="4">4xx</button>
+<button class="pill" data-class="5">5xx</button>
+</div>
+<div class="counter" id="counter"></div>
+</div>
+<div class="grid" id="grid"></div>
+<div class="hint-card">
+<p>Tip: type any 3-digit code to jump to it. Direct link with <code>#404</code>.</p>
+</div>
+</div>
+<script src="/tools/http-status/http-status.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

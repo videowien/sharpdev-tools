@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Markdown Preview — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Preview Markdown live with GitHub-flavored basics like tables and code, and export to HTML or .md. Free online Markdown preview, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/markdown/" rel="canonical"/>
+<meta content="Markdown Preview — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Preview Markdown live with GitHub-flavored basics like tables and code, and export to HTML or .md. Free online Markdown preview, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/markdown/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Markdown Preview — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Preview Markdown live with GitHub-flavored basics like tables and code, and export to HTML or .md. Free online Markdown preview, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Markdown Preview",
+        "item": "https://sharpdev.tools/tools/markdown/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Markdown flavor does the preview support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It supports CommonMark plus GitHub-flavored basics like tables, fenced code blocks, task lists and strikethrough."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my document private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — rendering happens in your browser, so your Markdown never leaves your device."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Markdown Preview — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/markdown/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/markdown/markdown.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('markdown');</script>
+<div class="page">
+<h1>Markdown Preview</h1>
+<p class="subtitle">Write Markdown on the left, see rendered HTML on the right. Live preview. Export to HTML or .md.</p>
+<div class="actions">
+<button class="btn" onclick="copyHtml()">Copy HTML</button>
+<button class="btn" onclick="downloadHtml()">Download .html</button>
+<button class="btn" onclick="downloadMd()">Download .md</button>
+<button class="btn" onclick="loadSample()">Load sample</button>
+<button class="btn btn-reset" onclick="clearAll()">Clear</button>
+</div>
+<div class="tabs">
+<button class="tab active" data-tab="write" onclick="setTab('write')">Write</button>
+<button class="tab" data-tab="preview" onclick="setTab('preview')">Preview</button>
+</div>
+<div class="grid">
+<div class="col col-write">
+<label for="md-input">Markdown</label>
+<textarea id="md-input" oninput="render()" spellcheck="false"></textarea>
+<div class="stats" id="stats-src">0 chars · 0 words</div>
+</div>
+<div class="col col-preview">
+<label>Preview</label>
+<div class="preview" id="preview"></div>
+</div>
+</div>
+</div>
+<script src="/tools/markdown/markdown.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

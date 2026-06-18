@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Online Notepad — Free Browser Notes with Autosave | SharpDev.Tools</title>
+<meta content="Free online notepad with autosave to your browser. No account, no upload — your notes stay private in localStorage. Word + char count, download as TXT or MD. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/notepad/" rel="canonical"/>
+<meta content="Online Notepad — Free Browser Notes with Autosave | SharpDev.Tools" property="og:title"/>
+<meta content="Free online notepad with autosave. No account, no upload — private in your browser. Download TXT or MD." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/notepad/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Online Notepad — Free Browser Notes with Autosave | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free online notepad with autosave. Private in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Online Notepad","item":"https://sharpdev.tools/tools/notepad/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Where are my notes stored?","acceptedAnswer":{"@type":"Answer","text":"In your browser's localStorage on this exact device + browser. Nothing is uploaded. Clearing your browser data will delete the notes — download them as TXT if you need a backup."}},
+    {"@type":"Question","name":"Will my notes be there when I come back?","acceptedAnswer":{"@type":"Answer","text":"Yes — as long as you use the same browser on the same device and don't clear localStorage. Notes autosave on every keystroke."}},
+    {"@type":"Question","name":"Can other people see my notes?","acceptedAnswer":{"@type":"Answer","text":"No. localStorage is per-origin and per-browser. There's no account, no syncing, no upload."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Online Notepad — SharpDev.Tools","url":"https://sharpdev.tools/tools/notepad/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/notepad/notepad.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('notepad');</script>
+<div class="page">
+<h1>Online Notepad</h1>
+<p class="subtitle">Autosaves to your browser. No account. No upload. Private.</p>
+
+<div class="card notepad-card">
+<div class="notepad-toolbar">
+<span class="status-msg" id="save-status">Saved · just now</span>
+<span class="spacer"></span>
+<button class="tool-btn" id="dl-txt" type="button">Download TXT</button>
+<button class="tool-btn" id="dl-md" type="button">Download MD</button>
+<button class="tool-btn danger" id="clear-btn" type="button">Clear</button>
+</div>
+<textarea id="notepad" placeholder="Start typing… everything is saved to your browser automatically."></textarea>
+<div class="notepad-stats">
+<span><strong id="char-count">0</strong> chars</span>
+<span><strong id="word-count">0</strong> words</span>
+<span><strong id="line-count">0</strong> lines</span>
+<span><strong id="time-count">0 min</strong> read time</span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What makes this different from other notepads</h2>
+<ul>
+<li><strong>Privacy first</strong> — your notes never leave your browser. No account, no upload, no sync</li>
+<li><strong>Autosaves on every keystroke</strong> — no save button, no data loss</li>
+<li><strong>Survives reloads</strong> — close the tab, come back, your notes are still there</li>
+<li><strong>Per-device storage</strong> — opening on a different device starts fresh (privacy feature)</li>
+</ul>
+
+<h2>When this is useful</h2>
+<ul>
+<li><strong>Quick drafts</strong> — paste something to clean up, write a tweet, draft a reply</li>
+<li><strong>Side note while researching</strong> — keep a tab open with thoughts as you browse</li>
+<li><strong>Meeting notes</strong> — type along, download as TXT when done</li>
+<li><strong>Markdown drafts</strong> — write your README / blog post here, export as .md</li>
+</ul>
+
+<h2>Backup tips</h2>
+<p>Since notes live only in your browser, periodically download as <strong>TXT</strong> or <strong>MD</strong> if the content matters. Clearing browser data (or going incognito) will delete the notes.</p>
+
+<h2>Privacy</h2>
+<p>Notes are stored in your browser's <code>localStorage</code>. They are not uploaded, never visible to us, and are tied to this exact device + browser combination.</p>
+</section>
+
+<script src="/tools/notepad/notepad.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JWT Signer — HS256, HS384, HS512 | SharpDev.Tools</title>
+<meta content="Build and sign JSON Web Tokens in your browser with HS256, HS384, or HS512. No server involved, your secret never leaves the page. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/jwt-sign/" rel="canonical"/>
+<meta content="JWT Signer — HS256, HS384, HS512 | SharpDev.Tools" property="og:title"/>
+<meta content="Build and sign JSON Web Tokens in your browser with HS256, HS384, or HS512. No server involved, your secret never leaves the page. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/jwt-sign/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="JWT Signer — HS256, HS384, HS512 | SharpDev.Tools" name="twitter:title"/>
+<meta content="Build and sign JSON Web Tokens in your browser with HS256, HS384, or HS512. No server involved, your secret never leaves the page. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security & Crypto",
+        "item": "https://sharpdev.tools/#security-crypto"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "JWT Signer",
+        "item": "https://sharpdev.tools/tools/jwt-sign/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the JWT signer do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It creates a signed JSON Web Token from the header and payload you provide, using an HMAC secret (HS256, HS384 or HS512). It is handy for testing APIs and authentication flows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my secret sent anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Signing happens in your browser with the Web Crypto API, so your secret and payload never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it verify or decode tokens?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool focuses on signing. To decode and inspect an existing token, use the separate JWT decoder tool."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "JWT Signer — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/jwt-sign/",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/jwt-sign/jwt-sign.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('jwt-sign');</script>
+<div class="page">
+<h1>JWT Signer</h1>
+<p class="subtitle">Build and sign JWTs with HMAC (HS256/384/512). Everything runs in your browser.</p>
+<div class="jw-alg">
+<label>Algorithm</label>
+<select id="alg">
+<option value="HS256" selected>HS256</option>
+<option value="HS384">HS384</option>
+<option value="HS512">HS512</option>
+</select>
+</div>
+<div class="jw-row">
+<div class="jw-col">
+<label for="payload">Payload (JSON)</label>
+<textarea id="payload">{
+  "sub": "user_12345",
+  "name": "Gillian Scharf",
+  "iat": 1713456789
+}</textarea>
+</div>
+<div class="jw-col">
+<label for="secret">Secret</label>
+<input type="text" id="secret" value="your-256-bit-secret" spellcheck="false">
+<label for="header" style="margin-top: 14px;">Header (JSON)</label>
+<textarea id="header">{"alg":"HS256","typ":"JWT"}</textarea>
+</div>
+</div>
+<button type="button" class="btn btn-primary" id="sign-btn">Sign token</button>
+<div class="err" id="err"></div>
+<div class="jw-out-head">
+<label>Signed JWT</label>
+<button class="copy-btn" id="copy-btn" type="button">Copy</button>
+</div>
+<div class="jwt-output" id="jwt-output">—</div>
+</div>
+<script src="/tools/jwt-sign/jwt-sign.js"></script>
+<script>renderFooter();</script>
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Week Number Calculator (ISO 8601) | SharpDev.Tools</title>
+<meta content="Free ISO 8601 week number calculator. Find which week of the year any date falls in, using the international standard (weeks start Monday, week 1 contains the first Thursday). Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/week-number/" rel="canonical"/>
+<meta content="Week Number Calculator (ISO 8601) | SharpDev.Tools" property="og:title"/>
+<meta content="Free ISO 8601 week number calculator. Find which week of the year any date falls in, using the international standard (weeks start Monday, week 1 contains the first Thursday). Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/week-number/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Week Number Calculator (ISO 8601) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free ISO 8601 week number calculator. Find which week of the year any date falls in, using the international standard (weeks start Monday, week 1 contains the first Thursday). Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"ISO Week Number Calculator","item":"https://sharpdev.tools/tools/week-number/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an ISO week number?","acceptedAnswer":{"@type":"Answer","text":"ISO 8601 numbers the weeks of the year 1\u201352 (sometimes 53). Weeks start on Monday, and week 1 is the week containing the year's first Thursday."}},{"@type":"Question","name":"Why doesn't it always match a simple count?","acceptedAnswer":{"@type":"Answer","text":"Because of the first-Thursday rule, the first days of January can belong to the last week of the previous year, and late December can fall in week 1 of the next year."}},{"@type":"Question","name":"Where are ISO weeks used?","acceptedAnswer":{"@type":"Answer","text":"In business, manufacturing, payroll and software across Europe and in standards worldwide \u2014 e.g. \u20182026-W25\u2019."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"ISO Week Number Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/week-number/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/week-number/week-number.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('week-number');</script>
+<div class="page">
+<h1>ISO Week Number Calculator</h1>
+<p class="subtitle">Find the ISO 8601 week number for any date — the standard used in business and software.</p>
+<div class="row"><div class="field"><label for="d">Date</label><input type="date" id="d"></div></div>
+<div class="out-head"><label>Result</label></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is an ISO week number?</summary><p>ISO 8601 numbers the weeks of the year 1–52 (sometimes 53). Weeks start on Monday, and week 1 is the week containing the year's first Thursday.</p></details>
+<details><summary>Why doesn't it always match a simple count?</summary><p>Because of the first-Thursday rule, the first days of January can belong to the last week of the previous year, and late December can fall in week 1 of the next year.</p></details>
+<details><summary>Where are ISO weeks used?</summary><p>In business, manufacturing, payroll and software across Europe and in standards worldwide — e.g. ‘2026-W25’.</p></details>
+</section>
+<script src="/tools/week-number/week-number.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

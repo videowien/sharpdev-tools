@@ -1,0 +1,33 @@
+# Cloudflare Pages headers config
+# Security defaults for every response.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Cache static assets — keep TTL short so deploys propagate fast.
+# Previous longer TTL (with SWR) left shared/components.js stuck at the
+# CDN edge for ~4 hours after a deploy. 5 min is the right balance between
+# network efficiency and shipping fixes quickly.
+/shared/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/tools/*.css
+  Cache-Control: public, max-age=300, must-revalidate
+
+/tools/*.js
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Favicons + SVG logo — long-cache, they rarely change
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+# HTML should revalidate on every visit so content updates propagate fast
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

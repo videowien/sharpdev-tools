@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Comment Counter — 1250 Char Limit | SharpDev.Tools</title>
+<meta content="Live 1250-character LinkedIn comment counter. The comment box truncates at ~3 lines on feed — see where the cutoff hits. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-comment/" rel="canonical"/>
+<meta content="LinkedIn Comment Counter — 1250 Chars + Live Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Live 1250-char LinkedIn comment counter with feed-preview cutoff. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-comment/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn Comment Counter — 1250 Chars + Live Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live 1250-char LinkedIn comment counter with feed-preview cutoff." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"LinkedIn","item":"https://sharpdev.tools/linkedin/"},
+    {"@type":"ListItem","position":3,"name":"LinkedIn Comment Counter","item":"https://sharpdev.tools/tools/linkedin-comment/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the LinkedIn comment character limit?","acceptedAnswer":{"@type":"Answer","text":"1250 characters for top-level comments and replies. After roughly 3 visible lines (≈200-250 chars), LinkedIn truncates with '…see more' and requires a click."}},
+    {"@type":"Question","name":"Why are short comments better?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn's algorithm weights both the volume of comments AND the time others spend reading them. A short comment that prompts a reply is worth more than a long one nobody finishes. Most engagement happens in 50-150 char comments."}},
+    {"@type":"Question","name":"Is the comment uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The comment stays in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"LinkedIn Comment Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/linkedin-comment/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-comment/linkedin-comment.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-comment');</script>
+<div class="page">
+<h1>LinkedIn Comment Counter</h1>
+<p class="subtitle">1250-character limit, live truncation at the "see more" cutoff.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="comment">Your comment</label>
+<textarea id="comment" rows="6" placeholder="Drop your comment here — see what shows above &quot;see more&quot;…"></textarea>
+<div class="counter-row">
+<span id="counter" class="counter">0 / 1250</span>
+<span class="counter-bar"><span id="counter-fill" class="counter-fill"></span></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Feed preview (before "…see more")</label>
+<div class="preview-comment">
+<div class="preview-avatar">SD</div>
+<div class="preview-body">
+<div class="preview-name">Gillian Scharf <span class="preview-time">· 1m</span></div>
+<div class="preview-headline">Indie maker · SharpDev.Tools</div>
+<div class="preview-text" id="preview-text">Your comment will appear here…</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>LinkedIn comment best practices</h2>
+<ul>
+<li><strong>50-150 characters wins</strong> — short comments get more replies, which feeds the algorithm</li>
+<li><strong>End with a question</strong> — invites the original poster to reply, doubling your engagement</li>
+<li><strong>Don't pitch in comments</strong> — the platform demotes comments that look like ads</li>
+<li><strong>Reply to other comments</strong> — replies inside a thread count as separate engagement signals</li>
+<li><strong>Tag with intent only</strong> — random @mentions are pruned by the spam filter</li>
+</ul>
+
+<h2>What "see more" actually means</h2>
+<p>After roughly 3 visible lines (≈200-250 chars depending on font rendering), LinkedIn truncates the comment with "…see more". Less than 5% of viewers click. Front-load the value.</p>
+
+<h2>Privacy</h2>
+<p>The comment stays in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/linkedin-comment/linkedin-comment.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

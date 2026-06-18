@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF to HTML — Convert PDF Text to HTML | SharpDev.Tools</title>
+<meta content="Convert PDF text to clean HTML. Two modes: structured (semantic h1/h2/p) or absolute-positioned (preserves layout). Browser-only, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-to-html/" rel="canonical"/>
+<meta content="PDF to HTML — Convert PDF Text to HTML | SharpDev.Tools" property="og:title"/>
+<meta content="Convert PDF to HTML. Structured or absolute-positioned modes. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-to-html/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF to HTML — Convert PDF Text to HTML | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert PDF to HTML. Structured or positioned modes." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF to HTML","item":"https://sharpdev.tools/tools/pdf-to-html/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which mode should I use?","acceptedAnswer":{"@type":"Answer","text":"Structured (semantic) for blog posts, articles, content that needs to flow + be searchable. Absolute-positioned for forms, designed layouts, anything where exact placement matters."}},
+    {"@type":"Question","name":"Does it include images?","acceptedAnswer":{"@type":"Answer","text":"No — only text content. For pixel-perfect representation including images, use the PDF to JPG/PNG tool and embed those images in your HTML."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF to HTML — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-to-html/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-to-html/pdf-to-html.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-to-html');</script>
+<div class="page">
+<h1>PDF to HTML</h1>
+<p class="subtitle">Two modes — semantic (text flow) or absolute-positioned (layout preserved).</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+</div>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Mode</label>
+<div class="seg">
+<button class="seg-btn active" data-mode="semantic" type="button">Semantic (h1 / p)</button>
+<button class="seg-btn" data-mode="positioned" type="button">Absolute-positioned</button>
+</div>
+</div>
+<label class="checkbox-label">
+<input id="wrap-full" type="checkbox" checked/> <span>Wrap with full HTML5 document</span>
+</label>
+</div>
+
+<label class="opt-label">HTML output</label>
+<textarea id="output" rows="22" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="dl-btn" type="button">Download .html</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Semantic vs positioned</h2>
+<ul>
+<li><strong>Semantic</strong> — produces clean <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code> tags. Best for content-driven PDFs where you want the result to be responsive, SEO-friendly, and editable. Reflows on any screen size.</li>
+<li><strong>Absolute-positioned</strong> — each text run becomes a positioned <code>&lt;div&gt;</code> at its original (x, y). Best for forms, certificates, decorative layouts where exact placement matters. Won't reflow but matches the source.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The PDF is parsed in your browser via pdf.js. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/pdf-to-html/pdf-to-html.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

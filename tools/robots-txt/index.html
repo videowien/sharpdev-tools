@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Robots.txt Generator — Visual Builder + Validator | SharpDev.Tools</title>
+<meta content="Generate a robots.txt file visually. User-agent rules, allow / disallow paths, sitemap reference, crawl-delay. Free, runs in your browser, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/robots-txt/" rel="canonical"/>
+<meta content="Robots.txt Generator — Visual Builder + Validator | SharpDev.Tools" property="og:title"/>
+<meta content="Generate a robots.txt file visually. User-agent rules, allow/disallow, sitemap, crawl-delay." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/robots-txt/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Robots.txt Generator — Visual Builder + Validator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate a robots.txt file visually." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/developers/"},
+    {"@type":"ListItem","position":3,"name":"Robots.txt Generator","item":"https://sharpdev.tools/tools/robots-txt/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is robots.txt?","acceptedAnswer":{"@type":"Answer","text":"A plain-text file placed at the root of your website (yourdomain.com/robots.txt) that tells search-engine crawlers which paths they may or may not access. It's a suggestion, not a hard block — well-behaved crawlers (Google, Bing) respect it; malicious bots ignore it."}},
+    {"@type":"Question","name":"Where do I put it?","acceptedAnswer":{"@type":"Answer","text":"At the root of your domain — e.g. https://example.com/robots.txt. It must be plain text, UTF-8, and exactly named 'robots.txt' (lowercase). Subdomains need their own copy."}},
+    {"@type":"Question","name":"Can robots.txt protect private content?","acceptedAnswer":{"@type":"Answer","text":"No. It's a crawler hint, not an access control. URLs listed in robots.txt are publicly visible. For real protection, use auth, server-side rules, or noindex headers."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Robots.txt Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/robots-txt/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/robots-txt/robots-txt.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('robots-txt');</script>
+<div class="page">
+<h1>Robots.txt Generator</h1>
+<p class="subtitle">Visual builder — output is plain robots.txt ready to drop at /robots.txt.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Quick start</label>
+<select id="preset">
+<option value="allow-all" selected>Allow all (default)</option>
+<option value="block-all">Block all crawlers</option>
+<option value="block-admin">Allow all but /admin /private</option>
+<option value="ai-block">Block AI crawlers (GPT, CCBot, Claude…)</option>
+<option value="seo-only">Allow only Google + Bing</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Sitemap URL</label>
+<input id="sitemap" type="text" placeholder="https://example.com/sitemap.xml"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Crawl delay (seconds)</label>
+<input id="crawl-delay" type="number" min="0" value="0"/>
+</div>
+</div>
+
+<div class="rules">
+<label class="opt-label">Rules</label>
+<div id="rules-list"></div>
+<button class="add-btn" id="add-rule" type="button">+ Add rule group</button>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Generated robots.txt</label>
+<pre class="output" id="output">—</pre>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="download-btn" type="button">Download robots.txt</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common robots.txt patterns</h2>
+<pre class="ex">User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://example.com/sitemap.xml</pre>
+
+<h2>Wildcards (Google + Bing)</h2>
+<ul>
+<li><code>*</code> matches zero or more chars — <code>Disallow: /*?</code> blocks any URL with a query string</li>
+<li><code>$</code> matches end of URL — <code>Disallow: /*.pdf$</code> blocks PDFs</li>
+<li><strong>Allow:</strong> overrides Disallow for more specific paths</li>
+</ul>
+
+<h2>Don't block your CSS/JS</h2>
+<p>Google has explicitly warned against blocking <code>/assets/</code> or <code>/static/</code> — modern crawlers render your page like a browser. Without CSS/JS they may flag your site as broken or non-mobile-friendly.</p>
+
+<h2>Privacy</h2>
+<p>The robots.txt is built locally in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/robots-txt/robots-txt.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

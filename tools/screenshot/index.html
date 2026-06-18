@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Website Screenshot — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Capture a full-page screenshot of any website at desktop, tablet or mobile size, exported as PNG, JPG or PDF. Free online, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/screenshot/" rel="canonical"/>
+<meta content="Website Screenshot — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Capture a full-page screenshot of any website at desktop, tablet or mobile size, exported as PNG, JPG or PDF. Free online, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/screenshot/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Website Screenshot — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Capture a full-page screenshot of any website at desktop, tablet or mobile size, exported as PNG, JPG or PDF. Free online, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Images & Media",
+        "item": "https://sharpdev.tools/#images-media"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Website Screenshot",
+        "item": "https://sharpdev.tools/tools/screenshot/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the Website Screenshot tool capture?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A full-page render of any public URL at desktop, tablet or mobile viewports, exported as PNG, JPG or PDF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No account is required — paste a URL and capture."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Website Screenshot — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/screenshot/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/screenshot/screenshot.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('screenshot');</script>
+<div class="page">
+<h1>Website Screenshot</h1>
+<p class="subtitle">Enter a URL to capture a full-page screenshot from top to bottom.</p>
+<div class="card">
+<label for="url-input">Website URL</label>
+<div class="input-row">
+<input autocomplete="url" id="url-input" placeholder="https://example.com" type="text"/>
+<button class="btn btn-primary" id="capture-btn" onclick="captureScreenshot()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="3"></circle></svg>
+        Capture
+      </button>
+</div>
+<div class="options-row">
+<div>
+<label for="width-select">Device</label>
+<select id="width-select">
+<option selected="" value="1440">Desktop (1440px)</option>
+<option value="768">Tablet (768px)</option>
+<option value="375">Mobile (375px)</option>
+</select>
+</div>
+<div>
+<label for="format-select">Format</label>
+<select id="format-select">
+<option selected="" value="png">PNG (lossless)</option>
+<option value="jpg">JPG (smaller file)</option>
+</select>
+</div>
+</div>
+<div class="status-msg" id="status-msg"></div>
+</div>
+<div class="preview-area" id="preview-area">
+<div class="preview-header">
+<h3>Preview</h3>
+<span class="screenshot-info" id="screenshot-info"></span>
+</div>
+<div class="preview-container">
+<img alt="Screenshot preview" id="preview-img" src=""/>
+</div>
+<div class="download-row">
+<button class="btn btn-primary" id="download-btn" onclick="downloadScreenshot()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+        Download
+      </button>
+</div>
+</div>
+</div>
+<script src="/tools/screenshot/screenshot.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

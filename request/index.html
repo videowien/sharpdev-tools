@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Tool — SharpDev.Tools</title>
+<meta name="description" content="Missing a tool you'd use? Tell me what it is and I'll build it. Most requests go live within a few days. Free, no sign-up, no spam.">
+<link rel="canonical" href="https://sharpdev.tools/request/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sharpdev.tools/request/">
+<meta property="og:title" content="Request a Tool — SharpDev.Tools">
+<meta property="og:description" content="Missing a tool you'd use? Tell me what it is and I'll build it. Most requests go live within a few days.">
+<meta property="og:site_name" content="SharpDev.Tools">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Request a Tool — SharpDev.Tools">
+<meta name="twitter:description" content="Missing a tool you'd use? Tell me what it is and I'll build it. Most requests go live within a few days.">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/shared/style.css?v=20260616a">
+<style>
+  .req-page { padding: 40px 0 60px; max-width: 640px; }
+  .req-page h1 { font-size: 36px; font-weight: 800; color: #fff; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .req-page .lede { color: #aaa; font-size: 16px; line-height: 1.6; margin-bottom: 28px; }
+
+  .req-card {
+    background: #141414; border: 1px solid #262626; border-radius: 14px; padding: 28px;
+  }
+  .req-form { display: flex; flex-direction: column; gap: 14px; }
+  .req-form label {
+    font-size: 12px; font-weight: 600; color: #aaa;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: -6px;
+  }
+  .req-form .optional {
+    color: #555; font-weight: 400; text-transform: none; letter-spacing: 0;
+  }
+  .req-form input, .req-form textarea {
+    width: 100%; background: #0d0d0d; border: 1px solid #2a2a2a;
+    color: #e1e1e1; font-size: 15px; padding: 12px 14px; border-radius: 8px;
+    font-family: inherit; outline: none; transition: border-color 0.15s;
+  }
+  .req-form textarea { min-height: 110px; resize: vertical; line-height: 1.55; }
+  .req-form input:focus, .req-form textarea:focus { border-color: #ff4444; }
+  .req-form button {
+    align-self: flex-start; padding: 12px 26px; background: #cc0000;
+    border: none; color: #fff; font-size: 15px; font-weight: 600;
+    border-radius: 8px; cursor: pointer; transition: background 0.15s;
+    font-family: inherit;
+  }
+  .req-form button:hover { background: #ff1a1a; }
+  .req-form button:disabled { background: #333; cursor: not-allowed; }
+  .req-form .hint { font-size: 12px; color: #555; }
+  .req-status {
+    font-size: 13px; padding: 11px 14px; border-radius: 8px; display: none;
+  }
+  .req-status.success {
+    color: #4ade80; background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+  }
+  .req-status.error {
+    color: #f87171; background: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+  }
+
+  .req-examples {
+    margin-top: 20px; font-size: 13px; color: #888; line-height: 1.6;
+  }
+  .req-examples strong { color: #ccc; }
+
+  @media (max-width: 600px) {
+    .req-page h1 { font-size: 28px; }
+    .req-card { padding: 22px; }
+  }
+</style>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('request');</script>
+
+<main class="container req-page">
+  <h1>Request a tool</h1>
+  <p class="lede">Missing something you'd use? Tell me what it is — most requests go live within a few days. Free, no sign-up, no spam.</p>
+
+  <div class="req-card">
+    <form class="req-form" id="req-form">
+      <label for="req-tool">Tool idea</label>
+      <input type="text" id="req-tool" name="tool" maxlength="120" required placeholder="e.g. SVG optimizer, JWT signer, IP geolocation lookup..." autofocus>
+
+      <label for="req-details">What should it do? <span class="optional">(optional)</span></label>
+      <textarea id="req-details" name="details" maxlength="2000" placeholder="A short description helps — what inputs, what outputs, who's it for?"></textarea>
+
+      <label for="req-email">Your email <span class="optional">(optional, only if you want a reply)</span></label>
+      <input type="email" id="req-email" name="email" maxlength="200" placeholder="you@example.com">
+
+      <button type="submit" id="req-submit">Send request</button>
+      <div class="hint">Your request goes straight to my inbox. No newsletter, no spam. See the <a href="https://sharpdev.tools/datenschutz/" style="color:#888;text-decoration:underline;">Datenschutzerklärung</a>.</div>
+      <div id="req-status" class="req-status"></div>
+    </form>
+
+    <div class="req-examples">
+      <strong>Things people have asked for:</strong><br>
+      SVG optimizer · CIDR calculator · Bcrypt generator · Emoji picker · Gradient generator<br>
+      <em style="color:#555">(all shipped within a few days)</em>
+    </div>
+  </div>
+</main>
+
+<script>
+  (() => {
+    const form = document.getElementById('req-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('req-submit');
+      const status = document.getElementById('req-status');
+      const tool = document.getElementById('req-tool').value.trim();
+      if (!tool) return;
+      const data = {
+        tool,
+        details: document.getElementById('req-details').value.trim(),
+        email: document.getElementById('req-email').value.trim(),
+        referrer: document.referrer || '',
+        userAgent: navigator.userAgent,
+      };
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.style.display = 'none';
+      try {
+        const res = await fetch('/api/request-tool', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({ error: 'Request failed' }));
+          throw new Error(err.error || 'Request failed');
+        }
+        status.className = 'req-status success';
+        status.textContent = 'Thanks! Request received — I see every one.';
+        status.style.display = 'block';
+        form.reset();
+      } catch (err) {
+        status.className = 'req-status error';
+        status.textContent = 'Could not send: ' + err.message + '. Email gillian@videowien.at directly if this keeps failing.';
+        status.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send request';
+      }
+    });
+  })();
+</script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twitter Thread Builder — Auto-Split Long Text into 280-char Tweets | SharpDev.Tools</title>
+<meta content="Paste long text, get a ready-to-post Twitter / X thread. Auto-splits into 280-char tweets at sentence boundaries with 1/10 numbering. Free, instant, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-thread/" rel="canonical"/>
+<meta content="Twitter Thread Builder — Auto-Split Long Text into 280-char Tweets | SharpDev.Tools" property="og:title"/>
+<meta content="Paste long text, get a ready-to-post Twitter / X thread. Auto-splits into 280-char tweets at sentence boundaries with 1/10 numbering. Free, instant, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-thread/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Twitter Thread Builder — Auto-Split Long Text into 280-char Tweets | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste long text, get a ready-to-post Twitter / X thread. Auto-splits into 280-char tweets at sentence boundaries with 1/10 numbering. Free, instant, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Twitter", "item": "https://sharpdev.tools/#twitter" },
+      { "@type": "ListItem", "position": 3, "name": "Twitter Thread Builder", "item": "https://sharpdev.tools/tools/twitter-thread/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I split a long post into a Twitter thread?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Paste your long text into the input box. The tool splits it into 280-character tweets at sentence and word boundaries, then prefixes each with a 1/N counter (so readers know how long the thread is). Copy each tweet individually with its copy button, or copy the whole thread as a numbered list." } },
+      { "@type": "Question", "name": "Will the splitter break my words?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The splitter prefers sentence boundaries (period, question mark, exclamation point), then falls back to word boundaries (spaces). Mid-word breaks are avoided. URLs are kept intact and counted at their full visible length." } },
+      { "@type": "Question", "name": "Does it count URLs as 23 characters like Twitter does?",
+        "acceptedAnswer": { "@type": "Answer", "text": "By default we count URLs at their actual length to be safe (Twitter's t.co shortening also counts as 23, but visual feedback in your draft is clearer at full length). Toggle the URL-mode setting if you want Twitter's t.co accounting." } },
+      { "@type": "Question", "name": "Is the thread builder free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no usage limits." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Twitter Thread Builder — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/twitter-thread/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-thread/twitter-thread.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-thread');</script>
+<div class="page">
+<h1>Twitter Thread Builder</h1>
+<p class="subtitle">Paste long text, get a ready-to-post Twitter / X thread split into 280-char tweets with 1/N numbering.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Limit per tweet</label>
+<select id="limit">
+<option selected value="280">280 (standard)</option>
+<option value="4000">4000 (X Premium)</option>
+<option value="25000">25000 (X Premium+)</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Numbering</label>
+<select id="numbering">
+<option selected value="slash">1/10 (slash)</option>
+<option value="dot">1.</option>
+<option value="paren">(1/10)</option>
+<option value="none">None</option>
+</select>
+</div>
+</div>
+<label for="input-text">Your text</label>
+<textarea id="input-text" placeholder="Paste your post here. The tool will split it into a numbered Twitter thread automatically."></textarea>
+<div class="stats" id="stats"></div>
+</div>
+
+<div class="thread-output" id="thread-output"></div>
+
+</div>
+
+<section class="info-block">
+<h2>How the splitter works</h2>
+<p>The algorithm walks your text and tries to break at sentence boundaries first (<code>.</code>, <code>!</code>, <code>?</code>), then at word boundaries (spaces) if no sentence break fits. Mid-word breaks are never produced. Each chunk gets a counter prefix (1/N format by default) so readers know the thread length.</p>
+
+<h2>Best practices for threads</h2>
+<ul>
+<li><strong>Hook in the first tweet</strong> — the first tweet is what shows in feeds; the rest only loads on click. Front-load the value.</li>
+<li><strong>Numbering tells reach</strong> — using 1/10 vs 1/40 sets expectations. Don't over-promise.</li>
+<li><strong>One idea per tweet</strong> — split where the thought completes. The tool prefers sentence boundaries for exactly this reason.</li>
+<li><strong>End with a CTA</strong> — most engagement on threads comes from the last tweet (where readers land after scrolling through).</li>
+</ul>
+
+<h2>Posting the thread</h2>
+<p>This tool doesn't auto-post to Twitter / X (no API integration, no credentials needed). After splitting, you copy each tweet and paste them into Twitter / X's composer one by one, replying to the previous tweet. Or paste them all at once into the native multi-tweet composer (the + button in the official client).</p>
+</section>
+
+<script src="/tools/twitter-thread/twitter-thread.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.page { max-width: 720px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+.tc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+.tc-field label { display: block; font-size: 11px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.tc-wrap { display: flex; align-items: stretch; background: #141414; border: 1px solid #262626; border-radius: 10px; overflow: hidden; transition: border-color 0.15s; }
+.tc-wrap:focus-within { border-color: #ff4444; }
+.tc-wrap input { flex: 1; padding: 14px 14px; background: transparent; border: none; color: #fff; font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; outline: none; }
+.tc-wrap span { padding: 14px 14px; background: #0d0d0d; color: #888; font-family: 'SF Mono', Monaco, monospace; font-size: 14px; }
+.tc-refs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.tc-ref { padding: 12px 16px; background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.15s; }
+.tc-ref:hover { border-color: #ff4444; background: #141414; }
+.ref-name { font-size: 13px; color: #aaa; }
+.ref-val { font-size: 12px; color: #fff; font-family: 'SF Mono', Monaco, monospace; }
+@media (max-width: 600px) { .page h1 { font-size: 28px; } .tc-grid { grid-template-columns: 1fr; } .tc-refs { grid-template-columns: 1fr; } }

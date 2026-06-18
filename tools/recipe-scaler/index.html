@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recipe Scaler — Resize Ingredients by Servings | SharpDev.Tools</title>
+<meta content="Paste a recipe — scale all ingredients to any servings count. Smart number + unit parsing, fraction-aware. Free, browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/recipe-scaler/" rel="canonical"/>
+<meta content="Recipe Scaler — Resize Ingredients by Servings | SharpDev.Tools" property="og:title"/>
+<meta content="Paste a recipe — scale all ingredients to any servings count. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/recipe-scaler/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Recipe Scaler — Resize Ingredients by Servings | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste a recipe — scale ingredients by servings." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/calculators/"},
+    {"@type":"ListItem","position":3,"name":"Recipe Scaler","item":"https://sharpdev.tools/tools/recipe-scaler/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What number formats are parsed?","acceptedAnswer":{"@type":"Answer","text":"Whole numbers (2), decimals (1.5), fractions (1/2, 3/4), and mixed numbers (2 1/2). The first number on each line is treated as the scalable quantity."}},
+    {"@type":"Question","name":"Are units converted?","acceptedAnswer":{"@type":"Answer","text":"No — scaling preserves the unit. For unit conversion (cups ↔ grams, etc.), use the Cooking Converter tool first."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Recipe Scaler — SharpDev.Tools","url":"https://sharpdev.tools/tools/recipe-scaler/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/recipe-scaler/recipe-scaler.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('recipe-scaler');</script>
+<div class="page">
+<h1>Recipe Scaler</h1>
+<p class="subtitle">Paste your recipe — change the servings — copy the rescaled version.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Original servings</label>
+<input id="orig" type="number" min="1" step="1" value="4"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Target servings</label>
+<input id="target" type="number" min="1" step="1" value="6"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Scale factor</label>
+<div class="scale-val" id="scale-val">1.5×</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="split">
+<div>
+<label class="opt-label">Original</label>
+<textarea id="input" rows="14">2 cups flour
+1.5 tsp baking powder
+1/2 cup sugar
+3/4 cup milk
+2 large eggs
+1/4 cup butter, melted
+1 tsp vanilla extract
+1/8 tsp salt</textarea>
+</div>
+<div>
+<label class="opt-label">Scaled</label>
+<textarea id="output" rows="14" readonly></textarea>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy scaled recipe</button>
+<button class="btn btn-secondary" id="format-btn" type="button">Round to clean fractions</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Tips for accurate scaling</h2>
+<ul>
+<li><strong>Spices and salt</strong> often need less proportional scaling — scaling 3× doesn't mean 3× the cumin. Taste-test.</li>
+<li><strong>Pan size</strong> doesn't scale linearly. A 9" cake pan scaled 1.5× isn't a 13.5" pan — adjust thickness or bake time instead.</li>
+<li><strong>Baking time</strong> stays similar for thickness. Total volume + 50% = +10-20% bake time, not 50%.</li>
+<li><strong>Yeast doughs</strong> scale cleanly; soufflés, custards, meringues are notoriously fussy at scale.</li>
+</ul>
+</section>
+
+<script src="/tools/recipe-scaler/recipe-scaler.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

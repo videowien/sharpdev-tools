@@ -1,0 +1,52 @@
+/* Diceware Passphrase Generator — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.opt-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+.opt-group { display: flex; align-items: center; gap: 8px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-value { font-size: 13px; color: #fff; font-family: 'SF Mono', monospace; min-width: 30px; }
+.opt-group input[type=range] { accent-color: #ff4444; width: 130px; }
+.opt-group select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 6px 10px; border-radius: 6px; font-size: 13px;
+}
+.checkbox-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; color: #ccc; }
+.checkbox-label input { accent-color: #ff4444; }
+
+.passphrase-box {
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 10px;
+  padding: 24px; margin-bottom: 16px;
+}
+.passphrase-text {
+  font-family: 'SF Mono', Menlo, monospace; font-size: 20px;
+  color: #fff; word-break: break-all; line-height: 1.5;
+  user-select: all;
+}
+.passphrase-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 14px; padding-top: 14px; border-top: 1px solid #1f1f1f;
+  font-size: 12px;
+}
+.entropy { color: #888; font-family: 'SF Mono', monospace; }
+.strength { padding: 3px 10px; border-radius: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.strength.weak     { background: rgba(255, 68, 68, 0.15); color: #ff6666; }
+.strength.fair     { background: rgba(255, 152, 0, 0.15); color: #ffa726; }
+.strength.strong   { background: rgba(76, 175, 80, 0.15); color: #66bb6a; }
+.strength.veryStrong { background: rgba(76, 175, 80, 0.25); color: #4caf50; }
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+
+.entropy-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.entropy-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.entropy-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.entropy-table td:nth-child(2) { font-family: 'SF Mono', monospace; color: #fff; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .passphrase-text { font-size: 16px; }
+}

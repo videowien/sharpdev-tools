@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>HTML to PDF Converter — Free Online, No Sign-Up | SharpDev.Tools</title>
+<meta content="Convert HTML to PDF online — paste raw HTML, see a live preview, download a clean PDF. Free, instant, runs in your browser so your content never gets uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/html-to-pdf/" rel="canonical"/>
+<meta content="HTML to PDF Converter — Free Online, No Sign-Up | SharpDev.Tools" property="og:title"/>
+<meta content="Convert HTML to PDF online — paste raw HTML, see a live preview, download a clean PDF. Free, instant, runs in your browser so your content never gets uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/html-to-pdf/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="HTML to PDF Converter — Free Online, No Sign-Up | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert HTML to PDF online — paste raw HTML, see a live preview, download a clean PDF. Free, instant, runs in your browser so your content never gets uploaded." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF", "item": "https://sharpdev.tools/#pdf" },
+      { "@type": "ListItem", "position": 3, "name": "HTML to PDF", "item": "https://sharpdev.tools/tools/html-to-pdf/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I convert HTML to PDF online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Paste your HTML into the left pane (or click 'Open .html file' to upload). The right pane renders the HTML live. Pick page size, click Download PDF. The file is built in your browser via jsPDF + html2canvas — nothing is uploaded." } },
+      { "@type": "Question", "name": "Can I include CSS styles in the HTML?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Inline <style> tags and inline style attributes are honored. External stylesheets (<link rel='stylesheet'>) won't load from this tool for security reasons — embed the CSS inside the document instead." } },
+      { "@type": "Question", "name": "Are images supported?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes for inline base64 data URLs (data:image/...). External image URLs may not render if the host blocks cross-origin loading. For reliable embedding, convert images to base64 first using our /tools/image-base64/ tool, then paste the data URLs into your HTML." } },
+      { "@type": "Question", "name": "Are my HTML files uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Conversion happens entirely in your browser via jsPDF and html2canvas. Your HTML content never touches a server." } },
+      { "@type": "Question", "name": "Is the HTML to PDF converter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no document length limit." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HTML to PDF — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/html-to-pdf/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/html-to-pdf/html-to-pdf.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('html-to-pdf');</script>
+<div class="page">
+<h1>HTML to PDF Converter</h1>
+<p class="subtitle">Paste HTML, see a live preview, download a clean PDF. Free, instant, runs in your browser.</p>
+
+<div class="card">
+<div class="toolbar">
+<div class="opt-group">
+<label class="opt-label">Page size</label>
+<select id="page-size">
+<option selected value="a4">A4</option>
+<option value="letter">Letter</option>
+<option value="legal">Legal</option>
+<option value="a5">A5</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Margin</label>
+<select id="margin">
+<option value="20">Small</option>
+<option selected value="40">Medium</option>
+<option value="60">Large</option>
+</select>
+</div>
+<div class="opt-actions">
+<input accept=".html,.htm,text/html" hidden id="file-input" type="file"/>
+<button class="btn btn-secondary btn-sm" id="open-btn" type="button">Open .html file</button>
+<button class="btn btn-secondary btn-sm" id="sample-btn" type="button">Insert sample</button>
+<button class="btn btn-primary" id="download-btn" type="button">Download PDF</button>
+</div>
+</div>
+<div class="split-view">
+<textarea id="html-input" placeholder="<h1>Your title</h1>&#10;<p>Paste HTML on this side. The preview on the right renders it live.</p>&#10;<p>Inline &lt;style&gt; tags and style attributes are honored.</p>"></textarea>
+<iframe class="preview-pane" id="preview-pane" sandbox="allow-same-origin"></iframe>
+</div>
+<div class="status-row">
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How does HTML to PDF conversion work?</h2>
+<p>The HTML you paste renders into a sandboxed iframe (so it can't run scripts or talk to any network). When you click Download PDF, <code>html2canvas</code> rasterizes the rendered page and <code>jsPDF</code> assembles the result into a paginated PDF. Everything runs in your browser — your HTML content never leaves your device.</p>
+
+<h2>What's supported?</h2>
+<ul>
+<li><strong>Standard HTML tags</strong> — headings, paragraphs, lists, tables, blockquotes, code, links</li>
+<li><strong>Inline CSS</strong> — both <code>&lt;style&gt;</code> blocks and <code>style="…"</code> attributes</li>
+<li><strong>Embedded data-URL images</strong> — <code>&lt;img src="data:image/…;base64,…"&gt;</code> works perfectly</li>
+<li><strong>External images</strong> — load only if the source allows cross-origin access (most won't)</li>
+</ul>
+
+<h2>What's not supported (browser limitations)</h2>
+<ul>
+<li>External stylesheets (<code>&lt;link rel="stylesheet"&gt;</code>) — paste the CSS into inline <code>&lt;style&gt;</code> tags instead</li>
+<li>External fonts and scripts — also blocked by the sandbox</li>
+<li>Form interactions — the PDF is a snapshot, not interactive</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Exporting an HTML report from a generator script as a clean PDF</li>
+<li>Saving an email-newsletter design as PDF for archiving</li>
+<li>Turning a styled HTML invoice template into a downloadable PDF</li>
+<li>Converting a hand-coded landing page to PDF for client review</li>
+</ul>
+</section>
+
+<script src="/tools/html-to-pdf/html-to-pdf.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

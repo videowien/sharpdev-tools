@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Random Team Generator — Split a List Into Teams | SharpDev.Tools</title>
+<meta content="Split a list of names into random, balanced teams. Set the number of teams or team size. Free online random team generator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/team-generator/" rel="canonical"/>
+<meta content="Random Team Generator — Split a List Into Teams | SharpDev.Tools" property="og:title"/>
+<meta content="Split a list of names into random, balanced teams. Set the number of teams or team size. Free online random team generator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/team-generator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Random Team Generator — Split a List Into Teams | SharpDev.Tools" name="twitter:title"/>
+<meta content="Split a list of names into random, balanced teams. Set the number of teams or team size. Free online random team generator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/#generators"},{"@type":"ListItem","position":3,"name":"Random Team Generator","item":"https://sharpdev.tools/tools/team-generator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are the teams balanced?","acceptedAnswer":{"@type":"Answer","text":"Names are shuffled with a cryptographically random Fisher-Yates shuffle, then dealt round-robin into the teams, so team sizes differ by at most one and the assignment is unbiased."}},{"@type":"Question","name":"Can I split by team size instead of count?","acceptedAnswer":{"@type":"Answer","text":"Set the number of teams you want; the tool balances sizes automatically. For a fixed size, pick the team count that gives that size (e.g. 20 people into teams of 4 = 5 teams)."}},{"@type":"Question","name":"Is it actually random?","acceptedAnswer":{"@type":"Answer","text":"Yes, it uses crypto.getRandomValues, not Math.random, so re-running gives genuinely different fair splits."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Random Team Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/team-generator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/team-generator/team-generator.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('team-generator');</script>
+<div class="page">
+<h1>Random Team Generator</h1>
+<p class="subtitle">Paste names, pick how many teams, get a fair random split.</p>
+<div class="field"><label for="in">Names (one per line)</label><textarea id="in" placeholder="Anna
+Ben
+Clara
+David
+Ella
+Finn"></textarea></div>
+<div class="row"><div class="field" style="flex:0 0 160px"><label for="teams">Number of teams</label><input type="number" id="teams" value="2" min="2" max="50"></div>
+<div class="actions"><button class="btn btn-primary" id="go" style="margin-top:18px">Make teams</button></div></div>
+<div id="out" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:8px"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How are the teams balanced?</summary><p>Names are shuffled with a cryptographically random Fisher-Yates shuffle, then dealt round-robin into the teams, so team sizes differ by at most one and the assignment is unbiased.</p></details>
+<details><summary>Can I split by team size instead of count?</summary><p>Set the number of teams you want; the tool balances sizes automatically. For a fixed size, pick the team count that gives that size (e.g. 20 people into teams of 4 = 5 teams).</p></details>
+<details><summary>Is it actually random?</summary><p>Yes, it uses crypto.getRandomValues, not Math.random, so re-running gives genuinely different fair splits.</p></details>
+</section>
+<script src="/tools/team-generator/team-generator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

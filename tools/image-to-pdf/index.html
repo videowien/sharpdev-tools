@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image to PDF Converter — JPG / PNG to PDF Online | SharpDev.Tools</title>
+<meta content="Convert JPG, PNG, WebP or GIF images to a single PDF online — free, instant, runs in your browser so your images never get uploaded. Drag multiple files, reorder pages, pick page size and margin." name="description"/>
+<link href="https://sharpdev.tools/tools/image-to-pdf/" rel="canonical"/>
+<meta content="Image to PDF Converter — JPG / PNG to PDF Online | SharpDev.Tools" property="og:title"/>
+<meta content="Convert JPG, PNG, WebP or GIF images to a single PDF online — free, instant, runs in your browser so your images never get uploaded. Drag multiple files, reorder pages, pick page size and margin." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-to-pdf/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Image to PDF Converter — JPG / PNG to PDF Online | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert JPG, PNG, WebP or GIF images to a single PDF online — free, instant, runs in your browser so your images never get uploaded. Drag multiple files, reorder pages, pick page size and margin." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF", "item": "https://sharpdev.tools/#pdf" },
+      { "@type": "ListItem", "position": 3, "name": "Image to PDF", "item": "https://sharpdev.tools/tools/image-to-pdf/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I convert JPG to PDF online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Drop one or more JPG images onto the upload area, drag to reorder if you want a specific page sequence, pick page size (A4, Letter or Auto/Match Image) and margin, then click Create PDF. Each image becomes one page in a single downloadable PDF." } },
+      { "@type": "Question", "name": "Can I combine multiple images into one PDF?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Drop as many JPG, PNG, WebP or GIF files as you want. Each becomes a page. Drag the cards to reorder them, click the × on a card to remove it." } },
+      { "@type": "Question", "name": "Are my images uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The PDF is built entirely in your browser via jsPDF. Nothing is sent to any server, so screenshots, ID scans, or private mockups are safe to convert here." } },
+      { "@type": "Question", "name": "Which image formats can I convert to PDF?",
+        "acceptedAnswer": { "@type": "Answer", "text": "JPG, PNG, WebP and GIF (first frame only for animated GIFs). The tool auto-detects format from each file." } },
+      { "@type": "Question", "name": "Is the image to PDF converter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no file limit." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image to PDF — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/image-to-pdf/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-to-pdf/image-to-pdf.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-to-pdf');</script>
+<div class="page">
+<h1>Image to PDF Converter</h1>
+<p class="subtitle">Convert JPG, PNG, WebP or GIF images into a single PDF — drag multiple files, reorder pages, pick page size. Free, instant, your images never leave your browser.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" multiple type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop images here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP, GIF · multi-select supported</p>
+</div>
+</div>
+</div>
+
+<div class="card options-card" id="options-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Page size</label>
+<select id="page-size">
+<option value="auto">Auto · match image</option>
+<option selected value="a4">A4 · 210×297 mm</option>
+<option value="letter">Letter · 8.5×11 in</option>
+<option value="legal">Legal · 8.5×14 in</option>
+<option value="a3">A3 · 297×420 mm</option>
+<option value="a5">A5 · 148×210 mm</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Orientation</label>
+<div class="toggle-row">
+<label class="toggle"><input checked name="orient" type="radio" value="auto"/><span>Auto</span></label>
+<label class="toggle"><input name="orient" type="radio" value="portrait"/><span>Portrait</span></label>
+<label class="toggle"><input name="orient" type="radio" value="landscape"/><span>Landscape</span></label>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Margin</label>
+<div class="toggle-row">
+<label class="toggle"><input name="margin" type="radio" value="0"/><span>None</span></label>
+<label class="toggle"><input checked name="margin" type="radio" value="10"/><span>Small</span></label>
+<label class="toggle"><input name="margin" type="radio" value="20"/><span>Medium</span></label>
+<label class="toggle"><input name="margin" type="radio" value="30"/><span>Large</span></label>
+</div>
+</div>
+</div>
+<div class="image-list" id="image-list"></div>
+<div class="action-row">
+<button class="btn btn-primary" id="create-btn" type="button">Create PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How does image to PDF conversion work?</h2>
+<p>This tool uses <code>jsPDF</code> to build a fresh PDF in your browser. Each image you upload becomes one page. You control the order (drag the cards), the page size (A4, Letter, or auto-fit to image), the orientation, and the margin around each image. Nothing leaves your device — even sensitive scans like ID cards or signed contracts stay local.</p>
+
+<h2>Combine multiple JPGs into one PDF</h2>
+<p>Drop multiple JPGs at once. Drag the thumbnails to reorder. Click × on any thumbnail to remove that image before creating the final PDF. You can also drop additional images later — they get appended to the end of the list.</p>
+
+<h2>Which page size should I pick?</h2>
+<ul>
+<li><strong>A4</strong> — European standard, default for most printers and digital documents.</li>
+<li><strong>Letter</strong> — US standard, slightly wider and shorter than A4.</li>
+<li><strong>Auto · match image</strong> — each page exactly matches its image's dimensions. Useful for photo books or screenshots where you don't want whitespace around the image.</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Combining multiple receipt photos into one PDF for expense reports</li>
+<li>Building a PDF portfolio from screenshots of your work</li>
+<li>Sending scanned contract pages as a single document instead of N separate JPGs</li>
+<li>Bundling a sequence of photos as a printable PDF album</li>
+</ul>
+</section>
+
+<script src="/tools/image-to-pdf/image-to-pdf.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

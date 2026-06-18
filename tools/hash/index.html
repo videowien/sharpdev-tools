@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Hash Generator — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Compute MD5, SHA-1, SHA-256 and SHA-512 hashes of text or any file, all locally in your browser. Free online hash generator, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/hash/" rel="canonical"/>
+<meta content="Hash Generator — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Compute MD5, SHA-1, SHA-256 and SHA-512 hashes of text or any file, all locally in your browser. Free online hash generator, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hash/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Hash Generator — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Compute MD5, SHA-1, SHA-256 and SHA-512 hashes of text or any file, all locally in your browser. Free online hash generator, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security & Crypto", "item": "https://sharpdev.tools/#security-crypto"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Hash Generator",
+        "item": "https://sharpdev.tools/tools/hash/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which hash algorithms does the Hash Generator support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MD5, SHA-1, SHA-256 and SHA-512 — computed for text input or any uploaded file, including large files via streaming."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my file uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Hashing uses the Web Crypto API in your browser, so files never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hash Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/hash/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hash/hash.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hash');</script>
+<div class="page">
+<h1>Hash Generator</h1>
+<p class="subtitle">MD5, SHA-1, SHA-256, SHA-512. Text or file. Computed locally in your browser.</p>
+<div class="mode-switch">
+<button class="mode-btn active" id="mode-text" onclick="setMode('text')">Text</button>
+<button class="mode-btn" id="mode-file" onclick="setMode('file')">File</button>
+<label class="toggle" style="margin-left:auto">
+<input id="opt-upper" onchange="renderHashes()" type="checkbox"/>
+<span>Uppercase</span>
+</label>
+</div>
+<div id="text-pane">
+<label for="input">Text</label>
+<textarea id="input" oninput="scheduleHash()" placeholder="Type or paste text here..." spellcheck="false"></textarea>
+<div class="stats" id="stats-in">0 chars</div>
+</div>
+<div id="file-pane" style="display:none">
+<div class="file-zone" id="file-zone">
+<input hidden="" id="file-input" type="file"/>
+<p><strong>Drop a file here</strong> or <button class="link-btn" onclick="document.getElementById('file-input').click()">pick one</button>.</p>
+<p class="hint" id="file-info">No file selected.</p>
+<div class="progress" id="progress" style="display:none">
+<div class="progress-fill" id="progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="results" id="results">
+<div class="hash-row" data-algo="MD5">
+<label>MD5</label>
+<div class="hash-out">
+<input id="out-md5" placeholder="—" readonly="" type="text"/>
+<button class="copy-btn" onclick="copyHash('md5')" title="Copy">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+</button>
+</div>
+</div>
+<div class="hash-row" data-algo="SHA-1">
+<label>SHA-1</label>
+<div class="hash-out">
+<input id="out-sha1" placeholder="—" readonly="" type="text"/>
+<button class="copy-btn" onclick="copyHash('sha1')" title="Copy">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+</button>
+</div>
+</div>
+<div class="hash-row" data-algo="SHA-256">
+<label>SHA-256</label>
+<div class="hash-out">
+<input id="out-sha256" placeholder="—" readonly="" type="text"/>
+<button class="copy-btn" onclick="copyHash('sha256')" title="Copy">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+</button>
+</div>
+</div>
+<div class="hash-row" data-algo="SHA-512">
+<label>SHA-512</label>
+<div class="hash-out">
+<input id="out-sha512" placeholder="—" readonly="" type="text"/>
+<button class="copy-btn" onclick="copyHash('sha512')" title="Copy">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="info-card">
+<h3>About these hashes</h3>
+<p><code>MD5</code> and <code>SHA-1</code> are broken for security but still useful as checksums. <code>SHA-256</code> and <code>SHA-512</code> remain secure. All hashing happens in your browser using the Web Crypto API (MD5 uses an inline implementation since it's not in the standard). Nothing is uploaded anywhere.</p>
+</div>
+</div>
+<script src="/tools/hash/hash.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

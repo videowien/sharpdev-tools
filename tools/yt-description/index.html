@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Description Counter — 5000 Chars + Link Extraction | SharpDev.Tools</title>
+<meta content="Live 5000-character YouTube description counter. See above-the-fold cutoff (~157 chars). Extract URLs, timestamps and hashtags from your description. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/yt-description/" rel="canonical"/>
+<meta content="YouTube Description Counter — 5000 Chars + Link Extraction | SharpDev.Tools" property="og:title"/>
+<meta content="Live 5000-char YouTube description counter. Above-the-fold preview, URL / timestamp / hashtag extraction." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/yt-description/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="YouTube Description Counter — 5000 Chars + Link Extraction | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live 5000-char YouTube description counter with above-the-fold preview and link extraction." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"YouTube","item":"https://sharpdev.tools/youtube/"},
+    {"@type":"ListItem","position":3,"name":"YouTube Description Counter","item":"https://sharpdev.tools/tools/yt-description/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the YouTube description character limit?","acceptedAnswer":{"@type":"Answer","text":"5000 characters. But only the first ~157 characters appear above the 'Show more' fold on desktop. That's where the click happens — make it count."}},
+    {"@type":"Question","name":"How many hashtags can I use?","acceptedAnswer":{"@type":"Answer","text":"Up to 60 hashtags in a description. YouTube displays only the first three above the title. More than 60 hashtags can cause the video to be ignored by search entirely (anti-spam rule)."}},
+    {"@type":"Question","name":"Is my description uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Counting and parsing both happen in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Description Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/yt-description/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/yt-description/yt-description.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('yt-description');</script>
+<div class="page">
+<h1>YouTube Description Counter</h1>
+<p class="subtitle">5000-char limit with above-the-fold preview and link extraction.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="desc">Your description</label>
+<textarea id="desc" rows="12" placeholder="Drop your YouTube description here — the first 157 chars show above &quot;Show more&quot;…">In this video I show you how I built 143 free utility tools in 6 months — no framework, no ads, no sign-up, no cookies. Just vanilla HTML, CSS and JavaScript.
+
+Chapters:
+00:00 Intro
+01:23 The architecture
+05:42 SEO strategy that worked
+10:15 What I'd do differently
+
+→ Site: https://sharpdev.tools/
+→ Newsletter: https://example.com/sub
+→ GitHub: https://github.com/videowien/sharpdev
+
+#YouTube #IndieMaker #BuildInPublic</textarea>
+<div class="counter-row">
+<span id="counter" class="counter">0 / 5000</span>
+<span class="counter-bar"><span id="counter-fill" class="counter-fill"></span></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Above-the-fold preview (~157 chars before "Show more")</label>
+<div class="preview-fold" id="preview-fold">—</div>
+<div class="action-row">
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy full description</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Detected elements</label>
+<div class="detected-grid">
+<div class="detected-block">
+<div class="detected-label">Chapters (timestamps starting at 00:00)</div>
+<div class="detected-value" id="d-chapters">—</div>
+</div>
+<div class="detected-block">
+<div class="detected-label">Links</div>
+<div class="detected-value" id="d-links">—</div>
+</div>
+<div class="detected-block">
+<div class="detected-label">Hashtags</div>
+<div class="detected-value" id="d-hashtags">—</div>
+</div>
+<div class="detected-block">
+<div class="detected-label">Mentions</div>
+<div class="detected-value" id="d-mentions">—</div>
+</div>
+</div>
+<div class="detected-warn" id="warn-hashtags" style="display:none">⚠ More than 15 hashtags — YouTube may ignore them all (spam threshold).</div>
+<div class="detected-warn" id="warn-chapters" style="display:none">⚠ Chapters need to start at 00:00 and include ≥3 timestamps. Some are missing.</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>The 157-character rule</h2>
+<p>YouTube shows the first ~157 characters above the "Show more" fold on desktop. That's the only part most viewers ever see. The rest is for SEO, channel links, sponsor mentions and chapter timestamps.</p>
+
+<h2>Description structure that works</h2>
+<ul>
+<li><strong>Hook (above fold, ~150 chars)</strong> — what the viewer will get, in one sentence</li>
+<li><strong>Chapters / timestamps</strong> — first <code>00:00</code> required, then any time format. Auto-generates chapter markers on the seekbar</li>
+<li><strong>Links</strong> — site, newsletter, social. YouTube auto-shortens long URLs in display</li>
+<li><strong>Hashtags</strong> — 3-5 ideal. First three appear above the video title. More than ~15 risks the anti-spam filter</li>
+<li><strong>Disclaimers / affiliate notices</strong> — bottom of description, after main content</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All counting and extraction runs in your browser. Nothing is sent to a server.</p>
+</section>
+
+<script src="/tools/yt-description/yt-description.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

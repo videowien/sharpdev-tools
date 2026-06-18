@@ -1,0 +1,20 @@
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+.ci-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
+.ci-field label { display: block; font-size: 11px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.ci-wrap { display: flex; align-items: stretch; background: #141414; border: 1px solid #262626; border-radius: 10px; overflow: hidden; }
+.ci-wrap span { padding: 10px 10px; background: #0d0d0d; color: #888; font-family: 'SF Mono', Monaco, monospace; font-size: 13px; }
+.ci-wrap input, .ci-wrap select { flex: 1; padding: 10px 10px; background: transparent; border: none; color: #e1e1e1; font-size: 14px; outline: none; font-variant-numeric: tabular-nums; font-family: inherit; }
+.ci-wrap:focus-within { border-color: #ff4444; }
+.ci-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
+.ci-stat { padding: 18px; text-align: center; background: #141414; border: 1px solid #262626; border-radius: 10px; }
+.ci-stat.highlight { border-color: #ff4444; }
+.ci-label { font-size: 11px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.ci-value { font-size: 24px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+.ci-yearly { background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 12px; padding: 14px 18px; font-family: 'SF Mono', Monaco, monospace; font-size: 12px; max-height: 300px; overflow-y: auto; }
+.ci-yearly h2 { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; font-family: inherit; }
+.ci-yr-row { display: grid; grid-template-columns: 60px 1fr 1fr 1fr; gap: 8px; padding: 4px 0; color: #bbb; }
+.ci-yr-row.head { color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #1f1f1f; padding-bottom: 8px; margin-bottom: 4px; }
+.ci-yr-row .val { text-align: right; }
+@media (max-width: 700px) { .page h1 { font-size: 28px; } .ci-grid { grid-template-columns: 1fr 1fr; } .ci-results { grid-template-columns: 1fr; } }

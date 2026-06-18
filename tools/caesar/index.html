@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Caesar Cipher Encoder / Decoder | SharpDev.Tools</title>
+<meta content="Free Caesar cipher tool. Encrypt or decrypt text by shifting letters any amount (0–25). Includes ROT13. Live result, keeps punctuation and case. Runs entirely in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/caesar/" rel="canonical"/>
+<meta content="Caesar Cipher Encoder / Decoder | SharpDev.Tools" property="og:title"/>
+<meta content="Free Caesar cipher tool. Encrypt or decrypt text by shifting letters any amount (0–25). Includes ROT13. Live result, keeps punctuation and case. Runs entirely in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/caesar/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Caesar Cipher Encoder / Decoder | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Caesar cipher tool. Encrypt or decrypt text by shifting letters any amount (0–25). Includes ROT13. Live result, keeps punctuation and case. Runs entirely in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Caesar Cipher Encoder & Decoder","item":"https://sharpdev.tools/tools/caesar/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Caesar cipher?","acceptedAnswer":{"@type":"Answer","text":"It shifts every letter a fixed number of places in the alphabet. A shift of 3 turns A into D, B into E, and so on. It's one of the oldest known ciphers."}},{"@type":"Question","name":"What is ROT13?","acceptedAnswer":{"@type":"Answer","text":"ROT13 is just a Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying ROT13 twice returns the original text. Set the shift to 13 here to use it."}},{"@type":"Question","name":"Is this secure encryption?","acceptedAnswer":{"@type":"Answer","text":"No. A Caesar cipher is trivially broken and is for learning, puzzles and CTFs only. For real protection use the AES tool."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Caesar Cipher Encoder & Decoder \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/caesar/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/caesar/caesar.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('caesar');</script>
+<div class="page">
+<h1>Caesar Cipher Encoder & Decoder</h1>
+<p class="subtitle">Shift letters by any amount to encrypt or decrypt a Caesar cipher. Live output, ROT13 included.</p>
+<div class="field"><label for="in">Text</label><textarea id="in" placeholder="Hello, World!">Hello, World!</textarea></div>
+<div class="row"><div class="field"><label for="shift">Shift (−25 to 25)</label><input type="number" id="shift" value="3" min="-25" max="25"></div></div>
+<div class="actions"><button class="small-btn" id="enc">Encode →</button><button class="small-btn" id="dec">← Decode</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a Caesar cipher?</summary><p>It shifts every letter a fixed number of places in the alphabet. A shift of 3 turns A into D, B into E, and so on. It's one of the oldest known ciphers.</p></details>
+<details><summary>What is ROT13?</summary><p>ROT13 is just a Caesar cipher with a shift of 13. Because the alphabet has 26 letters, applying ROT13 twice returns the original text. Set the shift to 13 here to use it.</p></details>
+<details><summary>Is this secure encryption?</summary><p>No. A Caesar cipher is trivially broken and is for learning, puzzles and CTFs only. For real protection use the AES tool.</p></details>
+</section>
+<script src="/tools/caesar/caesar.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

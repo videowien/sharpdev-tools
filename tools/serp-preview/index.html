@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Google Snippet Preview — SERP Title &amp; Meta Description Tester | SharpDev.Tools</title>
+<meta content="See exactly how your page appears in Google search — desktop and mobile previews with live title (60 char) and meta-description (155-160 char) truncation. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/serp-preview/" rel="canonical"/>
+<meta content="Google Snippet Preview — SERP Tester | SharpDev.Tools" property="og:title"/>
+<meta content="See how your page renders in Google — desktop + mobile, with live truncation at 60 / 160 chars." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/serp-preview/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Google Snippet Preview — SERP Tester | SharpDev.Tools" name="twitter:title"/>
+<meta content="See how your page renders in Google — desktop + mobile, with live truncation." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/developers/"},
+    {"@type":"ListItem","position":3,"name":"SERP Preview","item":"https://sharpdev.tools/tools/serp-preview/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the title tag length limit in Google?","acceptedAnswer":{"@type":"Answer","text":"Google truncates titles at about 580 pixels — which translates to roughly 50-60 characters depending on letter widths (capital W is wide, lowercase i is narrow). The tool uses a 60-char heuristic which matches most real SERPs."}},
+    {"@type":"Question","name":"What about the meta description?","acceptedAnswer":{"@type":"Answer","text":"~155 chars on desktop, ~120 on mobile. Google may also rewrite descriptions based on the search query, especially if your description is generic. Keep it specific and benefit-driven."}},
+    {"@type":"Question","name":"Does Google always show my title and description?","acceptedAnswer":{"@type":"Answer","text":"No. Google rewrites ~60% of titles and ~70% of descriptions when it thinks something else fits the query better. Your meta tags are a strong suggestion, not a guarantee."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"SERP Preview — SharpDev.Tools","url":"https://sharpdev.tools/tools/serp-preview/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/serp-preview/serp-preview.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('serp-preview');</script>
+<div class="page">
+<h1>Google Snippet Preview</h1>
+<p class="subtitle">Live preview — desktop + mobile, with truncation marks at the Google limits.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="title">Title tag (60 chars)</label>
+<input id="title" type="text" maxlength="120" value="SharpDev.Tools — 179 Free Online Tools, No Sign-Up, No Ads"/>
+<div class="counter-row"><span id="t-counter" class="counter">0 / 60</span></div>
+</div>
+
+<div class="form-row">
+<label for="url">URL</label>
+<input id="url" type="text" value="https://sharpdev.tools/"/>
+</div>
+
+<div class="form-row">
+<label for="desc">Meta description (155 chars)</label>
+<textarea id="desc" rows="3" maxlength="300">Browse 179 free online tools for developers, writers and creators: formatters, converters, generators, calculators, design helpers, and social-media utilities.</textarea>
+<div class="counter-row"><span id="d-counter" class="counter">0 / 155</span></div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Desktop preview</label>
+<div class="serp-desktop" id="preview-desktop">
+<div class="serp-url" id="d-url">—</div>
+<div class="serp-title" id="d-title">—</div>
+<div class="serp-desc" id="d-desc">—</div>
+</div>
+
+<label class="opt-label" style="margin-top:24px">Mobile preview</label>
+<div class="serp-mobile" id="preview-mobile">
+<div class="serp-url" id="m-url">—</div>
+<div class="serp-title" id="m-title">—</div>
+<div class="serp-desc" id="m-desc">—</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Google SERP length limits</h2>
+<table class="serp-table">
+<tr><th>Element</th><th>Desktop</th><th>Mobile</th></tr>
+<tr><td>Title</td><td>~60 chars (580 px)</td><td>~50 chars (520 px)</td></tr>
+<tr><td>Description</td><td>~155 chars</td><td>~120 chars</td></tr>
+<tr><td>URL</td><td>Truncated mid-path</td><td>Truncated at domain</td></tr>
+</table>
+
+<h2>What Google looks for in titles</h2>
+<ul>
+<li><strong>Primary keyword near the start</strong> — first 3-5 words carry the most weight</li>
+<li><strong>Brand name at the end</strong> separated by a dash, pipe, or em-dash</li>
+<li><strong>One value proposition</strong> — "free", "online", year, or a number tends to lift CTR</li>
+<li><strong>Avoid filler words</strong> — drop "the", "a", "of" where possible to free up budget</li>
+</ul>
+
+<h2>What Google looks for in descriptions</h2>
+<ul>
+<li><strong>Lead with the benefit</strong>, not the feature list</li>
+<li><strong>End with a verb-driven CTA</strong> ("get the free template", "start in 30 seconds")</li>
+<li><strong>Match the search intent</strong> — informational queries want how/what/why; commercial queries want price, free, comparison</li>
+<li><strong>One keyword variation</strong> is fine, but stuffing kills CTR</li>
+</ul>
+
+<h2>Why Google may rewrite your title</h2>
+<p>Google rewrites titles when it thinks the page would rank better with a different framing — for example using your H1 instead of the title tag, or a snippet of your visible body text. Provide both: a clean title tag <strong>and</strong> a relevant H1 + good body content.</p>
+
+<h2>Privacy</h2>
+<p>Everything is computed in your browser. No data is uploaded.</p>
+</section>
+
+<script src="/tools/serp-preview/serp-preview.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

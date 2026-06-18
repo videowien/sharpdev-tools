@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Emoji Finder &amp; Search — Find Emojis by Name, Keyword or Category | SharpDev.Tools</title>
+<meta content="Free emoji finder &amp; search tool — find any emoji by name, keyword or category. Search 300+ emojis instantly, click to copy, recently used pinned up top. No sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/emoji/" rel="canonical"/>
+<meta content="Emoji Finder &amp; Search — Find Emojis by Name, Keyword or Category | SharpDev.Tools" property="og:title"/>
+<meta content="Free emoji finder &amp; search tool — find any emoji by name, keyword or category. Search 300+ emojis instantly, click to copy, recently used pinned up top. No sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/emoji/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Emoji Finder &amp; Search — Find Emojis by Name, Keyword or Category | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free emoji finder &amp; search tool — find any emoji by name, keyword or category. Search 300+ emojis instantly, click to copy, recently used pinned up top. No sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+{"@type":"ListItem","position":2,"name":"Social Media","item":"https://sharpdev.tools/#social-media"},
+{"@type":"ListItem","position":3,"name":"Emoji Finder","item":"https://sharpdev.tools/tools/emoji/"}
+]},
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I search for an emoji by name?","acceptedAnswer":{"@type":"Answer","text":"Type the emoji name or any matching keyword into the search box at the top — for example 'heart', 'fire', 'pizza' or 'thumbs up'. The grid filters instantly as you type. Click any emoji to copy it to your clipboard."}},
+{"@type":"Question","name":"What is the difference between emoji search and emoji finder?","acceptedAnswer":{"@type":"Answer","text":"They're the same thing. This tool combines both: a real-time search box for finding emojis by keyword, plus 9 category browsers (Smileys, People, Animals, Food, Travel, Activities, Objects, Symbols, Flags) for picking emojis by intent when you don't know the exact name."}},
+{"@type":"Question","name":"Can I look up an emoji by keyword instead of by name?","acceptedAnswer":{"@type":"Answer","text":"Yes — every emoji is indexed by name AND by all its common keywords. Searching 'happy' surfaces the smiley faces, 'love' surfaces hearts and kisses, 'food' surfaces pizza/burger/sushi/etc."}},
+{"@type":"Question","name":"How many emojis can I search through?","acceptedAnswer":{"@type":"Answer","text":"300+ commonly used emojis across 9 categories. The set covers everything people typically copy for messaging, social posts, comments and design mockups."}},
+{"@type":"Question","name":"How do I copy an emoji?","acceptedAnswer":{"@type":"Answer","text":"Click on any emoji in the grid. It copies to your clipboard instantly and a brief 'Copied!' confirmation appears. Recently copied emojis stay pinned at the top so you can grab them again quickly."}},
+{"@type":"Question","name":"Is the emoji search free and does it work without sign-up?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no account, no ads, no usage limits. The whole tool runs in your browser; no emoji or click is ever sent to a server."}}
+]},
+{"@context":"https://schema.org","@type":"WebApplication","name":"Emoji Finder &amp; Search — SharpDev.Tools","url":"https://sharpdev.tools/tools/emoji/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/emoji/emoji.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('emoji');</script>
+<div class="page">
+<h1>Emoji Finder &amp; Search</h1>
+<p class="subtitle">Find any emoji by name, keyword or category. Click to copy. Recently used pinned up top.</p>
+<div class="em-search-row">
+<input type="text" id="em-search" placeholder="Search emojis (e.g. heart, fire, pizza)..." autocomplete="off" autofocus>
+</div>
+<div class="em-cats" id="em-cats"></div>
+<div class="em-copied" id="em-copied" style="display:none;">Copied <span id="em-copied-emoji"></span>!</div>
+<div class="em-recent" id="em-recent" style="display:none;">
+<h2>Recent</h2>
+<div class="em-grid" id="em-grid-recent"></div>
+</div>
+<div class="em-list" id="em-list"></div>
+
+<section class="info-block">
+<h2>How the emoji search works</h2>
+<p>Every emoji in the grid is indexed by both its <strong>name</strong> and its common <strong>keywords</strong>. Type into the search box and the grid filters in real-time — match anywhere in the name or any keyword. Examples:</p>
+<ul>
+<li><strong>"heart"</strong> — surfaces ❤️ 💛 💚 💙 💜 🖤 🤍 🤎 plus 💗 💖 💘 💝</li>
+<li><strong>"fire"</strong> — surfaces 🔥 and any emoji tagged with fire/hot/lit</li>
+<li><strong>"pizza"</strong> — direct name match 🍕</li>
+<li><strong>"happy"</strong> — surfaces 😀 😃 😄 😁 😆 😊 and other smileys tagged happy</li>
+<li><strong>"thumbs up"</strong> — 👍 (multi-word name match works)</li>
+<li><strong>"love"</strong> — hearts, kisses 😘 💋, eyes 😍 🥰</li>
+</ul>
+
+<h2>Emoji search vs emoji finder vs emoji picker — same tool, different words</h2>
+<p>People searching for an "emoji finder", "emoji search", "emoji lookup", "emoji picker" or "emojifinder" all want the same thing: a fast way to locate a specific emoji and copy it. This tool does all of that — the search box covers the lookup/search/find use case, the 9 category tabs cover the browse/picker use case, and a single click copies any emoji to your clipboard.</p>
+
+<h2>Browse emojis by category</h2>
+<p>When you don't know the exact name, switch to category browsing. Nine categories cover the full common emoji set:</p>
+<ul>
+<li><strong>Smileys &amp; Emotion</strong> — faces, hearts, gestures of feeling</li>
+<li><strong>People &amp; Body</strong> — hand gestures, body parts, professions</li>
+<li><strong>Animals &amp; Nature</strong> — animals, plants, weather</li>
+<li><strong>Food &amp; Drink</strong> — meals, ingredients, beverages</li>
+<li><strong>Travel &amp; Places</strong> — vehicles, landmarks, buildings</li>
+<li><strong>Activities</strong> — sports, hobbies, events</li>
+<li><strong>Objects</strong> — household items, tools, tech</li>
+<li><strong>Symbols</strong> — math, arrows, warnings, hearts</li>
+<li><strong>Flags</strong> — country and regional flags</li>
+</ul>
+
+<h2>Common emoji search examples</h2>
+<p>Real-world examples of what people search for and how to find it here:</p>
+<ul>
+<li>Looking for the <strong>checkmark emoji</strong>? Search "check" → ✅ ✔️ ☑️</li>
+<li>Need a <strong>star</strong>? Search "star" → ⭐ 🌟 ✨ 💫</li>
+<li>Want <strong>arrows</strong>? Search "arrow" → ⬆️ ➡️ ⬇️ ⬅️ ↗️ ↘️ ↙️ ↖️</li>
+<li><strong>Crying face</strong>? Search "cry" → 😢 😭 🥲</li>
+<li><strong>Smiling face with hearts</strong>? Search "love" or "heart eyes" → 🥰 😍</li>
+<li><strong>Party emoji</strong>? Search "party" → 🥳 🎉 🎊</li>
+</ul>
+
+<h2>Privacy &amp; how it runs</h2>
+<p>Everything runs locally in your browser. No emoji, no click and no search query is ever sent to a server. Recently used emojis are stored in your browser's localStorage only.</p>
+</section>
+
+<script src="/tools/emoji/emoji.js"></script>
+<script>renderFooter();</script>
+</body></html>

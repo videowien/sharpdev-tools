@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tweet to Image — Turn a Twitter / X Post into a PNG | SharpDev.Tools</title>
+<meta content="Turn any Twitter / X post into a beautiful PNG image to share on Instagram, LinkedIn or your blog. Paste text, pick a style, download. Free, no upload, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-image/" rel="canonical"/>
+<meta content="Tweet to Image — Turn a Twitter / X Post into a PNG | SharpDev.Tools" property="og:title"/>
+<meta content="Turn any Twitter / X post into a beautiful PNG image to share on Instagram, LinkedIn or your blog. Paste text, pick a style, download. Free, no upload, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-image/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Tweet to Image — Turn a Twitter / X Post into a PNG | SharpDev.Tools" name="twitter:title"/>
+<meta content="Turn any Twitter / X post into a beautiful PNG image to share on Instagram, LinkedIn or your blog. Paste text, pick a style, download. Free, no upload, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Twitter", "item": "https://sharpdev.tools/#twitter" },
+      { "@type": "ListItem", "position": 3, "name": "Tweet to Image", "item": "https://sharpdev.tools/tools/twitter-image/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I turn a tweet into an image?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Type or paste the tweet text into the left panel, fill in display name and handle, pick a theme (light, dim, dark), then click Download PNG. The image is rendered locally in your browser — nothing is uploaded." } },
+      { "@type": "Question", "name": "Can I customize the tweet style?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose between light, dim and dark themes (matching Twitter / X official themes), set a verified checkmark, set the date, and include realistic engagement counters (replies, retweets, likes, views). The image is generated to look like a real Twitter / X post." } },
+      { "@type": "Question", "name": "What can I do with the exported image?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tweet screenshots are commonly shared on Instagram (as feed posts or Reels covers), LinkedIn (as document carousels), Discord, in blog posts, and email newsletters. The PNG is high resolution (2x) so it stays sharp on retina displays." } },
+      { "@type": "Question", "name": "Does this tool fetch real tweets?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. This is a styled renderer — you provide the text, name, handle, and metadata, and the tool generates a tweet-style image from that. It does not connect to Twitter / X's API and cannot fetch existing tweets." } },
+      { "@type": "Question", "name": "Is it free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no watermark." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tweet to Image — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/twitter-image/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-image/twitter-image.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-image');</script>
+<div class="page">
+<h1>Tweet to Image</h1>
+<p class="subtitle">Turn a Twitter / X post into a clean PNG to share on Instagram, LinkedIn or your blog. Rendered locally, no upload.</p>
+
+<div class="grid">
+
+<div class="card form-card">
+<div class="form-group">
+<label for="f-name">Display name</label>
+<input id="f-name" type="text" value="Jane Doe"/>
+</div>
+<div class="form-group">
+<label for="f-handle">@ handle</label>
+<input id="f-handle" type="text" value="janedoe"/>
+</div>
+<div class="form-group">
+<label for="f-text">Tweet text</label>
+<textarea id="f-text">This is a sample tweet. Edit me to your message. Hashtags, emoji, and line breaks all render.
+
+The image you download stays crisp on retina screens (2× resolution).</textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="f-date">Date</label>
+<input id="f-date" type="text" value="2:34 PM · May 16, 2026"/>
+</div>
+<div class="form-group">
+<label class="checkbox-label">
+<input id="f-verified" type="checkbox"/>
+<span>Verified ✓</span>
+</label>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="f-replies">Replies</label>
+<input id="f-replies" type="text" value="42"/>
+</div>
+<div class="form-group">
+<label for="f-retweets">Reposts</label>
+<input id="f-retweets" type="text" value="183"/>
+</div>
+<div class="form-group">
+<label for="f-likes">Likes</label>
+<input id="f-likes" type="text" value="1.2K"/>
+</div>
+<div class="form-group">
+<label for="f-views">Views</label>
+<input id="f-views" type="text" value="34K"/>
+</div>
+</div>
+<div class="form-group">
+<label class="opt-label">Theme</label>
+<div class="theme-row">
+<label class="theme-toggle"><input checked name="theme" type="radio" value="light"/><span class="t-light">Light</span></label>
+<label class="theme-toggle"><input name="theme" type="radio" value="dim"/><span class="t-dim">Dim</span></label>
+<label class="theme-toggle"><input name="theme" type="radio" value="dark"/><span class="t-dark">Dark</span></label>
+</div>
+</div>
+<div class="form-group">
+<label class="checkbox-label">
+<input id="f-show-engagement" type="checkbox" checked/>
+<span>Show engagement counters</span>
+</label>
+</div>
+<button class="btn btn-primary" id="download-btn" type="button">Download PNG</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+
+<div class="card preview-card">
+<div class="preview-label">Preview</div>
+<div class="tweet-canvas-wrap">
+<div class="tweet-canvas tw-light" id="tweet-canvas">
+<div class="tw-row">
+<div class="tw-avatar" id="tw-avatar">J</div>
+<div class="tw-meta">
+<div class="tw-name">
+<span class="tw-name-text" id="tw-name">Jane Doe</span>
+<svg class="tw-verified" id="tw-verified" style="display:none" viewBox="0 0 22 22" fill="#1d9bf0"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"/></svg>
+</div>
+<div class="tw-handle">@<span id="tw-handle">janedoe</span></div>
+</div>
+</div>
+<div class="tw-text" id="tw-text">This is a sample tweet. Edit me to your message.</div>
+<div class="tw-date" id="tw-date">2:34 PM · May 16, 2026</div>
+<div class="tw-engagement" id="tw-engagement">
+<span class="tw-eng-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01z"/></svg> <span id="eng-replies">42</span></span>
+<span class="tw-eng-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg> <span id="eng-retweets">183</span></span>
+<span class="tw-eng-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91z"/></svg> <span id="eng-likes">1.2K</span></span>
+<span class="tw-eng-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg> <span id="eng-views">34K</span></span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<section class="info-block">
+<h2>Why turn tweets into images?</h2>
+<p>Posting a screenshot of a tweet on other platforms — Instagram, LinkedIn, Discord, blogs — is a common content pattern. Native screenshots are awkward (cropped, low-res, missing context). A dedicated tool gives you a clean, consistent, full-resolution image that looks intentional rather than improvised.</p>
+
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Repurposing</strong> — turn your best Twitter / X threads into Instagram carousels by exporting each tweet as a slide</li>
+<li><strong>LinkedIn posts</strong> — share a tweet without forcing your LinkedIn audience to click an external link</li>
+<li><strong>Blog illustrations</strong> — embed a tweet visually without relying on Twitter's oEmbed widget (which can break)</li>
+<li><strong>Newsletter content</strong> — most email clients block live Twitter embeds, but they render images fine</li>
+<li><strong>Saving for offline reference</strong> — archive a tweet's content even if the original gets deleted</li>
+</ul>
+
+<h2>Privacy and how it works</h2>
+<p>You provide the tweet text, name, handle, and engagement counters manually. The tool renders an HTML mock-up of a Twitter / X post in a hidden element, then uses <code>html2canvas</code> to rasterize it into a PNG download. No Twitter / X API call is made and nothing is uploaded — the rendering happens entirely in your browser.</p>
+</section>
+
+<script src="/tools/twitter-image/twitter-image.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

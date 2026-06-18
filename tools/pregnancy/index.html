@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Due Date Calculator — Pregnancy Week + Trimester Tracker | SharpDev.Tools</title>
+<meta content="Calculate your due date and current pregnancy week from LMP or conception date. Trimester breakdown, weekly milestones. Free, runs in your browser, nothing uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/pregnancy/" rel="canonical"/>
+<meta content="Due Date Calculator — Pregnancy Week + Trimester | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate your due date and current pregnancy week. Trimester breakdown, weekly milestones. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pregnancy/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Due Date Calculator — Pregnancy Week + Trimester | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate your due date and current pregnancy week. Trimester breakdown, weekly milestones." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/calculators/"},
+    {"@type":"ListItem","position":3,"name":"Due Date Calculator","item":"https://sharpdev.tools/tools/pregnancy/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How is the due date calculated?","acceptedAnswer":{"@type":"Answer","text":"Naegele's rule — due date = first day of last menstrual period + 280 days (40 weeks). If you enter the conception date instead, the calculator uses date + 266 days. This assumes a regular 28-day cycle with ovulation around day 14."}},
+    {"@type":"Question","name":"Is this medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. This is a standard estimate based on dates. Only an ultrasound dating scan from your doctor gives a clinically accurate due date — only 4-5% of babies are actually born on their estimated due date."}},
+    {"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The dates stay in your browser."}},
+    {"@type":"Question","name":"What if my cycle isn't 28 days?","acceptedAnswer":{"@type":"Answer","text":"For a longer or shorter cycle, the conception date estimate may be off by a few days. If you know the actual conception date, use that mode instead — it's more accurate."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Due Date Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/pregnancy/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pregnancy/pregnancy.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pregnancy');</script>
+<div class="page">
+<h1>Due Date Calculator</h1>
+<p class="subtitle">Calculate your estimated due date and current pregnancy week.</p>
+
+<div class="card">
+<div class="form-grid">
+<div class="form-row">
+<label>Calculate from</label>
+<div class="seg">
+<button class="seg-btn active" data-mode="lmp" type="button">First day of last period</button>
+<button class="seg-btn" data-mode="conception" type="button">Conception date</button>
+</div>
+</div>
+<div class="form-row">
+<label for="date-input" id="date-label">Date of first day of last period</label>
+<input id="date-input" type="date"/>
+</div>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<div class="result-row">
+<div class="result-block highlight">
+<div class="result-label">Estimated due date</div>
+<div class="result-value" id="due-date">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Current week</div>
+<div class="result-value" id="current-week">—</div>
+<div class="result-sub" id="current-trimester">—</div>
+</div>
+</div>
+
+<div class="progress-wrap">
+<div class="progress-bar">
+<div class="progress-fill" id="progress-fill"></div>
+<div class="progress-marker" id="t1-marker" style="left:33.3%"></div>
+<div class="progress-marker" id="t2-marker" style="left:66.6%"></div>
+</div>
+<div class="progress-labels">
+<span>T1 — Week 1</span>
+<span>T2 — Week 13</span>
+<span>T3 — Week 27</span>
+<span>Due — Week 40</span>
+</div>
+</div>
+
+<div class="milestones">
+<h3>Upcoming milestones</h3>
+<ul id="milestones-list"></ul>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How the due date is calculated</h2>
+<p><strong>Naegele's rule</strong> — first day of last menstrual period (LMP) + 280 days = estimated due date. This assumes a regular 28-day cycle with ovulation around day 14. If you know the conception date, the tool uses date + 266 days.</p>
+
+<h2>Trimester breakdown</h2>
+<ul>
+<li><strong>First trimester</strong> — weeks 1-12. Most rapid development; biggest risk window.</li>
+<li><strong>Second trimester</strong> — weeks 13-26. The "easier" trimester for most; energy returns.</li>
+<li><strong>Third trimester</strong> — weeks 27-40+. Final growth phase; preparation for birth.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All calculation happens in your browser. The dates you enter are not uploaded anywhere.</p>
+
+<p class="disclaimer"><strong>Not medical advice.</strong> Only an ultrasound dating scan gives a clinically accurate due date. Just 4-5% of babies are actually born on their estimated date — most arrive within 2 weeks before or after.</p>
+</section>
+
+<script src="/tools/pregnancy/pregnancy.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

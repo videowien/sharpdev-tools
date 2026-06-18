@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>LinkedIn Post Character Counter (3000) | SharpDev.Tools</title>
+<meta content="Live LinkedIn post character counter with the 210-char "See more" cutoff marked so your hook lands. 3000-char limit, copy-ready. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-count/" rel="canonical"/>
+<meta content="LinkedIn Post Character Counter (3000) | SharpDev.Tools" property="og:title"/>
+<meta content="Live LinkedIn post character counter with the 210-char "See more" cutoff marked so your hook lands. 3000-char limit, copy-ready. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-count/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn Post Character Counter (3000) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live LinkedIn post character counter with the 210-char "See more" cutoff marked so your hook lands. 3000-char limit, copy-ready. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name": "LinkedIn", "item": "https://sharpdev.tools/#linkedin"},
+    {"@type":"ListItem","position":3,"name":"LinkedIn Counter","item":"https://sharpdev.tools/tools/linkedin-count/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why 210 characters for the \u201cSee more\u201d cutoff?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn truncates posts in the feed at roughly 210 characters on desktop before showing a \u201c\u2026see more\u201d link. That's your hook. Anything past that is hidden until the reader clicks to expand."}},
+    {"@type":"Question","name":"What is the LinkedIn post character limit?","acceptedAnswer":{"@type":"Answer","text":"3,000 characters for text posts. Articles on LinkedIn have their own, much longer limits."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"LinkedIn Post Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/linkedin-count/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-count/linkedin-count.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-count');</script>
+<div class="page">
+<h1>LinkedIn Post Counter</h1>
+<p class="subtitle">3000-char limit. The dotted line shows where LinkedIn cuts to "…see more" (210 chars). Nail your hook above it.</p>
+<label for="text-in">Your post</label>
+<textarea id="text-in" oninput="liGo()" placeholder="Start typing or paste your LinkedIn post..."></textarea>
+<div class="li-meter" id="li-meter">
+<div class="li-bar-wrap">
+<div class="li-bar" id="li-bar"></div>
+<div class="li-hook-mark" id="li-hook-mark" title="LinkedIn truncates at ~210 chars"></div>
+</div>
+<div class="li-stats">
+<span id="li-count">0</span> / 3000
+<span class="li-sep">•</span>
+<span id="li-hook">0/210 hook</span>
+</div>
+</div>
+<div class="li-preview" id="li-preview">
+<div class="li-preview-head">Feed preview (what shows before "…see more")</div>
+<div class="li-preview-body" id="li-preview-body">—</div>
+<div class="li-preview-meta" id="li-preview-meta"></div>
+</div>
+</div>
+<script src="/tools/linkedin-count/linkedin-count.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

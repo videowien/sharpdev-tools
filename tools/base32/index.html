@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Base32 Encode / Decode (RFC 4648) | SharpDev.Tools</title>
+<meta content="Free Base32 encoder and decoder. Convert text to RFC 4648 Base32 and back, with padding. UTF-8 aware, runs entirely in your browser — nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/base32/" rel="canonical"/>
+<meta content="Base32 Encode / Decode (RFC 4648) | SharpDev.Tools" property="og:title"/>
+<meta content="Free Base32 encoder and decoder. Convert text to RFC 4648 Base32 and back, with padding. UTF-8 aware, runs entirely in your browser — nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/base32/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Base32 Encode / Decode (RFC 4648) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Base32 encoder and decoder. Convert text to RFC 4648 Base32 and back, with padding. UTF-8 aware, runs entirely in your browser — nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Base32 Encoder & Decoder","item":"https://sharpdev.tools/tools/base32/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Base32?","acceptedAnswer":{"@type":"Answer","text":"Base32 encodes binary data using 32 characters (A\u2013Z and 2\u20137). It's case-insensitive and avoids easily-confused characters, so it's common in TOTP secrets, file names and URLs."}},{"@type":"Question","name":"How is it different from Base64?","acceptedAnswer":{"@type":"Answer","text":"Base64 uses 64 characters and is more compact, but is case-sensitive and includes symbols. Base32 is longer but safer for case-insensitive, human-readable contexts."}},{"@type":"Question","name":"Is my input uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Encoding and decoding run entirely in your browser."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Base32 Encoder & Decoder \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/base32/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/base32/base32.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('base32');</script>
+<div class="page">
+<h1>Base32 Encoder & Decoder</h1>
+<p class="subtitle">Encode text to Base32 or decode Base32 back to text, following RFC 4648. Runs in your browser.</p>
+<div class="field"><label for="in">Input</label><textarea id="in" placeholder="Text to encode, or Base32 to decode">Hello, World!</textarea></div>
+<div class="actions"><button class="small-btn" id="enc">Encode →</button><button class="small-btn" id="dec">← Decode</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is Base32?</summary><p>Base32 encodes binary data using 32 characters (A–Z and 2–7). It's case-insensitive and avoids easily-confused characters, so it's common in TOTP secrets, file names and URLs.</p></details>
+<details><summary>How is it different from Base64?</summary><p>Base64 uses 64 characters and is more compact, but is case-sensitive and includes symbols. Base32 is longer but safer for case-insensitive, human-readable contexts.</p></details>
+<details><summary>Is my input uploaded?</summary><p>No. Encoding and decoding run entirely in your browser.</p></details>
+</section>
+<script src="/tools/base32/base32.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

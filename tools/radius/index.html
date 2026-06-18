@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Border Radius Generator — All 4 Corners Independent | SharpDev.Tools</title>
+<meta content="Visual CSS border-radius builder. Control each corner independently, link for uniform radii, live preview, copy the CSS rule. Free, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/radius/" rel="canonical"/>
+<meta content="Border Radius Generator — All 4 Corners Independent | SharpDev.Tools" property="og:title"/>
+<meta content="Visual CSS border-radius builder. Control each corner independently, link for uniform radii, live preview, copy the CSS rule. Free, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/radius/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Border Radius Generator — All 4 Corners Independent | SharpDev.Tools" name="twitter:title"/>
+<meta content="Visual CSS border-radius builder. Control each corner independently, link for uniform radii, live preview, copy the CSS rule. Free, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"Border Radius","item":"https://sharpdev.tools/tools/radius/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between single and elliptical radii?","acceptedAnswer":{"@type":"Answer","text":"A single value like 20px makes a perfectly round corner. A pair like 20px 40px produces an elliptical corner — 20px horizontal curve and 40px vertical curve. Toggle the Elliptical mode to expose both."}},
+    {"@type":"Question","name":"Can I use percentages?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the unit selector from px to % and your radius is computed relative to the element's box. 50/50% on a square makes a perfect circle."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Border Radius Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/radius/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/radius/radius.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('radius');</script>
+<div class="page">
+<h1>Border Radius Generator</h1>
+<p class="subtitle">Control each corner independently. Link mode gives you one knob for all four.</p>
+<div class="rad-layout">
+<div class="rad-preview">
+<div class="rad-box" id="rad-box"></div>
+</div>
+<div class="rad-controls">
+<div class="rad-options">
+<label class="chip"><input type="checkbox" id="link-all" checked> Link all corners</label>
+<label class="chip"><input type="checkbox" id="elliptical"> Elliptical</label>
+<select id="unit-select" class="unit-select">
+<option value="px">px</option>
+<option value="%">%</option>
+</select>
+</div>
+<div class="rad-sliders" id="rad-sliders"></div>
+</div>
+</div>
+<div class="code-panel">
+<div class="code-head"><span>Generated CSS</span><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<pre id="code-out"></pre>
+</div>
+</div>
+<script src="/tools/radius/radius.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

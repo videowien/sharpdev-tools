@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>String Escape / Unescape — JSON, JS, HTML, URL, Backslash | SharpDev.Tools</title>
+<meta content="Escape or unescape strings for JSON, JavaScript, HTML, URL and backslash sequences. Two-way, instant. Free online string escaper, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/string-escape/" rel="canonical"/>
+<meta content="String Escape / Unescape — JSON, JS, HTML, URL, Backslash | SharpDev.Tools" property="og:title"/>
+<meta content="Escape or unescape strings for JSON, JavaScript, HTML, URL and backslash sequences. Two-way, instant. Free online string escaper, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/string-escape/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="String Escape / Unescape — JSON, JS, HTML, URL, Backslash | SharpDev.Tools" name="twitter:title"/>
+<meta content="Escape or unescape strings for JSON, JavaScript, HTML, URL and backslash sequences. Two-way, instant. Free online string escaper, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"String Escape / Unescape","item":"https://sharpdev.tools/tools/string-escape/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does string escaping do?","acceptedAnswer":{"@type":"Answer","text":"It replaces characters that have special meaning in a given context with safe escape sequences. For example, a double quote inside a JSON string becomes \\\", and a < in HTML becomes &lt;. Unescaping reverses it."}},{"@type":"Question","name":"Which formats are supported?","acceptedAnswer":{"@type":"Answer","text":"JSON string escaping, JavaScript string escaping, HTML entity encoding, and URL percent-encoding, each in both directions (escape and unescape)."}},{"@type":"Question","name":"Does it run locally?","acceptedAnswer":{"@type":"Answer","text":"Yes, entirely in your browser. Paste secrets or internal strings safely; nothing is transmitted."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"String Escape / Unescape \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/string-escape/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/string-escape/string-escape.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('string-escape');</script>
+<div class="page">
+<h1>String Escape / Unescape</h1>
+<p class="subtitle">Escape or unescape text for JSON, JavaScript, HTML, URL or raw backslash sequences.</p>
+<div class="row">
+<div class="field" style="flex:0 0 160px"><label for="mode">Format</label><select id="mode"><option value="json">JSON string</option><option value="js">JavaScript</option><option value="html">HTML</option><option value="url">URL</option></select></div>
+<div class="actions" style="align-items:center"><button class="small-btn" id="esc">Escape &#8595;</button><button class="small-btn" id="unesc">Unescape &#8593;</button></div>
+</div>
+<div class="field"><label for="in">Input</label><textarea id="in" placeholder="Paste text to escape or unescape..."></textarea></div>
+<div class="out-head"><label for="out">Output</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does string escaping do?</summary><p>It replaces characters that have special meaning in a given context with safe escape sequences. For example, a double quote inside a JSON string becomes \", and a < in HTML becomes &lt;. Unescaping reverses it.</p></details>
+<details><summary>Which formats are supported?</summary><p>JSON string escaping, JavaScript string escaping, HTML entity encoding, and URL percent-encoding, each in both directions (escape and unescape).</p></details>
+<details><summary>Does it run locally?</summary><p>Yes, entirely in your browser. Paste secrets or internal strings safely; nothing is transmitted.</p></details>
+</section>
+<script src="/tools/string-escape/string-escape.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

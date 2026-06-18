@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SQL Formatter — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Format messy SQL queries with indented clauses, configurable keyword case and comma style. Free online SQL formatter, no ads, no sign-up needed." name="description"/>
+<link href="https://sharpdev.tools/tools/sql/" rel="canonical"/>
+<meta content="SQL Formatter — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Format messy SQL queries with indented clauses, configurable keyword case and comma style. Free online SQL formatter, no ads, no sign-up needed." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/sql/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="SQL Formatter — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Format messy SQL queries with indented clauses, configurable keyword case and comma style. Free online SQL formatter, no ads, no sign-up needed." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Data & Files",
+        "item": "https://sharpdev.tools/#data-files"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SQL Formatter",
+        "item": "https://sharpdev.tools/tools/sql/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which SQL dialects does the SQL Formatter support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A generic dialect that handles standard SQL plus MySQL, PostgreSQL, SQLite and SQL Server keywords, comments and string literals correctly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my query uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Formatting runs locally in your browser — your SQL never leaves your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SQL Formatter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/sql/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/sql/sql.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('sql');</script>
+<div class="page">
+<h1>SQL Formatter</h1>
+<p class="subtitle">Format messy SQL. Keywords on new lines, indented clauses. Handles comments and strings correctly.</p>
+<div class="actions">
+<button class="btn" onclick="doFormat()">Format</button>
+<button class="btn" onclick="doMinify()">Minify</button>
+<button class="btn" onclick="setCase('upper')">Keywords UPPER</button>
+<button class="btn" onclick="setCase('lower')">Keywords lower</button>
+<button class="btn" onclick="swap()">Use output as input</button>
+<button class="btn" onclick="copyOut()">Copy</button>
+<button class="btn btn-reset" onclick="clearAll()">Clear</button>
+</div>
+<div class="opt-row">
+<label>Indent:
+      <select id="opt-indent">
+<option value="2">2 spaces</option>
+<option selected="" value="4">4 spaces</option>
+<option value="tab">tab</option>
+</select>
+</label>
+<label>Keyword case:
+      <select id="opt-case">
+<option selected="" value="upper">UPPER</option>
+<option value="lower">lower</option>
+<option value="preserve">preserve</option>
+</select>
+</label>
+<label>Commas:
+      <select id="opt-comma">
+<option selected="" value="end">end of line</option>
+<option value="start">start of line</option>
+</select>
+</label>
+</div>
+<div class="grid">
+<div class="col">
+<label for="input">Input</label>
+<textarea id="input" placeholder="select id, name, email from users where active=1 and signup_date &gt; '2024-01-01' order by signup_date desc limit 10;" spellcheck="false"></textarea>
+<div class="stats" id="stats-in">0 chars</div>
+</div>
+<div class="col">
+<label for="output">Output</label>
+<textarea id="output" placeholder="Formatted SQL will appear here..." readonly="" spellcheck="false"></textarea>
+<div class="stats" id="stats-out">0 chars</div>
+</div>
+</div>
+</div>
+<script src="/tools/sql/sql.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

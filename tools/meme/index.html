@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Meme Generator | SharpDev.Tools</title>
+<meta content="Free meme generator. Upload any image, add classic bold top and bottom caption text with the traditional white-and-black outline, and download — all in your browser. Nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/meme/" rel="canonical"/>
+<meta content="Meme Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free meme generator. Upload any image, add classic bold top and bottom caption text with the traditional white-and-black outline, and download — all in your browser. Nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/meme/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Meme Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free meme generator. Upload any image, add classic bold top and bottom caption text with the traditional white-and-black outline, and download — all in your browser. Nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Meme Generator","item":"https://sharpdev.tools/tools/meme/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What font does it use?","acceptedAnswer":{"@type":"Answer","text":"The classic meme look uses Impact (with Arial Black as a fallback) in bold white with a black outline \u2014 the traditional caption style."}},{"@type":"Question","name":"Why is my text in capitals?","acceptedAnswer":{"@type":"Answer","text":"Meme captions are traditionally uppercase, so the tool capitalizes automatically for that recognizable look."}},{"@type":"Question","name":"Is the image uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The meme is drawn on a canvas in your browser and downloaded locally; nothing is sent to a server."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Meme Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/meme/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/meme/meme.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('meme');</script>
+<div class="page">
+<h1>Meme Generator</h1>
+<p class="subtitle">Add classic top and bottom text to any image and download the meme. Runs in your browser.</p>
+<label class="sd-drop" for="file">Click or drop an image here<input type="file" id="file" accept="image/*"></label>
+<div class="row"><div class="field"><label for="top">Top text</label><input type="text" id="top" value="ONE DOES NOT SIMPLY"></div><div class="field"><label for="bot">Bottom text</label><input type="text" id="bot" value="MAKE A MEME"></div></div>
+<div class="row"><div class="field"><label for="size">Font size (%)</label><input type="number" id="size" value="10" min="3" max="20"></div></div>
+<div class="out-head"><label>Preview</label><a class="copy-btn" id="dl" style="display:none;">Download PNG</a></div>
+<canvas id="cv"></canvas>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What font does it use?</summary><p>The classic meme look uses Impact (with Arial Black as a fallback) in bold white with a black outline — the traditional caption style.</p></details>
+<details><summary>Why is my text in capitals?</summary><p>Meme captions are traditionally uppercase, so the tool capitalizes automatically for that recognizable look.</p></details>
+<details><summary>Is the image uploaded anywhere?</summary><p>No. The meme is drawn on a canvas in your browser and downloaded locally; nothing is sent to a server.</p></details>
+</section>
+<script src="/tools/meme/meme.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+.page { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 24px; font-size: 14px; }
+
+label {
+  display: block; font-size: 12px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.card {
+  background: #141414; border: 1px solid #262626; border-radius: 12px;
+  padding: 24px; margin-bottom: 16px;
+}
+
+textarea {
+  width: 100%; min-height: 160px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; padding: 14px; outline: none;
+  font-family: inherit; line-height: 1.6; font-size: 15px;
+  transition: border-color 0.15s;
+}
+textarea:focus { border-color: #ff4444; }
+
+.toggles {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px;
+}
+.toggle {
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 6px;
+  cursor: pointer; font-size: 13px; color: #ccc; text-transform: none;
+  letter-spacing: normal; margin-bottom: 0; font-weight: 500;
+}
+.toggle:hover { border-color: #444; }
+.toggle input { accent-color: #ff4444; width: 14px; height: 14px; margin: 0; }
+
+.hl-preview {
+  margin-top: 16px; padding: 16px; background: #0d0d0d;
+  border: 1px solid #222; border-radius: 8px;
+  color: #ccc; line-height: 1.7; font-size: 15px;
+  white-space: pre-wrap; word-wrap: break-word;
+}
+.hl-preview .long-sent { background: rgba(251,191,36,0.12); border-bottom: 1px solid #fbbf24; }
+.hl-preview .complex-word { color: #ff4444; font-weight: 600; }
+
+.summary-card {
+  background: linear-gradient(135deg, #1a1010 0%, #141414 100%);
+  border: 1px solid #2a2a2a; border-radius: 12px;
+  padding: 28px 24px; text-align: center; margin-bottom: 16px;
+}
+.summary-label {
+  color: #888; font-size: 12px; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 600;
+}
+.summary-val {
+  color: #ff4444; font-size: 64px; font-weight: 700; line-height: 1;
+  font-family: 'SF Mono', Monaco, monospace; margin: 10px 0;
+}
+.summary-sub { color: #aaa; font-size: 14px; }
+
+.sec-title { color: #fff; font-size: 15px; margin-bottom: 14px; }
+.section-title {
+  color: #fff; font-size: 13px; text-transform: uppercase;
+  letter-spacing: 1px; margin: 24px 0 12px; font-weight: 700;
+}
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.stat {
+  background: #0d0d0d; border: 1px solid #222; border-radius: 6px;
+  padding: 10px 12px;
+}
+.stat .lbl { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat .val {
+  color: #fff; font-family: 'SF Mono', Monaco, monospace;
+  font-size: 18px; font-weight: 600; margin-top: 4px;
+}
+
+.scores-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px;
+}
+.score-card {
+  background: #141414; border: 1px solid #262626; border-radius: 10px;
+  padding: 18px;
+}
+.score-name { color: #fff; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.score-sub { color: #666; font-size: 11px; margin-bottom: 10px; }
+.score-val {
+  color: #ff4444; font-size: 28px; font-weight: 700;
+  font-family: 'SF Mono', Monaco, monospace; line-height: 1;
+}
+.score-interp { color: #aaa; font-size: 12px; margin-top: 8px; line-height: 1.4; }
+
+.bar {
+  height: 6px; background: #1f1f1f; border-radius: 3px; overflow: hidden; margin-top: 8px;
+}
+.bar-fill {
+  height: 100%; background: linear-gradient(90deg, #ff4444, #fbbf24, #4ade80);
+  transition: width 0.3s;
+}
+
+.info-card {
+  padding: 16px 20px; background: #0d0d0d; border: 1px solid #1f1f1f;
+  border-radius: 10px; margin-top: 16px;
+}
+.info-card h3 { color: #ccc; font-size: 13px; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.info-card p { color: #888; font-size: 13px; line-height: 1.6; margin: 0; }
+
+@media (max-width: 800px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .scores-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .scores-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .summary-val { font-size: 48px; }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Mock Data — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Generate fake users, addresses and dates for prototyping and export as JSON, CSV, NDJSON, SQL or TypeScript. Free online, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/mock-data/" rel="canonical"/>
+<meta content="Mock Data — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Generate fake users, addresses and dates for prototyping and export as JSON, CSV, NDJSON, SQL or TypeScript. Free online, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mock-data/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Mock Data — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate fake users, addresses and dates for prototyping and export as JSON, CSV, NDJSON, SQL or TypeScript. Free online, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Generators",
+        "item": "https://sharpdev.tools/#generators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Mock Data",
+        "item": "https://sharpdev.tools/tools/mock-data/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What data can the Mock Data Generator produce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fake users, names, emails, addresses, phone numbers, dates, IDs and custom fields — exportable as JSON, CSV, NDJSON, SQL INSERT statements or TypeScript types."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no account needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my schema uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All mock data is generated locally in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mock Data — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/mock-data/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mock-data/mock-data.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mock-data');</script>
+<div class="page">
+<h1>Mock Data Generator</h1>
+<p class="subtitle">Generate fake users, addresses, dates for prototyping. Export as JSON, NDJSON, CSV, SQL, or TypeScript.</p>
+<div class="panels">
+<div class="panel">
+<div class="panel-head">
+<label>Schema</label>
+<div class="presets">
+<span class="preset-label">Presets:</span>
+<button class="small-btn" data-preset="user">User</button>
+<button class="small-btn" data-preset="customer">Customer</button>
+<button class="small-btn" data-preset="product">Product</button>
+<button class="small-btn" data-preset="transaction">Transaction</button>
+<button class="small-btn" data-preset="post">Blog Post</button>
+</div>
+</div>
+<div class="fields" id="fields"></div>
+<button class="btn btn-add" id="btn-add">+ Add field</button>
+<div class="options">
+<div class="opt">
+<label>Format</label>
+<select id="opt-format">
+<option selected="" value="json">JSON</option>
+<option value="ndjson">NDJSON</option>
+<option value="csv">CSV</option>
+<option value="sql">SQL INSERT</option>
+<option value="ts">TypeScript</option>
+</select>
+</div>
+<div class="opt">
+<label>Count</label>
+<input id="opt-count" max="1000" min="1" type="number" value="10"/>
+</div>
+<div class="opt">
+<label>Table / Type name</label>
+<input id="opt-table" type="text" value="users"/>
+</div>
+<div class="opt">
+<label>Seed (optional)</label>
+<input id="opt-seed" placeholder="random" type="text"/>
+</div>
+</div>
+<div class="actions">
+<button class="btn" id="btn-gen">Regenerate</button>
+<button class="btn" id="btn-copy">Copy</button>
+<button class="btn" id="btn-dl">Download</button>
+</div>
+</div>
+<div class="panel out-panel">
+<label for="output">Output</label>
+<textarea id="output" readonly="" spellcheck="false"></textarea>
+<div class="stats" id="stats">0 chars</div>
+</div>
+</div>
+</div>
+<script src="/tools/mock-data/mock-data.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

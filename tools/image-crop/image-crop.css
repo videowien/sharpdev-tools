@@ -1,0 +1,63 @@
+/* Image Crop — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-group select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+}
+.crop-size { font-family: 'SF Mono', monospace; color: #fff; font-size: 14px; padding-top: 8px; }
+
+.crop-stage {
+  position: relative; background: #0a0a0a; padding: 0;
+  border-radius: 8px; overflow: hidden; user-select: none;
+  display: flex; justify-content: center; max-height: 540px;
+}
+#display { display: block; max-width: 100%; max-height: 540px; }
+
+.crop-box {
+  position: absolute;
+  border: 2px solid #ff4444; box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+  cursor: move;
+}
+.crop-handle {
+  position: absolute;
+  width: 12px; height: 12px;
+  background: #ff4444; border: 2px solid #fff;
+  border-radius: 50%;
+}
+.crop-handle[data-handle="nw"] { top: -6px; left: -6px; cursor: nw-resize; }
+.crop-handle[data-handle="ne"] { top: -6px; right: -6px; cursor: ne-resize; }
+.crop-handle[data-handle="sw"] { bottom: -6px; left: -6px; cursor: sw-resize; }
+.crop-handle[data-handle="se"] { bottom: -6px; right: -6px; cursor: se-resize; }
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+
+.aspect-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.aspect-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.aspect-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.aspect-table td:first-child { font-family: 'SF Mono', monospace; color: #fff; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

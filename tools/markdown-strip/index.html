@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Markdown Stripper — Convert Markdown to Plain Text | SharpDev.Tools</title>
+<meta content="Remove Markdown formatting and get clean plain text. Strips headings, bold, italics, links, code, lists and more. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/markdown-strip/" rel="canonical"/>
+<meta content="Markdown Stripper — Convert Markdown to Plain Text | SharpDev.Tools" property="og:title"/>
+<meta content="Remove Markdown formatting and get clean plain text. Strips headings, bold, italics, links, code, lists and more. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/markdown-strip/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Markdown Stripper — Convert Markdown to Plain Text | SharpDev.Tools" name="twitter:title"/>
+<meta content="Remove Markdown formatting and get clean plain text. Strips headings, bold, italics, links, code, lists and more. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Markdown to Plain Text","item":"https://sharpdev.tools/tools/markdown-strip/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Markdown stripper remove?","acceptedAnswer":{"@type":"Answer","text":"Heading hashes, bold and italic markers, inline and fenced code backticks, link and image syntax (keeping the visible text), blockquotes, list bullets and numbers, horizontal rules, and table pipes. The readable words remain."}},{"@type":"Question","name":"How is this different from a Markdown previewer?","acceptedAnswer":{"@type":"Answer","text":"A previewer renders Markdown as styled HTML. This does the opposite: it removes the syntax entirely so you get flat plain text, useful for word counts, plain-text emails or pasting where formatting is not allowed."}},{"@type":"Question","name":"Does it run locally?","acceptedAnswer":{"@type":"Answer","text":"Yes, entirely in your browser. Your text is never uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Markdown to Plain Text \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/markdown-strip/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/markdown-strip/markdown-strip.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('markdown-strip');</script>
+<div class="page">
+<h1>Markdown to Plain Text</h1>
+<p class="subtitle">Strip Markdown syntax and keep just the readable text. Headings, bold, links, code, lists.</p>
+<div class="field"><label for="in">Markdown</label><textarea id="in" placeholder="# Title
+
+Some **bold** and a [link](https://x.com)."></textarea></div>
+<div class="out-head"><label for="out">Plain text</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the Markdown stripper remove?</summary><p>Heading hashes, bold and italic markers, inline and fenced code backticks, link and image syntax (keeping the visible text), blockquotes, list bullets and numbers, horizontal rules, and table pipes. The readable words remain.</p></details>
+<details><summary>How is this different from a Markdown previewer?</summary><p>A previewer renders Markdown as styled HTML. This does the opposite: it removes the syntax entirely so you get flat plain text, useful for word counts, plain-text emails or pasting where formatting is not allowed.</p></details>
+<details><summary>Does it run locally?</summary><p>Yes, entirely in your browser. Your text is never uploaded.</p></details>
+</section>
+<script src="/tools/markdown-strip/markdown-strip.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

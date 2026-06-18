@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Hours Calculator — Add Up Work Time and Timesheets | SharpDev.Tools</title>
+<meta content="Add up hours from start and end times across multiple rows, subtract breaks, and get total hours and decimal hours. Free timesheet calculator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/hours-calculator/" rel="canonical"/>
+<meta content="Hours Calculator — Add Up Work Time and Timesheets | SharpDev.Tools" property="og:title"/>
+<meta content="Add up hours from start and end times across multiple rows, subtract breaks, and get total hours and decimal hours. Free timesheet calculator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hours-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hours Calculator — Add Up Work Time and Timesheets | SharpDev.Tools" name="twitter:title"/>
+<meta content="Add up hours from start and end times across multiple rows, subtract breaks, and get total hours and decimal hours. Free timesheet calculator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Hours Calculator","item":"https://sharpdev.tools/tools/hours-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add up my work hours?","acceptedAnswer":{"@type":"Answer","text":"Enter a start and end time on each row, plus any unpaid break in minutes. The calculator sums every row and shows the total as hours and minutes and as decimal hours for payroll."}},{"@type":"Question","name":"Does it handle overnight shifts?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the end time is earlier than the start time, the row is treated as crossing midnight and the duration is calculated correctly."}},{"@type":"Question","name":"What are decimal hours for?","acceptedAnswer":{"@type":"Answer","text":"Payroll and invoicing usually use decimal hours (for example 7.5 instead of 7h 30m). The tool shows both so you can copy whichever your timesheet needs."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Hours Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/hours-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hours-calculator/hours-calculator.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hours-calculator');</script>
+<div class="page">
+<h1>Hours Calculator</h1>
+<p class="subtitle">Enter start and end times, subtract breaks, get the total in hours:minutes and decimal hours.</p>
+<div id="rows"></div>
+<div class="actions"><button class="small-btn" id="add">+ Add row</button></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I add up my work hours?</summary><p>Enter a start and end time on each row, plus any unpaid break in minutes. The calculator sums every row and shows the total as hours and minutes and as decimal hours for payroll.</p></details>
+<details><summary>Does it handle overnight shifts?</summary><p>Yes. If the end time is earlier than the start time, the row is treated as crossing midnight and the duration is calculated correctly.</p></details>
+<details><summary>What are decimal hours for?</summary><p>Payroll and invoicing usually use decimal hours (for example 7.5 instead of 7h 30m). The tool shows both so you can copy whichever your timesheet needs.</p></details>
+</section>
+<script src="/tools/hours-calculator/hours-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

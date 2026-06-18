@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gas Mileage Calculator — MPG, L/100km, Cost per Mile | SharpDev.Tools</title>
+<meta content="Calculate fuel economy — MPG (US + UK), L/100km, km/L. Cost per mile + total trip cost. Switch between miles / km, gallons / litres. Free, browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/mpg/" rel="canonical"/>
+<meta content="Gas Mileage Calculator — MPG, L/100km, Cost per Mile | SharpDev.Tools" property="og:title"/>
+<meta content="MPG (US + UK), L/100km, km/L. Cost per mile + trip total. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mpg/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Gas Mileage Calculator — MPG, L/100km, Cost per Mile | SharpDev.Tools" name="twitter:title"/>
+<meta content="MPG (US + UK), L/100km, km/L. Cost per mile + trip total." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/calculators/"},
+    {"@type":"ListItem","position":3,"name":"Gas Mileage Calculator","item":"https://sharpdev.tools/tools/mpg/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's good MPG?","acceptedAnswer":{"@type":"Answer","text":"Compact cars: 30-40 MPG (city) and 35-45 (highway). SUVs: 18-25 MPG. Hybrids: 45-55. Pure EVs convert at MPGe ~100+. UK MPG is ~20% higher than US MPG because the UK gallon is larger."}},
+    {"@type":"Question","name":"How is L/100km different from MPG?","acceptedAnswer":{"@type":"Answer","text":"MPG = miles per gallon (higher = better). L/100km = litres per 100 km (lower = better). Most of the world outside the US uses L/100km. 6 L/100km ≈ 39 US MPG."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All math runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Gas Mileage — SharpDev.Tools","url":"https://sharpdev.tools/tools/mpg/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mpg/mpg.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mpg');</script>
+<div class="page">
+<h1>Gas Mileage Calculator</h1>
+<p class="subtitle">MPG (US + UK), L/100km, cost per mile, full trip cost.</p>
+
+<div class="card">
+<div class="form-grid">
+<div class="form-row">
+<label class="opt-label">Distance</label>
+<div class="row">
+<input id="distance" type="number" step="0.1" min="0" value="350"/>
+<select id="dist-unit">
+<option value="mi" selected>miles</option>
+<option value="km">km</option>
+</select>
+</div>
+</div>
+
+<div class="form-row">
+<label class="opt-label">Fuel used</label>
+<div class="row">
+<input id="fuel" type="number" step="0.01" min="0" value="12"/>
+<select id="fuel-unit">
+<option value="gal-us" selected>US gallons</option>
+<option value="gal-uk">UK gallons</option>
+<option value="l">litres</option>
+</select>
+</div>
+</div>
+
+<div class="form-row">
+<label class="opt-label">Fuel price (per unit)</label>
+<div class="row">
+<input id="price" type="number" step="0.01" min="0" value="3.50"/>
+<select id="currency">
+<option>$</option><option>€</option><option>£</option><option>¥</option>
+</select>
+<span class="unit-label" id="price-per">per US gallon</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="result-grid">
+<div class="result-block highlight">
+<div class="result-label">Fuel economy</div>
+<div class="result-value" id="r-mpg-us">—</div>
+<div class="result-sub">US MPG</div>
+</div>
+<div class="result-block">
+<div class="result-label">UK MPG</div>
+<div class="result-value" id="r-mpg-uk">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">L / 100 km</div>
+<div class="result-value" id="r-l100">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">km / litre</div>
+<div class="result-value" id="r-kmpl">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Cost / mile</div>
+<div class="result-value" id="r-cpm">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Trip total</div>
+<div class="result-value" id="r-total">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Reference economy by vehicle type</h2>
+<table class="ref-table">
+<tr><th>Vehicle</th><th>US MPG</th><th>L/100km</th></tr>
+<tr><td>Subcompact petrol</td><td>32-40</td><td>5.9-7.4</td></tr>
+<tr><td>Mid-size sedan</td><td>24-32</td><td>7.4-9.8</td></tr>
+<tr><td>SUV / Crossover</td><td>20-28</td><td>8.4-11.8</td></tr>
+<tr><td>Pickup truck</td><td>15-22</td><td>10.7-15.7</td></tr>
+<tr><td>Hybrid sedan</td><td>45-55</td><td>4.3-5.2</td></tr>
+<tr><td>Plug-in hybrid</td><td>50-100 MPGe</td><td>2.4-4.7</td></tr>
+<tr><td>EV (MPGe equivalent)</td><td>100-140</td><td>1.7-2.4</td></tr>
+</table>
+
+<h2>UK vs US gallon</h2>
+<p>1 UK gallon = 4.546 litres. 1 US gallon = 3.785 litres. So UK MPG always reads ~20% higher than US MPG for the same car.</p>
+
+<h2>Privacy</h2>
+<p>All math runs in your browser.</p>
+</section>
+
+<script src="/tools/mpg/mpg.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

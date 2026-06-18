@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Random Key Generator — API Keys, Tokens, Hex &amp; Base64 Secrets | SharpDev.Tools</title>
+<meta content="Generate cryptographically secure random keys and tokens: hex, base64, base64url or alphanumeric, any length, in bulk. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/random-key/" rel="canonical"/>
+<meta content="Random Key Generator — API Keys, Tokens, Hex &amp; Base64 Secrets | SharpDev.Tools" property="og:title"/>
+<meta content="Generate cryptographically secure random keys and tokens: hex, base64, base64url or alphanumeric, any length, in bulk. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/random-key/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Random Key Generator — API Keys, Tokens, Hex &amp; Base64 Secrets | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate cryptographically secure random keys and tokens: hex, base64, base64url or alphanumeric, any length, in bulk. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Random Key Generator","item":"https://sharpdev.tools/tools/random-key/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these keys cryptographically secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every byte comes from the browser's crypto.getRandomValues(), the same secure generator used for cryptographic keys, not the predictable Math.random()."}},{"@type":"Question","name":"Which format should I use for an API key?","acceptedAnswer":{"@type":"Answer","text":"Hex and Base64URL are the most common for API keys and tokens because they are URL-safe and copy cleanly. Alphanumeric avoids symbols entirely if a system rejects them."}},{"@type":"Question","name":"Is anything sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Keys are generated locally in your browser and never transmitted, so they are safe to use as real secrets."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Random Key Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/random-key/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/random-key/random-key.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('random-key');</script>
+<div class="page">
+<h1>Random Key Generator</h1>
+<p class="subtitle">Cryptographically secure keys and tokens. Hex, Base64, Base64URL or alphanumeric, any length.</p>
+<div class="row">
+<div class="field" style="flex:0 0 170px"><label for="fmt">Format</label><select id="fmt"><option value="hex">Hex</option><option value="b64">Base64</option><option value="b64url">Base64 URL-safe</option><option value="alnum">Alphanumeric</option></select></div>
+<div class="field" style="flex:0 0 130px"><label for="len">Length (chars)</label><input type="number" id="len" value="32" min="4" max="512"></div>
+<div class="field" style="flex:0 0 130px"><label for="count">How many</label><input type="number" id="count" value="5" min="1" max="200"></div>
+</div>
+<div class="actions"><button class="btn btn-primary" id="gen">Generate</button></div>
+<div class="out-head"><label for="out">Keys</label><button class="copy-btn" id="copy">Copy all</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Are these keys cryptographically secure?</summary><p>Yes. Every byte comes from the browser's crypto.getRandomValues(), the same secure generator used for cryptographic keys, not the predictable Math.random().</p></details>
+<details><summary>Which format should I use for an API key?</summary><p>Hex and Base64URL are the most common for API keys and tokens because they are URL-safe and copy cleanly. Alphanumeric avoids symbols entirely if a system rejects them.</p></details>
+<details><summary>Is anything sent to a server?</summary><p>No. Keys are generated locally in your browser and never transmitted, so they are safe to use as real secrets.</p></details>
+</section>
+<script src="/tools/random-key/random-key.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

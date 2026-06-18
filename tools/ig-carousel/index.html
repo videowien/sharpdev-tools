@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Carousel Image Splitter — Split Wide Image into 10 Slides | SharpDev.Tools</title>
+<meta content="Split one wide image into 2-10 square Instagram-ready slides. Pick aspect ratio (1:1, 4:5), download all as ZIP. Free, instant, runs in your browser — no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-carousel/" rel="canonical"/>
+<meta content="Instagram Carousel Image Splitter — Split Wide Image into 10 Slides | SharpDev.Tools" property="og:title"/>
+<meta content="Split one wide image into 2-10 square Instagram-ready slides. Pick aspect ratio (1:1, 4:5), download all as ZIP. Free, instant, runs in your browser — no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-carousel/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Carousel Image Splitter — Split Wide Image into 10 Slides | SharpDev.Tools" name="twitter:title"/>
+<meta content="Split one wide image into 2-10 square Instagram-ready slides. Pick aspect ratio (1:1, 4:5), download all as ZIP. Free, instant, runs in your browser — no upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Instagram", "item": "https://sharpdev.tools/#instagram" },
+      { "@type": "ListItem", "position": 3, "name": "Carousel Image Splitter", "item": "https://sharpdev.tools/tools/ig-carousel/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I split a wide image into Instagram carousel slides?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Upload your wide image (e.g. a panoramic photo or a 5400×1080 designed graphic). Pick the slide ratio (1:1 square or 4:5 portrait — Instagram supports both) and the number of slides (2 to 10). The tool slices the image into evenly-sized pieces. Download all as ZIP and upload them to Instagram as a multi-image carousel post." } },
+      { "@type": "Question", "name": "What dimensions should each slide be?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Instagram recommends 1080×1080 for square or 1080×1350 for 4:5 portrait. The tool exports at these dimensions. Your input image's height becomes the slide height — if it's much taller or shorter than the target, the splitter will scale appropriately." } },
+      { "@type": "Question", "name": "How many slides should I make?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Instagram allows 2-10 slides per carousel post. 5-7 is the sweet spot — long enough to deliver value, short enough that people swipe through. Reels and feed posts cap at 10." } },
+      { "@type": "Question", "name": "Are my images uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Slicing happens via Canvas in your browser. Nothing is uploaded — your image stays on your device." } },
+      { "@type": "Question", "name": "Is the carousel splitter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no watermark on the output slides." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram Carousel Image Splitter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/ig-carousel/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-carousel/ig-carousel.css" rel="stylesheet"/>
+<script src="/shared/zip.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-carousel');</script>
+<div class="page">
+<h1>Instagram Carousel Image Splitter</h1>
+<p class="subtitle">Split a wide image into 2–10 Instagram-ready slides. Square (1:1) or portrait (4:5). All processing local.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a wide image here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP — anything wider than tall works best</p>
+</div>
+</div>
+</div>
+
+<div class="card options-card" id="options-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Slide ratio</label>
+<div class="toggle-row">
+<label class="toggle"><input checked name="ratio" type="radio" value="1:1"/><span>1:1 Square</span></label>
+<label class="toggle"><input name="ratio" type="radio" value="4:5"/><span>4:5 Portrait</span></label>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label" for="slides">Number of slides</label>
+<input id="slides" max="10" min="2" type="number" value="5"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Output format</label>
+<div class="toggle-row">
+<label class="toggle"><input checked name="fmt" type="radio" value="jpg"/><span>JPG</span></label>
+<label class="toggle"><input name="fmt" type="radio" value="png"/><span>PNG</span></label>
+</div>
+</div>
+</div>
+<button class="btn btn-primary" id="split-btn" type="button">Split into slides</button>
+</div>
+
+<div class="card result-area" id="result-area" style="display:none">
+<div class="result-header">
+<span class="result-label" id="result-label"></span>
+<div class="result-actions">
+<button class="btn btn-primary btn-sm" id="zip-btn" type="button">Download all as ZIP</button>
+<button class="btn btn-secondary btn-sm" id="reset-btn" type="button">Reset</button>
+</div>
+</div>
+<div class="slides-grid" id="slides-grid"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How carousel splitting works</h2>
+<p>Carousel posts let you tell a longer story than a single Instagram square. The "wide image trick" is: design one panoramic image (e.g. 5400×1080 for 5 square slides, or 5400×1350 for 5 portrait slides), then slice it into N evenly-sized pieces. When uploaded in order as a carousel, they form a continuous wider canvas as you swipe.</p>
+
+<h2>Recommended input dimensions</h2>
+<ul>
+<li><strong>5 square slides</strong>: 5400 × 1080 (1:1 output)</li>
+<li><strong>7 square slides</strong>: 7560 × 1080</li>
+<li><strong>10 square slides</strong>: 10800 × 1080</li>
+<li><strong>5 portrait slides</strong>: 5400 × 1350 (4:5 output)</li>
+<li><strong>10 portrait slides</strong>: 10800 × 1350</li>
+</ul>
+<p>If your image dimensions don't match exactly, the splitter scales each slice to the target dimensions, which may distort edges. For best quality, design at exact multiples of 1080.</p>
+
+<h2>Posting tips</h2>
+<ul>
+<li><strong>Upload in order</strong> — Instagram preserves the order you select slides. Pick from left to right.</li>
+<li><strong>First slide is the hook</strong> — it appears in feeds and decides whether people swipe.</li>
+<li><strong>Carousels get re-shown</strong> — Instagram re-surfaces carousels to users who didn't swipe past the first slide, giving you a second engagement chance per follower.</li>
+<li><strong>Add captions per slide</strong> — even though they're images, your single post caption should refer to "slide 3 →" etc. for clarity.</li>
+</ul>
+</section>
+
+<script src="/tools/ig-carousel/ig-carousel.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

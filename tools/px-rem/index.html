@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>PX to REM Converter — px, rem, em, pt, percent | SharpDev.Tools</title>
+<meta content="Convert between px, rem, em, pt and percent for CSS, based on your root font size. Type any unit and see the rest instantly. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/px-rem/" rel="canonical"/>
+<meta content="PX to REM Converter — px, rem, em, pt, percent | SharpDev.Tools" property="og:title"/>
+<meta content="Convert between px, rem, em, pt and percent for CSS, based on your root font size. Type any unit and see the rest instantly. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/px-rem/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="PX to REM Converter — px, rem, em, pt, percent | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert between px, rem, em, pt and percent for CSS, based on your root font size. Type any unit and see the rest instantly. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"PX to REM Converter","item":"https://sharpdev.tools/tools/px-rem/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert px to rem?","acceptedAnswer":{"@type":"Answer","text":"rem equals the pixel value divided by the root font size, which is 16px by default. So 24px is 1.5rem. Change the base field if your project uses a different root size."}},{"@type":"Question","name":"What is the difference between rem and em?","acceptedAnswer":{"@type":"Answer","text":"rem is always relative to the root font size, while em is relative to the current element's font size. This converter treats em against the base for a quick estimate; in nested contexts the real em depends on the parent."}},{"@type":"Question","name":"Why convert pt?","acceptedAnswer":{"@type":"Answer","text":"pt (points) appears in print styles and design tools. At the standard 96 dpi, 1pt equals 1.333px, which this tool accounts for."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"PX to REM Converter \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/px-rem/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/px-rem/px-rem.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('px-rem');</script>
+<div class="page">
+<h1>PX to REM Converter</h1>
+<p class="subtitle">Convert px, rem, em, pt and percent for CSS. Set the base font size, type any unit.</p>
+<div class="field" style="max-width:240px"><label for="base">Root font size (px)</label><input type="number" id="base" value="16" min="1" step="0.5"></div>
+<div class="row">
+<div class="field"><label for="px">px</label><input type="number" id="px" value="16" step="0.5"></div>
+<div class="field"><label for="rem">rem</label><input type="number" id="rem" step="0.01"></div>
+<div class="field"><label for="em">em</label><input type="number" id="em" step="0.01"></div>
+<div class="field"><label for="pt">pt</label><input type="number" id="pt" step="0.01"></div>
+<div class="field"><label for="pct">%</label><input type="number" id="pct" step="0.1"></div>
+</div>
+<p class="note">px = rem × base. pt assumes 96 dpi (1pt = 1.333px). % is relative to the base (100% = 1rem).</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert px to rem?</summary><p>rem equals the pixel value divided by the root font size, which is 16px by default. So 24px is 1.5rem. Change the base field if your project uses a different root size.</p></details>
+<details><summary>What is the difference between rem and em?</summary><p>rem is always relative to the root font size, while em is relative to the current element's font size. This converter treats em against the base for a quick estimate; in nested contexts the real em depends on the parent.</p></details>
+<details><summary>Why convert pt?</summary><p>pt (points) appears in print styles and design tools. At the standard 96 dpi, 1pt equals 1.333px, which this tool accounts for.</p></details>
+</section>
+<script src="/tools/px-rem/px-rem.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

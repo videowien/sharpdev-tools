@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voice Recorder Online — Browser MediaRecorder, No Upload | SharpDev.Tools</title>
+<meta content="Record audio from your microphone in the browser — no sign-up, no upload. Download as WebM or OGG. Pause / resume support. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/audio-recorder/" rel="canonical"/>
+<meta content="Voice Recorder Online — Browser MediaRecorder | SharpDev.Tools" property="og:title"/>
+<meta content="Record audio in your browser. WebM / OGG download. Pause / resume. No upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/audio-recorder/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Voice Recorder Online — Browser MediaRecorder | SharpDev.Tools" name="twitter:title"/>
+<meta content="Record audio in your browser. No upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Audio Recorder","item":"https://sharpdev.tools/tools/audio-recorder/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What format is the recording?","acceptedAnswer":{"@type":"Answer","text":"Depends on your browser. Chrome / Firefox / Edge produce WebM (Opus codec). Safari produces MP4 (AAC). Both are universally playable. For MP3 you'd need a separate transcoding library — not included to keep the page light."}},
+    {"@type":"Question","name":"Is the recording uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The audio is captured in your browser via MediaRecorder API. The blob stays in memory until you download it."}},
+    {"@type":"Question","name":"Why does the browser ask for microphone access?","acceptedAnswer":{"@type":"Answer","text":"Browsers require explicit permission before accessing the mic. SharpDev.Tools doesn't store or transmit anything — the permission is a browser-level gate to prevent silent eavesdropping."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Audio Recorder — SharpDev.Tools","url":"https://sharpdev.tools/tools/audio-recorder/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript + microphone","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/audio-recorder/audio-recorder.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('audio-recorder');</script>
+<div class="page">
+<h1>Voice Recorder</h1>
+<p class="subtitle">Record from your mic. Pause, resume, download. Browser-only — no upload.</p>
+
+<div class="card recorder-card">
+<div class="record-area">
+<div class="timer" id="timer">00:00</div>
+<div class="visual" id="visual"></div>
+<div class="actions">
+<button class="big-btn" id="record-btn" type="button">🎤 Record</button>
+<button class="big-btn" id="pause-btn" type="button" disabled>⏸ Pause</button>
+<button class="big-btn" id="stop-btn" type="button" disabled>■ Stop</button>
+</div>
+<p class="status" id="status">Click Record. Your browser will ask for mic permission once.</p>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<label class="opt-label">Recording</label>
+<audio id="audio-preview" controls></audio>
+<div class="action-row">
+<button class="btn btn-primary" id="dl-btn" type="button">Download</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Discard</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Tips for a good recording</h2>
+<ul>
+<li><strong>Close to the mic</strong> — 15-30 cm away for clarity</li>
+<li><strong>Quiet room</strong> — close windows, turn off fans, mute notifications</li>
+<li><strong>External mic if possible</strong> — USB or Lavalier mics significantly outperform laptop built-in</li>
+<li><strong>Test with a 5-second clip first</strong> — check volume and noise before recording a long piece</li>
+</ul>
+
+<h2>What to do with the file</h2>
+<p>The download is WebM (Chrome/Firefox/Edge) or MP4 (Safari). Both play in nearly every app — VLC, QuickTime, Windows Media Player. To convert to MP3, use a desktop tool like ffmpeg or an online converter.</p>
+
+<h2>Privacy</h2>
+<p>Audio is captured via the browser's MediaRecorder API and held in memory only. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/audio-recorder/audio-recorder.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

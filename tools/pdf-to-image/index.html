@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>PDF to JPG / PNG Converter — Free Online, No Upload | SharpDev.Tools</title>
+<meta content="Convert PDF to JPG or PNG online — every page becomes a high-quality image. Free, instant, runs in your browser so your PDF never gets uploaded. Choose 72/144/300 DPI and download single pages or all as ZIP." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-to-image/" rel="canonical"/>
+<meta content="PDF to JPG / PNG Converter — Free Online, No Upload | SharpDev.Tools" property="og:title"/>
+<meta content="Convert PDF to JPG or PNG online — every page becomes a high-quality image. Free, instant, runs in your browser so your PDF never gets uploaded. Choose 72/144/300 DPI and download single pages or all as ZIP." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-to-image/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF to JPG / PNG Converter — Free Online, No Upload | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert PDF to JPG or PNG online — every page becomes a high-quality image. Free, instant, runs in your browser so your PDF never gets uploaded. Choose 72/144/300 DPI and download single pages or all as ZIP." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF", "item": "https://sharpdev.tools/#pdf" },
+      { "@type": "ListItem", "position": 3, "name": "PDF to JPG / PNG", "item": "https://sharpdev.tools/tools/pdf-to-image/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I convert PDF to JPG online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Drop your PDF onto the upload area, pick JPG (or PNG) and your preferred DPI (72 for web, 144 for retina, 300 for print), then click Convert. Each page becomes an image you can download individually or as a single ZIP." } },
+      { "@type": "Question", "name": "Is my PDF uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The PDF is opened by PDF.js running in your browser, rendered to canvas, and exported locally. Nothing is sent to any server, so even confidential documents are safe to convert here." } },
+      { "@type": "Question", "name": "What DPI should I choose?",
+        "acceptedAnswer": { "@type": "Answer", "text": "72 DPI for screen use (small files), 144 DPI for retina/HiDPI displays, 300 DPI for print-quality output. Higher DPI means larger files and longer conversion time, especially on big PDFs." } },
+      { "@type": "Question", "name": "What's the difference between JPG and PNG output?",
+        "acceptedAnswer": { "@type": "Answer", "text": "JPG is smaller in file size and best for photographic content. PNG is lossless, supports transparency where the PDF has it, and is better for diagrams, screenshots, and pages with text or sharp edges." } },
+      { "@type": "Question", "name": "Is the PDF to image converter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no page limit." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PDF to JPG / PNG — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/pdf-to-image/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-to-image/pdf-to-image.css" rel="stylesheet"/>
+<script src="/shared/zip.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-to-image');</script>
+<div class="page">
+<h1>PDF to JPG / PNG Converter</h1>
+<p class="subtitle">Convert every page of a PDF into a JPG or PNG image — free, instant, runs entirely in your browser so your PDF never gets uploaded.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden="" id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">PDF only. Processed in your browser.</p>
+</div>
+</div>
+</div>
+
+<div class="card options-card" id="options-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Format</label>
+<div class="toggle-row">
+<label class="toggle"><input checked name="fmt" type="radio" value="jpg"/><span>JPG</span></label>
+<label class="toggle"><input name="fmt" type="radio" value="png"/><span>PNG</span></label>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Resolution</label>
+<div class="toggle-row">
+<label class="toggle"><input name="dpi" type="radio" value="72"/><span>72 DPI</span></label>
+<label class="toggle"><input checked name="dpi" type="radio" value="144"/><span>144 DPI</span></label>
+<label class="toggle"><input name="dpi" type="radio" value="300"/><span>300 DPI</span></label>
+</div>
+</div>
+<div class="opt-group" id="jpg-quality-group">
+<label class="opt-label">JPG quality</label>
+<input id="jpg-quality" max="100" min="40" type="range" value="92"/>
+<span class="opt-value"><span id="jpg-quality-display">92</span>%</span>
+</div>
+</div>
+<button class="btn btn-primary" id="convert-btn" type="button">Convert PDF to images</button>
+</div>
+
+<div class="progress-area" id="progress-area" style="display:none">
+<div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-bar"></div></div>
+<div class="progress-text" id="progress-text">Rendering page 1 of N...</div>
+</div>
+
+<div class="card result-area" id="result-area" style="display:none">
+<div class="result-header">
+<div>
+<h3 id="file-name">document.pdf</h3>
+<span class="page-count" id="page-count"></span>
+</div>
+<div class="result-actions">
+<button class="btn btn-primary btn-sm" id="download-zip-btn" type="button">Download all as ZIP</button>
+<button class="btn btn-secondary btn-sm" id="reset-btn" type="button">New PDF</button>
+</div>
+</div>
+<div class="thumbs-grid" id="thumbs-grid"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How does PDF to JPG conversion work?</h2>
+<p>PDF is a vector + raster format. To convert it into JPG or PNG, every page is rendered onto a canvas at the resolution you choose, then exported as an image file. This tool uses Mozilla's <code>pdf.js</code> entirely client-side — your PDF never touches a server, so confidential contracts, internal reports and scanned documents are safe to convert here.</p>
+
+<h2>JPG vs PNG: which should you choose?</h2>
+<ul>
+<li><strong>JPG</strong> — smaller files, lossy compression, ideal for PDFs that are mostly photos or have lots of color gradients. Adjust the quality slider for size vs fidelity.</li>
+<li><strong>PNG</strong> — lossless, larger files, supports transparency. Best for PDFs with text, line art, screenshots or diagrams where edges need to stay crisp.</li>
+</ul>
+
+<h2>What DPI should I pick?</h2>
+<ul>
+<li><strong>72 DPI</strong> — fast, small files. Use for thumbnails or web previews.</li>
+<li><strong>144 DPI</strong> (default) — retina/HiDPI sharp on screens, reasonable file size.</li>
+<li><strong>300 DPI</strong> — print-quality. Slow on big PDFs but the result is sharp enough to physically print.</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Posting PDF report pages on social media (which doesn't accept PDFs)</li>
+<li>Embedding a contract page as an image in a Notion / Confluence doc</li>
+<li>Sending a single page via WhatsApp / iMessage as an image preview</li>
+<li>Converting a scanned PDF back to image files for re-cropping</li>
+</ul>
+</section>
+
+<script src="/tools/pdf-to-image/pdf-to-image.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

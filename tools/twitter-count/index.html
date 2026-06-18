@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Twitter/X Character Counter &amp; Thread Splitter — Free | SharpDev.Tools</title>
+<meta content="Live 280-character Twitter/X counter. Paste anything longer and it auto-splits into a numbered thread you can copy tweet-by-tweet. Free, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/twitter-count/" rel="canonical"/>
+<meta content="Twitter/X Character Counter &amp; Thread Splitter — Free | SharpDev.Tools" property="og:title"/>
+<meta content="Live 280-character Twitter/X counter. Paste anything longer and it auto-splits into a numbered thread you can copy tweet-by-tweet. Free, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/twitter-count/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Twitter/X Character Counter &amp; Thread Splitter — Free | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live 280-character Twitter/X counter. Paste anything longer and it auto-splits into a numbered thread you can copy tweet-by-tweet. Free, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Twitter", "item": "https://sharpdev.tools/#twitter"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Twitter/X Counter",
+        "item": "https://sharpdev.tools/tools/twitter-count/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this tool count URLs as 23 characters like Twitter does?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It counts every character literally, so a long URL takes up its full length. Twitter shortens URLs to 23 characters via t.co, so your real post may come in slightly under the count shown here."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the thread splitter decide where to break?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It prefers sentence endings (. ! ?), then word boundaries (spaces), and only cuts mid-word as a last resort. Each tweet reserves room for the numbering like 1/7, 2/7."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I post the thread directly from here?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The tool copies tweets to your clipboard one by one (or all at once with separators). Paste them into Twitter or X manually — the tool has no account access, no API key, and no tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free, no ads, no sign-up, no tracking. All counting and splitting happens in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Twitter/X Character Counter &amp; Thread Splitter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/twitter-count/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/twitter-count/twitter-count.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('twitter-count');</script>
+<div class="page">
+<h1>Twitter/X Counter &amp; Thread Splitter</h1>
+<p class="subtitle">Live 280-character counter. Paste anything longer and it auto-splits into a numbered thread.</p>
+<label for="text-in">Your post</label>
+<textarea id="text-in" oninput="updateTwCount()" placeholder="Start typing or paste your post here..."></textarea>
+<div class="tw-meter" id="tw-meter">
+<div class="tw-bar-wrap">
+<div class="tw-bar" id="tw-bar"></div>
+</div>
+<div class="tw-stats">
+<span id="tw-count">0</span> / 280
+<span class="tw-sep">•</span>
+<span id="tw-thread">1 tweet</span>
+</div>
+</div>
+<div class="thread-output" id="thread-output"></div>
+</div>
+<script src="/tools/twitter-count/twitter-count.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

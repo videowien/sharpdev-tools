@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Base64 — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Encode and decode Base64 for text and files with the URL-safe variant supported. Free online Base64 encoder/decoder, no ads, no sign-up required." name="description"/>
+<link href="https://sharpdev.tools/tools/base64/" rel="canonical"/>
+<meta content="Base64 — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Encode and decode Base64 for text and files with the URL-safe variant supported. Free online Base64 encoder/decoder, no ads, no sign-up required." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/base64/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Base64 — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Encode and decode Base64 for text and files with the URL-safe variant supported. Free online Base64 encoder/decoder, no ads, no sign-up required." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Data & Files",
+        "item": "https://sharpdev.tools/#data-files"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Base64",
+        "item": "https://sharpdev.tools/tools/base64/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does the Base64 tool support files as well as text?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can encode any file into Base64 or decode a Base64 string back into a downloadable file, and toggle URL-safe encoding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Encoding and decoding run locally in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Base64 — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/base64/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/base64/base64.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('base64');</script>
+<div class="page">
+<h1>Base64 Encoder/Decoder</h1>
+<p class="subtitle">Encode or decode Base64. Works with text and files. Auto-detects direction.</p>
+<div class="actions">
+<button class="btn" onclick="doEncode()">Encode →</button>
+<button class="btn" onclick="doDecode()">← Decode</button>
+<button class="btn" onclick="swap()">Swap</button>
+<label class="toggle">
+<input id="opt-urlsafe" onchange="onOptionsChanged()" type="checkbox"/>
+<span>URL-safe</span>
+</label>
+<label class="toggle">
+<input id="opt-file" onchange="onFileModeToggle()" type="checkbox"/>
+<span>File mode</span>
+</label>
+<button class="btn btn-reset" onclick="clearAll()">Clear</button>
+</div>
+<div class="file-zone" id="file-zone" style="display:none">
+<input hidden="" id="file-input" type="file"/>
+<p><strong>File mode</strong> — drop a file here or <button class="link-btn" onclick="document.getElementById('file-input').click()">pick one</button>.</p>
+<p class="hint" id="file-info">No file selected.</p>
+<div class="file-actions">
+<button class="btn" onclick="encodeFile()">Encode file → base64</button>
+<button class="btn" onclick="decodeToFile()">Decode base64 → download file</button>
+</div>
+</div>
+<div class="hint-box" id="hint-box" style="display:none"></div>
+<div class="grid">
+<div class="col">
+<label for="input">Input</label>
+<textarea id="input" oninput="onInputChanged()" placeholder="Paste text or base64 here..." spellcheck="false"></textarea>
+<div class="stats" id="stats-in">0 chars</div>
+</div>
+<div class="col">
+<label for="output">Output</label>
+<textarea id="output" placeholder="Result will appear here..." readonly="" spellcheck="false"></textarea>
+<div class="stats-row">
+<span class="stats" id="stats-out">0 chars</span>
+<div class="small-actions">
+<button class="small-btn" onclick="copyOutput()">Copy</button>
+<button class="small-btn" onclick="useAsInput()">Use as input</button>
+</div>
+</div>
+</div>
+</div>
+<div class="error-box" id="error-box" style="display:none"></div>
+</div>
+<script src="/tools/base64/base64.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

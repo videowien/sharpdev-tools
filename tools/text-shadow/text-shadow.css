@@ -1,0 +1,98 @@
+/* Text Shadow Generator — styles */
+.page { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+
+.ts-preview {
+  background:
+    linear-gradient(45deg, #0f0f0f 25%, transparent 25%) 0 0/20px 20px,
+    linear-gradient(-45deg, #0f0f0f 25%, transparent 25%) 0 10px/20px 20px,
+    #141414;
+  border: 1px solid #262626; border-radius: 12px;
+  padding: 50px 30px; min-height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+#ts-text {
+  font-size: 64px; font-weight: 800;
+  color: #fff; letter-spacing: -1px;
+  outline: none;
+}
+
+.ts-presets {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 20px;
+}
+.ts-preset-btn {
+  padding: 8px 14px; background: #141414; border: 1px solid #262626;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 999px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s;
+}
+.ts-preset-btn:hover { border-color: #ff4444; color: #fff; background: #1a1a1a; }
+.ts-preset-btn.active { border-color: #ff4444; color: #ff4444; }
+
+.ts-controls {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 12px; padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 20px;
+}
+.ts-slider { display: grid; grid-template-columns: 100px 1fr 50px; align-items: center; gap: 10px; }
+.ts-slider label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.ts-slider input[type=range] { width: 100%; accent-color: #ff4444; }
+.ts-slider .val {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 12px; color: #fff; text-align: right;
+}
+
+.ts-color-row { display: grid; grid-template-columns: 100px 44px 1fr; align-items: center; gap: 10px; }
+.ts-color-row label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.ts-color-row input[type=color] {
+  width: 44px; height: 32px; border: none; padding: 0; background: transparent; cursor: pointer;
+  border-radius: 5px;
+}
+.ts-color-row input[type=text] {
+  padding: 6px 10px;
+  background: #0d0d0d; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace;
+  border-radius: 6px; outline: none;
+}
+
+.code-panel {
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.code-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px; border-bottom: 1px solid #1f1f1f;
+  font-size: 12px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.copy-btn {
+  padding: 5px 12px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 12px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s; text-transform: none; letter-spacing: 0;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+pre#code-out {
+  padding: 16px; margin: 0;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace;
+  line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  #ts-text { font-size: 44px; }
+}

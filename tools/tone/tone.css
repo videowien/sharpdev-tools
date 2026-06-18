@@ -1,0 +1,53 @@
+/* Tone Generator — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.warning {
+  background: rgba(255,167,38,0.08); border-left: 3px solid #ffa726;
+  padding: 10px 14px; color: #ffa726; border-radius: 4px;
+  font-size: 13px; margin-bottom: 18px;
+}
+
+.form-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+.freq-row { display: flex; gap: 10px; align-items: center; }
+.freq-row input[type=range] { flex: 1; accent-color: #ff4444; }
+.freq-row input[type=number] {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 16px;
+  font-family: 'SF Mono', monospace; width: 120px; text-align: right;
+}
+.freq-row .unit { font-size: 13px; color: #888; }
+
+.preset-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.preset {
+  background: transparent; border: 1px solid #2a2a2a; color: #888;
+  padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 11px;
+  font-family: 'SF Mono', monospace;
+}
+.preset:hover { color: #ff4444; border-color: #ff4444; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 20px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-group select, .opt-group input[type=range] {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 13px;
+}
+.opt-group input[type=range] { width: 160px; padding: 0; accent-color: #ff4444; }
+.opt-value { font-size: 12px; color: #888; font-family: 'SF Mono', monospace; min-width: 40px; }
+
+.play-btn {
+  background: #ff4444; color: #fff; border: none;
+  padding: 14px 36px; border-radius: 999px; font-size: 16px;
+  cursor: pointer; font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+}
+.play-btn:hover { background: #ff5555; }
+.play-btn.playing { background: #4caf50; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3); }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

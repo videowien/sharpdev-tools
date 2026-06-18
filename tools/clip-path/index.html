@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Clip-path Generator — Shapes Library | SharpDev.Tools</title>
+<meta content="Visual CSS clip-path builder. Drag polygon vertices live in the preview, or pick from 20+ shape presets (triangle, hexagon, star, arrow). Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/clip-path/" rel="canonical"/>
+<meta content="CSS Clip-path Generator — Shapes Library | SharpDev.Tools" property="og:title"/>
+<meta content="Visual CSS clip-path builder. Drag polygon vertices live in the preview, or pick from 20+ shape presets (triangle, hexagon, star, arrow). Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/clip-path/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="CSS Clip-path Generator — Shapes Library | SharpDev.Tools" name="twitter:title"/>
+<meta content="Visual CSS clip-path builder. Drag polygon vertices live in the preview, or pick from 20+ shape presets (triangle, hexagon, star, arrow). Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"Clip-path","item":"https://sharpdev.tools/tools/clip-path/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can I drag polygon vertices?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once you pick a polygon preset, grab any vertex handle in the preview and drag to reshape. Coordinates use percentages so the shape stays responsive."}},
+    {"@type":"Question","name":"Which shapes does clip-path support?","acceptedAnswer":{"@type":"Answer","text":"Polygons (any number of vertices), circles, ellipses, insets, and paths. This tool covers polygons, circles, ellipses, and insets — the most commonly used. Complex SVG paths can be pasted in manually."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Clip-path Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/clip-path/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/clip-path/clip-path.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('clip-path');</script>
+<div class="page">
+<h1>Clip-path Generator</h1>
+<p class="subtitle">Pick a shape, drag the vertices to reshape, copy the CSS.</p>
+<div class="cp-layout">
+<div class="cp-preview-wrap" id="cp-preview-wrap">
+<div class="cp-preview" id="cp-preview"></div>
+<div class="cp-handles" id="cp-handles"></div>
+</div>
+<div class="cp-shapes">
+<h2>Shapes</h2>
+<div class="cp-shape-grid" id="cp-shape-grid"></div>
+</div>
+</div>
+<div class="code-panel">
+<div class="code-head"><span>Generated CSS</span><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<pre id="code-out"></pre>
+</div>
+</div>
+<script src="/tools/clip-path/clip-path.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

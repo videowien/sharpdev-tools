@@ -1,0 +1,39 @@
+/* Running Pace Calculator — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.block { display: flex; flex-direction: column; gap: 8px; }
+.block label { font-size: 12px; color: #aaa; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+.dist-row, .time-row { display: flex; align-items: center; gap: 6px; }
+.dist-row input, .time-row input, .dist-row select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+  width: 70px; text-align: center;
+}
+.dist-row input { width: 80px; }
+.dist-row select { width: 80px; }
+.time-row span:not(.unit) { color: #555; font-weight: 600; }
+.time-row .unit { font-size: 12px; color: #666; margin-left: 6px; }
+
+.preset-row { display: flex; gap: 6px; margin-top: 4px; }
+.preset-btn { background: transparent; border: 1px solid #2a2a2a; color: #888; padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer; }
+.preset-btn:hover { border-color: #ff4444; color: #ff4444; }
+
+.hint { color: #666; font-size: 12px; margin-top: 14px; }
+.link-btn { background: none; border: none; color: #ff4444; cursor: pointer; padding: 0; font-size: 12px; }
+.link-btn:hover { text-decoration: underline; }
+
+.card-title { font-size: 14px; color: #ccc; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.splits-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.splits-table th { text-align: left; padding: 8px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.splits-table td { padding: 10px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.splits-table td:last-child { font-family: 'SF Mono', monospace; color: #fff; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .time-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,39 @@
+/* ASCII Art — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.form-row input[type=text] {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 18px;
+  font-family: 'SF Mono', monospace; text-transform: uppercase;
+}
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-group select, .opt-group input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+  font-family: 'SF Mono', monospace;
+}
+.opt-group input { width: 60px; text-align: center; }
+
+.art {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #4caf50;
+  padding: 18px 20px; border-radius: 8px;
+  font-family: 'SF Mono', Courier, monospace;
+  font-size: 12px; line-height: 1.0; white-space: pre; overflow-x: auto;
+  margin: 0 0 12px;
+}
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .art { font-size: 10px; }
+}

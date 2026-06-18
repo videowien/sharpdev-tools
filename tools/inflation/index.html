@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inflation Calculator — Purchasing Power Over Time | SharpDev.Tools</title>
+<meta content="Calculate the future or past value of money given an inflation rate. What $100 in 1990 is worth today, or what $5000 today will be worth in 20 years. Free." name="description"/>
+<link href="https://sharpdev.tools/tools/inflation/" rel="canonical"/>
+<meta content="Inflation Calculator — Purchasing Power Over Time | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate the future or past value of money with compound inflation. $100 → over years. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/inflation/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Inflation Calculator — Purchasing Power Over Time | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate the future or past value of money with compound inflation." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/money-finance/"},
+    {"@type":"ListItem","position":3,"name":"Inflation Calculator","item":"https://sharpdev.tools/tools/inflation/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How does compound inflation work?","acceptedAnswer":{"@type":"Answer","text":"Each year prices grow by the rate × previous price. At 3% annually, $100 → $103 → $106.09 → $109.27 … not $100 → $103 → $106. After 30 years at 3% inflation, $100 needs $242.73 to maintain the same purchasing power."}},
+    {"@type":"Question","name":"What inflation rate should I use?","acceptedAnswer":{"@type":"Answer","text":"Long-term US CPI averages ~2.5-3.5%. Germany/Euro area ~2%. UK ~3%. For long-term planning, 3% is a safe assumption. For real recent data, look up your country's official CPI."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All math runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Inflation Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/inflation/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/inflation/inflation.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('inflation');</script>
+<div class="page">
+<h1>Inflation Calculator</h1>
+<p class="subtitle">Compound inflation math — purchasing power over time, forward or backward.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Direction</label>
+<div class="seg">
+<button class="seg-btn active" data-dir="forward" type="button">Today → future</button>
+<button class="seg-btn" data-dir="backward" type="button">Past → today</button>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Currency</label>
+<select id="currency">
+<option value="€">€</option>
+<option value="$" selected>$</option>
+<option value="£">£</option>
+<option value="¥">¥</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid">
+<div class="form-row">
+<label class="opt-label" id="amount-label">Amount today</label>
+<input id="amount" type="number" min="0" step="100" value="10000"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Years</label>
+<input id="years" type="number" min="1" max="200" value="20"/>
+</div>
+<div class="form-row">
+<label class="opt-label">Annual inflation rate (%)</label>
+<input id="rate" type="number" min="0" step="0.1" value="3"/>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="result-row">
+<div class="result-block highlight">
+<div class="result-label" id="result-label">Future value</div>
+<div class="result-value" id="r-result">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Total inflation</div>
+<div class="result-value" id="r-total">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Purchasing power lost</div>
+<div class="result-value" id="r-lost">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Forward vs backward</h2>
+<ul>
+<li><strong>Today → future</strong> — how much you'll need then to have the same purchasing power as today. Useful for retirement, sabbatical, or long-term savings planning.</li>
+<li><strong>Past → today</strong> — what an old price would be in today's money. Useful for historical comparisons ("dad's first house cost $40k in 1985 — what's that today?").</li>
+</ul>
+
+<h2>Long-term inflation reference (annualised)</h2>
+<table class="cpi-table">
+<tr><th>Region</th><th>~Recent avg</th><th>Notes</th></tr>
+<tr><td>US (1990-2024)</td><td>2.8%</td><td>Higher in 2021-2023, calmer otherwise</td></tr>
+<tr><td>Eurozone</td><td>2.0%</td><td>ECB target, mostly held until 2022</td></tr>
+<tr><td>UK</td><td>2.5-3%</td><td>BoE target 2%, often above</td></tr>
+<tr><td>Japan</td><td>~0.5%</td><td>Decades of near-zero, recent uptick</td></tr>
+<tr><td>Turkey</td><td>15-50%+</td><td>Persistent high inflation</td></tr>
+</table>
+
+<h2>The compound effect</h2>
+<p>People underestimate compound inflation. At 3% for 30 years, prices roughly <strong>2.4×</strong>. At 5% for 30 years, prices <strong>4.3×</strong>. Salary plans, retirement targets, and education savings goals should all be adjusted for at least one full inflation cycle.</p>
+
+<h2>Privacy</h2>
+<p>Pure calculation in your browser.</p>
+</section>
+
+<script src="/tools/inflation/inflation.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

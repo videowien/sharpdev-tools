@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>HTML Table Generator — Build Table Markup | SharpDev.Tools</title>
+<meta content="Generate clean HTML table markup: pick rows and columns, header row, striping and borders, get copy-paste HTML with a live preview. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/html-table/" rel="canonical"/>
+<meta content="HTML Table Generator — Build Table Markup | SharpDev.Tools" property="og:title"/>
+<meta content="Generate clean HTML table markup: pick rows and columns, header row, striping and borders, get copy-paste HTML with a live preview. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/html-table/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="HTML Table Generator — Build Table Markup | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate clean HTML table markup: pick rows and columns, header row, striping and borders, get copy-paste HTML with a live preview. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"HTML Table Generator","item":"https://sharpdev.tools/tools/html-table/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I generate an HTML table?","acceptedAnswer":{"@type":"Answer","text":"Set the number of rows and columns and toggle a header row, borders and striping. The tool outputs clean, indented HTML (with a small style block when needed) and shows a live preview."}},{"@type":"Question","name":"Does it use thead and tbody?","acceptedAnswer":{"@type":"Answer","text":"Yes. With the header option on, the first row is wrapped in thead and the data rows in tbody, which is the semantically correct structure."}},{"@type":"Question","name":"Can I edit the cell text?","acceptedAnswer":{"@type":"Answer","text":"Replace the placeholder 'Cell 1,1' text in the generated HTML with your content. The generator gives you a correct skeleton to fill in."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"HTML Table Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/html-table/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/html-table/html-table.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('html-table');</script>
+<div class="page">
+<h1>HTML Table Generator</h1>
+<p class="subtitle">Pick rows and columns, toggle a header and styling, get clean HTML with a live preview.</p>
+<div class="row">
+<div class="field" style="flex:0 0 120px"><label for="rows">Rows</label><input type="number" id="rows" value="3" min="1" max="50"></div>
+<div class="field" style="flex:0 0 120px"><label for="cols">Columns</label><input type="number" id="cols" value="3" min="1" max="20"></div>
+<div class="field" style="flex:1"><label>Options</label><div style="display:flex;gap:14px;flex-wrap:wrap;padding-top:6px;font-size:13px;color:#ccc">
+<label><input type="checkbox" id="header" checked> Header row</label>
+<label><input type="checkbox" id="border" checked> Borders</label>
+<label><input type="checkbox" id="stripe"> Striped</label>
+</div></div>
+</div>
+<div class="out-head"><label>Preview</label></div>
+<div id="prev" style="background:#fff;color:#000;padding:14px;border-radius:8px;overflow:auto;margin-bottom:14px"></div>
+<div class="out-head"><label for="out">HTML</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I generate an HTML table?</summary><p>Set the number of rows and columns and toggle a header row, borders and striping. The tool outputs clean, indented HTML (with a small style block when needed) and shows a live preview.</p></details>
+<details><summary>Does it use thead and tbody?</summary><p>Yes. With the header option on, the first row is wrapped in thead and the data rows in tbody, which is the semantically correct structure.</p></details>
+<details><summary>Can I edit the cell text?</summary><p>Replace the placeholder 'Cell 1,1' text in the generated HTML with your content. The generator gives you a correct skeleton to fill in.</p></details>
+</section>
+<script src="/tools/html-table/html-table.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,3015 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SharpDev.Tools — Free Online Tools, No Sign-Up, No Ads</title>
+<meta content="Browse 622 free online tools for developers, writers and creators: formatters, converters, generators, calculators, design helpers, and social-media utilities. No ads." name="description"/>
+<link href="https://sharpdev.tools/" rel="canonical"/>
+<meta content="SharpDev.Tools — Free Online Tools, No Sign-Up, No Ads" property="og:title"/>
+<meta content="Browse 622 free online tools for developers, writers and creators: formatters, converters, generators, calculators, design helpers, and social-media utilities. No ads." property="og:description"/>
+<meta content="https://sharpdev.tools/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="SharpDev.Tools — Free Online Tools, No Sign-Up, No Ads" name="twitter:title"/>
+<meta content="Browse 622 free online tools for developers, writers and creators: formatters, converters, generators, calculators, design helpers, and social-media utilities. No ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SharpDev.Tools",
+    "url": "https://sharpdev.tools/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://sharpdev.tools/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SharpDev.Tools",
+    "url": "https://sharpdev.tools/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SharpDev.Tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SharpDev.Tools is a collection of 622 free online tools across 16 categories — text utilities, image editors, PDF tools, CSS and design helpers, developer utilities (formatters, converters, encoders), calculators, generators, social media counters, time and date math, and money / finance calculators. Every tool runs in your browser; nothing is uploaded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are all SharpDev.Tools really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — every tool is free, with no sign-up, no ads, no usage limits, no premium tier. SharpDev.Tools is funded entirely by side-project budget; there are no paywalls or upsells."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no account system on SharpDev.Tools. Open any tool URL and use it immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my files and data uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every tool runs entirely in your browser via JavaScript / WebAssembly. Even PDF tools, image processing, OCR and cryptography happen locally. The only exceptions are tools that explicitly fetch from a public API (e.g. YouTube thumbnail downloader) — those make the API call from your browser, not a server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does SharpDev.Tools use cookies or tracking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No cookies. Zero cookies, no consent banner needed. The site uses privacy-friendly aggregate analytics (Plausible) to measure pageviews — no personal data, no cross-site tracking, GDPR-compliant by design."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which categories of tools are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "15 categories: Text (19 tools), YouTube (9), Twitter / X (7), LinkedIn (9), Instagram (9), Social Media cross-platform (9), Images & Media (15), PDF (26), Design & CSS (14), Calculators (18), Time & Date (12), Money & Finance (12), Security & Crypto (12), Generators (19), Developers (28)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why use SharpDev.Tools instead of other free tool sites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three reasons: (1) Privacy — nothing uploads, no cookies, no tracking; (2) No ads, no sign-up, no upsells; (3) Mobile-first design that actually works on a phone. Most 'free tool' sites are full of ads, require sign-ups for the best features, or upload your files to a server."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I request a new tool or report a bug?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every tool page has a 'Found a bug?' section that opens a quick form. For new-tool requests, the homepage and footer link to the Request page where you can describe what you'd like to see built."
+        }
+      }
+    ]
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<style>
+  .hero {
+    text-align: center; padding: 80px 20px 50px;
+  }
+  .hero h1 {
+    font-size: 72px; font-weight: 800; color: #fff;
+    margin-bottom: 18px; letter-spacing: -2px; line-height: 1;
+  }
+  .hero h1 .accent { color: #ff4444; }
+  .hero .tagline {
+    font-size: 26px; font-weight: 600; color: #ddd;
+    max-width: 600px; margin: 0 auto 10px;
+  }
+  .hero .subline {
+    font-size: 14px; color: #666; margin-top: 6px;
+  }
+  .hero-search {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
+    background: #141414; border: 1px solid #2a2a2a; border-radius: 10px;
+    color: #888; font-size: 16px; font-family: inherit; cursor: pointer;
+    padding: 13px 18px; width: min(440px, 92vw); transition: all 0.15s;
+  }
+  .hero-search:hover { border-color: #ff4444; color: #fff; }
+  .hero-search svg { color: #666; flex-shrink: 0; }
+  .hero-search:hover svg { color: #ff4444; }
+  .hero-search span:nth-of-type(1) { text-align: left; flex: 1; }
+  .hero-search-kbd {
+    border: 1px solid #2a2a2a; border-radius: 4px; padding: 1px 8px;
+    font-size: 13px; color: #777; font-family: 'SF Mono', Monaco, monospace;
+  }
+
+  .categories { max-width: 1280px; margin: 0 auto; padding: 0 20px 40px; }
+  .category { margin-bottom: 44px; }
+  .category-header {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .category-header h2 {
+    font-size: 13px; font-weight: 700; color: #fff;
+    text-transform: uppercase; letter-spacing: 1.5px;
+  }
+  .category-header .count {
+    font-size: 12px; color: #555;
+    font-family: 'SF Mono', Monaco, monospace;
+  }
+  .category-header .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #ff4444; display: inline-block;
+  }
+
+  .tools-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .tool-card {
+    background: #141414; border: 1px solid #262626; border-radius: 12px;
+    padding: 22px; transition: all 0.2s; text-decoration: none; color: inherit;
+    display: block;
+  }
+  .tool-card:hover { border-color: #444; transform: translateY(-2px); text-decoration: none; }
+  .tool-card h3 { font-size: 15px; color: #fff; margin-bottom: 6px; }
+  .tool-card p { font-size: 13px; color: #888; line-height: 1.5; }
+
+  .coming-soon {
+    opacity: 0.4; pointer-events: none;
+  }
+
+  /* Collapse long category grids to a 12-card preview (cards stay in the DOM
+     for internal-link SEO; only visually hidden). Toggle reveals the rest. */
+  .category.sd-collapsed .tools-grid .tool-card:nth-child(n+13) { display: none; }
+  .cat-toggle {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+    background: #141414; border: 1px solid #2a2a2a; border-radius: 8px;
+    color: #aaa; font-size: 13px; font-weight: 600; font-family: inherit;
+    padding: 9px 16px; cursor: pointer; transition: all 0.15s;
+  }
+  .cat-toggle:hover { border-color: #ff4444; color: #fff; }
+
+  @media (max-width: 1100px) {
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 800px) {
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 50px 16px 30px; }
+    .hero h1 { font-size: 46px; letter-spacing: -1.5px; }
+    .hero .tagline { font-size: 20px; }
+    .hero .subline { font-size: 13px; }
+    .categories { padding: 0 12px 30px; }
+    .category { margin-bottom: 32px; }
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+
+  .home-info {
+    padding: 60px 20px 80px;
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+  }
+  .home-info-inner {
+    max-width: 920px; margin: 0 auto;
+    color: #ccc; line-height: 1.6;
+  }
+  .home-info h2 {
+    font-size: 24px; font-weight: 700; color: #fff;
+    margin: 44px 0 16px; letter-spacing: -0.3px;
+  }
+  .home-info h2:first-child { margin-top: 0; }
+  .home-info .lead {
+    font-size: 17px; padding: 18px 20px;
+    background: rgba(255,68,68,0.04);
+    border-left: 3px solid #ff4444; border-radius: 4px;
+  }
+  .home-cat-links {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin: 0 0 12px;
+  }
+  .home-cat-links a {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 14px 16px; background: #141414;
+    border: 1px solid #262626; border-radius: 8px;
+    color: #ccc; text-decoration: none;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .home-cat-links a:hover {
+    border-color: #444; transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .home-cat-links a strong {
+    color: #fff; font-size: 15px;
+  }
+  .home-cat-links a span {
+    color: #888; font-size: 13px; line-height: 1.4;
+  }
+  .home-why { list-style: none; padding: 0; }
+  .home-why li {
+    padding: 12px 16px; margin-bottom: 8px;
+    background: #141414; border: 1px solid #262626; border-radius: 8px;
+    font-size: 15px;
+  }
+  .home-why li strong { color: #fff; }
+  .home-faq {
+    background: #141414; border: 1px solid #262626; border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .home-faq summary {
+    padding: 14px 18px; cursor: pointer;
+    font-weight: 600; color: #eee; font-size: 15px;
+    list-style: none; position: relative; padding-right: 36px;
+  }
+  .home-faq summary::after {
+    content: '+'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 20px; color: #888;
+  }
+  .home-faq[open] summary::after { content: '−'; }
+  .home-faq p { padding: 0 18px 16px; margin: 0; color: #ccc; font-size: 14px; }
+  .home-faq p a { color: #ff6666; }
+  @media (max-width: 700px) {
+    .home-cat-links { grid-template-columns: 1fr; }
+    .home-info h2 { font-size: 20px; }
+    .home-info .lead { font-size: 15px; }
+  }
+
+</style>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('home');</script>
+<div class="hero">
+<h1>SharpDev<span class="accent">.</span>Tools</h1>
+<p class="tagline">Free tools for everyone.</p>
+<p class="subline">No sign-up. No tracking. No ads.</p>
+<button class="hero-search" type="button" onclick="if(window._sdOpenSearch)_sdOpenSearch()" aria-label="Search all tools">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<span>Search all tools&hellip;</span>
+<span class="hero-search-kbd">/</span>
+</button>
+</div>
+<div class="categories">
+<section class="category" id="text">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/text/">Text</a></h2>
+<span class="count">36 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/wordcount/">
+<h3>Word Counter</h3>
+<p>Count words, characters, sentences, paragraphs. Reading and speaking time estimates. Instant results.</p>
+</a>
+<a class="tool-card" href="/tools/case/">
+<h3>Case Converter</h3>
+<p>Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more.</p>
+</a>
+<a class="tool-card" href="/tools/lorem/">
+<h3>Lorem Ipsum Generator</h3>
+<p>Generate placeholder text for your designs. Paragraphs, sentences, or words. Copy as text or HTML.</p>
+</a>
+<a class="tool-card" href="/tools/diff/">
+<h3>Text Diff Checker</h3>
+<p>Compare two texts side by side and see exactly what changed. Word-level highlighting, inline or split view.</p>
+</a>
+<a class="tool-card" href="/tools/lines/">
+<h3>Line Sorter &amp; Deduper</h3>
+<p>Clean up any list. Sort alphabetically, remove duplicates, reverse, trim whitespace, number lines.</p>
+</a>
+<a class="tool-card" href="/tools/chars/">
+<h3>Character Counter</h3>
+<p>Check if your post fits Twitter, Instagram, SMS, or SEO limits. Live count with platform presets.</p>
+</a>
+<a class="tool-card" href="/tools/slug/">
+<h3>Slug Generator</h3>
+<p>Turn any text into a clean URL slug. Handles accents, special characters, and stopwords.</p>
+</a>
+<a class="tool-card" href="/tools/markdown/">
+<h3>Markdown Preview</h3>
+<p>Live Markdown preview with GitHub-flavored basics. Export to HTML or .md.</p>
+</a>
+<a class="tool-card" href="/tools/whitespace/">
+<h3>Whitespace &amp; Invisible Char Cleaner</h3>
+<p>Strip zero-width chars, normalize spaces, fix line endings, remove suspicious Unicode.</p>
+</a>
+<a class="tool-card" href="/tools/md-html/">
+<h3>Markdown ↔ HTML Converter</h3>
+<p>Convert Markdown to HTML or HTML back to Markdown. Live conversion both ways.</p>
+</a>
+<a class="tool-card" href="/tools/reading-level/">
+<h3>Reading Level Scorer</h3>
+<p>Flesch, Gunning Fog, SMOG, Coleman-Liau, ARI. See what grade level your text is written at.</p>
+</a>
+<a class="tool-card" href="/tools/string-utils/">
+<h3>String Utilities</h3>
+<p>Repeat, pad, reverse, split, join, find/replace, count. The little string operations all in one place.</p>
+</a>
+<a class="tool-card" href="/tools/md-table/">
+<h3>Markdown Table Builder</h3>
+<p>Visual editor for GitHub-flavored Markdown tables. Paste from CSV, set alignment, sort columns.</p>
+</a>
+<a class="tool-card" href="/tools/unicode-text/">
+<h3>Unicode Text Stylizer</h3><p>Make 𝐛𝐨𝐥𝐝, 𝑖𝑡𝑎𝑙𝑖𝑐, 𝓈𝒸𝓇𝒾𝓅𝓉, ɐlǝlǝɹǝp text using Unicode. For social bios and posts.</p>
+</a>
+<a class="tool-card" href="/tools/reverse/">
+<h3>Text Reverser</h3>
+<p>Reverse any text by character, word, or line. Handles multi-byte emoji properly. Copy with one click.</p>
+</a>
+<a class="tool-card" href="/tools/find-replace/">
+<h3>Find &amp; Replace</h3>
+<p>Bulk find and replace across any text. Regex, case sensitivity, whole-word toggles. Match count as you type.</p>
+</a>
+<a class="tool-card" href="/tools/html-strip/">
+<h3>HTML to Plain Text</h3>
+<p>Strip all HTML tags, decode entities, keep paragraph breaks and bullets. DOMParser-based — handles real-world HTML.</p>
+</a>
+<a class="tool-card" href="/tools/keyword-density/">
+<h3>Keyword Density Analyzer</h3>
+<p>1, 2, 3-word phrase frequency for SEO content audits. Stopword filtering, density % per phrase.</p>
+</a>
+<a class="tool-card" href="/tools/wpm/">
+<h3>WPM Typing Test</h3>
+<p>Test your typing speed — words per minute, accuracy, mistakes. 15s / 30s / 60s / 2min sessions.</p>
+</a>
+<a class="tool-card" href="/tools/flip-text/">
+<h3>Upside Down Text</h3>
+<p>Flip text upside down and backwards (ɐǝ) for bios and posts. Copy anywhere.</p>
+</a>
+<a class="tool-card" href="/tools/text-repeat/">
+<h3>Text Repeater</h3>
+<p>Repeat text or a word N times, with optional separator, new line or numbering.</p>
+</a>
+<a class="tool-card" href="/tools/markdown-strip/">
+<h3>Markdown Stripper</h3>
+<p>Remove Markdown formatting for clean plain text. Strips headings, bold, links, code, lists.</p>
+</a>
+<a class="tool-card" href="/tools/bacon-ipsum/">
+<h3>Bacon / Themed Ipsum</h3>
+<p>Generate bacon, pirate, hipster or corporate placeholder text. Fun Lorem Ipsum alternative.</p>
+</a>
+<a class="tool-card" href="/tools/remove-line-breaks/">
+<h3>Remove Line Breaks</h3>
+<p>Strip newlines from text. Join with spaces, delete entirely, or keep paragraph breaks.</p>
+</a>
+<a class="tool-card" href="/tools/add-line-numbers/">
+<h3>Add Line Numbers</h3>
+<p>Number each line of text. Custom start number, separator and zero-padding.</p>
+</a>
+<a class="tool-card" href="/tools/remove-duplicate-words/">
+<h3>Remove Duplicate Words</h3>
+<p>Delete repeated words from text, keep the first occurrence. Case-insensitive option.</p>
+</a>
+<a class="tool-card" href="/tools/extract-emails/">
+<h3>Email Extractor</h3>
+<p>Pull every email address out of pasted text. Deduplicate and sort the results.</p>
+</a>
+<a class="tool-card" href="/tools/extract-urls/">
+<h3>URL Extractor</h3>
+<p>Pull every link out of pasted text. Deduplicate and sort the results.</p>
+</a>
+<a class="tool-card" href="/tools/remove-emojis/">
+<h3>Remove Emojis</h3>
+<p>Strip all emojis and pictographic symbols from text, leaving clean plain text.</p>
+</a>
+<a class="tool-card" href="/tools/pig-latin/">
+<h3>Pig Latin Translator</h3>
+<p>Translate English to Pig Latin. Handles consonant clusters, keeps caps and punctuation.</p>
+</a>
+<a class="tool-card" href="/tools/leetspeak/">
+<h3>Leetspeak (1337)</h3>
+<p>Convert text to leetspeak. Basic vowel swaps or full substitution.</p>
+</a>
+<a class="tool-card" href="/tools/palindrome-checker/">
+<h3>Palindrome Checker</h3>
+<p>Check if a word, phrase or number reads the same backwards. Ignores case and punctuation.</p>
+</a>
+<a class="tool-card" href="/tools/count-occurrences/">
+<h3>Count Occurrences</h3>
+<p>Count how many times a word, phrase or character appears in text. Whole-word + case options.</p>
+</a>
+<a class="tool-card" href="/tools/remove-accents/">
+<h3>Remove Accents</h3>
+<p>Strip accents & diacritics — café → cafe. Handles ß, ø, æ, ł and more.</p>
+</a>
+<a class="tool-card" href="/tools/zalgo/">
+<h3>Zalgo Text</h3>
+<p>Corrupt text into creepy glitch ‘zalgo’ style with adjustable intensity. Copy & paste anywhere.</p>
+</a>
+<a class="tool-card" href="/tools/invisible-text/">
+<h3>Invisible Text</h3>
+<p>Copy genuinely invisible Unicode characters — blank usernames, empty messages, spacing.</p>
+</a>
+</div>
+</section>
+<section class="category" id="youtube">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/youtube/">YouTube</a></h2>
+<span class="count">9 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/thumbnail/">
+<h3>YouTube Thumbnail Downloader</h3>
+<p>Download YouTube video thumbnails in the highest available resolution. Batch download as ZIP.</p>
+</a>
+<a class="tool-card" href="/tools/subtitles/">
+<h3>YouTube Subtitle Downloader</h3>
+<p>Download auto-generated or manual subtitles from any YouTube video. SRT or plain text. Batch processing supported.</p>
+</a>
+<a class="tool-card" href="/tools/yt-tags/">
+<h3>YouTube Tags Extractor</h3>
+<p>Paste any YouTube URL and pull the video's tags. Copy individually or as a comma-separated list.</p>
+</a>
+<a class="tool-card" href="/tools/yt-clean/">
+<h3>YouTube URL Cleaner</h3>
+<p>Strip ?si=, ?feature=, ?pp= and other tracking parameters from YouTube URLs. Keep just v, t and list.</p>
+</a>
+<a class="tool-card" href="/tools/yt-embed/">
+<h3>YouTube Embed Code Generator</h3>
+<p>Paste a video link, toggle autoplay / mute / loop / start-time, copy the iframe. Responsive 16:9 wrapper included.</p>
+</a>
+<a class="tool-card" href="/tools/yt-chapters/">
+<h3>YouTube Chapters Generator</h3>
+<p>Build clean YouTube chapters with live validation — checks 00:00 start, 3-chapter minimum, 10-second gaps.</p>
+</a>
+<a class="tool-card" href="/tools/yt-title/">
+<h3>YouTube Title Counter</h3>
+<p>Live 100-char title counter with truncation marks for desktop search, mobile feed and suggested videos.</p>
+</a>
+<a class="tool-card" href="/tools/yt-description/">
+<h3>YouTube Description Counter</h3>
+<p>5000-char description counter, above-the-fold preview, auto-extract chapters / links / hashtags / mentions.</p>
+</a>
+<a class="tool-card" href="/tools/yt-money/">
+<h3>YouTube Revenue Estimator</h3>
+<p>Estimate AdSense income from views × RPM. Niche presets for finance, gaming, beauty, crypto, education.</p>
+</a>
+</div>
+</section>
+<section class="category" id="twitter">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/twitter/">Twitter</a></h2>
+<span class="count">7 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/twitter-count/">
+<h3>Twitter/X Counter &amp; Thread Splitter</h3>
+<p>Live 280-char counter. Paste anything longer and it auto-splits into numbered thread tweets ready to copy.</p>
+</a>
+<a class="tool-card" href="/tools/twitter-thread/">
+<h3>Twitter Thread Builder</h3>
+<p>Paste long text, get a numbered Twitter / X thread auto-split into 280-char tweets at sentence boundaries.</p>
+</a>
+<a class="tool-card" href="/tools/twitter-image/">
+<h3>Tweet to Image</h3>
+<p>Turn a Twitter / X post into a PNG to share on Instagram, LinkedIn or blogs. Light, dim or dark theme.</p>
+</a>
+<a class="tool-card" href="/tools/twitter-clean/">
+<h3>Twitter URL Cleaner</h3>
+<p>Strip ?s=20, ?t=, ref_src and other tracking parameters from Twitter / X URLs.</p>
+</a>
+<a class="tool-card" href="/tools/twitter-bio/">
+<h3>Twitter Bio Counter</h3>
+<p>Live 160-character Twitter / X bio counter with emoji-safe counting and profile mockup preview.</p>
+</a>
+<a class="tool-card" href="/tools/twitter-banner/">
+<h3>Twitter Banner Sizer</h3>
+<p>Crop any photo to a Twitter / X banner (1500×500) with safe zones for the profile pic + mobile crop.</p>
+</a>
+<a class="tool-card" href="/tools/twitter-poll/">
+<h3>Twitter Poll Composer</h3>
+<p>Plan polls before posting — 25-char limit per option (2-4 options), duration picker, live preview.</p>
+</a>
+</div>
+</section>
+<section class="category" id="linkedin">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/linkedin/">LinkedIn</a></h2>
+<span class="count">9 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/linkedin-count/">
+<h3>LinkedIn Post Counter</h3>
+<p>Live 3000-char counter with the "See more" truncation line marked at 210 chars so your hook lands.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-headline/">
+<h3>LinkedIn Headline Counter</h3>
+<p>220-character headline limit with live counter, profile preview, and search-result truncation preview.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-about/">
+<h3>LinkedIn About Counter</h3>
+<p>2600-character About section counter with "see more" cutoff preview at ~265 chars.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-pdf/">
+<h3>LinkedIn Carousel PDF</h3>
+<p>Combine slide images into one PDF for LinkedIn Document posts. Drag to reorder, pick aspect ratio.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-clean/">
+<h3>LinkedIn URL Cleaner</h3>
+<p>Strip ?trackingId=, ?lipi=, ?refId=, ?utm_* and other tracking parameters from LinkedIn URLs.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-banner/">
+<h3>LinkedIn Banner Sizer</h3>
+<p>Crop any photo to exactly 1584×396 with drag-to-position. Safe zones for profile pic and mobile crop included.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-comment/">
+<h3>LinkedIn Comment Counter</h3>
+<p>Live 1250-char comment counter with feed-preview cutoff at "…see more". Best practice tips inline.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-newsletter/">
+<h3>LinkedIn Newsletter Counter</h3>
+<p>150-char title + 110000-char body counter, reading-time estimate, feed snippet preview.</p>
+</a>
+<a class="tool-card" href="/tools/linkedin-poll/">
+<h3>LinkedIn Poll Composer</h3>
+<p>140-char question + 30-char options (2-4), duration picker, live LinkedIn-style poll preview.</p>
+</a>
+</div>
+</section>
+<section class="category" id="instagram">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/instagram/">Instagram</a></h2>
+<span class="count">9 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/ig-count/">
+<h3>Instagram Caption Counter</h3>
+<p>Live 2200-char counter with feed preview — see what appears before "…more" and pull out your hashtags.</p>
+</a>
+<a class="tool-card" href="/tools/ig-bio/">
+<h3>Instagram Bio Line Breaks</h3>
+<p>Add real line breaks to your Instagram bio using an invisible-character trick that survives saving.</p>
+</a>
+<a class="tool-card" href="/tools/ig-carousel/">
+<h3>Instagram Carousel Splitter</h3>
+<p>Split one wide image into 2-10 square Instagram-ready slides. Download all as ZIP.</p>
+</a>
+<a class="tool-card" href="/tools/ig-highlight/">
+<h3>Instagram Highlight Cover</h3>
+<p>Make minimalist 1080×1920 Story highlight covers — pick a color, add an emoji, download PNG.</p>
+</a>
+<a class="tool-card" href="/tools/ig-engagement/">
+<h3>Engagement Rate Calculator</h3>
+<p>Calculate Instagram engagement rate from followers, likes and comments. With industry benchmarks.</p>
+</a>
+<a class="tool-card" href="/tools/ig-pfp/">
+<h3>Instagram Profile Pic Cropper</h3>
+<p>Drag, zoom and preview the circular crop. Export 320×320 (Instagram-native) or 1080×1080 (high-res).</p>
+</a>
+<a class="tool-card" href="/tools/ig-grid/">
+<h3>Instagram Grid Preview</h3>
+<p>Plan your feed visually — drop up to 12 images, drag to reorder, see how the 3-column grid will look.</p>
+</a>
+<a class="tool-card" href="/tools/ig-reels-cover/">
+<h3>Instagram Reels Cover Sizer</h3>
+<p>Crop to 1080×1920 with the 1:1 grid-thumbnail safe zone marked so your reel cover looks right on the grid too.</p>
+</a>
+<a class="tool-card" href="/tools/ig-hashtag-mix/">
+<h3>Hashtag Mix Optimizer</h3>
+<p>Analyze your hashtag mix by popularity tier. Mega / large / medium / niche / micro distribution + balance feedback.</p>
+</a>
+</div>
+</section>
+<section class="category" id="social-media">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/social-media/">Social Media</a></h2>
+<span class="count">9 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/hashtag/">
+<h3>Hashtag Generator</h3>
+<p>Enter a topic and get a curated list of popular and long-tail hashtags. Copy the whole pack or pick individually.</p>
+</a>
+<a class="tool-card" href="/tools/emoji/">
+<h3>Emoji Finder &amp; Picker</h3>
+<p>Searchable emoji picker with 300+ emojis across 9 categories. Click any emoji to copy. Recently used pinned up top.</p>
+</a>
+<a class="tool-card" href="/tools/bio/">
+<h3>Bio / Link-in-bio Builder</h3>
+<p>Build a clean bio with Unicode styling (bold, italic, script) and emoji dividers. Character counter for Instagram, Twitter, TikTok bios.</p>
+</a>
+<a class="tool-card" href="/tools/meta-tags/">
+<h3>OG &amp; Twitter Card Generator</h3>
+<p>Generate Open Graph and Twitter Card meta tags. Live preview for Facebook, Twitter, LinkedIn, Slack.</p>
+</a>
+<a class="tool-card" href="/tools/signature/">
+<h3>Email Signature Generator</h3>
+<p>Build a clean HTML email signature. Four templates, live preview. Works in Gmail, Outlook, Apple Mail.</p>
+</a>
+<a class="tool-card" href="/tools/utm/">
+<h3>UTM Link Builder</h3>
+<p>Build clean campaign URLs for Google Analytics. Source, medium, campaign, content, term — lowercase-normalized.</p>
+</a>
+<a class="tool-card" href="/tools/mention-extractor/">
+<h3>Mention &amp; Hashtag Extractor</h3>
+<p>Paste any text — pull every @mention, #hashtag and URL. Deduplicated, sortable, copy-ready.</p>
+</a>
+<a class="tool-card" href="/tools/char-counter-multi/">
+<h3>Multi-Platform Char Counter</h3>
+<p>Paste once, see limits for Twitter, Instagram, LinkedIn, TikTok, Threads, Bluesky, Mastodon, Pinterest, Facebook.</p>
+</a>
+<a class="tool-card" href="/tools/handle-checker/">
+<h3>Username / Handle Checker</h3>
+<p>Validate your handle format across Twitter, Instagram, TikTok, GitHub, Reddit, YouTube, LinkedIn, Bluesky and more.</p>
+</a>
+</div>
+</section>
+<section class="category" id="images-media">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/images-media/">Images & Media</a></h2>
+<span class="count">21 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/image/">
+<h3>Image Compressor &amp; Resizer</h3>
+<p>Compress and resize JPG, PNG, WebP in your browser. Batch processing. Target file size or quality.</p>
+</a>
+<a class="tool-card" href="/tools/image-dl/">
+<h3>Image Downloader</h3>
+<p>Download any image from the web. Paste a direct URL or a webpage link to find and save all its images.</p>
+</a>
+<a class="tool-card" href="/tools/image-base64/">
+<h3>Image to Base64</h3>
+<p>Convert any image to a data URL for embedding in CSS, HTML, or JSON. Drop or paste.</p>
+</a>
+<a class="tool-card" href="/tools/image-convert/">
+<h3>Image Format Converter</h3>
+<p>Convert PNG ↔ JPG ↔ WebP in your browser. Set quality, batch convert, download as ZIP.</p>
+</a>
+<a class="tool-card" href="/tools/image-color/">
+<h3>Image Color Picker</h3>
+<p>Click any pixel in an uploaded image to get HEX, RGB, HSL. Build a palette of multiple picks.</p>
+</a>
+<a class="tool-card" href="/tools/image-rotate/">
+<h3>Image Rotate &amp; Flip</h3>
+<p>Rotate any image 90°, 180°, 270° or flip horizontally / vertically. Lossless at right angles. Custom-angle slider for arbitrary rotation.</p>
+</a>
+<a class="tool-card" href="/tools/image-crop/">
+<h3>Image Crop</h3>
+<p>Free crop or aspect-lock to 1:1, 4:5, 9:16, 16:9 and more. Drag handles to size + position. PNG/JPG export.</p>
+</a>
+<a class="tool-card" href="/tools/heic-jpg/">
+<h3>HEIC to JPG / PNG</h3>
+<p>Convert iPhone HEIC / HEIF photos to standard JPG or PNG. Batch convert, download as ZIP. Browser-only.</p>
+</a>
+<a class="tool-card" href="/tools/ocr/">
+<h3>Image to Text (OCR)</h3>
+<p>Extract text from any image via Tesseract.js. 100+ languages, browser-only — your image never uploaded.</p>
+</a>
+<a class="tool-card" href="/tools/pixelate/">
+<h3>Pixelate / Blur Image</h3>
+<p>Draw redaction boxes on an image — pixelate, blur, or solid black bar. For faces, license plates, sensitive info.</p>
+</a>
+<a class="tool-card" href="/tools/photo-collage/">
+<h3>Photo Collage Maker</h3>
+<p>Combine 2-9 photos into one image. Grid layout, configurable gap + background, IG / Story output sizes.</p>
+</a>
+<a class="tool-card" href="/tools/color-from-image/">
+<h3>Color Palette from Image</h3>
+<p>Auto-extract dominant 3-12 colors from any image. Median-cut quantization, HEX / RGB / HSL output.</p>
+</a>
+<a class="tool-card" href="/tools/gif-maker/">
+<h3>GIF Maker</h3>
+<p>Combine 2-30 images into an animated GIF. Drag to reorder, set frame delay + size. Browser-only via gif.js.</p>
+</a>
+<a class="tool-card" href="/tools/exif/">
+<h3>EXIF / Image Metadata Viewer</h3><p>See camera, lens, exposure, and GPS data in your photos. Strip metadata before sharing for privacy.</p>
+</a>
+<a class="tool-card" href="/tools/favicon/">
+<h3>Favicon Generator</h3>
+<p>Make favicons from an emoji, text, or image. Download PNGs at every size. Copy HTML snippet.</p>
+</a>
+<a class="tool-card" href="/tools/image-resize/">
+<h3>Image Resizer</h3>
+<p>Resize images to exact pixels with aspect lock. In your browser, no upload.</p>
+</a>
+<a class="tool-card" href="/tools/image-watermark/">
+<h3>Image Watermark</h3>
+<p>Overlay text on an image — position, size, color, opacity. In your browser.</p>
+</a>
+<a class="tool-card" href="/tools/avatar-crop/">
+<h3>Avatar Crop</h3>
+<p>Crop a photo to a circle or square avatar at any size. Transparent PNG.</p>
+</a>
+<a class="tool-card" href="/tools/image-ascii/">
+<h3>Image to ASCII</h3>
+<p>Turn a photo into text ASCII art — width, charset, invert. Copy/download.</p>
+</a>
+<a class="tool-card" href="/tools/meme/">
+<h3>Meme Generator</h3>
+<p>Add classic top/bottom caption text to an image and download. In your browser.</p>
+</a>
+<a class="tool-card" href="/tools/audio-trim/">
+<h3>Audio Trimmer</h3>
+<p>Cut a clip from an audio file by start/end time, download as WAV. In your browser.</p>
+</a>
+</div>
+</section>
+<section class="category" id="pdf">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/pdf/">PDF</a></h2>
+<span class="count">26 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/pdf-text/">
+<h3>PDF to Text</h3>
+<p>Extract text from any PDF file. Copy or download as .txt. Your file never leaves your device.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-to-image/">
+<h3>PDF to JPG / PNG</h3>
+<p>Convert every page of a PDF into a JPG or PNG image. Pick 72/144/300 DPI. Download single pages or all as ZIP.</p>
+</a>
+<a class="tool-card" href="/tools/image-to-pdf/">
+<h3>Image to PDF</h3>
+<p>Combine multiple JPG, PNG, WebP or GIF images into a single PDF. Drag to reorder, pick page size and margin.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-merge/">
+<h3>Merge PDF</h3>
+<p>Combine multiple PDFs into one file. Drag to reorder. Runs entirely in your browser — your PDFs stay local.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-split/">
+<h3>Split PDF</h3>
+<p>Extract a page range or split every page into its own file. Download as ZIP. Range syntax: 1-5, 8, 10-12.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-rotate/">
+<h3>Rotate PDF</h3>
+<p>Rotate every page or click thumbnails to rotate individual pages 90, 180 or 270 degrees. Save as new PDF.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-delete-pages/">
+<h3>Delete Pages from PDF</h3>
+<p>Click page thumbnails to mark them for removal, then save a clean PDF without those pages.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-numbers/">
+<h3>PDF Page Numbering</h3>
+<p>Add page numbers to any PDF. Pick position (header / footer × left / center / right), format, start number.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-watermark/">
+<h3>PDF Watermark</h3>
+<p>Add a diagonal text watermark — DRAFT, CONFIDENTIAL, copyright. Color, opacity, rotation, font size.</p>
+</a>
+<a class="tool-card" href="/tools/md-to-pdf/">
+<h3>Markdown to PDF</h3>
+<p>Paste Markdown, see a live preview, download a clean PDF. Tables, code blocks, lists, all supported.</p>
+</a>
+<a class="tool-card" href="/tools/html-to-pdf/">
+<h3>HTML to PDF</h3>
+<p>Paste raw HTML, see a live preview, download a paginated PDF. Inline CSS and data-URL images supported.</p>
+</a>
+<a class="tool-card" href="/tools/word-to-pdf/">
+<h3>Word to PDF</h3>
+<p>Convert .docx files to PDF directly in your browser via mammoth.js — your document never leaves your device. Headings, tables, lists, images preserved.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-metadata/">
+<h3>PDF Metadata Editor</h3>
+<p>View + edit Title, Author, Subject, Keywords, Creator. Strip personal info before sharing. SEO-friendly.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-crop/">
+<h3>Crop PDF</h3>
+<p>Trim margins from every page. Set top / bottom / left / right in mm or percentage. Useful for scanner output.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-reorder/">
+<h3>Reorder PDF Pages</h3>
+<p>Drag thumbnails to rearrange pages. Reverse all, remove pages, reset to original order. Save the new PDF.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-insert/">
+<h3>Insert PDF into Another</h3>
+<p>Insert pages from PDF B into PDF A at any position. Optional page-range filter. Different from Merge.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-sign/">
+<h3>Sign a PDF</h3>
+<p>Place a signature image on any page, drag to position, scale. PNG with transparency works best.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-compress/">
+<h3>Compress PDF</h3>
+<p>Reduce file size by rasterizing + JPEG-recompressing. Best for scans + slide decks. Before / after size shown.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-flatten/">
+<h3>PDF Form Flatten</h3>
+<p>Lock filled form values into static text — recipient can no longer edit. For signed contracts, tax forms, invoices.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-fill/">
+<h3>PDF Form Fill</h3>
+<p>Open any AcroForm PDF, fill every field directly in the browser, save the completed file.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-ocr/">
+<h3>PDF OCR — Make Scans Searchable</h3>
+<p>Run OCR on a scanned PDF via Tesseract.js. Output looks identical but has an invisible searchable text layer.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-redact/">
+<h3>PDF Redact</h3>
+<p>Permanent black-bar redaction — text underneath is destroyed via rasterization, not just hidden.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-resize/">
+<h3>PDF Page Size Resize</h3>
+<p>Convert pages between A4, Letter, Legal, A3, A5 or custom. Fit-with-margins or stretch-to-fill.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-to-md/">
+<h3>PDF to Markdown</h3>
+<p>Extract text with detected H1/H2/H3 headings via font-size clustering. Best for text-heavy documents.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-to-html/">
+<h3>PDF to HTML</h3>
+<p>Semantic h1/p tags or absolute-positioned divs. Two modes. Wrap in full HTML5 document.</p>
+</a>
+<a class="tool-card" href="/tools/pdf-to-word/">
+<h3>PDF to Word (.docx)</h3>
+<p>Honest text-only conversion to editable .docx. Headings preserved. Best for articles, reports, books.</p>
+</a>
+</div>
+</section>
+<section class="category" id="design-css">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/design-css/">Design & CSS</a></h2>
+<span class="count">27 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/colors/">
+<h3>Color Palette Extractor</h3>
+<p>Upload an image and extract its dominant colors. HEX, RGB, HSL values. Click to copy.</p>
+</a>
+<a class="tool-card" href="/tools/color-convert/">
+<h3>Color Converter</h3>
+<p>Convert between HEX, RGB, HSL, HSV, CMYK. Eyedrop or type any format. Includes complementary palettes.</p>
+</a>
+<a class="tool-card" href="/tools/contrast/">
+<h3>WCAG Contrast Checker</h3>
+<p>Check foreground/background pair against WCAG AA and AAA for normal and large text. Real-time score.</p>
+</a>
+<a class="tool-card" href="/tools/gradient/">
+<h3>Gradient Generator</h3>
+<p>Visual builder for linear and radial CSS gradients. Multiple color stops, live preview, copy code.</p>
+</a>
+<a class="tool-card" href="/tools/shadow/">
+<h3>Box Shadow Generator</h3>
+<p>Visual builder with multiple stacked shadows, inset toggle, and full control over offset, blur, spread, colour.</p>
+</a>
+<a class="tool-card" href="/tools/text-shadow/">
+<h3>Text Shadow Generator</h3>
+<p>Build polished text shadow effects with live preview and presets — glow, emboss, hard drop, neon and more.</p>
+</a>
+<a class="tool-card" href="/tools/css-filter/">
+<h3>CSS Filter Playground</h3>
+<p>Stack CSS filters on any image in real time — blur, brightness, contrast, hue-rotate, saturate, invert, sepia.</p>
+</a>
+<a class="tool-card" href="/tools/glass/">
+<h3>Glassmorphism Generator</h3>
+<p>Trendy frosted-glass effect builder. Backdrop-filter blur, tint, border, shadow and corner radius tuned live.</p>
+</a>
+<a class="tool-card" href="/tools/radius/">
+<h3>Border Radius Generator</h3>
+<p>Control all 8 corner handles individually. Elliptical radii, live preview, copy the full CSS rule.</p>
+</a>
+<a class="tool-card" href="/tools/clip-path/">
+<h3>Clip-path Generator</h3>
+<p>Visual builder for CSS clip-path polygons, circles and ellipses. Drag vertices directly in the preview.</p>
+</a>
+<a class="tool-card" href="/tools/css-gen/">
+<h3>CSS Generator</h3>
+<p>Visual builders for CSS gradients, box shadows, and border radius. Live preview, copy code.</p>
+</a>
+<a class="tool-card" href="/tools/css-anim/">
+<h3>CSS Animation Generator</h3>
+<p>Build keyframe animations visually. Drag timeline, edit per-frame properties, copy CSS.</p>
+</a>
+<a class="tool-card" href="/tools/css-flexbox/">
+<h3>CSS Flexbox Generator</h3>
+<p>Visual Flexbox builder with live preview. Direction, justify, align, wrap, gap — copy the CSS.</p>
+</a>
+<a class="tool-card" href="/tools/css-grid/">
+<h3>CSS Grid Generator</h3>
+<p>Visual CSS Grid builder. Presets for sidebar, cards, dashboard, Holy Grail. Custom templates supported.</p>
+</a>
+<a class="tool-card" href="/tools/color-mixer/">
+<h3>Color Mixer</h3>
+<p>Blend two colors and get the result plus every step in between. Adjustable ratio.</p>
+</a>
+<a class="tool-card" href="/tools/css-triangle/">
+<h3>CSS Triangle Generator</h3>
+<p>Pure CSS triangles in any direction, size and color via the border trick. Live preview.</p>
+</a>
+<a class="tool-card" href="/tools/cubic-bezier/">
+<h3>Cubic Bezier Editor</h3>
+<p>Drag handles to design a CSS cubic-bezier easing curve. Live animation preview.</p>
+</a>
+<a class="tool-card" href="/tools/neumorphism/">
+<h3>Neumorphism Generator</h3>
+<p>Soft-UI (neumorphic) shadow CSS with dual shadows and a live preview. Copy-paste ready.</p>
+</a>
+<a class="tool-card" href="/tools/px-rem/">
+<h3>PX to REM Converter</h3>
+<p>Convert px, rem, em, pt and percent for CSS based on your root font size.</p>
+</a>
+<a class="tool-card" href="/tools/color-blind/">
+<h3>Color Blindness Simulator</h3>
+<p>Preview colors under protanopia, deuteranopia, tritanopia and achromatopsia for accessibility.</p>
+</a>
+<a class="tool-card" href="/tools/color-name/">
+<h3>Color Name Finder</h3>
+<p>Find the nearest CSS named color for any hex value, with exact-match detection.</p>
+</a>
+<a class="tool-card" href="/tools/css-button/">
+<h3>CSS Button</h3>
+<p>Design a button visually, copy the CSS. Colors, radius, border, shadow, live preview.</p>
+</a>
+<a class="tool-card" href="/tools/css-spinner/">
+<h3>CSS Spinner</h3>
+<p>Pure-CSS loading spinner — size, color, speed. Copy HTML + CSS, no images.</p>
+</a>
+<a class="tool-card" href="/tools/css-scrollbar/">
+<h3>CSS Scrollbar</h3>
+<p>Style scrollbars — width, track & thumb colors, radius. WebKit + standard CSS.</p>
+</a>
+<a class="tool-card" href="/tools/text-gradient/">
+<h3>Gradient Text</h3>
+<p>Gradient-filled text via background-clip — two colors + angle, live preview.</p>
+</a>
+<a class="tool-card" href="/tools/css-specificity/">
+<h3>CSS Specificity</h3>
+<p>Score any selector's specificity (IDs, classes, elements) with a breakdown.</p>
+</a>
+<a class="tool-card" href="/tools/color-palette/">
+<h3>Color Palette</h3>
+<p>Harmonious palettes from a base color — complementary, triadic, analogous & more.</p>
+</a>
+</div>
+</section>
+<section class="category" id="calculators">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/calculators/">Calculators</a></h2>
+<span class="count">39 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/meeting-cost/">
+<h3>Meeting Cost Calculator</h3>
+<p>Find out how much your meetings actually cost. Enter attendees, salaries, and duration.</p>
+</a>
+<a class="tool-card" href="/tools/aspect/">
+<h3>Aspect Ratio Calculator</h3>
+<p>Resize images and videos keeping proportions. Presets for YouTube, Reels, Instagram, DSLR.</p>
+</a>
+<a class="tool-card" href="/tools/convert/">
+<h3>Unit Converter</h3>
+<p>Convert between units instantly. Length, weight, temperature, area, volume, speed, data size, time, CSS.</p>
+</a>
+<a class="tool-card" href="/tools/base/">
+<h3>Number Base Converter</h3>
+<p>Convert between binary, octal, decimal, and hex. Live-linked fields. Bitwise inspector.</p>
+</a>
+<a class="tool-card" href="/tools/bmi/">
+<h3>BMI &amp; Body Calculator</h3>
+<p>BMI, BMR, ideal weight, TDEE, and macros. Metric or imperial. US Navy body-fat method.</p>
+</a>
+<a class="tool-card" href="/tools/roman/">
+<h3>Roman Numerals Converter</h3>
+<p>Convert between Roman numerals and regular numbers. Supports extended notation up to 3,999,999.</p>
+</a>
+<a class="tool-card" href="/tools/percent/">
+<h3>Percentage Calculator</h3>
+<p>Three calculators in one: X % of Y, what % is X of Y, and percentage increase/decrease between two numbers.</p>
+</a>
+<a class="tool-card" href="/tools/random/">
+<h3>Random Number Generator</h3>
+<p>Generate random integers in any range, one-off or in batch. Cryptographically random, unique option.</p>
+</a>
+<a class="tool-card" href="/tools/temperature/">
+<h3>Temperature Converter</h3>
+<p>Convert between Celsius, Fahrenheit, Kelvin and Rankine. Live three-way conversion as you type.</p>
+</a>
+<a class="tool-card" href="/tools/num-words/">
+<h3>Number to Words</h3>
+<p>Spell out any integer in English, from zero to quadrillions. Useful for cheques, legal text, and invoices.</p>
+</a>
+<a class="tool-card" href="/tools/tdee/">
+<h3>TDEE &amp; BMR Calculator</h3>
+<p>Daily calorie needs using Mifflin-St Jeor. Activity multipliers + targets for cutting, maintaining and bulking.</p>
+</a>
+<a class="tool-card" href="/tools/pregnancy/">
+<h3>Due Date Calculator</h3>
+<p>Calculate due date and current pregnancy week from LMP or conception. Trimester breakdown + milestones.</p>
+</a>
+<a class="tool-card" href="/tools/pace/">
+<h3>Running Pace Calculator</h3>
+<p>Pace ↔ time ↔ distance. Split tables for 5K, 10K, half-marathon, marathon at any pace you set.</p>
+</a>
+<a class="tool-card" href="/tools/cooking/">
+<h3>Cooking Measurement Converter</h3>
+<p>Cups ↔ grams ↔ ml ↔ oz with per-ingredient density. Plus °C / °F / gas-mark for oven temps.</p>
+</a>
+<a class="tool-card" href="/tools/sleep/">
+<h3>Sleep Cycle Calculator</h3>
+<p>Wake at the end of a 90-minute cycle (not mid-cycle). Bedtime suggestions or wake-time options.</p>
+</a>
+<a class="tool-card" href="/tools/gpa/">
+<h3>GPA Calculator</h3>
+<p>Unweighted (4.0) + weighted (5.0) GPA from courses, grades, credits, and AP / honors / college flags.</p>
+</a>
+<a class="tool-card" href="/tools/mpg/">
+<h3>Gas Mileage Calculator</h3>
+<p>MPG (US + UK), L/100km, km/L, cost-per-mile, full trip cost. Multi-currency.</p>
+</a>
+<a class="tool-card" href="/tools/recipe-scaler/">
+<h3>Recipe Scaler</h3>
+<p>Paste any recipe, change servings — every ingredient quantity scales. Fraction-aware, decimals or pretty fractions.</p>
+</a>
+<a class="tool-card" href="/tools/average/">
+<h3>Average Calculator</h3>
+<p>Mean, median, mode, range, sum and count from any list of numbers.</p>
+</a>
+<a class="tool-card" href="/tools/hours-calculator/">
+<h3>Hours Calculator</h3>
+<p>Add up work time from start/end rows, subtract breaks. Total in h:mm and decimal hours.</p>
+</a>
+<a class="tool-card" href="/tools/fraction/">
+<h3>Fraction Calculator</h3>
+<p>Simplify fractions, fraction to decimal and decimal to fraction, mixed numbers.</p>
+</a>
+<a class="tool-card" href="/tools/ratio/">
+<h3>Ratio Calculator</h3>
+<p>Simplify ratios to lowest terms and solve proportions A:B = C:?. Scale mixes and recipes.</p>
+</a>
+<a class="tool-card" href="/tools/scientific-notation/">
+<h3>Scientific Notation</h3>
+<p>Convert numbers to/from scientific, E-notation and engineering notation.</p>
+</a>
+<a class="tool-card" href="/tools/circle-calculator/">
+<h3>Circle Calculator</h3>
+<p>Area, circumference, radius and diameter from any single value.</p>
+</a>
+<a class="tool-card" href="/tools/triangle-calculator/">
+<h3>Triangle Calculator</h3>
+<p>Area (Heron), perimeter, type and right-angle check from three sides.</p>
+</a>
+<a class="tool-card" href="/tools/pythagorean/">
+<h3>Pythagorean Calculator</h3>
+<p>Solve a² + b² = c² for the missing side of a right triangle.</p>
+</a>
+<a class="tool-card" href="/tools/gcd-lcm/">
+<h3>GCD & LCM Calculator</h3>
+<p>Greatest common divisor (HCF) and least common multiple of two or more numbers.</p>
+</a>
+<a class="tool-card" href="/tools/prime-checker/">
+<h3>Prime Checker</h3>
+<p>Check if a number is prime and get its prime factorization.</p>
+</a>
+<a class="tool-card" href="/tools/standard-deviation/">
+<h3>Standard Deviation</h3>
+<p>Population & sample standard deviation, variance and mean from a number list.</p>
+</a>
+<a class="tool-card" href="/tools/combinations/">
+<h3>Combinations & Permutations</h3>
+<p>nCr (combinations), nPr (permutations) and factorials from n and r.</p>
+</a>
+<a class="tool-card" href="/tools/unit-price/">
+<h3>Unit Price Calculator</h3>
+<p>Compare products by price per unit, find the cheapest option at the shelf.</p>
+</a>
+<a class="tool-card" href="/tools/slope/">
+<h3>Slope Calculator</h3>
+<p>Slope, distance, midpoint and y=mx+b from two points (x1,y1) and (x2,y2).</p>
+</a>
+<a class="tool-card" href="/tools/quadratic/">
+<h3>Quadratic Solver</h3>
+<p>Solve ax²+bx+c=0: roots (real or complex), discriminant and vertex.</p>
+</a>
+<a class="tool-card" href="/tools/tally-counter/">
+<h3>Tally Counter</h3>
+<p>Click counter with keyboard support & custom step. Count is saved in your browser.</p>
+</a>
+<a class="tool-card" href="/tools/fibonacci/">
+<h3>Fibonacci Generator</h3>
+<p>List N Fibonacci terms from any start point, exact big-integer math, one-click copy.</p>
+</a>
+<a class="tool-card" href="/tools/prime-factors/">
+<h3>Prime Factorization</h3>
+<p>Break a number into its prime factors, in exponent form (360 = 2³ × 3² × 5).</p>
+</a>
+<a class="tool-card" href="/tools/factorial/">
+<h3>Factorial Calculator</h3>
+<p>Compute n! exactly with big-integer math, plus the digit count.</p>
+</a>
+<a class="tool-card" href="/tools/simple-interest/">
+<h3>Simple Interest</h3>
+<p>Interest & total from principal, rate and time (I = P·r·t).</p>
+</a>
+<a class="tool-card" href="/tools/ohms-law/">
+<h3>Ohm's Law</h3>
+<p>Enter any 2 of V, I, R, P → get the other two. V=I·R, P=V·I.</p>
+</a>
+</div>
+</section>
+<section class="category" id="converters">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/converters/">Converters</a></h2>
+<span class="count">288 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/cm-to-inches/">
+<h3>Centimeters to Inches</h3>
+<p>Convert centimeters to inches (1 centimeter = 0.393701 in). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inches-to-cm/">
+<h3>Inches to Centimeters</h3>
+<p>Convert inches to centimeters (1 inch = 2.54 cm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mm-to-inches/">
+<h3>Millimeters to Inches</h3>
+<p>Convert millimeters to inches (1 millimeter = 0.03937 in). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inches-to-mm/">
+<h3>Inches to Millimeters</h3>
+<p>Convert inches to millimeters (1 inch = 25.4 mm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-to-meters/">
+<h3>Feet to Meters</h3>
+<p>Convert feet to meters (1 foot = 0.3048 m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-to-feet/">
+<h3>Meters to Feet</h3>
+<p>Convert meters to feet (1 meter = 3.28084 ft). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/km-to-miles/">
+<h3>Kilometers to Miles</h3>
+<p>Convert kilometers to miles (1 kilometer = 0.621371 mi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/miles-to-km/">
+<h3>Miles to Kilometers</h3>
+<p>Convert miles to kilometers (1 mile = 1.60934 km). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cm-to-feet/">
+<h3>Centimeters to Feet</h3>
+<p>Convert centimeters to feet (1 centimeter = 0.032808 ft). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-to-cm/">
+<h3>Feet to Centimeters</h3>
+<p>Convert feet to centimeters (1 foot = 30.48 cm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-to-yards/">
+<h3>Meters to Yards</h3>
+<p>Convert meters to yards (1 meter = 1.09361 yd). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/yards-to-meters/">
+<h3>Yards to Meters</h3>
+<p>Convert yards to meters (1 yard = 0.9144 m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-lbs/">
+<h3>Kilograms to Pounds</h3>
+<p>Convert kilograms to pounds (1 kilogram = 2.20462 lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lbs-to-kg/">
+<h3>Pounds to Kilograms</h3>
+<p>Convert pounds to kilograms (1 pound = 0.453592 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/grams-to-ounces/">
+<h3>Grams to Ounces</h3>
+<p>Convert grams to ounces (1 gram = 0.035274 oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ounces-to-grams/">
+<h3>Ounces to Grams</h3>
+<p>Convert ounces to grams (1 ounce = 28.3495 g). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-stone/">
+<h3>Kilograms to Stone</h3>
+<p>Convert kilograms to stone (1 kilogram = 0.157473 st). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/stone-to-kg/">
+<h3>Stone to Kilograms</h3>
+<p>Convert stone to kilograms (1 stone = 6.35029 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lbs-to-ounces/">
+<h3>Pounds to Ounces</h3>
+<p>Convert pounds to ounces (1 pound = 16 oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ounces-to-lbs/">
+<h3>Ounces to Pounds</h3>
+<p>Convert ounces to pounds (1 ounce = 0.0625 lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/liters-to-gallons/">
+<h3>Liters to US gallons</h3>
+<p>Convert liters to US gallons (1 liter = 0.264172 gal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gallons-to-liters/">
+<h3>US gallons to Liters</h3>
+<p>Convert US gallons to liters (1 US gallon = 3.78541 L). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-cups/">
+<h3>Milliliters to US cups</h3>
+<p>Convert milliliters to US cups (1 milliliter = 0.004227 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-ml/">
+<h3>US cups to Milliliters</h3>
+<p>Convert US cups to milliliters (1 US cup = 236.588 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mph-to-kmh/">
+<h3>Miles per hour to Kilometers per hour</h3>
+<p>Convert miles per hour to kilometers per hour (1 mile per hour = 1.60934 km/h). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kmh-to-mph/">
+<h3>Kilometers per hour to Miles per hour</h3>
+<p>Convert kilometers per hour to miles per hour (1 kilometer per hour = 0.621371 mph). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mb-to-gb/">
+<h3>Megabytes to Gigabytes</h3>
+<p>Convert megabytes to gigabytes (1 megabyte = 0.001 GB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gb-to-mb/">
+<h3>Gigabytes to Megabytes</h3>
+<p>Convert gigabytes to megabytes (1 gigabyte = 1000 MB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kb-to-mb/">
+<h3>Kilobytes to Megabytes</h3>
+<p>Convert kilobytes to megabytes (1 kilobyte = 0.001 MB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mb-to-kb/">
+<h3>Megabytes to Kilobytes</h3>
+<p>Convert megabytes to kilobytes (1 megabyte = 1000 KB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/celsius-to-fahrenheit/">
+<h3>Celsius to Fahrenheit</h3>
+<p>Convert Celsius to Fahrenheit (multiply by 9/5 and add 32). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/fahrenheit-to-celsius/">
+<h3>Fahrenheit to Celsius</h3>
+<p>Convert Fahrenheit to Celsius (subtract 32, then multiply by 5/9). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/celsius-to-kelvin/">
+<h3>Celsius to Kelvin</h3>
+<p>Convert Celsius to Kelvin (add 273.15). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kelvin-to-celsius/">
+<h3>Kelvin to Celsius</h3>
+<p>Convert Kelvin to Celsius (subtract 273.15). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mm-to-cm/">
+<h3>Millimeters to Centimeters</h3>
+<p>Convert millimeters to centimeters (1 millimeter = 0.1 cm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cm-to-mm/">
+<h3>Centimeters to Millimeters</h3>
+<p>Convert centimeters to millimeters (1 centimeter = 10 mm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/km-to-feet/">
+<h3>Kilometers to Feet</h3>
+<p>Convert kilometers to feet (1 kilometer = 3280.84 ft). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-to-km/">
+<h3>Feet to Kilometers</h3>
+<p>Convert feet to kilometers (1 foot = 0.000305 km). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/miles-to-yards/">
+<h3>Miles to Yards</h3>
+<p>Convert miles to yards (1 mile = 1760 yd). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/yards-to-miles/">
+<h3>Yards to Miles</h3>
+<p>Convert yards to miles (1 yard = 0.000568 mi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/yards-to-feet/">
+<h3>Yards to Feet</h3>
+<p>Convert yards to feet (1 yard = 3 ft). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-to-yards/">
+<h3>Feet to Yards</h3>
+<p>Convert feet to yards (1 foot = 0.333333 yd). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/miles-to-feet/">
+<h3>Miles to Feet</h3>
+<p>Convert miles to feet (1 mile = 5280 ft). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-to-miles/">
+<h3>Feet to Miles</h3>
+<p>Convert feet to miles (1 foot = 0.000189 mi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/milligrams-to-grams/">
+<h3>Milligrams to Grams</h3>
+<p>Convert milligrams to grams (1 milligram = 0.001 g). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/grams-to-milligrams/">
+<h3>Grams to Milligrams</h3>
+<p>Convert grams to milligrams (1 gram = 1000 mg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tonnes-to-kg/">
+<h3>Tonnes to Kilograms</h3>
+<p>Convert tonnes to kilograms (1 tonne = 1000 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-tonnes/">
+<h3>Kilograms to Tonnes</h3>
+<p>Convert kilograms to tonnes (1 kilogram = 0.001 t). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/grams-to-lbs/">
+<h3>Grams to Pounds</h3>
+<p>Convert grams to pounds (1 gram = 0.002205 lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lbs-to-grams/">
+<h3>Pounds to Grams</h3>
+<p>Convert pounds to grams (1 pound = 453.592 g). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ounces-to-kg/">
+<h3>Ounces to Kilograms</h3>
+<p>Convert ounces to kilograms (1 ounce = 0.02835 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-ounces/">
+<h3>Kilograms to Ounces</h3>
+<p>Convert kilograms to ounces (1 kilogram = 35.274 oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tablespoons-to-ml/">
+<h3>Tablespoons to Milliliters</h3>
+<p>Convert tablespoons to milliliters (1 tablespoon = 14.7868 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-tablespoons/">
+<h3>Milliliters to Tablespoons</h3>
+<p>Convert milliliters to tablespoons (1 milliliter = 0.067628 tbsp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/teaspoons-to-ml/">
+<h3>Teaspoons to Milliliters</h3>
+<p>Convert teaspoons to milliliters (1 teaspoon = 4.92892 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-teaspoons/">
+<h3>Milliliters to Teaspoons</h3>
+<p>Convert milliliters to teaspoons (1 milliliter = 0.202884 tsp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pints-to-ml/">
+<h3>US pints to Milliliters</h3>
+<p>Convert US pints to milliliters (1 US pint = 473.176 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-pints/">
+<h3>Milliliters to US pints</h3>
+<p>Convert milliliters to US pints (1 milliliter = 0.002113 pt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/quarts-to-liters/">
+<h3>US quarts to Liters</h3>
+<p>Convert US quarts to liters (1 US quart = 0.946353 L). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/liters-to-quarts/">
+<h3>Liters to US quarts</h3>
+<p>Convert liters to US quarts (1 liter = 1.05669 qt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/fluid-ounces-to-ml/">
+<h3>US fluid ounces to Milliliters</h3>
+<p>Convert US fluid ounces to milliliters (1 US fluid ounce = 29.5735 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-fluid-ounces/">
+<h3>Milliliters to US fluid ounces</h3>
+<p>Convert milliliters to US fluid ounces (1 milliliter = 0.033814 fl oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/knots-to-kmh/">
+<h3>Knots to Kilometers per hour</h3>
+<p>Convert knots to kilometers per hour (1 knot = 1.852 km/h). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kmh-to-knots/">
+<h3>Kilometers per hour to Knots</h3>
+<p>Convert kilometers per hour to knots (1 kilometer per hour = 0.539957 kn). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/knots-to-mph/">
+<h3>Knots to Miles per hour</h3>
+<p>Convert knots to miles per hour (1 knot = 1.15078 mph). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mph-to-knots/">
+<h3>Miles per hour to Knots</h3>
+<p>Convert miles per hour to knots (1 mile per hour = 0.868976 kn). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-per-second-to-kmh/">
+<h3>Meters per second to Kilometers per hour</h3>
+<p>Convert meters per second to kilometers per hour (1 meter per second = 3.6 km/h). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kmh-to-meters-per-second/">
+<h3>Kilometers per hour to Meters per second</h3>
+<p>Convert kilometers per hour to meters per second (1 kilometer per hour = 0.277778 m/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-per-second-to-mph/">
+<h3>Feet per second to Miles per hour</h3>
+<p>Convert feet per second to miles per hour (1 foot per second = 0.681818 mph). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mph-to-feet-per-second/">
+<h3>Miles per hour to Feet per second</h3>
+<p>Convert miles per hour to feet per second (1 mile per hour = 1.46667 ft/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gb-to-tb/">
+<h3>Gigabytes to Terabytes</h3>
+<p>Convert gigabytes to terabytes (1 gigabyte = 0.001 TB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tb-to-gb/">
+<h3>Terabytes to Gigabytes</h3>
+<p>Convert terabytes to gigabytes (1 terabyte = 1000 GB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bytes-to-kb/">
+<h3>Bytes to Kilobytes</h3>
+<p>Convert bytes to kilobytes (1 byte = 0.001 KB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kb-to-bytes/">
+<h3>Kilobytes to Bytes</h3>
+<p>Convert kilobytes to bytes (1 kilobyte = 1000 B). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bits-to-bytes/">
+<h3>Bits to Bytes</h3>
+<p>Convert bits to bytes (1 bit = 0.125 B). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bytes-to-bits/">
+<h3>Bytes to Bits</h3>
+<p>Convert bytes to bits (1 byte = 8 bit). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-meters-to-square-feet/">
+<h3>Square meters to Square feet</h3>
+<p>Convert square meters to square feet (1 square meter = 10.7639 ft²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-feet-to-square-meters/">
+<h3>Square feet to Square meters</h3>
+<p>Convert square feet to square meters (1 square foot = 0.092903 m²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/acres-to-hectares/">
+<h3>Acres to Hectares</h3>
+<p>Convert acres to hectares (1 acre = 0.404686 ha). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hectares-to-acres/">
+<h3>Hectares to Acres</h3>
+<p>Convert hectares to acres (1 hectare = 2.47105 ac). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-kilometers-to-square-miles/">
+<h3>Square kilometers to Square miles</h3>
+<p>Convert square kilometers to square miles (1 square kilometer = 0.386102 mi²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-miles-to-square-kilometers/">
+<h3>Square miles to Square kilometers</h3>
+<p>Convert square miles to square kilometers (1 square mile = 2.58999 km²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-feet-to-square-yards/">
+<h3>Square feet to Square yards</h3>
+<p>Convert square feet to square yards (1 square foot = 0.111111 yd²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-yards-to-square-feet/">
+<h3>Square yards to Square feet</h3>
+<p>Convert square yards to square feet (1 square yard = 9 ft²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bar-to-psi/">
+<h3>Bar to Psi</h3>
+<p>Convert bar to psi (1 bar = 14.5038 psi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/psi-to-bar/">
+<h3>Psi to Bar</h3>
+<p>Convert psi to bar (1 psi = 0.068948 bar). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/psi-to-kilopascals/">
+<h3>Psi to Kilopascals</h3>
+<p>Convert psi to kilopascals (1 psi = 6.89476 kPa). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilopascals-to-psi/">
+<h3>Kilopascals to Psi</h3>
+<p>Convert kilopascals to psi (1 kilopascal = 0.145038 psi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/atmospheres-to-bar/">
+<h3>Atmospheres to Bar</h3>
+<p>Convert atmospheres to bar (1 atmosphere = 1.01325 bar). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bar-to-atmospheres/">
+<h3>Bar to Atmospheres</h3>
+<p>Convert bar to atmospheres (1 bar = 0.986923 atm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilocalories-to-kilojoules/">
+<h3>Kilocalories to Kilojoules</h3>
+<p>Convert kilocalories to kilojoules (1 kilocalorie = 4.184 kJ). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilojoules-to-kilocalories/">
+<h3>Kilojoules to Kilocalories</h3>
+<p>Convert kilojoules to kilocalories (1 kilojoule = 0.239006 kcal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/calories-to-joules/">
+<h3>Calories to Joules</h3>
+<p>Convert calories to joules (1 calorie = 4.184 J). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/joules-to-calories/">
+<h3>Joules to Calories</h3>
+<p>Convert joules to calories (1 joule = 0.239006 cal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/degrees-to-radians/">
+<h3>Degrees to Radians</h3>
+<p>Convert degrees to radians (1 degree = 0.017453 rad). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/radians-to-degrees/">
+<h3>Radians to Degrees</h3>
+<p>Convert radians to degrees (1 radian = 57.2958 deg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/horsepower-to-kilowatts/">
+<h3>Horsepower to Kilowatts</h3>
+<p>Convert horsepower to kilowatts (1 horsepower = 0.7457 kW). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilowatts-to-horsepower/">
+<h3>Kilowatts to Horsepower</h3>
+<p>Convert kilowatts to horsepower (1 kilowatt = 1.34102 hp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-to-cm/">
+<h3>Meters to Centimeters</h3>
+<p>Convert meters to centimeters (1 meter = 100 cm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cm-to-meters/">
+<h3>Centimeters to Meters</h3>
+<p>Convert centimeters to meters (1 centimeter = 0.01 m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-to-inches/">
+<h3>Meters to Inches</h3>
+<p>Convert meters to inches (1 meter = 39.3701 in). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inches-to-meters/">
+<h3>Inches to Meters</h3>
+<p>Convert inches to meters (1 inch = 0.0254 m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inches-to-yards/">
+<h3>Inches to Yards</h3>
+<p>Convert inches to yards (1 inch = 0.027778 yd). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/yards-to-inches/">
+<h3>Yards to Inches</h3>
+<p>Convert yards to inches (1 yard = 36 in). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/grams-to-kg/">
+<h3>Grams to Kilograms</h3>
+<p>Convert grams to kilograms (1 gram = 0.001 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-grams/">
+<h3>Kilograms to Grams</h3>
+<p>Convert kilograms to grams (1 kilogram = 1000 g). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lbs-to-stone/">
+<h3>Pounds to Stone</h3>
+<p>Convert pounds to stone (1 pound = 0.071429 st). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/stone-to-lbs/">
+<h3>Stone to Pounds</h3>
+<p>Convert stone to pounds (1 stone = 14 lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-tablespoons/">
+<h3>US cups to Tablespoons</h3>
+<p>Convert US cups to tablespoons (1 US cup = 16 tbsp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tablespoons-to-cups/">
+<h3>Tablespoons to US cups</h3>
+<p>Convert tablespoons to US cups (1 tablespoon = 0.0625 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tablespoons-to-teaspoons/">
+<h3>Tablespoons to Teaspoons</h3>
+<p>Convert tablespoons to teaspoons (1 tablespoon = 3 tsp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/teaspoons-to-tablespoons/">
+<h3>Teaspoons to Tablespoons</h3>
+<p>Convert teaspoons to tablespoons (1 teaspoon = 0.333333 tbsp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gallons-to-cups/">
+<h3>US gallons to US cups</h3>
+<p>Convert US gallons to US cups (1 US gallon = 16 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-gallons/">
+<h3>US cups to US gallons</h3>
+<p>Convert US cups to US gallons (1 US cup = 0.0625 gal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/quarts-to-cups/">
+<h3>US quarts to US cups</h3>
+<p>Convert US quarts to US cups (1 US quart = 4 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-quarts/">
+<h3>US cups to US quarts</h3>
+<p>Convert US cups to US quarts (1 US cup = 0.25 qt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pints-to-cups/">
+<h3>US pints to US cups</h3>
+<p>Convert US pints to US cups (1 US pint = 2 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-pints/">
+<h3>US cups to US pints</h3>
+<p>Convert US cups to US pints (1 US cup = 0.5 pt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/liters-to-ml/">
+<h3>Liters to Milliliters</h3>
+<p>Convert liters to milliliters (1 liter = 1000 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-liters/">
+<h3>Milliliters to Liters</h3>
+<p>Convert milliliters to liters (1 milliliter = 0.001 L). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kb-to-gb/">
+<h3>Kilobytes to Gigabytes</h3>
+<p>Convert kilobytes to gigabytes (1 kilobyte = 1e-06 GB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gb-to-kb/">
+<h3>Gigabytes to Kilobytes</h3>
+<p>Convert gigabytes to kilobytes (1 gigabyte = 1e+06 KB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mb-to-tb/">
+<h3>Megabytes to Terabytes</h3>
+<p>Convert megabytes to terabytes (1 megabyte = 1e-06 TB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tb-to-mb/">
+<h3>Terabytes to Megabytes</h3>
+<p>Convert terabytes to megabytes (1 terabyte = 1e+06 MB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-meters-to-acres/">
+<h3>Square meters to Acres</h3>
+<p>Convert square meters to acres (1 square meter = 0.000247 ac). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/acres-to-square-meters/">
+<h3>Acres to Square meters</h3>
+<p>Convert acres to square meters (1 acre = 4046.86 m²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-yards-to-square-meters/">
+<h3>Square yards to Square meters</h3>
+<p>Convert square yards to square meters (1 square yard = 0.836127 m²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-meters-to-square-yards/">
+<h3>Square meters to Square yards</h3>
+<p>Convert square meters to square yards (1 square meter = 1.19599 yd²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilowatt-hours-to-watt-hours/">
+<h3>Kilowatt-hours to Watt-hours</h3>
+<p>Convert kilowatt-hours to watt-hours (1 kilowatt-hour = 1000 Wh). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/watt-hours-to-kilowatt-hours/">
+<h3>Watt-hours to Kilowatt-hours</h3>
+<p>Convert watt-hours to kilowatt-hours (1 watt-hour = 0.001 kWh). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilocalories-to-calories/">
+<h3>Kilocalories to Calories</h3>
+<p>Convert kilocalories to calories (1 kilocalorie = 1000 cal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/calories-to-kilocalories/">
+<h3>Calories to Kilocalories</h3>
+<p>Convert calories to kilocalories (1 calorie = 0.001 kcal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/atmospheres-to-psi/">
+<h3>Atmospheres to Psi</h3>
+<p>Convert atmospheres to psi (1 atmosphere = 14.6959 psi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/psi-to-atmospheres/">
+<h3>Psi to Atmospheres</h3>
+<p>Convert psi to atmospheres (1 psi = 0.068046 atm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/horsepower-to-watts/">
+<h3>Horsepower to Watts</h3>
+<p>Convert horsepower to watts (1 horsepower = 745.7 W). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/watts-to-horsepower/">
+<h3>Watts to Horsepower</h3>
+<p>Convert watts to horsepower (1 watt = 0.001341 hp). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/seconds-to-minutes/">
+<h3>Seconds to Minutes</h3>
+<p>Convert seconds to minutes (1 second = 0.016667 min). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/minutes-to-seconds/">
+<h3>Minutes to Seconds</h3>
+<p>Convert minutes to seconds (1 minute = 60 s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/minutes-to-hours/">
+<h3>Minutes to Hours</h3>
+<p>Convert minutes to hours (1 minute = 0.016667 hr). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hours-to-minutes/">
+<h3>Hours to Minutes</h3>
+<p>Convert hours to minutes (1 hour = 60 min). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hours-to-days/">
+<h3>Hours to Days</h3>
+<p>Convert hours to days (1 hour = 0.041667 d). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/days-to-hours/">
+<h3>Days to Hours</h3>
+<p>Convert days to hours (1 day = 24 hr). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/days-to-weeks/">
+<h3>Days to Weeks</h3>
+<p>Convert days to weeks (1 day = 0.142857 wk). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/weeks-to-days/">
+<h3>Weeks to Days</h3>
+<p>Convert weeks to days (1 week = 7 d). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/milliseconds-to-seconds/">
+<h3>Milliseconds to Seconds</h3>
+<p>Convert milliseconds to seconds (1 millisecond = 0.001 s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/seconds-to-milliseconds/">
+<h3>Seconds to Milliseconds</h3>
+<p>Convert seconds to milliseconds (1 second = 1000 ms). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/megahertz-to-gigahertz/">
+<h3>Megahertz to Gigahertz</h3>
+<p>Convert megahertz to gigahertz (1 megahertz = 0.001 GHz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gigahertz-to-megahertz/">
+<h3>Gigahertz to Megahertz</h3>
+<p>Convert gigahertz to megahertz (1 gigahertz = 1000 MHz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilohertz-to-megahertz/">
+<h3>Kilohertz to Megahertz</h3>
+<p>Convert kilohertz to megahertz (1 kilohertz = 0.001 MHz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/megahertz-to-kilohertz/">
+<h3>Megahertz to Kilohertz</h3>
+<p>Convert megahertz to kilohertz (1 megahertz = 1000 kHz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hertz-to-kilohertz/">
+<h3>Hertz to Kilohertz</h3>
+<p>Convert hertz to kilohertz (1 hertz = 0.001 kHz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilohertz-to-hertz/">
+<h3>Kilohertz to Hertz</h3>
+<p>Convert kilohertz to hertz (1 kilohertz = 1000 Hz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mbps-to-mb-per-second/">
+<h3>Megabits per second to Megabytes per second</h3>
+<p>Convert megabits per second to megabytes per second (1 megabit per second = 0.125 MB/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mb-per-second-to-mbps/">
+<h3>Megabytes per second to Megabits per second</h3>
+<p>Convert megabytes per second to megabits per second (1 megabyte per second = 8 Mbps). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gbps-to-mbps/">
+<h3>Gigabits per second to Megabits per second</h3>
+<p>Convert gigabits per second to megabits per second (1 gigabit per second = 1000 Mbps). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mbps-to-gbps/">
+<h3>Megabits per second to Gigabits per second</h3>
+<p>Convert megabits per second to gigabits per second (1 megabit per second = 0.001 Gbps). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mbps-to-kbps/">
+<h3>Megabits per second to Kilobits per second</h3>
+<p>Convert megabits per second to kilobits per second (1 megabit per second = 1000 kbps). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kbps-to-mbps/">
+<h3>Kilobits per second to Megabits per second</h3>
+<p>Convert kilobits per second to megabits per second (1 kilobit per second = 0.001 Mbps). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/newton-metres-to-foot-pounds/">
+<h3>Newton metres to Foot-pounds</h3>
+<p>Convert newton metres to foot-pounds (1 newton metre = 0.737562 ft·lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/foot-pounds-to-newton-metres/">
+<h3>Foot-pounds to Newton metres</h3>
+<p>Convert foot-pounds to newton metres (1 foot-pound = 1.35582 N·m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/newton-metres-to-inch-pounds/">
+<h3>Newton metres to Inch-pounds</h3>
+<p>Convert newton metres to inch-pounds (1 newton metre = 8.85075 in·lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inch-pounds-to-newton-metres/">
+<h3>Inch-pounds to Newton metres</h3>
+<p>Convert inch-pounds to newton metres (1 inch-pound = 0.112985 N·m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/foot-pounds-to-inch-pounds/">
+<h3>Foot-pounds to Inch-pounds</h3>
+<p>Convert foot-pounds to inch-pounds (1 foot-pound = 12 in·lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inch-pounds-to-foot-pounds/">
+<h3>Inch-pounds to Foot-pounds</h3>
+<p>Convert inch-pounds to foot-pounds (1 inch-pound = 0.083333 ft·lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/newtons-to-pounds-force/">
+<h3>Newtons to Pounds-force</h3>
+<p>Convert newtons to pounds-force (1 newton = 0.224809 lbf). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pounds-force-to-newtons/">
+<h3>Pounds-force to Newtons</h3>
+<p>Convert pounds-force to newtons (1 pound-force = 4.44822 N). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilograms-force-to-newtons/">
+<h3>Kilograms-force to Newtons</h3>
+<p>Convert kilograms-force to newtons (1 kilogram-force = 9.80665 N). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/newtons-to-kilograms-force/">
+<h3>Newtons to Kilograms-force</h3>
+<p>Convert newtons to kilograms-force (1 newton = 0.101972 kgf). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilonewtons-to-newtons/">
+<h3>Kilonewtons to Newtons</h3>
+<p>Convert kilonewtons to newtons (1 kilonewton = 1000 N). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/newtons-to-kilonewtons/">
+<h3>Newtons to Kilonewtons</h3>
+<p>Convert newtons to kilonewtons (1 newton = 0.001 kN). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gallons-to-quarts/">
+<h3>US gallons to US quarts</h3>
+<p>Convert US gallons to US quarts (1 US gallon = 4 qt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/quarts-to-gallons/">
+<h3>US quarts to US gallons</h3>
+<p>Convert US quarts to US gallons (1 US quart = 0.25 gal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gallons-to-pints/">
+<h3>US gallons to US pints</h3>
+<p>Convert US gallons to US pints (1 US gallon = 8 pt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pints-to-gallons/">
+<h3>US pints to US gallons</h3>
+<p>Convert US pints to US gallons (1 US pint = 0.125 gal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/quarts-to-pints/">
+<h3>US quarts to US pints</h3>
+<p>Convert US quarts to US pints (1 US quart = 2 pt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pints-to-quarts/">
+<h3>US pints to US quarts</h3>
+<p>Convert US pints to US quarts (1 US pint = 0.5 qt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-fluid-ounces/">
+<h3>US cups to US fluid ounces</h3>
+<p>Convert US cups to US fluid ounces (1 US cup = 8 fl oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/fluid-ounces-to-cups/">
+<h3>US fluid ounces to US cups</h3>
+<p>Convert US fluid ounces to US cups (1 US fluid ounce = 0.125 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gallons-to-fluid-ounces/">
+<h3>US gallons to US fluid ounces</h3>
+<p>Convert US gallons to US fluid ounces (1 US gallon = 128 fl oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/fluid-ounces-to-gallons/">
+<h3>US fluid ounces to US gallons</h3>
+<p>Convert US fluid ounces to US gallons (1 US fluid ounce = 0.007812 gal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-to-inches/">
+<h3>Feet to Inches</h3>
+<p>Convert feet to inches (1 foot = 12 in). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/inches-to-feet/">
+<h3>Inches to Feet</h3>
+<p>Convert inches to feet (1 inch = 0.083333 ft). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-to-mm/">
+<h3>Meters to Millimeters</h3>
+<p>Convert meters to millimeters (1 meter = 1000 mm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mm-to-meters/">
+<h3>Millimeters to Meters</h3>
+<p>Convert millimeters to meters (1 millimeter = 0.001 m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/acres-to-square-feet/">
+<h3>Acres to Square feet</h3>
+<p>Convert acres to square feet (1 acre = 43560 ft²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-feet-to-acres/">
+<h3>Square feet to Acres</h3>
+<p>Convert square feet to acres (1 square foot = 2.3e-05 ac). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mmhg-to-kilopascals/">
+<h3>Millimeters of mercury to Kilopascals</h3>
+<p>Convert millimeters of mercury to kilopascals (1 millimeter of mercury = 0.133322 kPa). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilopascals-to-mmhg/">
+<h3>Kilopascals to Millimeters of mercury</h3>
+<p>Convert kilopascals to millimeters of mercury (1 kilopascal = 7.50062 mmHg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mmhg-to-psi/">
+<h3>Millimeters of mercury to Psi</h3>
+<p>Convert millimeters of mercury to psi (1 millimeter of mercury = 0.019337 psi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/psi-to-mmhg/">
+<h3>Psi to Millimeters of mercury</h3>
+<p>Convert psi to millimeters of mercury (1 psi = 51.7149 mmHg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/joules-to-kilojoules/">
+<h3>Joules to Kilojoules</h3>
+<p>Convert joules to kilojoules (1 joule = 0.001 kJ). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilojoules-to-joules/">
+<h3>Kilojoules to Joules</h3>
+<p>Convert kilojoules to joules (1 kilojoule = 1000 J). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/degrees-to-gradians/">
+<h3>Degrees to Gradians</h3>
+<p>Convert degrees to gradians (1 degree = 1.11111 gon). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gradians-to-degrees/">
+<h3>Gradians to Degrees</h3>
+<p>Convert gradians to degrees (1 gradian = 0.9 deg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/seconds-to-hours/">
+<h3>Seconds to Hours</h3>
+<p>Convert seconds to hours (1 second = 0.000278 hr). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hours-to-seconds/">
+<h3>Hours to Seconds</h3>
+<p>Convert hours to seconds (1 hour = 3600 s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/fahrenheit-to-kelvin/">
+<h3>Fahrenheit to Kelvin</h3>
+<p>Convert Fahrenheit to Kelvin (subtract 32, multiply by 5/9, then add 273.15). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kelvin-to-fahrenheit/">
+<h3>Kelvin to Fahrenheit</h3>
+<p>Convert Kelvin to Fahrenheit (multiply by 9/5, then subtract 459.67). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/rpm-to-hertz/">
+<h3>Revolutions per minute to Hertz</h3>
+<p>Convert revolutions per minute to hertz (1 revolution per minute = 0.016667 Hz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hertz-to-rpm/">
+<h3>Hertz to Revolutions per minute</h3>
+<p>Convert hertz to revolutions per minute (1 hertz = 60 rpm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/carats-to-grams/">
+<h3>Carats to Grams</h3>
+<p>Convert carats to grams (1 carat = 0.2 g). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/grams-to-carats/">
+<h3>Grams to Carats</h3>
+<p>Convert grams to carats (1 gram = 5 ct). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/short-tons-to-kg/">
+<h3>Short tons to Kilograms</h3>
+<p>Convert short tons to kilograms (1 short ton = 907.185 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-short-tons/">
+<h3>Kilograms to Short tons</h3>
+<p>Convert kilograms to short tons (1 kilogram = 0.001102 ton). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/short-tons-to-lbs/">
+<h3>Short tons to Pounds</h3>
+<p>Convert short tons to pounds (1 short ton = 2000 lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lbs-to-short-tons/">
+<h3>Pounds to Short tons</h3>
+<p>Convert pounds to short tons (1 pound = 0.0005 ton). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-to-milligrams/">
+<h3>Kilograms to Milligrams</h3>
+<p>Convert kilograms to milligrams (1 kilogram = 1e+06 mg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/milligrams-to-kg/">
+<h3>Milligrams to Kilograms</h3>
+<p>Convert milligrams to kilograms (1 milligram = 1e-06 kg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/btu-to-kilojoules/">
+<h3>BTU to Kilojoules</h3>
+<p>Convert BTU to kilojoules (1 BTU = 1.05506 kJ). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilojoules-to-btu/">
+<h3>Kilojoules to BTU</h3>
+<p>Convert kilojoules to BTU (1 kilojoule = 0.947817 BTU). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/btu-to-watt-hours/">
+<h3>BTU to Watt-hours</h3>
+<p>Convert BTU to watt-hours (1 BTU = 0.293071 Wh). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/watt-hours-to-btu/">
+<h3>Watt-hours to BTU</h3>
+<p>Convert watt-hours to BTU (1 watt-hour = 3.41214 BTU). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tb-to-pb/">
+<h3>Terabytes to Petabytes</h3>
+<p>Convert terabytes to petabytes (1 terabyte = 0.001 PB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pb-to-tb/">
+<h3>Petabytes to Terabytes</h3>
+<p>Convert petabytes to terabytes (1 petabyte = 1000 TB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bytes-to-mb/">
+<h3>Bytes to Megabytes</h3>
+<p>Convert bytes to megabytes (1 byte = 1e-06 MB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mb-to-bytes/">
+<h3>Megabytes to Bytes</h3>
+<p>Convert megabytes to bytes (1 megabyte = 1e+06 B). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/bytes-to-gb/">
+<h3>Bytes to Gigabytes</h3>
+<p>Convert bytes to gigabytes (1 byte = 0 GB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gb-to-bytes/">
+<h3>Gigabytes to Bytes</h3>
+<p>Convert gigabytes to bytes (1 gigabyte = 1e+09 B). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilowatts-to-watts/">
+<h3>Kilowatts to Watts</h3>
+<p>Convert kilowatts to watts (1 kilowatt = 1000 W). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/watts-to-kilowatts/">
+<h3>Watts to Kilowatts</h3>
+<p>Convert watts to kilowatts (1 watt = 0.001 kW). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/megawatts-to-kilowatts/">
+<h3>Megawatts to Kilowatts</h3>
+<p>Convert megawatts to kilowatts (1 megawatt = 1000 kW). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilowatts-to-megawatts/">
+<h3>Kilowatts to Megawatts</h3>
+<p>Convert kilowatts to megawatts (1 kilowatt = 0.001 MW). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-feet-to-square-inches/">
+<h3>Square feet to Square inches</h3>
+<p>Convert square feet to square inches (1 square foot = 144 in²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-inches-to-square-feet/">
+<h3>Square inches to Square feet</h3>
+<p>Convert square inches to square feet (1 square inch = 0.006944 ft²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-meters-to-square-centimeters/">
+<h3>Square meters to Square centimeters</h3>
+<p>Convert square meters to square centimeters (1 square meter = 10000 cm²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-centimeters-to-square-meters/">
+<h3>Square centimeters to Square meters</h3>
+<p>Convert square centimeters to square meters (1 square centimeter = 0.0001 m²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-per-second-to-mph/">
+<h3>Meters per second to Miles per hour</h3>
+<p>Convert meters per second to miles per hour (1 meter per second = 2.23694 mph). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mph-to-meters-per-second/">
+<h3>Miles per hour to Meters per second</h3>
+<p>Convert miles per hour to meters per second (1 mile per hour = 0.44704 m/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-per-second-to-meters-per-second/">
+<h3>Feet per second to Meters per second</h3>
+<p>Convert feet per second to meters per second (1 foot per second = 0.3048 m/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-per-second-to-feet-per-second/">
+<h3>Meters per second to Feet per second</h3>
+<p>Convert meters per second to feet per second (1 meter per second = 3.28084 ft/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/knots-to-meters-per-second/">
+<h3>Knots to Meters per second</h3>
+<p>Convert knots to meters per second (1 knot = 0.514444 m/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-per-second-to-knots/">
+<h3>Meters per second to Knots</h3>
+<p>Convert meters per second to knots (1 meter per second = 1.94384 kn). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/psi-to-pascals/">
+<h3>Psi to Pascals</h3>
+<p>Convert psi to pascals (1 psi = 6894.76 Pa). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pascals-to-psi/">
+<h3>Pascals to Psi</h3>
+<p>Convert pascals to psi (1 pascal = 0.000145 psi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/nautical-miles-to-km/">
+<h3>Nautical miles to Kilometers</h3>
+<p>Convert nautical miles to kilometers (1 nautical mile = 1.852 km). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/km-to-nautical-miles/">
+<h3>Kilometers to Nautical miles</h3>
+<p>Convert kilometers to nautical miles (1 kilometer = 0.539957 nmi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/nautical-miles-to-miles/">
+<h3>Nautical miles to Miles</h3>
+<p>Convert nautical miles to miles (1 nautical mile = 1.15078 mi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/miles-to-nautical-miles/">
+<h3>Miles to Nautical miles</h3>
+<p>Convert miles to nautical miles (1 mile = 0.868976 nmi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pints-to-liters/">
+<h3>US pints to Liters</h3>
+<p>Convert US pints to liters (1 US pint = 0.473176 L). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/liters-to-pints/">
+<h3>Liters to US pints</h3>
+<p>Convert liters to US pints (1 liter = 2.11338 pt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/fluid-ounces-to-liters/">
+<h3>US fluid ounces to Liters</h3>
+<p>Convert US fluid ounces to liters (1 US fluid ounce = 0.029574 L). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/liters-to-fluid-ounces/">
+<h3>Liters to US fluid ounces</h3>
+<p>Convert liters to US fluid ounces (1 liter = 33.814 fl oz). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/liters-to-cups/">
+<h3>Liters to US cups</h3>
+<p>Convert liters to US cups (1 liter = 4.22675 cup). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/cups-to-liters/">
+<h3>US cups to Liters</h3>
+<p>Convert US cups to liters (1 US cup = 0.236588 L). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gallons-to-ml/">
+<h3>US gallons to Milliliters</h3>
+<p>Convert US gallons to milliliters (1 US gallon = 3785.41 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-gallons/">
+<h3>Milliliters to US gallons</h3>
+<p>Convert milliliters to US gallons (1 milliliter = 0.000264 gal). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/quarts-to-ml/">
+<h3>US quarts to Milliliters</h3>
+<p>Convert US quarts to milliliters (1 US quart = 946.353 ml). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ml-to-quarts/">
+<h3>Milliliters to US quarts</h3>
+<p>Convert milliliters to US quarts (1 milliliter = 0.001057 qt). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-miles-to-acres/">
+<h3>Square miles to Acres</h3>
+<p>Convert square miles to acres (1 square mile = 640 ac). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/acres-to-square-miles/">
+<h3>Acres to Square miles</h3>
+<p>Convert acres to square miles (1 acre = 0.001563 mi²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/acres-to-square-yards/">
+<h3>Acres to Square yards</h3>
+<p>Convert acres to square yards (1 acre = 4840 yd²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-yards-to-acres/">
+<h3>Square yards to Acres</h3>
+<p>Convert square yards to acres (1 square yard = 0.000207 ac). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-kilometers-to-hectares/">
+<h3>Square kilometers to Hectares</h3>
+<p>Convert square kilometers to hectares (1 square kilometer = 100 ha). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hectares-to-square-kilometers/">
+<h3>Hectares to Square kilometers</h3>
+<p>Convert hectares to square kilometers (1 hectare = 0.01 km²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-meters-to-square-kilometers/">
+<h3>Square meters to Square kilometers</h3>
+<p>Convert square meters to square kilometers (1 square meter = 1e-06 km²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/square-kilometers-to-square-meters/">
+<h3>Square kilometers to Square meters</h3>
+<p>Convert square kilometers to square meters (1 square kilometer = 1e+06 m²). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pascals-to-kilopascals/">
+<h3>Pascals to Kilopascals</h3>
+<p>Convert pascals to kilopascals (1 pascal = 0.001 kPa). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilopascals-to-pascals/">
+<h3>Kilopascals to Pascals</h3>
+<p>Convert kilopascals to pascals (1 kilopascal = 1000 Pa). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mmhg-to-atmospheres/">
+<h3>Millimeters of mercury to Atmospheres</h3>
+<p>Convert millimeters of mercury to atmospheres (1 millimeter of mercury = 0.001316 atm). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/atmospheres-to-mmhg/">
+<h3>Atmospheres to Millimeters of mercury</h3>
+<p>Convert atmospheres to millimeters of mercury (1 atmosphere = 760 mmHg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/btu-to-kilowatt-hours/">
+<h3>BTU to Kilowatt-hours</h3>
+<p>Convert BTU to kilowatt-hours (1 BTU = 0.000293 kWh). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilowatt-hours-to-btu/">
+<h3>Kilowatt-hours to BTU</h3>
+<p>Convert kilowatt-hours to BTU (1 kilowatt-hour = 3412.14 BTU). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/seconds-to-days/">
+<h3>Seconds to Days</h3>
+<p>Convert seconds to days (1 second = 1.2e-05 d). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/days-to-seconds/">
+<h3>Days to Seconds</h3>
+<p>Convert days to seconds (1 day = 86400 s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/hours-to-weeks/">
+<h3>Hours to Weeks</h3>
+<p>Convert hours to weeks (1 hour = 0.005952 wk). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/weeks-to-hours/">
+<h3>Weeks to Hours</h3>
+<p>Convert weeks to hours (1 week = 168 hr). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/tonnes-to-lbs/">
+<h3>Tonnes to Pounds</h3>
+<p>Convert tonnes to pounds (1 tonne = 2204.62 lb). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lbs-to-tonnes/">
+<h3>Pounds to Tonnes</h3>
+<p>Convert pounds to tonnes (1 pound = 0.000454 t). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/carats-to-milligrams/">
+<h3>Carats to Milligrams</h3>
+<p>Convert carats to milligrams (1 carat = 200 mg). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/milligrams-to-carats/">
+<h3>Milligrams to Carats</h3>
+<p>Convert milligrams to carats (1 milligram = 0.005 ct). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/knots-to-feet-per-second/">
+<h3>Knots to Feet per second</h3>
+<p>Convert knots to feet per second (1 knot = 1.68781 ft/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/feet-per-second-to-knots/">
+<h3>Feet per second to Knots</h3>
+<p>Convert feet per second to knots (1 foot per second = 0.592484 kn). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/radians-to-gradians/">
+<h3>Radians to Gradians</h3>
+<p>Convert radians to gradians (1 radian = 63.662 gon). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gradians-to-radians/">
+<h3>Gradians to Radians</h3>
+<p>Convert gradians to radians (1 gradian = 0.015708 rad). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pounds-force-to-kilograms-force/">
+<h3>Pounds-force to Kilograms-force</h3>
+<p>Convert pounds-force to kilograms-force (1 pound-force = 0.453592 kgf). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kilograms-force-to-pounds-force/">
+<h3>Kilograms-force to Pounds-force</h3>
+<p>Convert kilograms-force to pounds-force (1 kilogram-force = 2.20462 lbf). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gbps-to-mb-per-second/">
+<h3>Gigabits per second to Megabytes per second</h3>
+<p>Convert gigabits per second to megabytes per second (1 gigabit per second = 125 MB/s). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/mb-per-second-to-gbps/">
+<h3>Megabytes per second to Gigabits per second</h3>
+<p>Convert megabytes per second to gigabits per second (1 megabyte per second = 0.008 Gbps). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/miles-to-meters/">
+<h3>Miles to Meters</h3>
+<p>Convert miles to meters (1 mile = 1609.34 m). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/meters-to-miles/">
+<h3>Meters to Miles</h3>
+<p>Convert meters to miles (1 meter = 0.000621 mi). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/gb-to-pb/">
+<h3>Gigabytes to Petabytes</h3>
+<p>Convert gigabytes to petabytes (1 gigabyte = 1e-06 PB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/pb-to-gb/">
+<h3>Petabytes to Gigabytes</h3>
+<p>Convert petabytes to gigabytes (1 petabyte = 1e+06 GB). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/g-per-cm3-to-kg-per-m3/">
+<h3>Grams per cubic centimetre to Kilograms per cubic metre</h3>
+<p>Convert grams per cubic centimetre to kilograms per cubic metre (1 gram per cubic centimetre = 1000 kg/m³). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/kg-per-m3-to-g-per-cm3/">
+<h3>Kilograms per cubic metre to Grams per cubic centimetre</h3>
+<p>Convert kilograms per cubic metre to grams per cubic centimetre (1 kilogram per cubic metre = 0.001 g/cm³). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/g-per-cm3-to-lb-per-ft3/">
+<h3>Grams per cubic centimetre to Pounds per cubic foot</h3>
+<p>Convert grams per cubic centimetre to pounds per cubic foot (1 gram per cubic centimetre = 62.428 lb/ft³). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lb-per-ft3-to-g-per-cm3/">
+<h3>Pounds per cubic foot to Grams per cubic centimetre</h3>
+<p>Convert pounds per cubic foot to grams per cubic centimetre (1 pound per cubic foot = 0.016018 g/cm³). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/foot-candles-to-lux/">
+<h3>Foot-candles to Lux</h3>
+<p>Convert foot-candles to lux (1 foot-candle = 10.7639 lx). Live result + reference table.</p>
+</a>
+<a class="tool-card" href="/tools/lux-to-foot-candles/">
+<h3>Lux to Foot-candles</h3>
+<p>Convert lux to foot-candles (1 lux = 0.092903 fc). Live result + reference table.</p>
+</a>
+</div>
+</section>
+<section class="category" id="time-date">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/time-date/">Time & Date</a></h2>
+<span class="count">20 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/age/">
+<h3>Age &amp; Date Difference</h3>
+<p>Calculate exact age or difference between two dates. Years, months, days, weeks, hours, minutes.</p>
+</a>
+<a class="tool-card" href="/tools/timer/">
+<h3>Timer, Stopwatch &amp; Pomodoro</h3>
+<p>Three timers in one. Work sessions, accurate stopwatch, countdown. Notifications for background tabs.</p>
+</a>
+<a class="tool-card" href="/tools/timestamp/">
+<h3>Timestamp Converter</h3>
+<p>Unix timestamp to human date and back. Live clock, relative time, seconds or milliseconds.</p>
+</a>
+<a class="tool-card" href="/tools/cron/">
+<h3>Cron Expression Explainer</h3>
+<p>Paste any cron expression and see it in plain English plus the next 5 run times.</p>
+</a>
+<a class="tool-card" href="/tools/timezone/">
+<h3>Time Zone Converter</h3>
+<p>Convert times between any zones. Live world clock for your favorite cities.</p>
+</a>
+<a class="tool-card" href="/tools/working-days/">
+<h3>Working Days Calculator</h3>
+<p>Count business days between two dates. Skips weekends, with optional public-holiday exclusions.</p>
+</a>
+<a class="tool-card" href="/tools/day-of-year/">
+<h3>Day of Year + Week Number</h3>
+<p>Date ↔ ordinal day (1-366), ISO 8601 week number, quarter, days remaining in year, year progress %.</p>
+</a>
+<a class="tool-card" href="/tools/countdown/">
+<h3>Countdown Timer</h3>
+<p>Live days / hours / minutes / seconds to any future date. Presets for New Year, Christmas, custom moment.</p>
+</a>
+<a class="tool-card" href="/tools/date-format/">
+<h3>Date Format Converter</h3>
+<p>Convert between ISO 8601, US, EU, RFC 2822, Unix timestamps. Edit any field — all others update live.</p>
+</a>
+<a class="tool-card" href="/tools/add-days/">
+<h3>Add or Subtract Days</h3>
+<p>Project-deadline math — add/subtract days, weeks, months, years. Business-day mode skips weekends.</p>
+</a>
+<a class="tool-card" href="/tools/sunrise/">
+<h3>Sunrise / Sunset Calculator</h3>
+<p>Sunrise + sunset + day length + twilight phases for any lat / lng / date. NOAA algorithm.</p>
+</a>
+<a class="tool-card" href="/tools/moon/">
+<h3>Moon Phase Calculator</h3>
+<p>Current moon phase + illumination + next full / new moon dates. Pick any date.</p>
+</a>
+<a class="tool-card" href="/tools/time-duration/">
+<h3>Time Duration Calculator</h3>
+<p>Exact duration between two dates and times, broken into days/hours/minutes and totals.</p>
+</a>
+<a class="tool-card" href="/tools/leap-year/">
+<h3>Leap Year Checker</h3>
+<p>Is a year a leap year? See the rule and the next leap years.</p>
+</a>
+<a class="tool-card" href="/tools/day-of-week/">
+<h3>Day of the Week</h3>
+<p>What weekday is any date? ‘What day was I born’ — past or future.</p>
+</a>
+<a class="tool-card" href="/tools/week-number/">
+<h3>Week Number</h3>
+<p>ISO 8601 week number for any date — Monday-start, first-Thursday rule.</p>
+</a>
+<a class="tool-card" href="/tools/zodiac/">
+<h3>Zodiac Sign</h3>
+<p>Birth date → western star sign, with symbol, element and date range.</p>
+</a>
+<a class="tool-card" href="/tools/chinese-zodiac/">
+<h3>Chinese Zodiac</h3>
+<p>Birth year → Chinese zodiac animal + element (Metal Rat, Wood Dragon…).</p>
+</a>
+<a class="tool-card" href="/tools/pet-age/">
+<h3>Pet Age Calculator</h3>
+<p>Dog/cat age → human years, size-aware (not the ×7 myth).</p>
+</a>
+<a class="tool-card" href="/tools/calendar/">
+<h3>Printable Calendar</h3>
+<p>Clean monthly calendar for any month/year, Monday or Sunday start, print-ready.</p>
+</a>
+</div>
+</section>
+<section class="category" id="money-finance">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/money-finance/">Money & Finance</a></h2>
+<span class="count">17 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/tip/">
+<h3>Tip Calculator</h3>
+<p>Calculate tips and split the bill between any number of people. Multi-currency, instant results.</p>
+</a>
+<a class="tool-card" href="/tools/loan/">
+<h3>Mortgage &amp; Loan Calculator</h3>
+<p>Monthly payment, total interest, and full amortization schedule. Multi-currency, with extra payment scenarios.</p>
+</a>
+<a class="tool-card" href="/tools/salary/">
+<h3>Salary Converter</h3>
+<p>Convert between hourly, daily, weekly, monthly and yearly pay. Configurable hours per week and weeks off.</p>
+</a>
+<a class="tool-card" href="/tools/compound/">
+<h3>Compound Interest</h3>
+<p>Calculate compound growth of an investment over time with optional monthly contributions and annual growth rate.</p>
+</a>
+<a class="tool-card" href="/tools/discount/">
+<h3>Discount Calculator</h3>
+<p>Work out the final price after a discount, the original price from a sale price, or the discount percentage saved.</p>
+</a>
+<a class="tool-card" href="/tools/vat/">
+<h3>VAT / Sales Tax Calculator</h3>
+<p>Net ↔ gross with country presets. Germany 19%, UK 20%, Austria 20%, and more. Bidirectional input.</p>
+</a>
+<a class="tool-card" href="/tools/margin/">
+<h3>Profit Margin Calculator</h3>
+<p>Cost + price → margin & markup, or cost + target margin → selling price. For Etsy, Amazon, Shopify sellers.</p>
+</a>
+<a class="tool-card" href="/tools/hourly-rate/">
+<h3>Freelance Hourly Rate</h3>
+<p>Calculate your minimum freelance rate from take-home goal, tax, overhead, working days and billable ratio.</p>
+</a>
+<a class="tool-card" href="/tools/savings-goal/">
+<h3>Savings Goal Calculator</h3>
+<p>How much to save monthly to reach a goal, or how long it takes at your current rate. Compound interest baked in.</p>
+</a>
+<a class="tool-card" href="/tools/inflation/">
+<h3>Inflation Calculator</h3>
+<p>Future or past purchasing power. What $100 in 1990 is worth now, or what $5k today buys in 20 years.</p>
+</a>
+<a class="tool-card" href="/tools/roi/">
+<h3>ROI Calculator</h3>
+<p>Return on investment — ROI %, net profit, annualised %. Compare projects of different durations fairly.</p>
+</a>
+<a class="tool-card" href="/tools/net-worth/">
+<h3>Net Worth Calculator</h3>
+<p>Assets minus liabilities, line-by-line. Multi-currency. Your numbers never leave the browser.</p>
+</a>
+<a class="tool-card" href="/tools/paypal-fee/">
+<h3>Payment Fee Calculator</h3>
+<p>PayPal / Stripe / Wise fees and net payout, plus reverse 'charge to receive X'.</p>
+</a>
+<a class="tool-card" href="/tools/break-even/">
+<h3>Break-Even Calculator</h3>
+<p>Break-even units and revenue from fixed costs, price and variable cost per unit.</p>
+</a>
+<a class="tool-card" href="/tools/down-payment/">
+<h3>Down Payment</h3>
+<p>Down payment, loan amount and LTV from price and percentage.</p>
+</a>
+<a class="tool-card" href="/tools/stripe-fee/">
+<h3>Stripe Fee</h3>
+<p>Fee & net from a charge, or gross-up to receive an exact amount.</p>
+</a>
+<a class="tool-card" href="/tools/budget/">
+<h3>50/30/20 Budget</h3>
+<p>Split take-home pay into needs (50%), wants (30%), savings (20%).</p>
+</a>
+</div>
+</section>
+<section class="category" id="security-crypto">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/security-crypto/">Security & Crypto</a></h2>
+<span class="count">17 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/password/">
+<h3>Password Generator</h3>
+<p>Generate strong, random passwords. Configurable length, symbols, look-alike exclusion. Cryptographically secure.</p>
+</a>
+<a class="tool-card" href="/tools/password-strength/">
+<h3>Password Strength Checker</h3>
+<p>Entropy in bits, estimated online + offline crack time, common-pattern detection. Password never leaves the browser.</p>
+</a>
+<a class="tool-card" href="/tools/passphrase/">
+<h3>Diceware Passphrase</h3>
+<p>Memorable + cryptographically strong passphrases from the EFF wordlist. Entropy bits shown — runs in your browser.</p>
+</a>
+<a class="tool-card" href="/tools/hash/">
+<h3>Hash Generator</h3>
+<p>MD5, SHA-1, SHA-256, SHA-512. Works on text or any file. Computed locally in your browser.</p>
+</a>
+<a class="tool-card" href="/tools/hmac/">
+<h3>HMAC Generator</h3>
+<p>HMAC-SHA1/SHA-256/SHA-384/SHA-512 for API signing, JWT, webhook verification. Hex or Base64 output.</p>
+</a>
+<a class="tool-card" href="/tools/jwt/">
+<h3>JWT Decoder</h3>
+<p>Decode JSON Web Tokens. See header, payload, and signature. Human-readable exp/iat timestamps.</p>
+</a>
+<a class="tool-card" href="/tools/jwt-sign/">
+<h3>JWT Signer</h3>
+<p>Build and sign JSON Web Tokens with HS256/HS384/HS512 in your browser. Pairs with the existing JWT decoder.</p>
+</a>
+<a class="tool-card" href="/tools/bcrypt/">
+<h3>Bcrypt Generator &amp; Verifier</h3>
+<p>Hash passwords with bcrypt at adjustable cost, or verify a password against an existing hash. Runs locally.</p>
+</a>
+<a class="tool-card" href="/tools/htpasswd/">
+<h3>.htpasswd Generator</h3>
+<p>Create Apache and Nginx .htpasswd entries. Choose bcrypt or APR1 MD5. Copy the full one-line entry.</p>
+</a>
+<a class="tool-card" href="/tools/rot13/">
+<h3>ROT13 / Caesar Cipher</h3>
+<p>Classic letter-shift cipher with live preview. Any shift from 1 to 25, plus the ROT13 default. Both directions.</p>
+</a>
+<a class="tool-card" href="/tools/aes/">
+<h3>AES Encrypt / Decrypt</h3>
+<p>AES-GCM-256 with PBKDF2 key derivation. Browser-native via SubtleCrypto — password + plaintext stay local.</p>
+</a>
+<a class="tool-card" href="/tools/totp/">
+<h3>TOTP / 2FA Code Generator</h3>
+<p>Generate Google-Authenticator-compatible 2FA codes from a base32 secret. RFC 6238. Live countdown.</p>
+</a>
+<a class="tool-card" href="/tools/vigenere/">
+<h3>Vigenere Cipher</h3>
+<p>Encode/decode text with the Vigenere keyword cipher. Two-way, live, browser-only.</p>
+</a>
+<a class="tool-card" href="/tools/random-key/">
+<h3>Random Key Generator</h3>
+<p>Secure random API keys and tokens: hex, Base64, Base64URL or alphanumeric, bulk.</p>
+</a>
+<a class="tool-card" href="/tools/caesar/">
+<h3>Caesar Cipher</h3>
+<p>Encrypt/decrypt by shifting letters any amount (0–25). ROT13 included, live output.</p>
+</a>
+<a class="tool-card" href="/tools/atbash/">
+<h3>Atbash Cipher</h3>
+<p>Mirror the alphabet (A↔Z, B↔Y…). Self-inverse, keeps case & punctuation.</p>
+</a>
+<a class="tool-card" href="/tools/xor-cipher/">
+<h3>XOR Cipher</h3>
+<p>XOR text with a repeating key → hex, and back. UTF-8 aware, fully client-side.</p>
+</a>
+</div>
+</section>
+<section class="category" id="generators">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/generators/">Generators</a></h2>
+<span class="count">31 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/qr/">
+<h3>QR Code Generator</h3>
+<p>Generate permanent QR codes for free. No redirects, no expiration, no tracking. Works forever.</p>
+</a>
+<a class="tool-card" href="/tools/picker/">
+<h3>Random Picker</h3>
+<p>Pick random names from a list, generate numbers, flip coins, roll dice. Truly random, not pseudo-random.</p>
+</a>
+<a class="tool-card" href="/tools/mock-data/">
+<h3>Mock Data Generator</h3><p>Generate fake users, addresses, dates for prototyping. Export as JSON, CSV, NDJSON, SQL, or TypeScript.</p>
+</a>
+<a class="tool-card" href="/tools/dice/">
+<h3>Dice Roller</h3>
+<p>Roll any combo of D4, D6, D8, D10, D12, D20, D100. D&amp;D-style dice notation supported (e.g. 3d6+2).</p>
+</a>
+<a class="tool-card" href="/tools/coin/">
+<h3>Coin Flip</h3>
+<p>Flip a virtual coin. Run single flips or batches of 100 and see the streak and heads/tails ratio.</p>
+</a>
+<a class="tool-card" href="/tools/morse/">
+<h3>Morse Code Translator</h3>
+<p>Convert between text and Morse code instantly. International Morse alphabet, optional audio playback.</p>
+</a>
+<a class="tool-card" href="/tools/username/">
+<h3>Username Generator</h3>
+<p>Themed random handles — gamer, professional, cute, dev, dark. Style (snake/camel/pascal) and number suffix.</p>
+</a>
+<a class="tool-card" href="/tools/identicon/">
+<h3>Identicon Avatar Generator</h3>
+<p>GitHub-style abstract avatars from any text. Hash-derived, deterministic. Download PNG or SVG.</p>
+</a>
+<a class="tool-card" href="/tools/placeholder/">
+<h3>Placeholder Image Generator</h3>
+<p>Solid-color PNG/JPG with dimension labels. Custom colors, preset sizes for HD, IG square, Story, OG image.</p>
+</a>
+<a class="tool-card" href="/tools/avatar-initials/">
+<h3>Initials Avatar Generator</h3>
+<p>Letter on a colored circle / square — Gmail / Slack style. Custom colors, shapes, sizes. PNG + SVG export.</p>
+</a>
+<a class="tool-card" href="/tools/color-shades/">
+<h3>Color Tints &amp; Shades</h3>
+<p>Tailwind-style 50-900 palette from any base color. HEX / RGB / HSL, copy CSS variables or Tailwind config.</p>
+</a>
+<a class="tool-card" href="/tools/notepad/">
+<h3>Online Notepad</h3>
+<p>Free browser notepad with autosave to localStorage. No account, no upload — your notes stay private.</p>
+</a>
+<a class="tool-card" href="/tools/wheel/">
+<h3>Spin the Wheel</h3>
+<p>Random name picker with animation. Class raffles, giveaways, team decisions. Crypto-secure randomness.</p>
+</a>
+<a class="tool-card" href="/tools/decision/">
+<h3>Yes / No Decision Maker</h3>
+<p>Random Yes / No / Maybe with one click. Plus custom options mode. The trick is noticing your reaction.</p>
+</a>
+<a class="tool-card" href="/tools/tone/">
+<h3>Tone Generator</h3>
+<p>Sine / square / triangle / sawtooth tones at any Hz. Speaker test, hearing test, tuning reference.</p>
+</a>
+<a class="tool-card" href="/tools/tts/">
+<h3>Text-to-Speech</h3>
+<p>Hear typed text spoken aloud via Web Speech API. Pick voice + rate + pitch + volume. Local OS voices.</p>
+</a>
+<a class="tool-card" href="/tools/stt/">
+<h3>Speech-to-Text</h3>
+<p>Speak into your mic, watch text appear. 60+ languages. Chrome / Edge / Brave / Chromium browsers.</p>
+</a>
+<a class="tool-card" href="/tools/audio-recorder/">
+<h3>Audio Recorder</h3>
+<p>Record from your mic, download as WebM or MP4. Pause / resume. Browser-only — no upload.</p>
+</a>
+<a class="tool-card" href="/tools/ascii-art/">
+<h3>ASCII Art Generator</h3>
+<p>Type a word, get giant block-letter ASCII art. Multiple styles. Copy-paste into terminals, READMEs, banners.</p>
+</a>
+<a class="tool-card" href="/tools/nato/">
+<h3>NATO Phonetic Alphabet</h3>
+<p>Spell text in Alpha-Bravo-Charlie. For reading codes and names clearly over the phone.</p>
+</a>
+<a class="tool-card" href="/tools/barcode/">
+<h3>Barcode Generator</h3>
+<p>Generate Code128, EAN, UPC, Code39 barcodes. Download as PNG or SVG, browser-only.</p>
+</a>
+<a class="tool-card" href="/tools/list-shuffle/">
+<h3>List Randomizer</h3>
+<p>Shuffle a list into random order, dedupe, or pick a random subset. Crypto-random.</p>
+</a>
+<a class="tool-card" href="/tools/random-color/">
+<h3>Random Color Generator</h3>
+<p>Generate random colors (hex/RGB/HSL) or a whole palette. One-click copy.</p>
+</a>
+<a class="tool-card" href="/tools/team-generator/">
+<h3>Random Team Generator</h3>
+<p>Split a list of names into random balanced teams. Crypto-random, fair.</p>
+</a>
+<a class="tool-card" href="/tools/secret-santa/">
+<h3>Secret Santa Generator</h3>
+<p>Random gift-exchange pairings where nobody gets themselves. Paste names, draw.</p>
+</a>
+<a class="tool-card" href="/tools/tournament-bracket/">
+<h3>Tournament Bracket</h3>
+<p>Single-elimination bracket from a participant list. Random seeding, auto byes.</p>
+</a>
+<a class="tool-card" href="/tools/would-you-rather/">
+<h3>Would You Rather</h3>
+<p>Random 'Would You Rather' questions for parties, road trips and icebreakers.</p>
+</a>
+<a class="tool-card" href="/tools/magic-8-ball/">
+<h3>Magic 8 Ball</h3>
+<p>Ask a yes/no question, get one of the classic 20 Magic 8 Ball answers.</p>
+</a>
+<a class="tool-card" href="/tools/pin/">
+<h3>PIN Generator</h3>
+<p>Secure random numeric PINs of any length, generated in your browser.</p>
+</a>
+<a class="tool-card" href="/tools/random-name/">
+<h3>Random Name</h3>
+<p>Generate random full names (gender + count) for test data, characters, mock-ups.</p>
+</a>
+<a class="tool-card" href="/tools/themed-ipsum/">
+<h3>Themed Ipsum</h3>
+<p>Funny placeholder text — pirate, hipster or corporate-buzzword style.</p>
+</a>
+</div>
+</section>
+<section class="category" id="developers">
+<div class="category-header">
+<span class="dot"></span>
+<h2><a class="cat-link" href="/developers/">Developers</a></h2>
+<span class="count">57 tools</span>
+</div>
+<div class="tools-grid">
+<a class="tool-card" href="/tools/json/">
+<h3>JSON Formatter</h3>
+<p>Format, validate, minify, and sort JSON. Error messages with line numbers. Escape and unescape strings.</p>
+</a>
+<a class="tool-card" href="/tools/base64/">
+<h3>Base64 Encoder/Decoder</h3>
+<p>Encode and decode Base64. Works with text and files. URL-safe variant supported.</p>
+</a>
+<a class="tool-card" href="/tools/csv-json/">
+<h3>CSV ↔ JSON</h3>
+<p>Convert between CSV and JSON. Handles quoted fields, custom delimiters, auto-detects direction.</p>
+</a>
+<a class="tool-card" href="/tools/sql/">
+<h3>SQL Formatter</h3>
+<p>Format messy SQL queries. Indented clauses, keyword case, comma style. Handles comments and strings correctly.</p>
+</a>
+<a class="tool-card" href="/tools/json-diff/">
+<h3>JSON Diff</h3>
+<p>Compare two JSON documents structurally. See added, removed, and changed values per path.</p>
+</a>
+<a class="tool-card" href="/tools/json-schema/">
+<h3>JSON Schema Generator</h3>
+<p>Paste a JSON sample, get a JSON Schema. Auto-detects types, formats, enums, required fields.</p>
+</a>
+<a class="tool-card" href="/tools/yaml/">
+<h3>YAML ↔ JSON Converter</h3><p>Convert YAML to JSON or JSON to YAML. Format and validate. Handles anchors, aliases, multi-line strings.</p>
+</a>
+<a class="tool-card" href="/tools/xml/">
+<h3>XML Formatter &amp; XML ↔ JSON</h3><p>Format, minify, and convert XML. Handles attributes, namespaces, CDATA, processing instructions.</p>
+</a>
+<a class="tool-card" href="/tools/http-status/">
+<h3>HTTP Status Code Reference</h3>
+<p>Every HTTP status code with common causes and what to do. Searchable, filterable, jump-by-code.</p>
+</a>
+<a class="tool-card" href="/tools/html-mini/">
+<h3>HTML Minifier &amp; Beautifier</h3>
+<p>Collapse whitespace, strip comments and inline CSS/JS — or beautify back with consistent indentation.</p>
+</a>
+<a class="tool-card" href="/tools/css-mini/">
+<h3>CSS Minifier &amp; Beautifier</h3>
+<p>Strip comments and whitespace for production, or re-expand minified CSS into readable indented form.</p>
+</a>
+<a class="tool-card" href="/tools/js-mini/">
+<h3>JS Minifier &amp; Beautifier</h3>
+<p>Compact JavaScript by removing comments and whitespace, or format minified JS with consistent indentation.</p>
+</a>
+<a class="tool-card" href="/tools/url-parser/">
+<h3>URL Parser</h3>
+<p>Break any URL into protocol, host, port, path, query, fragment. See each query param on its own line. Decode on.</p>
+</a>
+<a class="tool-card" href="/tools/ua-parser/">
+<h3>User-Agent Parser</h3>
+<p>Paste any User-Agent string to see the browser, engine, OS and device it identifies as. Detects major edge cases.</p>
+</a>
+<a class="tool-card" href="/tools/url-encode/">
+<h3>URL Encoder/Decoder</h3>
+<p>Encode and decode URL components. Parse query strings into a readable table.</p>
+</a>
+<a class="tool-card" href="/tools/regex/">
+<h3>Regex Tester</h3>
+<p>Test JavaScript regex with live match highlighting, capture groups, and replace.</p>
+</a>
+<a class="tool-card" href="/tools/html-entities/">
+<h3>HTML Entity Encoder/Decoder</h3>
+<p>Encode special characters to HTML entities and back. Named or numeric, safe or full.</p>
+</a>
+<a class="tool-card" href="/tools/binary-text/">
+<h3>Binary ↔ Text Converter</h3>
+<p>Convert text to 8-bit binary and back. UTF-8 aware so emojis and accents round-trip correctly.</p>
+</a>
+<a class="tool-card" href="/tools/uuid/">
+<h3>UUID Generator</h3>
+<p>Generate cryptographically random v4 UUIDs. Batch up to 1000 at a time. Multiple formats.</p>
+</a>
+<a class="tool-card" href="/tools/gitignore/">
+<h3>.gitignore Generator</h3><p>Combine curated templates for languages, frameworks, IDEs, and operating systems. Inlined, no external fetches.</p>
+</a>
+<a class="tool-card" href="/tools/cidr/">
+<h3>CIDR / Subnet Calculator</h3>
+<p>Calculate IPv4 subnet ranges, masks, host counts, and binary representations from any CIDR notation.</p>
+</a>
+<a class="tool-card" href="/tools/chmod/">
+<h3>chmod / Permission Calculator</h3>
+<p>Convert between octal, symbolic, and chmod commands. Visual checkboxes for user/group/other.</p>
+</a>
+<a class="tool-card" href="/tools/serp-preview/">
+<h3>Google SERP Preview</h3>
+<p>See how your page appears in Google — desktop + mobile snippets with title (60 char) and description (155 char) truncation.</p>
+</a>
+<a class="tool-card" href="/tools/robots-txt/">
+<h3>Robots.txt Generator</h3>
+<p>Visual builder for robots.txt — user-agent rules, allow / disallow paths, sitemap link, crawl-delay. Block AI crawlers preset.</p>
+</a>
+<a class="tool-card" href="/tools/sitemap-gen/">
+<h3>Sitemap.xml Generator</h3>
+<p>Paste URLs — get a valid sitemap.xml with lastmod, changefreq, priority. Download as file.</p>
+</a>
+<a class="tool-card" href="/tools/schema-gen/">
+<h3>Schema Markup Generator</h3>
+<p>JSON-LD for Article, FAQ, Product, LocalBusiness, Recipe, HowTo, Event, Organization, BreadcrumbList.</p>
+</a>
+<a class="tool-card" href="/tools/markdown-toc/">
+<h3>Markdown TOC Generator</h3>
+<p>Paste Markdown — get a table of contents with GitHub-style anchor links. Configurable depth.</p>
+</a>
+<a class="tool-card" href="/tools/json-path/">
+<h3>JSONPath Tester</h3>
+<p>Write JSONPath queries (<code>$.foo[*].bar</code>), see matches live. Filter expressions + slices supported.</p>
+</a>
+<a class="tool-card" href="/tools/json-to-ts/">
+<h3>JSON to TypeScript</h3>
+<p>Generate TypeScript interfaces from JSON with inferred types and nested interfaces.</p>
+</a>
+<a class="tool-card" href="/tools/html-to-jsx/">
+<h3>HTML to JSX</h3>
+<p>Convert HTML to React JSX — className, style objects, self-closing tags, camelCased attributes.</p>
+</a>
+<a class="tool-card" href="/tools/curl-builder/">
+<h3>cURL Builder</h3>
+<p>Build a copy-paste curl command from a form: method, URL, headers, JSON body, auth.</p>
+</a>
+<a class="tool-card" href="/tools/string-escape/">
+<h3>String Escape / Unescape</h3>
+<p>Escape or unescape strings for JSON, JS, HTML, URL and backslash sequences. Two-way.</p>
+</a>
+<a class="tool-card" href="/tools/id-generator/">
+<h3>Nano ID & ULID Generator</h3>
+<p>Generate Nano IDs and sortable ULIDs in bulk. Cryptographically random, URL-safe.</p>
+</a>
+<a class="tool-card" href="/tools/svg-optimizer/">
+<h3>SVG Optimizer</h3>
+<p>Minify SVG, strip editor cruft + metadata, export as optimized SVG, CSS data-URI or img tag.</p>
+</a>
+<a class="tool-card" href="/tools/credit-card-test/">
+<h3>Test Credit Card Numbers</h3>
+<p>Luhn-valid fake card numbers for testing payment forms. Visa/MC/Amex/Discover. Validator too.</p>
+</a>
+<a class="tool-card" href="/tools/base58/">
+<h3>Base58 Encode / Decode</h3>
+<p>Bitcoin-style Base58 (no confusing 0 O I l). Encode text or decode back. Two-way.</p>
+</a>
+<a class="tool-card" href="/tools/discord-timestamp/">
+<h3>Discord Timestamp</h3>
+<p>Generate dynamic Discord <t:...> timestamp codes for every style. Renders in local time.</p>
+</a>
+<a class="tool-card" href="/tools/html-table/">
+<h3>HTML Table Generator</h3>
+<p>Build HTML table markup: rows, columns, header row, borders, striping. Live preview.</p>
+</a>
+<a class="tool-card" href="/tools/url-status/">
+<h3>URL Status Checker</h3>
+<p>HTTP status code + full redirect chain (301 → 200) for any URL. Find broken links.</p>
+</a>
+<a class="tool-card" href="/tools/http-headers/">
+<h3>HTTP Header Checker</h3>
+<p>Inspect any URL's response headers + security-header checklist (HSTS, CSP, XFO).</p>
+</a>
+<a class="tool-card" href="/tools/mime-types/">
+<h3>MIME Type Lookup</h3>
+<p>File extension ↔ Content-Type MIME lookup, searchable reference table.</p>
+</a>
+<a class="tool-card" href="/tools/ascii-table/">
+<h3>ASCII Table</h3>
+<p>ASCII reference: decimal, hex, octal, binary and character for every code.</p>
+</a>
+<a class="tool-card" href="/tools/bitwise-calculator/">
+<h3>Bitwise Calculator</h3>
+<p>AND/OR/XOR/NOT and bit shifts on two integers, shown in dec, hex and binary.</p>
+</a>
+<a class="tool-card" href="/tools/ip-to-binary/">
+<h3>IP to Binary</h3>
+<p>IPv4 ↔ binary, hex and 32-bit integer.</p>
+</a>
+<a class="tool-card" href="/tools/json-to-go/">
+<h3>JSON to Go</h3>
+<p>Convert JSON to Go structs with json tags and inferred types.</p>
+</a>
+<a class="tool-card" href="/tools/html-preview/">
+<h3>HTML Preview</h3>
+<p>Live-render pasted HTML in a sandboxed iframe. Test snippets and markup instantly.</p>
+</a>
+<a class="tool-card" href="/tools/hex-to-text/">
+<h3>Hex ⇄ Text</h3>
+<p>Convert text to hexadecimal bytes and hex back to text. UTF-8 aware.</p>
+</a>
+<a class="tool-card" href="/tools/base32/">
+<h3>Base32</h3>
+<p>Encode/decode text ↔ RFC 4648 Base32, UTF-8 aware, fully client-side.</p>
+</a>
+<a class="tool-card" href="/tools/env-json/">
+<h3>.env ↔ JSON</h3>
+<p>Convert dotenv files to JSON and back. Handles comments & quoted values.</p>
+</a>
+<a class="tool-card" href="/tools/mac-address/">
+<h3>MAC Address</h3>
+<p>Generate random MAC addresses — pick separator, case and count.</p>
+</a>
+<a class="tool-card" href="/tools/json-to-python/">
+<h3>JSON to Python</h3>
+<p>Generate Python @dataclass definitions from JSON, with nested classes & types.</p>
+</a>
+<a class="tool-card" href="/tools/json-to-rust/">
+<h3>JSON to Rust</h3>
+<p>Generate serde Rust structs from JSON — inferred types, snake_case, nested.</p>
+</a>
+<a class="tool-card" href="/tools/json-to-kotlin/">
+<h3>JSON to Kotlin</h3>
+<p>Generate Kotlin data classes from JSON — inferred types, nested classes.</p>
+</a>
+<a class="tool-card" href="/tools/htaccess/">
+<h3>.htaccess Generator</h3>
+<p>Generate an Apache .htaccess — HTTPS, www, gzip, caching, error pages.</p>
+</a>
+<a class="tool-card" href="/tools/git-command/">
+<h3>Git Commands</h3>
+<p>Pick a task → the exact git command + a plain explanation (undo, branch, stash…).</p>
+</a>
+<a class="tool-card" href="/tools/graphql/">
+<h3>GraphQL Formatter</h3>
+<p>Format & indent GraphQL queries, mutations and schemas — even minified input.</p>
+</a>
+<a class="tool-card" href="/tools/csv-editor/">
+<h3>CSV Editor</h3>
+<p>Edit CSV in a table — add/remove rows & columns, export. Handles quoted fields.</p>
+</a>
+</div>
+</section>
+</div>
+
+<section class="home-info">
+<div class="home-info-inner">
+<h2>What is SharpDev.Tools?</h2>
+<p class="lead">SharpDev.Tools is a curated collection of <strong>622 free online tools</strong> for developers, writers, designers and content creators — organized into 16 categories covering text, code, design, PDFs, images, calculators, generators, social-media counters and developer utilities. Every tool runs in your browser; no upload, no sign-up, no ads, no cookies.</p>
+
+<h2>Browse by category</h2>
+<div class="home-cat-links">
+<a href="/text/"><strong>Text</strong><span>33 tools — counters, case converter, diff, Markdown, HTML stripper, WPM typing test &amp; more</span></a>
+<a href="/developers/"><strong>Developers</strong><span>47 tools — JSON / YAML / XML / SQL / regex, Base64, UUID, SEO helpers &amp; more</span></a>
+<a href="/pdf/"><strong>PDF</strong><span>26 tools — merge, split, OCR, redact, sign, compress, convert to/from Word / Markdown / HTML</span></a>
+<a href="/generators/"><strong>Generators</strong><span>28 tools — QR, dice, spin wheel, TTS, STT, mock data, ASCII art &amp; more</span></a>
+<a href="/calculators/"><strong>Calculators</strong><span>33 tools — percentage, BMI, TDEE, mortgage, GPA, recipe scaling, Roman numerals &amp; more</span></a>
+<a href="/images-media/"><strong>Images &amp; Media</strong><span>15 tools — compress, OCR, format convert, Image-to-Base64, EXIF viewer &amp; more</span></a>
+<a href="/design-css/"><strong>Design &amp; CSS</strong><span>21 tools — visual gradient / shadow / border-radius / Flexbox / Grid builders &amp; more</span></a>
+<a href="/time-date/"><strong>Time &amp; Date</strong><span>13 tools — age calculator, working days, cron explainer, timezone, sunrise &amp; more</span></a>
+<a href="/money-finance/"><strong>Money &amp; Finance</strong><span>14 tools — mortgage, salary, compound interest, VAT, ROI &amp; more</span></a>
+<a href="/security-crypto/"><strong>Security &amp; Crypto</strong><span>14 tools — password generator, JWT decoder / signer, AES, hashes, TOTP &amp; more</span></a>
+<a href="/social-media/"><strong>Social Media</strong><span>9 cross-platform tools — hashtag, emoji, link-in-bio, UTM, OG tags &amp; more</span></a>
+<a href="/youtube/"><strong>YouTube</strong><span>9 tools — thumbnail download, subtitles, tags, embed, chapter timestamps, AdSense estimator</span></a>
+<a href="/instagram/"><strong>Instagram</strong><span>9 tools — caption / bio counters, carousel, Reels cover, hashtag mix, engagement rate</span></a>
+<a href="/linkedin/"><strong>LinkedIn</strong><span>9 tools — post / headline / About / comment counters, carousel PDF, banner sizer</span></a>
+<a href="/twitter/"><strong>Twitter / X</strong><span>7 tools — character counter, thread splitter, tweet to image, banner, poll composer</span></a>
+</div>
+
+<h2>Why SharpDev.Tools?</h2>
+<ul class="home-why">
+<li><strong>Privacy by design</strong> — nothing uploads, zero cookies, no tracking, GDPR-compliant out of the box.</li>
+<li><strong>No sign-up, no ads, no paywalls</strong> — every tool fully free, no premium tier, no usage limits.</li>
+<li><strong>Browser-only</strong> — every operation runs locally via JavaScript / WebAssembly. Even PDFs, image OCR, and cryptography stay on your device.</li>
+<li><strong>Mobile-first</strong> — designed to actually work on a phone, not just a desktop afterthought.</li>
+<li><strong>Fast</strong> — vanilla HTML / CSS / JS, no framework bloat, hosted on Cloudflare's global edge.</li>
+<li><strong>Open feedback</strong> — every tool page has a bug-report form; new tool requests are reviewed and built fast.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details class="home-faq"><summary>Are all SharpDev.Tools really free?</summary><p>Yes — every tool is free, with no sign-up, no ads, no usage limits, no premium tier. SharpDev.Tools is funded entirely by side-project budget; there are no paywalls or upsells.</p></details>
+<details class="home-faq"><summary>Do I need to create an account?</summary><p>No. There is no account system on SharpDev.Tools. Open any tool URL and use it immediately.</p></details>
+<details class="home-faq"><summary>Are my files and data uploaded?</summary><p>No. Every tool runs entirely in your browser via JavaScript / WebAssembly. Even PDF tools, image processing, OCR and cryptography happen locally. The only exceptions are tools that explicitly fetch from a public API (e.g. YouTube thumbnail downloader) — those make the API call from your browser, not a server.</p></details>
+<details class="home-faq"><summary>Does SharpDev.Tools use cookies or tracking?</summary><p>No cookies. Zero cookies, no consent banner needed. The site uses privacy-friendly aggregate analytics (Plausible) to measure pageviews — no personal data, no cross-site tracking, GDPR-compliant by design.</p></details>
+<details class="home-faq"><summary>How can I request a new tool or report a bug?</summary><p>Every tool page has a 'Found a bug?' section that opens a quick form. For new-tool requests, the <a href="/request/">Request page</a> lets you describe what you'd like to see built.</p></details>
+</div>
+</section>
+
+<script>renderFooter();</script>
+<script>
+/* Homepage only: collapse each long category to a 12-card preview with a
+   "Show all N" toggle. Cards remain in the DOM (SEO), just hidden via CSS. */
+(function () {
+  var SHOWN = 12;
+  document.querySelectorAll('.categories .category').forEach(function (sec) {
+    var grid = sec.querySelector('.tools-grid');
+    if (!grid) return;
+    var total = grid.querySelectorAll('.tool-card').length;
+    if (total <= SHOWN) return;
+    sec.classList.add('sd-collapsed');
+    var collapsedLabel = 'Show all ' + total + ' →';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat-toggle';
+    btn.textContent = collapsedLabel;
+    btn.addEventListener('click', function () {
+      var nowCollapsed = sec.classList.toggle('sd-collapsed');
+      btn.textContent = nowCollapsed ? collapsedLabel : 'Show less ↑';
+    });
+    grid.parentNode.insertBefore(btn, grid.nextSibling);
+  });
+})();
+</script>
+</body>
+</html>

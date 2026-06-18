@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not Found — SharpDev.Tools</title>
+<meta name="description" content="The page you're looking for doesn't exist on SharpDev.Tools.">
+<link rel="canonical" href="https://sharpdev.tools/404.html">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/shared/style.css?v=20260616a">
+<style>
+  .nf-wrap {
+    min-height: calc(100vh - 260px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 20px;
+  }
+  .nf-card {
+    max-width: 520px; width: 100%;
+    background: #141414; border: 1px solid #262626;
+    border-radius: 12px; padding: 36px; text-align: center;
+  }
+  .nf-code {
+    font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #ff4444; margin-bottom: 10px;
+  }
+  .nf-card h1 {
+    font-size: 32px; font-weight: 800; color: #fff;
+    letter-spacing: -0.5px; margin-bottom: 12px;
+  }
+  .nf-card p {
+    color: #aaa; font-size: 15px; line-height: 1.6; margin-bottom: 24px;
+  }
+  .nf-actions {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  }
+  @media (max-width: 600px) {
+    .nf-card { padding: 28px 20px; }
+    .nf-card h1 { font-size: 26px; }
+  }
+</style>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('not-found');</script>
+
+<main class="nf-wrap">
+  <div class="nf-card">
+    <div class="nf-code">404</div>
+    <h1>Couldn't find that.</h1>
+    <p>That URL doesn't match any tool on SharpDev. It may have moved or never existed in the first place.</p>
+    <div class="nf-actions">
+      <a href="/" class="btn btn-primary">Browse all 62 tools</a>
+      <a href="/" class="btn btn-secondary">Request a tool</a>
+    </div>
+  </div>
+</main>
+
+<script>renderFooter();</script>
+</body>
+</html>

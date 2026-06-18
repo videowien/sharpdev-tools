@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Redact — Permanent Black-Bar Redaction | SharpDev.Tools</title>
+<meta content="Permanently redact PDF content with solid black bars. Draw rectangles on each page, save the burned-in PDF. Text underneath is no longer extractable. Browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-redact/" rel="canonical"/>
+<meta content="PDF Redact — Permanent Black-Bar Redaction | SharpDev.Tools" property="og:title"/>
+<meta content="Permanently redact PDF content with black bars. Browser-only via pdf-lib." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-redact/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF Redact — Permanent Black-Bar Redaction | SharpDev.Tools" name="twitter:title"/>
+<meta content="Permanently redact PDF content with black bars." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF Redact","item":"https://sharpdev.tools/tools/pdf-redact/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is the text underneath really gone?","acceptedAnswer":{"@type":"Answer","text":"This tool rasterizes each affected page through a re-render pipeline: the page is rendered to an image, the black bars are burned in at pixel level, then the page becomes an image-only page in the new PDF. Text behind the bars is gone — not just hidden. The trade-off: the affected pages lose their text layer entirely (no longer searchable / selectable)."}},
+    {"@type":"Question","name":"How does this differ from drawing a black box on top?","acceptedAnswer":{"@type":"Answer","text":"Drawing a vector black box (what most online tools do) leaves the text underneath intact — a determined viewer can extract it by copy-paste or by removing the rectangle in Acrobat. This tool burns the redaction into pixels, so the text is genuinely destroyed."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Redact — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-redact/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-redact/pdf-redact.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-redact');</script>
+<div class="page">
+<h1>PDF Redact</h1>
+<p class="subtitle">Permanent black-bar redaction — text underneath is destroyed via rasterization.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Page</label>
+<input id="page-num" type="number" min="1" value="1"/>
+<span class="hint" id="page-hint"></span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Boxes on this page</label>
+<span class="counts" id="box-count">0</span>
+<button class="link-btn" id="clear-boxes" type="button">Clear this page</button>
+</div>
+</div>
+
+<div class="canvas-wrap" id="canvas-wrap">
+<canvas id="display"></canvas>
+</div>
+<p class="hint">Click + drag on the page to draw a black redaction box. Click a box to delete it. Switch pages with the input above.</p>
+
+<div class="action-row">
+<button class="btn btn-primary" id="apply-btn" type="button">Apply redactions + download</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How this is different from "drawing a black rectangle"</h2>
+<p>Most cheap redaction tools simply draw a vector rectangle over the text. The text underneath stays in the file — it's just hidden visually. Anyone with a PDF editor (or even copy-paste) can recover it.</p>
+<p>This tool rasterizes each redacted page: renders to image, draws the black bars at pixel level, and replaces the page with an image-only version. The text is genuinely destroyed.</p>
+
+<h2>Trade-off: redacted pages lose searchability</h2>
+<p>Because affected pages become images, they're no longer searchable or selectable in the output PDF. Non-redacted pages are unchanged.</p>
+
+<h2>For sensitive documents</h2>
+<p>For truly sensitive material (court filings, classified docs, GDPR-relevant data), use a professional redaction tool with audit trail (Adobe Acrobat Pro). This tool is for routine privacy (sharing a screenshot of a PDF with bystander info redacted).</p>
+
+<h2>Privacy</h2>
+<p>Everything runs in your browser. The PDF is never uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-redact/pdf-redact.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

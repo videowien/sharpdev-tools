@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Morse Code Translator — Text &amp; Audio | SharpDev.Tools</title>
+<meta content="Convert between text and International Morse code instantly. Optional audio playback at adjustable WPM. Free online, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/morse/" rel="canonical"/>
+<meta content="Morse Code Translator — Text &amp; Audio | SharpDev.Tools" property="og:title"/>
+<meta content="Convert between text and International Morse code instantly. Optional audio playback at adjustable WPM. Free online, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/morse/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Morse Code Translator — Text &amp; Audio | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert between text and International Morse code instantly. Optional audio playback at adjustable WPM. Free online, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name": "Generators", "item": "https://sharpdev.tools/#generators"},
+    {"@type":"ListItem","position":3,"name":"Morse Code","item":"https://sharpdev.tools/tools/morse/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which Morse standard is used?","acceptedAnswer":{"@type":"Answer","text":"International Morse Code, including letters A–Z, digits 0–9, and common punctuation. Accented letters and unsupported characters are skipped."}},
+    {"@type":"Question","name":"How does the audio playback work?","acceptedAnswer":{"@type":"Answer","text":"The tool generates sine-wave tones in your browser using the Web Audio API at the WPM you choose. Nothing is sent to any server."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Morse Code Translator — SharpDev.Tools","url":"https://sharpdev.tools/tools/morse/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/morse/morse.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('morse');</script>
+<div class="page">
+<h1>Morse Code Translator</h1>
+<p class="subtitle">Text to Morse or Morse to text — it detects the direction automatically.</p>
+<label for="in">Input</label>
+<textarea id="in" oninput="morseGo()" placeholder="Type plain text (SOS) or morse (... --- ...)..."></textarea>
+<div class="out-head">
+<label for="out">Output</label>
+<div class="out-actions">
+<button class="copy-btn" id="copy-btn" type="button">Copy</button>
+<button class="copy-btn" id="play-btn" type="button">▶ Play</button>
+</div>
+</div>
+<textarea id="out" readonly></textarea>
+<div class="wpm-row">
+<label for="wpm">Playback WPM</label>
+<input type="range" id="wpm" min="5" max="40" value="20">
+<span class="wpm-val" id="wpm-val">20 wpm</span>
+</div>
+</div>
+<script src="/tools/morse/morse.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

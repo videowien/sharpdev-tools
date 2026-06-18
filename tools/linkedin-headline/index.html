@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Headline Counter — 220 Character Limit Checker | SharpDev.Tools</title>
+<meta content="LinkedIn headlines have a 220-character limit (mobile + desktop, 2024+). Live counter, mobile-preview, search-result preview. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-headline/" rel="canonical"/>
+<meta content="LinkedIn Headline Counter — 220 Character Limit Checker | SharpDev.Tools" property="og:title"/>
+<meta content="LinkedIn headlines have a 220-character limit (mobile + desktop, 2024+). Live counter, mobile-preview, search-result preview. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-headline/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn Headline Counter — 220 Character Limit Checker | SharpDev.Tools" name="twitter:title"/>
+<meta content="LinkedIn headlines have a 220-character limit (mobile + desktop, 2024+). Live counter, mobile-preview, search-result preview. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "LinkedIn", "item": "https://sharpdev.tools/#linkedin" },
+      { "@type": "ListItem", "position": 3, "name": "LinkedIn Headline Counter", "item": "https://sharpdev.tools/tools/linkedin-headline/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the LinkedIn headline character limit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "220 characters since the 2023/2024 platform update. The old 120-char limit (which still circulates in older blog posts) no longer applies. Your headline can be the full 220 chars on both mobile and desktop." } },
+      { "@type": "Question", "name": "Where does the LinkedIn headline appear?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Right under your name on your profile, in search results, in 'People you may know' suggestions, in comments you make, and in posts you publish. It's one of the most-viewed fields on the platform — every interaction surfaces it." } },
+      { "@type": "Question", "name": "How does the headline differ from the About section?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The headline is a single line (220 chars, no formatting) shown next to your name. The About section is a much longer block (2,600 chars) shown lower on your profile. Different field, different counter — use our LinkedIn About Section Counter for that." } },
+      { "@type": "Question", "name": "Are there headline keywords I should include?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — LinkedIn search heavily weights headline content. Include your role, your specialty, and the type of value you provide. Avoid buzzwords like 'guru', 'rockstar', 'thought leader' that LinkedIn deprioritizes." } },
+      { "@type": "Question", "name": "Is the counter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LinkedIn Headline Counter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/linkedin-headline/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-headline/linkedin-headline.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-headline');</script>
+<div class="page">
+<h1>LinkedIn Headline Counter</h1>
+<p class="subtitle">220-character limit. Live counter, profile preview, and search-result preview as you type.</p>
+
+<div class="card">
+<label for="headline-input">Your LinkedIn headline</label>
+<input id="headline-input" type="text" value="Senior Product Designer · Design Systems · ex-Stripe · Sharing weekly notes on craft & remote work" placeholder="Type your headline..."/>
+<div class="counter-bar">
+<div class="counter-fill" id="counter-fill"></div>
+</div>
+<div class="counter-row">
+<span class="char-count" id="char-count">0 / 220</span>
+<span class="remaining" id="remaining"></span>
+</div>
+</div>
+
+<div class="card preview-card">
+<div class="preview-label">Profile preview</div>
+<div class="profile-preview">
+<div class="prof-avatar">JD</div>
+<div class="prof-meta">
+<div class="prof-name">Jane Doe</div>
+<div class="prof-headline" id="preview-headline"></div>
+<div class="prof-location">Berlin, Germany · 500+ connections</div>
+</div>
+</div>
+
+<div class="preview-label" style="margin-top:20px">Search-result preview</div>
+<div class="search-preview">
+<div class="search-avatar">JD</div>
+<div class="search-meta">
+<div class="search-name">Jane Doe · <span class="search-degree">2nd</span></div>
+<div class="search-headline" id="search-headline"></div>
+<div class="search-location">Berlin, Germany</div>
+</div>
+<button class="search-connect" type="button">+ Connect</button>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What makes a strong LinkedIn headline?</h2>
+<ul>
+<li><strong>Role + specialty + value</strong> — "Senior Product Designer · Design Systems · Helping teams ship faster" beats "Product Designer".</li>
+<li><strong>Keyword-rich</strong> — LinkedIn search ranks headline content heavily. Include the role title someone would search for.</li>
+<li><strong>Pipe-separated structure</strong> — `Role | Specialty | Outcome` reads cleanly on every surface.</li>
+<li><strong>One emoji max</strong> — sparingly used emojis catch the eye; more than one looks cluttered.</li>
+<li><strong>No buzzwords</strong> — "guru, rockstar, thought leader" are deprioritized by LinkedIn's algorithm and trigger eye rolls.</li>
+</ul>
+
+<h2>Examples by role</h2>
+<ul>
+<li><em>Engineer:</em> "Staff Software Engineer · Distributed Systems · Building developer tools at Acme · ex-Stripe"</li>
+<li><em>Designer:</em> "Senior Product Designer · Design Systems · Currently @ Acme, sharing weekly notes on craft"</li>
+<li><em>Marketer:</em> "Content Marketing Lead · B2B SaaS · I help category leaders publish without burning out"</li>
+<li><em>Founder:</em> "Founder @ Acme (we're hiring 2 engineers) · Building tools for B2B sales teams · ex-Stripe"</li>
+</ul>
+
+<h2>What changes when you hit 220</h2>
+<p>Going over 220 means LinkedIn truncates with an ellipsis. On mobile, the visible cutoff is narrower than 220 chars — the search-result preview above mimics the ~150-char mobile cutoff where your headline becomes "Senior Product Designer · Design Sys…" — so structure the highest-value content (role + specialty) in the first 100 chars.</p>
+</section>
+
+<script src="/tools/linkedin-headline/linkedin-headline.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

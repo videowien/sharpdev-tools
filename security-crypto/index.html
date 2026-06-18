@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security & Crypto Tools — 17 Free Online, No Sign-Up | SharpDev.Tools</title>
+<meta content="12 free security and crypto tools: password generator, password strength, Diceware passphrase, MD5 / SHA hash, HMAC, JWT decoder + signer, bcrypt, .htpasswd, ROT13, AES-GCM-256 encrypt / decrypt, TOTP 2FA generator." name="description"/>
+<link href="https://sharpdev.tools/security-crypto/" rel="canonical"/>
+<meta content="Security & Crypto Tools — 17 Free Online, No Sign-Up | SharpDev.Tools" property="og:title"/>
+<meta content="12 free security and crypto tools: password generator, password strength, Diceware passphrase, MD5 / SHA hash, HMAC, JWT decoder + signer, bcrypt, .htpasswd, ROT13, AES-GCM-256 encrypt / decrypt, TOTP 2FA generator." property="og:description"/>
+<meta content="https://sharpdev.tools/security-crypto/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Security & Crypto Tools — 17 Free Online, No Sign-Up | SharpDev.Tools" name="twitter:title"/>
+<meta content="12 free security and crypto tools: password generator, password strength, Diceware passphrase, MD5 / SHA hash, HMAC, JWT decoder + signer, bcrypt, .htpasswd, ROT13, AES-GCM-256 encrypt / decrypt, TOTP 2FA generator." name="twitter:description"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/"},
+      {"@type": "ListItem", "position": 2, "name": "Security & Crypto", "item": "https://sharpdev.tools/security-crypto/"}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Security & Crypto Tools — SharpDev.Tools",
+    "description": "12 free security and crypto tools: password generator, password strength, Diceware passphrase, MD5 / SHA hash, HMAC, JWT decoder + signer, bcrypt, .htpasswd, ROT13, AES-GCM-256 encrypt / decrypt, TOTP 2FA generator.",
+    "url": "https://sharpdev.tools/security-crypto/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 17,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "url": "https://sharpdev.tools/tools/password/", "name": "Password Generator"},
+        {"@type": "ListItem", "position": 2, "url": "https://sharpdev.tools/tools/password-strength/", "name": "Password Strength Checker"},
+        {"@type": "ListItem", "position": 3, "url": "https://sharpdev.tools/tools/passphrase/", "name": "Diceware Passphrase"},
+        {"@type": "ListItem", "position": 4, "url": "https://sharpdev.tools/tools/hash/", "name": "Hash Generator"},
+        {"@type": "ListItem", "position": 5, "url": "https://sharpdev.tools/tools/hmac/", "name": "HMAC Generator"},
+        {"@type": "ListItem", "position": 6, "url": "https://sharpdev.tools/tools/jwt/", "name": "JWT Decoder"},
+        {"@type": "ListItem", "position": 7, "url": "https://sharpdev.tools/tools/jwt-sign/", "name": "JWT Signer"},
+        {"@type": "ListItem", "position": 8, "url": "https://sharpdev.tools/tools/bcrypt/", "name": "Bcrypt Generator & Verifier"},
+        {"@type": "ListItem", "position": 9, "url": "https://sharpdev.tools/tools/htpasswd/", "name": ".htpasswd Generator"},
+        {"@type": "ListItem", "position": 10, "url": "https://sharpdev.tools/tools/rot13/", "name": "ROT13 / Caesar Cipher"},
+        {"@type": "ListItem", "position": 11, "url": "https://sharpdev.tools/tools/aes/", "name": "AES Encrypt / Decrypt"},
+        {"@type": "ListItem", "position": 12, "url": "https://sharpdev.tools/tools/totp/", "name": "TOTP / 2FA Code Generator"},
+        {"@type": "ListItem", "position": 13, "url": "https://sharpdev.tools/tools/vigenere/", "name": "Vigenere Cipher"},
+        {"@type": "ListItem", "position": 14, "url": "https://sharpdev.tools/tools/random-key/", "name": "Random Key Generator"},
+        {"@type": "ListItem", "position": 15, "url": "https://sharpdev.tools/tools/caesar/", "name": "Caesar Cipher"},
+        {"@type": "ListItem", "position": 16, "url": "https://sharpdev.tools/tools/atbash/", "name": "Atbash Cipher"},
+        {"@type": "ListItem", "position": 17, "url": "https://sharpdev.tools/tools/xor-cipher/", "name": "XOR Cipher"}
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type": "Question", "name": "Are the cryptographic operations secure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — they use the browser's Web Crypto API (industry-standard, audited) for AES, SHA and HMAC. The bcrypt implementation is the maintained vendored bcryptjs library. JWT signing uses HMAC variants."}},
+        {"@type": "Question", "name": "Are my passwords / secrets uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No — everything runs locally in your browser. No password, hash input or JWT secret is ever sent to a server. Even the TOTP secrets you test stay local."}},
+        {"@type": "Question", "name": "Why is MD5 included if it's insecure?", "acceptedAnswer": {"@type": "Answer", "text": "MD5 and SHA-1 are insecure for cryptographic signatures but still widely used for non-security purposes (checksums, deduplication, legacy integration). The tool warns when you use them for security purposes."}},
+        {"@type": "Question", "name": "Does the password generator use a secure random source?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — it uses `crypto.getRandomValues()` (cryptographically secure pseudo-random) for every character, not `Math.random()`."}}
+    ]
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<style>
+  .cat-hero {
+    text-align: center; padding: 60px 20px 30px;
+  }
+  .cat-hero h1 {
+    font-size: 48px; font-weight: 800; color: #fff;
+    margin-bottom: 14px; letter-spacing: -1.5px; line-height: 1.05;
+  }
+  .cat-hero h1 .accent { color: #ff4444; }
+  .cat-hero .tagline {
+    font-size: 20px; font-weight: 500; color: #ddd;
+    max-width: 600px; margin: 0 auto 6px;
+  }
+  .cat-hero .subline {
+    font-size: 13px; color: #666;
+  }
+
+  .cat-grid {
+    max-width: 1280px; margin: 0 auto; padding: 0 20px 60px;
+  }
+  .tools-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .tool-card {
+    background: #141414; border: 1px solid #262626; border-radius: 12px;
+    padding: 22px; transition: all 0.2s; text-decoration: none; color: inherit;
+    display: block;
+  }
+  .tool-card:hover { border-color: #444; transform: translateY(-2px); text-decoration: none; }
+  .tool-card h3 { font-size: 15px; color: #fff; margin-bottom: 6px; }
+  .tool-card p { font-size: 13px; color: #888; line-height: 1.5; }
+
+  .cat-back {
+    max-width: 1280px; margin: 0 auto 60px; padding: 0 20px;
+    text-align: center;
+  }
+  .cat-back a {
+    color: #888; text-decoration: none;
+    font-size: 14px; padding: 10px 18px;
+    border: 1px solid #262626; border-radius: 8px;
+    transition: all 0.15s;
+  }
+  .cat-back a:hover { color: #fff; border-color: #444; }
+
+  .cat-info {
+    max-width: 880px; margin: 0 auto 80px; padding: 0 20px;
+    color: #ccc; line-height: 1.6;
+  }
+  .cat-info h2 {
+    font-size: 22px; font-weight: 700; color: #fff;
+    margin: 36px 0 14px; letter-spacing: -0.3px;
+  }
+  .cat-info h2:first-child { margin-top: 0; }
+  .cat-info p, .cat-info ul { font-size: 15px; }
+  .cat-info ul.cat-use-cases {
+    list-style: none; padding: 0; margin: 0 0 16px;
+  }
+  .cat-info ul.cat-use-cases li {
+    padding: 12px 16px; margin-bottom: 8px;
+    background: #141414; border: 1px solid #262626; border-radius: 8px;
+  }
+  .cat-info ul.cat-use-cases li strong { color: #fff; }
+  .cat-info .cat-intro {
+    padding: 16px 18px; background: rgba(255,68,68,0.04);
+    border-left: 3px solid #ff4444; border-radius: 4px;
+  }
+  .cat-info details.cat-faq {
+    background: #141414; border: 1px solid #262626; border-radius: 8px;
+    margin-bottom: 8px; padding: 0;
+  }
+  .cat-info details.cat-faq summary {
+    padding: 14px 18px; cursor: pointer; font-weight: 600;
+    color: #eee; font-size: 15px; list-style: none;
+    position: relative; padding-right: 36px;
+  }
+  .cat-info details.cat-faq summary::after {
+    content: '+'; position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%); font-size: 20px; color: #888;
+    transition: transform 0.15s;
+  }
+  .cat-info details.cat-faq[open] summary::after { content: '−'; }
+  .cat-info details.cat-faq p { padding: 0 18px 16px; margin: 0; color: #ccc; }
+
+  @media (max-width: 1100px) { .tools-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px)  { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  {
+    .cat-hero { padding: 40px 16px 24px; }
+    .cat-hero h1 { font-size: 34px; }
+    .cat-hero .tagline { font-size: 16px; }
+    .cat-grid { padding: 0 12px 40px; }
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('cat-security-crypto');</script>
+
+<div class="cat-hero">
+<h1>Security & Crypto</h1>
+<p class="tagline">12 utilities for passwords, hashes, signatures, tokens, encryption and 2FA.</p>
+<p class="subline">No sign-up. No tracking. No ads.</p>
+</div>
+
+<div class="cat-grid">
+<div class="tools-grid">
+<a class="tool-card" href="/tools/password/">
+<h3>Password Generator</h3>
+<p>Generate strong, random passwords. Configurable length, symbols, look-alike exclusion. Cryptographically secure.</p>
+</a>
+<a class="tool-card" href="/tools/password-strength/">
+<h3>Password Strength Checker</h3>
+<p>Entropy in bits, estimated online + offline crack time, common-pattern detection. Password never leaves the browser.</p>
+</a>
+<a class="tool-card" href="/tools/passphrase/">
+<h3>Diceware Passphrase</h3>
+<p>Memorable + cryptographically strong passphrases from the EFF wordlist. Entropy bits shown — runs in your browser.</p>
+</a>
+<a class="tool-card" href="/tools/hash/">
+<h3>Hash Generator</h3>
+<p>MD5, SHA-1, SHA-256, SHA-512. Works on text or any file. Computed locally in your browser.</p>
+</a>
+<a class="tool-card" href="/tools/hmac/">
+<h3>HMAC Generator</h3>
+<p>HMAC-SHA1/SHA-256/SHA-384/SHA-512 for API signing, JWT, webhook verification. Hex or Base64 output.</p>
+</a>
+<a class="tool-card" href="/tools/jwt/">
+<h3>JWT Decoder</h3>
+<p>Decode JSON Web Tokens. See header, payload, and signature. Human-readable exp/iat timestamps.</p>
+</a>
+<a class="tool-card" href="/tools/jwt-sign/">
+<h3>JWT Signer</h3>
+<p>Build and sign JSON Web Tokens with HS256/HS384/HS512 in your browser. Pairs with the existing JWT decoder.</p>
+</a>
+<a class="tool-card" href="/tools/bcrypt/">
+<h3>Bcrypt Generator &amp; Verifier</h3>
+<p>Hash passwords with bcrypt at adjustable cost, or verify a password against an existing hash. Runs locally.</p>
+</a>
+<a class="tool-card" href="/tools/htpasswd/">
+<h3>.htpasswd Generator</h3>
+<p>Create Apache and Nginx .htpasswd entries. Choose bcrypt or APR1 MD5. Copy the full one-line entry.</p>
+</a>
+<a class="tool-card" href="/tools/rot13/">
+<h3>ROT13 / Caesar Cipher</h3>
+<p>Classic letter-shift cipher with live preview. Any shift from 1 to 25, plus the ROT13 default. Both directions.</p>
+</a>
+<a class="tool-card" href="/tools/aes/">
+<h3>AES Encrypt / Decrypt</h3>
+<p>AES-GCM-256 with PBKDF2 key derivation. Browser-native via SubtleCrypto — password + plaintext stay local.</p>
+</a>
+<a class="tool-card" href="/tools/totp/">
+<h3>TOTP / 2FA Code Generator</h3>
+<p>Generate Google-Authenticator-compatible 2FA codes from a base32 secret. RFC 6238. Live countdown.</p>
+</a>
+<a class="tool-card" href="/tools/vigenere/">
+<h3>Vigenere Cipher</h3>
+<p>Encode/decode text with the Vigenere keyword cipher. Two-way, live, browser-only.</p>
+</a>
+<a class="tool-card" href="/tools/random-key/">
+<h3>Random Key Generator</h3>
+<p>Secure random API keys and tokens: hex, Base64, Base64URL or alphanumeric, bulk.</p>
+</a>
+<a class="tool-card" href="/tools/caesar/">
+<h3>Caesar Cipher</h3>
+<p>Encrypt/decrypt by shifting letters any amount (0–25). ROT13 included, live output.</p>
+</a>
+<a class="tool-card" href="/tools/atbash/">
+<h3>Atbash Cipher</h3>
+<p>Mirror the alphabet (A↔Z, B↔Y…). Self-inverse, keeps case & punctuation.</p>
+</a>
+<a class="tool-card" href="/tools/xor-cipher/">
+<h3>XOR Cipher</h3>
+<p>XOR text with a repeating key → hex, and back. UTF-8 aware, fully client-side.</p>
+</a>
+</div>
+</div>
+
+
+<section class="cat-info">
+<h2>About this toolkit</h2>
+<p class="cat-intro">A <strong>browser-based security &amp; cryptography toolkit</strong> — password generator + strength meter, Diceware passphrases, MD5 / SHA hashing, HMAC, bcrypt, JWT decode + sign, .htpasswd generator, AES-GCM-256 symmetric encrypt / decrypt, TOTP 2FA generator, ROT13. All cryptographic operations use the browser's Web Crypto API or vendored bcrypt — nothing is uploaded.</p>
+
+<h2>Who uses these tools</h2>
+<ul class="cat-use-cases">
+<li><strong>Password management</strong> — Generate strong passwords with length + character-set controls, test the strength of an existing password, generate human-memorable Diceware passphrases.</li>
+<li><strong>Hashing &amp; signatures</strong> — MD5 / SHA-1 / SHA-256 / SHA-384 / SHA-512 hashes, HMAC with any of those, bcrypt with adjustable cost, .htpasswd-formatted output for Apache / nginx.</li>
+<li><strong>Tokens &amp; auth</strong> — JWT decoder (verify signature, inspect payload), JWT signer (HS256 / HS384 / HS512), TOTP 2FA generator (for testing your authenticator setup).</li>
+<li><strong>Encryption</strong> — AES-GCM-256 encrypt / decrypt — paste text and a password, get authenticated ciphertext. Same tool reverses with the same password.</li>
+<li><strong>Legacy &amp; fun</strong> — ROT13 cipher (for spoilers and old-school obfuscation).</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details class="cat-faq"><summary>Are the cryptographic operations secure?</summary><p>Yes — they use the browser's Web Crypto API (industry-standard, audited) for AES, SHA and HMAC. The bcrypt implementation is the maintained vendored bcryptjs library. JWT signing uses HMAC variants.</p></details>
+<details class="cat-faq"><summary>Are my passwords / secrets uploaded?</summary><p>No — everything runs locally in your browser. No password, hash input or JWT secret is ever sent to a server. Even the TOTP secrets you test stay local.</p></details>
+<details class="cat-faq"><summary>Why is MD5 included if it's insecure?</summary><p>MD5 and SHA-1 are insecure for cryptographic signatures but still widely used for non-security purposes (checksums, deduplication, legacy integration). The tool warns when you use them for security purposes.</p></details>
+<details class="cat-faq"><summary>Does the password generator use a secure random source?</summary><p>Yes — it uses `crypto.getRandomValues()` (cryptographically secure pseudo-random) for every character, not `Math.random()`.</p></details>
+</section>
+
+<div class="cat-back">
+<a href="/">← Browse all 622 tools</a>
+</div>
+
+<script>renderFooter();</script>
+</body>
+</html>

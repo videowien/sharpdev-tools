@@ -1,0 +1,70 @@
+/* Twitter Bio Counter — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.form-row label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.form-row textarea, .form-row input[type=text] {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  resize: vertical;
+}
+
+.counter-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 4px;
+}
+.counter {
+  font-size: 12px; color: #888; font-family: 'SF Mono', monospace;
+}
+.counter.warn { color: #ffa726; }
+.counter.over { color: #ff4444; font-weight: 600; }
+.counter-bar {
+  flex: 1; margin-left: 12px; height: 4px; background: #0d0d0d;
+  border-radius: 2px; overflow: hidden; max-width: 200px;
+}
+.counter-fill { display: block; height: 100%; width: 0%; background: #4caf50; transition: width 0.15s, background 0.15s; }
+.counter-fill.warn { background: #ffa726; }
+.counter-fill.over { background: #ff4444; }
+
+.preview-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.preview-controls label { grid-column: span 1; }
+.preview-controls input { grid-column: span 1; }
+
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+.preview-box {
+  background: #fff; color: #0f1419; border-radius: 10px; overflow: hidden;
+  border: 1px solid #2a2a2a; margin-top: 10px;
+}
+.preview-cover {
+  height: 100px; background: linear-gradient(135deg, #ff4444, #ff8866);
+}
+.preview-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: #ff4444; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700;
+  margin: -40px 0 0 16px;
+  border: 4px solid #fff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.preview-content {
+  padding: 6px 18px 18px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.preview-name { font-size: 19px; font-weight: 800; color: #0f1419; }
+.preview-handle { font-size: 14px; color: #536471; margin-top: 2px; }
+.preview-bio {
+  font-size: 14px; color: #0f1419; margin-top: 12px;
+  white-space: pre-wrap; line-height: 1.4; word-break: break-word;
+}
+.preview-meta { font-size: 13px; color: #536471; margin-top: 12px; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .preview-controls { grid-template-columns: 1fr; gap: 8px; }
+}

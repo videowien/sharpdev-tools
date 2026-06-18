@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Triangle Calculator — Area, Perimeter From 3 Sides | SharpDev.Tools</title>
+<meta content="Calculate a triangle's area (Heron's formula), perimeter and type from its three sides. Checks validity and right angles. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/triangle-calculator/" rel="canonical"/>
+<meta content="Triangle Calculator — Area, Perimeter From 3 Sides | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate a triangle's area (Heron's formula), perimeter and type from its three sides. Checks validity and right angles. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/triangle-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Triangle Calculator — Area, Perimeter From 3 Sides | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate a triangle's area (Heron's formula), perimeter and type from its three sides. Checks validity and right angles. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Triangle Calculator","item":"https://sharpdev.tools/tools/triangle-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the area calculated from three sides?","acceptedAnswer":{"@type":"Answer","text":"With Heron's formula: compute the semi-perimeter s = (a+b+c)/2, then area = sqrt(s(s-a)(s-b)(s-c)). No height needed."}},{"@type":"Question","name":"How does it know the triangle type?","acceptedAnswer":{"@type":"Answer","text":"If all three sides are equal it is equilateral, if exactly two are equal it is isosceles, otherwise scalene. It also checks whether a squared plus b squared equals c squared to flag a right triangle."}},{"@type":"Question","name":"What if my sides cannot form a triangle?","acceptedAnswer":{"@type":"Answer","text":"If any side is longer than or equal to the sum of the other two, no triangle exists and the tool says so (the triangle inequality)."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Triangle Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/triangle-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/triangle-calculator/triangle-calculator.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('triangle-calculator');</script>
+<div class="page">
+<h1>Triangle Calculator</h1>
+<p class="subtitle">Enter three side lengths: get area, perimeter, triangle type and a right-angle check.</p>
+<div class="row"><div class="field"><label for="a">Side a</label><input type="number" id="a" value="3" step="any"></div>
+<div class="field"><label for="b">Side b</label><input type="number" id="b" value="4" step="any"></div>
+<div class="field"><label for="c">Side c</label><input type="number" id="c" value="5" step="any"></div></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the area calculated from three sides?</summary><p>With Heron's formula: compute the semi-perimeter s = (a+b+c)/2, then area = sqrt(s(s-a)(s-b)(s-c)). No height needed.</p></details>
+<details><summary>How does it know the triangle type?</summary><p>If all three sides are equal it is equilateral, if exactly two are equal it is isosceles, otherwise scalene. It also checks whether a squared plus b squared equals c squared to flag a right triangle.</p></details>
+<details><summary>What if my sides cannot form a triangle?</summary><p>If any side is longer than or equal to the sum of the other two, no triangle exists and the tool says so (the triangle inequality).</p></details>
+</section>
+<script src="/tools/triangle-calculator/triangle-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

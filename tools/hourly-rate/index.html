@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freelance Hourly Rate Calculator — What to Charge per Hour | SharpDev.Tools</title>
+<meta content="Calculate your minimum freelance hourly rate from your annual income goal, taxes, working days per year, billable hours, and overhead. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/hourly-rate/" rel="canonical"/>
+<meta content="Freelance Hourly Rate Calculator — What to Charge per Hour | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate your minimum freelance hourly rate from your annual income goal, taxes, working days per year, billable hours, and overhead. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hourly-rate/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Freelance Hourly Rate Calculator — What to Charge per Hour | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate your minimum freelance hourly rate from your annual income goal, taxes, working days per year, billable hours, and overhead. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},
+    {"@type":"ListItem","position":3,"name":"Hourly Rate Calculator","item":"https://sharpdev.tools/tools/hourly-rate/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I calculate my freelance hourly rate?","acceptedAnswer":{"@type":"Answer","text":"Start with your target take-home. Add taxes and business overhead (insurance, software, equipment). Divide that gross by your billable hours per year. Billable hours are roughly 60% of working hours — the rest goes to admin, sales, learning."}},
+    {"@type":"Question","name":"What's a realistic billable-hours ratio?","acceptedAnswer":{"@type":"Answer","text":"60-70% for established freelancers; 40-50% for newer ones still spending heavily on biz dev. A 'full-time' freelance year is typically 1500-1800 billable hours, not 2080 (52 weeks × 40 hours)."}},
+    {"@type":"Question","name":"Do I need to factor in vacation and sick days?","acceptedAnswer":{"@type":"Answer","text":"Yes — the calculator subtracts vacation, holidays, and sick days from working days. Most freelancers underestimate this and end up undercharging."}},
+    {"@type":"Question","name":"Is the calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Freelance Hourly Rate Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/hourly-rate/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hourly-rate/hourly-rate.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hourly-rate');</script>
+<div class="page">
+<h1>Freelance Hourly Rate Calculator</h1>
+<p class="subtitle">Build your minimum hourly rate from take-home goal, taxes, vacation, and billable-hours reality.</p>
+
+<div class="card">
+<div class="section-label">Income goal</div>
+<div class="input-row">
+<div class="input-group">
+<label for="take-home">Desired take-home / year</label>
+<input id="take-home" type="number" min="0" step="1000" value="60000"/>
+</div>
+<div class="input-group">
+<label for="tax-rate">Tax + social-security rate (%)</label>
+<input id="tax-rate" type="number" min="0" max="80" step="1" value="35"/>
+</div>
+</div>
+
+<div class="section-label">Business overhead</div>
+<div class="input-row">
+<div class="input-group">
+<label for="overhead">Overhead / year (insurance, tools, equipment)</label>
+<input id="overhead" type="number" min="0" step="500" value="6000"/>
+</div>
+</div>
+
+<div class="section-label">Available time</div>
+<div class="input-row">
+<div class="input-group">
+<label for="vacation">Vacation days</label>
+<input id="vacation" type="number" min="0" max="60" step="1" value="25"/>
+</div>
+<div class="input-group">
+<label for="public-hol">Public holidays</label>
+<input id="public-hol" type="number" min="0" max="20" step="1" value="10"/>
+</div>
+<div class="input-group">
+<label for="sick">Sick / buffer days</label>
+<input id="sick" type="number" min="0" max="30" step="1" value="7"/>
+</div>
+</div>
+
+<div class="input-row">
+<div class="input-group">
+<label for="hours-per-day">Working hours per day</label>
+<input id="hours-per-day" type="number" min="1" max="16" step="0.5" value="8"/>
+</div>
+<div class="input-group">
+<label for="billable-ratio">Billable ratio (%)</label>
+<input id="billable-ratio" type="number" min="20" max="100" step="5" value="60"/>
+</div>
+</div>
+
+<div class="results">
+<div class="result-row">
+<span class="result-label">Gross income needed (take-home + tax)</span>
+<span class="result-value" id="r-gross">—</span>
+</div>
+<div class="result-row">
+<span class="result-label">Plus overhead → revenue target</span>
+<span class="result-value" id="r-revenue">—</span>
+</div>
+<div class="result-row">
+<span class="result-label">Working days / year (after vacation + holidays + sick)</span>
+<span class="result-value" id="r-days">—</span>
+</div>
+<div class="result-row">
+<span class="result-label">Total billable hours / year</span>
+<span class="result-value" id="r-hours">—</span>
+</div>
+<div class="result-row hl">
+<span class="result-label">Minimum hourly rate</span>
+<span class="result-value" id="r-rate">—</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why your hourly rate is higher than employees per hour</h2>
+<p>A €60k salary employee at a company has a fully-loaded cost to the employer of ~€90k once you add taxes, social security, equipment, office, training, and benefits. As a freelancer you're charging the equivalent of that loaded cost — so your hourly rate is naturally 1.5–2× what a comparable employee "earns per hour" on their payslip.</p>
+
+<h2>Common mistakes that lead to undercharging</h2>
+<ul>
+<li><strong>Forgetting vacation</strong> — you don't get paid time off as a freelancer, so vacation has to come out of your billable hours.</li>
+<li><strong>Assuming 40 billable hours/week</strong> — admin, sales, invoicing, learning, and gaps between projects make 40 unrealistic. 25-30 billable hours/week is closer to reality.</li>
+<li><strong>Not factoring tax</strong> — €100/hour gross with a 35% effective tax rate is €65 in your pocket. Always quote and think in gross.</li>
+<li><strong>No overhead</strong> — software subscriptions, hardware, insurance, accountant fees, conference tickets all add up. €5–10k/year is normal.</li>
+<li><strong>Mistaking peer salary for peer income</strong> — if your employed friend earns €70k, you need to charge as if your gross is ~€105k+ to match net lifestyle, since you pay your own benefits.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All math runs in your browser. Nothing is sent or stored.</p>
+</section>
+
+<script src="/tools/hourly-rate/hourly-rate.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

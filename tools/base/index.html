@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Number Base — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Convert numbers between binary, octal, decimal and hex with live-linked fields and a bitwise inspector. Free online, no ads, no sign-up needed." name="description"/>
+<link href="https://sharpdev.tools/tools/base/" rel="canonical"/>
+<meta content="Number Base — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Convert numbers between binary, octal, decimal and hex with live-linked fields and a bitwise inspector. Free online, no ads, no sign-up needed." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/base/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Number Base — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert numbers between binary, octal, decimal and hex with live-linked fields and a bitwise inspector. Free online, no ads, no sign-up needed." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://sharpdev.tools/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Number Base",
+        "item": "https://sharpdev.tools/tools/base/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can the Number Base Converter show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Live-linked binary, octal, decimal and hexadecimal fields, plus a bitwise inspector that shows individual bits and lets you flip them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free with no ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my number sent anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — conversion runs locally in your browser."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Number Base — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/base/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/base/base.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('base');</script>
+<div class="page">
+<h1>Number Base Converter</h1>
+<p class="subtitle">Live-linked binary, octal, decimal, and hex. 64-bit precision, bitwise inspector, ASCII preview.</p>
+<div class="presets">
+<span class="preset-label">Presets:</span>
+<button class="preset" data-val="0">0</button>
+<button class="preset" data-val="42">42</button>
+<button class="preset" data-val="255">255</button>
+<button class="preset" data-val="1024">1024</button>
+<button class="preset" data-val="65535">65535</button>
+<button class="preset" data-val="2147483647">2^31-1</button>
+<button class="preset" data-val="4294967295">2^32-1</button>
+</div>
+<div class="fields">
+<div class="field" data-base="bin">
+<label>Binary</label>
+<input autocomplete="off" id="in-bin" spellcheck="false" type="text"/>
+<div class="err" id="err-bin"></div>
+</div>
+<div class="field" data-base="oct">
+<label>Octal</label>
+<input autocomplete="off" id="in-oct" spellcheck="false" type="text"/>
+<div class="err" id="err-oct"></div>
+</div>
+<div class="field" data-base="dec">
+<label>Decimal</label>
+<input autocomplete="off" id="in-dec" spellcheck="false" type="text"/>
+<div class="err" id="err-dec"></div>
+</div>
+<div class="field" data-base="hex">
+<label>Hexadecimal</label>
+<input autocomplete="off" id="in-hex" spellcheck="false" type="text"/>
+<div class="err" id="err-hex"></div>
+</div>
+</div>
+<div class="card bits-card">
+<div class="card-head"><h3>Bitwise inspector</h3><span class="hint">Click a bit to toggle</span></div>
+<div class="bits" id="bits"></div>
+</div>
+<div class="card ascii-card">
+<h3>ASCII / Unicode</h3>
+<div class="ascii" id="ascii">—</div>
+</div>
+<div class="card ref-card">
+<h3>Common values</h3>
+<table class="ref-table">
+<tr><th>Name</th><th>Decimal</th><th>Hex</th></tr>
+<tr><td>INT8_MAX</td><td>127</td><td>0x7F</td></tr>
+<tr><td>UINT8_MAX</td><td>255</td><td>0xFF</td></tr>
+<tr><td>INT16_MAX</td><td>32767</td><td>0x7FFF</td></tr>
+<tr><td>UINT16_MAX</td><td>65535</td><td>0xFFFF</td></tr>
+<tr><td>INT32_MAX</td><td>2147483647</td><td>0x7FFFFFFF</td></tr>
+<tr><td>UINT32_MAX</td><td>4294967295</td><td>0xFFFFFFFF</td></tr>
+<tr><td>-1 (u32)</td><td>4294967295</td><td>0xFFFFFFFF</td></tr>
+<tr><td>INT64_MAX</td><td>9223372036854775807</td><td>0x7FFFFFFFFFFFFFFF</td></tr>
+<tr><td>UINT64_MAX</td><td>18446744073709551615</td><td>0xFFFFFFFFFFFFFFFF</td></tr>
+</table>
+</div>
+</div>
+<script src="/tools/base/base.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

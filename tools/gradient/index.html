@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Gradient Generator — Linear &amp; Radial | SharpDev.Tools</title>
+<meta content="Visual CSS gradient builder. Linear or radial, multiple stops, live preview, copy the CSS rule. Free online, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/gradient/" rel="canonical"/>
+<meta content="CSS Gradient Generator — Linear &amp; Radial | SharpDev.Tools" property="og:title"/>
+<meta content="Visual CSS gradient builder. Linear or radial, multiple stops, live preview, copy the CSS rule. Free online, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/gradient/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="CSS Gradient Generator — Linear &amp; Radial | SharpDev.Tools" name="twitter:title"/>
+<meta content="Visual CSS gradient builder. Linear or radial, multiple stops, live preview, copy the CSS rule. Free online, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},
+    {"@type":"ListItem","position":3,"name":"Gradient Generator","item":"https://sharpdev.tools/tools/gradient/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can I add more than two color stops?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click \u201c+ Add stop\u201d to add up to ten color stops. Each stop has its own colour and position along the gradient."}},
+    {"@type":"Question","name":"What's the difference between linear and radial?","acceptedAnswer":{"@type":"Answer","text":"Linear gradients fade along a straight axis at an angle you choose. Radial gradients fade outwards from a central point and can be circular or elliptical."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Gradient Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/gradient/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/gradient/gradient.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('gradient');</script>
+<div class="page">
+<h1>Gradient Generator</h1>
+<p class="subtitle">Linear or radial, up to 10 color stops, live preview.</p>
+<div class="gr-preview" id="gr-preview"></div>
+<div class="gr-controls">
+<div class="gr-type-row">
+<div class="tabs">
+<button type="button" class="tab-btn active" data-type="linear">Linear</button>
+<button type="button" class="tab-btn" data-type="radial">Radial</button>
+</div>
+<div class="gr-angle-row" id="linear-opts">
+<label>Angle</label>
+<input type="range" id="angle" min="0" max="360" value="135">
+<span class="val" id="angle-val">135&deg;</span>
+</div>
+<div class="gr-shape-row" id="radial-opts" style="display:none;">
+<label>Shape</label>
+<select id="shape">
+<option value="circle">Circle</option>
+<option value="ellipse" selected>Ellipse</option>
+</select>
+<label>Position</label>
+<select id="position">
+<option value="center" selected>Center</option>
+<option value="top left">Top left</option>
+<option value="top right">Top right</option>
+<option value="bottom left">Bottom left</option>
+<option value="bottom right">Bottom right</option>
+</select>
+</div>
+</div>
+<div class="gr-stops" id="gr-stops"></div>
+<button type="button" class="add-btn" id="add-stop">+ Add stop</button>
+</div>
+<div class="code-panel">
+<div class="code-head"><span>Generated CSS</span><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<pre id="code-out"></pre>
+</div>
+</div>
+<script src="/tools/gradient/gradient.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

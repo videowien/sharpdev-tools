@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Color Tints &amp; Shades Generator — Design System Palette | SharpDev.Tools</title>
+<meta content="Generate 50-900 tints + shades from a base color for design systems (Tailwind-style). HEX, RGB, HSL output. Copy CSS variables. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/color-shades/" rel="canonical"/>
+<meta content="Color Tints &amp; Shades Generator — Design System Palette | SharpDev.Tools" property="og:title"/>
+<meta content="Generate 50-900 tints + shades from a base color (Tailwind-style). HEX/RGB/HSL output, CSS variables." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/color-shades/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Color Tints &amp; Shades Generator — Design System Palette | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate 50-900 tints + shades from a base color (Tailwind-style)." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Color Tints &amp; Shades","item":"https://sharpdev.tools/tools/color-shades/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between tint and shade?","acceptedAnswer":{"@type":"Answer","text":"Tint = your base color mixed with white (lighter). Shade = your base color mixed with black (darker). Tone (less common) = mixed with grey. This tool generates both."}},
+    {"@type":"Question","name":"What's the 50-900 scale?","acceptedAnswer":{"@type":"Answer","text":"Tailwind-style — 50 is nearly white, 500 is the base color, 900 is nearly black. Adopted as a de-facto standard across many design systems (Material, Polaris, Carbon)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All color math runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Color Tints &amp; Shades — SharpDev.Tools","url":"https://sharpdev.tools/tools/color-shades/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/color-shades/color-shades.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('color-shades');</script>
+<div class="page">
+<h1>Color Tints &amp; Shades</h1>
+<p class="subtitle">Tailwind-style 50-900 scale from any base color. Copy as HEX, RGB, HSL or CSS variables.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Base color</label>
+<div class="color-input-row">
+<input id="color-picker" type="color" value="#ff4444"/>
+<input id="hex-input" type="text" value="#ff4444"/>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Format</label>
+<div class="seg">
+<button class="seg-btn active" data-fmt="hex" type="button">HEX</button>
+<button class="seg-btn" data-fmt="rgb" type="button">RGB</button>
+<button class="seg-btn" data-fmt="hsl" type="button">HSL</button>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Name (for CSS vars)</label>
+<input id="name" type="text" placeholder="brand" value="brand"/>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="palette" id="palette"></div>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-css" type="button">Copy CSS variables</button>
+<button class="btn btn-secondary" id="copy-tailwind" type="button">Copy Tailwind config</button>
+<button class="btn btn-secondary" id="copy-json" type="button">Copy JSON</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How tints and shades are generated</h2>
+<p>The base color sits at 500. Tints (50-400) are generated by interpolating toward white in HSL space (raising lightness). Shades (600-900) toward black (lowering lightness). The exact lightness steps are based on Tailwind's defaults.</p>
+
+<h2>Where to use each step</h2>
+<table class="step-table">
+<tr><th>Step</th><th>Typical use</th></tr>
+<tr><td>50 / 100</td><td>Backgrounds, hover states on light themes</td></tr>
+<tr><td>200 / 300</td><td>Borders, dividers, disabled state</td></tr>
+<tr><td>400</td><td>Secondary text, icon strokes</td></tr>
+<tr><td>500 (base)</td><td>Primary action color, brand</td></tr>
+<tr><td>600 / 700</td><td>Hover states on the base, link visited</td></tr>
+<tr><td>800 / 900</td><td>Text on light backgrounds, dark mode primary</td></tr>
+</table>
+
+<h2>Privacy</h2>
+<p>Color math runs in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/color-shades/color-shades.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

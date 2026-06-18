@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Slope Calculator — Slope, Distance &amp; Midpoint of Two Points | SharpDev.Tools</title>
+<meta content="Calculate the slope, distance, midpoint and line equation between two points. Free online slope calculator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/slope/" rel="canonical"/>
+<meta content="Slope Calculator — Slope, Distance &amp; Midpoint of Two Points | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate the slope, distance, midpoint and line equation between two points. Free online slope calculator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/slope/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Slope Calculator — Slope, Distance &amp; Midpoint of Two Points | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate the slope, distance, midpoint and line equation between two points. Free online slope calculator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Slope Calculator","item":"https://sharpdev.tools/tools/slope/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is slope calculated?","acceptedAnswer":{"@type":"Answer","text":"Slope m = (y2 - y1) / (x2 - x1), the rise over the run between the two points. A vertical line (x1 = x2) has an undefined slope, which the tool reports."}},{"@type":"Question","name":"What else does it give me?","acceptedAnswer":{"@type":"Answer","text":"The straight-line distance between the points, their midpoint, and the full line equation in slope-intercept form y = mx + b."}},{"@type":"Question","name":"Does it handle negative and decimal coordinates?","acceptedAnswer":{"@type":"Answer","text":"Yes, all four coordinates accept negatives and decimals."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Slope Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/slope/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/slope/slope.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('slope');</script>
+<div class="page">
+<h1>Slope Calculator</h1>
+<p class="subtitle">From two points: slope, distance, midpoint and the line equation y = mx + b.</p>
+<div class="row"><div class="field"><label for="x1">x1</label><input type="number" id="x1" value="1" step="any"></div>
+<div class="field"><label for="y1">y1</label><input type="number" id="y1" value="2" step="any"></div>
+<div class="field"><label for="x2">x2</label><input type="number" id="x2" value="4" step="any"></div>
+<div class="field"><label for="y2">y2</label><input type="number" id="y2" value="8" step="any"></div></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is slope calculated?</summary><p>Slope m = (y2 - y1) / (x2 - x1), the rise over the run between the two points. A vertical line (x1 = x2) has an undefined slope, which the tool reports.</p></details>
+<details><summary>What else does it give me?</summary><p>The straight-line distance between the points, their midpoint, and the full line equation in slope-intercept form y = mx + b.</p></details>
+<details><summary>Does it handle negative and decimal coordinates?</summary><p>Yes, all four coordinates accept negatives and decimals.</p></details>
+</section>
+<script src="/tools/slope/slope.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

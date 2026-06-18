@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Pythagorean Theorem Calculator — Solve a, b or c | SharpDev.Tools</title>
+<meta content="Solve the Pythagorean theorem: enter any two sides of a right triangle and get the third. Free a squared plus b squared equals c squared calculator." name="description"/>
+<link href="https://sharpdev.tools/tools/pythagorean/" rel="canonical"/>
+<meta content="Pythagorean Theorem Calculator — Solve a, b or c | SharpDev.Tools" property="og:title"/>
+<meta content="Solve the Pythagorean theorem: enter any two sides of a right triangle and get the third. Free a squared plus b squared equals c squared calculator." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pythagorean/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Pythagorean Theorem Calculator — Solve a, b or c | SharpDev.Tools" name="twitter:title"/>
+<meta content="Solve the Pythagorean theorem: enter any two sides of a right triangle and get the third. Free a squared plus b squared equals c squared calculator." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Pythagorean Theorem Calculator","item":"https://sharpdev.tools/tools/pythagorean/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find the hypotenuse?","acceptedAnswer":{"@type":"Answer","text":"Enter both legs (a and b) and leave c blank. The calculator returns c = sqrt(a squared + b squared)."}},{"@type":"Question","name":"Can I solve for a leg instead?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the hypotenuse c and one leg, leave the other leg blank; it solves the missing leg as sqrt(c squared minus leg squared). The hypotenuse must be the longest side."}},{"@type":"Question","name":"What is the Pythagorean theorem?","acceptedAnswer":{"@type":"Answer","text":"For a right triangle, the square of the hypotenuse equals the sum of the squares of the two legs: a squared + b squared = c squared."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Pythagorean Theorem Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/pythagorean/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pythagorean/pythagorean.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pythagorean');</script>
+<div class="page">
+<h1>Pythagorean Theorem Calculator</h1>
+<p class="subtitle">Right triangle: fill any two of a, b (legs) and c (hypotenuse), leave the unknown blank.</p>
+<div class="row"><div class="field"><label for="a">a (leg)</label><input type="number" id="a" value="3" step="any"></div>
+<div class="field"><label for="b">b (leg)</label><input type="number" id="b" value="4" step="any"></div>
+<div class="field"><label for="c">c (hypotenuse)</label><input type="number" id="c" placeholder="leave blank" step="any"></div></div>
+<div class="result-cards" id="cards"></div><div id="err" class="note" style="display:none"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find the hypotenuse?</summary><p>Enter both legs (a and b) and leave c blank. The calculator returns c = sqrt(a squared + b squared).</p></details>
+<details><summary>Can I solve for a leg instead?</summary><p>Yes. Enter the hypotenuse c and one leg, leave the other leg blank; it solves the missing leg as sqrt(c squared minus leg squared). The hypotenuse must be the longest side.</p></details>
+<details><summary>What is the Pythagorean theorem?</summary><p>For a right triangle, the square of the hypotenuse equals the sum of the squares of the two legs: a squared + b squared = c squared.</p></details>
+</section>
+<script src="/tools/pythagorean/pythagorean.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Circle Avatar Crop | SharpDev.Tools</title>
+<meta content="Free avatar crop tool. Center-crop any photo into a circular or square avatar at a chosen size and download a transparent PNG. Runs entirely in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/avatar-crop/" rel="canonical"/>
+<meta content="Circle Avatar Crop | SharpDev.Tools" property="og:title"/>
+<meta content="Free avatar crop tool. Center-crop any photo into a circular or square avatar at a chosen size and download a transparent PNG. Runs entirely in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/avatar-crop/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Circle Avatar Crop | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free avatar crop tool. Center-crop any photo into a circular or square avatar at a chosen size and download a transparent PNG. Runs entirely in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Circle / Square Avatar Crop","item":"https://sharpdev.tools/tools/avatar-crop/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the crop chosen?","acceptedAnswer":{"@type":"Answer","text":"The largest centered square of your photo is taken, scaled to your chosen size, and (for circle) clipped to a circle with a transparent background."}},{"@type":"Question","name":"Why a transparent PNG?","acceptedAnswer":{"@type":"Answer","text":"So a circular avatar has clean transparent corners and sits nicely on any background, like profile pictures and chat apps."}},{"@type":"Question","name":"Can I reposition the crop?","acceptedAnswer":{"@type":"Answer","text":"This tool center-crops automatically. For off-center crops, pre-crop with the image crop tool first."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Circle / Square Avatar Crop \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/avatar-crop/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/avatar-crop/avatar-crop.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('avatar-crop');</script>
+<div class="page">
+<h1>Circle / Square Avatar Crop</h1>
+<p class="subtitle">Center-crop any photo to a circle or square avatar at a chosen size, then download. Runs in your browser.</p>
+<label class="sd-drop" for="file">Click or drop a photo here<input type="file" id="file" accept="image/*"></label>
+<div class="row"><div class="field"><label for="shape">Shape</label><select id="shape"><option value="circle">Circle</option><option value="square">Square</option></select></div><div class="field"><label for="sz">Output size (px)</label><input type="number" id="sz" value="256" min="16" max="2048"></div></div>
+<div class="out-head"><label>Preview</label><a class="copy-btn dlbtn" id="dl" style="display:none;">Download PNG</a></div>
+<canvas id="cv"></canvas>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the crop chosen?</summary><p>The largest centered square of your photo is taken, scaled to your chosen size, and (for circle) clipped to a circle with a transparent background.</p></details>
+<details><summary>Why a transparent PNG?</summary><p>So a circular avatar has clean transparent corners and sits nicely on any background, like profile pictures and chat apps.</p></details>
+<details><summary>Can I reposition the crop?</summary><p>This tool center-crops automatically. For off-center crops, pre-crop with the image crop tool first.</p></details>
+</section>
+<script src="/tools/avatar-crop/avatar-crop.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

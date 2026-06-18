@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Profile Pic Cropper — Round 320×320 Crop Preview | SharpDev.Tools</title>
+<meta content="Crop and preview your Instagram profile picture. Drag to position, zoom, see exactly how the circular crop will look. Download 320×320 (Instagram-native) or 1080×1080 (high-res). Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-pfp/" rel="canonical"/>
+<meta content="Instagram Profile Pic Cropper — Round 320×320 Crop Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Crop and preview your Instagram profile picture. Drag to position, zoom, see exactly how the circular crop will look. Download 320×320 (Instagram-native) or 1080×1080 (high-res). Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-pfp/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Profile Pic Cropper — Round 320×320 Crop Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Crop and preview your Instagram profile picture. Drag to position, zoom, see exactly how the circular crop will look. Download 320×320 (Instagram-native) or 1080×1080 (high-res). Free, no upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Instagram","item":"https://sharpdev.tools/#instagram"},
+    {"@type":"ListItem","position":3,"name":"Profile Pic Cropper","item":"https://sharpdev.tools/tools/ig-pfp/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What size is an Instagram profile picture?","acceptedAnswer":{"@type":"Answer","text":"Instagram displays profile pics in a circle. The native resolution is 320 × 320 pixels for in-app display, but Instagram accepts (and prefers) higher-res uploads — 1080 × 1080 is the recommended source size for the best quality. The tool exports both."}},
+    {"@type":"Question","name":"Why does my profile pic look blurry on Instagram?","acceptedAnswer":{"@type":"Answer","text":"You probably uploaded at exactly 320 × 320. Instagram re-compresses and the result looks soft. Upload at 1080 × 1080 (or higher square) and Instagram will down-sample for the display size while keeping sharpness."}},
+    {"@type":"Question","name":"Is my image uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The crop is computed in your browser via Canvas. Nothing is uploaded."}},
+    {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up, no watermark."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Instagram Profile Pic Cropper — SharpDev.Tools","url":"https://sharpdev.tools/tools/ig-pfp/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-pfp/ig-pfp.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-pfp');</script>
+<div class="page">
+<h1>Instagram Profile Pic Cropper</h1>
+<p class="subtitle">Crop your image to a square, see the circular Instagram crop live, download 320×320 or 1080×1080.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a photo here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP — square or portrait works best</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Zoom</label>
+<input id="zoom" type="range" min="100" max="300" step="5" value="100"/>
+<span class="opt-value" id="zoom-val">100%</span>
+</div>
+</div>
+
+<div class="canvas-wrap">
+<canvas id="display" width="540" height="540"></canvas>
+<div class="circle-overlay"></div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="dl-1080" type="button">Download 1080×1080</button>
+<button class="btn btn-secondary" id="dl-320" type="button">Download 320×320</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why 1080×1080 (not 320×320)?</h2>
+<p>Instagram's profile pic displays at 320×320 in the app and 110×110 in feeds. But uploading at exactly 320×320 means Instagram re-compresses a small image, and the result is fuzzy. Uploading at 1080×1080 (or larger square) lets Instagram pick a clean down-sample, giving you crisper edges on Retina/HiDPI screens and in story-ring previews.</p>
+
+<h2>Composition tips</h2>
+<ul>
+<li><strong>Center your face</strong> — Instagram displays as circle; corners get cropped</li>
+<li><strong>Tight crop on the head/shoulders</strong> — the profile pic shows tiny in feeds (~40px); details below the shoulders won't be visible</li>
+<li><strong>High-contrast background</strong> — your profile picture sits inside a story-ring border; busy backgrounds compete</li>
+<li><strong>Match your overall feed aesthetic</strong> — if your feed is muted, a fluorescent green PFP looks out of place</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Cropping happens entirely in your browser via Canvas. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/ig-pfp/ig-pfp.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

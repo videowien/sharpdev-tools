@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn URL Cleaner — Remove trackingId, utm_ &amp; refId Params | SharpDev.Tools</title>
+<meta content="Clean LinkedIn profile, post and company URLs by stripping ?trackingId=, ?lipi=, ?refId=, &amp;utm_* and other tracking parameters. Paste, copy clean. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-clean/" rel="canonical"/>
+<meta content="LinkedIn URL Cleaner — Remove trackingId, utm_ &amp; refId Params | SharpDev.Tools" property="og:title"/>
+<meta content="Clean LinkedIn profile, post and company URLs by stripping ?trackingId=, ?lipi=, ?refId=, &amp;utm_* and other tracking parameters. Paste, copy clean. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-clean/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn URL Cleaner — Remove trackingId, utm_ &amp; refId Params | SharpDev.Tools" name="twitter:title"/>
+<meta content="Clean LinkedIn profile, post and company URLs by stripping ?trackingId=, ?lipi=, ?refId=, &amp;utm_* and other tracking parameters. Paste, copy clean. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "LinkedIn", "item": "https://sharpdev.tools/#linkedin" },
+      { "@type": "ListItem", "position": 3, "name": "LinkedIn URL Cleaner", "item": "https://sharpdev.tools/tools/linkedin-clean/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What are LinkedIn tracking parameters?",
+        "acceptedAnswer": { "@type": "Answer", "text": "When you click a link inside LinkedIn (a profile, post, company page), the URL is decorated with parameters like ?trackingId=, ?lipi=, ?refId=, and other LinkedIn-internal identifiers. These leak information about how you found the link. Also URLs from external campaigns often pick up ?utm_source=, ?utm_medium=, etc." } },
+      { "@type": "Question", "name": "Which params get stripped?",
+        "acceptedAnswer": { "@type": "Answer", "text": "?trackingId=, ?lipi=, ?refId=, ?miniProfileUrn=, ?originalSubdomain=, ?ck=, and any &-prefixed param starting with utm_, ref, src, tracking, lipi or fb." } },
+      { "@type": "Question", "name": "Is this tool free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no usage limits." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LinkedIn URL Cleaner — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/linkedin-clean/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-clean/linkedin-clean.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-clean');</script>
+<div class="page">
+<h1>LinkedIn URL Cleaner</h1>
+<p class="subtitle">Strip <code>trackingId</code>, <code>lipi</code>, <code>refId</code>, <code>utm_*</code> and other tracking parameters from LinkedIn URLs.</p>
+
+<div class="card">
+<label for="input-url">Paste LinkedIn URL</label>
+<textarea id="input-url" placeholder="https://www.linkedin.com/in/example/?trackingId=...&amp;lipi=urn..."></textarea>
+
+<div class="result-row">
+<label for="output-url">Cleaned URL</label>
+<textarea id="output-url" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+<div class="info-row" id="info-row" style="display:none">
+<span class="info-label">Removed:</span>
+<span class="info-value" id="removed-list"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why clean LinkedIn URLs?</h2>
+<p>LinkedIn appends internal tracking IDs to every link you click on the platform. They leak information about your activity, are ugly to share, and don't change the actual destination. Cleaning the URL also makes it shorter and more presentable in messages or documents.</p>
+
+<h2>What this tool strips</h2>
+<ul>
+<li><code>?trackingId=</code> — LinkedIn's primary click tracker</li>
+<li><code>?lipi=</code> — LinkedIn Page Interaction identifier</li>
+<li><code>?refId=</code>, <code>?miniProfileUrn=</code> — referrer identifiers</li>
+<li><code>?originalSubdomain=</code> — locale routing identifier</li>
+<li><code>&utm_source=</code>, <code>&utm_medium=</code>, <code>&utm_campaign=</code>, <code>&utm_content=</code>, <code>&utm_term=</code> — campaign tracking</li>
+<li><code>?ck=</code>, <code>?fbclid=</code> and any param starting with <code>ref</code>, <code>src</code>, <code>utm</code>, <code>lipi</code>, <code>tracking</code> or <code>fb</code></li>
+</ul>
+
+<h2>What stays</h2>
+<p>The path (<code>/in/username</code>, <code>/posts/...</code>, <code>/company/...</code>) and any meaningful query params (rare on LinkedIn) are preserved. Both <code>linkedin.com</code> and country-specific subdomains (<code>de.linkedin.com</code>, etc.) work.</p>
+</section>
+
+<script src="/tools/linkedin-clean/linkedin-clean.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

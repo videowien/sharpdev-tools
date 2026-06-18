@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>.htpasswd Generator — Apache / Nginx | SharpDev.Tools</title>
+<meta content="Generate Apache and Nginx .htpasswd entries using bcrypt. Everything computed locally — no credentials leave your browser. Free, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/htpasswd/" rel="canonical"/>
+<meta content=".htpasswd Generator — Apache / Nginx | SharpDev.Tools" property="og:title"/>
+<meta content="Generate Apache and Nginx .htpasswd entries using bcrypt. Everything computed locally — no credentials leave your browser. Free, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/htpasswd/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content=".htpasswd Generator — Apache / Nginx | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate Apache and Nginx .htpasswd entries using bcrypt. Everything computed locally — no credentials leave your browser. Free, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security & Crypto",
+        "item": "https://sharpdev.tools/#security-crypto"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": ".htpasswd",
+        "item": "https://sharpdev.tools/tools/htpasswd/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a .htpasswd file?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It stores usernames and hashed passwords for HTTP Basic Authentication on Apache and nginx. This tool generates the username:hash line you paste into your .htpasswd file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which hash does it use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It produces bcrypt-based entries, the recommended secure option for modern Apache and nginx, generated in your browser so the password is never uploaded."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": ".htpasswd Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/htpasswd/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/htpasswd/htpasswd.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('htpasswd');</script>
+<div class="page">
+<h1>.htpasswd Generator</h1>
+<p class="subtitle">Bcrypt-hashed .htpasswd line for Apache or Nginx basic auth. All computed locally.</p>
+<div class="ht-grid">
+<div class="ht-field"><label for="user">Username</label><input type="text" id="user" placeholder="admin" spellcheck="false"></div>
+<div class="ht-field"><label for="pass">Password</label><input type="text" id="pass" placeholder="choose a strong one" spellcheck="false"></div>
+<div class="ht-field"><label for="cost">Cost</label><input type="number" id="cost" min="4" max="14" value="10"></div>
+</div>
+<button type="button" class="btn btn-primary" id="gen-btn">Generate entry</button>
+<div class="err" id="err"></div>
+<label style="margin-top:16px;">.htpasswd line</label>
+<div class="ht-output-row"><div class="ht-output" id="out">—</div><button type="button" class="copy-btn" id="copy-btn">Copy</button></div>
+<p class="hint">Add to /etc/apache2/.htpasswd (or your configured file). In nginx, enable with <code>auth_basic "name"; auth_basic_user_file /path/to/.htpasswd;</code>.</p>
+</div>
+<script src="/shared/vendor/bcrypt.min.js?v=2.4.3"></script>
+<script src="/tools/htpasswd/htpasswd.js"></script>
+<script>renderFooter();</script>
+</body></html>

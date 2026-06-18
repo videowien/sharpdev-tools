@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image Resizer | SharpDev.Tools</title>
+<meta content="Free image resizer. Resize any image (JPG, PNG, WebP) to exact dimensions with optional aspect-ratio lock, preview live and download — all in your browser. Nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/image-resize/" rel="canonical"/>
+<meta content="Image Resizer | SharpDev.Tools" property="og:title"/>
+<meta content="Free image resizer. Resize any image (JPG, PNG, WebP) to exact dimensions with optional aspect-ratio lock, preview live and download — all in your browser. Nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-resize/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Resizer | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free image resizer. Resize any image (JPG, PNG, WebP) to exact dimensions with optional aspect-ratio lock, preview live and download — all in your browser. Nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Image Resizer","item":"https://sharpdev.tools/tools/image-resize/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The resize happens entirely in your browser using a canvas; the image never leaves your device."}},{"@type":"Question","name":"Does aspect lock keep proportions?","acceptedAnswer":{"@type":"Answer","text":"Yes. With \u2018Lock aspect\u2019 on, changing the width updates the height automatically (and vice-versa) so the image isn't stretched."}},{"@type":"Question","name":"What format is the download?","acceptedAnswer":{"@type":"Answer","text":"PNG, which is lossless. For smaller files from photos, you can re-save the result as JPG/WebP with the image compressor tool."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Image Resizer \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/image-resize/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-resize/image-resize.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-resize');</script>
+<div class="page">
+<h1>Image Resizer</h1>
+<p class="subtitle">Resize an image to exact pixels with optional aspect-ratio lock, then download. Runs in your browser.</p>
+<label class="sd-drop" for="file">Click or drop an image here<input type="file" id="file" accept="image/*"></label>
+<div class="row"><div class="field"><label for="w">Width (px)</label><input type="number" id="w"></div><div class="field"><label for="h">Height (px)</label><input type="number" id="h"></div><div class="field"><label for="lock">Lock aspect</label><select id="lock"><option value="1">Yes</option><option value="0">No</option></select></div></div>
+<div class="out-head"><label>Preview</label><a class="copy-btn dlbtn" id="dl" style="display:none;">Download PNG</a></div>
+<canvas id="cv"></canvas>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Is my image uploaded to a server?</summary><p>No. The resize happens entirely in your browser using a canvas; the image never leaves your device.</p></details>
+<details><summary>Does aspect lock keep proportions?</summary><p>Yes. With ‘Lock aspect’ on, changing the width updates the height automatically (and vice-versa) so the image isn't stretched.</p></details>
+<details><summary>What format is the download?</summary><p>PNG, which is lossless. For smaller files from photos, you can re-save the result as JPG/WebP with the image compressor tool.</p></details>
+</section>
+<script src="/tools/image-resize/image-resize.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

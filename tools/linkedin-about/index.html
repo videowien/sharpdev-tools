@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn About Section Counter — 2600 Character Limit | SharpDev.Tools</title>
+<meta content="LinkedIn About sections have a 2,600 character limit, but only ~265 chars show before 'See more'. This tool tracks both — live counter, cutoff preview, and the 'first 3 lines' that decide whether visitors expand." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-about/" rel="canonical"/>
+<meta content="LinkedIn About Section Counter — 2600 Character Limit | SharpDev.Tools" property="og:title"/>
+<meta content="LinkedIn About sections have a 2,600 character limit, but only ~265 chars show before 'See more'. This tool tracks both — live counter, cutoff preview, and the 'first 3 lines' that decide whether visitors expand." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-about/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn About Section Counter — 2600 Character Limit | SharpDev.Tools" name="twitter:title"/>
+<meta content="LinkedIn About sections have a 2,600 character limit, but only ~265 chars show before 'See more'. This tool tracks both — live counter, cutoff preview, and the 'first 3 lines' that decide whether visitors expand." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "LinkedIn", "item": "https://sharpdev.tools/#linkedin" },
+      { "@type": "ListItem", "position": 3, "name": "LinkedIn About Counter", "item": "https://sharpdev.tools/tools/linkedin-about/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the LinkedIn About section character limit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "2,600 characters maximum. Only the first ~265 characters (about 3 lines) appear before the 'See more' link — anyone reading your profile decides in those 3 lines whether to expand and read the rest." } },
+      { "@type": "Question", "name": "What's the 'See more' cutoff length?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Approximately 265 characters on desktop, slightly less on mobile (~210). The exact cutoff depends on how many line breaks are in the text. This tool shows you both — the full 2,600-char count and the visible-before-cutoff preview." } },
+      { "@type": "Question", "name": "Can I use line breaks in the About section?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Single line breaks work and render in the LinkedIn UI. Double line breaks (paragraph breaks) work too. Bullet points need to be typed as Unicode characters (•) since LinkedIn doesn't support Markdown." } },
+      { "@type": "Question", "name": "Is the About counter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LinkedIn About Section Counter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/linkedin-about/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-about/linkedin-about.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-about');</script>
+<div class="page">
+<h1>LinkedIn About Section Counter</h1>
+<p class="subtitle">2,600 character limit, with a "see more" cutoff at ~265 chars. Both shown live as you type.</p>
+
+<div class="card">
+<label for="about-input">Your LinkedIn About</label>
+<textarea id="about-input" placeholder="Write your About section here. The first ~265 characters are what shows before the 'See more' link — that's your hook."></textarea>
+<div class="counter-bar"><div class="counter-fill" id="counter-fill"></div></div>
+<div class="counter-row">
+<span class="char-count" id="char-count">0 / 2600</span>
+<span class="cutoff" id="cutoff-msg"></span>
+</div>
+</div>
+
+<div class="card preview-card">
+<div class="preview-label">About section preview (with "see more" cutoff)</div>
+<div class="about-preview" id="about-preview">
+<div class="about-text" id="about-text"></div>
+<button class="see-more" id="see-more-btn" type="button">…see more</button>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>The "first 3 lines" rule</h2>
+<p>LinkedIn truncates the About section at roughly 265 characters with a "see more" link. Those ~265 chars are everything visitors see by default — they decide whether to expand and read the rest. That makes the opening of your About section the most important block on your entire profile.</p>
+
+<h2>Hook patterns that work</h2>
+<ul>
+<li><strong>Outcome-first</strong> — "I help B2B SaaS teams turn churn into retention. Here's how:"</li>
+<li><strong>Curiosity gap</strong> — "Most product designers spend 80% of their time on the wrong thing. I learned this the hard way."</li>
+<li><strong>Specific story</strong> — "In 2024, I joined a 50-person startup as their first designer. 18 months later, we're a design-led 250-person company. Here's what I learned:"</li>
+<li><strong>Bold claim</strong> — "I believe most company values pages are useless. After 5 years of remote work, here's what I write instead:"</li>
+</ul>
+
+<h2>What the bottom 2,300 chars should do</h2>
+<p>If your hook worked and the visitor expanded, the rest of the About should:</p>
+<ul>
+<li>Tell your career story in chronological or thematic chunks</li>
+<li>Drop a few keywords for LinkedIn search (your role, your specialty, the tools you use)</li>
+<li>Include 2-3 specific accomplishments with numbers if possible</li>
+<li>End with a clear CTA — DM you, follow your newsletter, book a call, whatever fits your goal</li>
+</ul>
+</section>
+
+<script src="/tools/linkedin-about/linkedin-about.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

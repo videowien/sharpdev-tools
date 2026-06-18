@@ -1,0 +1,127 @@
+.page { padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 24px; font-size: 14px; }
+
+label {
+  display: block; font-size: 12px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.main-grid {
+  display: grid; grid-template-columns: 320px 1fr; gap: 24px;
+  margin-bottom: 30px;
+}
+
+.swatch-col { display: flex; flex-direction: column; gap: 12px; }
+.swatch {
+  width: 100%; height: 220px; border-radius: 12px;
+  background: #ff4444; border: 1px solid #262626;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background-image:
+    linear-gradient(45deg, #222 25%, transparent 25%),
+    linear-gradient(-45deg, #222 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #222 75%),
+    linear-gradient(-45deg, transparent 75%, #222 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+.swatch-controls {
+  display: flex; align-items: center; gap: 10px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 8px; padding: 10px 14px;
+}
+#picker {
+  width: 48px; height: 36px; border: 1px solid #2a2a2a;
+  border-radius: 6px; background: transparent; cursor: pointer;
+  padding: 2px;
+}
+.picker-label {
+  margin: 0; font-size: 13px; color: #aaa;
+  text-transform: none; letter-spacing: normal; font-weight: 500;
+}
+
+.nearest-box {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 8px; padding: 12px 14px;
+}
+.nearest-label {
+  font-size: 11px; color: #888; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 600; margin-bottom: 4px;
+}
+.nearest-name {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 15px; color: #fff; font-weight: 600;
+}
+
+.fields-col { display: flex; flex-direction: column; gap: 14px; }
+#parse-input {
+  width: 100%; padding: 12px 14px;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 14px;
+  font-family: 'SF Mono', Monaco, monospace; outline: none;
+  transition: border-color 0.15s;
+}
+#parse-input:focus { border-color: #ff4444; }
+#parse-input.invalid { border-color: #f87171; }
+
+.row { display: flex; flex-direction: column; gap: 6px; }
+.row label { margin: 0; display: flex; align-items: center; gap: 8px; }
+.field {
+  display: flex; gap: 8px; align-items: stretch;
+}
+.field input {
+  flex: 1; padding: 9px 12px;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 6px;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace; outline: none;
+}
+.small-btn {
+  padding: 5px 14px; background: transparent; border: 1px solid #333;
+  color: #aaa; border-radius: 4px; font-size: 12px; cursor: pointer;
+  transition: all 0.15s; font-family: inherit;
+}
+.small-btn:hover { border-color: #ff4444; color: #fff; }
+
+.alpha-val {
+  font-family: 'SF Mono', Monaco, monospace; color: #888;
+  font-weight: 500; text-transform: none; letter-spacing: normal;
+  font-size: 11px;
+}
+.alpha-slider {
+  width: 100%; margin-top: 6px; accent-color: #ff4444;
+}
+
+.harmony {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.harmony-block {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px; padding: 16px;
+}
+.harmony-block h3 {
+  font-size: 12px; color: #fff; margin-bottom: 10px;
+  text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;
+}
+.swatch-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.mini-swatch {
+  flex: 1; min-width: 40px; height: 56px; border-radius: 6px;
+  cursor: pointer; border: 1px solid #262626;
+  transition: transform 0.15s, border-color 0.15s;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 4px;
+}
+.mini-swatch:hover {
+  transform: translateY(-2px); border-color: #444;
+}
+.mini-swatch span {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 9px; color: #fff;
+  background: rgba(0,0,0,0.5); padding: 1px 4px; border-radius: 3px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 800px) {
+  .main-grid { grid-template-columns: 1fr; }
+  .swatch { height: 160px; }
+  .harmony { grid-template-columns: 1fr; }
+}

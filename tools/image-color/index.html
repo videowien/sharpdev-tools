@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Image Color Picker — Pick Colors from Any Image | SharpDev.Tools</title>
+<meta content="Upload an image, click any pixel, get the exact HEX, RGB and HSL color. Zoom for pixel-perfect picking. Free, runs in your browser — no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/image-color/" rel="canonical"/>
+<meta content="Image Color Picker — Pick Colors from Any Image | SharpDev.Tools" property="og:title"/>
+<meta content="Upload an image, click any pixel, get the exact HEX, RGB and HSL color. Zoom for pixel-perfect picking. Free, runs in your browser — no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-color/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Image Color Picker — Pick Colors from Any Image | SharpDev.Tools" name="twitter:title"/>
+<meta content="Upload an image, click any pixel, get the exact HEX, RGB and HSL color. Zoom for pixel-perfect picking. Free, runs in your browser — no upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},
+    {"@type":"ListItem","position":3,"name":"Image Color Picker","item":"https://sharpdev.tools/tools/image-color/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How does the color picker work?","acceptedAnswer":{"@type":"Answer","text":"Upload any image. Hover or click a pixel to see its exact color in HEX (#rrggbb), RGB (r, g, b), and HSL formats. Recent picks are stored so you can build a palette of multiple colors from one image."}},
+    {"@type":"Question","name":"Is my image uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The image is loaded into a Canvas in your browser; pixel reading happens locally. Nothing is uploaded."}},
+    {"@type":"Question","name":"Can I pick more than one color?","acceptedAnswer":{"@type":"Answer","text":"Yes — each click adds the color to the palette panel on the right. Hover over any palette swatch to see its values; click to copy."}},
+    {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Image Color Picker — SharpDev.Tools","url":"https://sharpdev.tools/tools/image-color/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-color/image-color.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-color');</script>
+<div class="page">
+<h1>Image Color Picker</h1>
+<p class="subtitle">Upload an image, click any pixel for HEX, RGB, and HSL. Build a palette from one image.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop an image here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP, GIF</p>
+</div>
+</div>
+</div>
+
+<div class="picker-grid" id="picker-grid" style="display:none">
+<div class="card canvas-card">
+<canvas id="canvas"></canvas>
+<div class="hover-info" id="hover-info">Click the image to pick a color</div>
+</div>
+<div class="card palette-card">
+<div class="current-color" id="current-color">
+<div class="current-swatch" id="current-swatch"></div>
+<div class="current-values">
+<div class="cv-row"><span class="cv-label">HEX</span><code id="cv-hex">—</code><button class="cv-copy" data-target="cv-hex">⧉</button></div>
+<div class="cv-row"><span class="cv-label">RGB</span><code id="cv-rgb">—</code><button class="cv-copy" data-target="cv-rgb">⧉</button></div>
+<div class="cv-row"><span class="cv-label">HSL</span><code id="cv-hsl">—</code><button class="cv-copy" data-target="cv-hsl">⧉</button></div>
+</div>
+</div>
+<div class="palette-label">Palette (click to copy HEX)</div>
+<div class="palette" id="palette"></div>
+<button class="btn btn-secondary" id="clear-palette" type="button">Clear palette</button>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How to use</h2>
+<ol>
+<li>Drop or pick an image.</li>
+<li>Hover over the image — color values follow your cursor.</li>
+<li>Click to add to your palette (right side).</li>
+<li>Click any palette swatch to copy its HEX value.</li>
+</ol>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Extracting brand colors from a logo</li>
+<li>Matching CSS colors to a screenshot or mockup</li>
+<li>Building a color palette from a photo for a design</li>
+<li>Finding the exact accent color a competitor uses</li>
+</ul>
+</section>
+
+<script src="/tools/image-color/image-color.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

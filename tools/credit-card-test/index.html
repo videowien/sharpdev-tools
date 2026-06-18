@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Test Credit Card Number Generator — Luhn-Valid Fake Cards | SharpDev.Tools</title>
+<meta content="Generate Luhn-valid fake credit card numbers for testing payment forms (Visa, Mastercard, Amex, Discover). Also validates a card number. For testing only. Free, browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/credit-card-test/" rel="canonical"/>
+<meta content="Test Credit Card Number Generator — Luhn-Valid Fake Cards | SharpDev.Tools" property="og:title"/>
+<meta content="Generate Luhn-valid fake credit card numbers for testing payment forms (Visa, Mastercard, Amex, Discover). Also validates a card number. For testing only. Free, browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/credit-card-test/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Test Credit Card Number Generator — Luhn-Valid Fake Cards | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate Luhn-valid fake credit card numbers for testing payment forms (Visa, Mastercard, Amex, Discover). Also validates a card number. For testing only. Free, browser-only." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Test Credit Card Numbers","item":"https://sharpdev.tools/tools/credit-card-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these real credit card numbers?","acceptedAnswer":{"@type":"Answer","text":"No. They are randomly generated numbers that merely satisfy the Luhn checksum and use a brand's prefix, so test systems accept their format. No bank account exists behind them and they cannot be charged."}},{"@type":"Question","name":"What is the Luhn check?","acceptedAnswer":{"@type":"Answer","text":"It is the checksum formula every real card number also satisfies. The validator at the bottom tells you whether any number you paste passes it, which catches typos."}},{"@type":"Question","name":"Why generate test card numbers?","acceptedAnswer":{"@type":"Answer","text":"To exercise payment forms, validation logic and checkout flows during development without using a real card."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Test Credit Card Numbers \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/credit-card-test/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/credit-card-test/credit-card-test.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('credit-card-test');</script>
+<div class="page">
+<h1>Test Credit Card Numbers</h1>
+<p class="subtitle">Luhn-valid fake card numbers for testing checkout forms. Visa, Mastercard, Amex, Discover. Never real.</p>
+<div class="row">
+<div class="field" style="flex:0 0 180px"><label for="brand">Brand</label><select id="brand"><option value="4">Visa</option><option value="55">Mastercard</option><option value="34">Amex</option><option value="6011">Discover</option></select></div>
+<div class="field" style="flex:0 0 130px"><label for="count">How many</label><input type="number" id="count" value="5" min="1" max="100"></div>
+<div class="actions"><button class="btn btn-primary" id="gen" style="margin-top:18px">Generate</button></div>
+</div>
+<div class="out-head"><label for="out">Test numbers</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+<div class="field" style="margin-top:18px"><label for="check">Validate a card number (Luhn check)</label><input type="text" id="check" placeholder="4111 1111 1111 1111"></div>
+<div id="check-out" class="note" style="display:none"></div>
+</div>
+<section class="tool-info">
+<p class="note">These numbers pass the Luhn checksum so they work in test forms, but they are not real accounts and cannot be charged. Use them only for development and QA, never enter them on a live payment page.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>Are these real credit card numbers?</summary><p>No. They are randomly generated numbers that merely satisfy the Luhn checksum and use a brand's prefix, so test systems accept their format. No bank account exists behind them and they cannot be charged.</p></details>
+<details><summary>What is the Luhn check?</summary><p>It is the checksum formula every real card number also satisfies. The validator at the bottom tells you whether any number you paste passes it, which catches typos.</p></details>
+<details><summary>Why generate test card numbers?</summary><p>To exercise payment forms, validation logic and checkout flows during development without using a real card.</p></details>
+</section>
+<script src="/tools/credit-card-test/credit-card-test.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

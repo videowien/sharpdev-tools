@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>YouTube Subtitles — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Download auto-generated or manual YouTube subtitles as SRT or plain text, single or batch. Free online subtitle downloader, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/subtitles/" rel="canonical"/>
+<meta content="YouTube Subtitles — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Download auto-generated or manual YouTube subtitles as SRT or plain text, single or batch. Free online subtitle downloader, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/subtitles/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="YouTube Subtitles — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Download auto-generated or manual YouTube subtitles as SRT or plain text, single or batch. Free online subtitle downloader, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "YouTube", "item": "https://sharpdev.tools/#youtube"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "YouTube Subtitles",
+        "item": "https://sharpdev.tools/tools/subtitles/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I download auto-generated captions too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The YouTube Subtitle Downloader supports both manually uploaded subtitles and YouTube's auto-generated captions in any available language."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SRT (with timestamps) and plain text (captions only) — plus batch download for multiple videos at once."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, completely free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Subtitles — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/subtitles/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/subtitles/subtitles.css" rel="stylesheet"/>
+<script crossorigin="anonymous" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('subtitles');</script>
+<div class="page">
+<h1>YouTube Subtitle Downloader</h1>
+<p class="subtitle">Paste YouTube links and download auto-generated subtitles as a ZIP file.</p>
+<details class="disclaimer">
+<summary>Limitations &amp; how it works</summary>
+<ul>
+<li>Subtitle requests are made from your browser through our proxy server.</li>
+<li>YouTube may temporarily block requests if too many are made too quickly.</li>
+<li>To stay safe, this tool processes <strong>15 links at a time</strong> with a <strong>5-second delay</strong> between each, and waits <strong>10 minutes</strong> between batches.</li>
+<li>Only auto-generated or manually uploaded subtitles are downloaded — not the video itself.</li>
+<li>Some videos may not have subtitles available in your chosen language.</li>
+<li>If downloads fail, wait ~30 minutes and try again.</li>
+</ul>
+</details>
+<div class="card">
+<label for="urls">YouTube URLs (one per line)</label>
+<textarea id="urls" placeholder="https://www.youtube.com/watch?v=...
+https://youtu.be/...
+https://www.youtube.com/watch?v=..."></textarea>
+<div class="url-count"><span id="url-count">0</span> valid URLs <span id="dup-count"></span></div>
+<div class="validation-msg" id="validation-msg"></div>
+<div class="batch-warning" id="batch-warning"></div>
+<div class="row">
+<div>
+<label for="lang">Language</label>
+<select id="lang">
+<option selected="" value="en">English</option>
+<option value="de">German</option>
+<option value="es">Spanish</option>
+<option value="fr">French</option>
+<option value="pt">Portuguese</option>
+<option value="it">Italian</option>
+<option value="nl">Dutch</option>
+<option value="ja">Japanese</option>
+<option value="ko">Korean</option>
+<option value="zh-Hans">Chinese (Simplified)</option>
+<option value="ar">Arabic</option>
+<option value="hi">Hindi</option>
+<option value="ru">Russian</option>
+</select>
+</div>
+<div>
+<label for="fmt">Format</label>
+<select id="fmt">
+<option selected="" value="srt">SRT (timestamps)</option>
+<option value="txt">Plain text</option>
+</select>
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-primary" id="start-btn" onclick="startDownload()">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+        Download Subtitles
+      </button>
+<button class="btn btn-secondary" id="pause-btn" onclick="togglePause()" style="display:none">Pause</button>
+<button class="btn btn-cancel" id="cancel-btn" onclick="cancelDownload()" style="display:none">Cancel</button>
+</div>
+</div>
+<div class="card" id="progress-area">
+<div class="progress-header">
+<h3 id="progress-title">Downloading...</h3>
+<span id="counter" style="font-size:14px;color:#666">0 / 0</span>
+</div>
+<div class="batch-info" id="batch-info"></div>
+<div class="progress-bar-bg">
+<div class="progress-bar-fill" id="progress-bar"></div>
+</div>
+<div class="cooldown-banner" id="cooldown-banner">
+<div class="cooldown-label">Cooling down to avoid YouTube rate limits</div>
+<div class="timer" id="cooldown-timer">10:00</div>
+<div class="cooldown-label">Next batch starts automatically</div>
+</div>
+<div id="log"></div>
+<div class="summary" id="summary" style="display:none"></div>
+<div class="error-banner" id="error-banner"></div>
+</div>
+</div>
+<script src="/tools/subtitles/subtitles.js?v=20260512a"></script>
+<script>renderFooter();</script>
+</body>
+</html>

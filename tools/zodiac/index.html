@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Zodiac Sign Calculator | SharpDev.Tools</title>
+<meta content="Free zodiac sign calculator. Enter a birth date and get the western (tropical) star sign, its symbol, element and date range. Runs entirely in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/zodiac/" rel="canonical"/>
+<meta content="Zodiac Sign Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free zodiac sign calculator. Enter a birth date and get the western (tropical) star sign, its symbol, element and date range. Runs entirely in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/zodiac/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Zodiac Sign Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free zodiac sign calculator. Enter a birth date and get the western (tropical) star sign, its symbol, element and date range. Runs entirely in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Zodiac Sign Calculator","item":"https://sharpdev.tools/tools/zodiac/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is my zodiac sign determined?","acceptedAnswer":{"@type":"Answer","text":"By the position of the Sun on your birth date in the western tropical zodiac \u2014 which maps to fixed date ranges, so only the month and day matter."}},{"@type":"Question","name":"What if I'm born on a cusp?","acceptedAnswer":{"@type":"Answer","text":"Dates near a boundary can vary by a day depending on the year and time of birth. This tool uses the common date ranges; a full birth-time chart would refine edge cases."}},{"@type":"Question","name":"What's the element of my sign?","acceptedAnswer":{"@type":"Answer","text":"Each sign belongs to Fire, Earth, Air or Water \u2014 shown above with your sign."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Zodiac Sign Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/zodiac/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/zodiac/zodiac.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('zodiac');</script>
+<div class="page">
+<h1>Zodiac Sign Calculator</h1>
+<p class="subtitle">Find your western (tropical) star sign from your birth date — with its symbol, element and dates.</p>
+<div class="row"><div class="field"><label for="d">Birth date</label><input type="date" id="d" value="2000-07-15"></div></div>
+<div class="out-head"><label>Your sign</label></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is my zodiac sign determined?</summary><p>By the position of the Sun on your birth date in the western tropical zodiac — which maps to fixed date ranges, so only the month and day matter.</p></details>
+<details><summary>What if I'm born on a cusp?</summary><p>Dates near a boundary can vary by a day depending on the year and time of birth. This tool uses the common date ranges; a full birth-time chart would refine edge cases.</p></details>
+<details><summary>What's the element of my sign?</summary><p>Each sign belongs to Fire, Earth, Air or Water — shown above with your sign.</p></details>
+</section>
+<script src="/tools/zodiac/zodiac.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

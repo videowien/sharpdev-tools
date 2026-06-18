@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WPM Typing Test — Words Per Minute + Accuracy | SharpDev.Tools</title>
+<meta content="Test your typing speed. WPM, accuracy, mistakes per minute. 60-second test with common English words. Free, no sign-up, browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/wpm/" rel="canonical"/>
+<meta content="WPM Typing Test — Words Per Minute + Accuracy | SharpDev.Tools" property="og:title"/>
+<meta content="Test your typing speed. WPM, accuracy, mistakes per minute. Free, browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/wpm/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="WPM Typing Test — Words Per Minute + Accuracy | SharpDev.Tools" name="twitter:title"/>
+<meta content="Test your typing speed. Free, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/text/"},
+    {"@type":"ListItem","position":3,"name":"WPM Typing Test","item":"https://sharpdev.tools/tools/wpm/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's a good WPM?","acceptedAnswer":{"@type":"Answer","text":"Average adult typing speed is 40 WPM. 60+ is professional level. 80+ is fast. 100+ is competitive. Touch typists average 70-90 WPM; hunt-and-peck rarely exceeds 30."}},
+    {"@type":"Question","name":"How is WPM calculated?","acceptedAnswer":{"@type":"Answer","text":"Standard formula: (correct characters ÷ 5) ÷ time in minutes. A 'word' = 5 characters including spaces. So 300 correct characters in 60 seconds = 60 WPM."}},
+    {"@type":"Question","name":"Is the test fair across languages?","acceptedAnswer":{"@type":"Answer","text":"Currently English only. Adding language packs is on the future list."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"WPM Typing Test — SharpDev.Tools","url":"https://sharpdev.tools/tools/wpm/","applicationCategory":"GameApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/wpm/wpm.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('wpm');</script>
+<div class="page">
+<h1>WPM Typing Test</h1>
+<p class="subtitle">Type the text below. Timer starts on your first keystroke.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Duration</label>
+<div class="seg">
+<button class="seg-btn" data-time="15" type="button">15s</button>
+<button class="seg-btn" data-time="30" type="button">30s</button>
+<button class="seg-btn active" data-time="60" type="button">60s</button>
+<button class="seg-btn" data-time="120" type="button">2 min</button>
+</div>
+</div>
+<div class="opt-group">
+<label class="opt-label">Difficulty</label>
+<select id="difficulty">
+<option value="common" selected>Common words</option>
+<option value="varied">Varied vocabulary</option>
+<option value="punctuation">With punctuation + numbers</option>
+</select>
+</div>
+<button class="btn btn-secondary" id="restart" type="button">Restart</button>
+</div>
+
+<div class="stats-row">
+<div class="stat"><div class="stat-label">Time left</div><div class="stat-val" id="time">60s</div></div>
+<div class="stat"><div class="stat-label">WPM</div><div class="stat-val" id="wpm">0</div></div>
+<div class="stat"><div class="stat-label">Accuracy</div><div class="stat-val" id="acc">100%</div></div>
+<div class="stat"><div class="stat-label">Errors</div><div class="stat-val" id="err">0</div></div>
+</div>
+
+<div class="text-display" id="text-display"></div>
+<input type="text" id="input" placeholder="Click here and start typing…" autocomplete="off" spellcheck="false"/>
+</div>
+
+<div class="card result-card" id="result-card" style="display:none">
+<h2 class="result-title">Done!</h2>
+<div class="result-grid">
+<div class="result-block"><div class="result-label">Words / min</div><div class="result-value" id="r-wpm">—</div></div>
+<div class="result-block"><div class="result-label">Accuracy</div><div class="result-value" id="r-acc">—</div></div>
+<div class="result-block"><div class="result-label">Errors</div><div class="result-value" id="r-err">—</div></div>
+<div class="result-block"><div class="result-label">Skill</div><div class="result-value" id="r-skill">—</div></div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>WPM skill levels</h2>
+<table class="ref-table">
+<tr><th>WPM</th><th>Level</th></tr>
+<tr><td>0-20</td><td>Beginner / hunt-and-peck</td></tr>
+<tr><td>20-40</td><td>Casual user</td></tr>
+<tr><td>40-60</td><td>Average adult</td></tr>
+<tr><td>60-80</td><td>Professional touch typist</td></tr>
+<tr><td>80-100</td><td>Fast typist</td></tr>
+<tr><td>100+</td><td>Competitive level</td></tr>
+<tr><td>150+</td><td>World-class (very rare)</td></tr>
+</table>
+
+<h2>How to improve</h2>
+<ul>
+<li><strong>Touch-type</strong> — never look at the keyboard. Use the home row.</li>
+<li><strong>Accuracy first, speed second</strong> — slow correct typing builds muscle memory; fast wrong typing trains errors</li>
+<li><strong>Practice 10 minutes daily</strong> — beats hour-long weekly sessions</li>
+<li><strong>Use punctuation + capitals</strong> — that's where real-world WPM drops vs lowercase-only tests</li>
+</ul>
+</section>
+
+<script src="/tools/wpm/wpm.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

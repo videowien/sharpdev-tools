@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF OCR — Make Scanned PDFs Searchable | SharpDev.Tools</title>
+<meta content="Run OCR on a scanned PDF to make it searchable. Tesseract.js, 15+ languages. Output: original-look PDF with hidden searchable text layer. Browser-only — no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-ocr/" rel="canonical"/>
+<meta content="PDF OCR — Make Scanned PDFs Searchable | SharpDev.Tools" property="og:title"/>
+<meta content="OCR a scanned PDF in your browser. Adds searchable text layer. 15+ languages." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-ocr/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF OCR — Make Scanned PDFs Searchable | SharpDev.Tools" name="twitter:title"/>
+<meta content="OCR a scanned PDF. Adds searchable text layer." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF OCR","item":"https://sharpdev.tools/tools/pdf-ocr/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What does this do exactly?","acceptedAnswer":{"@type":"Answer","text":"Takes a scanned (image-only) PDF, OCRs each page with Tesseract.js, then writes a new PDF that looks identical to the scan BUT with an invisible text layer over each page. The result is searchable in Acrobat / Preview / browsers, and copy-paste works."}},
+    {"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"Tesseract is browser-side via WebAssembly — roughly 5-15 seconds per page depending on your CPU and image complexity. A 10-page document is around 1-2 minutes. First run also downloads the language data (~10-30 MB per language)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Tesseract runs in your browser via WebAssembly. The PDF, OCR'd text, and output never leave the page."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF OCR — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-ocr/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-ocr/pdf-ocr.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-ocr');</script>
+<div class="page">
+<h1>PDF OCR — Make Scans Searchable</h1>
+<p class="subtitle">Run OCR on every page, output a PDF that looks the same but has a hidden searchable text layer.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a scanned PDF here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">First run downloads language data (~10-30 MB) — subsequent OCR is faster.</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">OCR language</label>
+<select id="lang">
+<option value="eng" selected>English</option>
+<option value="deu">German (Deutsch)</option>
+<option value="spa">Spanish</option>
+<option value="fra">French</option>
+<option value="ita">Italian</option>
+<option value="por">Portuguese</option>
+<option value="rus">Russian</option>
+<option value="chi_sim">Chinese (Simplified)</option>
+<option value="jpn">Japanese</option>
+<option value="kor">Korean</option>
+<option value="ara">Arabic</option>
+<option value="hin">Hindi</option>
+<option value="nld">Dutch</option>
+<option value="pol">Polish</option>
+<option value="tur">Turkish</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">DPI</label>
+<select id="dpi">
+<option value="100">100 (fast)</option>
+<option value="150" selected>150 (recommended)</option>
+<option value="200">200 (best quality, slow)</option>
+</select>
+</div>
+</div>
+
+<div class="progress-wrap">
+<div class="progress-label" id="progress-label">Ready to start OCR</div>
+<div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="ocr-btn" type="button">Run OCR + download searchable PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What "searchable PDF" means</h2>
+<p>A searchable PDF looks identical to the original scan but has invisible text positioned over each scanned word. Search tools (Ctrl-F in Acrobat / Preview / browsers), copy-paste, and screen readers can all access the text.</p>
+
+<h2>When this works well</h2>
+<ul>
+<li><strong>Clean scans of printed text</strong> — 200+ DPI, straight pages, good contrast — accuracy 95%+</li>
+<li><strong>Modern documents</strong> — books, reports, invoices, modern letters</li>
+</ul>
+
+<h2>When it struggles</h2>
+<ul>
+<li><strong>Handwritten content</strong> — Tesseract is print-trained; accuracy drops sharply</li>
+<li><strong>Low-resolution / skewed scans</strong> — pre-process first (straighten, sharpen)</li>
+<li><strong>Decorative or display fonts</strong> — Tesseract trained on standard text fonts</li>
+<li><strong>Tables and forms</strong> — text is extracted but layout / column structure is lost</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Tesseract.js runs entirely in your browser via WebAssembly. Language model files come from cdnjs. Your PDF and the OCR'd text never leave the page.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js"></script>
+<script src="/tools/pdf-ocr/pdf-ocr.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

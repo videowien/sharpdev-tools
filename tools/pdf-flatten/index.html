@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF Form Flatten — Lock Filled Forms into Static Text | SharpDev.Tools</title>
+<meta content="Flatten a filled PDF form — convert fillable fields into static, non-editable text. Locks the values into the page. Browser-only via pdf-lib." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-flatten/" rel="canonical"/>
+<meta content="PDF Form Flatten — Lock Filled Forms into Static Text | SharpDev.Tools" property="og:title"/>
+<meta content="Flatten a filled PDF form — values become permanent static text. No upload, browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-flatten/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF Form Flatten — Lock Filled Forms into Static Text | SharpDev.Tools" name="twitter:title"/>
+<meta content="Flatten a filled PDF form — values become permanent static text." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF Form Flatten","item":"https://sharpdev.tools/tools/pdf-flatten/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What does flattening do?","acceptedAnswer":{"@type":"Answer","text":"It converts editable form fields (text boxes, checkboxes, dropdowns) into their visual representation as static text or shapes on the page. After flattening, the values can no longer be edited via a PDF reader — they're 'baked in'."}},
+    {"@type":"Question","name":"When should I flatten?","acceptedAnswer":{"@type":"Answer","text":"Before sending a completed form to someone who shouldn't be able to change it (signed contracts, tax forms, invoices). Also useful when the recipient's PDF viewer doesn't render form fields correctly — flattening guarantees universal display."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is processed locally via pdf-lib. Nothing leaves your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Form Flatten — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-flatten/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-flatten/pdf-flatten.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-flatten');</script>
+<div class="page">
+<h1>PDF Form Flatten</h1>
+<p class="subtitle">Lock filled form values into static, non-editable text. Permanent.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a filled PDF form here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">All form fields will be flattened — runs in your browser</p>
+</div>
+</div>
+</div>
+
+<div class="card" id="editor-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="flatten-btn" type="button">Flatten + download</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What flattening locks</h2>
+<ul>
+<li><strong>Text fields</strong> — typed values become permanent printed text</li>
+<li><strong>Checkboxes</strong> — checked state is locked in</li>
+<li><strong>Dropdowns</strong> — selected option becomes static text</li>
+<li><strong>Radio buttons</strong> — selected button becomes a marked circle</li>
+<li><strong>Digital signatures</strong> — appearance is preserved but signature is no longer validatable</li>
+</ul>
+
+<h2>When to use this</h2>
+<ul>
+<li>Sending a signed contract — recipient can't change your signed values</li>
+<li>Submitting tax / legal forms — locks the answers</li>
+<li>Form looks broken in recipient's PDF viewer — flattening fixes rendering</li>
+<li>Need to print + the printer ignores form fields — flatten first</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The PDF is parsed and rewritten in your browser via pdf-lib. Nothing is uploaded.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="/tools/pdf-flatten/pdf-flatten.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

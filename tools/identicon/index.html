@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Identicon Generator — GitHub-Style Avatars from Text | SharpDev.Tools</title>
+<meta content="Generate identicons (GitHub-style abstract avatars) from any text. Hash-based, deterministic, downloads as PNG or SVG. Perfect for default profile pics. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/identicon/" rel="canonical"/>
+<meta content="Identicon Generator — GitHub-Style Avatars from Text | SharpDev.Tools" property="og:title"/>
+<meta content="Generate GitHub-style identicons from any text. Hash-based, deterministic. Download PNG or SVG." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/identicon/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Identicon Generator — GitHub-Style Avatars from Text | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate GitHub-style identicons from any text. Hash-based, deterministic. Download PNG or SVG." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Identicon Generator","item":"https://sharpdev.tools/tools/identicon/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is an identicon?","acceptedAnswer":{"@type":"Answer","text":"An identicon is a hash-derived abstract avatar — the same text always produces the same image, but different text produces different images. GitHub uses identicons for users who haven't uploaded a profile picture."}},
+    {"@type":"Question","name":"How is the hash computed?","acceptedAnswer":{"@type":"Answer","text":"SHA-256 of your input. The first bytes determine the color, the rest determine which 5×5 grid cells are filled (mirrored left/right for symmetry, like GitHub's pattern)."}},
+    {"@type":"Question","name":"Is the input uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Hashing and drawing both happen in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Identicon Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/identicon/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/identicon/identicon.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('identicon');</script>
+<div class="page">
+<h1>Identicon Generator</h1>
+<p class="subtitle">GitHub-style abstract avatars from any text. Same input = same image, every time.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="input">Text or seed</label>
+<input id="input" type="text" placeholder="alice@example.com or any username" value="hello@sharpdev.tools"/>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Size</label>
+<input id="size" type="number" min="64" max="1024" step="16" value="256"/>
+<span class="unit">px</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Background</label>
+<input id="bg" type="color" value="#f0f0f0"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Hue mode</label>
+<select id="hue-mode">
+<option value="hash">From hash (deterministic)</option>
+<option value="brand">SharpDev red</option>
+<option value="cool">Cool palette</option>
+<option value="warm">Warm palette</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="preview-wrap">
+<canvas id="identicon" width="256" height="256"></canvas>
+</div>
+<div class="action-row">
+<button class="btn btn-primary" id="dl-png" type="button">Download PNG</button>
+<button class="btn btn-secondary" id="dl-svg" type="button">Download SVG</button>
+<button class="btn btn-secondary" id="reroll-btn" type="button">Reroll seed</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Where to use identicons</h2>
+<ul>
+<li><strong>Default avatars</strong> — show something distinct for users who haven't uploaded a picture (GitHub does exactly this)</li>
+<li><strong>API clients / bots</strong> — give each automation a visual identity even when there's no real person behind it</li>
+<li><strong>Hash visualisation</strong> — quickly spot if two long strings are the same (e.g. SSH key fingerprints)</li>
+</ul>
+
+<h2>How it works</h2>
+<p>The input is hashed with SHA-256. The first three bytes pick a hue (or are overridden by a fixed palette). The remaining bytes are read as a bitstream into a 5×3 grid which is then mirrored horizontally — that's why identicons look symmetrical.</p>
+
+<h2>Privacy</h2>
+<p>Your input never leaves the browser. Hashing and drawing both run locally.</p>
+</section>
+
+<script src="/tools/identicon/identicon.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

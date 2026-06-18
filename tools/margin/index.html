@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profit Margin Calculator — Cost, Price, Markup &amp; Margin % | SharpDev.Tools</title>
+<meta content="Calculate profit margin, markup, and gross profit from cost and selling price. Or work backwards: pick a target margin and find the right price. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/margin/" rel="canonical"/>
+<meta content="Profit Margin Calculator — Cost, Price, Markup &amp; Margin % | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate profit margin, markup, and gross profit from cost and selling price. Or work backwards: pick a target margin and find the right price. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/margin/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Profit Margin Calculator — Cost, Price, Markup &amp; Margin % | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate profit margin, markup, and gross profit from cost and selling price. Or work backwards: pick a target margin and find the right price. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},
+    {"@type":"ListItem","position":3,"name":"Profit Margin Calculator","item":"https://sharpdev.tools/tools/margin/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between margin and markup?","acceptedAnswer":{"@type":"Answer","text":"Margin is profit as a percentage of the selling price: (price - cost) / price × 100. Markup is profit as a percentage of the cost: (price - cost) / cost × 100. A 50% markup yields a 33.3% margin, not 50%. Most retailers think in markup; most accountants quote margin. Both are useful."}},
+    {"@type":"Question","name":"What's a good profit margin?","acceptedAnswer":{"@type":"Answer","text":"Depends on the industry: grocery 1-3%, software/SaaS 70-90%, e-commerce 5-10%, services 20-50%, luxury goods 50-80%. Healthier than absolute number is whether margin is stable or improving over time at your current scale."}},
+    {"@type":"Question","name":"Can I work backwards from a target margin?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter your cost and the margin % you want — the calculator computes the selling price needed to hit that margin. Useful when you know what margin your business needs and want to set prices accordingly."}},
+    {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Profit Margin Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/margin/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/margin/margin.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('margin');</script>
+<div class="page">
+<h1>Profit Margin Calculator</h1>
+<p class="subtitle">Compute margin, markup, and gross profit. Or set a target margin and find the right price.</p>
+
+<div class="card">
+<div class="mode-row">
+<label class="toggle"><input checked name="mode" type="radio" value="forward"/><span>Cost + Price → Margin</span></label>
+<label class="toggle"><input name="mode" type="radio" value="reverse"/><span>Cost + Target Margin → Price</span></label>
+</div>
+
+<div class="forward-grid" id="forward-grid">
+<div class="input-group">
+<label for="cost">Cost</label>
+<input id="cost" type="number" step="0.01" min="0" value="40"/>
+</div>
+<div class="input-group">
+<label for="price">Selling price</label>
+<input id="price" type="number" step="0.01" min="0" value="100"/>
+</div>
+</div>
+
+<div class="reverse-grid" id="reverse-grid" style="display:none">
+<div class="input-group">
+<label for="cost-r">Cost</label>
+<input id="cost-r" type="number" step="0.01" min="0" value="40"/>
+</div>
+<div class="input-group">
+<label for="margin-r">Target margin (%)</label>
+<input id="margin-r" type="number" step="0.1" min="0" max="99" value="60"/>
+</div>
+</div>
+
+<div class="results">
+<div class="result-card">
+<div class="result-label">Gross profit</div>
+<div class="result-value" id="r-profit">—</div>
+</div>
+<div class="result-card highlight">
+<div class="result-label">Margin %</div>
+<div class="result-value" id="r-margin">—</div>
+</div>
+<div class="result-card">
+<div class="result-label">Markup %</div>
+<div class="result-value" id="r-markup">—</div>
+</div>
+<div class="result-card" id="rev-price-card" style="display:none">
+<div class="result-label">Required selling price</div>
+<div class="result-value" id="r-price">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Margin vs markup — quick reference</h2>
+<ul>
+<li><strong>Margin</strong> = profit / selling price × 100. Tells you what fraction of revenue is profit.</li>
+<li><strong>Markup</strong> = profit / cost × 100. Tells you how much you added on top of cost.</li>
+</ul>
+<p>Quick conversion table:</p>
+<table>
+<thead><tr><th>Markup</th><th>Margin</th></tr></thead>
+<tbody>
+<tr><td>10%</td><td>9.1%</td></tr>
+<tr><td>25%</td><td>20%</td></tr>
+<tr><td>50%</td><td>33.3%</td></tr>
+<tr><td>100%</td><td>50%</td></tr>
+<tr><td>200%</td><td>66.7%</td></tr>
+<tr><td>400%</td><td>80%</td></tr>
+</tbody>
+</table>
+
+<h2>Industry benchmark margins</h2>
+<ul>
+<li><strong>Grocery</strong>: 1–3%</li>
+<li><strong>E-commerce (retail)</strong>: 5–10%</li>
+<li><strong>Restaurants</strong>: 3–9% (food cost ~30% means 70% gross margin on food, but ops eat most of it)</li>
+<li><strong>Professional services</strong>: 20–50%</li>
+<li><strong>Software / SaaS</strong>: 70–90%</li>
+<li><strong>Luxury goods</strong>: 50–80%</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Setting prices on a new product line so you hit your target margin</li>
+<li>Spot-checking a wholesale supplier's margin claim ("we offer 40% margin to retailers" — really?)</li>
+<li>Forecasting gross profit for a budget</li>
+<li>Comparing two pricing options side-by-side</li>
+</ul>
+</section>
+
+<script src="/tools/margin/margin.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

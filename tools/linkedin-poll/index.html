@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Poll Composer — Question (140) + 30-Char Options | SharpDev.Tools</title>
+<meta content="Plan your LinkedIn poll before posting — 140-char question, 30-char options (2-4), duration picker, live profile preview. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-poll/" rel="canonical"/>
+<meta content="LinkedIn Poll Composer — Question + 30-Char Options | SharpDev.Tools" property="og:title"/>
+<meta content="Plan LinkedIn polls — 140-char question, 30-char options (2-4), duration picker, live preview." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-poll/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn Poll Composer — Question + 30-Char Options | SharpDev.Tools" name="twitter:title"/>
+<meta content="Plan LinkedIn polls — 140-char question, 30-char options, duration." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"LinkedIn","item":"https://sharpdev.tools/linkedin/"},
+    {"@type":"ListItem","position":3,"name":"LinkedIn Poll Composer","item":"https://sharpdev.tools/tools/linkedin-poll/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What are LinkedIn poll limits?","acceptedAnswer":{"@type":"Answer","text":"Question: 140 characters. Options: 30 characters each, 2-4 options. Duration: 1 day, 3 days, 1 week, 2 weeks (locked after posting)."}},
+    {"@type":"Question","name":"Can I edit the poll after posting?","acceptedAnswer":{"@type":"Answer","text":"No. Question, options, and duration are all locked once the poll is live. Compose carefully — this tool helps."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. This is just a composer / preview — copy the text into LinkedIn manually."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"LinkedIn Poll Composer — SharpDev.Tools","url":"https://sharpdev.tools/tools/linkedin-poll/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-poll/linkedin-poll.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-poll');</script>
+<div class="page">
+<h1>LinkedIn Poll Composer</h1>
+<p class="subtitle">140-char question, 30-char options (2-4), duration picker, live preview.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="question">Question (140 chars)</label>
+<textarea id="question" rows="3" maxlength="200"></textarea>
+<div class="counter-row"><span id="q-counter" class="counter">0 / 140</span></div>
+</div>
+
+<div class="form-row">
+<label>Options (2-4)</label>
+<div class="poll-options" id="poll-options"></div>
+<button class="add-option" id="add-option" type="button">+ Add option</button>
+</div>
+
+<div class="form-row">
+<label for="duration">Duration</label>
+<select id="duration">
+<option value="1">1 day</option>
+<option value="3">3 days</option>
+<option value="7" selected>1 week</option>
+<option value="14">2 weeks (max)</option>
+</select>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Live preview</label>
+<div class="post-preview">
+<div class="lp-header">
+<div class="lp-avatar">SD</div>
+<div>
+<div class="lp-name">Gillian Scharf <span class="lp-degree">· 1st</span></div>
+<div class="lp-headline">Indie maker · SharpDev.Tools</div>
+<div class="lp-time">now</div>
+</div>
+</div>
+<div class="lp-body" id="lp-question">Your poll question will appear here…</div>
+<div class="lp-poll-frame">
+<div class="lp-poll" id="lp-poll"></div>
+<div class="lp-poll-meta" id="lp-meta">0 votes · 1 week left</div>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-secondary" id="copy-btn" type="button">Copy poll text</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>LinkedIn poll best practices</h2>
+<ul>
+<li><strong>1-week duration wins</strong> — long enough for your whole network to see, short enough to feel current</li>
+<li><strong>Open with "What's your take" or "Which would you pick"</strong> — invites a decision</li>
+<li><strong>Add "Curious to hear in comments"</strong> in the post body — polls + comments together boost reach</li>
+<li><strong>2 options outperform 4</strong> — same as Twitter, decisive framings get more votes</li>
+<li><strong>Avoid leading questions</strong> — "Why should I avoid the bus?" reads as biased</li>
+</ul>
+
+<h2>Why polls boost reach on LinkedIn</h2>
+<p>LinkedIn weighs <strong>dwell time</strong> + <strong>vote action</strong> as high-value engagement. A poll typically gets 3-5× the impressions of an equivalent text post, because each vote is a strong relevance signal back to the algorithm.</p>
+
+<h2>Privacy</h2>
+<p>Everything stays in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/linkedin-poll/linkedin-poll.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

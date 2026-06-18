@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Keyword Density Analyzer — 1 / 2 / 3-Word Phrase Counter | SharpDev.Tools</title>
+<meta content="Paste your content — see top keywords, 2-word phrases, 3-word phrases sorted by frequency. Stopword filtering, density percentages. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/keyword-density/" rel="canonical"/>
+<meta content="Keyword Density Analyzer — 1/2/3-Word Phrase Counter | SharpDev.Tools" property="og:title"/>
+<meta content="Paste content, see top keywords + 2/3-word phrases with density %. Stopword filtering. Free, no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/keyword-density/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Keyword Density Analyzer — 1/2/3-Word Phrase Counter | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste content, see top keywords + 2/3-word phrases with density %." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/text/"},
+    {"@type":"ListItem","position":3,"name":"Keyword Density Analyzer","item":"https://sharpdev.tools/tools/keyword-density/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's a healthy keyword density?","acceptedAnswer":{"@type":"Answer","text":"Generally 0.5%-2.5% for the main target keyword. Above 3% reads as stuffing and may get downranked by Google. Modern SEO cares more about topical depth than exact density."}},
+    {"@type":"Question","name":"Why 2- and 3-word phrases?","acceptedAnswer":{"@type":"Answer","text":"Single-word counts are too generic. 2- and 3-word phrases (bigrams / trigrams) surface the actual topics — 'free PDF merger', 'character counter', 'image to base64' all show what the content is really about."}},
+    {"@type":"Question","name":"Is content uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Analysis runs entirely in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Keyword Density — SharpDev.Tools","url":"https://sharpdev.tools/tools/keyword-density/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/keyword-density/keyword-density.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('keyword-density');</script>
+<div class="page">
+<h1>Keyword Density Analyzer</h1>
+<p class="subtitle">Single words, 2-word phrases and 3-word phrases — sorted by frequency.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="input">Paste your content</label>
+<textarea id="input" rows="10" placeholder="Paste your article, blog post, or product description here…"></textarea>
+</div>
+
+<div class="opt-row">
+<label class="checkbox-label">
+<input id="stopwords" type="checkbox" checked/>
+<span>Filter common stopwords (the, of, and, …)</span>
+</label>
+<label class="checkbox-label">
+<input id="min-len" type="checkbox" checked/>
+<span>Ignore words under 3 letters</span>
+</label>
+<span class="stat" id="word-stat"></span>
+</div>
+</div>
+
+<div class="card">
+<div class="results-grid">
+<div class="result-block">
+<label class="opt-label">Single words (top 20)</label>
+<table class="kd-table" id="t-1"><tbody></tbody></table>
+</div>
+<div class="result-block">
+<label class="opt-label">2-word phrases (top 20)</label>
+<table class="kd-table" id="t-2"><tbody></tbody></table>
+</div>
+<div class="result-block">
+<label class="opt-label">3-word phrases (top 20)</label>
+<table class="kd-table" id="t-3"><tbody></tbody></table>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How to use the data</h2>
+<ul>
+<li><strong>Top single words</strong> — confirm your target keyword is actually frequent (1-2%)</li>
+<li><strong>Top 2-word phrases</strong> — see what your real topic clusters are; align with search intent</li>
+<li><strong>Top 3-word phrases</strong> — surface long-tail variations you're already ranking adjacent to</li>
+<li><strong>Stopword filtering</strong> — without it the top result is always "the" / "of" / "and"</li>
+</ul>
+
+<h2>Density isn't everything</h2>
+<p>Modern SEO weights <strong>topical depth</strong> (related entities, semantic completeness) far more than exact density. Use keyword density to spot gaps and over-stuffing, not as a target to hit.</p>
+
+<h2>Privacy</h2>
+<p>Content analysis runs in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/keyword-density/keyword-density.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

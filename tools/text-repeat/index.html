@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Text Repeater — Repeat Text Multiple Times | SharpDev.Tools</title>
+<meta content="Repeat any text or word a set number of times, with an optional separator and numbering. Free online text repeater, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/text-repeat/" rel="canonical"/>
+<meta content="Text Repeater — Repeat Text Multiple Times | SharpDev.Tools" property="og:title"/>
+<meta content="Repeat any text or word a set number of times, with an optional separator and numbering. Free online text repeater, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/text-repeat/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Text Repeater — Repeat Text Multiple Times | SharpDev.Tools" name="twitter:title"/>
+<meta content="Repeat any text or word a set number of times, with an optional separator and numbering. Free online text repeater, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Text Repeater","item":"https://sharpdev.tools/tools/text-repeat/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I repeat text many times?","acceptedAnswer":{"@type":"Answer","text":"Type the text, set how many times, and choose a separator (new line, space, comma or none). The repeated text appears instantly and the Copy button grabs all of it."}},{"@type":"Question","name":"Can it number each repetition?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tick 'number them' and each copy is prefixed with 1., 2., 3. and so on, handy for making quick numbered lists."}},{"@type":"Question","name":"Is there a limit?","acceptedAnswer":{"@type":"Answer","text":"You can repeat up to 10,000 times. Very large counts produce a lot of text, so your browser may slow briefly while it renders."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Text Repeater \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/text-repeat/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/text-repeat/text-repeat.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('text-repeat');</script>
+<div class="page">
+<h1>Text Repeater</h1>
+<p class="subtitle">Repeat text N times with an optional separator, new line, or numbering.</p>
+<div class="field"><label for="in">Text to repeat</label><textarea id="in" style="min-height:80px" placeholder="Type text..."></textarea></div>
+<div class="row">
+<div class="field" style="flex:0 0 130px"><label for="times">Times</label><input type="number" id="times" value="10" min="1" max="10000"></div>
+<div class="field" style="flex:0 0 180px"><label for="sep">Separator</label><select id="sep"><option value="
+">New line</option><option value=" ">Space</option><option value=", ">Comma</option><option value="">None</option></select></div>
+<div class="field" style="flex:0 0 130px"><label class="small-btn" style="margin-top:18px"><input type="checkbox" id="num"> number them</label></div>
+</div>
+<div class="out-head"><label for="out">Output (<span id="cnt">0</span> chars)</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I repeat text many times?</summary><p>Type the text, set how many times, and choose a separator (new line, space, comma or none). The repeated text appears instantly and the Copy button grabs all of it.</p></details>
+<details><summary>Can it number each repetition?</summary><p>Yes. Tick 'number them' and each copy is prefixed with 1., 2., 3. and so on, handy for making quick numbered lists.</p></details>
+<details><summary>Is there a limit?</summary><p>You can repeat up to 10,000 times. Very large counts produce a lot of text, so your browser may slow briefly while it renders.</p></details>
+</section>
+<script src="/tools/text-repeat/text-repeat.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

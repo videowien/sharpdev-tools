@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Lorem Ipsum — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Generate Lorem Ipsum placeholder text for mockups and designs — paragraphs, sentences or words, as plain text or HTML. Free online, no ads, no sign-up needed." name="description"/>
+<link href="https://sharpdev.tools/tools/lorem/" rel="canonical"/>
+<meta content="Lorem Ipsum — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Generate Lorem Ipsum placeholder text for mockups and designs — paragraphs, sentences or words, as plain text or HTML. Free online, no ads, no sign-up needed." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/lorem/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Lorem Ipsum — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate Lorem Ipsum placeholder text for mockups and designs — paragraphs, sentences or words, as plain text or HTML. Free online, no ads, no sign-up needed." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Lorem Ipsum",
+        "item": "https://sharpdev.tools/tools/lorem/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can the Lorem Ipsum generator produce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can generate any number of paragraphs, sentences or words of classic Lorem Ipsum and copy the output as plain text or wrapped in HTML paragraph tags."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to sign up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No sign-up is required — open the page and start generating immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, unlimited and free, with no ads or tracking."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Lorem Ipsum — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/lorem/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/lorem/lorem.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('lorem');</script>
+<div class="page">
+<h1>Lorem Ipsum Generator</h1>
+<p class="subtitle">Generate placeholder text for your designs, mockups, and layouts.</p>
+<div class="card controls-card">
+<div class="controls-row">
+<div class="control-group">
+<label for="amount">Amount</label>
+<input id="amount" max="1000" min="1" type="number" value="3"/>
+</div>
+<div class="control-group">
+<label for="unit">Unit</label>
+<select id="unit">
+<option selected="" value="paragraphs">Paragraphs</option>
+<option value="sentences">Sentences</option>
+<option value="words">Words</option>
+</select>
+</div>
+<div class="control-group cb-group">
+<label class="checkbox-label">
+<input checked="" id="start-lorem" type="checkbox"/>
+          Start with "Lorem ipsum..."
+        </label>
+</div>
+<div class="control-group">
+<button class="btn btn-primary" onclick="generate()">Generate</button>
+</div>
+</div>
+</div>
+<div class="card output-area" id="output-area">
+<div class="output-text" id="output-text"></div>
+<div class="output-footer">
+<span class="output-stats" id="output-stats"></span>
+<div class="output-actions">
+<button class="btn btn-primary btn-sm" onclick="copyOutput()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+          Copy
+        </button>
+<button class="btn btn-secondary btn-sm" onclick="copyHtml()">Copy as HTML</button>
+<span class="copy-msg" id="copy-msg"></span>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/lorem/lorem.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

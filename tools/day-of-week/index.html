@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Day of the Week Calculator | SharpDev.Tools</title>
+<meta content="Free day-of-the-week calculator. Enter any date and find out which weekday it falls on — what day you were born, or any past or future date. Shows the day number of the year too. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/day-of-week/" rel="canonical"/>
+<meta content="Day of the Week Calculator | SharpDev.Tools" property="og:title"/>
+<meta content="Free day-of-the-week calculator. Enter any date and find out which weekday it falls on — what day you were born, or any past or future date. Shows the day number of the year too. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/day-of-week/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Day of the Week Calculator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free day-of-the-week calculator. Enter any date and find out which weekday it falls on — what day you were born, or any past or future date. Shows the day number of the year too. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Day of the Week Calculator","item":"https://sharpdev.tools/tools/day-of-week/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find what day I was born?","acceptedAnswer":{"@type":"Answer","text":"Pick your birth date above \u2014 the tool instantly shows the weekday, computed from the date with no time-zone surprises."}},{"@type":"Question","name":"Does it work for dates far in the past or future?","acceptedAnswer":{"@type":"Answer","text":"Yes, for any date your browser's date picker accepts, using the standard proleptic Gregorian calendar."}},{"@type":"Question","name":"What is the \u2018day of the year\u2019?","acceptedAnswer":{"@type":"Answer","text":"It's the position of the date within its year \u2014 January 1 is day 1, December 31 is day 365 (or 366 in a leap year)."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Day of the Week Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/day-of-week/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/day-of-week/day-of-week.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('day-of-week');</script>
+<div class="page">
+<h1>Day of the Week Calculator</h1>
+<p class="subtitle">Find the weekday for any date — what day you were born, or any date in history or the future.</p>
+<div class="row"><div class="field"><label for="d">Date</label><input type="date" id="d" value="2000-01-01"></div></div>
+<div class="out-head"><label>Result</label></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find what day I was born?</summary><p>Pick your birth date above — the tool instantly shows the weekday, computed from the date with no time-zone surprises.</p></details>
+<details><summary>Does it work for dates far in the past or future?</summary><p>Yes, for any date your browser's date picker accepts, using the standard proleptic Gregorian calendar.</p></details>
+<details><summary>What is the ‘day of the year’?</summary><p>It's the position of the date within its year — January 1 is day 1, December 31 is day 365 (or 366 in a leap year).</p></details>
+</section>
+<script src="/tools/day-of-week/day-of-week.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

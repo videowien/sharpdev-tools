@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Net Worth Calculator — Assets, Liabilities, Total Wealth | SharpDev.Tools</title>
+<meta content="Calculate your net worth — sum your assets, subtract your liabilities, see your total wealth. Multi-currency, line-by-line categories. Browser-only, never uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/net-worth/" rel="canonical"/>
+<meta content="Net Worth Calculator — Assets, Liabilities, Total | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate net worth — assets minus liabilities. Multi-currency. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/net-worth/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Net Worth Calculator — Assets, Liabilities, Total | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate net worth — assets minus liabilities." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/money-finance/"},
+    {"@type":"ListItem","position":3,"name":"Net Worth Calculator","item":"https://sharpdev.tools/tools/net-worth/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What counts as an asset?","acceptedAnswer":{"@type":"Answer","text":"Anything you own with monetary value — cash, savings, brokerage accounts, real estate (market value), vehicles (current resale value, not purchase price), retirement accounts, valuables, business equity."}},
+    {"@type":"Question","name":"What counts as a liability?","acceptedAnswer":{"@type":"Answer","text":"Anything you owe — mortgage balance, credit card debt, student loans, car loans, personal loans, tax owed. The current balance, not the original amount."}},
+    {"@type":"Question","name":"Are my numbers uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The data stays in your browser. The page doesn't even save it between visits — refresh and it's gone. For tracking over time, copy the result + screenshot, store privately."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Net Worth Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/net-worth/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/net-worth/net-worth.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('net-worth');</script>
+<div class="page">
+<h1>Net Worth Calculator</h1>
+<p class="subtitle">Assets minus liabilities. Browser-only — your numbers never leave the page.</p>
+
+<div class="card">
+<div class="opt-row">
+<label class="opt-label">Currency</label>
+<select id="currency"><option>$</option><option>€</option><option>£</option><option>¥</option><option>kr</option></select>
+</div>
+</div>
+
+<div class="card">
+<h2 class="section-title">Assets <span class="muted">(what you own)</span></h2>
+<div class="line-list" id="assets-list"></div>
+<button class="add-btn" data-side="assets" type="button">+ Add asset</button>
+<div class="subtotal">Subtotal: <span id="assets-total">—</span></div>
+</div>
+
+<div class="card">
+<h2 class="section-title">Liabilities <span class="muted">(what you owe)</span></h2>
+<div class="line-list" id="liabilities-list"></div>
+<button class="add-btn" data-side="liabilities" type="button">+ Add liability</button>
+<div class="subtotal">Subtotal: <span id="liabilities-total">—</span></div>
+</div>
+
+<div class="card result-card">
+<div class="result-label">Net Worth</div>
+<div class="result-value" id="net-worth">—</div>
+<div class="result-sub" id="net-sub"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Net worth milestones (US median data, 2024)</h2>
+<table class="ref-table">
+<tr><th>Age</th><th>Median net worth</th><th>Top 10% net worth</th></tr>
+<tr><td>Under 35</td><td>~$39k</td><td>~$369k</td></tr>
+<tr><td>35-44</td><td>~$135k</td><td>~$760k</td></tr>
+<tr><td>45-54</td><td>~$247k</td><td>~$1.5M</td></tr>
+<tr><td>55-64</td><td>~$364k</td><td>~$2.6M</td></tr>
+<tr><td>65+</td><td>~$410k</td><td>~$3.2M</td></tr>
+</table>
+
+<h2>Tracking net worth over time</h2>
+<p>Update once a quarter (more often is noise). The trend matters — a growing curve through ups and downs is the goal. Most personal-finance experts recommend the same accounts, same prices, same time of month for consistency.</p>
+
+<h2>Privacy</h2>
+<p>Your numbers never leave the browser. The page doesn't auto-save them either — refresh and they're gone.</p>
+</section>
+
+<script src="/tools/net-worth/net-worth.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

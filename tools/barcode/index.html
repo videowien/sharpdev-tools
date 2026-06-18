@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Barcode Generator — Code128, EAN, UPC, Code39 | SharpDev.Tools</title>
+<meta content="Generate barcodes online: Code128, EAN-13, EAN-8, UPC, Code39, ITF and more. Download as PNG or SVG. Free barcode maker, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/barcode/" rel="canonical"/>
+<meta content="Barcode Generator — Code128, EAN, UPC, Code39 | SharpDev.Tools" property="og:title"/>
+<meta content="Generate barcodes online: Code128, EAN-13, EAN-8, UPC, Code39, ITF and more. Download as PNG or SVG. Free barcode maker, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/barcode/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Barcode Generator — Code128, EAN, UPC, Code39 | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate barcodes online: Code128, EAN-13, EAN-8, UPC, Code39, ITF and more. Download as PNG or SVG. Free barcode maker, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/#generators"},{"@type":"ListItem","position":3,"name":"Barcode Generator","item":"https://sharpdev.tools/tools/barcode/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which barcode formats are supported?","acceptedAnswer":{"@type":"Answer","text":"Code128 (the default, encodes any text), EAN-13, EAN-8, UPC, Code39, ITF-14, MSI and pharmacode. EAN and UPC need the exact digit count for their standard, otherwise the tool shows an error."}},{"@type":"Question","name":"Can I download the barcode?","acceptedAnswer":{"@type":"Answer","text":"Yes, as a crisp SVG (vector, scales to any size) or as a PNG raster. Both render on a white background suitable for printing or embedding."}},{"@type":"Question","name":"Is the barcode generated in my browser?","acceptedAnswer":{"@type":"Answer","text":"Yes. The data never leaves your device; the barcode is rendered locally with the JsBarcode library loaded from the Cloudflare CDN."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Barcode Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/barcode/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/barcode/barcode.css" rel="stylesheet"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('barcode');</script>
+<div class="page">
+<h1>Barcode Generator</h1>
+<p class="subtitle">Make Code128, EAN, UPC and Code39 barcodes. Download as PNG or SVG. Runs in your browser.</p>
+<div class="row">
+<div class="field"><label for="val">Data</label><input type="text" id="val" value="SHARPDEV-2026"></div>
+<div class="field" style="flex:0 0 150px"><label for="fmt">Format</label><select id="fmt"><option>CODE128</option><option>EAN13</option><option>EAN8</option><option>UPC</option><option>CODE39</option><option>ITF14</option><option>MSI</option><option>pharmacode</option></select></div>
+</div>
+<div class="row">
+<div class="field"><label>Bar width: <span id="w-val">2</span></label><input type="range" id="bw" min="1" max="5" value="2"></div>
+<div class="field"><label>Height: <span id="h-val">90</span></label><input type="range" id="bh" min="30" max="160" value="90"></div>
+<div class="field" style="flex:0 0 130px"><label class="small-btn" style="margin-top:18px"><input type="checkbox" id="showtext" checked> show text</label></div>
+</div>
+<div id="bc-stage" style="background:#fff;border-radius:8px;padding:16px;text-align:center;margin:14px 0;min-height:80px"><svg id="bc"></svg></div>
+<div id="bc-err" class="note" style="display:none"></div>
+<div class="actions"><button class="btn btn-primary" id="png">Download PNG</button><button class="btn btn-secondary" id="svg">Download SVG</button></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Which barcode formats are supported?</summary><p>Code128 (the default, encodes any text), EAN-13, EAN-8, UPC, Code39, ITF-14, MSI and pharmacode. EAN and UPC need the exact digit count for their standard, otherwise the tool shows an error.</p></details>
+<details><summary>Can I download the barcode?</summary><p>Yes, as a crisp SVG (vector, scales to any size) or as a PNG raster. Both render on a white background suitable for printing or embedding.</p></details>
+<details><summary>Is the barcode generated in my browser?</summary><p>Yes. The data never leaves your device; the barcode is rendered locally with the JsBarcode library loaded from the Cloudflare CDN.</p></details>
+</section>
+<script src="/tools/barcode/barcode.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

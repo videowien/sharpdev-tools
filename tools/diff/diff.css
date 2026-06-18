@@ -1,0 +1,132 @@
+/* Text Diff Checker — Tool-specific styles */
+
+.page { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* Input textareas */
+.input-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-bottom: 16px;
+}
+.input-col textarea {
+  width: 100%; min-height: 180px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 14px; padding: 14px; outline: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
+  line-height: 1.6; transition: border-color 0.2s;
+}
+.input-col textarea:focus { border-color: #ff4444; }
+.input-col textarea::placeholder { color: #444; }
+
+/* Action buttons */
+.actions {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: all 0.15s;
+}
+.btn-primary { background: #ff4444; color: #fff; }
+.btn-primary:hover { background: #cc0000; }
+.btn-secondary { background: #1a1a1a; color: #ccc; border: 1px solid #333; }
+.btn-secondary:hover { border-color: #555; color: #fff; }
+
+.view-toggle {
+  display: flex; margin-left: auto; border: 1px solid #333; border-radius: 6px; overflow: hidden;
+}
+.toggle-btn {
+  padding: 8px 16px; font-size: 13px; background: transparent; color: #888;
+  border: none; cursor: pointer; transition: all 0.15s;
+}
+.toggle-btn:hover { color: #ccc; }
+.toggle-btn.active { background: #262626; color: #fff; }
+
+/* Stats bar */
+.stats {
+  background: #141414; border: 1px solid #262626; border-radius: 8px;
+  padding: 12px 18px; margin-bottom: 16px;
+  display: flex; gap: 20px; font-size: 13px; color: #888;
+  flex-wrap: wrap;
+}
+.stats .stat-val { color: #e1e1e1; font-weight: 600; }
+.stat-added .stat-val { color: #4ade80; }
+.stat-removed .stat-val { color: #f87171; }
+.stat-changed .stat-val { color: #facc15; }
+
+/* Side-by-side view */
+.result-side {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid #262626; border-radius: 10px; overflow: hidden;
+}
+.diff-panel { min-width: 0; }
+.diff-panel:first-child { border-right: 1px solid #262626; }
+.diff-header {
+  background: #1a1a1a; padding: 8px 14px; font-size: 12px;
+  color: #888; text-transform: uppercase; letter-spacing: 0.5px;
+  font-weight: 600; border-bottom: 1px solid #262626;
+}
+.diff-content {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
+  font-size: 13px; line-height: 1.7; overflow-x: auto;
+}
+
+/* Inline view */
+.result-inline {
+  border: 1px solid #262626; border-radius: 10px; overflow: hidden;
+}
+.result-inline .diff-content { padding: 0; }
+
+/* Diff lines */
+.diff-line {
+  padding: 2px 14px; white-space: pre-wrap; word-break: break-word;
+  min-height: 1.7em; border-bottom: 1px solid #1a1a1a;
+  display: flex;
+}
+.diff-line-num {
+  color: #444; font-size: 12px; min-width: 36px; text-align: right;
+  padding-right: 12px; user-select: none; flex-shrink: 0;
+}
+.diff-line-text { flex: 1; min-width: 0; }
+
+.diff-line.added { background: rgba(74, 222, 128, 0.08); }
+.diff-line.added .diff-line-num { color: #4ade80; }
+.diff-line.removed { background: rgba(248, 113, 113, 0.08); }
+.diff-line.removed .diff-line-num { color: #f87171; }
+.diff-line.changed { background: rgba(250, 204, 21, 0.06); }
+
+/* Inline word-level highlights */
+.hl-add {
+  background: rgba(74, 222, 128, 0.25); border-radius: 2px;
+  padding: 1px 0;
+}
+.hl-rm {
+  background: rgba(248, 113, 113, 0.25); border-radius: 2px;
+  padding: 1px 0; text-decoration: line-through; text-decoration-color: rgba(248,113,113,0.5);
+}
+
+/* Empty placeholder for side-by-side alignment */
+.diff-line.empty { background: rgba(255,255,255,0.02); }
+.diff-line.empty .diff-line-text { color: #333; }
+
+/* No changes message */
+.no-changes {
+  text-align: center; padding: 40px 20px; color: #4ade80;
+  font-size: 16px; background: #141414; border: 1px solid #262626;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  .input-row { grid-template-columns: 1fr; }
+  .result-side { grid-template-columns: 1fr; }
+  .diff-panel:first-child { border-right: none; border-bottom: 1px solid #262626; }
+  .view-toggle { margin-left: 0; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .actions .btn { text-align: center; }
+}

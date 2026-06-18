@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Embed Code Generator — Build iframe with Autoplay, Loop, Start | SharpDev.Tools</title>
+<meta content="Generate a clean YouTube embed code from any video URL. Set autoplay, controls, start-time, mute, loop, no-cookie domain, modest branding. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/yt-embed/" rel="canonical"/>
+<meta content="YouTube Embed Code Generator — Build iframe with Autoplay, Loop, Start | SharpDev.Tools" property="og:title"/>
+<meta content="Generate a clean YouTube embed code from any video URL. Set autoplay, controls, start-time, mute, loop, no-cookie domain, modest branding. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/yt-embed/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="YouTube Embed Code Generator — Build iframe with Autoplay, Loop, Start | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate a clean YouTube embed code from any video URL. Set autoplay, controls, start-time, mute, loop, no-cookie domain, modest branding. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"YouTube","item":"https://sharpdev.tools/#youtube"},
+    {"@type":"ListItem","position":3,"name":"YouTube Embed Generator","item":"https://sharpdev.tools/tools/yt-embed/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I embed a YouTube video on my website?","acceptedAnswer":{"@type":"Answer","text":"Paste any YouTube or youtu.be URL into the input. The tool extracts the video ID and builds an <iframe> embed tag with your chosen options (autoplay, controls, start time, mute, loop, etc.). Copy the snippet and paste it into your HTML."}},
+    {"@type":"Question","name":"What's the difference between youtube.com and youtube-nocookie.com?","acceptedAnswer":{"@type":"Answer","text":"youtube-nocookie.com is YouTube's privacy-enhanced embed domain. It doesn't set tracking cookies until the visitor clicks play. Recommended for GDPR-compliant sites. Toggle the 'No-cookie domain' option to switch."}},
+    {"@type":"Question","name":"How does autoplay work?","acceptedAnswer":{"@type":"Answer","text":"Most browsers (Chrome, Safari, Firefox) block autoplay with sound. To make autoplay actually work, enable both autoplay AND mute. The video starts muted; the viewer can unmute if they want."}},
+    {"@type":"Question","name":"Can I start the video at a specific time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the Start time field. Enter seconds (e.g. 90) or MM:SS (e.g. 1:30) — the tool converts to the right format."}},
+    {"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Embed Code Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/yt-embed/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/yt-embed/yt-embed.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('yt-embed');</script>
+<div class="page">
+<h1>YouTube Embed Code Generator</h1>
+<p class="subtitle">Paste a YouTube URL, pick options, copy the <code>&lt;iframe&gt;</code> snippet. Works with youtube.com and youtu.be.</p>
+
+<div class="grid">
+<div class="card form-card">
+<div class="form-group">
+<label for="video-url">YouTube URL</label>
+<input id="video-url" type="text" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" placeholder="https://www.youtube.com/watch?v=..."/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="width">Width</label>
+<input id="width" type="number" value="560" min="100"/>
+</div>
+<div class="form-group">
+<label for="height">Height</label>
+<input id="height" type="number" value="315" min="100"/>
+</div>
+<div class="form-group">
+<label class="checkbox-label" style="margin-top:22px;">
+<input id="responsive" type="checkbox" checked/>
+<span>Responsive (16:9)</span>
+</label>
+</div>
+</div>
+<div class="form-group">
+<label for="start">Start time (seconds or MM:SS)</label>
+<input id="start" type="text" placeholder="e.g. 90 or 1:30"/>
+</div>
+<div class="form-group toggles">
+<label class="checkbox-label"><input id="autoplay" type="checkbox"/><span>Autoplay</span></label>
+<label class="checkbox-label"><input id="mute" type="checkbox"/><span>Muted</span></label>
+<label class="checkbox-label"><input id="loop" type="checkbox"/><span>Loop</span></label>
+<label class="checkbox-label"><input id="controls" type="checkbox" checked/><span>Show controls</span></label>
+<label class="checkbox-label"><input id="modest" type="checkbox" checked/><span>Modest branding</span></label>
+<label class="checkbox-label"><input id="rel" type="checkbox"/><span>Show related videos at end</span></label>
+<label class="checkbox-label"><input id="nocookie" type="checkbox" checked/><span>No-cookie domain (GDPR-friendly)</span></label>
+</div>
+</div>
+
+<div class="card output-card">
+<label for="output">Embed code</label>
+<textarea id="output" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+<div class="preview-label">Preview</div>
+<div class="preview-box" id="preview-box"></div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Available iframe parameters</h2>
+<ul>
+<li><strong>autoplay=1</strong> — starts playing immediately (requires mute=1 in most browsers)</li>
+<li><strong>mute=1</strong> — starts muted (required for autoplay to actually work)</li>
+<li><strong>loop=1</strong> — restarts at the end (also requires playlist=VIDEO_ID for it to work)</li>
+<li><strong>controls=0</strong> — hide the player controls (no play/pause/seek/volume)</li>
+<li><strong>modestbranding=1</strong> — minimize the YouTube logo</li>
+<li><strong>rel=0</strong> — don't show related videos at the end (since 2018, "rel=0" means "from the same channel" — true zero-related isn't possible)</li>
+<li><strong>start=N</strong> — start at second N</li>
+<li>Domain: <strong>youtube-nocookie.com</strong> sets no cookies until play — GDPR-safer</li>
+</ul>
+
+<h2>Responsive (16:9) embed code</h2>
+<p>When "Responsive" is checked, the iframe uses 100% width and the parent container uses an aspect-ratio CSS trick. Drop the generated CSS + HTML into your page and the video will scale with the container.</p>
+</section>
+
+<script src="/tools/yt-embed/yt-embed.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

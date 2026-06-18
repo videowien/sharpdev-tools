@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Color Mixer — Blend Two Colors Online | SharpDev.Tools</title>
+<meta content="Mix two colors and get the blended result plus every step in between. Adjust the ratio, copy any hex. Free online color blender, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/color-mixer/" rel="canonical"/>
+<meta content="Color Mixer — Blend Two Colors Online | SharpDev.Tools" property="og:title"/>
+<meta content="Mix two colors and get the blended result plus every step in between. Adjust the ratio, copy any hex. Free online color blender, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/color-mixer/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Color Mixer — Blend Two Colors Online | SharpDev.Tools" name="twitter:title"/>
+<meta content="Mix two colors and get the blended result plus every step in between. Adjust the ratio, copy any hex. Free online color blender, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"Color Mixer","item":"https://sharpdev.tools/tools/color-mixer/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the color mixer blend two colors?","acceptedAnswer":{"@type":"Answer","text":"It converts both colors to RGB, then linearly interpolates each channel by the ratio you set. At 50% you get the exact midpoint; drag the slider toward either color to weight the blend. The 11-step strip shows the full gradient between them."}},{"@type":"Question","name":"Can I copy the blended color?","acceptedAnswer":{"@type":"Answer","text":"Yes. The result swatch shows the hex code, and the Copy hex button puts it on your clipboard ready to paste into CSS, a design tool, or anywhere else."}},{"@type":"Question","name":"Is this the same as mixing paint?","acceptedAnswer":{"@type":"Answer","text":"Not exactly. This blends colors in RGB (additive, screen-style) which is how digital colors combine. Physical paint mixes subtractively, so the result can differ from real pigment mixing."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Color Mixer \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/color-mixer/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/color-mixer/color-mixer.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('color-mixer');</script>
+<div class="page">
+<h1>Color Mixer</h1>
+<p class="subtitle">Blend two colors and see every step between them. Drag the ratio, copy any hex.</p>
+<div class="row">
+<div class="field"><label for="c1">Color A</label><input type="color" id="c1" value="#ff4444"></div>
+<div class="field"><label for="c2">Color B</label><input type="color" id="c2" value="#4488ff"></div>
+</div>
+<div class="field"><label for="ratio">Mix ratio: <span id="ratio-val">50%</span> toward B</label><input type="range" id="ratio" min="0" max="100" value="50" style="width:100%"></div>
+<div class="out-head"><label>Blended result</label><button class="copy-btn" id="copy">Copy hex</button></div>
+<div id="result-swatch" style="height:64px;border-radius:8px;border:1px solid #2a2a2a;display:flex;align-items:center;justify-content:center;font-family:monospace;font-weight:700;"></div>
+<div class="out-head" style="margin-top:18px"><label>Gradient steps</label></div>
+<div id="steps" style="display:flex;border-radius:8px;overflow:hidden;border:1px solid #2a2a2a;"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does the color mixer blend two colors?</summary><p>It converts both colors to RGB, then linearly interpolates each channel by the ratio you set. At 50% you get the exact midpoint; drag the slider toward either color to weight the blend. The 11-step strip shows the full gradient between them.</p></details>
+<details><summary>Can I copy the blended color?</summary><p>Yes. The result swatch shows the hex code, and the Copy hex button puts it on your clipboard ready to paste into CSS, a design tool, or anywhere else.</p></details>
+<details><summary>Is this the same as mixing paint?</summary><p>Not exactly. This blends colors in RGB (additive, screen-style) which is how digital colors combine. Physical paint mixes subtractively, so the result can differ from real pigment mixing.</p></details>
+</section>
+<script src="/tools/color-mixer/color-mixer.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

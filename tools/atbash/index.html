@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Atbash Cipher Encoder / Decoder | SharpDev.Tools</title>
+<meta content="Free Atbash cipher tool. Mirror the alphabet — A becomes Z, B becomes Y — to encode or decode text. Self-inverse, keeps case and punctuation, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/atbash/" rel="canonical"/>
+<meta content="Atbash Cipher Encoder / Decoder | SharpDev.Tools" property="og:title"/>
+<meta content="Free Atbash cipher tool. Mirror the alphabet — A becomes Z, B becomes Y — to encode or decode text. Self-inverse, keeps case and punctuation, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/atbash/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Atbash Cipher Encoder / Decoder | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free Atbash cipher tool. Mirror the alphabet — A becomes Z, B becomes Y — to encode or decode text. Self-inverse, keeps case and punctuation, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Atbash Cipher Encoder & Decoder","item":"https://sharpdev.tools/tools/atbash/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Atbash cipher?","acceptedAnswer":{"@type":"Answer","text":"Atbash maps each letter to its mirror in the alphabet: A\u2194Z, B\u2194Y, C\u2194X, and so on. It originated as a Hebrew substitution cipher."}},{"@type":"Question","name":"How do I decode Atbash?","acceptedAnswer":{"@type":"Answer","text":"Run the same text through Atbash again \u2014 the cipher is its own inverse, so encoding and decoding are the same operation."}},{"@type":"Question","name":"Does it keep numbers and punctuation?","acceptedAnswer":{"@type":"Answer","text":"Yes. Only letters are mirrored; digits, spaces and punctuation pass through unchanged."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Atbash Cipher Encoder & Decoder \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/atbash/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/atbash/atbash.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('atbash');</script>
+<div class="page">
+<h1>Atbash Cipher Encoder & Decoder</h1>
+<p class="subtitle">Mirror the alphabet (A↔Z, B↔Y…) to encode or decode. The same operation reverses itself.</p>
+<div class="field"><label for="in">Text</label><textarea id="in" placeholder="Hello, World!">Hello, World!</textarea></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Atbash output (run it again to decode)</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Atbash cipher?</summary><p>Atbash maps each letter to its mirror in the alphabet: A↔Z, B↔Y, C↔X, and so on. It originated as a Hebrew substitution cipher.</p></details>
+<details><summary>How do I decode Atbash?</summary><p>Run the same text through Atbash again — the cipher is its own inverse, so encoding and decoding are the same operation.</p></details>
+<details><summary>Does it keep numbers and punctuation?</summary><p>Yes. Only letters are mirrored; digits, spaces and punctuation pass through unchanged.</p></details>
+</section>
+<script src="/tools/atbash/atbash.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

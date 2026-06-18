@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Dog &amp; Cat Age Calculator (Human Years) | SharpDev.Tools</title>
+<meta content="Free dog and cat age calculator. Convert your pet's age into human years using a realistic, size-aware model instead of the outdated ‘multiply by 7’ rule. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/pet-age/" rel="canonical"/>
+<meta content="Dog &amp; Cat Age Calculator (Human Years) | SharpDev.Tools" property="og:title"/>
+<meta content="Free dog and cat age calculator. Convert your pet's age into human years using a realistic, size-aware model instead of the outdated ‘multiply by 7’ rule. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pet-age/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Dog &amp; Cat Age Calculator (Human Years) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free dog and cat age calculator. Convert your pet's age into human years using a realistic, size-aware model instead of the outdated ‘multiply by 7’ rule. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Dog & Cat Age in Human Years","item":"https://sharpdev.tools/tools/pet-age/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the \u2018multiply by 7\u2019 rule accurate?","acceptedAnswer":{"@type":"Answer","text":"No. Pets age fast in their first two years, then more slowly. This tool front-loads those early years and uses a gentler rate afterwards, which matches veterinary guidance far better."}},{"@type":"Question","name":"Why does dog size matter?","acceptedAnswer":{"@type":"Answer","text":"Smaller dogs live longer and age more slowly later in life than large breeds, so the per-year rate is lower for small dogs and higher for large ones."}},{"@type":"Question","name":"Is this exact?","acceptedAnswer":{"@type":"Answer","text":"It's a solid estimate. Real ageing varies by breed, health and individual, so treat it as a guide rather than a precise figure."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Dog & Cat Age in Human Years \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/pet-age/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pet-age/pet-age.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pet-age');</script>
+<div class="page">
+<h1>Dog & Cat Age in Human Years</h1>
+<p class="subtitle">Convert your dog's or cat's age to human years with a realistic, size-aware formula — not the old ×7 myth.</p>
+<div class="row">
+<div class="field"><label for="age">Pet age (years)</label><input type="number" id="age" value="5" min="0" step="0.5"></div>
+<div class="field"><label for="type">Animal</label><select id="type"><option value="dog">Dog</option><option value="cat">Cat</option></select></div>
+<div class="field" id="sizeWrap"><label for="size">Dog size</label><select id="size"><option value="small">Small (&lt;10 kg)</option><option value="medium" selected>Medium (10–25 kg)</option><option value="large">Large (&gt;25 kg)</option></select></div>
+</div>
+<div class="result-cards"><div class="result-card hl"><div class="label">Human years</div><div class="value" id="out">—</div></div></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Is the ‘multiply by 7’ rule accurate?</summary><p>No. Pets age fast in their first two years, then more slowly. This tool front-loads those early years and uses a gentler rate afterwards, which matches veterinary guidance far better.</p></details>
+<details><summary>Why does dog size matter?</summary><p>Smaller dogs live longer and age more slowly later in life than large breeds, so the per-year rate is lower for small dogs and higher for large ones.</p></details>
+<details><summary>Is this exact?</summary><p>It's a solid estimate. Real ageing varies by breed, health and individual, so treat it as a guide rather than a precise figure.</p></details>
+</section>
+<script src="/tools/pet-age/pet-age.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

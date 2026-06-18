@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Engagement Rate Calculator — Free Online | SharpDev.Tools</title>
+<meta content="Calculate your Instagram engagement rate from followers, likes, and comments. Compare against industry benchmarks. Free, instant, runs in your browser — no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-engagement/" rel="canonical"/>
+<meta content="Instagram Engagement Rate Calculator — Free Online | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate your Instagram engagement rate from followers, likes, and comments. Compare against industry benchmarks. Free, instant, runs in your browser — no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-engagement/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Engagement Rate Calculator — Free Online | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate your Instagram engagement rate from followers, likes, and comments. Compare against industry benchmarks. Free, instant, runs in your browser — no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "Instagram", "item": "https://sharpdev.tools/#instagram" },
+      { "@type": "ListItem", "position": 3, "name": "Engagement Rate Calculator", "item": "https://sharpdev.tools/tools/ig-engagement/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How is Instagram engagement rate calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The standard formula is (Likes + Comments) / Followers × 100. Some agencies also include Saves, Shares and DMs, but Likes + Comments is the most common public-data calculation." } },
+      { "@type": "Question", "name": "What is a good Instagram engagement rate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Benchmarks vary by follower size. Nano-accounts (under 5K) often see 5-8%, micro-accounts (5-50K) 2-4%, mid-tier (50-500K) 1-2%, and macro/celeb (500K+) 0.5-1.5%. Anything above the band for your size is strong." } },
+      { "@type": "Question", "name": "Does the engagement rate include Reels views?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Reels Engagement Rate is calculated against Views, not Followers: (Likes + Comments + Shares) / Plays × 100. This tool calculates the post / feed engagement rate (against follower count) which is the standard public-data metric." } },
+      { "@type": "Question", "name": "Is this calculator free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram Engagement Rate Calculator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/ig-engagement/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-engagement/ig-engagement.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-engagement');</script>
+<div class="page">
+<h1>Instagram Engagement Rate Calculator</h1>
+<p class="subtitle">Type your followers, average likes and average comments per post. Get your engagement rate and how it stacks up.</p>
+
+<div class="card">
+<div class="input-grid">
+<div class="input-group">
+<label for="followers">Followers</label>
+<input id="followers" type="number" min="1" placeholder="e.g. 10000" value="10000"/>
+</div>
+<div class="input-group">
+<label for="likes">Avg. likes per post</label>
+<input id="likes" type="number" min="0" placeholder="e.g. 300" value="300"/>
+</div>
+<div class="input-group">
+<label for="comments">Avg. comments per post</label>
+<input id="comments" type="number" min="0" placeholder="e.g. 15" value="15"/>
+</div>
+</div>
+
+<div class="result-block" id="result-block">
+<div class="result-main">
+<div class="result-label">Engagement rate</div>
+<div class="result-value" id="er-value">—</div>
+</div>
+<div class="result-benchmark" id="er-benchmark"></div>
+<div class="result-breakdown" id="er-breakdown"></div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How engagement rate works</h2>
+<p>The standard public-data formula is <code>(Likes + Comments) / Followers × 100</code>. It's a percentage: a 3% engagement rate means 3 of every 100 followers interact with your average post (via like or comment).</p>
+
+<h2>Benchmarks by follower size</h2>
+<table>
+<thead><tr><th>Tier</th><th>Followers</th><th>Average ER</th><th>Strong ER</th></tr></thead>
+<tbody>
+<tr><td>Nano</td><td>under 5K</td><td>4–6%</td><td>7%+</td></tr>
+<tr><td>Micro</td><td>5K–50K</td><td>2–3%</td><td>4%+</td></tr>
+<tr><td>Mid</td><td>50K–500K</td><td>1–2%</td><td>2.5%+</td></tr>
+<tr><td>Macro</td><td>500K–1M</td><td>0.8–1.5%</td><td>2%+</td></tr>
+<tr><td>Celebrity</td><td>1M+</td><td>0.5–1%</td><td>1.5%+</td></tr>
+</tbody>
+</table>
+<p style="font-size:13px;color:#888;">Source: aggregated across multiple 2024–2026 social-media-analytics industry reports. Real numbers vary by niche and posting cadence.</p>
+
+<h2>Why engagement matters more than follower count</h2>
+<ul>
+<li><strong>Algorithm signal</strong> — Instagram's feed and Explore ranking use engagement to decide which posts to surface. High-ER accounts get more organic reach per post.</li>
+<li><strong>Sponsorship value</strong> — brands often pay per-engagement, not per-follower. A 50K account with 5% ER can earn more than a 200K account with 0.8% ER.</li>
+<li><strong>Audience quality</strong> — high ER signals an active, real, interested audience. Low ER suggests followers may be inactive, bought, or off-niche.</li>
+</ul>
+
+<h2>How to improve your engagement rate</h2>
+<ul>
+<li>Post when YOUR audience is active (check Instagram Insights).</li>
+<li>Use carousels — they consistently outperform single-image posts.</li>
+<li>Ask questions in captions to drive comments.</li>
+<li>Reply to every comment in the first hour to push the algorithm.</li>
+<li>Stop buying followers — it tanks ER and is detectable.</li>
+</ul>
+</section>
+
+<script src="/tools/ig-engagement/ig-engagement.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

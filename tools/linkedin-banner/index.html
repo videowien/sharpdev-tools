@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Banner Image Sizer — Crop to 1584×396 | SharpDev.Tools</title>
+<meta content="Crop any image to LinkedIn's exact banner dimensions (1584×396). Drag to position, see the mobile crop zone. Free, runs in your browser — no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/linkedin-banner/" rel="canonical"/>
+<meta content="LinkedIn Banner Image Sizer — Crop to 1584×396 | SharpDev.Tools" property="og:title"/>
+<meta content="Crop any image to LinkedIn's exact banner dimensions (1584×396). Drag to position, see the mobile crop zone. Free, runs in your browser — no upload." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/linkedin-banner/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="LinkedIn Banner Image Sizer — Crop to 1584×396 | SharpDev.Tools" name="twitter:title"/>
+<meta content="Crop any image to LinkedIn's exact banner dimensions (1584×396). Drag to position, see the mobile crop zone. Free, runs in your browser — no upload." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"LinkedIn","item":"https://sharpdev.tools/#linkedin"},
+    {"@type":"ListItem","position":3,"name":"LinkedIn Banner Sizer","item":"https://sharpdev.tools/tools/linkedin-banner/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What size should a LinkedIn banner be?","acceptedAnswer":{"@type":"Answer","text":"Personal profile banner: 1584 × 396 pixels (4:1 aspect ratio). Company page cover: 1128 × 191 pixels. LinkedIn accepts JPG and PNG up to 8 MB."}},
+    {"@type":"Question","name":"How do I avoid LinkedIn cropping important parts?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn shows roughly the center-left third of your banner behind your profile photo on mobile (which itself is in the bottom-left). Keep important text/elements in the top-right and avoid putting anything critical in the bottom-left third. This tool overlays both safe zones so you can position the crop accordingly."}},
+    {"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The crop is computed via Canvas in your browser. Nothing is uploaded."}},
+    {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up, no watermark."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"LinkedIn Banner Sizer — SharpDev.Tools","url":"https://sharpdev.tools/tools/linkedin-banner/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/linkedin-banner/linkedin-banner.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('linkedin-banner');</script>
+<div class="page">
+<h1>LinkedIn Banner Image Sizer</h1>
+<p class="subtitle">Crop to 1584 × 396. Drag the image to position. Safe-zone overlays show what's hidden behind profile pic / cropped on mobile.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop an image here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">JPG, PNG, WebP — input image should be ≥1584px wide for best quality</p>
+</div>
+</div>
+</div>
+
+<div class="card editor-card" id="editor-card" style="display:none">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Zoom</label>
+<input id="zoom" type="range" min="100" max="300" step="5" value="100"/>
+<span class="opt-value" id="zoom-val">100%</span>
+</div>
+<div class="opt-group">
+<label class="checkbox-label"><input id="show-safe" type="checkbox" checked/><span>Show safe zones</span></label>
+</div>
+</div>
+
+<div class="canvas-wrap" id="canvas-wrap">
+<canvas id="display" width="792" height="198"></canvas>
+<div class="zone profile-pic-zone" id="zone-pp"></div>
+<div class="zone mobile-zone" id="zone-mobile"></div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="download-btn" type="button">Download 1584×396 PNG</button>
+<button class="btn btn-secondary" id="download-jpg-btn" type="button">Download 1584×396 JPG</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>LinkedIn banner safe zones</h2>
+<ul>
+<li><strong>Profile picture overlay</strong> — Your circular profile photo sits in the bottom-left of the banner on desktop. About 240×240 pixels of the banner are hidden under it. Don't put text or important content in that region.</li>
+<li><strong>Mobile crop</strong> — On mobile, LinkedIn crops the banner more aggressively (about 25% off each side). The mobile view shows roughly the center half horizontally.</li>
+<li><strong>Right-side text safe zone</strong> — The top-right and middle-right are most reliably visible across all surfaces (desktop, mobile, embedded previews).</li>
+</ul>
+
+<h2>Banner design tips</h2>
+<ul>
+<li>Use one strong message, top-right area</li>
+<li>Stay on-brand (your headshot's vibe + the banner should feel like the same designer made them)</li>
+<li>If you need text, make it bigger than feels right — at 1584×396 displayed in feeds at ~700px wide, type halves in size</li>
+<li>Avoid solid blocks of color behind where your profile pic goes — looks lazy when half is hidden</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Cropping happens entirely in your browser via Canvas. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/linkedin-banner/linkedin-banner.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

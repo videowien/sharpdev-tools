@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PDF to Word — Convert PDF Text to .docx (Editable) | SharpDev.Tools</title>
+<meta content="Convert PDF text to editable Word .docx. Best for text-heavy documents (articles, books, reports). Preserves headings; layout fidelity is limited. Browser-only, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-to-word/" rel="canonical"/>
+<meta content="PDF to Word — Convert PDF Text to .docx | SharpDev.Tools" property="og:title"/>
+<meta content="Convert PDF text to .docx. Text-only output with detected headings. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-to-word/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="PDF to Word — Convert PDF Text to .docx | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert PDF text to .docx. Browser-only." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"PDF","item":"https://sharpdev.tools/pdf/"},
+    {"@type":"ListItem","position":3,"name":"PDF to Word","item":"https://sharpdev.tools/tools/pdf-to-word/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Will the output look exactly like the PDF?","acceptedAnswer":{"@type":"Answer","text":"No — and you should be skeptical of any free tool that claims it does. This is honest text-only conversion. Paragraphs, headings, and basic text structure are preserved. Complex layouts (columns, tables, image positions) become single-column flowing text. For pixel-perfect Word output, Adobe Acrobat Pro and a few paid services use ML and still don't always nail it."}},
+    {"@type":"Question","name":"What's preserved?","acceptedAnswer":{"@type":"Answer","text":"Text content, paragraph breaks, headings (H1-H3 detected by font size), bullet lists. The result is editable in Word / Google Docs / LibreOffice. Image content is replaced with [image] placeholders."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is parsed and the .docx is built entirely in your browser via pdf.js + JSZip."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF to Word — SharpDev.Tools","url":"https://sharpdev.tools/tools/pdf-to-word/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-to-word/pdf-to-word.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-to-word');</script>
+<div class="page">
+<h1>PDF to Word (.docx)</h1>
+<p class="subtitle">Honest text-only conversion. Best for text-heavy documents (articles, books, reports).</p>
+
+<div class="card honest">
+<strong>⚠ Honest scope:</strong> This tool extracts text + detected headings into a clean .docx. It does <strong>NOT</strong> preserve complex layouts (multi-column, tables, image positioning). For pixel-perfect Word output you need Adobe Acrobat Pro — and even that isn't always perfect.
+</div>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop a PDF here or <span class="upload-link">click to browse</span></p>
+</div>
+</div>
+</div>
+
+<div class="card" id="result-card" style="display:none">
+<div class="file-info" id="file-info"></div>
+<label class="opt-label">Preview (first 1000 chars)</label>
+<pre class="preview" id="preview"></pre>
+
+<div class="action-row">
+<button class="btn btn-primary" id="dl-btn" type="button">Download .docx</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Pick a different file</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>When this works well</h2>
+<ul>
+<li><strong>Articles, blog posts, papers</strong> — text-driven content with clear hierarchy</li>
+<li><strong>Books and reports</strong> — single-column, paragraph-based layout</li>
+<li><strong>Legal documents</strong> where you need editable text and don't care about original formatting</li>
+</ul>
+
+<h2>When it'll disappoint</h2>
+<ul>
+<li><strong>Magazines / newspapers</strong> — multi-column flows into single-column gibberish</li>
+<li><strong>Forms with positioned fields</strong> — boxes / lines / labels lose their relationships</li>
+<li><strong>Spreadsheets exported as PDF</strong> — table structure is mostly lost; try a dedicated table extractor</li>
+<li><strong>Image-heavy designs</strong> — images become <code>[image]</code> placeholders</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Everything runs in your browser. pdf.js for parsing, JSZip for building the .docx file.</p>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/tools/pdf-to-word/pdf-to-word.js" type="module"></script>
+<script>renderFooter();</script>
+</body>
+</html>

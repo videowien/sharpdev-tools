@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>MAC Address Generator | SharpDev.Tools</title>
+<meta content="Free random MAC address generator. Create valid random MAC addresses with your choice of separator (colon, hyphen, dot or none) and case, generated as locally-administered unicast. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/mac-address/" rel="canonical"/>
+<meta content="MAC Address Generator | SharpDev.Tools" property="og:title"/>
+<meta content="Free random MAC address generator. Create valid random MAC addresses with your choice of separator (colon, hyphen, dot or none) and case, generated as locally-administered unicast. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mac-address/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="MAC Address Generator | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free random MAC address generator. Create valid random MAC addresses with your choice of separator (colon, hyphen, dot or none) and case, generated as locally-administered unicast. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Random MAC Address Generator","item":"https://sharpdev.tools/tools/mac-address/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a MAC address?","acceptedAnswer":{"@type":"Answer","text":"A Media Access Control address is a 48-bit hardware identifier for a network interface, usually shown as six pairs of hex digits like 02:1A:2B:3C:4D:5E."}},{"@type":"Question","name":"Are these safe to use for testing?","acceptedAnswer":{"@type":"Answer","text":"Yes. They're generated as locally-administered (the second bit of the first byte is set) and unicast, the range reserved for local use, so they won't clash with manufacturer-assigned addresses."}},{"@type":"Question","name":"What's the dot format?","acceptedAnswer":{"@type":"Answer","text":"Cisco-style notation groups the address into three blocks of four hex digits, like 021a.2b3c.4d5e."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Random MAC Address Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/mac-address/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mac-address/mac-address.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mac-address');</script>
+<div class="page">
+<h1>Random MAC Address Generator</h1>
+<p class="subtitle">Generate random MAC addresses with your choice of separator and case. Locally-administered, unicast.</p>
+<div class="row">
+<div class="field"><label for="sep">Separator</label><select id="sep"><option value=":">Colon (:)</option><option value="-">Hyphen (-)</option><option value=".">Dot (.)</option><option value="">None</option></select></div>
+<div class="field"><label for="case">Case</label><select id="case"><option value="upper">UPPER</option><option value="lower">lower</option></select></div>
+<div class="field"><label for="count">How many?</label><input type="number" id="count" value="5" min="1" max="100"></div></div>
+<div class="actions"><button class="small-btn" id="gen">Generate</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>MAC address(es)</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a MAC address?</summary><p>A Media Access Control address is a 48-bit hardware identifier for a network interface, usually shown as six pairs of hex digits like 02:1A:2B:3C:4D:5E.</p></details>
+<details><summary>Are these safe to use for testing?</summary><p>Yes. They're generated as locally-administered (the second bit of the first byte is set) and unicast, the range reserved for local use, so they won't clash with manufacturer-assigned addresses.</p></details>
+<details><summary>What's the dot format?</summary><p>Cisco-style notation groups the address into three blocks of four hex digits, like 021a.2b3c.4d5e.</p></details>
+</section>
+<script src="/tools/mac-address/mac-address.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

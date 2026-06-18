@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROI Calculator — Return on Investment + Annualised % | SharpDev.Tools</title>
+<meta content="Calculate ROI percentage, net profit, and annualised return for any investment. Compare projects by ROI. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/roi/" rel="canonical"/>
+<meta content="ROI Calculator — Return on Investment + Annualised | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate ROI percentage, net profit, and annualised return. Compare investments. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/roi/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="ROI Calculator — Return on Investment + Annualised | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate ROI %, net profit, and annualised return." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/money-finance/"},
+    {"@type":"ListItem","position":3,"name":"ROI Calculator","item":"https://sharpdev.tools/tools/roi/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the ROI formula?","acceptedAnswer":{"@type":"Answer","text":"ROI = (Final value − Initial cost) ÷ Initial cost × 100. It's a percentage. A 20% ROI on a $10k investment means $2k of profit."}},
+    {"@type":"Question","name":"What's annualised ROI?","acceptedAnswer":{"@type":"Answer","text":"ROI doesn't account for how LONG the investment took. Annualised converts the total return into an equivalent yearly compounded rate, so you can fairly compare a 2-year project against a 5-year one. Formula: ((Final/Initial)^(1/years)) − 1."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ROI Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/roi/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/roi/roi.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('roi');</script>
+<div class="page">
+<h1>ROI Calculator</h1>
+<p class="subtitle">Return on investment — ROI %, net profit, annualised %.</p>
+
+<div class="card">
+<div class="form-grid">
+<div class="form-row">
+<label class="opt-label">Initial investment</label>
+<div class="row">
+<select id="currency"><option>$</option><option>€</option><option>£</option><option>¥</option></select>
+<input id="initial" type="number" step="100" min="0" value="10000"/>
+</div>
+</div>
+<div class="form-row">
+<label class="opt-label">Final value</label>
+<div class="row">
+<span class="currency-mirror" id="cur-mirror">$</span>
+<input id="final" type="number" step="100" value="13500"/>
+</div>
+</div>
+<div class="form-row">
+<label class="opt-label">Investment duration (years)</label>
+<input id="years" type="number" step="0.1" min="0.1" value="3"/>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="result-grid">
+<div class="result-block highlight">
+<div class="result-label">ROI</div>
+<div class="result-value" id="r-roi">—</div>
+<div class="result-sub" id="r-roi-label">overall</div>
+</div>
+<div class="result-block">
+<div class="result-label">Net profit</div>
+<div class="result-value" id="r-profit">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Annualised ROI</div>
+<div class="result-value" id="r-annual">—</div>
+<div class="result-sub">per year</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What's a "good" ROI?</h2>
+<ul>
+<li><strong>S&amp;P 500 long-term average</strong> — ~10% annualised</li>
+<li><strong>Real estate</strong> — 8-12% annualised including rental yield</li>
+<li><strong>High-yield savings</strong> — 4-5% (currently, late-2025)</li>
+<li><strong>Business / startup</strong> — VCs target 25-40% annualised on portfolio; failures included</li>
+<li><strong>Inflation</strong> — 2-3% baseline; any return below this is a loss in real terms</li>
+</ul>
+
+<h2>ROI vs annualised ROI — why both matter</h2>
+<p>A 50% ROI over 10 years = 4.1% annualised — slower than the S&amp;P. A 30% ROI over 2 years = 14% annualised — way better. Always check both numbers before comparing investments of different durations.</p>
+
+<h2>Privacy</h2>
+<p>All math runs in your browser.</p>
+</section>
+
+<script src="/tools/roi/roi.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* Recipe Scaler — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-group input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 9px 12px; border-radius: 6px; font-size: 14px;
+  font-family: 'SF Mono', monospace; width: 100px; text-align: center;
+}
+
+.scale-val { font-size: 22px; color: #ff4444; font-family: 'SF Mono', monospace; font-weight: 700; padding-top: 6px; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
+.split textarea {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 13px;
+  font-family: 'SF Mono', monospace; resize: vertical; line-height: 1.6;
+}
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .split { grid-template-columns: 1fr; }
+}

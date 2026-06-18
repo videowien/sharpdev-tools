@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Online Diff Tool — Compare Two Texts Word-by-Word | SharpDev.Tools</title>
+<meta content="Free online diff tool — compare two texts and see word-by-word what changed. Side-by-side or inline view, instant highlighting. No sign-up, no ads, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/diff/" rel="canonical"/>
+<meta content="Online Diff Tool — Compare Two Texts Word-by-Word | SharpDev.Tools" property="og:title"/>
+<meta content="Free online diff tool — compare two texts and see word-by-word what changed. Side-by-side or inline view, instant highlighting. No sign-up, no ads, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/diff/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Online Diff Tool — Compare Two Texts Word-by-Word | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free online diff tool — compare two texts and see word-by-word what changed. Side-by-side or inline view, instant highlighting. No sign-up, no ads, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Text Diff",
+        "item": "https://sharpdev.tools/tools/diff/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I compare two texts online with this diff tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Paste your original text in the left box and the changed version in the right box. Click Compare and the tool highlights every added, deleted and changed word. Toggle between side-by-side and inline view depending on what's easier to read."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a word diff and how is it different from line diff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A word diff highlights changes at the word level — useful for prose, paragraphs and natural language. A line diff (what code tools like git diff use) marks whole lines as added/removed. This tool does word-level diffing, which catches small edits inside long sentences without flagging the whole line."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I compare two strings to find the difference?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — paste any two strings (short or long) and click Compare. Works for short snippets like commit messages or full multi-paragraph documents. The diff is computed in the browser so even sensitive text stays local."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between side-by-side and inline diff view?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Side-by-side shows the original on the left and the changed text on the right, easy for scanning whole sections. Inline shows one combined stream with red strikethroughs for deletions and green for additions, easy for proofreading edits sequentially."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the online diff tool free and is my text uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completely free, no sign-up, no ads, no usage limits. Diffing runs entirely in your browser in JavaScript — neither the original nor the compared text is ever uploaded or logged."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Text Diff — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/diff/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/diff/diff.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('diff');</script>
+<div class="page">
+<h1>Online Diff Tool — Compare Two Texts</h1>
+<p class="subtitle">Paste two versions and see word-by-word what changed. Side-by-side or inline view.</p>
+<div class="input-row">
+<div class="input-col">
+<label for="text-a">Original</label>
+<textarea id="text-a" placeholder="Paste the original text here..." spellcheck="false"></textarea>
+</div>
+<div class="input-col">
+<label for="text-b">Changed</label>
+<textarea id="text-b" placeholder="Paste the changed text here..." spellcheck="false"></textarea>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="compare()">Compare</button>
+<button class="btn btn-secondary" onclick="swapTexts()">Swap</button>
+<button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+<div class="view-toggle">
+<button class="toggle-btn active" id="btn-side" onclick="setView('side')">Side by side</button>
+<button class="toggle-btn" id="btn-inline" onclick="setView('inline')">Inline</button>
+</div>
+</div>
+<div class="stats" id="stats" style="display:none"></div>
+<div class="result-side" id="result-side" style="display:none">
+<div class="diff-panel">
+<div class="diff-header">Original</div>
+<div class="diff-content" id="diff-left"></div>
+</div>
+<div class="diff-panel">
+<div class="diff-header">Changed</div>
+<div class="diff-content" id="diff-right"></div>
+</div>
+</div>
+<div class="result-inline" id="result-inline" style="display:none">
+<div class="diff-content" id="diff-inline"></div>
+</div>
+<div class="no-changes" id="no-changes" style="display:none">
+    Both texts are identical. No differences found.
+  </div>
+</div>
+
+<section class="info-block">
+<h2>Online diff — compare two texts in your browser</h2>
+<p>This is a free <strong>online diff tool</strong> for prose, paragraphs and any string text. Paste original on the left, changed on the right, click Compare — every added word is highlighted green, every deleted word red, every changed word is shown both ways. Everything runs locally in JavaScript so even sensitive content (contracts, drafts, NDAs, internal docs) stays on your device.</p>
+
+<h2>Word diff vs line diff — what this tool does</h2>
+<p>This is a <strong>word-level diff</strong>, also called a <em>word diff</em>. It catches small edits inside long sentences without flagging the entire line as changed. That's different from a <em>line diff</em> (what <code>git diff</code> and code review tools use), which marks whole lines as added/removed. For natural-language editing — proofreading, copy revision, contract comparison, AI-output comparison — word-level diffing is usually what you want.</p>
+
+<h2>Common use cases for the diff tool</h2>
+<ul>
+<li><strong>Proofreading edits</strong> — see exactly what your editor changed in your draft</li>
+<li><strong>Comparing AI outputs</strong> — diff two LLM responses to the same prompt</li>
+<li><strong>Contract revision tracking</strong> — see what the other party changed in v2 vs v1</li>
+<li><strong>String comparison for debugging</strong> — why is this string slightly different from what the API expected?</li>
+<li><strong>Translation review</strong> — compare an updated translation against the previous version</li>
+<li><strong>Commit message review</strong> — quick check before you hit send</li>
+</ul>
+
+<h2>Side-by-side vs inline view</h2>
+<p>Toggle the view at the top of the result:</p>
+<ul>
+<li><strong>Side-by-side</strong> — original left, changed right, easy for scanning whole sections side by side. Best for long-form content.</li>
+<li><strong>Inline</strong> — single combined stream with red strikethrough for deletions and green underlines for additions. Best for proofreading sequential edits or short snippets.</li>
+</ul>
+
+<h2>Privacy &amp; how it works</h2>
+<p>The diff algorithm runs entirely client-side via JavaScript. Neither the original nor the compared text is uploaded, logged, cached or sent anywhere. The tool doesn't even keep a history — refresh the page and everything is gone.</p>
+</section>
+
+<script src="/tools/diff/diff.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

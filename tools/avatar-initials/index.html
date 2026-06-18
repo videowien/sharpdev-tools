@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Initials Avatar Generator — Letter on Color Circle | SharpDev.Tools</title>
+<meta content="Generate clean initials avatars (letter on colored circle) like Gmail and Slack. Custom background, text color, size, shape (circle / square / rounded). PNG + SVG export." name="description"/>
+<link href="https://sharpdev.tools/tools/avatar-initials/" rel="canonical"/>
+<meta content="Initials Avatar Generator — Letter on Color Circle | SharpDev.Tools" property="og:title"/>
+<meta content="Generate clean initials avatars like Gmail / Slack. Custom colors, sizes, shapes. PNG + SVG." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/avatar-initials/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Initials Avatar Generator — Letter on Color Circle | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate clean initials avatars. Custom colors, sizes, shapes." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Initials Avatar Generator","item":"https://sharpdev.tools/tools/avatar-initials/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How are initials picked?","acceptedAnswer":{"@type":"Answer","text":"From the first and last word of your input. 'Gillian Scharf' → GS. 'Sharpdev' → S. You can override by typing custom initials directly."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The image is rendered locally via Canvas. Nothing is uploaded."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Initials Avatar Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/avatar-initials/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/avatar-initials/avatar-initials.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('avatar-initials');</script>
+<div class="page">
+<h1>Initials Avatar Generator</h1>
+<p class="subtitle">Letter on a colored circle, like Gmail / Slack / GitHub. PNG + SVG export.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="name">Name (initials auto-derived)</label>
+<input id="name" type="text" placeholder="Gillian Scharf" value="Gillian Scharf"/>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Initials override</label>
+<input id="initials" type="text" maxlength="3" placeholder="GS"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Background</label>
+<input id="bg" type="color" value="#ff4444"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Text color</label>
+<input id="fg" type="color" value="#ffffff"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Shape</label>
+<select id="shape">
+<option value="circle" selected>Circle</option>
+<option value="square">Square</option>
+<option value="rounded">Rounded</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Size</label>
+<input id="size" type="number" min="64" max="1024" step="32" value="256"/>
+<span class="unit">px</span>
+</div>
+<label class="checkbox-label">
+<input id="bold" type="checkbox" checked/>
+<span>Bold</span>
+</label>
+</div>
+</div>
+
+<div class="card">
+<div class="preview-wrap">
+<canvas id="avatar" width="256" height="256"></canvas>
+</div>
+<div class="action-row">
+<button class="btn btn-primary" id="dl-png" type="button">Download PNG</button>
+<button class="btn btn-secondary" id="dl-svg" type="button">Download SVG</button>
+<button class="btn btn-secondary" id="random-color" type="button">Random color</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Where to use initials avatars</h2>
+<ul>
+<li><strong>Default user avatars</strong> — for accounts without an uploaded photo (Gmail, Slack, Notion all do this)</li>
+<li><strong>Team directory</strong> — every team member gets a colored letter circle as a fallback</li>
+<li><strong>Comment systems</strong> — assign a deterministic color per commenter so threads have visual variety</li>
+<li><strong>Email signatures</strong> — small initial circle next to your name reads more polished than a Gravatar placeholder</li>
+</ul>
+
+<h2>Color tips</h2>
+<ul>
+<li><strong>Saturated, mid-light backgrounds</strong> work best — white text on too-light a background is unreadable</li>
+<li><strong>One color per user, deterministic</strong> — derive from name hash so the same person always gets the same circle</li>
+<li><strong>Avoid grey</strong> for branded contexts — it reads as "missing image" not "stylish avatar"</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The avatar is rendered locally via Canvas. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/avatar-initials/avatar-initials.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

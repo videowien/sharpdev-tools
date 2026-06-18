@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Line Sorter — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Sort alphabetically, deduplicate, reverse, trim and number lines of any list in one click. Free online Line Sorter, no sign-up, no ads, no tracking." name="description"/>
+<link href="https://sharpdev.tools/tools/lines/" rel="canonical"/>
+<meta content="Line Sorter — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Sort alphabetically, deduplicate, reverse, trim and number lines of any list in one click. Free online Line Sorter, no sign-up, no ads, no tracking." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/lines/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Line Sorter — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Sort alphabetically, deduplicate, reverse, trim and number lines of any list in one click. Free online Line Sorter, no sign-up, no ads, no tracking." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Line Sorter",
+        "item": "https://sharpdev.tools/tools/lines/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can the Line Sorter do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can sort alphabetically or numerically, remove duplicates, reverse order, trim whitespace, add line numbers and filter blank lines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data kept private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — everything runs in your browser, so your lists never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free forever with no ads and no account required."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Line Sorter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/lines/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/lines/lines.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('lines');</script>
+<div class="page">
+<h1>Line Sorter &amp; Deduplicator</h1>
+<p class="subtitle">Clean up any list — sort, dedupe, reverse, trim.</p>
+<div class="actions">
+<button class="btn" onclick="apply('sort-asc')">Sort A → Z</button>
+<button class="btn" onclick="apply('sort-desc')">Sort Z → A</button>
+<button class="btn" onclick="apply('sort-len-asc')">Shortest first</button>
+<button class="btn" onclick="apply('sort-len-desc')">Longest first</button>
+<button class="btn" onclick="apply('reverse')">Reverse</button>
+<button class="btn" onclick="apply('shuffle')">Shuffle</button>
+<button class="btn" onclick="apply('dedupe')">Remove duplicates</button>
+<button class="btn" onclick="apply('trim')">Trim whitespace</button>
+<button class="btn" onclick="apply('blank')">Remove blank lines</button>
+<button class="btn" onclick="apply('number')">Number lines</button>
+</div>
+<div class="grid">
+<div class="col">
+<label for="input">Input</label>
+<textarea id="input" placeholder="Paste your list here, one item per line..." spellcheck="false"></textarea>
+<div class="stats" id="stats-in">0 lines</div>
+</div>
+<div class="col">
+<label for="output">Output</label>
+<textarea id="output" placeholder="Result will appear here..." spellcheck="false"></textarea>
+<div class="stats-row">
+<span class="stats" id="stats-out">0 lines</span>
+<div class="small-actions">
+<button class="small-btn" onclick="copyOutput()">Copy</button>
+<button class="small-btn" onclick="swap()">Use as input</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="/tools/lines/lines.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

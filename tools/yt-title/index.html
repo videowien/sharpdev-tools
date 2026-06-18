@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Title Counter — 100 Char Limit + Search Preview | SharpDev.Tools</title>
+<meta content="Live 100-character YouTube title counter. See exactly how your title appears in search results, suggested videos and mobile. Truncation marked. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/yt-title/" rel="canonical"/>
+<meta content="YouTube Title Counter — 100 Chars + Search Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Live 100-character YouTube title counter with search-result preview and truncation marks for desktop / mobile / suggested." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/yt-title/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="YouTube Title Counter — 100 Chars + Search Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Live 100-character YouTube title counter with search-result preview and truncation marks." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"YouTube","item":"https://sharpdev.tools/youtube/"},
+    {"@type":"ListItem","position":3,"name":"YouTube Title Counter","item":"https://sharpdev.tools/tools/yt-title/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the YouTube title character limit?","acceptedAnswer":{"@type":"Answer","text":"100 characters total. But the visible cutoff varies — about 70 chars on desktop search, 50-60 on mobile, 40-45 in suggested videos and end screens. The tool shows truncation marks at each cutoff."}},
+    {"@type":"Question","name":"What characters count?","acceptedAnswer":{"@type":"Answer","text":"Every visible character including spaces, emojis, brackets, punctuation. The tool counts each emoji as 1 grapheme (matching YouTube's count)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The title stays in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Title Counter — SharpDev.Tools","url":"https://sharpdev.tools/tools/yt-title/","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/yt-title/yt-title.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('yt-title');</script>
+<div class="page">
+<h1>YouTube Title Counter</h1>
+<p class="subtitle">100-character limit with truncation marks for search, suggested, and mobile.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="title">Your title</label>
+<textarea id="title" rows="2" placeholder="How I Built 143 Free Tools in 6 Months (no framework, no ads)">How I Built 143 Free Tools in 6 Months (no framework, no ads)</textarea>
+<div class="counter-row">
+<span id="counter" class="counter">0 / 100</span>
+<span class="counter-bar"><span id="counter-fill" class="counter-fill"></span></span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Search result preview (desktop, ~70 chars before cut)</label>
+<div class="preview-search">
+<div class="preview-thumb"></div>
+<div class="preview-meta">
+<div class="preview-title" id="p-search">—</div>
+<div class="preview-channel">SharpDev.Tools · 1.2M views · 3 weeks ago</div>
+<div class="preview-desc">Free utility tools — no sign-up, no ads, no cookies. Cropping happens in your browser…</div>
+</div>
+</div>
+
+<label class="opt-label" style="margin-top:24px">Suggested video preview (sidebar, ~45 chars before cut)</label>
+<div class="preview-suggested">
+<div class="preview-thumb-sm"></div>
+<div class="preview-meta-sm">
+<div class="preview-title" id="p-suggested">—</div>
+<div class="preview-channel-sm">SharpDev.Tools</div>
+</div>
+</div>
+
+<label class="opt-label" style="margin-top:24px">Mobile preview (~55 chars before cut)</label>
+<div class="preview-mobile">
+<div class="preview-thumb-mobile"></div>
+<div class="preview-title-mobile" id="p-mobile">—</div>
+<div class="preview-channel-mobile">SharpDev.Tools · 1.2M views</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>The hidden YouTube title cutoffs</h2>
+<p>YouTube technically allows 100 characters. But what users actually see depends on where the title appears:</p>
+<table class="cutoff-table">
+<tr><th>Surface</th><th>Visible chars</th></tr>
+<tr><td>Desktop search results</td><td>~70</td></tr>
+<tr><td>Mobile search results</td><td>~55</td></tr>
+<tr><td>Suggested videos sidebar</td><td>~45</td></tr>
+<tr><td>End screens / Mobile feed</td><td>~40</td></tr>
+<tr><td>Notifications</td><td>~30</td></tr>
+</table>
+
+<h2>Best practice — front-load the hook</h2>
+<ul>
+<li><strong>First 40 chars carry the click</strong> — the rest is for SEO long-tail keywords</li>
+<li><strong>Lead with the value proposition or pattern interrupt</strong> — "I tried X for 30 days" beats "What I learned trying X"</li>
+<li><strong>Use brackets for tone</strong> — [Free], (no API needed), {2026 update} all signal type-of-content</li>
+<li><strong>Avoid all-caps</strong> — YouTube downranks it as clickbait</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Counter and preview run entirely in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/yt-title/yt-title.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

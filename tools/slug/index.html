@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Slug Generator — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Turn any text into a clean URL slug that handles accents, special characters and common stopwords. Free online slug generator, no ads, no sign-up required." name="description"/>
+<link href="https://sharpdev.tools/tools/slug/" rel="canonical"/>
+<meta content="Slug Generator — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Turn any text into a clean URL slug that handles accents, special characters and common stopwords. Free online slug generator, no ads, no sign-up required." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/slug/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Slug Generator — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Turn any text into a clean URL slug that handles accents, special characters and common stopwords. Free online slug generator, no ads, no sign-up required." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Text",
+        "item": "https://sharpdev.tools/#text"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Slug Generator",
+        "item": "https://sharpdev.tools/tools/slug/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the Slug Generator handle accents and special characters?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It transliterates accented characters (like ä, é, ñ) to ASCII, strips symbols, collapses whitespace and optionally removes common stopwords."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free to use with no ads and no account needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my input private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The generator runs in your browser; nothing is sent to a server."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Slug Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/slug/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/slug/slug.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('slug');</script>
+<div class="page">
+<h1>Slug Generator</h1>
+<p class="subtitle">Turn any text into a clean URL slug. Also handles accents and special characters.</p>
+<label for="input-text">Text</label>
+<textarea id="input-text" oninput="generate()" placeholder="My Awesome Blog Post — Part 1!">My Awesome Blog Post — Part 1!</textarea>
+<div class="controls">
+<label class="toggle">
+<input checked="" name="sep" onchange="generate()" type="radio" value="-"/>
+<span>Hyphens (my-post)</span>
+</label>
+<label class="toggle">
+<input name="sep" onchange="generate()" type="radio" value="_"/>
+<span>Underscores (my_post)</span>
+</label>
+<label class="toggle">
+<input checked="" id="opt-lower" onchange="generate()" type="checkbox"/>
+<span>Lowercase</span>
+</label>
+<label class="toggle">
+<input id="opt-strip-stop" onchange="generate()" type="checkbox"/>
+<span>Remove stopwords (a, the, of...)</span>
+</label>
+</div>
+<label for="output">Slug</label>
+<div class="output-box">
+<input id="output" readonly="" type="text"/>
+<button class="copy-btn" onclick="copySlug()" title="Copy">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+</button>
+</div>
+<div class="info-card">
+<h3>What's a slug?</h3>
+<p>A URL slug is the part of the URL that identifies a specific page in a human-readable way. For example in <code>yoursite.com/my-great-post</code>, the slug is <code>my-great-post</code>. Good slugs are short, descriptive, lowercase, and use hyphens instead of spaces.</p>
+</div>
+</div>
+<script src="/tools/slug/slug.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

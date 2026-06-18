@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Triangle Generator — Pure CSS Triangles with the Border Trick | SharpDev.Tools</title>
+<meta content="Generate a pure CSS triangle in any direction, size and color using the border trick. Live preview and copy-paste CSS. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-triangle/" rel="canonical"/>
+<meta content="CSS Triangle Generator — Pure CSS Triangles with the Border Trick | SharpDev.Tools" property="og:title"/>
+<meta content="Generate a pure CSS triangle in any direction, size and color using the border trick. Live preview and copy-paste CSS. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-triangle/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Triangle Generator — Pure CSS Triangles with the Border Trick | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate a pure CSS triangle in any direction, size and color using the border trick. Live preview and copy-paste CSS. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Triangle Generator","item":"https://sharpdev.tools/tools/css-triangle/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does a CSS triangle work?","acceptedAnswer":{"@type":"Answer","text":"It uses the 'border trick': an element with zero width and height but thick borders renders each border as a trapezoid meeting at 45-degree diagonals. Make three borders transparent and one colored, and the colored one becomes a triangle. This tool writes that CSS for you."}},{"@type":"Question","name":"Why use a CSS triangle instead of an image or SVG?","acceptedAnswer":{"@type":"Answer","text":"A CSS triangle needs no extra HTTP request, scales crisply, and is trivial to recolor. It is the classic way to make speech-bubble tails, dropdown carets and tooltips arrows."}},{"@type":"Question","name":"Can I make triangles pointing diagonally?","acceptedAnswer":{"@type":"Answer","text":"Yes. Besides the four cardinal directions, the generator includes the four diagonal (corner) triangles, which use two colored borders meeting at a corner."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Triangle Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/css-triangle/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-triangle/css-triangle.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-triangle');</script>
+<div class="page">
+<h1>CSS Triangle Generator</h1>
+<p class="subtitle">Pure CSS triangles in any direction using the border trick. Live preview, copy the CSS.</p>
+<div class="row">
+<div class="field"><label for="dir">Direction</label><select id="dir">
+<option value="up">Up &#9650;</option><option value="down">Down &#9660;</option>
+<option value="left">Left &#9664;</option><option value="right">Right &#9654;</option>
+<option value="up-left">Up-left</option><option value="up-right">Up-right</option>
+<option value="down-left">Down-left</option><option value="down-right">Down-right</option>
+</select></div>
+<div class="field"><label for="size">Size: <span id="size-val">40</span>px</label><input type="range" id="size" min="8" max="120" value="40"></div>
+<div class="field"><label for="col">Color</label><input type="color" id="col" value="#ff4444"></div>
+</div>
+<div style="height:180px;background:#0d0d0d;border:1px solid #2a2a2a;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><div id="tri"></div></div>
+<div class="out-head"><label for="out">CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does a CSS triangle work?</summary><p>It uses the 'border trick': an element with zero width and height but thick borders renders each border as a trapezoid meeting at 45-degree diagonals. Make three borders transparent and one colored, and the colored one becomes a triangle. This tool writes that CSS for you.</p></details>
+<details><summary>Why use a CSS triangle instead of an image or SVG?</summary><p>A CSS triangle needs no extra HTTP request, scales crisply, and is trivial to recolor. It is the classic way to make speech-bubble tails, dropdown carets and tooltips arrows.</p></details>
+<details><summary>Can I make triangles pointing diagonally?</summary><p>Yes. Besides the four cardinal directions, the generator includes the four diagonal (corner) triangles, which use two colored borders meeting at a corner.</p></details>
+</section>
+<script src="/tools/css-triangle/css-triangle.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

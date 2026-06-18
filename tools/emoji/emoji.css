@@ -1,0 +1,23 @@
+.page { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 20px; }
+.em-search-row { margin-bottom: 14px; }
+#em-search { width: 100%; padding: 14px 18px; background: #141414; border: 1px solid #262626; color: #e1e1e1; font-size: 15px; border-radius: 10px; outline: none; transition: border-color 0.15s; }
+#em-search:focus { border-color: #ff4444; }
+.em-cats { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.em-cat-btn { padding: 7px 14px; background: #141414; border: 1px solid #262626; color: #ccc; font-size: 13px; font-weight: 500; border-radius: 999px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+.em-cat-btn:hover { border-color: #ff4444; color: #fff; }
+.em-cat-btn.active { border-color: #ff4444; color: #ff4444; }
+.em-copied { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); background: #1a1a1a; border: 1px solid #4ade80; color: #4ade80; padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; z-index: 1000; animation: pop 0.2s ease-out; }
+@keyframes pop { from { transform: translateX(-50%) scale(0.8); opacity: 0; } to { transform: translateX(-50%) scale(1); opacity: 1; } }
+.em-copied span { font-size: 16px; margin-left: 6px; }
+.em-recent { margin-bottom: 24px; padding: 14px 18px; background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 12px; }
+.em-recent h2, .em-list h2 { font-size: 12px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.em-list { display: flex; flex-direction: column; gap: 22px; }
+.em-section { }
+.em-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+.em-btn { aspect-ratio: 1/1; background: transparent; border: 1px solid transparent; border-radius: 8px; font-size: 26px; cursor: pointer; transition: all 0.1s; padding: 0; display: flex; align-items: center; justify-content: center; }
+.em-btn:hover { background: #141414; border-color: #ff4444; transform: scale(1.15); }
+.em-empty { text-align: center; padding: 40px; color: #555; font-size: 14px; }
+@media (max-width: 800px) { .em-grid { grid-template-columns: repeat(8, 1fr); } .em-btn { font-size: 22px; } .page h1 { font-size: 28px; } }
+@media (max-width: 500px) { .em-grid { grid-template-columns: repeat(6, 1fr); } }

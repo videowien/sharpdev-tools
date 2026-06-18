@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSON to Python Dataclass Converter | SharpDev.Tools</title>
+<meta content="Free JSON to Python dataclass converter. Paste a JSON object and generate Python @dataclass definitions with inferred types, nested classes and lists. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/json-to-python/" rel="canonical"/>
+<meta content="JSON to Python Dataclass Converter | SharpDev.Tools" property="og:title"/>
+<meta content="Free JSON to Python dataclass converter. Paste a JSON object and generate Python @dataclass definitions with inferred types, nested classes and lists. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json-to-python/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSON to Python Dataclass Converter | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free JSON to Python dataclass converter. Paste a JSON object and generate Python @dataclass definitions with inferred types, nested classes and lists. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"JSON to Python Dataclass","item":"https://sharpdev.tools/tools/json-to-python/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this generate?","acceptedAnswer":{"@type":"Answer","text":"Python @dataclass definitions matching your JSON shape \u2014 one class per nested object, with field types inferred (str, int, float, bool, list[...])."}},{"@type":"Question","name":"How are types decided?","acceptedAnswer":{"@type":"Answer","text":"From the JSON values: strings become str, whole numbers int, decimals float, true/false bool, arrays list[...]. Nulls become Any. Refine as needed for your data."}},{"@type":"Question","name":"Does it handle nested objects?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each nested object becomes its own dataclass, referenced by a field, with the leaf classes defined first so the file is valid as-is."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"JSON to Python Dataclass \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/json-to-python/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json-to-python/json-to-python.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json-to-python');</script>
+<div class="page">
+<h1>JSON to Python Dataclass</h1>
+<p class="subtitle">Paste JSON and get Python dataclasses with inferred types and nested classes.</p>
+<div class="field"><label for="in">JSON</label><textarea id="in" style="min-height:140px;">{"id": 1, "name": "Ada", "active": true, "score": 9.5, "tags": ["a", "b"], "address": {"city": "Vienna", "zip": "1010"}}</textarea></div>
+<div class="actions"><button class="small-btn" id="gen">Generate</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Python dataclasses</label></div>
+<textarea class="output" id="out" readonly style="min-height:200px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does this generate?</summary><p>Python @dataclass definitions matching your JSON shape — one class per nested object, with field types inferred (str, int, float, bool, list[...]).</p></details>
+<details><summary>How are types decided?</summary><p>From the JSON values: strings become str, whole numbers int, decimals float, true/false bool, arrays list[...]. Nulls become Any. Refine as needed for your data.</p></details>
+<details><summary>Does it handle nested objects?</summary><p>Yes. Each nested object becomes its own dataclass, referenced by a field, with the leaf classes defined first so the file is valid as-is.</p></details>
+</section>
+<script src="/tools/json-to-python/json-to-python.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

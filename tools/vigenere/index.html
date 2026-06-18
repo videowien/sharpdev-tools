@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Vigenere Cipher Encoder / Decoder | SharpDev.Tools</title>
+<meta content="Encode or decode text with the Vigenere keyword cipher. Live, two-way, runs entirely in your browser. Free classical cipher tool." name="description"/>
+<link href="https://sharpdev.tools/tools/vigenere/" rel="canonical"/>
+<meta content="Vigenere Cipher Encoder / Decoder | SharpDev.Tools" property="og:title"/>
+<meta content="Encode or decode text with the Vigenere keyword cipher. Live, two-way, runs entirely in your browser. Free classical cipher tool." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/vigenere/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Vigenere Cipher Encoder / Decoder | SharpDev.Tools" name="twitter:title"/>
+<meta content="Encode or decode text with the Vigenere keyword cipher. Live, two-way, runs entirely in your browser. Free classical cipher tool." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Vigenere Cipher","item":"https://sharpdev.tools/tools/vigenere/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is Vigenere different from a Caesar cipher?","acceptedAnswer":{"@type":"Answer","text":"A Caesar cipher shifts every letter by the same fixed amount. Vigenere uses a keyword, so each position is shifted by a different amount based on the corresponding key letter, cycling through the keyword. That makes simple frequency analysis much harder."}},{"@type":"Question","name":"Is the Vigenere cipher secure?","acceptedAnswer":{"@type":"Answer","text":"No. It is a classical cipher, breakable with known techniques (Kasiski examination, frequency analysis on the key length). Use it for puzzles and learning, never for real secrets."}},{"@type":"Question","name":"What happens to spaces and punctuation?","acceptedAnswer":{"@type":"Answer","text":"Only letters are enciphered. Spaces, digits and punctuation pass through unchanged, and the original upper/lower case is preserved."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Vigenere Cipher \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/vigenere/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/vigenere/vigenere.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('vigenere');</script>
+<div class="page">
+<h1>Vigenere Cipher</h1>
+<p class="subtitle">Keyword-based classical cipher. Enter a key, encode or decode. Letters only are shifted.</p>
+<div class="row">
+<div class="field" style="flex:0 0 220px"><label for="key">Keyword</label><input type="text" id="key" value="SHARPDEV"></div>
+<div class="actions" style="align-items:center"><button class="small-btn" id="enc">Encode &#8595;</button><button class="small-btn" id="dec">Decode &#8593;</button></div>
+</div>
+<div class="field"><label for="in">Text</label><textarea id="in" placeholder="Type or paste text..."></textarea></div>
+<div class="out-head"><label for="out">Output</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is Vigenere different from a Caesar cipher?</summary><p>A Caesar cipher shifts every letter by the same fixed amount. Vigenere uses a keyword, so each position is shifted by a different amount based on the corresponding key letter, cycling through the keyword. That makes simple frequency analysis much harder.</p></details>
+<details><summary>Is the Vigenere cipher secure?</summary><p>No. It is a classical cipher, breakable with known techniques (Kasiski examination, frequency analysis on the key length). Use it for puzzles and learning, never for real secrets.</p></details>
+<details><summary>What happens to spaces and punctuation?</summary><p>Only letters are enciphered. Spaces, digits and punctuation pass through unchanged, and the original upper/lower case is preserved.</p></details>
+</section>
+<script src="/tools/vigenere/vigenere.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

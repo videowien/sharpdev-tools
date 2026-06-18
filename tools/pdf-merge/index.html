@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Merge PDF Online — Combine Multiple PDFs Into One | SharpDev.Tools</title>
+<meta content="Merge PDF files online — free, instant, runs in your browser so your PDFs never get uploaded. Drag multiple PDFs, reorder them, click merge. Single combined PDF downloads with all pages in your chosen order." name="description"/>
+<link href="https://sharpdev.tools/tools/pdf-merge/" rel="canonical"/>
+<meta content="Merge PDF Online — Combine Multiple PDFs Into One | SharpDev.Tools" property="og:title"/>
+<meta content="Merge PDF files online — free, instant, runs in your browser so your PDFs never get uploaded. Drag multiple PDFs, reorder them, click merge. Single combined PDF downloads with all pages in your chosen order." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pdf-merge/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Merge PDF Online — Combine Multiple PDFs Into One | SharpDev.Tools" name="twitter:title"/>
+<meta content="Merge PDF files online — free, instant, runs in your browser so your PDFs never get uploaded. Drag multiple PDFs, reorder them, click merge. Single combined PDF downloads with all pages in your chosen order." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sharpdev.tools/" },
+      { "@type": "ListItem", "position": 2, "name": "PDF", "item": "https://sharpdev.tools/#pdf" },
+      { "@type": "ListItem", "position": 3, "name": "Merge PDF", "item": "https://sharpdev.tools/tools/pdf-merge/" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I merge PDFs online for free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Drop two or more PDFs onto the upload area, drag the file cards to set the order you want, then click Merge. A single combined PDF downloads with all pages in your chosen sequence — typically in a couple of seconds." } },
+      { "@type": "Question", "name": "Are my PDFs uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Merging happens entirely in your browser via pdf-lib. Your PDFs never touch a server, so confidential contracts, internal reports and scanned IDs are safe to combine here." } },
+      { "@type": "Question", "name": "How many PDFs can I combine at once?",
+        "acceptedAnswer": { "@type": "Answer", "text": "There's no hard limit. The only constraint is your browser's available memory — for very large source PDFs (hundreds of MB total) you may want to merge in batches." } },
+      { "@type": "Question", "name": "Does the merge preserve bookmarks, links, and form fields?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pages are copied with their content, annotations, and links intact. Bookmarks (the outline tree) from individual PDFs are not preserved in the merged file — pdf-lib's merge focuses on page content." } },
+      { "@type": "Question", "name": "Is the PDF merge tool free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no ads, no sign-up, no file limit." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Merge PDF — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/pdf-merge/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "SharpDev.Tools", "url": "https://sharpdev.tools/" }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pdf-merge/pdf-merge.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pdf-merge');</script>
+<div class="page">
+<h1>Merge PDF</h1>
+<p class="subtitle">Combine multiple PDFs into a single file — drag to reorder, click merge. Free, instant, your PDFs never leave your browser.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="application/pdf,.pdf" hidden id="file-input" multiple type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop PDFs here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">2+ PDFs · drag to reorder after upload</p>
+</div>
+</div>
+</div>
+
+<div class="card pdfs-card" id="pdfs-card" style="display:none">
+<div class="pdfs-list" id="pdfs-list"></div>
+<div class="merge-summary" id="merge-summary"></div>
+<div class="action-row">
+<button class="btn btn-primary" id="merge-btn" type="button">Merge into one PDF</button>
+<button class="btn btn-secondary" id="reset-btn" type="button">Reset</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How does PDF merging work?</h2>
+<p>This tool uses <code>pdf-lib</code> to copy pages from each of your PDFs into a single new PDF document, in the order you specify. The merge happens entirely in your browser — your PDFs are never uploaded anywhere, so confidential contracts, internal reports and signed agreements are safe to combine here.</p>
+
+<h2>Reorder before merging</h2>
+<p>After dropping your PDFs, the file cards appear in upload order with their page counts. <strong>Drag any card</strong> to a new position to change where its pages appear in the final merged document. Use the × button to remove a PDF from the merge list without re-uploading the others.</p>
+
+<h2>What gets preserved?</h2>
+<ul>
+<li>✅ All page content (text, images, vector graphics, annotations)</li>
+<li>✅ Internal page-to-page links within each source PDF</li>
+<li>✅ Form fields and signature placeholders (though you may need to re-flatten after merge)</li>
+<li>❌ Outline bookmarks from individual PDFs — pdf-lib's merge currently flattens these</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Combining contract pages from multiple signers into one final document</li>
+<li>Bundling separate scan-sessions of a multi-page document</li>
+<li>Building a single PDF report from individual chapter exports</li>
+<li>Stacking a cover letter, CV, and reference letters into one application packet</li>
+</ul>
+</section>
+
+<script src="/tools/pdf-merge/pdf-merge.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

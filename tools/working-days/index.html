@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Working Days Calculator — Add Business Days From Today Or Between Dates | SharpDev.Tools</title>
+<meta content="Calculate working days from today, add or subtract business days, or count working days between two dates. Skip weekends and public holidays. Free, no sign-up, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/working-days/" rel="canonical"/>
+<meta content="Working Days Calculator — Add Business Days From Today Or Between Dates | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate working days from today, add or subtract business days, or count working days between two dates. Skip weekends and public holidays. Free, no sign-up, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/working-days/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Working Days Calculator — Add Business Days From Today Or Between Dates | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate working days from today, add or subtract business days, or count working days between two dates. Skip weekends and public holidays. Free, no sign-up, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},
+    {"@type":"ListItem","position":3,"name":"Working Days Calculator","item":"https://sharpdev.tools/tools/working-days/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I calculate 10 working days from today?","acceptedAnswer":{"@type":"Answer","text":"Open Add days from a date mode (default), leave the From date as today, enter 10, and the resulting date appears immediately. The tool skips weekends and any public holidays you list."}},
+    {"@type":"Question","name":"What date is 25 business days from today?","acceptedAnswer":{"@type":"Answer","text":"Enter 25 in the Add days mode with today as the From date. The output shows the exact date, the weekday it falls on, the calendar-day span, and how many weekends were crossed."}},
+    {"@type":"Question","name":"Can I subtract working days from a date?","acceptedAnswer":{"@type":"Answer","text":"Yes — enter a negative number (e.g. -10) in Add days mode to go backward in time and find a date X working days before."}},
+    {"@type":"Question","name":"How are working days counted between two dates?","acceptedAnswer":{"@type":"Answer","text":"In Days between two dates mode, the tool counts Monday-Friday days between (and including) the two dates. Saturdays, Sundays, and any public holidays you list are excluded."}},
+    {"@type":"Question","name":"How do I exclude my country's public holidays?","acceptedAnswer":{"@type":"Answer","text":"Paste holiday dates in the holiday-list field, one per line in YYYY-MM-DD format. Any date that falls on a weekday is then skipped in both modes."}},
+    {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up, no data uploaded. Everything runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Working Days Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/working-days/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/working-days/working-days.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('working-days');</script>
+<div class="page">
+<h1>Working Days Calculator</h1>
+<p class="subtitle">Add business days from today (or any date), or count working days between two dates. Skips weekends + holidays.</p>
+
+<div class="mode-toggle" role="tablist">
+<button class="mode-btn active" data-mode="add" role="tab" aria-selected="true">Add days from a date</button>
+<button class="mode-btn" data-mode="between" role="tab" aria-selected="false">Days between two dates</button>
+</div>
+
+<div class="card mode-panel" id="mode-add">
+<div class="date-row">
+<div class="input-group">
+<label for="add-from">From date</label>
+<input id="add-from" type="date"/>
+</div>
+<div class="input-group">
+<label for="add-n">Working days to add (negative = subtract)</label>
+<input id="add-n" type="number" value="10" step="1"/>
+</div>
+</div>
+
+<div class="opt-row">
+<label for="add-holidays">Public holidays to skip (one date per line, YYYY-MM-DD)</label>
+<textarea id="add-holidays" placeholder="2026-01-01&#10;2026-12-25&#10;2026-12-26"></textarea>
+</div>
+
+<div class="results">
+<div class="result-card hl wide">
+<div class="result-label">Resulting date</div>
+<div class="result-value" id="add-r-date">—</div>
+<div class="result-sub" id="add-r-weekday">—</div>
+</div>
+</div>
+
+<div class="results results-3">
+<div class="result-card">
+<div class="result-label">Calendar days crossed</div>
+<div class="result-value" id="add-r-calendar">—</div>
+</div>
+<div class="result-card">
+<div class="result-label">Weekends crossed</div>
+<div class="result-value" id="add-r-weekends">—</div>
+</div>
+<div class="result-card">
+<div class="result-label">Holidays skipped</div>
+<div class="result-value" id="add-r-holidays">—</div>
+</div>
+</div>
+</div>
+
+<div class="card mode-panel hidden" id="mode-between">
+<div class="date-row">
+<div class="input-group">
+<label for="start">Start date</label>
+<input id="start" type="date"/>
+</div>
+<div class="input-group">
+<label for="end">End date</label>
+<input id="end" type="date"/>
+</div>
+</div>
+
+<div class="opt-row">
+<label class="checkbox-label">
+<input id="inclusive" type="checkbox" checked/>
+<span>Include both start and end dates</span>
+</label>
+</div>
+
+<div class="opt-row">
+<label for="holidays">Public holidays to exclude (one date per line, YYYY-MM-DD)</label>
+<textarea id="holidays" placeholder="2026-01-01&#10;2026-12-25&#10;2026-12-26"></textarea>
+</div>
+
+<div class="results">
+<div class="result-card hl">
+<div class="result-label">Working days</div>
+<div class="result-value" id="r-working">—</div>
+</div>
+<div class="result-card">
+<div class="result-label">Calendar days</div>
+<div class="result-value" id="r-calendar">—</div>
+</div>
+<div class="result-card">
+<div class="result-label">Weekends excluded</div>
+<div class="result-value" id="r-weekends">—</div>
+</div>
+<div class="result-card">
+<div class="result-label">Holidays excluded</div>
+<div class="result-value" id="r-holidays">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What date is X working days from today?</h2>
+<p>This is the most common reason people open a working-days calculator: figuring out a delivery date, deadline, or SLA cutoff. Examples the tool handles directly in <em>Add days from a date</em> mode (default):</p>
+<ul>
+<li><strong>2 working days from today</strong> — typical fast-turnaround SLA</li>
+<li><strong>4 working days from today</strong> — common net-EOW deadline</li>
+<li><strong>5 working days from today</strong> — a full business week</li>
+<li><strong>10 working days from today</strong> — two business weeks (≈ 14 calendar days)</li>
+<li><strong>15 working days from today</strong> — three business weeks</li>
+<li><strong>20 working days from today</strong> — one business month (≈ 28 calendar days)</li>
+<li><strong>25 working days from today</strong> — five business weeks</li>
+<li><strong>30 working days from today</strong> — six business weeks (≈ 42 calendar days)</li>
+</ul>
+<p>All of these auto-skip Saturdays, Sundays, and any holidays you list. Enter a negative number to go backward: <em>"what date was 10 working days before today?"</em></p>
+
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Project planning</strong> — how many actual working days do I have to deliver?</li>
+<li><strong>Invoice &amp; contract dates</strong> — net-30 from invoice date in business days, not calendar days</li>
+<li><strong>HR / vacation planning</strong> — count vacation days that fall on weekdays</li>
+<li><strong>SLA tracking</strong> — "respond within 2 business days" requires this math</li>
+<li><strong>Court/legal deadlines</strong> — many jurisdictions count in business days</li>
+</ul>
+
+<h2>How calendar days differ from working days</h2>
+<p>14 calendar days ≠ 10 working days. A two-week window has 14 calendar days but only ~10 working days (2 weekends × 2 days = 4 weekend days). Add public holidays and the gap widens. Always be specific when communicating deadlines: "delivered in 10 business days" is much clearer than "in 2 weeks".</p>
+
+<h2>Privacy</h2>
+<p>Dates and holidays are processed entirely in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/working-days/working-days.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

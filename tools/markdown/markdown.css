@@ -1,0 +1,108 @@
+.page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
+.btn {
+  padding: 9px 16px; background: #141414; border: 1px solid #2a2a2a;
+  color: #ccc; border-radius: 6px; font-size: 13px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.btn:hover { border-color: #ff4444; color: #fff; background: #1f1f1f; }
+.btn-reset { margin-left: auto; }
+.btn-reset:hover { border-color: #f87171; color: #f87171; }
+
+.tabs { display: none; gap: 4px; margin-bottom: 10px; }
+.tab {
+  padding: 8px 16px; background: #141414; border: 1px solid #2a2a2a;
+  color: #888; border-radius: 6px 6px 0 0; font-size: 13px; cursor: pointer;
+  font-family: inherit;
+}
+.tab.active { color: #fff; border-color: #ff4444; background: #1f1f1f; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.col { display: flex; flex-direction: column; }
+
+#md-input {
+  width: 100%; min-height: 560px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 13px; padding: 14px; outline: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  line-height: 1.6; transition: border-color 0.2s; tab-size: 2;
+}
+#md-input:focus { border-color: #ff4444; }
+
+.preview {
+  min-height: 560px;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  padding: 20px 24px; color: #e1e1e1;
+  overflow-x: auto;
+  line-height: 1.6; font-size: 15px;
+}
+.preview h1, .preview h2, .preview h3, .preview h4, .preview h5, .preview h6 {
+  color: #fff; margin: 24px 0 12px; line-height: 1.3; font-weight: 700;
+}
+.preview h1 { font-size: 28px; border-bottom: 1px solid #2a2a2a; padding-bottom: 8px; }
+.preview h2 { font-size: 22px; border-bottom: 1px solid #222; padding-bottom: 6px; }
+.preview h3 { font-size: 18px; }
+.preview h4 { font-size: 16px; }
+.preview h5, .preview h6 { font-size: 14px; color: #bbb; }
+.preview p { margin: 0 0 14px; }
+.preview a { color: #ff4444; }
+.preview strong { color: #fff; font-weight: 700; }
+.preview em { color: #e1e1e1; font-style: italic; }
+.preview del { color: #888; }
+.preview code {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 0.88em;
+  background: #1a1a1a; padding: 2px 6px; border-radius: 4px;
+  color: #ff9e64; border: 1px solid #222;
+}
+.preview pre {
+  background: #0a0a0a; border: 1px solid #222; border-radius: 8px;
+  padding: 14px 16px; margin: 0 0 14px; overflow-x: auto;
+}
+.preview pre code {
+  background: transparent; padding: 0; border: 0; color: #e1e1e1;
+  font-size: 13px; line-height: 1.5;
+}
+.preview blockquote {
+  border-left: 3px solid #ff4444; padding: 4px 14px;
+  margin: 0 0 14px; color: #aaa; background: rgba(255,68,68,0.04);
+  border-radius: 0 6px 6px 0;
+}
+.preview blockquote p:last-child { margin-bottom: 0; }
+.preview ul, .preview ol { margin: 0 0 14px; padding-left: 28px; }
+.preview li { margin-bottom: 4px; }
+.preview hr {
+  border: 0; border-top: 1px solid #2a2a2a; margin: 22px 0;
+}
+.preview table {
+  border-collapse: collapse; margin-bottom: 14px;
+  border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden;
+}
+.preview th, .preview td {
+  padding: 8px 14px; border: 1px solid #2a2a2a; text-align: left;
+}
+.preview th { background: #141414; color: #fff; font-weight: 700; }
+.preview tr:nth-child(even) td { background: #0f0f0f; }
+.preview img { max-width: 100%; border-radius: 6px; margin: 8px 0; }
+
+.stats {
+  color: #666; font-size: 12px; margin-top: 6px; text-transform: none;
+  letter-spacing: normal; font-weight: 500; display: block;
+  font-family: 'SF Mono', Monaco, monospace;
+}
+
+@media (max-width: 800px) {
+  .tabs { display: flex; }
+  .grid { grid-template-columns: 1fr; }
+  .col-write, .col-preview { display: none; }
+  .col.tab-active { display: flex; }
+  #md-input, .preview { min-height: 400px; }
+  .btn-reset { margin-left: 0; }
+}

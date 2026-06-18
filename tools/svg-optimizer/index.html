@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SVG Optimizer &amp; Minifier — Shrink SVG + Data URI | SharpDev.Tools</title>
+<meta content="Minify SVG code: strip comments, metadata, editor cruft and whitespace, then export as optimized SVG, a CSS data URI or an HTML img tag. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/svg-optimizer/" rel="canonical"/>
+<meta content="SVG Optimizer &amp; Minifier — Shrink SVG + Data URI | SharpDev.Tools" property="og:title"/>
+<meta content="Minify SVG code: strip comments, metadata, editor cruft and whitespace, then export as optimized SVG, a CSS data URI or an HTML img tag. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/svg-optimizer/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SVG Optimizer &amp; Minifier — Shrink SVG + Data URI | SharpDev.Tools" name="twitter:title"/>
+<meta content="Minify SVG code: strip comments, metadata, editor cruft and whitespace, then export as optimized SVG, a CSS data URI or an HTML img tag. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"SVG Optimizer & Minifier","item":"https://sharpdev.tools/tools/svg-optimizer/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the SVG optimizer remove?","acceptedAnswer":{"@type":"Answer","text":"Comments, XML and DOCTYPE declarations, editor metadata (Inkscape/Sodipodi namespaces and elements), and redundant whitespace between tags. The visual result is unchanged while the file gets smaller."}},{"@type":"Question","name":"Can I use the SVG as a CSS background?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the output to CSS data URI and you get a ready background-image rule, or pick the img-tag option for inline HTML. Data-URI SVGs avoid an extra HTTP request for small icons."}},{"@type":"Question","name":"Does it run in my browser?","acceptedAnswer":{"@type":"Answer","text":"Yes, the optimization is pure client-side string processing. Your SVG is never uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"SVG Optimizer & Minifier \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/svg-optimizer/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/svg-optimizer/svg-optimizer.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('svg-optimizer');</script>
+<div class="page">
+<h1>SVG Optimizer & Minifier</h1>
+<p class="subtitle">Strip comments, metadata and whitespace from SVG. Export minified, as a CSS data-URI or an img tag.</p>
+<div class="field"><label for="in">SVG code</label><textarea id="in" placeholder="Paste your <svg>...</svg> here"></textarea></div>
+<div class="result-cards" id="stats"></div>
+<div class="row" style="margin-top:14px">
+<div class="field" style="flex:0 0 200px"><label for="fmt">Output as</label><select id="fmt"><option value="svg">Minified SVG</option><option value="css">CSS background (data URI)</option><option value="img">HTML img tag</option></select></div>
+</div>
+<div class="out-head"><label for="out">Output</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the SVG optimizer remove?</summary><p>Comments, XML and DOCTYPE declarations, editor metadata (Inkscape/Sodipodi namespaces and elements), and redundant whitespace between tags. The visual result is unchanged while the file gets smaller.</p></details>
+<details><summary>Can I use the SVG as a CSS background?</summary><p>Yes. Switch the output to CSS data URI and you get a ready background-image rule, or pick the img-tag option for inline HTML. Data-URI SVGs avoid an extra HTTP request for small icons.</p></details>
+<details><summary>Does it run in my browser?</summary><p>Yes, the optimization is pure client-side string processing. Your SVG is never uploaded.</p></details>
+</section>
+<script src="/tools/svg-optimizer/svg-optimizer.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

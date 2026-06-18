@@ -1,0 +1,36 @@
+/* TTS — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.form-row textarea {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  resize: vertical; line-height: 1.5;
+}
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-group select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 13px;
+  min-width: 220px;
+}
+.opt-group input[type=range] { width: 140px; accent-color: #ff4444; }
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; color: #888; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+
+.ref-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.ref-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.ref-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

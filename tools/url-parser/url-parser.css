@@ -1,0 +1,19 @@
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 20px; }
+.page label { display: block; font-size: 12px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+#url-in { width: 100%; min-height: 80px; background: #141414; border: 1px solid #262626; color: #e1e1e1; font-size: 14px; padding: 14px; border-radius: 10px; font-family: 'SF Mono', Monaco, monospace; resize: vertical; line-height: 1.5; outline: none; word-break: break-all; }
+#url-in:focus { border-color: #ff4444; }
+.err { min-height: 18px; font-size: 12px; color: #ff7070; margin-top: 8px; margin-bottom: 12px; }
+.up-parts { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; margin-bottom: 20px; }
+.up-part { display: grid; grid-template-columns: 100px 1fr; gap: 14px; padding: 10px 16px; background: #141414; border: 1px solid #262626; border-radius: 8px; }
+.up-part .k { font-size: 12px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.up-part .v { font-family: 'SF Mono', Monaco, monospace; font-size: 13px; color: #fff; word-break: break-all; }
+.up-part .v.empty { color: #555; }
+.up-params { margin-top: 20px; background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 12px; padding: 16px 20px; }
+.up-params h2 { font-size: 13px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.up-params-list { display: flex; flex-direction: column; gap: 6px; }
+.up-param { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; padding: 8px 12px; background: #141414; border: 1px solid #262626; border-radius: 8px; font-family: 'SF Mono', Monaco, monospace; font-size: 13px; }
+.up-param .pk { color: #ff4444; word-break: break-all; }
+.up-param .pv { color: #e1e1e1; word-break: break-all; }
+@media (max-width: 600px) { .page h1 { font-size: 28px; } .up-part { grid-template-columns: 1fr; gap: 4px; } .up-param { grid-template-columns: 1fr; } }

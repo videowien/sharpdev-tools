@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sitemap.xml Generator — Paste URLs, Get XML | SharpDev.Tools</title>
+<meta content="Paste your URL list, get a valid sitemap.xml. Last-modified date, priority, change frequency per URL. Download the file or copy the XML. Free, browser-only." name="description"/>
+<link href="https://sharpdev.tools/tools/sitemap-gen/" rel="canonical"/>
+<meta content="Sitemap.xml Generator — Paste URLs, Get XML | SharpDev.Tools" property="og:title"/>
+<meta content="Paste URLs, get a valid sitemap.xml with lastmod, priority, changefreq. Browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/sitemap-gen/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Sitemap.xml Generator — Paste URLs, Get XML | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste URLs, get a valid sitemap.xml." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/developers/"},
+    {"@type":"ListItem","position":3,"name":"Sitemap Generator","item":"https://sharpdev.tools/tools/sitemap-gen/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What goes in a sitemap.xml?","acceptedAnswer":{"@type":"Answer","text":"At minimum a list of URLs you want search engines to discover. Optionally per-URL last-modified date, change frequency, and priority. Wrap with the sitemap protocol XML namespace."}},
+    {"@type":"Question","name":"Are sitemaps still needed in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes — especially for sites with deep URL structures, low-link pages, or large content libraries. Google still uses them as a discovery hint. Mention them in robots.txt and submit via Google Search Console."}},
+    {"@type":"Question","name":"What's the size limit?","acceptedAnswer":{"@type":"Answer","text":"50,000 URLs or 50 MB uncompressed per sitemap file. Larger sites split into multiple sitemaps with a sitemap-index file."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Sitemap Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/sitemap-gen/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/sitemap-gen/sitemap-gen.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('sitemap-gen');</script>
+<div class="page">
+<h1>Sitemap.xml Generator</h1>
+<p class="subtitle">Paste your URL list — get a valid sitemap.xml.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="urls">URLs (one per line)</label>
+<textarea id="urls" rows="10" placeholder="https://example.com/&#10;https://example.com/about/&#10;https://example.com/blog/post-1/">https://example.com/
+https://example.com/about/
+https://example.com/contact/
+https://example.com/blog/
+https://example.com/blog/post-1/</textarea>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Last modified</label>
+<input id="lastmod" type="date"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Change frequency</label>
+<select id="changefreq">
+<option value="">(omit)</option>
+<option value="always">always</option>
+<option value="hourly">hourly</option>
+<option value="daily">daily</option>
+<option value="weekly">weekly</option>
+<option value="monthly" selected>monthly</option>
+<option value="yearly">yearly</option>
+<option value="never">never</option>
+</select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Priority</label>
+<select id="priority">
+<option value="">(omit)</option>
+<option value="1.0">1.0 (homepage)</option>
+<option value="0.8" selected>0.8 (main)</option>
+<option value="0.6">0.6 (secondary)</option>
+<option value="0.4">0.4 (deep)</option>
+<option value="0.2">0.2 (low)</option>
+</select>
+</div>
+</div>
+
+<p class="stat" id="stat">—</p>
+</div>
+
+<div class="card">
+<label class="opt-label">Generated sitemap.xml</label>
+<pre class="output" id="output">—</pre>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy XML</button>
+<button class="btn btn-secondary" id="download-btn" type="button">Download sitemap.xml</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>How to use your sitemap</h2>
+<ol>
+<li>Upload <code>sitemap.xml</code> to your site root (e.g. <code>https://example.com/sitemap.xml</code>)</li>
+<li>Reference it in <code>robots.txt</code>: <code>Sitemap: https://example.com/sitemap.xml</code></li>
+<li>Submit in Google Search Console → Sitemaps</li>
+<li>Submit in Bing Webmaster Tools too</li>
+</ol>
+
+<h2>Priority + changefreq are advisory</h2>
+<p>Google has confirmed it largely <strong>ignores</strong> the <code>priority</code> and <code>changefreq</code> fields. They're hints, not commands. Focus on <code>lastmod</code> — that one is still used to detect changed pages.</p>
+
+<h2>Privacy</h2>
+<p>URLs stay in your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/sitemap-gen/sitemap-gen.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

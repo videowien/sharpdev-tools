@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Time Duration Calculator — Time Between Two Dates and Times | SharpDev.Tools</title>
+<meta content="Calculate the exact duration between two dates and times, broken down into days, hours, minutes and totals. Free time duration calculator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/time-duration/" rel="canonical"/>
+<meta content="Time Duration Calculator — Time Between Two Dates and Times | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate the exact duration between two dates and times, broken down into days, hours, minutes and totals. Free time duration calculator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/time-duration/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Time Duration Calculator — Time Between Two Dates and Times | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate the exact duration between two dates and times, broken down into days, hours, minutes and totals. Free time duration calculator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Time Duration Calculator","item":"https://sharpdev.tools/tools/time-duration/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find the time between two dates?","acceptedAnswer":{"@type":"Answer","text":"Pick a start and end date-time. The calculator shows the gap as days, hours, minutes and seconds, plus the total in each single unit (total hours, total minutes, and so on)."}},{"@type":"Question","name":"Does it include the time of day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both inputs include hours and minutes, so the result is precise to the minute, not just whole days. This is what makes it different from a plain date-difference tool."}},{"@type":"Question","name":"Can the end be before the start?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you reverse them the duration is shown with a minus sign, but the magnitude is the same."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Time Duration Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/time-duration/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/time-duration/time-duration.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('time-duration');</script>
+<div class="page">
+<h1>Time Duration Calculator</h1>
+<p class="subtitle">Exact time between two date-times: days, hours, minutes, and totals in each unit.</p>
+<div class="row">
+<div class="field"><label for="start">Start</label><input type="datetime-local" id="start"></div>
+<div class="field"><label for="end">End</label><input type="datetime-local" id="end"></div>
+</div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find the time between two dates?</summary><p>Pick a start and end date-time. The calculator shows the gap as days, hours, minutes and seconds, plus the total in each single unit (total hours, total minutes, and so on).</p></details>
+<details><summary>Does it include the time of day?</summary><p>Yes. Both inputs include hours and minutes, so the result is precise to the minute, not just whole days. This is what makes it different from a plain date-difference tool.</p></details>
+<details><summary>Can the end be before the start?</summary><p>Yes. If you reverse them the duration is shown with a minus sign, but the magnitude is the same.</p></details>
+</section>
+<script src="/tools/time-duration/time-duration.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

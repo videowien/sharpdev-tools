@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>PIN Generator (Random Numeric PIN) | SharpDev.Tools</title>
+<meta content="Free random PIN generator. Create secure numeric PINs of any length (3–32 digits), one or many at a time, using your browser's cryptographically secure random generator. Nothing is sent anywhere." name="description"/>
+<link href="https://sharpdev.tools/tools/pin/" rel="canonical"/>
+<meta content="PIN Generator (Random Numeric PIN) | SharpDev.Tools" property="og:title"/>
+<meta content="Free random PIN generator. Create secure numeric PINs of any length (3–32 digits), one or many at a time, using your browser's cryptographically secure random generator. Nothing is sent anywhere." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pin/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="PIN Generator (Random Numeric PIN) | SharpDev.Tools" name="twitter:title"/>
+<meta content="Free random PIN generator. Create secure numeric PINs of any length (3–32 digits), one or many at a time, using your browser's cryptographically secure random generator. Nothing is sent anywhere." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/#generators"},{"@type":"ListItem","position":3,"name":"Random PIN Generator","item":"https://sharpdev.tools/tools/pin/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these PINs secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. They use the Web Crypto API (crypto.getRandomValues), the same cryptographically secure source browsers use for keys \u2014 far stronger than ordinary random functions."}},{"@type":"Question","name":"Does anything leave my device?","acceptedAnswer":{"@type":"Answer","text":"No. Generation happens entirely in your browser; no PIN is transmitted or stored anywhere."}},{"@type":"Question","name":"What length should a PIN be?","acceptedAnswer":{"@type":"Answer","text":"Four digits is common for cards, but six or more is much harder to guess. Longer is always safer for anything sensitive."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Random PIN Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/pin/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pin/pin.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pin');</script>
+<div class="page">
+<h1>Random PIN Generator</h1>
+<p class="subtitle">Generate secure random numeric PINs of any length. Uses your browser's cryptographic randomness.</p>
+<div class="row">
+<div class="field"><label for="len">Digits</label><input type="number" id="len" value="4" min="3" max="32"></div>
+<div class="field"><label for="count">How many?</label><input type="number" id="count" value="1" min="1" max="100"></div></div>
+<div class="actions"><button class="small-btn" id="gen">Generate</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>PIN(s)</label></div>
+<textarea class="output" id="out" readonly></textarea>
+<p class="note">Generated with your browser's cryptographically secure random generator. Nothing is sent to a server.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Are these PINs secure?</summary><p>Yes. They use the Web Crypto API (crypto.getRandomValues), the same cryptographically secure source browsers use for keys — far stronger than ordinary random functions.</p></details>
+<details><summary>Does anything leave my device?</summary><p>No. Generation happens entirely in your browser; no PIN is transmitted or stored anywhere.</p></details>
+<details><summary>What length should a PIN be?</summary><p>Four digits is common for cards, but six or more is much harder to guess. Longer is always safer for anything sensitive.</p></details>
+</section>
+<script src="/tools/pin/pin.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

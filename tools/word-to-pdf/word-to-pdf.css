@@ -1,0 +1,75 @@
+/* Word to PDF — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+.editor-card { margin-top: 16px; }
+.file-info {
+  background: #0d0d0d; border: 1px solid #2a2a2a;
+  padding: 12px; border-radius: 6px; margin-bottom: 16px;
+  font-size: 13px; color: #ccc;
+}
+.file-info .filename { color: #fff; font-family: 'SF Mono', monospace; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 18px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-group select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+  min-width: 160px;
+}
+
+.preview-wrap { margin-bottom: 16px; }
+.preview {
+  background: #fff; color: #000; padding: 30px;
+  border: 1px solid #2a2a2a; border-radius: 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px; line-height: 1.6;
+  max-height: 540px; overflow-y: auto;
+  margin-top: 8px;
+}
+.preview h1, .preview h2, .preview h3, .preview h4, .preview h5, .preview h6 {
+  font-family: Calibri, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #1f3864; margin-top: 1em; margin-bottom: 0.5em; font-weight: 700;
+}
+.preview h1 { font-size: 24px; }
+.preview h2 { font-size: 20px; }
+.preview h3 { font-size: 16px; }
+.preview h4 { font-size: 14px; }
+.preview p { margin: 0 0 10px; }
+.preview ul, .preview ol { padding-left: 24px; margin: 8px 0; }
+.preview li { margin-bottom: 4px; }
+.preview a { color: #0563c1; text-decoration: underline; }
+.preview table { border-collapse: collapse; margin: 12px 0; width: 100%; }
+.preview td, .preview th { border: 1px solid #bbb; padding: 6px 10px; font-size: 13px; }
+.preview img { max-width: 100%; height: auto; }
+.preview code, .preview pre { background: #f3f3f3; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; }
+.preview blockquote {
+  border-left: 3px solid #cfcfcf; padding-left: 12px; color: #555; margin: 12px 0;
+}
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+.status-msg.busy { color: #ffa726; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .preview { padding: 16px; font-size: 13px; }
+}

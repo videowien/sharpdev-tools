@@ -1,0 +1,111 @@
+/* Meeting Cost Calculator — Tool-specific styles */
+
+.page { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.calc-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  align-items: start;
+}
+
+/* Input card */
+.input-card { padding: 24px; }
+.input-group { margin-bottom: 20px; }
+.input-group:last-child { margin-bottom: 0; }
+
+.input-group input[type="number"],
+.input-group select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 16px; padding: 12px 14px; outline: none;
+  transition: border-color 0.2s; width: 100%;
+  -moz-appearance: textfield;
+}
+.input-group input[type="number"]::-webkit-inner-spin-button { opacity: 1; }
+.input-group input:focus, .input-group select:focus { border-color: #ff4444; }
+.input-group select option { background: #141414; }
+
+.input-with-unit {
+  display: flex; gap: 8px; align-items: center;
+}
+.input-with-unit select { width: 110px; flex-shrink: 0; font-size: 14px; padding: 12px 10px; }
+.input-with-unit input { flex: 1; }
+.unit-label { color: #555; font-size: 13px; white-space: nowrap; }
+
+.duration-row {
+  display: flex; gap: 12px;
+}
+.duration-row > div { flex: 1; text-align: center; }
+.duration-row input { width: 100%; text-align: center; }
+.unit-small { display: block; font-size: 11px; color: #555; margin-top: 4px; }
+
+.salary-hint {
+  display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;
+}
+.preset-btn {
+  padding: 4px 10px; font-size: 11px; background: #1a1a1a; border: 1px solid #333;
+  border-radius: 4px; color: #888; cursor: pointer; transition: all 0.15s;
+}
+.preset-btn:hover { border-color: #ff4444; color: #ccc; }
+
+/* Results card */
+.results-card {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 12px; padding: 28px;
+  position: sticky; top: 20px;
+}
+
+.cost-hero { text-align: center; margin-bottom: 24px; }
+.cost-label { font-size: 14px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.cost-amount {
+  font-size: 48px; font-weight: 800; color: #ff4444;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  line-height: 1.1;
+}
+.cost-per-min { font-size: 13px; color: #555; margin-top: 6px; }
+
+.cost-breakdown {
+  display: flex; gap: 12px; margin-bottom: 20px;
+}
+.breakdown-item {
+  flex: 1; background: #0d0d0d; border-radius: 8px; padding: 12px;
+  text-align: center;
+}
+.breakdown-label { display: block; font-size: 11px; color: #666; margin-bottom: 4px; }
+.breakdown-val {
+  font-size: 16px; font-weight: 700; color: #e1e1e1;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+}
+
+.recurring-section {
+  padding-top: 20px; border-top: 1px solid #222; margin-bottom: 20px;
+}
+.recurring-title { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.recurring-grid { display: flex; gap: 12px; }
+.recurring-item {
+  flex: 1; background: #0d0d0d; border-radius: 8px; padding: 12px; text-align: center;
+}
+.recurring-val {
+  display: block; font-size: 18px; font-weight: 700; color: #ffaa33;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  margin-bottom: 2px;
+}
+.recurring-label { font-size: 11px; color: #666; }
+
+.equivalents {
+  padding-top: 16px; border-top: 1px solid #222;
+  font-size: 13px; color: #666; line-height: 1.8;
+}
+.equivalents .eq-item { padding: 4px 0; }
+.equivalents .eq-val { color: #ccc; font-weight: 600; }
+
+@media (max-width: 700px) {
+  .calc-layout { grid-template-columns: 1fr; }
+  .results-card { position: static; }
+  .cost-amount { font-size: 36px; }
+}

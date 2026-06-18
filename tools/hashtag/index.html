@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Hashtag Generator — Topic-based Suggestions | SharpDev.Tools</title>
+<meta content="Enter a topic and get curated high-volume and niche hashtags mixed together. Pick the pack or individual tags. Free, no sign-up, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/hashtag/" rel="canonical"/>
+<meta content="Hashtag Generator — Topic-based Suggestions | SharpDev.Tools" property="og:title"/>
+<meta content="Enter a topic and get curated high-volume and niche hashtags mixed together. Pick the pack or individual tags. Free, no sign-up, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hashtag/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Hashtag Generator — Topic-based Suggestions | SharpDev.Tools" name="twitter:title"/>
+<meta content="Enter a topic and get curated high-volume and niche hashtags mixed together. Pick the pack or individual tags. Free, no sign-up, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Social Media",
+        "item": "https://sharpdev.tools/#social-media"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Hashtag Generator",
+        "item": "https://sharpdev.tools/tools/hashtag/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the hashtag generator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter a topic or keywords and it suggests relevant hashtags to copy into a social post, helping you find a varied mix instead of reusing the same few tags."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many hashtags should I use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the platform: Instagram allows up to 30 (3 to 5 is a common recommendation for Reels), while Twitter/X and LinkedIn favour 1 to 3. A focused set usually beats the maximum."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hashtag Generator — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/hashtag/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hashtag/hashtag.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hashtag');</script>
+<div class="page">
+<h1>Hashtag Generator</h1>
+<p class="subtitle">Type a topic — get a curated mix of popular and niche hashtags.</p>
+<div class="hg-search">
+<input type="text" id="hg-in" placeholder="e.g. travel, food, fitness, photography..." autocomplete="off" autofocus>
+</div>
+<div class="hg-suggested" id="hg-suggested"></div>
+<div class="hg-output" id="hg-output" style="display:none;">
+<div class="hg-head">
+<h2><span id="hg-count">0</span> hashtags — click any to toggle, or copy all below.</h2>
+</div>
+<div class="hg-tags" id="hg-tags"></div>
+<div class="hg-actions">
+<button type="button" class="copy-btn" id="copy-selected">Copy selected</button>
+<button type="button" class="copy-btn" id="copy-all">Copy all (space)</button>
+<button type="button" class="copy-btn" id="copy-block">Copy block (30 only)</button>
+</div>
+<p class="hint">Instagram allows up to 30 hashtags per post. The block button picks the top 30 popular + related.</p>
+</div>
+</div>
+<script src="/tools/hashtag/hashtag.js"></script>
+<script>renderFooter();</script>
+</body></html>

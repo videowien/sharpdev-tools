@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Instagram Grid Preview — Plan Your Feed Visually | SharpDev.Tools</title>
+<meta content="Plan your Instagram feed grid before posting. Upload up to 12 images, drag to reorder, see how your 3-column grid will look. Nothing uploaded — runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ig-grid/" rel="canonical"/>
+<meta content="Instagram Grid Preview — Plan Your Feed | SharpDev.Tools" property="og:title"/>
+<meta content="Plan your Instagram feed grid. Upload images, drag to reorder, preview the 3-column layout. No upload — browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ig-grid/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Instagram Grid Preview — Plan Your Feed | SharpDev.Tools" name="twitter:title"/>
+<meta content="Plan your Instagram feed grid. Upload images, drag to reorder, preview the 3-column layout." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Instagram","item":"https://sharpdev.tools/instagram/"},
+    {"@type":"ListItem","position":3,"name":"Instagram Grid Preview","item":"https://sharpdev.tools/tools/ig-grid/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How many images can I preview?","acceptedAnswer":{"@type":"Answer","text":"Up to 12 — four rows of three. That's enough to plan one to two weeks of posts at a normal cadence."}},
+    {"@type":"Question","name":"What if my images aren't square?","acceptedAnswer":{"@type":"Answer","text":"The preview crops everything to 1:1 with center-cover. Instagram's grid also center-crops, so this matches what you'll actually see in your profile feed."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Images are loaded directly into your browser via FileReader. Nothing is sent to a server."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Instagram Grid Preview — SharpDev.Tools","url":"https://sharpdev.tools/tools/ig-grid/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ig-grid/ig-grid.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ig-grid');</script>
+<div class="page">
+<h1>Instagram Grid Preview</h1>
+<p class="subtitle">Plan your feed before posting. Drag to reorder, see exactly how the 3-column grid will look.</p>
+
+<div class="card">
+<div class="upload-area" id="upload-area">
+<input accept="image/*" hidden id="file-input" multiple type="file"/>
+<div class="upload-content">
+<svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"></path></svg>
+<p>Drop images here or <span class="upload-link">click to browse</span></p>
+<p class="upload-hint">Up to 12 images (4 rows of 3) — square or portrait works best</p>
+</div>
+</div>
+</div>
+
+<div class="card" id="grid-card" style="display:none">
+<div class="profile-header">
+<div class="profile-avatar">SD</div>
+<div class="profile-meta">
+<div class="profile-name">your.handle</div>
+<div class="profile-stats">12 posts · 12.3k followers · 412 following</div>
+</div>
+</div>
+
+<div class="grid-preview" id="grid-preview"></div>
+
+<div class="action-row">
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear all</button>
+<span class="hint">Drag tiles to reorder. Click X on a tile to remove it.</span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why grid planning matters</h2>
+<p>People glance at your profile grid for ~3 seconds before deciding whether to follow. A grid with a clear visual rhythm — alternating light/dark, complementary colors, or recurring patterns — gives the impression of an "intentional" account.</p>
+
+<h2>Grid patterns that work</h2>
+<ul>
+<li><strong>Checkerboard</strong> — alternate quote / photo / quote / photo. Easy to maintain</li>
+<li><strong>Color rows</strong> — three blue posts, then three red posts. Bold but committing</li>
+<li><strong>Photo + cover</strong> — every third post is a text-card; the other two are photos. Mixes content types cleanly</li>
+<li><strong>Carousel splits</strong> — a 3×3 image where each tile shows part of a bigger picture (see Carousel Splitter)</li>
+</ul>
+
+<h2>The "fold" matters</h2>
+<p>Only the top 6-9 tiles are visible above the fold on mobile. Front-load your grid with what you most want people to see right after they tap your profile.</p>
+
+<h2>Privacy</h2>
+<p>Images are loaded via FileReader directly into your browser. Nothing is uploaded.</p>
+</section>
+
+<script src="/tools/ig-grid/ig-grid.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

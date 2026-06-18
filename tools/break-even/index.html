@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Break-Even Calculator — Units and Revenue to Break Even | SharpDev.Tools</title>
+<meta content="Calculate how many units you must sell to break even, and the revenue at that point, from fixed costs, price and variable cost per unit. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/break-even/" rel="canonical"/>
+<meta content="Break-Even Calculator — Units and Revenue to Break Even | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate how many units you must sell to break even, and the revenue at that point, from fixed costs, price and variable cost per unit. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/break-even/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Break-Even Calculator — Units and Revenue to Break Even | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate how many units you must sell to break even, and the revenue at that point, from fixed costs, price and variable cost per unit. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"Break-Even Calculator","item":"https://sharpdev.tools/tools/break-even/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the break-even point calculated?","acceptedAnswer":{"@type":"Answer","text":"Break-even units equal fixed costs divided by the contribution margin per unit, where contribution margin is price minus variable cost. At that number of units, total revenue exactly covers fixed plus variable costs."}},{"@type":"Question","name":"What is contribution margin?","acceptedAnswer":{"@type":"Answer","text":"It is how much each sale contributes toward covering fixed costs, that is the price minus the per-unit variable cost. If it is zero or negative, you can never break even at that price."}},{"@type":"Question","name":"What does break-even revenue tell me?","acceptedAnswer":{"@type":"Answer","text":"It is the sales income at the break-even point (break-even units times price), the minimum turnover you need before the product becomes profitable."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Break-Even Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/break-even/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/break-even/break-even.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('break-even');</script>
+<div class="page">
+<h1>Break-Even Calculator</h1>
+<p class="subtitle">How many units (and how much revenue) you need to cover your costs.</p>
+<div class="row">
+<div class="field"><label for="fixed">Fixed costs</label><input type="number" id="fixed" value="5000" step="any"></div>
+<div class="field"><label for="price">Price per unit</label><input type="number" id="price" value="25" step="any"></div>
+<div class="field"><label for="var">Variable cost per unit</label><input type="number" id="var" value="10" step="any"></div>
+</div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the break-even point calculated?</summary><p>Break-even units equal fixed costs divided by the contribution margin per unit, where contribution margin is price minus variable cost. At that number of units, total revenue exactly covers fixed plus variable costs.</p></details>
+<details><summary>What is contribution margin?</summary><p>It is how much each sale contributes toward covering fixed costs, that is the price minus the per-unit variable cost. If it is zero or negative, you can never break even at that price.</p></details>
+<details><summary>What does break-even revenue tell me?</summary><p>It is the sales income at the break-even point (break-even units times price), the minimum turnover you need before the product becomes profitable.</p></details>
+</section>
+<script src="/tools/break-even/break-even.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

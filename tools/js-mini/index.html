@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JS Minifier &amp; Beautifier | SharpDev.Tools</title>
+<meta content="Compact JavaScript by removing comments and whitespace, or format minified JS into readable indented code. Safe string-aware parsing. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/js-mini/" rel="canonical"/>
+<meta content="JS Minifier &amp; Beautifier | SharpDev.Tools" property="og:title"/>
+<meta content="Compact JavaScript by removing comments and whitespace, or format minified JS into readable indented code. Safe string-aware parsing. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/js-mini/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="JS Minifier &amp; Beautifier | SharpDev.Tools" name="twitter:title"/>
+<meta content="Compact JavaScript by removing comments and whitespace, or format minified JS into readable indented code. Safe string-aware parsing. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developers",
+        "item": "https://sharpdev.tools/#developers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "JS Minifier",
+        "item": "https://sharpdev.tools/tools/js-mini/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the JS minifier do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It removes comments and unnecessary whitespace to shrink JavaScript for production, and can beautify minified JS back into readable, properly indented code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will it break my code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The minifier is string-aware so it preserves strings, template literals and regular expressions, and the beautifier uses the battle-tested js-beautify library for correct formatting."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "JS Minifier & Beautifier — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/js-mini/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/html-mini/html-mini.css" rel="stylesheet"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('js-mini');</script>
+<div class="page">
+<h1>JS Minifier &amp; Beautifier</h1>
+<p class="subtitle">Strip comments and collapse whitespace for production, or expand back. String-aware so your strings and regex are never touched.</p>
+<div class="mini-actions">
+<button type="button" class="btn btn-primary" id="minify-btn">Minify</button>
+<button type="button" class="btn btn-secondary" id="beautify-btn">Beautify</button>
+<span class="size-label" id="size-label"></span>
+</div>
+<label for="in">Input</label>
+<textarea id="in" placeholder="Paste JavaScript..."></textarea>
+<div class="out-head">
+<label for="out">Output</label>
+<button class="copy-btn" id="copy-btn" type="button">Copy</button>
+</div>
+<textarea id="out" readonly></textarea>
+</div>
+<script src="/tools/js-mini/js-mini.js"></script>
+<script>renderFooter();</script>
+</body></html>

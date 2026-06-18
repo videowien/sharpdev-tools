@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UTM Builder — Build UTM Tagged URLs for Google Analytics | SharpDev.Tools</title>
+<meta content="Build UTM tagged URLs for campaign tracking in Google Analytics, GA4, or any analytics platform. Source, medium, campaign, content, term — all the parameters with auto-validation. Free, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/utm/" rel="canonical"/>
+<meta content="UTM Builder — Build UTM Tagged URLs for Google Analytics | SharpDev.Tools" property="og:title"/>
+<meta content="Build UTM tagged URLs for campaign tracking in Google Analytics, GA4, or any analytics platform. Source, medium, campaign, content, term — all the parameters with auto-validation. Free, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/utm/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="UTM Builder — Build UTM Tagged URLs for Google Analytics | SharpDev.Tools" name="twitter:title"/>
+<meta content="Build UTM tagged URLs for campaign tracking in Google Analytics, GA4, or any analytics platform. Source, medium, campaign, content, term — all the parameters with auto-validation. Free, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Social Media","item":"https://sharpdev.tools/#social-media"},
+    {"@type":"ListItem","position":3,"name":"UTM Builder","item":"https://sharpdev.tools/tools/utm/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What are UTM parameters?","acceptedAnswer":{"@type":"Answer","text":"UTM (Urchin Tracking Module) parameters are name/value pairs added to a URL to tell Google Analytics where a visitor came from. The five standard parameters are utm_source, utm_medium, utm_campaign, utm_content, and utm_term."}},
+    {"@type":"Question","name":"What should I put in each UTM field?","acceptedAnswer":{"@type":"Answer","text":"utm_source: the platform (e.g. facebook, twitter, newsletter). utm_medium: the type of traffic (e.g. social, email, cpc). utm_campaign: a campaign name (e.g. summer_sale_2026). utm_content: differentiates ads/links within the same campaign (e.g. button_a, button_b). utm_term: paid-search keyword. The first three are required; content and term are optional."}},
+    {"@type":"Question","name":"Do UTMs work with GA4?","acceptedAnswer":{"@type":"Answer","text":"Yes. GA4 reads the same utm_* parameters as Universal Analytics. utm_id is also supported in GA4 for campaign-level attribution but isn't required."}},
+    {"@type":"Question","name":"Are my URLs saved or logged?","acceptedAnswer":{"@type":"Answer","text":"No. The tool runs entirely in your browser — nothing is sent or stored."}},
+    {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"UTM Builder — SharpDev.Tools","url":"https://sharpdev.tools/tools/utm/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/utm/utm.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('utm');</script>
+<div class="page">
+<h1>UTM Builder</h1>
+<p class="subtitle">Build campaign-tagged URLs for Google Analytics (GA4) and other analytics platforms.</p>
+
+<div class="card">
+<div class="form-group">
+<label for="base-url">Destination URL <span class="req">*</span></label>
+<input id="base-url" type="text" placeholder="https://example.com/landing-page" value="https://example.com/page"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="utm-source">utm_source <span class="req">*</span></label>
+<input id="utm-source" type="text" placeholder="e.g. twitter, newsletter, google" list="source-presets"/>
+<datalist id="source-presets">
+<option value="google"></option>
+<option value="facebook"></option>
+<option value="twitter"></option>
+<option value="linkedin"></option>
+<option value="instagram"></option>
+<option value="newsletter"></option>
+<option value="youtube"></option>
+<option value="tiktok"></option>
+</datalist>
+</div>
+<div class="form-group">
+<label for="utm-medium">utm_medium <span class="req">*</span></label>
+<input id="utm-medium" type="text" placeholder="e.g. social, email, cpc" list="medium-presets"/>
+<datalist id="medium-presets">
+<option value="social"></option>
+<option value="email"></option>
+<option value="cpc"></option>
+<option value="organic"></option>
+<option value="referral"></option>
+<option value="display"></option>
+<option value="affiliate"></option>
+</datalist>
+</div>
+</div>
+<div class="form-group">
+<label for="utm-campaign">utm_campaign <span class="req">*</span></label>
+<input id="utm-campaign" type="text" placeholder="e.g. summer_sale_2026, product_launch"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="utm-content">utm_content <span class="opt">optional</span></label>
+<input id="utm-content" type="text" placeholder="e.g. cta_button, version_a"/>
+</div>
+<div class="form-group">
+<label for="utm-term">utm_term <span class="opt">optional</span></label>
+<input id="utm-term" type="text" placeholder="paid-search keyword"/>
+</div>
+</div>
+<div class="form-group">
+<label class="checkbox-label">
+<input id="lowercase" type="checkbox" checked/>
+<span>Force lowercase (recommended — GA treats Facebook ≠ facebook as different sources)</span>
+</label>
+</div>
+
+<div class="result-row">
+<label for="output">Generated URL</label>
+<textarea id="output" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy URL</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>UTM cheat sheet</h2>
+<table>
+<thead><tr><th>Parameter</th><th>Required</th><th>What it means</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td><code>utm_source</code></td><td>yes</td><td>Where the click came from</td><td>twitter · newsletter · google · partner_blog</td></tr>
+<tr><td><code>utm_medium</code></td><td>yes</td><td>The type of channel</td><td>social · email · cpc · organic · referral</td></tr>
+<tr><td><code>utm_campaign</code></td><td>yes</td><td>Identifies a campaign by name</td><td>summer_sale · launch_q1 · webinar_apr</td></tr>
+<tr><td><code>utm_content</code></td><td>no</td><td>Differentiates links within a campaign</td><td>button_top · button_footer · version_a</td></tr>
+<tr><td><code>utm_term</code></td><td>no</td><td>Paid search keyword</td><td>online+pdf+merger · ai+image+resizer</td></tr>
+</tbody>
+</table>
+
+<h2>Good naming conventions</h2>
+<ul>
+<li><strong>Lowercase everything</strong> — GA treats <code>Facebook</code> and <code>facebook</code> as different sources, splitting your data unintentionally.</li>
+<li><strong>Underscores, not spaces</strong> — spaces get URL-encoded to <code>%20</code> which looks ugly in reports.</li>
+<li><strong>Consistent vocabulary</strong> — don't use <code>fb</code> on one campaign and <code>facebook</code> on another. Pick one and stick with it across the org.</li>
+<li><strong>Date in campaign name</strong> — <code>summer_sale_2026</code> beats <code>summer_sale</code> because you'll re-use the name in 2027 and not be able to compare year-over-year.</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>All URL building runs in your browser. The tool doesn't fetch, log, or store anything.</p>
+</section>
+
+<script src="/tools/utm/utm.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

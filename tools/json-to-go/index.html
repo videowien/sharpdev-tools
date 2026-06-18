@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSON to Go Struct Converter | SharpDev.Tools</title>
+<meta content="Convert JSON into Go structs with json tags and inferred types. Nested objects become their own structs. Free online JSON to Go converter, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/json-to-go/" rel="canonical"/>
+<meta content="JSON to Go Struct Converter | SharpDev.Tools" property="og:title"/>
+<meta content="Convert JSON into Go structs with json tags and inferred types. Nested objects become their own structs. Free online JSON to Go converter, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json-to-go/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSON to Go Struct Converter | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert JSON into Go structs with json tags and inferred types. Nested objects become their own structs. Free online JSON to Go converter, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"JSON to Go Struct","item":"https://sharpdev.tools/tools/json-to-go/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does JSON to Go work?","acceptedAnswer":{"@type":"Answer","text":"Paste a JSON object and the tool generates Go struct definitions with matching json tags, inferring int/float64/bool/string and turning nested objects into their own named structs."}},{"@type":"Question","name":"How are numbers typed?","acceptedAnswer":{"@type":"Answer","text":"Whole numbers become int and numbers with decimals become float64. If a field varies, you may want to adjust manually, since JSON does not distinguish int sizes."}},{"@type":"Question","name":"Is my JSON uploaded?","acceptedAnswer":{"@type":"Answer","text":"No, conversion runs entirely in your browser."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"JSON to Go Struct \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/json-to-go/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json-to-go/json-to-go.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json-to-go');</script>
+<div class="page">
+<h1>JSON to Go Struct</h1>
+<p class="subtitle">Paste JSON, get Go structs with json tags. Nested objects become named structs.</p>
+<div class="row"><div class="field" style="flex:0 0 220px"><label for="root">Root struct name</label><input type="text" id="root" value="Root"></div></div>
+<div class="field"><label for="in">JSON</label><textarea id="in" placeholder='{"id": 1, "name": "Ada", "tags": ["x"]}'></textarea></div>
+<div class="out-head"><label for="out">Go</label><button class="copy-btn" id="copy">Copy</button></div><div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does JSON to Go work?</summary><p>Paste a JSON object and the tool generates Go struct definitions with matching json tags, inferring int/float64/bool/string and turning nested objects into their own named structs.</p></details>
+<details><summary>How are numbers typed?</summary><p>Whole numbers become int and numbers with decimals become float64. If a field varies, you may want to adjust manually, since JSON does not distinguish int sizes.</p></details>
+<details><summary>Is my JSON uploaded?</summary><p>No, conversion runs entirely in your browser.</p></details>
+</section>
+<script src="/tools/json-to-go/json-to-go.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

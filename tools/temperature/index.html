@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Temperature Converter — C, F, K, Rankine | SharpDev.Tools</title>
+<meta content="Convert temperatures between Celsius, Fahrenheit, Kelvin and Rankine. Live four-way conversion as you type in any field. Free online, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/temperature/" rel="canonical"/>
+<meta content="Temperature Converter — C, F, K, Rankine | SharpDev.Tools" property="og:title"/>
+<meta content="Convert temperatures between Celsius, Fahrenheit, Kelvin and Rankine. Live four-way conversion as you type in any field. Free online, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/temperature/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Temperature Converter — C, F, K, Rankine | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert temperatures between Celsius, Fahrenheit, Kelvin and Rankine. Live four-way conversion as you type in any field. Free online, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculators",
+        "item": "https://sharpdev.tools/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Temperature",
+        "item": "https://sharpdev.tools/tools/temperature/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which temperature scales does it convert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Celsius, Fahrenheit, Kelvin and Rankine, all at once. Type a value in any scale and the others update live."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Celsius to Fahrenheit formula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Multiply by 9/5 and add 32, so 20 degrees Celsius is 68 degrees Fahrenheit. The tool does this and the reverse automatically."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Temperature Converter — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/temperature/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/temperature/temperature.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('temperature');</script>
+<div class="page">
+<h1>Temperature Converter</h1>
+<p class="subtitle">Four-way live conversion. Edit any field — the others update.</p>
+<div class="tc-grid">
+<div class="tc-field"><label>Celsius</label><div class="tc-wrap"><input type="number" step="any" id="c" placeholder="0"><span>°C</span></div></div>
+<div class="tc-field"><label>Fahrenheit</label><div class="tc-wrap"><input type="number" step="any" id="f" placeholder="32"><span>°F</span></div></div>
+<div class="tc-field"><label>Kelvin</label><div class="tc-wrap"><input type="number" step="any" id="k" placeholder="273.15"><span>K</span></div></div>
+<div class="tc-field"><label>Rankine</label><div class="tc-wrap"><input type="number" step="any" id="r" placeholder="491.67"><span>°R</span></div></div>
+</div>
+<div class="tc-refs">
+<div class="tc-ref" data-c="-273.15"><span class="ref-name">Absolute zero</span><span class="ref-val">-273.15°C</span></div>
+<div class="tc-ref" data-c="0"><span class="ref-name">Water freezes</span><span class="ref-val">0°C</span></div>
+<div class="tc-ref" data-c="37"><span class="ref-name">Body temp</span><span class="ref-val">37°C</span></div>
+<div class="tc-ref" data-c="100"><span class="ref-name">Water boils</span><span class="ref-val">100°C</span></div>
+</div>
+</div>
+<script src="/tools/temperature/temperature.js"></script>
+<script>renderFooter();</script>
+</body></html>

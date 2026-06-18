@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>UUID — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Generate cryptographically random v4 UUIDs in batches of up to 1000 in multiple formats. Free online UUID generator, no ads, no sign-up needed." name="description"/>
+<link href="https://sharpdev.tools/tools/uuid/" rel="canonical"/>
+<meta content="UUID — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Generate cryptographically random v4 UUIDs in batches of up to 1000 in multiple formats. Free online UUID generator, no ads, no sign-up needed." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/uuid/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="UUID — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate cryptographically random v4 UUIDs in batches of up to 1000 in multiple formats. Free online UUID generator, no ads, no sign-up needed." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Developers", "item": "https://sharpdev.tools/#developers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "UUID",
+        "item": "https://sharpdev.tools/tools/uuid/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which UUID version does the generator produce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Version 4 (fully random) UUIDs created with the browser's Web Crypto API, in standard, no-dashes, uppercase and brace-wrapped formats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fully free with no ads and no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I generate in bulk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — up to 1000 UUIDs at a time, ready to copy or download."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "UUID — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/uuid/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/uuid/uuid.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('uuid');</script>
+<div class="page">
+<h1>UUID Generator</h1>
+<p class="subtitle" id="subtitle">Cryptographically random UUIDs (v4). Batch up to 1000 at a time.</p>
+<div class="controls">
+<div class="row">
+<label for="count">How many</label>
+<input id="count" max="1000" min="1" type="number" value="1"/>
+<button class="btn btn-primary" onclick="generate()">Generate</button>
+</div>
+<div class="toggles">
+<label class="toggle">
+<input checked="" id="opt-hyphens" onchange="onOptionsChanged()" type="checkbox"/>
+<span>Hyphens (8-4-4-4-12)</span>
+</label>
+<label class="toggle">
+<input id="opt-upper" onchange="onOptionsChanged()" type="checkbox"/>
+<span>Uppercase</span>
+</label>
+<label class="toggle">
+<input id="opt-braces" onchange="onOptionsChanged()" type="checkbox"/>
+<span>Braces {…}</span>
+</label>
+<label class="toggle">
+<input id="opt-quotes" onchange="onOptionsChanged()" type="checkbox"/>
+<span>Double quotes</span>
+</label>
+</div>
+</div>
+<label for="output">Output</label>
+<textarea id="output" readonly="" spellcheck="false"></textarea>
+<div class="stats-row">
+<span class="stats" id="stats-out">0 UUIDs</span>
+<div class="small-actions">
+<button class="small-btn" onclick="copyOutput()">Copy all</button>
+<button class="small-btn" onclick="downloadTxt()">Download .txt</button>
+</div>
+</div>
+<div class="info-card">
+<h3>About v4 UUIDs</h3>
+<p>UUID version 4 uses 122 bits of random data (128 bits total minus 6 fixed for version and variant). The odds of two v4 UUIDs ever colliding are effectively zero — you'd need to generate about a billion per second for 85 years to have a 50% chance of one duplicate. Generated here using <code>crypto.getRandomValues</code>.</p>
+</div>
+</div>
+<script src="/tools/uuid/uuid.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>cURL Command Builder — Generate curl from a Form | SharpDev.Tools</title>
+<meta content="Build a curl command from a simple form: method, URL, headers, body and auth. Copy-paste ready. Free online curl generator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/curl-builder/" rel="canonical"/>
+<meta content="cURL Command Builder — Generate curl from a Form | SharpDev.Tools" property="og:title"/>
+<meta content="Build a curl command from a simple form: method, URL, headers, body and auth. Copy-paste ready. Free online curl generator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/curl-builder/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="cURL Command Builder — Generate curl from a Form | SharpDev.Tools" name="twitter:title"/>
+<meta content="Build a curl command from a simple form: method, URL, headers, body and auth. Copy-paste ready. Free online curl generator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"cURL Command Builder","item":"https://sharpdev.tools/tools/curl-builder/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I build a curl command?","acceptedAnswer":{"@type":"Answer","text":"Pick the HTTP method, paste the URL, add any headers (one per line as Name: Value), optionally a bearer token and a request body. The tool assembles a properly quoted curl command you can copy straight into a terminal."}},{"@type":"Question","name":"Does it quote values safely?","acceptedAnswer":{"@type":"Answer","text":"Yes. The URL, headers and body are wrapped in single quotes with embedded quotes escaped, so special characters in JSON bodies or tokens don't break the command."}},{"@type":"Question","name":"What is the multi-line option?","acceptedAnswer":{"@type":"Answer","text":"It joins the flags with backslash-newline so long commands are readable. Untick it for a single-line command that's easier to paste into scripts."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"cURL Command Builder \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/curl-builder/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/curl-builder/curl-builder.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('curl-builder');</script>
+<div class="page">
+<h1>cURL Command Builder</h1>
+<p class="subtitle">Fill the form, get a copy-paste curl command. Method, headers, JSON body, bearer auth.</p>
+<div class="row">
+<div class="field" style="flex:0 0 120px"><label for="method">Method</label><select id="method"><option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option></select></div>
+<div class="field"><label for="url">URL</label><input type="text" id="url" placeholder="https://api.example.com/users"></div>
+</div>
+<div class="field"><label for="headers">Headers (one per line, Name: Value)</label><textarea id="headers" style="min-height:70px" placeholder="Content-Type: application/json"></textarea></div>
+<div class="field"><label for="token">Bearer token (optional)</label><input type="text" id="token" placeholder="paste token, adds Authorization header"></div>
+<div class="field"><label for="body">Body (JSON or raw, optional)</label><textarea id="body" style="min-height:70px" placeholder='{"name":"Ada"}'></textarea></div>
+<div class="actions"><label class="small-btn"><input type="checkbox" id="pretty" checked> multi-line (\)</label></div>
+<div class="out-head"><label for="out">curl command</label><button class="copy-btn" id="copy">Copy</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I build a curl command?</summary><p>Pick the HTTP method, paste the URL, add any headers (one per line as Name: Value), optionally a bearer token and a request body. The tool assembles a properly quoted curl command you can copy straight into a terminal.</p></details>
+<details><summary>Does it quote values safely?</summary><p>Yes. The URL, headers and body are wrapped in single quotes with embedded quotes escaped, so special characters in JSON bodies or tokens don't break the command.</p></details>
+<details><summary>What is the multi-line option?</summary><p>It joins the flags with backslash-newline so long commands are readable. Untick it for a single-line command that's easier to paste into scripts.</p></details>
+</section>
+<script src="/tools/curl-builder/curl-builder.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

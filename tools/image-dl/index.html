@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image Downloader — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Download any image from the web by direct URL or find every image on a page and save them. Free online image downloader, no ads, no sign-up needed." name="description"/>
+<link href="https://sharpdev.tools/tools/image-dl/" rel="canonical"/>
+<meta content="Image Downloader — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Download any image from the web by direct URL or find every image on a page and save them. Free online image downloader, no ads, no sign-up needed." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-dl/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Image Downloader — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Download any image from the web by direct URL or find every image on a page and save them. Free online image downloader, no ads, no sign-up needed." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Images & Media",
+        "item": "https://sharpdev.tools/#images-media"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Image Downloader",
+        "item": "https://sharpdev.tools/tools/image-dl/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the Image Downloader do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Paste a direct image URL to save the file, or paste a webpage URL to scan it for images you can pick and download individually or as a batch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, completely free with no ads and no account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to sign up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Open the page and start downloading right away."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image Downloader — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/image-dl/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-dl/image-dl.css" rel="stylesheet"/>
+<script crossorigin="anonymous" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-dl');</script>
+<div class="page">
+<h1>Image Downloader</h1>
+<p class="subtitle">Paste an image URL to download it, or paste any webpage to find and download all its images.</p>
+<div class="card">
+<label for="url-input">URL</label>
+<div class="input-row">
+<input autocomplete="url" id="url-input" placeholder="https://example.com/photo.jpg  or  https://example.com/gallery" type="text"/>
+<button class="btn btn-primary" id="fetch-btn" onclick="fetchUrl()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+        Fetch
+      </button>
+</div>
+<div class="status-msg" id="status-msg"></div>
+</div>
+<!-- Single image preview -->
+<div class="preview-single card" id="preview-single">
+<img alt="Preview" src=""/>
+<div class="img-info"></div>
+<button class="btn btn-primary" onclick="downloadSingleImage()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+      Download Image
+    </button>
+</div>
+<!-- Multi-image grid -->
+<div class="image-grid-header" id="image-grid-header">
+<h3>Images on this page</h3>
+<span class="count" id="image-count"></span>
+</div>
+<div class="select-bar" id="select-bar">
+<button class="btn btn-secondary" onclick="selectAll()">Select All</button>
+<button class="btn btn-secondary" onclick="selectNone()">Select None</button>
+<span class="selected-count" id="selected-count">None selected</span>
+</div>
+<div class="image-grid" id="image-grid"></div>
+<div class="download-bar" id="download-bar">
+<button class="btn btn-primary" onclick="downloadSelected()">
+<svg fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+      Download Selected
+    </button>
+</div>
+</div>
+<script src="/tools/image-dl/image-dl.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

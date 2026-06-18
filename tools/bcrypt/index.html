@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Bcrypt Generator &amp; Verifier | SharpDev.Tools</title>
+<meta content="Hash passwords with bcrypt at adjustable cost factor, or verify a password against an existing hash. Runs locally in your browser. Free, no ads." name="description"/>
+<link href="https://sharpdev.tools/tools/bcrypt/" rel="canonical"/>
+<meta content="Bcrypt Generator &amp; Verifier | SharpDev.Tools" property="og:title"/>
+<meta content="Hash passwords with bcrypt at adjustable cost factor, or verify a password against an existing hash. Runs locally in your browser. Free, no ads." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/bcrypt/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Bcrypt Generator &amp; Verifier | SharpDev.Tools" name="twitter:title"/>
+<meta content="Hash passwords with bcrypt at adjustable cost factor, or verify a password against an existing hash. Runs locally in your browser. Free, no ads." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security & Crypto",
+        "item": "https://sharpdev.tools/#security-crypto"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bcrypt",
+        "item": "https://sharpdev.tools/tools/bcrypt/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is bcrypt used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bcrypt is a password-hashing function designed to be deliberately slow so it resists brute-force attacks. You store the bcrypt hash instead of the password, so even if your database leaks the real passwords stay protected. This tool generates a bcrypt hash and verifies a password against an existing hash."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost factor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cost (work factor) sets how many rounds of hashing are applied, and each increment doubles the work. Higher is more secure but slower; 10 to 12 is the common range for web apps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my password uploaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Hashing and verification run entirely in your browser with a vendored bcrypt library, so your password never leaves your device."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bcrypt Generator & Verifier — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/bcrypt/",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/bcrypt/bcrypt.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('bcrypt');</script>
+<div class="page">
+<h1>Bcrypt Generator &amp; Verifier</h1>
+<p class="subtitle">Generate a bcrypt hash for a password, or verify a password against an existing hash.</p>
+<div class="tabs">
+<button type="button" class="tab-btn active" data-tab="hash">Hash</button>
+<button type="button" class="tab-btn" data-tab="verify">Verify</button>
+</div>
+<div class="tab-content" id="tab-hash">
+<div class="bc-grid">
+<div class="bc-field"><label for="pw">Password</label><input type="text" id="pw" placeholder="Enter password" spellcheck="false"></div>
+<div class="bc-field"><label for="rounds">Cost (rounds)</label><input type="number" id="rounds" min="4" max="14" value="10"></div>
+</div>
+<button type="button" class="btn btn-primary" id="hash-btn">Generate hash</button>
+<div class="err" id="hash-err"></div>
+<label style="margin-top: 14px;">Hash</label>
+<div class="bc-output-row"><div class="bc-output" id="hash-out">—</div><button type="button" class="copy-btn" id="copy-hash">Copy</button></div>
+<p class="hint">Higher cost = more secure but slower. 10 is a good default. Each +1 doubles the time.</p>
+</div>
+<div class="tab-content" id="tab-verify" style="display:none;">
+<label for="v-pw">Password</label>
+<input type="text" id="v-pw" placeholder="Password to check" spellcheck="false">
+<label for="v-hash" style="margin-top: 14px;">Hash</label>
+<input type="text" id="v-hash" placeholder="$2a$10$..." spellcheck="false">
+<button type="button" class="btn btn-primary" id="verify-btn" style="margin-top: 14px;">Verify</button>
+<div class="err" id="verify-err"></div>
+<div class="verdict" id="verdict"></div>
+</div>
+</div>
+<script src="/shared/vendor/bcrypt.min.js?v=2.4.3"></script>
+<script src="/tools/bcrypt/bcrypt.js"></script>
+<script>renderFooter();</script>
+</body></html>

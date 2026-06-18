@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CSS Grid Generator — Visual Builder + Live Preview | SharpDev.Tools</title>
+<meta content="Build CSS Grid layouts visually. Set columns, rows, gap, alignment, areas — live preview, copy CSS. Two-dimensional layouts without the cheat-sheet hunting." name="description"/>
+<link href="https://sharpdev.tools/tools/css-grid/" rel="canonical"/>
+<meta content="CSS Grid Generator — Visual Builder + Live Preview | SharpDev.Tools" property="og:title"/>
+<meta content="Visual CSS Grid builder with live preview. Columns, rows, gap, alignment, named areas." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-grid/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="CSS Grid Generator — Visual Builder + Live Preview | SharpDev.Tools" name="twitter:title"/>
+<meta content="Visual CSS Grid builder with live preview." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/design-css/"},
+    {"@type":"ListItem","position":3,"name":"CSS Grid Generator","item":"https://sharpdev.tools/tools/css-grid/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's fr in grid-template-columns?","acceptedAnswer":{"@type":"Answer","text":"fr = fractional unit. 1fr 2fr means the second column gets twice the leftover space. repeat(3, 1fr) = three equal columns. Use fr instead of % when you want columns to share leftover space after fixed-size columns and gaps."}},
+    {"@type":"Question","name":"When to use Grid vs Flexbox?","acceptedAnswer":{"@type":"Answer","text":"Grid = 2D layouts where rows AND columns matter. Flexbox = 1D where items flow in one direction. Page layout = Grid. A button row = Flexbox."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"CSS Grid Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/css-grid/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-grid/css-grid.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-grid');</script>
+<div class="page">
+<h1>CSS Grid Generator</h1>
+<p class="subtitle">Visual builder + live preview. Common presets — or define your own template.</p>
+
+<div class="card">
+<div class="ctrl-grid">
+<div class="ctrl">
+<label class="opt-label">Preset</label>
+<select id="preset">
+<option value="3col" selected>3 equal columns</option>
+<option value="2col">2 equal columns</option>
+<option value="sidebar">Sidebar + content</option>
+<option value="cards">Auto-fit cards</option>
+<option value="dashboard">Dashboard (3×2)</option>
+<option value="holy">Holy Grail layout</option>
+<option value="custom">Custom</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">grid-template-columns</label>
+<input id="cols" type="text" value="1fr 1fr 1fr"/>
+</div>
+<div class="ctrl">
+<label class="opt-label">grid-template-rows</label>
+<input id="rows" type="text" value="auto"/>
+</div>
+<div class="ctrl">
+<label class="opt-label">gap</label>
+<input id="gap" type="range" min="0" max="40" value="12"/>
+<span class="opt-value" id="gap-val">12 px</span>
+</div>
+<div class="ctrl">
+<label class="opt-label">justify-items</label>
+<select id="justify">
+<option value="stretch" selected>stretch</option>
+<option value="start">start</option>
+<option value="end">end</option>
+<option value="center">center</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">align-items</label>
+<select id="align">
+<option value="stretch" selected>stretch</option>
+<option value="start">start</option>
+<option value="end">end</option>
+<option value="center">center</option>
+</select>
+</div>
+<div class="ctrl">
+<label class="opt-label">Items</label>
+<input id="items" type="range" min="1" max="12" value="6"/>
+<span class="opt-value" id="items-val">6</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<label class="opt-label">Preview</label>
+<div class="preview" id="preview"></div>
+</div>
+
+<div class="card">
+<label class="opt-label">CSS</label>
+<pre class="output" id="output"></pre>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy CSS</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Grid template syntax</h2>
+<ul>
+<li><code>1fr 1fr 1fr</code> — 3 equal columns</li>
+<li><code>200px 1fr</code> — fixed sidebar + flexible content</li>
+<li><code>repeat(3, 1fr)</code> — same as <code>1fr 1fr 1fr</code></li>
+<li><code>repeat(auto-fit, minmax(200px, 1fr))</code> — responsive cards that wrap automatically</li>
+<li><code>minmax(100px, 1fr)</code> — minimum 100px, otherwise flexible</li>
+</ul>
+
+<h2>Holy Grail layout</h2>
+<p>Header + sidebar + content + aside + footer — historically painful, trivial with Grid:</p>
+<pre class="snippet">grid-template-areas:
+  "header header header"
+  "nav    main   aside"
+  "footer footer footer";</pre>
+</section>
+
+<script src="/tools/css-grid/css-grid.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

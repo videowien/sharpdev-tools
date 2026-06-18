@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Placeholder Image Generator — Custom Size, Color, Label PNG | SharpDev.Tools</title>
+<meta content="Generate custom placeholder images. Set dimensions, background color, text label and font color. Download PNG. Free, no sign-up, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/placeholder/" rel="canonical"/>
+<meta content="Placeholder Image Generator — Custom Size, Color, Label PNG | SharpDev.Tools" property="og:title"/>
+<meta content="Generate custom placeholder images. Set dimensions, background, text. Download PNG. Free." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/placeholder/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Placeholder Image Generator — Custom Size, Color, Label PNG | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate custom placeholder images. Set dimensions, background, text. Download PNG." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Placeholder Image Generator","item":"https://sharpdev.tools/tools/placeholder/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's a placeholder image?","acceptedAnswer":{"@type":"Answer","text":"A solid-color image with the dimensions written on it — used during development as a stand-in for real images. Designers and frontend developers use them to test layouts before the real assets arrive."}},
+    {"@type":"Question","name":"Why not just use placehold.co?","acceptedAnswer":{"@type":"Answer","text":"You can — but that requires a network call every time. With this tool you download the PNG once and use it offline, no external dependency, and you get to pick exact colors and text."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The image is drawn with Canvas in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Placeholder Image Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/placeholder/","applicationCategory":"DesignApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/placeholder/placeholder.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('placeholder');</script>
+<div class="page">
+<h1>Placeholder Image Generator</h1>
+<p class="subtitle">Quick solid-color PNGs with dimension labels — perfect for prototyping layouts.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Width</label>
+<input id="width" type="number" min="16" max="4096" value="800"/>
+<span class="unit">px</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Height</label>
+<input id="height" type="number" min="16" max="4096" value="450"/>
+<span class="unit">px</span>
+</div>
+<div class="opt-group">
+<label class="opt-label">Background</label>
+<input id="bg" type="color" value="#2a2a2a"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Text color</label>
+<input id="fg" type="color" value="#aaaaaa"/>
+</div>
+</div>
+
+<div class="form-row">
+<label for="label">Label text <span class="hint">(leave empty to use dimensions automatically)</span></label>
+<input id="label" type="text" placeholder="e.g. Hero image"/>
+</div>
+
+<div class="preset-row">
+<span class="opt-label">Quick presets:</span>
+<button class="preset-btn" data-w="1920" data-h="1080" type="button">1920×1080 (HD)</button>
+<button class="preset-btn" data-w="1080" data-h="1080" type="button">1080² (IG square)</button>
+<button class="preset-btn" data-w="1080" data-h="1920" type="button">1080×1920 (Story)</button>
+<button class="preset-btn" data-w="1200" data-h="630" type="button">1200×630 (OG)</button>
+<button class="preset-btn" data-w="800" data-h="450" type="button">800×450 (16:9)</button>
+<button class="preset-btn" data-w="400" data-h="400" type="button">400² (Avatar)</button>
+</div>
+</div>
+
+<div class="card">
+<div class="preview-wrap">
+<canvas id="placeholder-canvas"></canvas>
+</div>
+<div class="action-row">
+<button class="btn btn-primary" id="dl-png" type="button">Download PNG</button>
+<button class="btn btn-secondary" id="dl-jpg" type="button">Download JPG</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Frontend prototyping</strong> — fill <code>&lt;img&gt;</code> tags before assets arrive</li>
+<li><strong>Design mockups</strong> — drop into Figma / Sketch / Affinity as a fast stand-in</li>
+<li><strong>Email templates</strong> — bake size hints into test sends so the recipient knows what's missing</li>
+<li><strong>Print mockups</strong> — quick squares for InDesign / Affinity Publisher layouts</li>
+</ul>
+
+<h2>Tip: bake the size into the filename</h2>
+<p>If you generate many placeholders, the auto-generated filename includes <code>{width}x{height}</code>. Drop them into a folder and you can scan dimensions at a glance.</p>
+
+<h2>Privacy</h2>
+<p>Canvas-only — no upload, no external service.</p>
+</section>
+
+<script src="/tools/placeholder/placeholder.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

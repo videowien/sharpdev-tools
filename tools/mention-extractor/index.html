@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mention &amp; Hashtag Extractor — Pull @handles + #tags from Text | SharpDev.Tools</title>
+<meta content="Paste any text — extract all @mentions, #hashtags and URLs at once. Deduplicated, sorted, copy-ready. Works on tweets, captions, comments. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/mention-extractor/" rel="canonical"/>
+<meta content="Mention &amp; Hashtag Extractor | SharpDev.Tools" property="og:title"/>
+<meta content="Extract @mentions, #hashtags and URLs from any text. Deduplicated, sorted, copy-ready. Free, browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mention-extractor/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Mention &amp; Hashtag Extractor | SharpDev.Tools" name="twitter:title"/>
+<meta content="Extract @mentions, #hashtags and URLs from any text. Deduplicated, sorted, copy-ready." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Social Media","item":"https://sharpdev.tools/social-media/"},
+    {"@type":"ListItem","position":3,"name":"Mention &amp; Hashtag Extractor","item":"https://sharpdev.tools/tools/mention-extractor/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What characters does this recognise as part of a handle?","acceptedAnswer":{"@type":"Answer","text":"Letters, digits, underscore and (for Instagram-style handles) period. So @gillian_scharf and @my.handle both extract correctly. Hashtags allow letters, digits, and underscore (#YearInReview2026 works)."}},
+    {"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Parsing happens entirely in your browser via regex."}},
+    {"@type":"Question","name":"Why deduplicate the results?","acceptedAnswer":{"@type":"Answer","text":"For most use cases (building a follower outreach list, gathering hashtags from old posts, auditing UGC for brand mentions) you only want each unique handle once. The tool also shows raw counts if you need them."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Mention &amp; Hashtag Extractor — SharpDev.Tools","url":"https://sharpdev.tools/tools/mention-extractor/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mention-extractor/mention-extractor.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mention-extractor');</script>
+<div class="page">
+<h1>Mention &amp; Hashtag Extractor</h1>
+<p class="subtitle">Paste text — get every @mention, #hashtag and URL, deduplicated.</p>
+
+<div class="card">
+<div class="form-row">
+<label for="input">Paste text (tweet, caption, comments, full article…)</label>
+<textarea id="input" rows="10" placeholder="Drop content here…">Big shoutout to @marketing_alice and @bob.dev for the support! 🙌
+Loved chatting with @ChrisOnline last week.
+
+Posts I'm reading this week — check the threads from @ig_alice, @marketing_alice, and @new.follow_2026.
+
+#SaaS #BuildInPublic #IndieMaker #SaaS #YearInReview2026
+
+→ https://sharpdev.tools/ · https://example.com/blog</textarea>
+</div>
+</div>
+
+<div class="card">
+<div class="results-grid">
+<div class="result-block">
+<div class="result-header">
+<span class="result-label">Mentions <span class="counts" id="c-mentions"></span></span>
+<button class="copy-mini" data-target="mentions" type="button">Copy</button>
+</div>
+<div class="result-list" id="r-mentions"></div>
+</div>
+<div class="result-block">
+<div class="result-header">
+<span class="result-label">Hashtags <span class="counts" id="c-hashtags"></span></span>
+<button class="copy-mini" data-target="hashtags" type="button">Copy</button>
+</div>
+<div class="result-list" id="r-hashtags"></div>
+</div>
+<div class="result-block">
+<div class="result-header">
+<span class="result-label">URLs <span class="counts" id="c-urls"></span></span>
+<button class="copy-mini" data-target="urls" type="button">Copy</button>
+</div>
+<div class="result-list" id="r-urls"></div>
+</div>
+</div>
+
+<div class="opt-row">
+<label class="checkbox-label">
+<input id="dedup" type="checkbox" checked/>
+<span>Deduplicate</span>
+</label>
+<label class="checkbox-label">
+<input id="sort" type="checkbox" checked/>
+<span>Sort alphabetically</span>
+</label>
+<label class="checkbox-label">
+<input id="strip-prefix" type="checkbox"/>
+<span>Strip @ and # prefix in copy</span>
+</label>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Common use cases</h2>
+<ul>
+<li><strong>Outreach lists</strong> — pull all the handles from a Twitter / X thread or LinkedIn comment section</li>
+<li><strong>Hashtag audit</strong> — paste your last 30 captions and see which tags you actually use</li>
+<li><strong>UGC monitoring</strong> — paste a feed of user comments and pull mentions of your brand</li>
+<li><strong>Article link extraction</strong> — pull every URL out of a long form post</li>
+<li><strong>Comment moderation</strong> — surface every @mention to check for tag-spam</li>
+</ul>
+
+<h2>What gets recognised</h2>
+<ul>
+<li><strong>Mentions</strong> — <code>@</code> followed by letters, digits, underscore, period, hyphen (covers Twitter, Instagram, GitHub, Mastodon)</li>
+<li><strong>Hashtags</strong> — <code>#</code> followed by letters, digits, underscore. Stops at punctuation</li>
+<li><strong>URLs</strong> — <code>http://</code> or <code>https://</code> followed by a non-whitespace run, stops at trailing punctuation like <code>.</code> <code>,</code> <code>)</code></li>
+</ul>
+
+<h2>Privacy</h2>
+<p>Text parsing runs entirely in your browser via regex. Nothing is sent to a server.</p>
+</section>
+
+<script src="/tools/mention-extractor/mention-extractor.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

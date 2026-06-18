@@ -1,0 +1,56 @@
+/* Instagram Grid Preview — tool-specific */
+.page { padding: 40px 20px; max-width: 540px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 36px 20px; }
+.upload-icon { width: 36px; height: 36px; color: #444; margin-bottom: 10px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+.profile-header { display: flex; gap: 14px; align-items: center; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #2a2a2a; }
+.profile-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, #ff4444, #ff8866); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 18px;
+}
+.profile-name { font-size: 14px; color: #fff; font-weight: 500; }
+.profile-stats { font-size: 12px; color: #888; margin-top: 4px; }
+
+.grid-preview {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  background: #0a0a0a; padding: 2px; border-radius: 4px;
+}
+.grid-cell {
+  position: relative; aspect-ratio: 1/1;
+  background: #1a1a1a; overflow: hidden;
+  cursor: grab;
+}
+.grid-cell.dragging { opacity: 0.4; cursor: grabbing; }
+.grid-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.grid-cell .remove {
+  position: absolute; top: 4px; right: 4px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(0,0,0,0.7); color: #fff; border: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; cursor: pointer; padding: 0;
+  opacity: 0; transition: opacity 0.15s;
+}
+.grid-cell:hover .remove { opacity: 1; }
+
+.action-row { display: flex; gap: 12px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+.hint { font-size: 12px; color: #666; }
+
+@media (max-width: 600px) {
+  .page { padding: 20px 12px; }
+  .page h1 { font-size: 22px; }
+}

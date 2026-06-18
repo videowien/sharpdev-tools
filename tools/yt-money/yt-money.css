@@ -1,0 +1,36 @@
+/* YouTube Revenue Estimator — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-group select, .opt-group input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+  min-width: 140px;
+}
+.opt-group .unit { font-size: 11px; color: #666; margin-top: 2px; }
+
+.result-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px; margin-bottom: 20px;
+}
+.result-block { padding: 16px; background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px; text-align: center; }
+.result-block.highlight { border-color: #ff4444; background: rgba(255, 68, 68, 0.06); }
+.result-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.result-value { font-size: 24px; font-weight: 700; color: #fff; font-family: 'SF Mono', monospace; }
+
+.annual-row { padding-top: 16px; border-top: 1px solid #1f1f1f; text-align: center; }
+.result-annual { font-size: 18px; color: #aaa; font-family: 'SF Mono', monospace; margin-top: 8px; }
+
+.rpm-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.rpm-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.rpm-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.rpm-table td:nth-child(2), .rpm-table td:nth-child(3) { font-family: 'SF Mono', monospace; color: #fff; text-align: right; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

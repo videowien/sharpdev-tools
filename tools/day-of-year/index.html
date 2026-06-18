@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Day of the Year Calculator — What Day Is It Out of 365 (or 366)? | SharpDev.Tools</title>
+<meta content="Day of the year calculator — what day of the year is it out of 365 (or 366 in leap years)? Date ↔ day number, ISO 8601 week, quarter, days remaining. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/day-of-year/" rel="canonical"/>
+<meta content="Day of the Year Calculator — What Day Is It Out of 365 (or 366)? | SharpDev.Tools" property="og:title"/>
+<meta content="Day of the year calculator — what day of the year is it out of 365 (or 366 in leap years)? Date ↔ day number, ISO 8601 week, quarter, days remaining. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/day-of-year/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Day of the Year Calculator — What Day Is It Out of 365 (or 366)? | SharpDev.Tools" name="twitter:title"/>
+<meta content="Day of the year calculator — what day of the year is it out of 365 (or 366 in leap years)? Date ↔ day number, ISO 8601 week, quarter, days remaining. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/time-date/"},
+    {"@type":"ListItem","position":3,"name":"Day of Year Calculator","item":"https://sharpdev.tools/tools/day-of-year/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What day of the year is it out of 365 (or 366)?","acceptedAnswer":{"@type":"Answer","text":"Today's day-of-year number is shown automatically when you open the tool with today's date. The answer is between 1 and 365 in a normal year, or 1 and 366 in a leap year. The result also shows the percentage of the year that has passed and how many days remain."}},
+    {"@type":"Question","name":"How do I calculate the day of the year for any date?","acceptedAnswer":{"@type":"Answer","text":"In Date → number mode, pick any date. The tool returns the day-of-year (1-366), the ISO 8601 week number, the quarter (Q1-Q4), and the days remaining in the year. Works for past, present and future dates."}},
+    {"@type":"Question","name":"How do I convert a day-of-year number back to a date?","acceptedAnswer":{"@type":"Answer","text":"Switch to Number → date mode, enter the year and the day-of-year number (1-366), and the tool returns the calendar date plus the ISO week and quarter."}},
+    {"@type":"Question","name":"Why is 365 sometimes 366?","acceptedAnswer":{"@type":"Answer","text":"Leap years have 366 days because February 29 is added. Leap years are every 4 years, except centennial years that aren't divisible by 400 (so 1900 was not a leap year, but 2000 was). The tool handles leap years automatically."}},
+    {"@type":"Question","name":"What is an ISO 8601 week number?","acceptedAnswer":{"@type":"Answer","text":"ISO weeks start on Monday. Week 1 is the week containing the year's first Thursday. So January 1 may belong to week 52 or 53 of the previous year if it falls on a Friday, Saturday or Sunday. ISO weeks are the European business standard and what most calendar libraries use."}},
+    {"@type":"Question","name":"What is this calculator useful for?","acceptedAnswer":{"@type":"Answer","text":"Scientific data (astronomy/satellite logs use day-of-year), military date formats (DDD-YYYY), fiscal calendars, project planning ('we're 43% through the year'), and just satisfying curiosity about how far through the year we currently are."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Day of Year Calculator — SharpDev.Tools","url":"https://sharpdev.tools/tools/day-of-year/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/day-of-year/day-of-year.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('day-of-year');</script>
+<div class="page">
+<h1>Day of the Year Calculator</h1>
+<p class="subtitle">What day of the year is it (out of 365 or 366)? Plus ISO 8601 week, quarter, days remaining. Date ↔ day number both ways.</p>
+
+<div class="card">
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Mode</label>
+<div class="seg">
+<button class="seg-btn active" data-mode="date" type="button">Date → number</button>
+<button class="seg-btn" data-mode="number" type="button">Number → date</button>
+</div>
+</div>
+</div>
+
+<div class="mode-date">
+<div class="form-row">
+<label for="date-input">Date</label>
+<input id="date-input" type="date"/>
+</div>
+</div>
+
+<div class="mode-number" style="display:none">
+<div class="form-row">
+<label for="year-input">Year</label>
+<input id="year-input" type="number" min="1900" max="2200"/>
+</div>
+<div class="form-row">
+<label for="doy-input">Day of year (1-366)</label>
+<input id="doy-input" type="number" min="1" max="366" value="100"/>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="result-grid">
+<div class="result-block">
+<div class="result-label">Date</div>
+<div class="result-value" id="r-date">—</div>
+</div>
+<div class="result-block highlight">
+<div class="result-label">Day of year</div>
+<div class="result-value" id="r-doy">—</div>
+<div class="result-sub" id="r-doy-sub">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">ISO week</div>
+<div class="result-value" id="r-week">—</div>
+<div class="result-sub" id="r-week-sub">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Quarter</div>
+<div class="result-value" id="r-quarter">—</div>
+</div>
+<div class="result-block">
+<div class="result-label">Days remaining</div>
+<div class="result-value" id="r-remain">—</div>
+<div class="result-sub">in year</div>
+</div>
+<div class="result-block">
+<div class="result-label">Year progress</div>
+<div class="result-value" id="r-progress">—</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What day of the year is it?</h2>
+<p>The day-of-year (also called <strong>ordinal day</strong> or <strong>year day number</strong>) is just a count: January 1 is day 1, December 31 is day 365 — or day 366 in a leap year. The tool opens with today's date pre-filled so the first thing you see is "today is day N of YYYY" with the percentage progress through the year. Change the date to any other day to see its number.</p>
+
+<h2>365 vs 366 — when does it matter?</h2>
+<p>Normal years have 365 days. Leap years have 366 because February 29 is added. The rule:</p>
+<ul>
+<li>Divisible by 4 → leap year (e.g. 2020, 2024, 2028)</li>
+<li>EXCEPT divisible by 100 → not a leap year (e.g. 1900)</li>
+<li>EXCEPT divisible by 400 → leap year again (e.g. 2000)</li>
+</ul>
+<p>So the answer to "what day of the year is it out of 365" is wrong if you ask it on a leap year — the right denominator is 366. The tool handles this automatically and shows the correct max for the selected year.</p>
+
+<h2>Common queries this answers</h2>
+<ul>
+<li><strong>"What day of the year is it?"</strong> — today's number, instantly</li>
+<li><strong>"Current day number of the year"</strong> — same answer, plus percentage</li>
+<li><strong>"What day of the year is it out of 365 / 366"</strong> — with correct denominator for the current year</li>
+<li><strong>"Day in year for [specific date]"</strong> — date → number lookup</li>
+<li><strong>"Numerical / numeric day of the year"</strong> — same thing, just different wording</li>
+<li><strong>"Convert day number back to date"</strong> — reverse mode (Number → date)</li>
+</ul>
+
+<h2>Reverse mode — day number to date</h2>
+<p>Less common but useful for scientific data and military date formats. Switch to <em>Number → date</em>, enter the year and the day-of-year number (1-366), and the tool returns the calendar date with ISO week and quarter. Useful when you receive data labeled <code>2026-153</code> (DDD-YYYY format) and need to know what calendar date that actually is.</p>
+
+<h2>ISO 8601 week numbers</h2>
+<p>Different from "week of the year" the way Excel might calculate it. <strong>ISO weeks</strong>:</p>
+<ul>
+<li>Start on Monday (not Sunday)</li>
+<li>Week 1 contains the year's first Thursday</li>
+<li>So January 1 may belong to week 52 or 53 of the <em>previous</em> year if it's a Friday, Saturday or Sunday</li>
+<li>Used as the default in most European businesses and ISO-compliant calendar libraries</li>
+</ul>
+
+<h2>Year progress percentage</h2>
+<p>Want to see how much of the year is left? "85 % through 2026" is a more visceral framing than "day 310 of 365" — both shown side by side.</p>
+
+<h2>Privacy</h2>
+<p>Date math only — nothing leaves the browser.</p>
+</section>
+
+<script src="/tools/day-of-year/day-of-year.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

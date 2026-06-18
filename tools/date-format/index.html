@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Date Format Converter — ISO ↔ US ↔ EU ↔ RFC 2822 | SharpDev.Tools</title>
+<meta content="Convert dates between formats — ISO 8601, US (MM/DD/YYYY), EU (DD.MM.YYYY), RFC 2822, Unix timestamp. Live conversion across all formats simultaneously. Free, no upload." name="description"/>
+<link href="https://sharpdev.tools/tools/date-format/" rel="canonical"/>
+<meta content="Date Format Converter — ISO ↔ US ↔ EU ↔ RFC | SharpDev.Tools" property="og:title"/>
+<meta content="Convert dates between ISO 8601, US, EU, RFC 2822, Unix timestamp. All formats update live as you type." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/date-format/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Date Format Converter — ISO ↔ US ↔ EU ↔ RFC | SharpDev.Tools" name="twitter:title"/>
+<meta content="Convert dates between ISO 8601, US, EU, RFC 2822, Unix timestamp." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/time-date/"},
+    {"@type":"ListItem","position":3,"name":"Date Format Converter","item":"https://sharpdev.tools/tools/date-format/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between US and EU date formats?","acceptedAnswer":{"@type":"Answer","text":"US uses MM/DD/YYYY (month first) — 03/14/2026 means March 14. EU uses DD.MM.YYYY or DD/MM/YYYY (day first) — 14.03.2026 means March 14. ISO 8601 (YYYY-MM-DD) avoids the ambiguity entirely and is the modern default."}},
+    {"@type":"Question","name":"What's RFC 2822?","acceptedAnswer":{"@type":"Answer","text":"The email and HTTP standard format — 'Mon, 14 Mar 2026 15:30:00 +0100'. Required for the Date header of emails. JavaScript's toString() output is close but not exactly RFC 2822."}},
+    {"@type":"Question","name":"Is the date uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All conversion runs in your browser."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Date Format Converter — SharpDev.Tools","url":"https://sharpdev.tools/tools/date-format/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/date-format/date-format.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('date-format');</script>
+<div class="page">
+<h1>Date Format Converter</h1>
+<p class="subtitle">Edit any field — all the others update.</p>
+
+<div class="card">
+<div class="format-grid">
+<div class="fmt-row">
+<label class="fmt-label">ISO 8601 (recommended)</label>
+<input class="fmt-input" data-fmt="iso" id="f-iso" type="text" placeholder="2026-05-19T10:30:00.000Z"/>
+<span class="fmt-hint">YYYY-MM-DDTHH:mm:ss.sssZ · UTC</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">Date only (ISO)</label>
+<input class="fmt-input" data-fmt="iso-date" id="f-iso-date" type="text" placeholder="2026-05-19"/>
+<span class="fmt-hint">YYYY-MM-DD</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">US</label>
+<input class="fmt-input" data-fmt="us" id="f-us" type="text" placeholder="05/19/2026"/>
+<span class="fmt-hint">MM/DD/YYYY</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">EU</label>
+<input class="fmt-input" data-fmt="eu" id="f-eu" type="text" placeholder="19.05.2026"/>
+<span class="fmt-hint">DD.MM.YYYY</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">RFC 2822 (email / HTTP)</label>
+<input class="fmt-input" data-fmt="rfc" id="f-rfc" type="text" placeholder="Tue, 19 May 2026 10:30:00 +0000"/>
+<span class="fmt-hint">Mon, DD Mmm YYYY HH:mm:ss ±HHMM</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">Unix timestamp (seconds)</label>
+<input class="fmt-input" data-fmt="unix" id="f-unix" type="text" placeholder="1779528600"/>
+<span class="fmt-hint">Seconds since 1970-01-01 UTC</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">Unix timestamp (milliseconds)</label>
+<input class="fmt-input" data-fmt="unix-ms" id="f-unix-ms" type="text" placeholder="1779528600000"/>
+<span class="fmt-hint">JavaScript Date.now() format</span>
+</div>
+<div class="fmt-row">
+<label class="fmt-label">Long form (locale)</label>
+<input class="fmt-input" data-fmt="long" id="f-long" type="text" placeholder="May 19, 2026"/>
+<span class="fmt-hint">Read-only — formatted from current locale</span>
+</div>
+</div>
+<div class="action-row">
+<button class="btn btn-secondary" id="now-btn" type="button">Use current time</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Why ISO 8601 is the right default</h2>
+<p>YYYY-MM-DD sorts correctly as a string (newer dates sort larger), avoids the US/EU ambiguity (is 03/04 March 4th or April 3rd?), and is the international standard. Adopted by SQL, JSON Schema, Git, and every modern logging system. If you're choosing a format for storage or APIs, pick ISO 8601.</p>
+
+<h2>Format quick-reference</h2>
+<table class="fmt-table">
+<tr><th>Format</th><th>Example</th><th>Used for</th></tr>
+<tr><td>ISO 8601</td><td><code>2026-05-19T10:30:00Z</code></td><td>APIs, databases, JSON, logs</td></tr>
+<tr><td>US</td><td><code>05/19/2026</code></td><td>US consumer interfaces</td></tr>
+<tr><td>EU</td><td><code>19.05.2026</code></td><td>European consumer interfaces</td></tr>
+<tr><td>RFC 2822</td><td><code>Tue, 19 May 2026 10:30:00 +0000</code></td><td>Email Date header, HTTP If-Modified-Since</td></tr>
+<tr><td>Unix s</td><td><code>1779528600</code></td><td>POSIX, server logs, databases</td></tr>
+<tr><td>Unix ms</td><td><code>1779528600000</code></td><td>JavaScript, Java</td></tr>
+</table>
+
+<h2>Privacy</h2>
+<p>All conversion runs in your browser.</p>
+</section>
+
+<script src="/tools/date-format/date-format.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

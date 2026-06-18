@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Nano ID &amp; ULID Generator — Short Unique IDs | SharpDev.Tools</title>
+<meta content="Generate Nano IDs and ULIDs (sortable, timestamp-based IDs) in bulk. Cryptographically random, URL-safe. Free online ID generator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/id-generator/" rel="canonical"/>
+<meta content="Nano ID &amp; ULID Generator — Short Unique IDs | SharpDev.Tools" property="og:title"/>
+<meta content="Generate Nano IDs and ULIDs (sortable, timestamp-based IDs) in bulk. Cryptographically random, URL-safe. Free online ID generator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/id-generator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Nano ID &amp; ULID Generator — Short Unique IDs | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate Nano IDs and ULIDs (sortable, timestamp-based IDs) in bulk. Cryptographically random, URL-safe. Free online ID generator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Nano ID & ULID Generator","item":"https://sharpdev.tools/tools/id-generator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Nano ID?","acceptedAnswer":{"@type":"Answer","text":"Nano ID is a tiny, URL-safe unique ID format: 21 cryptographically random characters from a 64-symbol alphabet. It is shorter than a UUID but has comparable collision resistance, popular in modern JavaScript projects."}},{"@type":"Question","name":"What is a ULID and why is it sortable?","acceptedAnswer":{"@type":"Answer","text":"A ULID is a 26-character identifier where the first 10 characters encode the creation timestamp and the last 16 are random. Because the timestamp leads, ULIDs sort chronologically as plain strings, unlike random UUIDs."}},{"@type":"Question","name":"Are the IDs cryptographically random?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both use the browser's crypto.getRandomValues(), the same secure source used for keys, not the predictable Math.random()."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Nano ID & ULID Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/id-generator/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/id-generator/id-generator.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('id-generator');</script>
+<div class="page">
+<h1>Nano ID & ULID Generator</h1>
+<p class="subtitle">Generate Nano IDs and ULIDs in bulk. Cryptographically random, URL-safe, sortable.</p>
+<div class="row">
+<div class="field" style="flex:0 0 150px"><label for="type">Type</label><select id="type"><option value="nano">Nano ID</option><option value="ulid">ULID</option></select></div>
+<div class="field" style="flex:0 0 130px"><label for="size">Nano ID length</label><input type="number" id="size" value="21" min="4" max="64"></div>
+<div class="field" style="flex:0 0 130px"><label for="count">How many</label><input type="number" id="count" value="10" min="1" max="500"></div>
+</div>
+<div class="actions"><button class="btn btn-primary" id="gen">Generate</button></div>
+<div class="out-head"><label for="out">IDs</label><button class="copy-btn" id="copy">Copy all</button></div>
+<div class="output" id="out"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a Nano ID?</summary><p>Nano ID is a tiny, URL-safe unique ID format: 21 cryptographically random characters from a 64-symbol alphabet. It is shorter than a UUID but has comparable collision resistance, popular in modern JavaScript projects.</p></details>
+<details><summary>What is a ULID and why is it sortable?</summary><p>A ULID is a 26-character identifier where the first 10 characters encode the creation timestamp and the last 16 are random. Because the timestamp leads, ULIDs sort chronologically as plain strings, unlike random UUIDs.</p></details>
+<details><summary>Are the IDs cryptographically random?</summary><p>Yes. Both use the browser's crypto.getRandomValues(), the same secure source used for keys, not the predictable Math.random().</p></details>
+</section>
+<script src="/tools/id-generator/id-generator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

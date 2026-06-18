@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Password — Free Online, No Ads | SharpDev.Tools</title>
+<meta content="Generate strong, cryptographically secure random passwords with configurable length, symbols and look-alike exclusion. Free online, no ads, no sign-up." name="description"/>
+<link href="https://sharpdev.tools/tools/password/" rel="canonical"/>
+<meta content="Password — Free Online, No Ads | SharpDev.Tools" property="og:title"/>
+<meta content="Generate strong, cryptographically secure random passwords with configurable length, symbols and look-alike exclusion. Free online, no ads, no sign-up." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/password/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Password — Free Online, No Ads | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate strong, cryptographically secure random passwords with configurable length, symbols and look-alike exclusion. Free online, no ads, no sign-up." name="twitter:description"/>
+<script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sharpdev.tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security & Crypto", "item": "https://sharpdev.tools/#security-crypto"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Password",
+        "item": "https://sharpdev.tools/tools/password/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the Password Generator stay secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It uses the browser's Web Crypto API for cryptographically secure randomness, and nothing is sent or logged — each password is generated locally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I exclude look-alike characters?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — you can configure length, include or exclude symbols, numbers and ambiguous characters like 0/O or l/1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, free with no ads and no sign-up."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Password — SharpDev.Tools",
+    "url": "https://sharpdev.tools/tools/password/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SharpDev.Tools",
+      "url": "https://sharpdev.tools/"
+    }
+  }
+]</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/password/password.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('password');</script>
+<div class="page">
+<h1>Password Generator</h1>
+<p class="subtitle">Strong passwords generated in your browser. Nothing sent anywhere.</p>
+<div class="output-box">
+<input id="password-out" readonly="" type="text"/>
+<button class="copy-btn" onclick="copyPassword()" title="Copy">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+</button>
+<button class="regen-btn" onclick="generate()" title="Generate new">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+</button>
+</div>
+<div class="strength-bar" id="strength-bar">
+<div class="strength-fill" id="strength-fill"></div>
+<div class="strength-label" id="strength-label">—</div>
+</div>
+<div class="controls">
+<div class="ctrl-row">
+<label for="length">Length: <span id="length-val">16</span></label>
+<input id="length" max="64" min="4" oninput="document.getElementById('length-val').textContent = this.value; generate()" type="range" value="16"/>
+</div>
+<div class="toggle-grid">
+<label class="toggle">
+<input checked="" id="opt-upper" onchange="generate()" type="checkbox"/>
+<span>Uppercase (A-Z)</span>
+</label>
+<label class="toggle">
+<input checked="" id="opt-lower" onchange="generate()" type="checkbox"/>
+<span>Lowercase (a-z)</span>
+</label>
+<label class="toggle">
+<input checked="" id="opt-nums" onchange="generate()" type="checkbox"/>
+<span>Numbers (0-9)</span>
+</label>
+<label class="toggle">
+<input checked="" id="opt-syms" onchange="generate()" type="checkbox"/>
+<span>Symbols (!@#$...)</span>
+</label>
+<label class="toggle">
+<input id="opt-ambig" onchange="generate()" type="checkbox"/>
+<span>Exclude look-alikes (0,O,1,l,I)</span>
+</label>
+</div>
+<div class="presets">
+<button class="preset-btn" onclick="setPreset(8)">Short (8)</button>
+<button class="preset-btn" onclick="setPreset(16)">Strong (16)</button>
+<button class="preset-btn" onclick="setPreset(24)">Very strong (24)</button>
+<button class="preset-btn" onclick="setPreset(32)">Paranoid (32)</button>
+</div>
+</div>
+<div class="info-card">
+<h3>About password strength</h3>
+<p>Each character slot adds roughly 6 bits of entropy with mixed types. A 16-character password with all four categories is unguessable by brute force in any human lifetime. Passwords are generated using the cryptographically secure <code>crypto.getRandomValues</code> API — never any third-party service.</p>
+</div>
+</div>
+<script src="/tools/password/password.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

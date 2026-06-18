@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube Chapters Generator — Format Timestamps for Video Description | SharpDev.Tools</title>
+<meta content="Paste timestamps and titles, get properly-formatted YouTube chapters for your video description. Validates the 3-chapter / 10-second / 00:00 first-stamp rules. Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/yt-chapters/" rel="canonical"/>
+<meta content="YouTube Chapters Generator — Format Timestamps for Video Description | SharpDev.Tools" property="og:title"/>
+<meta content="Paste timestamps and titles, get properly-formatted YouTube chapters for your video description. Validates the 3-chapter / 10-second / 00:00 first-stamp rules. Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/yt-chapters/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="YouTube Chapters Generator — Format Timestamps for Video Description | SharpDev.Tools" name="twitter:title"/>
+<meta content="Paste timestamps and titles, get properly-formatted YouTube chapters for your video description. Validates the 3-chapter / 10-second / 00:00 first-stamp rules. Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"YouTube","item":"https://sharpdev.tools/#youtube"},
+    {"@type":"ListItem","position":3,"name":"YouTube Chapters Generator","item":"https://sharpdev.tools/tools/yt-chapters/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do YouTube chapters work?","acceptedAnswer":{"@type":"Answer","text":"YouTube auto-detects chapters when your video description contains a list of timestamps with titles, starting at 00:00. Each timestamp must be ≥10 seconds after the previous, and you need at least 3 chapters total. When detected, chapter markers appear on the progress bar and in the player UI."}},
+    {"@type":"Question","name":"What's the required format?","acceptedAnswer":{"@type":"Answer","text":"Each line: timestamp followed by a space and the chapter title. Timestamps can be M:SS, MM:SS, H:MM:SS, or HH:MM:SS. The first chapter MUST be at 00:00. Example: '00:00 Intro' then '01:30 First topic' then '03:45 Q&A'."}},
+    {"@type":"Question","name":"What are the YouTube chapter rules?","acceptedAnswer":{"@type":"Answer","text":"1) First timestamp must be 00:00. 2) Minimum 3 chapters total. 3) Each chapter must be at least 10 seconds long (gap between consecutive timestamps ≥10s). 4) Chapters must be in chronological order. Break any rule and YouTube falls back to no chapters."}},
+    {"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube Chapters Generator — SharpDev.Tools","url":"https://sharpdev.tools/tools/yt-chapters/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/yt-chapters/yt-chapters.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('yt-chapters');</script>
+<div class="page">
+<h1>YouTube Chapters Generator</h1>
+<p class="subtitle">Paste timestamps + titles, get YouTube-formatted chapters with live rule validation.</p>
+
+<div class="card">
+<label for="input-text">Your chapters (one per line: timestamp then title)</label>
+<textarea id="input-text" placeholder="00:00 Intro
+1:30 First topic
+3:45 Diving deeper
+8:15 Demo
+12:00 Q&amp;A">00:00 Intro
+1:30 First topic
+3:45 Diving deeper
+8:15 Demo
+12:00 Q&amp;A</textarea>
+
+<div class="result-row">
+<label for="output-text">YouTube-ready chapters block</label>
+<textarea id="output-text" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+<div class="validation" id="validation"></div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>YouTube chapter rules (must all be true)</h2>
+<ul>
+<li>✅ <strong>First chapter at 00:00</strong> — if your first timestamp isn't 00:00, YouTube doesn't render any chapters at all</li>
+<li>✅ <strong>At least 3 chapters</strong> total</li>
+<li>✅ <strong>Each chapter ≥ 10 seconds long</strong> (gap between consecutive timestamps must be 10s or more)</li>
+<li>✅ <strong>Chronological order</strong> — timestamps must increase line-by-line</li>
+<li>✅ <strong>Title comes after the timestamp</strong>, separated by a space or dash</li>
+</ul>
+
+<h2>Where do chapters help?</h2>
+<ul>
+<li><strong>Algorithmic boost</strong> — YouTube favors videos with chapters; viewers stay longer when they can skip to what they want</li>
+<li><strong>Search snippet</strong> — Google sometimes shows chapter timestamps in search results, taking up more SERP real estate</li>
+<li><strong>Suggested clips</strong> — viewers can jump in mid-video at a specific chapter from feeds and recommendations</li>
+<li><strong>Replays</strong> — for tutorial/educational content, chapters make videos much more usable as reference</li>
+</ul>
+
+<h2>How to use the generated chapters</h2>
+<ol>
+<li>Copy the formatted block</li>
+<li>Open your YouTube video on YouTube Studio → Edit Details</li>
+<li>Paste into the Description (anywhere — chapters work no matter where in the description they are)</li>
+<li>Click Save</li>
+<li>Reload the video page; chapter markers should appear on the progress bar within ~1 minute</li>
+</ol>
+</section>
+
+<script src="/tools/yt-chapters/yt-chapters.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

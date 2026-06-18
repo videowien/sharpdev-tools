@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Random Color Generator — Hex, RGB, HSL | SharpDev.Tools</title>
+<meta content="Generate random colors with hex, RGB and HSL codes. Make a single color or a whole palette. Free online random color generator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/random-color/" rel="canonical"/>
+<meta content="Random Color Generator — Hex, RGB, HSL | SharpDev.Tools" property="og:title"/>
+<meta content="Generate random colors with hex, RGB and HSL codes. Make a single color or a whole palette. Free online random color generator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/random-color/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Random Color Generator — Hex, RGB, HSL | SharpDev.Tools" name="twitter:title"/>
+<meta content="Generate random colors with hex, RGB and HSL codes. Make a single color or a whole palette. Free online random color generator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/#generators"},{"@type":"ListItem","position":3,"name":"Random Color Generator","item":"https://sharpdev.tools/tools/random-color/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How random are the colors?","acceptedAnswer":{"@type":"Answer","text":"Each color uses the browser's cryptographically secure random source (crypto.getRandomValues), so the colors are uniformly distributed across the full RGB space."}},{"@type":"Question","name":"Can I generate a palette?","acceptedAnswer":{"@type":"Answer","text":"Yes, set 'How many' to generate a grid of random colors at once, handy for brainstorming or picking an unexpected combination."}},{"@type":"Question","name":"How do I copy a color?","acceptedAnswer":{"@type":"Answer","text":"Click any swatch to copy its hex code to your clipboard. The hex is shown on each swatch in readable contrast."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Random Color Generator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/random-color/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/random-color/random-color.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('random-color');</script>
+<div class="page">
+<h1>Random Color Generator</h1>
+<p class="subtitle">Generate a random color or a palette. Copy hex, RGB or HSL.</p>
+<div class="row"><div class="field" style="flex:0 0 150px"><label for="count">How many</label><input type="number" id="count" value="1" min="1" max="40"></div>
+<div class="actions"><button class="btn btn-primary" id="gen" style="margin-top:18px">Generate</button></div></div>
+<div id="out" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:8px"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How random are the colors?</summary><p>Each color uses the browser's cryptographically secure random source (crypto.getRandomValues), so the colors are uniformly distributed across the full RGB space.</p></details>
+<details><summary>Can I generate a palette?</summary><p>Yes, set 'How many' to generate a grid of random colors at once, handy for brainstorming or picking an unexpected combination.</p></details>
+<details><summary>How do I copy a color?</summary><p>Click any swatch to copy its hex code to your clipboard. The hex is shown on each swatch in readable contrast.</p></details>
+</section>
+<script src="/tools/random-color/random-color.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

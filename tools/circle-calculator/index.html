@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Circle Calculator — Area, Circumference, Radius, Diameter | SharpDev.Tools</title>
+<meta content="Calculate a circle's area, circumference, diameter and radius from any one value. Free online circle calculator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/circle-calculator/" rel="canonical"/>
+<meta content="Circle Calculator — Area, Circumference, Radius, Diameter | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate a circle's area, circumference, diameter and radius from any one value. Free online circle calculator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/circle-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Circle Calculator — Area, Circumference, Radius, Diameter | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate a circle's area, circumference, diameter and radius from any one value. Free online circle calculator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Circle Calculator","item":"https://sharpdev.tools/tools/circle-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate the area of a circle?","acceptedAnswer":{"@type":"Answer","text":"Enter the radius and select 'Radius'; the area is shown as pi times radius squared. You can also start from the diameter, circumference or area and the calculator derives the rest."}},{"@type":"Question","name":"What formulas are used?","acceptedAnswer":{"@type":"Answer","text":"Diameter = 2r, Circumference = 2 pi r, Area = pi r squared. Given any one of these, the calculator solves for the radius first, then computes the others."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes, runs entirely in your browser."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Circle Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/circle-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/circle-calculator/circle-calculator.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('circle-calculator');</script>
+<div class="page">
+<h1>Circle Calculator</h1>
+<p class="subtitle">Enter any one value (radius, diameter, circumference or area), get the other three.</p>
+<div class="row"><div class="field"><label for="val">Value</label><input type="number" id="val" value="5" step="any"></div>
+<div class="field" style="flex:0 0 200px"><label for="known">is the</label><select id="known"><option value="radius">Radius</option><option value="diameter">Diameter</option><option value="circumference">Circumference</option><option value="area">Area</option></select></div></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I calculate the area of a circle?</summary><p>Enter the radius and select 'Radius'; the area is shown as pi times radius squared. You can also start from the diameter, circumference or area and the calculator derives the rest.</p></details>
+<details><summary>What formulas are used?</summary><p>Diameter = 2r, Circumference = 2 pi r, Area = pi r squared. Given any one of these, the calculator solves for the radius first, then computes the others.</p></details>
+<details><summary>Is it free?</summary><p>Yes, runs entirely in your browser.</p></details>
+</section>
+<script src="/tools/circle-calculator/circle-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

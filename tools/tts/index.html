@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Text-to-Speech — Free Online TTS in Your Browser | SharpDev.Tools</title>
+<meta content="Type or paste text, hear it spoken aloud. Multiple voices + languages from your OS. Pitch + rate + volume controls. Free, runs in browser via Web Speech API." name="description"/>
+<link href="https://sharpdev.tools/tools/tts/" rel="canonical"/>
+<meta content="Text-to-Speech — Free Online TTS in Your Browser | SharpDev.Tools" property="og:title"/>
+<meta content="Type or paste, hear it spoken. OS voices + languages. Pitch / rate / volume. Free, browser-only." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/tts/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="Text-to-Speech — Free Online TTS in Your Browser | SharpDev.Tools" name="twitter:title"/>
+<meta content="Type or paste, hear it spoken. OS voices + languages." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/generators/"},
+    {"@type":"ListItem","position":3,"name":"Text-to-Speech","item":"https://sharpdev.tools/tools/tts/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why do voice options differ between devices?","acceptedAnswer":{"@type":"Answer","text":"This tool uses your operating system's built-in voices via the Web Speech API. Mac and iOS ship with the highest-quality voices (Siri voices). Windows has good standard voices. Linux often has only robotic eSpeak voices unless you install extras. Voice options are not under our control."}},
+    {"@type":"Question","name":"Can I download the audio?","acceptedAnswer":{"@type":"Answer","text":"Not directly — Web Speech API outputs to the speakers, not to a file. To record the audio, use the Audio Recorder tool while TTS is playing, or your OS screen-recording with audio enabled."}},
+    {"@type":"Question","name":"Is the text uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Speech synthesis runs entirely on your device."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Text-to-Speech — SharpDev.Tools","url":"https://sharpdev.tools/tools/tts/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/tts/tts.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('tts');</script>
+<div class="page">
+<h1>Text-to-Speech</h1>
+<p class="subtitle">Hear typed text spoken aloud. Uses your OS voices via Web Speech API.</p>
+
+<div class="card">
+<div class="form-row">
+<label class="opt-label">Text</label>
+<textarea id="text" rows="8" placeholder="Type or paste text to speak…">Welcome to SharpDev Tools — over 200 free online utilities for developers, writers, and creators. No sign-up, no tracking, no ads.</textarea>
+</div>
+
+<div class="opt-row">
+<div class="opt-group">
+<label class="opt-label">Voice</label>
+<select id="voice"></select>
+</div>
+<div class="opt-group">
+<label class="opt-label">Rate <span id="rate-val">1.0</span></label>
+<input id="rate" type="range" min="0.5" max="2" step="0.1" value="1"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Pitch <span id="pitch-val">1.0</span></label>
+<input id="pitch" type="range" min="0.5" max="2" step="0.1" value="1"/>
+</div>
+<div class="opt-group">
+<label class="opt-label">Volume <span id="vol-val">100%</span></label>
+<input id="vol" type="range" min="0" max="1" step="0.05" value="1"/>
+</div>
+</div>
+
+<div class="action-row">
+<button class="btn btn-primary" id="speak-btn" type="button">▶ Speak</button>
+<button class="btn btn-secondary" id="pause-btn" type="button" disabled>⏸ Pause</button>
+<button class="btn btn-secondary" id="stop-btn" type="button" disabled>■ Stop</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>Voice quality varies by OS</h2>
+<table class="ref-table">
+<tr><th>OS</th><th>Quality</th></tr>
+<tr><td>macOS / iOS</td><td>Excellent (Siri voices)</td></tr>
+<tr><td>Windows 10/11</td><td>Good (David, Zira, neural voices)</td></tr>
+<tr><td>Android</td><td>Good (Google TTS)</td></tr>
+<tr><td>Linux</td><td>Robotic by default (eSpeak); installs improve it</td></tr>
+</table>
+
+<h2>Tips</h2>
+<ul>
+<li><strong>Add commas + periods</strong> — they give natural pauses; pure paragraphs sound robotic</li>
+<li><strong>Slow down with rate 0.8</strong> for unfamiliar words; speed up to 1.5 for fast reading practice</li>
+<li><strong>Match voice to language</strong> — using an English voice on German text sounds awful (and vice versa)</li>
+</ul>
+
+<h2>Privacy</h2>
+<p>The Web Speech API runs locally on your device. No audio is uploaded.</p>
+</section>
+
+<script src="/tools/tts/tts.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouTube URL Cleaner — Remove ?si=, ?feature=, ?pp= Tracking | SharpDev.Tools</title>
+<meta content="Clean YouTube and youtu.be URLs by stripping tracking parameters like ?si=, ?feature=, ?pp=. Keeps legit params (v, t, list, start). Free, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/yt-clean/" rel="canonical"/>
+<meta content="YouTube URL Cleaner — Remove ?si=, ?feature=, ?pp= Tracking | SharpDev.Tools" property="og:title"/>
+<meta content="Clean YouTube and youtu.be URLs by stripping tracking parameters like ?si=, ?feature=, ?pp=. Keeps legit params (v, t, list, start). Free, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/yt-clean/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sharpdev.tools/og-image.png" name="twitter:image"/>
+<meta content="YouTube URL Cleaner — Remove ?si=, ?feature=, ?pp= Tracking | SharpDev.Tools" name="twitter:title"/>
+<meta content="Clean YouTube and youtu.be URLs by stripping tracking parameters like ?si=, ?feature=, ?pp=. Keeps legit params (v, t, list, start). Free, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},
+    {"@type":"ListItem","position":2,"name":"YouTube","item":"https://sharpdev.tools/#youtube"},
+    {"@type":"ListItem","position":3,"name":"YouTube URL Cleaner","item":"https://sharpdev.tools/tools/yt-clean/"}
+  ]},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is ?si= in a YouTube URL?","acceptedAnswer":{"@type":"Answer","text":"?si= is the share-source identifier YouTube adds when you tap the share button. It tells YouTube which device/app the share came from. Stripping it doesn't change which video the link points to."}},
+    {"@type":"Question","name":"What stays, what gets removed?","acceptedAnswer":{"@type":"Answer","text":"Kept: v= (video id), t= (timestamp), list= (playlist), index= (position in playlist), start= (alternate timestamp). Removed: si, feature, pp, app, ab_channel, utm_*, and any other ref/src/utm/tracking-looking param."}},
+    {"@type":"Question","name":"Does it work with youtu.be short URLs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both youtube.com/watch?v=… and youtu.be/… short links are cleaned. The host stays unchanged."}},
+    {"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no ads, no sign-up."}}
+  ]},
+  {"@context":"https://schema.org","@type":"WebApplication","name":"YouTube URL Cleaner — SharpDev.Tools","url":"https://sharpdev.tools/tools/yt-clean/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}
+]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/yt-clean/yt-clean.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({
+    outboundLinks: true,
+    fileDownloads: true,
+    formSubmissions: true,
+    captureOn404: true
+  });
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('yt-clean');</script>
+<div class="page">
+<h1>YouTube URL Cleaner</h1>
+<p class="subtitle">Strip <code>?si=</code>, <code>?feature=</code>, <code>?pp=</code> and other tracking parameters. Keeps legit params (v, t, list, start).</p>
+
+<div class="card">
+<label for="input-url">Paste YouTube URL</label>
+<textarea id="input-url" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;si=xxxxxxxx&amp;feature=youtu.be"></textarea>
+
+<div class="result-row">
+<label for="output-url">Cleaned URL</label>
+<textarea id="output-url" readonly></textarea>
+<div class="action-row">
+<button class="btn btn-primary" id="copy-btn" type="button">Copy</button>
+<button class="btn btn-secondary" id="clear-btn" type="button">Clear</button>
+<span class="status-msg" id="status-msg"></span>
+</div>
+</div>
+
+<div class="info-row" id="info-row" style="display:none">
+<span class="info-label">Removed:</span>
+<span class="info-value" id="removed-list"></span>
+</div>
+</div>
+
+</div>
+
+<section class="info-block">
+<h2>What gets stripped</h2>
+<ul>
+<li><code>?si=</code> — share-source identifier (tells YT where shares came from)</li>
+<li><code>?feature=</code> — referral feature attribution</li>
+<li><code>?pp=</code> — playback parameters used for tracking</li>
+<li><code>?app=</code> — app-source identifier</li>
+<li><code>&ab_channel=</code> — sometimes added by YT for channel attribution</li>
+<li><code>&utm_source=</code>, <code>&utm_medium=</code>, etc. — campaign tracking from third parties</li>
+<li>Any other param starting with <code>ref</code>, <code>src</code>, <code>utm</code> or <code>tracking</code></li>
+</ul>
+
+<h2>What stays</h2>
+<ul>
+<li><code>?v=</code> — the video ID (obviously)</li>
+<li><code>?t=</code> or <code>&t=</code> — start-at-timestamp deep link (e.g. <code>?t=42</code>)</li>
+<li><code>?start=</code> — embed-style timestamp</li>
+<li><code>?list=</code> — playlist ID</li>
+<li><code>?index=</code> — position in playlist</li>
+</ul>
+
+<h2>Common use cases</h2>
+<ul>
+<li>Sharing a cleaner link in a tweet/post/email without the share-source telemetry attached</li>
+<li>Building documentation that references YouTube videos — strip clutter for readability</li>
+<li>Avoiding broken links when YT eventually changes/deprecates internal tracking schemes</li>
+</ul>
+</section>
+
+<script src="/tools/yt-clean/yt-clean.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

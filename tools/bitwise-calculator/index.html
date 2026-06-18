@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Bitwise Calculator — AND, OR, XOR, NOT, Shifts | SharpDev.Tools</title>
+<meta content="Calculate bitwise AND, OR, XOR, NOT and bit shifts on two integers. Results in decimal, hex and binary. Free online bitwise calculator, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/bitwise-calculator/" rel="canonical"/>
+<meta content="Bitwise Calculator — AND, OR, XOR, NOT, Shifts | SharpDev.Tools" property="og:title"/>
+<meta content="Calculate bitwise AND, OR, XOR, NOT and bit shifts on two integers. Results in decimal, hex and binary. Free online bitwise calculator, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/bitwise-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.Tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bitwise Calculator — AND, OR, XOR, NOT, Shifts | SharpDev.Tools" name="twitter:title"/>
+<meta content="Calculate bitwise AND, OR, XOR, NOT and bit shifts on two integers. Results in decimal, hex and binary. Free online bitwise calculator, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Bitwise Calculator","item":"https://sharpdev.tools/tools/bitwise-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which bitwise operations are supported?","acceptedAnswer":{"@type":"Answer","text":"AND, OR, XOR, NOT (unary, on A), and left/right bit shifts. Enter A and B in decimal, hex (0x..) or binary (0b..) and the result shows in decimal, hex and binary."}},{"@type":"Question","name":"Why is NOT giving a negative number?","acceptedAnswer":{"@type":"Answer","text":"JavaScript bitwise operations use signed 32-bit integers, so ~12 is -13 in signed decimal. The Unsigned 32-bit card shows the same bits read as an unsigned value."}},{"@type":"Question","name":"Can I mix number bases?","acceptedAnswer":{"@type":"Answer","text":"Yes. A can be hex and B can be decimal, for example. Prefix hex with 0x and binary with 0b; plain numbers are read as decimal."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Bitwise Calculator \u2014 SharpDev.Tools","url":"https://sharpdev.tools/tools/bitwise-calculator/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.Tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/bitwise-calculator/bitwise-calculator.css" rel="stylesheet"/>
+<!-- Plausible Analytics (cookieless, kein Consent nötig) -->
+<script defer src="https://plausible.io/js/pa-VPgpR21o4WpTqjfxDnRsm.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init({outboundLinks:true,fileDownloads:true,formSubmissions:true,captureOn404:true});
+  plausible('pageview');
+</script>
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('bitwise-calculator');</script>
+<div class="page">
+<h1>Bitwise Calculator</h1>
+<p class="subtitle">AND, OR, XOR, NOT and shifts on two integers. Results in decimal, hex and binary.</p>
+<div class="row"><div class="field"><label for="a">A (dec, 0x.. or 0b..)</label><input type="text" id="a" value="12"></div>
+<div class="field" style="flex:0 0 150px"><label for="op">Operation</label><select id="op"><option value="and">A AND B</option><option value="or">A OR B</option><option value="xor">A XOR B</option><option value="not">NOT A</option><option value="shl">A &lt;&lt; B</option><option value="shr">A &gt;&gt; B</option></select></div>
+<div class="field"><label for="b">B</label><input type="text" id="b" value="10"></div></div>
+<div class="result-cards" id="cards"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Which bitwise operations are supported?</summary><p>AND, OR, XOR, NOT (unary, on A), and left/right bit shifts. Enter A and B in decimal, hex (0x..) or binary (0b..) and the result shows in decimal, hex and binary.</p></details>
+<details><summary>Why is NOT giving a negative number?</summary><p>JavaScript bitwise operations use signed 32-bit integers, so ~12 is -13 in signed decimal. The Unsigned 32-bit card shows the same bits read as an unsigned value.</p></details>
+<details><summary>Can I mix number bases?</summary><p>Yes. A can be hex and B can be decimal, for example. Prefix hex with 0x and binary with 0b; plain numbers are read as decimal.</p></details>
+</section>
+<script src="/tools/bitwise-calculator/bitwise-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

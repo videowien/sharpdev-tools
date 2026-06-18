@@ -1,0 +1,103 @@
+/* Glassmorphism Generator — styles */
+.page { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+
+.gl-stage {
+  height: 360px; border-radius: 12px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  margin-bottom: 14px;
+}
+.gl-stage.grad1 { background: linear-gradient(135deg, #ff6b8a 0%, #ffa04a 50%, #ffd36b 100%); }
+.gl-stage.grad2 { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+.gl-stage.grad3 { background: linear-gradient(135deg, #56ab2f, #a8e063); }
+.gl-stage.custom { background-size: cover; background-position: center; }
+
+.gl-card {
+  width: 300px; min-height: 160px;
+  padding: 28px 24px;
+  display: flex; flex-direction: column; justify-content: center;
+  color: #fff;
+  /* These get set by JS */
+}
+.gl-card-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+.gl-card-body { font-size: 14px; opacity: 0.85; line-height: 1.55; }
+
+.gl-bg-row {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.gl-bg-btn {
+  padding: 6px 14px; background: #141414; border: 1px solid #262626;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 999px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s;
+}
+.gl-bg-btn:hover { border-color: #ff4444; color: #fff; }
+.gl-bg-btn.active { border-color: #ff4444; color: #ff4444; }
+.upload-btn { border-style: dashed; }
+
+.gl-controls {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 12px; padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 20px;
+}
+.gl-slider { display: grid; grid-template-columns: 130px 1fr 60px; align-items: center; gap: 10px; }
+.gl-slider label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.gl-slider input[type=range] { width: 100%; accent-color: #ff4444; }
+.gl-slider .val {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 12px; color: #fff; text-align: right;
+}
+.gl-color-row { display: grid; grid-template-columns: 130px 44px 1fr; align-items: center; gap: 10px; }
+.gl-color-row label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.gl-color-row input[type=color] {
+  width: 44px; height: 32px; border: none; padding: 0; background: transparent; cursor: pointer;
+  border-radius: 5px;
+}
+.gl-color-row input[type=text] {
+  padding: 6px 10px; background: #0d0d0d; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace;
+  border-radius: 6px; outline: none;
+}
+
+.code-panel {
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.code-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px; border-bottom: 1px solid #1f1f1f;
+  font-size: 12px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.copy-btn {
+  padding: 5px 12px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 12px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s; text-transform: none; letter-spacing: 0;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+pre#code-out {
+  padding: 16px; margin: 0;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace;
+  line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .gl-stage { height: 280px; }
+  .gl-card { width: 80%; }
+}
