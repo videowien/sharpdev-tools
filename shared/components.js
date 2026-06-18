@@ -954,7 +954,7 @@ function renderBugReport() {
       form.reset();
     } catch (err) {
       status.className = 'sd-bug-status error';
-      status.textContent = 'Could not send: ' + err.message + '. Email gillian@videowien.at directly if this keeps failing.';
+      status.textContent = 'Could not send: ' + err.message + '. Use the contact form on sharpdev.tools if this keeps failing.';
       status.style.display = 'block';
     } finally {
       btn.disabled = false;
