@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>IBAN Validator &amp; Checker | SharpDev.tools</title>
+<meta content="Free IBAN validator. Check an International Bank Account Number using the official mod-97 checksum and per-country length, and see it formatted in groups of four. Runs in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/iban-validator/" rel="canonical"/>
+<meta content="IBAN Validator &amp; Checker | SharpDev.tools" property="og:title"/>
+<meta content="Free IBAN validator. Check an International Bank Account Number using the official mod-97 checksum and per-country length, and see it formatted in groups of four. Runs in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/iban-validator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="IBAN Validator &amp; Checker | SharpDev.tools" name="twitter:title"/>
+<meta content="Free IBAN validator. Check an International Bank Account Number using the official mod-97 checksum and per-country length, and see it formatted in groups of four. Runs in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"IBAN Validator","item":"https://sharpdev.tools/tools/iban-validator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the validator check?","acceptedAnswer":{"@type":"Answer","text":"It runs the official mod-97 checksum from the ISO 13616 standard and, for known countries, confirms the IBAN is the right length. Together these catch typos and transposed digits, which is exactly what the checksum was designed for."}},{"@type":"Question","name":"Does a valid result mean the account exists?","acceptedAnswer":{"@type":"Answer","text":"No. It means the number is correctly formed and passes the checksum. Only the receiving bank can confirm that the account actually exists and is active."}},{"@type":"Question","name":"Is my IBAN sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The check runs entirely in your browser and the number is never transmitted or stored."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"IBAN Validator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/iban-validator/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/iban-validator/iban-validator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('iban-validator');</script>
+<div class="page">
+<h1>IBAN Validator</h1>
+<p class="subtitle">Check whether an IBAN is valid using the official mod-97 checksum and the expected length for its country. Formats it for readability.</p>
+<div class="field"><label for="in">IBAN</label><input type="text" id="in" value="DE89 3704 0044 0532 0130 00"></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Result</div><div class="value" id="result" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Country</div><div class="value" id="country" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Length</div><div class="value" id="len">—</div></div></div>
+<div class="out-head"><label>Formatted</label></div>
+<div class="output" id="fmt" style="min-height:auto;padding:12px;">—</div>
+<p class="note">Validation uses the ISO 13616 mod-97 checksum, the same check banks use, plus the expected length for the country code. It confirms the number is well-formed, not that the account actually exists.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the validator check?</summary><p>It runs the official mod-97 checksum from the ISO 13616 standard and, for known countries, confirms the IBAN is the right length. Together these catch typos and transposed digits, which is exactly what the checksum was designed for.</p></details>
+<details><summary>Does a valid result mean the account exists?</summary><p>No. It means the number is correctly formed and passes the checksum. Only the receiving bank can confirm that the account actually exists and is active.</p></details>
+<details><summary>Is my IBAN sent anywhere?</summary><p>No. The check runs entirely in your browser and the number is never transmitted or stored.</p></details>
+</section>
+<script src="/tools/iban-validator/iban-validator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

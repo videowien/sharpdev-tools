@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Dipole Antenna Calculator (Half-Wave) | SharpDev.tools</title>
+<meta content="Free half-wave dipole antenna calculator. Enter a frequency to get the total wire length and each leg, in feet and metres, using the standard 468 / MHz formula. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/dipole/" rel="canonical"/>
+<meta content="Dipole Antenna Calculator (Half-Wave) | SharpDev.tools" property="og:title"/>
+<meta content="Free half-wave dipole antenna calculator. Enter a frequency to get the total wire length and each leg, in feet and metres, using the standard 468 / MHz formula. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/dipole/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Dipole Antenna Calculator (Half-Wave) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free half-wave dipole antenna calculator. Enter a frequency to get the total wire length and each leg, in feet and metres, using the standard 468 / MHz formula. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Dipole Antenna Calculator","item":"https://sharpdev.tools/tools/dipole/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is a half-wave dipole?","acceptedAnswer":{"@type":"Answer","text":"Total length in feet is 468 divided by the frequency in MHz, in metres it is about 142.6 divided by MHz. For example a 20m dipole at 14.2 MHz is about 32.96 feet (10.05 m) total, with two legs of 16.48 feet each."}},{"@type":"Question","name":"Why 468 and not 492?","acceptedAnswer":{"@type":"Answer","text":"A free-space half wavelength would use 492, but a real wire has an end effect that makes it resonate slightly short, so the practical figure is 468. Thicker wire and insulation shift it a little, so cut a touch long and trim for lowest SWR."}},{"@type":"Question","name":"How high should I hang it?","acceptedAnswer":{"@type":"Answer","text":"Higher is generally better. At least a quarter wavelength up helps efficiency and lowers the takeoff angle for DX; lower antennas radiate more straight up, which suits regional (NVIS) contacts."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Dipole Antenna Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/dipole/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/dipole/dipole.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('dipole');</script>
+<div class="page">
+<h1>Dipole Antenna Calculator</h1>
+<p class="subtitle">Find the length of a half-wave dipole for any frequency, total length and each leg, in feet and metres.</p>
+<div class="row"><div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="14.2" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Total length</div><div class="value" id="tot" style="font-size:18px;">-</div></div>
+<div class="result-card"><div class="label">Each leg</div><div class="value" id="leg" style="font-size:18px;">-</div></div></div>
+<p class="note">A half-wave dipole is the most common ham antenna. Total length in feet = 468 / frequency in MHz, split into two equal legs fed at the centre. The 468 figure already allows for the end effect that makes a real wire resonate a little shorter than a free-space half wavelength. Trim for lowest SWR.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long is a half-wave dipole?</summary><p>Total length in feet is 468 divided by the frequency in MHz, in metres it is about 142.6 divided by MHz. For example a 20m dipole at 14.2 MHz is about 32.96 feet (10.05 m) total, with two legs of 16.48 feet each.</p></details>
+<details><summary>Why 468 and not 492?</summary><p>A free-space half wavelength would use 492, but a real wire has an end effect that makes it resonate slightly short, so the practical figure is 468. Thicker wire and insulation shift it a little, so cut a touch long and trim for lowest SWR.</p></details>
+<details><summary>How high should I hang it?</summary><p>Higher is generally better. At least a quarter wavelength up helps efficiency and lowers the takeoff angle for DX; lower antennas radiate more straight up, which suits regional (NVIS) contacts.</p></details>
+</section>
+<script src="/tools/dipole/dipole.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Credit Card Payoff Calculator | SharpDev.tools</title>
+<meta content="Free credit card payoff calculator. See how many months a balance takes to clear at a fixed monthly payment and the total interest, or switch to find the payment needed to clear it in a set number of months. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/credit-card-payoff/" rel="canonical"/>
+<meta content="Credit Card Payoff Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free credit card payoff calculator. See how many months a balance takes to clear at a fixed monthly payment and the total interest, or switch to find the payment needed to clear it in a set number of months. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/credit-card-payoff/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Credit Card Payoff Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free credit card payoff calculator. See how many months a balance takes to clear at a fixed monthly payment and the total interest, or switch to find the payment needed to clear it in a set number of months. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"Credit Card Payoff Calculator","item":"https://sharpdev.tools/tools/credit-card-payoff/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my balance barely go down?","acceptedAnswer":{"@type":"Answer","text":"Credit cards charge interest monthly on the remaining balance. If your payment is close to the monthly interest, almost none of it reduces the principal. Paying well above the interest is what clears the debt."}},{"@type":"Question","name":"How can I pay it off faster?","acceptedAnswer":{"@type":"Answer","text":"Increase the monthly payment, even slightly, and watch the months and total interest drop. Switch to the 'payment for a target months' mode to see exactly what it takes to be done by a chosen date."}},{"@type":"Question","name":"Is the APR the same as the monthly rate?","acceptedAnswer":{"@type":"Answer","text":"No. The APR is the yearly rate; the calculator divides it by 12 for the monthly rate it applies to your balance. Most cards compound interest monthly like this."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Credit Card Payoff Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/credit-card-payoff/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/credit-card-payoff/credit-card-payoff.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('credit-card-payoff');</script>
+<div class="page">
+<h1>Credit Card Payoff Calculator</h1>
+<p class="subtitle">Find out how long a credit card balance takes to clear, or what monthly payment clears it by a target date, plus the interest cost.</p>
+<div class="row">
+<div class="field"><label for="bal">Balance</label><input type="number" id="bal" value="5000" step="any"></div>
+<div class="field"><label for="apr">APR (%)</label><input type="number" id="apr" value="19.99" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="mode">Solve for</label><select id="mode"><option value="months">Months from a payment</option><option value="payment">Payment for a target months</option></select></div>
+<div class="field"><label id="inlabel" for="input">Monthly payment</label><input type="number" id="input" value="150" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="r1label">Time to pay off</div><div class="value" id="r1" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Total interest</div><div class="value" id="int">—</div></div>
+<div class="result-card"><div class="label">Total paid</div><div class="value" id="paid">—</div></div></div>
+<p class="note" id="warn" style="display:none;"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Why does my balance barely go down?</summary><p>Credit cards charge interest monthly on the remaining balance. If your payment is close to the monthly interest, almost none of it reduces the principal. Paying well above the interest is what clears the debt.</p></details>
+<details><summary>How can I pay it off faster?</summary><p>Increase the monthly payment, even slightly, and watch the months and total interest drop. Switch to the 'payment for a target months' mode to see exactly what it takes to be done by a chosen date.</p></details>
+<details><summary>Is the APR the same as the monthly rate?</summary><p>No. The APR is the yearly rate; the calculator divides it by 12 for the monthly rate it applies to your balance. Most cards compound interest monthly like this.</p></details>
+</section>
+<script src="/tools/credit-card-payoff/credit-card-payoff.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

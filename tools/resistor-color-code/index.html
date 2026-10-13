@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Resistor Color Code Calculator (4, 5 &amp; 6 Band) | SharpDev.tools</title>
+<meta content="Free resistor color code calculator. Decode a 4, 5 or 6-band resistor into its resistance, tolerance and temperature coefficient, or look up the band colours for a value. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/resistor-color-code/" rel="canonical"/>
+<meta content="Resistor Color Code Calculator (4, 5 &amp; 6 Band) | SharpDev.tools" property="og:title"/>
+<meta content="Free resistor color code calculator. Decode a 4, 5 or 6-band resistor into its resistance, tolerance and temperature coefficient, or look up the band colours for a value. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/resistor-color-code/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Resistor Color Code Calculator (4, 5 &amp; 6 Band) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free resistor color code calculator. Decode a 4, 5 or 6-band resistor into its resistance, tolerance and temperature coefficient, or look up the band colours for a value. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"Resistor Color Code Calculator","item":"https://sharpdev.tools/tools/resistor-color-code/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I read a resistor's colour bands?","acceptedAnswer":{"@type":"Answer","text":"Hold the resistor with the tolerance band (often gold or silver) on the right. The first two bands (three on 5 and 6-band parts) are digits, the next is the multiplier (power of ten), then the tolerance, and on 6-band resistors a final band gives the temperature coefficient."}},{"@type":"Question","name":"What is the gold or silver band for?","acceptedAnswer":{"@type":"Answer","text":"As a tolerance band, gold means plus or minus 5% and silver 10%. As a multiplier band, gold divides by 10 and silver by 100, which is how sub-ohm resistor values are coded."}},{"@type":"Question","name":"Why 4, 5 or 6 bands?","acceptedAnswer":{"@type":"Answer","text":"4-band resistors give two significant digits, 5-band give three (more precise), and 6-band add a temperature-coefficient band for parts where stability over temperature matters."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Resistor Color Code Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/resistor-color-code/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/resistor-color-code/resistor-color-code.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('resistor-color-code');</script>
+<div class="page">
+<h1>Resistor Color Code Calculator</h1>
+<p class="subtitle">Read a resistor's value from its colour bands, or find the bands for a value. Supports 4, 5 and 6-band resistors with tolerance and temperature coefficient.</p>
+<div class="row">
+<div class="field"><label for="bands">Bands</label><select id="bands"><option value="4">4-band</option><option value="5" selected>5-band</option><option value="6">6-band</option></select></div></div>
+<div class="rcc-bands" id="bandsel"></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Resistance</div><div class="value" id="res" style="font-size:20px;">—</div></div>
+<div class="result-card"><div class="label">Tolerance</div><div class="value" id="tol">—</div></div>
+<div class="result-card"><div class="label">Temp. coeff.</div><div class="value" id="tc" style="font-size:15px;">—</div></div></div>
+<p class="note">Bands 1 to 2 (or 3 for 5/6-band) are significant digits, the next is the multiplier, then tolerance, and on 6-band resistors a final temperature-coefficient band. Gold and silver multipliers give sub-ohm and fractional values.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I read a resistor's colour bands?</summary><p>Hold the resistor with the tolerance band (often gold or silver) on the right. The first two bands (three on 5 and 6-band parts) are digits, the next is the multiplier (power of ten), then the tolerance, and on 6-band resistors a final band gives the temperature coefficient.</p></details>
+<details><summary>What is the gold or silver band for?</summary><p>As a tolerance band, gold means plus or minus 5% and silver 10%. As a multiplier band, gold divides by 10 and silver by 100, which is how sub-ohm resistor values are coded.</p></details>
+<details><summary>Why 4, 5 or 6 bands?</summary><p>4-band resistors give two significant digits, 5-band give three (more precise), and 6-band add a temperature-coefficient band for parts where stability over temperature matters.</p></details>
+</section>
+<script src="/tools/resistor-color-code/resistor-color-code.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

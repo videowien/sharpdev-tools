@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>EZ Grader (Test Score Percentage &amp; Grade) | SharpDev.tools</title>
+<meta content="Free EZ grader for teachers. Enter the total questions and the number wrong to get the percentage score and letter grade instantly. The classic quick grading tool. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ez-grader/" rel="canonical"/>
+<meta content="EZ Grader (Test Score Percentage &amp; Grade) | SharpDev.tools" property="og:title"/>
+<meta content="Free EZ grader for teachers. Enter the total questions and the number wrong to get the percentage score and letter grade instantly. The classic quick grading tool. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ez-grader/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="EZ Grader (Test Score Percentage &amp; Grade) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free EZ grader for teachers. Enter the total questions and the number wrong to get the percentage score and letter grade instantly. The classic quick grading tool. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"EZ Grader","item":"https://sharpdev.tools/tools/ez-grader/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the EZ grader work?","acceptedAnswer":{"@type":"Answer","text":"It divides the number of correct answers (total minus wrong) by the total number of questions and shows the percentage and a letter grade. It is the digital version of the classic teacher's grading wheel."}},{"@type":"Question","name":"Can I change the grading scale?","acceptedAnswer":{"@type":"Answer","text":"The tool uses the common 90/80/70/60 scale for A to F. If your school uses different cut-offs, read the percentage and apply your own scale; the percentage itself does not change."}},{"@type":"Question","name":"Does it handle extra-credit or weighted questions?","acceptedAnswer":{"@type":"Answer","text":"No, it assumes every question is worth the same. For weighted categories or extra credit, use the weighted grade calculator instead."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"EZ Grader \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/ez-grader/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ez-grader/ez-grader.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ez-grader');</script>
+<div class="page">
+<h1>EZ Grader</h1>
+<p class="subtitle">Enter the number of questions and how many were wrong to get the percentage score and letter grade instantly. A teacher's grading shortcut.</p>
+<div class="row">
+<div class="field"><label for="total">Total questions</label><input type="number" id="total" value="25" min="1"></div>
+<div class="field"><label for="wrong">Number wrong</label><input type="number" id="wrong" value="3" min="0"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Score</div><div class="value" id="pct">—</div></div>
+<div class="result-card"><div class="label">Grade</div><div class="value" id="grade">—</div></div>
+<div class="result-card"><div class="label">Correct</div><div class="value" id="right">—</div></div></div>
+<p class="note">Score is the percentage of questions answered correctly. The letter grade uses the common scale: 90+ is A, 80+ B, 70+ C, 60+ D, below 60 is F. Adjust for your own grading policy.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does the EZ grader work?</summary><p>It divides the number of correct answers (total minus wrong) by the total number of questions and shows the percentage and a letter grade. It is the digital version of the classic teacher's grading wheel.</p></details>
+<details><summary>Can I change the grading scale?</summary><p>The tool uses the common 90/80/70/60 scale for A to F. If your school uses different cut-offs, read the percentage and apply your own scale; the percentage itself does not change.</p></details>
+<details><summary>Does it handle extra-credit or weighted questions?</summary><p>No, it assumes every question is worth the same. For weighted categories or extra credit, use the weighted grade calculator instead.</p></details>
+</section>
+<script src="/tools/ez-grader/ez-grader.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

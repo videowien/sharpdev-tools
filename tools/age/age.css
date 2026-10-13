@@ -1,0 +1,63 @@
+.page { padding: 40px 20px; max-width: 760px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 24px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.input-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  margin-bottom: 24px;
+}
+.col { position: relative; }
+
+input[type="date"] {
+  width: 100%; padding: 12px 14px; background: #141414; border: 1px solid #2a2a2a;
+  border-radius: 8px; color: #fff; font-size: 15px; outline: none;
+  font-family: inherit; color-scheme: dark;
+}
+input[type="date"]:focus { border-color: #ff4444; }
+
+.today-btn {
+  margin-top: 8px; padding: 6px 12px; background: transparent;
+  border: 1px solid #333; color: #aaa; border-radius: 4px;
+  font-size: 12px; cursor: pointer; transition: all 0.15s;
+}
+.today-btn:hover { border-color: #ff4444; color: #fff; }
+
+.result-card {
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 12px;
+  padding: 28px; margin-bottom: 24px; min-height: 200px;
+}
+
+.main-result {
+  font-size: 40px; font-weight: 700; color: #ff4444; line-height: 1.1;
+  margin-bottom: 12px;
+}
+.main-sub { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+.breakdown {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;
+  margin-top: 16px;
+}
+.b-item {
+  background: #141414; border: 1px solid #262626; border-radius: 8px; padding: 14px;
+}
+.b-val { color: #fff; font-size: 22px; font-weight: 600; font-family: 'SF Mono', Monaco, monospace; }
+.b-label { color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+.empty-state { color: #666; text-align: center; padding: 40px 20px; }
+
+.info-card {
+  padding: 16px 20px;
+  background: #0d0d0d; border: 1px solid #1f1f1f; border-radius: 10px;
+}
+.info-card h3 { color: #ccc; font-size: 14px; margin-bottom: 8px; font-weight: 600; text-transform: none; letter-spacing: normal; }
+.info-card p { color: #888; font-size: 13px; line-height: 1.6; margin: 0; }
+
+@media (max-width: 600px) {
+  .input-row { grid-template-columns: 1fr; }
+  .main-result { font-size: 28px; }
+}

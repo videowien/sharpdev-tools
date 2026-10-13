@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Telescope Magnification Calculator | SharpDev.tools</title>
+<meta content="Free telescope magnification calculator. Enter telescope focal length, eyepiece focal length, optional Barlow and aperture to get the magnification, exit pupil and the useful magnification range. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/telescope-magnification/" rel="canonical"/>
+<meta content="Telescope Magnification Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free telescope magnification calculator. Enter telescope focal length, eyepiece focal length, optional Barlow and aperture to get the magnification, exit pupil and the useful magnification range. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/telescope-magnification/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Telescope Magnification Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free telescope magnification calculator. Enter telescope focal length, eyepiece focal length, optional Barlow and aperture to get the magnification, exit pupil and the useful magnification range. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"Telescope Magnification Calculator","item":"https://sharpdev.tools/tools/telescope-magnification/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate telescope magnification?","acceptedAnswer":{"@type":"Answer","text":"Divide the telescope focal length by the eyepiece focal length: a 1200 mm scope with a 10 mm eyepiece gives 120x. A 2x Barlow doubles that to 240x; a focal reducer works the other way."}},{"@type":"Question","name":"What is the maximum useful magnification?","acceptedAnswer":{"@type":"Answer","text":"About 2x the aperture in millimetres (roughly 50x per inch), so a 150 mm scope tops out around 300x. Beyond that the image gets bigger but not sharper, and most nights the atmosphere limits you to 150-250x regardless of the scope."}},{"@type":"Question","name":"Is there a minimum useful magnification?","acceptedAnswer":{"@type":"Answer","text":"Yes. Below about aperture \u00f7 7 the exit pupil exceeds the ~7 mm of a dark-adapted pupil and some of the light misses your eye. For a 150 mm scope that is around 21x."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Telescope Magnification Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/telescope-magnification/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/telescope-magnification/telescope-magnification.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('telescope-magnification');</script>
+<div class="page">
+<h1>Telescope Magnification Calculator</h1>
+<p class="subtitle">Magnification from your telescope and eyepiece focal lengths, with Barlow, exit pupil, and the useful magnification range for your aperture.</p>
+<div class="row">
+<div class="field"><label for="fl">Telescope focal length (mm)</label><input type="number" id="fl" value="1200" step="any"></div>
+<div class="field"><label for="ep">Eyepiece focal length (mm)</label><input type="number" id="ep" value="10" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="barlow">Barlow / reducer</label><select id="barlow"><option value="1" selected>none (1x)</option><option value="2">2x Barlow</option><option value="3">3x Barlow</option><option value="0.5">0.5x reducer</option></select></div>
+<div class="field"><label for="ap">Aperture (mm, optional)</label><input type="number" id="ap" value="150" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Magnification</div><div class="value" id="mag" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Exit pupil</div><div class="value" id="xp">-</div></div>
+<div class="result-card"><div class="label">Useful range</div><div class="value" id="range" style="font-size:14px;">-</div></div></div>
+<p class="note">Magnification = telescope focal length ÷ eyepiece focal length, times any Barlow. The practical ceiling is about 2× the aperture in mm (atmosphere and optics limit it); below about aperture ÷ 7 the exit pupil is larger than a dark-adapted eye and light is wasted.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I calculate telescope magnification?</summary><p>Divide the telescope focal length by the eyepiece focal length: a 1200 mm scope with a 10 mm eyepiece gives 120x. A 2x Barlow doubles that to 240x; a focal reducer works the other way.</p></details>
+<details><summary>What is the maximum useful magnification?</summary><p>About 2x the aperture in millimetres (roughly 50x per inch), so a 150 mm scope tops out around 300x. Beyond that the image gets bigger but not sharper, and most nights the atmosphere limits you to 150-250x regardless of the scope.</p></details>
+<details><summary>Is there a minimum useful magnification?</summary><p>Yes. Below about aperture ÷ 7 the exit pupil exceeds the ~7 mm of a dark-adapted pupil and some of the light misses your eye. For a 150 mm scope that is around 21x.</p></details>
+</section>
+<script src="/tools/telescope-magnification/telescope-magnification.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

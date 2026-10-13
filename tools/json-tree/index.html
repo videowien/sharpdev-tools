@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSON Tree Viewer (Collapsible JSON Explorer) | SharpDev.tools</title>
+<meta content="Free JSON tree viewer. Paste JSON and explore it as a collapsible, colour-coded tree: expand and collapse nested objects and arrays, see value types and array lengths, and navigate large API responses. Validates as you go. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/json-tree/" rel="canonical"/>
+<meta content="JSON Tree Viewer (Collapsible JSON Explorer) | SharpDev.tools" property="og:title"/>
+<meta content="Free JSON tree viewer. Paste JSON and explore it as a collapsible, colour-coded tree: expand and collapse nested objects and arrays, see value types and array lengths, and navigate large API responses. Validates as you go. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json-tree/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSON Tree Viewer (Collapsible JSON Explorer) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free JSON tree viewer. Paste JSON and explore it as a collapsible, colour-coded tree: expand and collapse nested objects and arrays, see value types and array lengths, and navigate large API responses. Validates as you go. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"JSON Tree Viewer","item":"https://sharpdev.tools/tools/json-tree/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is this different from a JSON formatter?","acceptedAnswer":{"@type":"Answer","text":"A formatter pretty-prints the whole text. The tree viewer turns the JSON into an interactive, collapsible outline so you can fold away the parts you do not care about and drill into deeply nested objects and arrays, which is far easier for large API responses."}},{"@type":"Question","name":"Does it validate my JSON?","acceptedAnswer":{"@type":"Answer","text":"Yes. It parses the JSON as you type and shows a clear error message if it is invalid, including where the problem is, so it doubles as a quick validator."}},{"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Parsing and rendering happen entirely in your browser, so even sensitive API payloads stay on your device."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Tree Viewer \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/json-tree/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json-tree/json-tree.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json-tree');</script>
+<div class="page">
+<h1>JSON Tree Viewer</h1>
+<p class="subtitle">Paste JSON and explore it as a collapsible tree. Expand and collapse objects and arrays, see types at a glance, and find your way around large payloads.</p>
+<div class="field"><label for="in">JSON</label><textarea id="in" style="min-height:120px;">{"name":"SharpDev","tools":713,"tags":["fast","private"],"meta":{"cookies":0,"open":true}}</textarea></div>
+<div class="actions"><button class="small-btn" id="expand">Expand all</button><button class="small-btn" id="collapse">Collapse all</button></div>
+<div id="err" class="jt-err" style="display:none;"></div>
+<div class="jt" id="tree"></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is this different from a JSON formatter?</summary><p>A formatter pretty-prints the whole text. The tree viewer turns the JSON into an interactive, collapsible outline so you can fold away the parts you do not care about and drill into deeply nested objects and arrays, which is far easier for large API responses.</p></details>
+<details><summary>Does it validate my JSON?</summary><p>Yes. It parses the JSON as you type and shows a clear error message if it is invalid, including where the problem is, so it doubles as a quick validator.</p></details>
+<details><summary>Is my data uploaded?</summary><p>No. Parsing and rendering happen entirely in your browser, so even sensitive API payloads stay on your device.</p></details>
+</section>
+<script src="/tools/json-tree/json-tree.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

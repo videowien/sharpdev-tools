@@ -1,0 +1,34 @@
+/* Handle Checker — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+.form-row label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.form-row input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 16px;
+  font-family: 'SF Mono', monospace;
+}
+.hint { font-size: 12px; color: #666; margin: 0; }
+
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 14px; }
+
+.platform-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; }
+.platform-row {
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  padding: 12px; display: flex; align-items: center; gap: 10px;
+}
+.platform-row.ok { border-left: 3px solid #4caf50; }
+.platform-row.fail { border-left: 3px solid #ff4444; }
+.platform-icon { width: 32px; height: 32px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 11px; font-family: 'SF Mono', monospace; }
+.platform-info { flex: 1; min-width: 0; }
+.platform-name { font-size: 13px; color: #fff; font-weight: 500; }
+.platform-status { font-size: 11px; margin-top: 2px; font-family: 'SF Mono', monospace; }
+.platform-status.ok { color: #4caf50; }
+.platform-status.fail { color: #ff6666; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

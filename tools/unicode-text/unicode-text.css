@@ -1,0 +1,49 @@
+.page { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.input-wrap { margin-bottom: 14px; }
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+#input {
+  width: 100%; min-height: 80px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 16px; padding: 14px; outline: none;
+  font-family: inherit; line-height: 1.5; transition: border-color 0.2s;
+}
+#input:focus { border-color: #ff4444; }
+
+.notes { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.note {
+  padding: 8px 12px; background: #141414; border: 1px solid #262626;
+  border-radius: 6px; color: #888; font-size: 12px;
+}
+.note.warn { border-left: 2px solid #ff4444; }
+
+.styles { display: flex; flex-direction: column; gap: 8px; }
+.style-row {
+  display: grid; grid-template-columns: 180px 1fr auto; gap: 14px;
+  align-items: center; padding: 12px 16px;
+  background: #0f0f0f; border: 1px solid #262626; border-radius: 8px;
+  transition: border-color 0.15s;
+}
+.style-row:hover { border-color: #333; }
+.style-name { font-size: 12px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.style-output {
+  font-size: 16px; color: #fff; user-select: all; word-break: break-word;
+  background: #0a0a0a; padding: 8px 12px; border-radius: 6px;
+  border: 1px solid #222; min-height: 20px;
+}
+.copy-btn {
+  padding: 6px 14px; background: transparent; border: 1px solid #333;
+  color: #aaa; border-radius: 4px; font-size: 12px; cursor: pointer;
+  transition: all 0.15s; font-family: inherit;
+}
+.copy-btn:hover { border-color: #ff4444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+@media (max-width: 700px) {
+  .style-row { grid-template-columns: 1fr; gap: 6px; }
+}

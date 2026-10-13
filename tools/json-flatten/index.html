@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSON Flatten / Unflatten (Dot-Notation Keys) | SharpDev.tools</title>
+<meta content="Free JSON flatten and unflatten tool. Flatten a nested JSON object into single-level keys joined by dots, or expand dot-notation keys back into a nested structure. Useful for translation files, configs and diffing. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/json-flatten/" rel="canonical"/>
+<meta content="JSON Flatten / Unflatten (Dot-Notation Keys) | SharpDev.tools" property="og:title"/>
+<meta content="Free JSON flatten and unflatten tool. Flatten a nested JSON object into single-level keys joined by dots, or expand dot-notation keys back into a nested structure. Useful for translation files, configs and diffing. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/json-flatten/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSON Flatten / Unflatten (Dot-Notation Keys) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free JSON flatten and unflatten tool. Flatten a nested JSON object into single-level keys joined by dots, or expand dot-notation keys back into a nested structure. Useful for translation files, configs and diffing. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"JSON Flatten & Unflatten","item":"https://sharpdev.tools/tools/json-flatten/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does flattening JSON do?","acceptedAnswer":{"@type":"Answer","text":"It rewrites a nested object so every value sits at the top level under a single key that traces its path, joined by dots. For example {\"a\":{\"b\":1}} becomes {\"a.b\":1}. Unflatten reverses it back to the nested form."}},{"@type":"Question","name":"When is this useful?","acceptedAnswer":{"@type":"Answer","text":"Flattened keys are great for translation (i18n) files, environment-style configs, comparing two JSON objects (diffs line up by full path), and feeding nested data into tools that only accept flat key-value pairs."}},{"@type":"Question","name":"How are arrays handled?","acceptedAnswer":{"@type":"Answer","text":"Arrays are kept intact as values rather than split into indexed keys, which keeps the round-trip clean and predictable. Only nested objects are flattened into dotted paths."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Flatten & Unflatten \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/json-flatten/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/json-flatten/json-flatten.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('json-flatten');</script>
+<div class="page">
+<h1>JSON Flatten & Unflatten</h1>
+<p class="subtitle">Flatten nested JSON into single-level dot-notation keys, or unflatten dotted keys back into a nested object. Useful for configs, i18n files and diffs.</p>
+<div class="field"><label for="in">JSON</label><textarea id="in" style="min-height:130px;">{"app":{"name":"SharpDev","limits":{"tools":713}},"flags":["a","b"]}</textarea></div>
+<div class="actions"><button class="small-btn" id="flat">Flatten</button><button class="small-btn" id="unflat">Unflatten</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does flattening JSON do?</summary><p>It rewrites a nested object so every value sits at the top level under a single key that traces its path, joined by dots. For example {"a":{"b":1}} becomes {"a.b":1}. Unflatten reverses it back to the nested form.</p></details>
+<details><summary>When is this useful?</summary><p>Flattened keys are great for translation (i18n) files, environment-style configs, comparing two JSON objects (diffs line up by full path), and feeding nested data into tools that only accept flat key-value pairs.</p></details>
+<details><summary>How are arrays handled?</summary><p>Arrays are kept intact as values rather than split into indexed keys, which keeps the round-trip clean and predictable. Only nested objects are flattened into dotted paths.</p></details>
+</section>
+<script src="/tools/json-flatten/json-flatten.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

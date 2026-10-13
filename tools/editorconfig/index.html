@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>.editorconfig Generator | SharpDev.tools</title>
+<meta content="Free .editorconfig generator. Build an .editorconfig file with your indent style, size, line endings, charset and whitespace rules to keep code style consistent across editors. Copy or download. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/editorconfig/" rel="canonical"/>
+<meta content=".editorconfig Generator | SharpDev.tools" property="og:title"/>
+<meta content="Free .editorconfig generator. Build an .editorconfig file with your indent style, size, line endings, charset and whitespace rules to keep code style consistent across editors. Copy or download. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/editorconfig/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content=".editorconfig Generator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free .editorconfig generator. Build an .editorconfig file with your indent style, size, line endings, charset and whitespace rules to keep code style consistent across editors. Copy or download. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":".editorconfig Generator","item":"https://sharpdev.tools/tools/editorconfig/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an .editorconfig file?","acceptedAnswer":{"@type":"Answer","text":"It is a simple config file that tells code editors how to format files in a project, such as whether to use spaces or tabs, the indent size, and which line endings to use. It keeps style consistent no matter which editor each person uses."}},{"@type":"Question","name":"Do all editors support it?","acceptedAnswer":{"@type":"Answer","text":"Many editors (including VS Code, the JetBrains IDEs and Vim with a plugin) support EditorConfig either natively or through a small plugin. Where supported, the rules apply automatically when someone edits a file in the project."}},{"@type":"Question","name":"What does 'root = true' mean?","acceptedAnswer":{"@type":"Answer","text":"It tells EditorConfig to stop looking for further .editorconfig files in parent folders. You put it in the file at your project root so settings from outside the project do not leak in."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":".editorconfig Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/editorconfig/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/editorconfig/editorconfig.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('editorconfig');</script>
+<div class="page">
+<h1>.editorconfig Generator</h1>
+<p class="subtitle">Build an .editorconfig file from a few options to keep indentation, line endings and whitespace consistent across editors and teammates.</p>
+<div class="row">
+<div class="field"><label for="istyle">Indent style</label><select id="istyle"><option value="space" selected>Spaces</option><option value="tab">Tabs</option></select></div>
+<div class="field"><label for="isize">Indent size</label><input type="number" id="isize" value="2" min="1" max="8"></div>
+<div class="field"><label for="eol">Line endings</label><select id="eol"><option value="lf" selected>LF (Unix/macOS)</option><option value="crlf">CRLF (Windows)</option><option value="cr">CR</option></select></div></div>
+<div class="row">
+<div class="field"><label for="maxlen">Max line length (0 = none)</label><input type="number" id="maxlen" value="0" min="0" max="500"></div></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="trim" checked style="width:auto;"> Trim trailing whitespace</label></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="finalnl" checked style="width:auto;"> Insert final newline</label></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="mdtrim" checked style="width:auto;"> Keep trailing whitespace in Markdown (.md)</label></div>
+<div class="actions"><button class="small-btn" id="dl">Download</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>.editorconfig</label></div>
+<textarea class="output" id="out" readonly style="min-height:160px;"></textarea>
+<p class="note">EditorConfig keeps coding style consistent across different editors and IDEs. Save the output as a file named .editorconfig in your project root; most modern editors read it automatically (some need a plugin).</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is an .editorconfig file?</summary><p>It is a simple config file that tells code editors how to format files in a project, such as whether to use spaces or tabs, the indent size, and which line endings to use. It keeps style consistent no matter which editor each person uses.</p></details>
+<details><summary>Do all editors support it?</summary><p>Many editors (including VS Code, the JetBrains IDEs and Vim with a plugin) support EditorConfig either natively or through a small plugin. Where supported, the rules apply automatically when someone edits a file in the project.</p></details>
+<details><summary>What does 'root = true' mean?</summary><p>It tells EditorConfig to stop looking for further .editorconfig files in parent folders. You put it in the file at your project root so settings from outside the project do not leak in.</p></details>
+</section>
+<script src="/tools/editorconfig/editorconfig.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

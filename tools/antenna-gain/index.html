@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Antenna Gain Calculator (dBi, dBd, ERP &amp; EIRP) | SharpDev.tools</title>
+<meta content="Free antenna gain calculator. Convert between dBi and dBd and compute ERP and EIRP in watts from transmit power, feedline loss and antenna gain. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/antenna-gain/" rel="canonical"/>
+<meta content="Antenna Gain Calculator (dBi, dBd, ERP &amp; EIRP) | SharpDev.tools" property="og:title"/>
+<meta content="Free antenna gain calculator. Convert between dBi and dBd and compute ERP and EIRP in watts from transmit power, feedline loss and antenna gain. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/antenna-gain/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Antenna Gain Calculator (dBi, dBd, ERP &amp; EIRP) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free antenna gain calculator. Convert between dBi and dBd and compute ERP and EIRP in watts from transmit power, feedline loss and antenna gain. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Antenna Gain & ERP / EIRP Calculator","item":"https://sharpdev.tools/tools/antenna-gain/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between dBi and dBd?","acceptedAnswer":{"@type":"Answer","text":"dBi is gain compared to a theoretical isotropic radiator, dBd is gain compared to a half-wave dipole. A dipole has 2.15 dBi of gain, so dBi = dBd + 2.15. Manufacturers often quote dBi because the number looks larger."}},{"@type":"Question","name":"What is the difference between ERP and EIRP?","acceptedAnswer":{"@type":"Answer","text":"Both are the effective radiated power after feedline loss and antenna gain. ERP is referenced to a dipole (uses dBd gain), EIRP to an isotropic source (uses dBi gain), so EIRP is always 2.15 dB higher than ERP for the same antenna."}},{"@type":"Question","name":"How is ERP calculated?","acceptedAnswer":{"@type":"Answer","text":"Work in decibels: take the transmit power in dBW, subtract the feedline loss in dB, and add the antenna gain in dBd. Convert back to watts. So 100W with 3 dB of feedline loss and a 6 dBd antenna gives about 200W ERP."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Antenna Gain & ERP / EIRP Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/antenna-gain/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/antenna-gain/antenna-gain.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('antenna-gain');</script>
+<div class="page">
+<h1>Antenna Gain & ERP / EIRP Calculator</h1>
+<p class="subtitle">Convert antenna gain between dBi and dBd, and work out ERP and EIRP from transmit power, feedline loss and antenna gain.</p>
+<div class="row">
+<div class="field"><label for="p">TX power (W)</label><input type="number" id="p" value="100" step="any"></div>
+<div class="field"><label for="loss">Feedline loss (dB)</label><input type="number" id="loss" value="3" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="g">Antenna gain</label><input type="number" id="g" value="6" step="any"></div>
+<div class="field"><label for="unit">Gain unit</label><select id="unit"><option value="dbd">dBd</option><option value="dbi">dBi</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">EIRP</div><div class="value" id="eirp" style="font-size:16px;">-</div></div>
+<div class="result-card"><div class="label">ERP</div><div class="value" id="erp" style="font-size:16px;">-</div></div>
+<div class="result-card"><div class="label">Gain (dBi / dBd)</div><div class="value" id="gg" style="font-size:15px;">-</div></div></div>
+<p class="note">Gain in dBi is referenced to an isotropic source, dBd to a dipole; dBi = dBd + 2.15. EIRP uses the dBi gain, ERP uses the dBd gain: effective power = TX power minus feedline loss plus antenna gain, in dB. This is how regulators express the radiated power limit.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between dBi and dBd?</summary><p>dBi is gain compared to a theoretical isotropic radiator, dBd is gain compared to a half-wave dipole. A dipole has 2.15 dBi of gain, so dBi = dBd + 2.15. Manufacturers often quote dBi because the number looks larger.</p></details>
+<details><summary>What is the difference between ERP and EIRP?</summary><p>Both are the effective radiated power after feedline loss and antenna gain. ERP is referenced to a dipole (uses dBd gain), EIRP to an isotropic source (uses dBi gain), so EIRP is always 2.15 dB higher than ERP for the same antenna.</p></details>
+<details><summary>How is ERP calculated?</summary><p>Work in decibels: take the transmit power in dBW, subtract the feedline loss in dB, and add the antenna gain in dBd. Convert back to watts. So 100W with 3 dB of feedline loss and a 6 dBd antenna gives about 200W ERP.</p></details>
+</section>
+<script src="/tools/antenna-gain/antenna-gain.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

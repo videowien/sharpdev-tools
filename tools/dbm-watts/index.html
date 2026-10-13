@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>dBm to Watts Calculator (dBm, W, mW, dBW) | SharpDev.tools</title>
+<meta content="Free dBm to watts calculator. Convert RF power between dBm, watts, milliwatts and dBW instantly. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/dbm-watts/" rel="canonical"/>
+<meta content="dBm to Watts Calculator (dBm, W, mW, dBW) | SharpDev.tools" property="og:title"/>
+<meta content="Free dBm to watts calculator. Convert RF power between dBm, watts, milliwatts and dBW instantly. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/dbm-watts/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="dBm to Watts Calculator (dBm, W, mW, dBW) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free dBm to watts calculator. Convert RF power between dBm, watts, milliwatts and dBW instantly. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"dBm to Watts Calculator","item":"https://sharpdev.tools/tools/dbm-watts/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert dBm to watts?","acceptedAnswer":{"@type":"Answer","text":"Watts = 10 to the power of ((dBm - 30) / 10). So 30 dBm is 1 watt, 60 dBm is 1000 watts. Going the other way, dBm = 10 log(watts) + 30."}},{"@type":"Question","name":"What is dBW?","acceptedAnswer":{"@type":"Answer","text":"dBW is power in decibels relative to one watt instead of one milliwatt, so it is simply dBm minus 30. 100 watts is 20 dBW or 50 dBm."}},{"@type":"Question","name":"Why use decibels for power?","acceptedAnswer":{"@type":"Answer","text":"Decibels turn the huge range of RF power, from microwatts to kilowatts, into manageable numbers and turn gains and losses into simple addition. Every 3 dB is a doubling and every 10 dB is a tenfold change."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"dBm to Watts Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/dbm-watts/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/dbm-watts/dbm-watts.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('dbm-watts');</script>
+<div class="page">
+<h1>dBm to Watts Calculator</h1>
+<p class="subtitle">Convert RF power between dBm, watts, milliwatts and dBW. Enter a value in any unit and read the rest.</p>
+<div class="row">
+<div class="field"><label for="val">Value</label><input type="number" id="val" value="100" step="any"></div>
+<div class="field"><label for="unit">Unit</label><select id="unit"><option value="w" selected>Watts</option><option value="mw">Milliwatts</option><option value="dbm">dBm</option><option value="dbw">dBW</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">dBm</div><div class="value" id="odbm">-</div></div>
+<div class="result-card"><div class="label">Watts</div><div class="value" id="ow">-</div></div>
+<div class="result-card"><div class="label">Milliwatts</div><div class="value" id="omw" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">dBW</div><div class="value" id="odbw">-</div></div></div>
+<p class="note">dBm is power in decibels relative to one milliwatt: dBm = 10 log(power in mW). dBW is relative to one watt, so dBW = dBm minus 30. Every 3 dB doubles the power, every 10 dB is ten times. 100 watts is 50 dBm or 20 dBW.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert dBm to watts?</summary><p>Watts = 10 to the power of ((dBm - 30) / 10). So 30 dBm is 1 watt, 60 dBm is 1000 watts. Going the other way, dBm = 10 log(watts) + 30.</p></details>
+<details><summary>What is dBW?</summary><p>dBW is power in decibels relative to one watt instead of one milliwatt, so it is simply dBm minus 30. 100 watts is 20 dBW or 50 dBm.</p></details>
+<details><summary>Why use decibels for power?</summary><p>Decibels turn the huge range of RF power, from microwatts to kilowatts, into manageable numbers and turn gains and losses into simple addition. Every 3 dB is a doubling and every 10 dB is a tenfold change.</p></details>
+</section>
+<script src="/tools/dbm-watts/dbm-watts.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

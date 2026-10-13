@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>End-Fed Half-Wave (EFHW) Antenna Calculator | SharpDev.tools</title>
+<meta content="Free end-fed half-wave (EFHW) antenna calculator. Enter the lowest band frequency to get the wire length and the harmonic bands the antenna also resonates on. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/end-fed-half-wave/" rel="canonical"/>
+<meta content="End-Fed Half-Wave (EFHW) Antenna Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free end-fed half-wave (EFHW) antenna calculator. Enter the lowest band frequency to get the wire length and the harmonic bands the antenna also resonates on. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/end-fed-half-wave/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="End-Fed Half-Wave (EFHW) Antenna Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free end-fed half-wave (EFHW) antenna calculator. Enter the lowest band frequency to get the wire length and the harmonic bands the antenna also resonates on. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"End-Fed Half-Wave Calculator","item":"https://sharpdev.tools/tools/end-fed-half-wave/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is an end-fed half-wave?","acceptedAnswer":{"@type":"Answer","text":"Length in feet is 468 divided by the lowest frequency in MHz, the same as a half-wave dipole. For a 40m EFHW at 7.15 MHz that is about 65.5 feet (20.0 m)."}},{"@type":"Question","name":"How does one wire cover several bands?","acceptedAnswer":{"@type":"Answer","text":"A half-wave on the lowest band is a full wave on twice the frequency, one and a half waves on three times, and so on. Those harmonics land near other ham bands, so a 40m EFHW also works on 20m, 15m and 10m with the right transformer."}},{"@type":"Question","name":"Why a 49:1 transformer?","acceptedAnswer":{"@type":"Answer","text":"At the end of a half-wave the impedance is very high (a few thousand ohms). A 49:1 unun transforms that down close to 50 ohms. A short counterpoise of a few feet helps stabilise the match."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"End-Fed Half-Wave Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/end-fed-half-wave/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/end-fed-half-wave/end-fed-half-wave.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('end-fed-half-wave');</script>
+<div class="page">
+<h1>End-Fed Half-Wave Calculator</h1>
+<p class="subtitle">Find the wire length for an end-fed half-wave antenna and the harmonic bands it also covers, for any frequency.</p>
+<div class="row"><div class="field"><label for="f">Lowest frequency (MHz)</label><input type="number" id="f" value="7.15" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Wire length</div><div class="value" id="len" style="font-size:18px;">-</div></div>
+<div class="result-card"><div class="label">Also resonant on</div><div class="value" id="harm" style="font-size:14px;">-</div></div></div>
+<p class="note">An end-fed half-wave is a half-wave wire fed at the end through a 49:1 transformer, so it needs little or no counterpoise. Length in feet = 468 / frequency in MHz. Because it also resonates on harmonics (2x, 3x, 4x the frequency), one wire can cover several bands.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long is an end-fed half-wave?</summary><p>Length in feet is 468 divided by the lowest frequency in MHz, the same as a half-wave dipole. For a 40m EFHW at 7.15 MHz that is about 65.5 feet (20.0 m).</p></details>
+<details><summary>How does one wire cover several bands?</summary><p>A half-wave on the lowest band is a full wave on twice the frequency, one and a half waves on three times, and so on. Those harmonics land near other ham bands, so a 40m EFHW also works on 20m, 15m and 10m with the right transformer.</p></details>
+<details><summary>Why a 49:1 transformer?</summary><p>At the end of a half-wave the impedance is very high (a few thousand ohms). A 49:1 unun transforms that down close to 50 ohms. A short counterpoise of a few feet helps stabilise the match.</p></details>
+</section>
+<script src="/tools/end-fed-half-wave/end-fed-half-wave.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

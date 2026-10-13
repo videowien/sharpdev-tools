@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Note to Frequency Calculator (and Frequency to Note) | SharpDev.tools</title>
+<meta content="Free note to frequency calculator. Convert any note and octave to Hz, or a frequency to the nearest note with cents offset, with an adjustable A4 reference pitch. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/note-frequency/" rel="canonical"/>
+<meta content="Note to Frequency Calculator (and Frequency to Note) | SharpDev.tools" property="og:title"/>
+<meta content="Free note to frequency calculator. Convert any note and octave to Hz, or a frequency to the nearest note with cents offset, with an adjustable A4 reference pitch. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/note-frequency/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Note to Frequency Calculator (and Frequency to Note) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free note to frequency calculator. Convert any note and octave to Hz, or a frequency to the nearest note with cents offset, with an adjustable A4 reference pitch. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Music","item":"https://sharpdev.tools/#music"},{"@type":"ListItem","position":3,"name":"Note \u2194 Frequency Calculator","item":"https://sharpdev.tools/tools/note-frequency/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert a note to a frequency?","acceptedAnswer":{"@type":"Answer","text":"In equal temperament, frequency = A4 reference \u00d7 2 to the power of (semitones from A4 \u00f7 12). Middle C (C4) is nine semitones below A4, giving 261.63 Hz at A4 = 440."}},{"@type":"Question","name":"What does the cents offset mean?","acceptedAnswer":{"@type":"Answer","text":"A cent is a hundredth of a semitone. When you convert a frequency, the tool names the nearest note and how many cents sharp or flat the frequency sits \u2014 445 Hz is A4 plus about 19.6 cents."}},{"@type":"Question","name":"What about A4 = 432 Hz?","acceptedAnswer":{"@type":"Answer","text":"Change the reference field and every note shifts proportionally: C4 becomes 256.87 Hz at A4 = 432. Orchestras also tune to 441-443; the maths is the same."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Note \u2194 Frequency Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/note-frequency/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/note-frequency/note-frequency.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('note-frequency');</script>
+<div class="page">
+<h1>Note ↔ Frequency Calculator</h1>
+<p class="subtitle">Convert a note to its frequency in Hz, or a frequency to the nearest note with its cents offset. Adjustable A4 reference (440, 432, anything).</p>
+<div class="row">
+<div class="field"><label for="mode">Convert</label><select id="mode"><option value="n2f" selected>Note → frequency</option><option value="f2n">Frequency → note</option></select></div>
+<div class="field"><label for="ref">A4 reference (Hz)</label><input type="number" id="ref" value="440" step="any"></div></div>
+<div class="row" id="noterow">
+<div class="field"><label for="note">Note</label><select id="note"><option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option></select></div>
+<div class="field"><label for="oct">Octave</label><select id="oct"><option>0</option><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div></div>
+<div class="row" id="freqrow" style="display:none;"><div class="field"><label for="freq">Frequency (Hz)</label><input type="number" id="freq" value="445" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="olabel">Frequency</div><div class="value" id="out" style="font-size:20px;">-</div></div>
+<div class="result-card"><div class="label">MIDI note</div><div class="value" id="midi">-</div></div></div>
+<p class="note">Equal temperament: frequency = A4 × 2^((MIDI − 69) ÷ 12), where A4 = MIDI 69. Middle C (C4, MIDI 60) is 261.63 Hz at the standard A4 = 440 Hz. Going the other way, the nearest note and the offset in cents are computed from the same relation.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert a note to a frequency?</summary><p>In equal temperament, frequency = A4 reference × 2 to the power of (semitones from A4 ÷ 12). Middle C (C4) is nine semitones below A4, giving 261.63 Hz at A4 = 440.</p></details>
+<details><summary>What does the cents offset mean?</summary><p>A cent is a hundredth of a semitone. When you convert a frequency, the tool names the nearest note and how many cents sharp or flat the frequency sits — 445 Hz is A4 plus about 19.6 cents.</p></details>
+<details><summary>What about A4 = 432 Hz?</summary><p>Change the reference field and every note shifts proportionally: C4 becomes 256.87 Hz at A4 = 432. Orchestras also tune to 441-443; the maths is the same.</p></details>
+</section>
+<script src="/tools/note-frequency/note-frequency.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

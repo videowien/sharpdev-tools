@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>What Is My User Agent? (Show My Browser User-Agent String) | SharpDev.tools</title>
+<meta content="Free what-is-my-user-agent tool. Instantly shows your browser's full User-Agent string with one-click copy, plus your platform, languages, and a quick browser and OS guess. Runs in your browser, nothing is sent anywhere." name="description"/>
+<link href="https://sharpdev.tools/tools/my-user-agent/" rel="canonical"/>
+<meta content="What Is My User Agent? (Show My Browser User-Agent String) | SharpDev.tools" property="og:title"/>
+<meta content="Free what-is-my-user-agent tool. Instantly shows your browser's full User-Agent string with one-click copy, plus your platform, languages, and a quick browser and OS guess. Runs in your browser, nothing is sent anywhere." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/my-user-agent/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="What Is My User Agent? (Show My Browser User-Agent String) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free what-is-my-user-agent tool. Instantly shows your browser's full User-Agent string with one-click copy, plus your platform, languages, and a quick browser and OS guess. Runs in your browser, nothing is sent anywhere." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Browser & Device Tests","item":"https://sharpdev.tools/#browser-device-tests"},{"@type":"ListItem","position":3,"name":"What Is My User Agent?","item":"https://sharpdev.tools/tools/my-user-agent/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a User-Agent string?","acceptedAnswer":{"@type":"Answer","text":"It is a line of text your browser sends to every website that identifies the browser, its version, the rendering engine and your operating system. Sites use it to adapt content and to gather analytics."}},{"@type":"Question","name":"Is my User-Agent private?","acceptedAnswer":{"@type":"Answer","text":"No. It is broadcast to every site you visit, so treat it as public. This tool only reads it locally and never uploads it. It also does not uniquely identify you on its own, but it is one of several signals used in browser fingerprinting."}},{"@type":"Question","name":"Why does my browser say it is Safari or Mozilla when it is not?","acceptedAnswer":{"@type":"Answer","text":"For historical compatibility almost every User-Agent starts with 'Mozilla' and many include 'Safari' or 'like Gecko'. That is why parsing User-Agents is unreliable and the browser guess here is approximate."}},{"@type":"Question","name":"Can I change my User-Agent?","acceptedAnswer":{"@type":"Answer","text":"Yes, browsers and extensions can spoof it, and developer tools let you override it for testing. This tool always shows what your browser is currently sending."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"What Is My User Agent? \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/my-user-agent/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/my-user-agent/my-user-agent.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('my-user-agent');</script>
+<div class="page">
+<h1>What Is My User Agent?</h1>
+<p class="subtitle">Instantly see your browser's full User-Agent string, plus your platform, languages and a quick browser and OS guess. One-click copy.</p>
+<div class="out-head"><label>Your User-Agent string</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="ua" readonly style="min-height:70px;"></textarea>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Browser</div><div class="value" id="br" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Operating system</div><div class="value" id="os" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Device</div><div class="value" id="dev" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Languages</div><div class="value" id="lang" style="font-size:15px;">—</div></div></div>
+<p class="note">Need to parse a different User-Agent string? Use the <a href="/tools/ua-parser/" style="color:#ff6666;">User-Agent Parser</a>. Your browser sends its User-Agent with every request, so it is not private, but nothing here is uploaded.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a User-Agent string?</summary><p>It is a line of text your browser sends to every website that identifies the browser, its version, the rendering engine and your operating system. Sites use it to adapt content and to gather analytics.</p></details>
+<details><summary>Is my User-Agent private?</summary><p>No. It is broadcast to every site you visit, so treat it as public. This tool only reads it locally and never uploads it. It also does not uniquely identify you on its own, but it is one of several signals used in browser fingerprinting.</p></details>
+<details><summary>Why does my browser say it is Safari or Mozilla when it is not?</summary><p>For historical compatibility almost every User-Agent starts with 'Mozilla' and many include 'Safari' or 'like Gecko'. That is why parsing User-Agents is unreliable and the browser guess here is approximate.</p></details>
+<details><summary>Can I change my User-Agent?</summary><p>Yes, browsers and extensions can spoof it, and developer tools let you override it for testing. This tool always shows what your browser is currently sending.</p></details>
+</section>
+<script src="/tools/my-user-agent/my-user-agent.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

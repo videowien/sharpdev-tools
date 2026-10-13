@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Hyperfocal Distance Calculator | SharpDev.tools</title>
+<meta content="Free hyperfocal distance calculator. Enter focal length, aperture and sensor format to get the hyperfocal distance and the resulting near limit. The key focus setting for sharp landscapes. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/hyperfocal-distance/" rel="canonical"/>
+<meta content="Hyperfocal Distance Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free hyperfocal distance calculator. Enter focal length, aperture and sensor format to get the hyperfocal distance and the resulting near limit. The key focus setting for sharp landscapes. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hyperfocal-distance/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hyperfocal Distance Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free hyperfocal distance calculator. Enter focal length, aperture and sensor format to get the hyperfocal distance and the resulting near limit. The key focus setting for sharp landscapes. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Hyperfocal Distance Calculator","item":"https://sharpdev.tools/tools/hyperfocal-distance/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the hyperfocal distance?","acceptedAnswer":{"@type":"Answer","text":"It is the closest distance you can focus at while keeping the background at infinity acceptably sharp. Focusing there gives the deepest possible depth of field: everything from half the hyperfocal distance out to infinity looks sharp."}},{"@type":"Question","name":"How is it calculated?","acceptedAnswer":{"@type":"Answer","text":"H = f squared / (N times c) + f, where f is the focal length in mm, N is the f-number and c is the circle of confusion for your sensor. A wider lens or a smaller aperture brings the hyperfocal distance closer."}},{"@type":"Question","name":"Why is it useful for landscapes?","acceptedAnswer":{"@type":"Answer","text":"Setting focus to the hyperfocal distance maximises front-to-back sharpness in one shot, which is ideal for scenes with a near foreground and a distant horizon."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Hyperfocal Distance Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/hyperfocal-distance/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hyperfocal-distance/hyperfocal-distance.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hyperfocal-distance');</script>
+<div class="page">
+<h1>Hyperfocal Distance Calculator</h1>
+<p class="subtitle">Find the focus distance that maximises depth of field. Focus here and everything from half that distance to infinity is acceptably sharp.</p>
+<div class="row">
+<div class="field"><label for="sensor">Sensor / format</label><select id="sensor"><option value="ff" selected>Full frame (36x24)</option><option value="apsc">APS-C 1.5x (Nikon / Sony)</option><option value="canon">APS-C 1.6x (Canon)</option><option value="mft">Micro 4/3 (2.0x)</option><option value="one">1-inch (2.7x)</option></select></div>
+<div class="field"><label for="f">Focal length (mm)</label><input type="number" id="f" value="24" step="any"></div>
+<div class="field"><label for="N">Aperture f/</label><input type="number" id="N" value="11" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Hyperfocal distance</div><div class="value" id="h" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Sharp from (near limit)</div><div class="value" id="near">-</div></div></div>
+<p class="note">Focus at the hyperfocal distance and everything from half that distance to infinity is acceptably sharp. It is the focus setting that maximises depth of field, widely used in landscape photography. H = f squared / (N times c) + f.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the hyperfocal distance?</summary><p>It is the closest distance you can focus at while keeping the background at infinity acceptably sharp. Focusing there gives the deepest possible depth of field: everything from half the hyperfocal distance out to infinity looks sharp.</p></details>
+<details><summary>How is it calculated?</summary><p>H = f squared / (N times c) + f, where f is the focal length in mm, N is the f-number and c is the circle of confusion for your sensor. A wider lens or a smaller aperture brings the hyperfocal distance closer.</p></details>
+<details><summary>Why is it useful for landscapes?</summary><p>Setting focus to the hyperfocal distance maximises front-to-back sharpness in one shot, which is ideal for scenes with a near foreground and a distant horizon.</p></details>
+</section>
+<script src="/tools/hyperfocal-distance/hyperfocal-distance.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

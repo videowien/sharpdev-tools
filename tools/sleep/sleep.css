@@ -1,0 +1,39 @@
+/* Sleep Cycle — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+.seg { display: inline-flex; gap: 0; border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden; }
+.seg-btn { background: #0d0d0d; color: #888; border: none; padding: 8px 14px; cursor: pointer; font-size: 13px; }
+.seg-btn:hover { background: #1a1a1a; color: #ccc; }
+.seg-btn.active { background: #ff4444; color: #fff; }
+
+.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.form-row input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 10px 12px; border-radius: 6px; font-size: 16px;
+  color-scheme: dark; max-width: 200px;
+  font-family: 'SF Mono', monospace;
+}
+
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.cycle {
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  padding: 14px; text-align: center;
+}
+.cycle.recommended { border-color: #4caf50; background: rgba(76, 175, 80, 0.06); }
+.cycle.minimal { border-color: #ff4444; background: rgba(255, 68, 68, 0.05); }
+.cycle-time { font-size: 22px; font-weight: 700; color: #fff; font-family: 'SF Mono', monospace; }
+.cycle-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+.cycle-detail { font-size: 11px; color: #aaa; margin-top: 4px; }
+
+.hint { font-size: 13px; color: #888; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

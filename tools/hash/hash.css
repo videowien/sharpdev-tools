@@ -1,0 +1,93 @@
+.page { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.mode-switch {
+  display: flex; gap: 6px; margin-bottom: 16px; align-items: center;
+  background: #0d0d0d; border: 1px solid #262626; border-radius: 8px; padding: 6px;
+}
+.mode-btn {
+  padding: 8px 18px; background: transparent; border: none;
+  color: #aaa; border-radius: 6px; font-size: 13px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit; font-weight: 500;
+}
+.mode-btn:hover { color: #fff; }
+.mode-btn.active { background: #1f1f1f; color: #ff4444; }
+
+.toggle {
+  display: flex; align-items: center; gap: 8px; padding: 6px 12px;
+  background: #141414; border: 1px solid #262626; border-radius: 6px;
+  cursor: pointer; font-size: 13px; color: #ccc; text-transform: none;
+  letter-spacing: normal; margin-bottom: 0; font-weight: 500;
+}
+.toggle:hover { border-color: #444; }
+.toggle input { accent-color: #ff4444; width: 14px; height: 14px; margin: 0; }
+
+textarea {
+  width: 100%; min-height: 140px; resize: vertical;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 13px; padding: 14px; outline: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  line-height: 1.5; transition: border-color 0.2s;
+}
+textarea:focus { border-color: #ff4444; }
+.stats { color: #666; font-size: 12px; margin-top: 6px; font-family: 'SF Mono', Monaco, monospace; }
+
+.file-zone {
+  background: #0d0d0d; border: 1px dashed #333; border-radius: 10px;
+  padding: 30px; margin-bottom: 6px; transition: border-color 0.2s;
+  text-align: center;
+}
+.file-zone.dragging { border-color: #ff4444; background: #141414; }
+.file-zone p { color: #ccc; font-size: 14px; margin-bottom: 8px; }
+.file-zone p.hint { color: #666; font-size: 12px; font-family: 'SF Mono', Monaco, monospace; }
+.link-btn {
+  background: transparent; border: none; color: #ff4444;
+  font: inherit; cursor: pointer; padding: 0; text-decoration: underline;
+}
+
+.progress { height: 4px; background: #1a1a1a; border-radius: 2px; overflow: hidden; margin-top: 10px; }
+.progress-fill { height: 100%; width: 0; background: #ff4444; transition: width 0.2s; }
+
+.results { margin-top: 24px; }
+.hash-row {
+  margin-bottom: 12px;
+}
+.hash-row label {
+  font-size: 11px; font-weight: 700; color: #ff4444;
+  margin-bottom: 6px; letter-spacing: 1px;
+}
+.hash-out {
+  display: flex; align-items: stretch;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  overflow: hidden;
+}
+.hash-out input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: #e1e1e1; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 13px; padding: 12px 14px; min-width: 0;
+}
+.copy-btn {
+  background: transparent; border: none; color: #888; padding: 0 14px;
+  cursor: pointer; transition: color 0.15s, background 0.15s; border-left: 1px solid #2a2a2a;
+}
+.copy-btn:hover { color: #ff4444; background: #141414; }
+.copy-btn.copied { color: #4ade80; }
+
+.info-card {
+  margin-top: 24px; padding: 16px 20px;
+  background: #0d0d0d; border: 1px solid #1f1f1f; border-radius: 10px;
+}
+.info-card h3 { color: #ccc; font-size: 14px; margin-bottom: 8px; font-weight: 600; text-transform: none; letter-spacing: normal; }
+.info-card p { color: #888; font-size: 13px; line-height: 1.6; margin: 0; }
+.info-card code { background: #1a1a1a; color: #ff4444; padding: 1px 6px; border-radius: 3px; font-size: 12px; font-family: 'SF Mono', Monaco, monospace; }
+
+@media (max-width: 800px) {
+  .hash-out input { font-size: 11px; padding: 10px 12px; }
+  .mode-switch { flex-wrap: wrap; }
+}

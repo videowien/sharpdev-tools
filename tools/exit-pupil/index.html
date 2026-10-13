@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Exit Pupil Calculator (Telescope &amp; Binoculars) | SharpDev.tools</title>
+<meta content="Free exit pupil calculator for telescopes and binoculars. Compute the exit pupil from aperture and magnification, or from eyepiece focal length and focal ratio. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/exit-pupil/" rel="canonical"/>
+<meta content="Exit Pupil Calculator (Telescope &amp; Binoculars) | SharpDev.tools" property="og:title"/>
+<meta content="Free exit pupil calculator for telescopes and binoculars. Compute the exit pupil from aperture and magnification, or from eyepiece focal length and focal ratio. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/exit-pupil/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Exit Pupil Calculator (Telescope &amp; Binoculars) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free exit pupil calculator for telescopes and binoculars. Compute the exit pupil from aperture and magnification, or from eyepiece focal length and focal ratio. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"Exit Pupil Calculator","item":"https://sharpdev.tools/tools/exit-pupil/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the exit pupil?","acceptedAnswer":{"@type":"Answer","text":"The diameter of the light beam leaving the eyepiece and entering your eye: aperture \u00f7 magnification. A 150 mm telescope at 120x delivers a 1.25 mm exit pupil; 10x50 binoculars deliver 5 mm."}},{"@type":"Question","name":"Why does it matter?","acceptedAnswer":{"@type":"Answer","text":"It sets how bright extended objects look and whether all the collected light fits into your pupil. Bigger than ~7 mm wastes light (your pupil cannot open that far); smaller than ~0.5 mm looks dim and shows retinal floaters."}},{"@type":"Question","name":"What is the shortcut with focal ratio?","acceptedAnswer":{"@type":"Answer","text":"Exit pupil also equals eyepiece focal length \u00f7 telescope focal ratio: a 10 mm eyepiece in an f/8 scope always gives 1.25 mm, whatever the aperture. Handy for choosing eyepieces for a given scope."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Exit Pupil Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/exit-pupil/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/exit-pupil/exit-pupil.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('exit-pupil');</script>
+<div class="page">
+<h1>Exit Pupil Calculator</h1>
+<p class="subtitle">The beam of light your eye receives: aperture ÷ magnification, or eyepiece ÷ focal ratio. Both routes, with guidance on the useful 0.5-7 mm range.</p>
+<div class="row">
+<div class="field"><label for="mode">Compute from</label><select id="mode"><option value="am" selected>Aperture & magnification</option><option value="ef">Eyepiece & focal ratio</option></select></div></div>
+<div class="row" id="amrow">
+<div class="field"><label for="ap">Aperture (mm)</label><input type="number" id="ap" value="150" step="any"></div>
+<div class="field"><label for="mag">Magnification (x)</label><input type="number" id="mag" value="120" step="any"></div></div>
+<div class="row" id="efrow" style="display:none;">
+<div class="field"><label for="ep">Eyepiece focal length (mm)</label><input type="number" id="ep" value="10" step="any"></div>
+<div class="field"><label for="fr">Focal ratio (f/)</label><input type="number" id="fr" value="8" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Exit pupil</div><div class="value" id="out" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Assessment</div><div class="value" id="tip" style="font-size:13px;">-</div></div></div>
+<p class="note">Exit pupil = aperture ÷ magnification, or equivalently eyepiece focal length ÷ focal ratio. A 150 mm scope at 120x gives 1.25 mm. Above ~7 mm (dark-adapted eye) light is wasted; below ~0.5 mm the view goes dim and floaters intrude. 2-5 mm is the comfortable sweet spot for most targets.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the exit pupil?</summary><p>The diameter of the light beam leaving the eyepiece and entering your eye: aperture ÷ magnification. A 150 mm telescope at 120x delivers a 1.25 mm exit pupil; 10x50 binoculars deliver 5 mm.</p></details>
+<details><summary>Why does it matter?</summary><p>It sets how bright extended objects look and whether all the collected light fits into your pupil. Bigger than ~7 mm wastes light (your pupil cannot open that far); smaller than ~0.5 mm looks dim and shows retinal floaters.</p></details>
+<details><summary>What is the shortcut with focal ratio?</summary><p>Exit pupil also equals eyepiece focal length ÷ telescope focal ratio: a 10 mm eyepiece in an f/8 scope always gives 1.25 mm, whatever the aperture. Handy for choosing eyepieces for a given scope.</p></details>
+</section>
+<script src="/tools/exit-pupil/exit-pupil.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

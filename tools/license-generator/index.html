@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>License Generator (MIT, ISC, BSD, Unlicense) | SharpDev.tools</title>
+<meta content="Free open source license generator. Produce a ready-to-use LICENSE file for MIT, ISC, BSD-2-Clause, BSD-3-Clause or the Unlicense by filling in your name and year. Copy or download. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/license-generator/" rel="canonical"/>
+<meta content="License Generator (MIT, ISC, BSD, Unlicense) | SharpDev.tools" property="og:title"/>
+<meta content="Free open source license generator. Produce a ready-to-use LICENSE file for MIT, ISC, BSD-2-Clause, BSD-3-Clause or the Unlicense by filling in your name and year. Copy or download. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/license-generator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="License Generator (MIT, ISC, BSD, Unlicense) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free open source license generator. Produce a ready-to-use LICENSE file for MIT, ISC, BSD-2-Clause, BSD-3-Clause or the Unlicense by filling in your name and year. Copy or download. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Open Source License Generator","item":"https://sharpdev.tools/tools/license-generator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which license should I choose?","acceptedAnswer":{"@type":"Answer","text":"MIT is the most popular for permissive open source: short, simple and business-friendly. ISC is an even simpler equivalent. BSD-2 and BSD-3 are similar, with BSD-3 adding a no-endorsement clause. The Unlicense places your work in the public domain."}},{"@type":"Question","name":"Where do I put the file?","acceptedAnswer":{"@type":"Answer","text":"Save the text as a file named LICENSE (no extension) in the root of your repository. Hosts like GitHub detect it automatically and show the license on your project page. Use the Download button to get it named correctly."}},{"@type":"Question","name":"Why are Apache-2.0 and GPL not included?","acceptedAnswer":{"@type":"Answer","text":"Those licenses are long and are meant to be used verbatim without filling in a name in the body. Copy them from their official sources. The licenses here are the ones that simply need your name and year."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Open Source License Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/license-generator/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/license-generator/license-generator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('license-generator');</script>
+<div class="page">
+<h1>Open Source License Generator</h1>
+<p class="subtitle">Fill in your name and year to generate a ready-to-use LICENSE file. Supports MIT, ISC, BSD-2, BSD-3 and the Unlicense.</p>
+<div class="row">
+<div class="field"><label for="lic">License</label><select id="lic"><option value="MIT">MIT</option><option value="ISC">ISC</option><option value="BSD2">BSD 2-Clause</option><option value="BSD3">BSD 3-Clause</option><option value="UNLICENSE">The Unlicense</option></select></div>
+<div class="field"><label for="year">Year</label><input type="number" id="year" value="2026" min="1990" max="2100"></div></div>
+<div class="field"><label for="name">Copyright holder</label><input type="text" id="name" value="Your Name"></div>
+<div class="actions"><button class="small-btn" id="dl">Download LICENSE</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>LICENSE</label></div>
+<textarea class="output" id="out" readonly style="min-height:240px;"></textarea>
+<p class="note">These permissive licenses just need your name and year. Apache-2.0 and the GPL family are used verbatim from their official text and are not filled in here, so copy those from the source if you need them.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Which license should I choose?</summary><p>MIT is the most popular for permissive open source: short, simple and business-friendly. ISC is an even simpler equivalent. BSD-2 and BSD-3 are similar, with BSD-3 adding a no-endorsement clause. The Unlicense places your work in the public domain.</p></details>
+<details><summary>Where do I put the file?</summary><p>Save the text as a file named LICENSE (no extension) in the root of your repository. Hosts like GitHub detect it automatically and show the license on your project page. Use the Download button to get it named correctly.</p></details>
+<details><summary>Why are Apache-2.0 and GPL not included?</summary><p>Those licenses are long and are meant to be used verbatim without filling in a name in the body. Copy them from their official sources. The licenses here are the ones that simply need your name and year.</p></details>
+</section>
+<script src="/tools/license-generator/license-generator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

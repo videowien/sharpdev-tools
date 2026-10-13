@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Final Grade Calculator (Score Needed on the Final) | SharpDev.tools</title>
+<meta content="Free final grade calculator. Work out the score you need on your final exam to reach a target overall grade, from your current grade and the weight of the final. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/final-grade/" rel="canonical"/>
+<meta content="Final Grade Calculator (Score Needed on the Final) | SharpDev.tools" property="og:title"/>
+<meta content="Free final grade calculator. Work out the score you need on your final exam to reach a target overall grade, from your current grade and the weight of the final. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/final-grade/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Final Grade Calculator (Score Needed on the Final) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free final grade calculator. Work out the score you need on your final exam to reach a target overall grade, from your current grade and the weight of the final. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Final Grade Calculator","item":"https://sharpdev.tools/tools/final-grade/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the required final score calculated?","acceptedAnswer":{"@type":"Answer","text":"Your current grade counts for everything except the final, and the final counts for its weight. The tool solves for the final score that makes the weighted total equal your target: (target \u2212 current \u00d7 (1 \u2212 weight)) \u00f7 weight."}},{"@type":"Question","name":"What if it says I need more than 100%?","acceptedAnswer":{"@type":"Answer","text":"Then your target is out of reach with the final alone, even with a perfect paper. Either set a lower target, or double-check the final's weight and your current grade."}},{"@type":"Question","name":"What does a negative or zero requirement mean?","acceptedAnswer":{"@type":"Answer","text":"It means you have already done enough. Even scoring zero on the final would leave you at or above your target, so the requirement is effectively nothing."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Final Grade Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/final-grade/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/final-grade/final-grade.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('final-grade');</script>
+<div class="page">
+<h1>Final Grade Calculator</h1>
+<p class="subtitle">Find out what score you need on your final exam to reach the grade you want, based on your current grade and the final's weight.</p>
+<div class="row">
+<div class="field"><label for="cur">Current grade (%)</label><input type="number" id="cur" value="82" step="any"></div>
+<div class="field"><label for="want">Target grade (%)</label><input type="number" id="want" value="85" step="any"></div>
+<div class="field"><label for="wt">Final exam weight (%)</label><input type="number" id="wt" value="30" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">You need to score</div><div class="value" id="need" style="font-size:24px;">—</div></div></div>
+<p class="note" id="note"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the required final score calculated?</summary><p>Your current grade counts for everything except the final, and the final counts for its weight. The tool solves for the final score that makes the weighted total equal your target: (target − current × (1 − weight)) ÷ weight.</p></details>
+<details><summary>What if it says I need more than 100%?</summary><p>Then your target is out of reach with the final alone, even with a perfect paper. Either set a lower target, or double-check the final's weight and your current grade.</p></details>
+<details><summary>What does a negative or zero requirement mean?</summary><p>It means you have already done enough. Even scoring zero on the final would leave you at or above your target, so the requirement is effectively nothing.</p></details>
+</section>
+<script src="/tools/final-grade/final-grade.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>A1Z26 Cipher (Letter to Number) | SharpDev.tools</title>
+<meta content="Free A1Z26 cipher encoder and decoder. Convert each letter to its alphabet position (A=1 to Z=26) and back, with letters in a word joined by hyphens and words separated by spaces. A popular puzzle cipher. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/a1z26/" rel="canonical"/>
+<meta content="A1Z26 Cipher (Letter to Number) | SharpDev.tools" property="og:title"/>
+<meta content="Free A1Z26 cipher encoder and decoder. Convert each letter to its alphabet position (A=1 to Z=26) and back, with letters in a word joined by hyphens and words separated by spaces. A popular puzzle cipher. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/a1z26/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="A1Z26 Cipher (Letter to Number) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free A1Z26 cipher encoder and decoder. Convert each letter to its alphabet position (A=1 to Z=26) and back, with letters in a word joined by hyphens and words separated by spaces. A popular puzzle cipher. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"A1Z26 Cipher","item":"https://sharpdev.tools/tools/a1z26/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the A1Z26 cipher?","acceptedAnswer":{"@type":"Answer","text":"It simply replaces each letter with its position in the alphabet: A is 1, B is 2, up to Z is 26. It is one of the first ciphers people learn and is common in escape rooms and puzzle hunts."}},{"@type":"Question","name":"How are the numbers formatted?","acceptedAnswer":{"@type":"Answer","text":"Letters within a word are joined by hyphens and words are separated by spaces, so HELLO WORLD becomes 8-5-12-12-15 23-15-18-12-4. That keeps word boundaries clear when decoding."}},{"@type":"Question","name":"Is it a secure cipher?","acceptedAnswer":{"@type":"Answer","text":"No. It is a direct, fixed substitution with no key, so anyone can decode it instantly. It is for fun, learning and puzzles, not security."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"A1Z26 Cipher \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/a1z26/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/a1z26/a1z26.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('a1z26');</script>
+<div class="page">
+<h1>A1Z26 Cipher</h1>
+<p class="subtitle">Convert letters to their position in the alphabet (A=1, B=2 … Z=26) and back. A common beginner and puzzle cipher.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">HELLO WORLD</textarea></div>
+<div class="actions"><button class="small-btn" id="enc">Letters → Numbers</button><button class="small-btn" id="dec">Numbers → Letters</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the A1Z26 cipher?</summary><p>It simply replaces each letter with its position in the alphabet: A is 1, B is 2, up to Z is 26. It is one of the first ciphers people learn and is common in escape rooms and puzzle hunts.</p></details>
+<details><summary>How are the numbers formatted?</summary><p>Letters within a word are joined by hyphens and words are separated by spaces, so HELLO WORLD becomes 8-5-12-12-15 23-15-18-12-4. That keeps word boundaries clear when decoding.</p></details>
+<details><summary>Is it a secure cipher?</summary><p>No. It is a direct, fixed substitution with no key, so anyone can decode it instantly. It is for fun, learning and puzzles, not security.</p></details>
+</section>
+<script src="/tools/a1z26/a1z26.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

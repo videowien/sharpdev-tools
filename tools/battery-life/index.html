@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Battery Life Calculator (Runtime Estimate) | SharpDev.tools</title>
+<meta content="Free battery life calculator. Estimate runtime from battery capacity (mAh or Ah) and device current draw (mA), with an adjustable derating factor for real-world efficiency losses. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/battery-life/" rel="canonical"/>
+<meta content="Battery Life Calculator (Runtime Estimate) | SharpDev.tools" property="og:title"/>
+<meta content="Free battery life calculator. Estimate runtime from battery capacity (mAh or Ah) and device current draw (mA), with an adjustable derating factor for real-world efficiency losses. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/battery-life/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Battery Life Calculator (Runtime Estimate) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free battery life calculator. Estimate runtime from battery capacity (mAh or Ah) and device current draw (mA), with an adjustable derating factor for real-world efficiency losses. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"Battery Life Calculator","item":"https://sharpdev.tools/tools/battery-life/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is battery life estimated?","acceptedAnswer":{"@type":"Answer","text":"The ideal runtime is the battery capacity divided by the current draw, so a 2000mAh battery powering a 150mA device lasts about 13.3 hours. Real cells deliver less under load, so a derating factor gives a more honest figure."}},{"@type":"Question","name":"Why apply a derating factor?","acceptedAnswer":{"@type":"Answer","text":"Rated capacity is measured under gentle, ideal conditions. Under a real load you lose some to internal resistance, voltage cutoff and heat, so 70 to 85% of the rating is a common, more realistic assumption. Lower it for high-drain or cold use."}},{"@type":"Question","name":"Does capacity in Ah work too?","acceptedAnswer":{"@type":"Answer","text":"Yes, just keep units consistent: if you enter capacity in mAh, enter the current in mA. For an amp-hour rating, multiply by 1000 to get mAh first."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Battery Life Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/battery-life/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/battery-life/battery-life.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('battery-life');</script>
+<div class="page">
+<h1>Battery Life Calculator</h1>
+<p class="subtitle">Estimate how long a battery will last from its capacity and the current your device draws, with a realistic efficiency derating.</p>
+<div class="row">
+<div class="field"><label for="cap">Battery capacity (mAh)</label><input type="number" id="cap" value="2000" step="any"></div>
+<div class="field"><label for="load">Device current (mA)</label><input type="number" id="load" value="150" step="any"></div>
+<div class="field"><label for="eff">Derating (%)</label><input type="number" id="eff" value="80" min="1" max="100"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Estimated runtime</div><div class="value" id="rt" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Ideal (no derating)</div><div class="value" id="ideal" style="font-size:16px;">—</div></div></div>
+<p class="note">Ideal runtime is capacity ÷ current draw. Real batteries deliver less than their rated capacity under load, so a derating factor (often 70 to 85%) gives a more realistic estimate. Heavy loads, cold temperatures and old cells reduce it further.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is battery life estimated?</summary><p>The ideal runtime is the battery capacity divided by the current draw, so a 2000mAh battery powering a 150mA device lasts about 13.3 hours. Real cells deliver less under load, so a derating factor gives a more honest figure.</p></details>
+<details><summary>Why apply a derating factor?</summary><p>Rated capacity is measured under gentle, ideal conditions. Under a real load you lose some to internal resistance, voltage cutoff and heat, so 70 to 85% of the rating is a common, more realistic assumption. Lower it for high-drain or cold use.</p></details>
+<details><summary>Does capacity in Ah work too?</summary><p>Yes, just keep units consistent: if you enter capacity in mAh, enter the current in mA. For an amp-hour rating, multiply by 1000 to get mAh first.</p></details>
+</section>
+<script src="/tools/battery-life/battery-life.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

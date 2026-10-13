@@ -1,0 +1,7 @@
+const $=id=>document.getElementById(id);
+let stream=null;
+async function start(){try{stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});const v=$('vid');v.srcObject=stream;$('camstatus').textContent='Camera running. You should see yourself above.';$('snap').disabled=false;$('stop').disabled=false;$('start').disabled=true;v.onloadedmetadata=()=>{$('res').textContent=v.videoWidth+' × '+v.videoHeight;};const t=stream.getVideoTracks()[0];if(t)$('dev').textContent=t.label||'Default camera';}catch(e){$('camstatus').textContent='Could not access the camera: '+e.name+'. Check that a camera is connected and that you allowed access.';}}
+function stop(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}$('vid').srcObject=null;$('snap').disabled=true;$('stop').disabled=true;$('start').disabled=false;$('camstatus').textContent='Camera stopped.';}
+function snap(){const v=$('vid'),c=$('shot');if(!v.videoWidth)return;c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);const a=document.createElement('a');a.href=c.toDataURL('image/png');a.download='webcam-snapshot.png';a.click();}
+$('start').addEventListener('click',start);$('stop').addEventListener('click',stop);$('snap').addEventListener('click',snap);
+window.addEventListener('pagehide',stop);

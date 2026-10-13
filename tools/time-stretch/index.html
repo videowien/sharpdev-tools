@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Time Stretch &amp; Pitch Shift Calculator (BPM Change) | SharpDev.tools</title>
+<meta content="Free time stretch calculator. Enter original and target BPM to get the speed ratio, percentage change, resulting pitch shift in semitones (vari-speed) and the new duration. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/time-stretch/" rel="canonical"/>
+<meta content="Time Stretch &amp; Pitch Shift Calculator (BPM Change) | SharpDev.tools" property="og:title"/>
+<meta content="Free time stretch calculator. Enter original and target BPM to get the speed ratio, percentage change, resulting pitch shift in semitones (vari-speed) and the new duration. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/time-stretch/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Time Stretch &amp; Pitch Shift Calculator (BPM Change) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free time stretch calculator. Enter original and target BPM to get the speed ratio, percentage change, resulting pitch shift in semitones (vari-speed) and the new duration. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Music","item":"https://sharpdev.tools/#music"},{"@type":"ListItem","position":3,"name":"Time Stretch & Pitch Calculator","item":"https://sharpdev.tools/tools/time-stretch/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens to pitch when I change speed?","acceptedAnswer":{"@type":"Answer","text":"If the audio is simply played faster (vari-speed), pitch rises with it: 12 \u00d7 log2 of the speed ratio in semitones. Going 100 to 120 BPM is a 1.2x ratio, about +3.16 semitones."}},{"@type":"Question","name":"What is the difference between vari-speed and time-stretch?","acceptedAnswer":{"@type":"Answer","text":"Vari-speed changes tempo and pitch together, like speeding up vinyl \u2014 clean but transposed. Time-stretch algorithms change tempo while holding pitch, which preserves the key but can smear transients on big changes."}},{"@type":"Question","name":"How much stretching is safe?","acceptedAnswer":{"@type":"Answer","text":"Within about \u00b110% most algorithms sound transparent; beyond \u00b120% artefacts get audible on complex material. For big jumps, consider vari-speed plus a separate pitch correction, or choose a track closer in tempo."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Time Stretch & Pitch Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/time-stretch/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/time-stretch/time-stretch.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('time-stretch');</script>
+<div class="page">
+<h1>Time Stretch & Pitch Calculator</h1>
+<p class="subtitle">Change a track's tempo and see the speed ratio, the pitch shift in semitones if you vari-speed it, and the new duration.</p>
+<div class="row">
+<div class="field"><label for="from">Original BPM</label><input type="number" id="from" value="100" step="any"></div>
+<div class="field"><label for="to">Target BPM</label><input type="number" id="to" value="120" step="any"></div>
+<div class="field"><label for="len">Original length (s, optional)</label><input type="number" id="len" value="240" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Speed</div><div class="value" id="ratio">-</div></div>
+<div class="result-card"><div class="label">Vari-speed pitch shift</div><div class="value" id="st">-</div></div>
+<div class="result-card"><div class="label">New length</div><div class="value" id="nlen">-</div></div></div>
+<p class="note">Speed ratio = target ÷ original BPM. Played vari-speed (like vinyl or a repitched sampler), pitch moves with speed: semitones = 12 × log2(ratio), so 100 → 120 BPM raises pitch 3.16 semitones. Time-stretch algorithms keep pitch constant instead, at the cost of artefacts on large stretches.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What happens to pitch when I change speed?</summary><p>If the audio is simply played faster (vari-speed), pitch rises with it: 12 × log2 of the speed ratio in semitones. Going 100 to 120 BPM is a 1.2x ratio, about +3.16 semitones.</p></details>
+<details><summary>What is the difference between vari-speed and time-stretch?</summary><p>Vari-speed changes tempo and pitch together, like speeding up vinyl — clean but transposed. Time-stretch algorithms change tempo while holding pitch, which preserves the key but can smear transients on big changes.</p></details>
+<details><summary>How much stretching is safe?</summary><p>Within about ±10% most algorithms sound transparent; beyond ±20% artefacts get audible on complex material. For big jumps, consider vari-speed plus a separate pitch correction, or choose a track closer in tempo.</p></details>
+</section>
+<script src="/tools/time-stretch/time-stretch.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

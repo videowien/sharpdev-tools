@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>APR to APY Calculator (and APY to APR) | SharpDev.tools</title>
+<meta content="Free APR to APY converter (and APY to APR). Convert between the nominal rate (APR) and the effective annual yield (APY) for daily, monthly, quarterly or annual compounding. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/apr-apy/" rel="canonical"/>
+<meta content="APR to APY Calculator (and APY to APR) | SharpDev.tools" property="og:title"/>
+<meta content="Free APR to APY converter (and APY to APR). Convert between the nominal rate (APR) and the effective annual yield (APY) for daily, monthly, quarterly or annual compounding. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/apr-apy/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="APR to APY Calculator (and APY to APR) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free APR to APY converter (and APY to APR). Convert between the nominal rate (APR) and the effective annual yield (APY) for daily, monthly, quarterly or annual compounding. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"APR \u2194 APY Calculator","item":"https://sharpdev.tools/tools/apr-apy/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between APR and APY?","acceptedAnswer":{"@type":"Answer","text":"APR is the nominal yearly rate without compounding. APY (effective annual rate) folds in how often interest compounds during the year, so it shows the real growth. For savings, a higher APY is better; for loans, a lower APR is better."}},{"@type":"Question","name":"Why does APY depend on compounding frequency?","acceptedAnswer":{"@type":"Answer","text":"Each time interest compounds, the next period earns interest on the interest. More frequent compounding (daily versus annually) produces a slightly higher effective yield, which is the APY."}},{"@type":"Question","name":"Which one should I compare?","acceptedAnswer":{"@type":"Answer","text":"Compare like with like. For savings accounts compare APY, since it reflects true earnings. For loans and credit cards, lenders usually quote APR. This tool converts between them so you can compare fairly."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"APR \u2194 APY Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/apr-apy/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/apr-apy/apr-apy.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('apr-apy');</script>
+<div class="page">
+<h1>APR ↔ APY Calculator</h1>
+<p class="subtitle">Convert between APR (nominal rate) and APY (effective annual yield) for any compounding frequency. See the real effect of compounding.</p>
+<div class="row">
+<div class="field"><label for="dir">Convert</label><select id="dir"><option value="apr2apy">APR → APY</option><option value="apy2apr">APY → APR</option></select></div>
+<div class="field"><label id="inlabel" for="rate">APR (%)</label><input type="number" id="rate" value="12" step="any"></div>
+<div class="field"><label for="n">Compounding</label><select id="n"><option value="365">Daily</option><option value="12" selected>Monthly</option><option value="4">Quarterly</option><option value="2">Semi-annually</option><option value="1">Annually</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="outlabel">APY (effective)</div><div class="value" id="out">—</div></div>
+<div class="result-card"><div class="label">Difference</div><div class="value" id="diff">—</div></div></div>
+<p class="note">APR is the stated nominal rate. APY (also called the effective annual rate) includes the effect of compounding within the year, so it is the true yearly growth. The more often interest compounds, the more APY exceeds APR.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between APR and APY?</summary><p>APR is the nominal yearly rate without compounding. APY (effective annual rate) folds in how often interest compounds during the year, so it shows the real growth. For savings, a higher APY is better; for loans, a lower APR is better.</p></details>
+<details><summary>Why does APY depend on compounding frequency?</summary><p>Each time interest compounds, the next period earns interest on the interest. More frequent compounding (daily versus annually) produces a slightly higher effective yield, which is the APY.</p></details>
+<details><summary>Which one should I compare?</summary><p>Compare like with like. For savings accounts compare APY, since it reflects true earnings. For loans and credit cards, lenders usually quote APR. This tool converts between them so you can compare fairly.</p></details>
+</section>
+<script src="/tools/apr-apy/apr-apy.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

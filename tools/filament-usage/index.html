@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Filament Length to Weight Calculator (g ↔ m) | SharpDev.tools</title>
+<meta content="Free filament length to weight calculator. Convert grams to metres and metres to grams for PLA, PETG, ABS, TPU and more, in 1.75 mm and 2.85 mm. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/filament-usage/" rel="canonical"/>
+<meta content="Filament Length to Weight Calculator (g ↔ m) | SharpDev.tools" property="og:title"/>
+<meta content="Free filament length to weight calculator. Convert grams to metres and metres to grams for PLA, PETG, ABS, TPU and more, in 1.75 mm and 2.85 mm. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/filament-usage/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Filament Length to Weight Calculator (g ↔ m) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free filament length to weight calculator. Convert grams to metres and metres to grams for PLA, PETG, ABS, TPU and more, in 1.75 mm and 2.85 mm. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"Filament Length \u2194 Weight Calculator","item":"https://sharpdev.tools/tools/filament-usage/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many metres of filament are in a 1 kg spool?","acceptedAnswer":{"@type":"Answer","text":"Depends on material and diameter. 1.75 mm PLA is about 2.98 g per metre, so a 1 kg spool holds roughly 335 m. PETG is a little denser (about 330 m), ABS lighter (about 400 m), and 2.85 mm filament holds about a third of the length."}},{"@type":"Question","name":"How is it calculated?","acceptedAnswer":{"@type":"Answer","text":"Filament is a cylinder: each metre has volume \u03c0 \u00d7 (diameter \u00f7 2)\u00b2 \u00d7 1 m. Multiply by the material density to get grams per metre, then divide or multiply to convert either way."}},{"@type":"Question","name":"Why do slicers report both grams and metres?","acceptedAnswer":{"@type":"Answer","text":"Grams tell you cost (spools are sold by weight) and metres tell you whether the physical spool will run out. This tool lets you convert whichever one you have into the other."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Filament Length \u2194 Weight Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/filament-usage/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/filament-usage/filament-usage.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('filament-usage');</script>
+<div class="page">
+<h1>Filament Length ↔ Weight Calculator</h1>
+<p class="subtitle">Convert filament weight to length and back, for any material and both standard diameters. How many metres are in a kilogram of PLA? About 335.</p>
+<div class="row">
+<div class="field"><label for="mat">Material</label><select id="mat"><option value="pla" selected>PLA (1.24 g/cm³)</option><option value="petg">PETG (1.27)</option><option value="abs">ABS (1.04)</option><option value="asa">ASA (1.07)</option><option value="tpu">TPU (1.21)</option><option value="nylon">Nylon (1.14)</option><option value="pc">Polycarbonate (1.20)</option><option value="custom">Custom...</option></select></div>
+<div class="field" id="rhowrap" style="display:none;"><label for="rho">Density (g/cm³)</label><input type="number" id="rho" value="1.24" step="any"></div>
+<div class="field"><label for="dia">Diameter</label><select id="dia"><option value="1.75" selected>1.75 mm</option><option value="2.85">2.85 mm</option></select></div></div>
+<div class="row">
+<div class="field"><label for="mode">Convert</label><select id="mode"><option value="w2l" selected>Weight → length</option><option value="l2w">Length → weight</option></select></div>
+<div class="field"><label id="vlabel" for="val">Weight (g)</label><input type="number" id="val" value="1000" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="olabel">Length</div><div class="value" id="out" style="font-size:20px;">-</div></div>
+<div class="result-card"><div class="label">This filament</div><div class="value" id="rate" style="font-size:15px;">-</div></div></div>
+<p class="note">A metre of filament is a thin cylinder: volume = π × (diameter/2)² × length, and weight = volume × density. For 1.75 mm PLA that is about 2.98 g per metre, so a 1 kg spool holds roughly 335 m. Thicker 2.85 mm filament holds about 126 m per kg of PLA.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How many metres of filament are in a 1 kg spool?</summary><p>Depends on material and diameter. 1.75 mm PLA is about 2.98 g per metre, so a 1 kg spool holds roughly 335 m. PETG is a little denser (about 330 m), ABS lighter (about 400 m), and 2.85 mm filament holds about a third of the length.</p></details>
+<details><summary>How is it calculated?</summary><p>Filament is a cylinder: each metre has volume π × (diameter ÷ 2)² × 1 m. Multiply by the material density to get grams per metre, then divide or multiply to convert either way.</p></details>
+<details><summary>Why do slicers report both grams and metres?</summary><p>Grams tell you cost (spools are sold by weight) and metres tell you whether the physical spool will run out. This tool lets you convert whichever one you have into the other.</p></details>
+</section>
+<script src="/tools/filament-usage/filament-usage.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Acronym Generator (Make an Acronym from a Phrase) | SharpDev.tools</title>
+<meta content="Free acronym generator. Build an acronym from the first letter of each word in a phrase, with an option to skip minor words like the, of, a and and. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/acronym-generator/" rel="canonical"/>
+<meta content="Acronym Generator (Make an Acronym from a Phrase) | SharpDev.tools" property="og:title"/>
+<meta content="Free acronym generator. Build an acronym from the first letter of each word in a phrase, with an option to skip minor words like the, of, a and and. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/acronym-generator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Acronym Generator (Make an Acronym from a Phrase) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free acronym generator. Build an acronym from the first letter of each word in a phrase, with an option to skip minor words like the, of, a and and. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Acronym Generator","item":"https://sharpdev.tools/tools/acronym-generator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an acronym?","acceptedAnswer":{"@type":"Answer","text":"An acronym is a short word formed from the first letters of a phrase, like NASA or ASAP. This tool builds one automatically from whatever phrase you type."}},{"@type":"Question","name":"Why would I skip minor words?","acceptedAnswer":{"@type":"Answer","text":"Small connecting words like the, of and and usually are not included in real acronyms. Turning on Skip minor words gives a cleaner, more natural result, for example 'United States of America' becomes USA rather than USOA."}},{"@type":"Question","name":"Does it work with numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes. The first letter or digit of each word is used, so a word starting with a number contributes that digit to the acronym."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Acronym Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/acronym-generator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/acronym-generator/acronym-generator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('acronym-generator');</script>
+<div class="page">
+<h1>Acronym Generator</h1>
+<p class="subtitle">Turn any phrase into an acronym from the first letter of each word. Optionally skip minor words like the, of and and.</p>
+<div class="field"><label for="in">Phrase</label><input type="text" id="in" value="As Soon As Possible"></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="skip" style="width:auto;"> Skip minor words (the, of, a, and, for...)</label></div>
+<div class="result-cards"><div class="result-card hl"><div class="label">Acronym</div><div class="value" id="out" style="font-size:26px;">—</div></div></div>
+<div class="actions" style="margin-top:12px;"><button class="copy-btn" id="copy">Copy</button></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is an acronym?</summary><p>An acronym is a short word formed from the first letters of a phrase, like NASA or ASAP. This tool builds one automatically from whatever phrase you type.</p></details>
+<details><summary>Why would I skip minor words?</summary><p>Small connecting words like the, of and and usually are not included in real acronyms. Turning on Skip minor words gives a cleaner, more natural result, for example 'United States of America' becomes USA rather than USOA.</p></details>
+<details><summary>Does it work with numbers?</summary><p>Yes. The first letter or digit of each word is used, so a word starting with a number contributes that digit to the acronym.</p></details>
+</section>
+<script src="/tools/acronym-generator/acronym-generator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

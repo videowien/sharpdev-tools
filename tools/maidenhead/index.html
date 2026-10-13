@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Maidenhead Grid Square Calculator (Locator, Distance &amp; Bearing) | SharpDev.tools</title>
+<meta content="Free Maidenhead grid square calculator. Convert a grid locator like FN31pr to latitude and longitude, and get the great-circle distance and beam heading to another grid. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/maidenhead/" rel="canonical"/>
+<meta content="Maidenhead Grid Square Calculator (Locator, Distance &amp; Bearing) | SharpDev.tools" property="og:title"/>
+<meta content="Free Maidenhead grid square calculator. Convert a grid locator like FN31pr to latitude and longitude, and get the great-circle distance and beam heading to another grid. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/maidenhead/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Maidenhead Grid Square Calculator (Locator, Distance &amp; Bearing) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Maidenhead grid square calculator. Convert a grid locator like FN31pr to latitude and longitude, and get the great-circle distance and beam heading to another grid. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Maidenhead Grid Square Calculator","item":"https://sharpdev.tools/tools/maidenhead/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Maidenhead grid square?","acceptedAnswer":{"@type":"Answer","text":"It is a compact way to give a location on the air. Two letters set a large field, two digits a square within it, and two more letters a smaller subsquare, like FN31pr. Hams exchange grids for awards, contests and pointing antennas."}},{"@type":"Question","name":"How accurate is a 6-character grid?","acceptedAnswer":{"@type":"Answer","text":"A 6-character subsquare is about 5 minutes of longitude by 2.5 minutes of latitude, roughly 5 by 4 kilometres at mid-latitudes. The tool returns the centre of that subsquare, which is close enough to point a beam."}},{"@type":"Question","name":"How is the beam heading found?","acceptedAnswer":{"@type":"Answer","text":"From the two grid coordinates the tool computes the great-circle (shortest-path) distance and the initial bearing from your location. Point a directional antenna at that bearing to work the other station the short way around."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Maidenhead Grid Square Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/maidenhead/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/maidenhead/maidenhead.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('maidenhead');</script>
+<div class="page">
+<h1>Maidenhead Grid Square Calculator</h1>
+<p class="subtitle">Convert a Maidenhead grid locator to latitude and longitude, and find the distance and beam heading to a second grid square.</p>
+<div class="row">
+<div class="field"><label for="g1">Your grid (e.g. FN31pr)</label><input type="text" id="g1" value="FN31pr" maxlength="6"></div>
+<div class="field"><label for="g2">Target grid (optional)</label><input type="text" id="g2" value="JN58td" maxlength="6"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Your location</div><div class="value" id="ll1" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Distance</div><div class="value" id="dist" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Beam heading</div><div class="value" id="bear" style="font-size:16px;">-</div></div></div>
+<p class="note">A Maidenhead locator encodes latitude and longitude into a short code: two letters for the field, two digits for the square and two letters for the subsquare. The tool returns the centre coordinate, and the great-circle distance and initial beam heading to a second grid for pointing a directional antenna.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a Maidenhead grid square?</summary><p>It is a compact way to give a location on the air. Two letters set a large field, two digits a square within it, and two more letters a smaller subsquare, like FN31pr. Hams exchange grids for awards, contests and pointing antennas.</p></details>
+<details><summary>How accurate is a 6-character grid?</summary><p>A 6-character subsquare is about 5 minutes of longitude by 2.5 minutes of latitude, roughly 5 by 4 kilometres at mid-latitudes. The tool returns the centre of that subsquare, which is close enough to point a beam.</p></details>
+<details><summary>How is the beam heading found?</summary><p>From the two grid coordinates the tool computes the great-circle (shortest-path) distance and the initial bearing from your location. Point a directional antenna at that bearing to work the other station the short way around.</p></details>
+</section>
+<script src="/tools/maidenhead/maidenhead.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

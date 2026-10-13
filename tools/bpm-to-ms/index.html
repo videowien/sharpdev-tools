@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>BPM to Milliseconds Calculator (Delay &amp; Reverb Times) | SharpDev.tools</title>
+<meta content="Free BPM to ms calculator. Convert a tempo to note-value durations in milliseconds and Hz (whole to 1/64, dotted and triplet) for delay, reverb pre-delay and LFO sync. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/bpm-to-ms/" rel="canonical"/>
+<meta content="BPM to Milliseconds Calculator (Delay &amp; Reverb Times) | SharpDev.tools" property="og:title"/>
+<meta content="Free BPM to ms calculator. Convert a tempo to note-value durations in milliseconds and Hz (whole to 1/64, dotted and triplet) for delay, reverb pre-delay and LFO sync. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/bpm-to-ms/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="BPM to Milliseconds Calculator (Delay &amp; Reverb Times) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free BPM to ms calculator. Convert a tempo to note-value durations in milliseconds and Hz (whole to 1/64, dotted and triplet) for delay, reverb pre-delay and LFO sync. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Music","item":"https://sharpdev.tools/#music"},{"@type":"ListItem","position":3,"name":"BPM to Milliseconds Calculator","item":"https://sharpdev.tools/tools/bpm-to-ms/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert BPM to milliseconds?","acceptedAnswer":{"@type":"Answer","text":"One beat (a quarter note) is 60000 divided by the BPM: 500 ms at 120 BPM, 400 ms at 150. Halve for eighths, halve again for sixteenths; dotted notes are 1.5 times longer and triplets two thirds."}},{"@type":"Question","name":"What are tempo-synced delays for?","acceptedAnswer":{"@type":"Answer","text":"Delays set to note values (1/4, 1/8, dotted 1/8) repeat in time with the song, so echoes reinforce the groove instead of smearing it. The dotted 1/8 is the classic U2-style guitar delay."}},{"@type":"Question","name":"What is the Hz column for?","acceptedAnswer":{"@type":"Answer","text":"Rate-based effects (LFOs, tremolo, auto-pan) are set in Hz. A quarter note at 120 BPM equals 2 Hz, so the table lets you sync free-running LFOs to the tempo by hand."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"BPM to Milliseconds Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/bpm-to-ms/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/bpm-to-ms/bpm-to-ms.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('bpm-to-ms');</script>
+<div class="page">
+<h1>BPM to Milliseconds Calculator</h1>
+<p class="subtitle">Tempo-synced delay and reverb times: every note value in milliseconds and Hz for your BPM, with dotted and triplet variants.</p>
+<div class="row"><div class="field"><label for="bpm">Tempo (BPM)</label><input type="number" id="bpm" value="120" step="any"></div></div>
+<table class="bpm-table"><thead><tr><th>Note</th><th>Straight (ms)</th><th>Dotted (ms)</th><th>Triplet (ms)</th><th>Hz</th></tr></thead><tbody id="rows"></tbody></table>
+<p class="note">One beat (quarter note) lasts 60000 ÷ BPM milliseconds — 500 ms at 120 BPM. Dotted values are 1.5x, triplets 2/3x. Use the ms column for delays and reverb pre-delay, the Hz column for LFO rates. Common trick: set pre-delay to a 1/64 or 1/128 value so the reverb breathes with the track.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert BPM to milliseconds?</summary><p>One beat (a quarter note) is 60000 divided by the BPM: 500 ms at 120 BPM, 400 ms at 150. Halve for eighths, halve again for sixteenths; dotted notes are 1.5 times longer and triplets two thirds.</p></details>
+<details><summary>What are tempo-synced delays for?</summary><p>Delays set to note values (1/4, 1/8, dotted 1/8) repeat in time with the song, so echoes reinforce the groove instead of smearing it. The dotted 1/8 is the classic U2-style guitar delay.</p></details>
+<details><summary>What is the Hz column for?</summary><p>Rate-based effects (LFOs, tremolo, auto-pan) are set in Hz. A quarter note at 120 BPM equals 2 Hz, so the table lets you sync free-running LFOs to the tempo by hand.</p></details>
+</section>
+<script src="/tools/bpm-to-ms/bpm-to-ms.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

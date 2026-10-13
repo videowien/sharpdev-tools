@@ -1,0 +1,11 @@
+.page { max-width: 720px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 28px; }
+.pc-row { display: flex; flex-direction: column; gap: 14px; }
+.pc-card { background: #141414; border: 1px solid #262626; border-radius: 12px; padding: 18px 22px; }
+.pc-card h2 { font-size: 13px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.pc-inputs { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 15px; color: #aaa; }
+.pc-inputs input { width: 100px; padding: 10px 12px; background: #0d0d0d; border: 1px solid #262626; color: #e1e1e1; font-size: 15px; border-radius: 8px; outline: none; font-variant-numeric: tabular-nums; }
+.pc-inputs input:focus { border-color: #ff4444; }
+.pc-result { min-width: 60px; padding: 10px 14px; background: #0f0f0f; border: 1px solid #ff4444; color: #fff; font-weight: 700; border-radius: 8px; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) { .page h1 { font-size: 28px; } .pc-inputs input { width: 80px; } }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Volumetric Flow Calculator (Max Print Speed) | SharpDev.tools</title>
+<meta content="Free volumetric flow calculator for 3D printing. Compute mm³/s from layer height, line width and speed, compare against your hotend limit, and get the maximum printable speed. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/volumetric-flow/" rel="canonical"/>
+<meta content="Volumetric Flow Calculator (Max Print Speed) | SharpDev.tools" property="og:title"/>
+<meta content="Free volumetric flow calculator for 3D printing. Compute mm³/s from layer height, line width and speed, compare against your hotend limit, and get the maximum printable speed. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/volumetric-flow/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Volumetric Flow Calculator (Max Print Speed) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free volumetric flow calculator for 3D printing. Compute mm³/s from layer height, line width and speed, compare against your hotend limit, and get the maximum printable speed. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"Volumetric Flow Calculator","item":"https://sharpdev.tools/tools/volumetric-flow/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is volumetric flow in 3D printing?","acceptedAnswer":{"@type":"Answer","text":"The volume of plastic the hotend must melt per second: layer height \u00d7 line width \u00d7 print speed. At 0.2 mm layers, 0.4 mm lines and 60 mm/s that is 4.8 mm\u00b3/s. It is the real speed limit of a printer."}},{"@type":"Question","name":"What happens if I exceed the hotend limit?","acceptedAnswer":{"@type":"Answer","text":"The extruder pushes faster than the hotend can melt, so lines come out thin and weak (under-extrusion), often with clicking or skipping. If a fast profile prints badly, this is the first thing to check."}},{"@type":"Question","name":"What limit does my hotend have?","acceptedAnswer":{"@type":"Answer","text":"Ballpark: classic V6 or MK8-style around 11-15 mm\u00b3/s, Revo and Dragon around 24, high-flow units 30-40+. It also depends on material and temperature; the printed maximum is usually quoted for PLA."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Volumetric Flow Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/volumetric-flow/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/volumetric-flow/volumetric-flow.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('volumetric-flow');</script>
+<div class="page">
+<h1>Volumetric Flow Calculator</h1>
+<p class="subtitle">How fast can you actually print? Flow = layer height × line width × speed. Compare it to your hotend's melt limit and get the real max speed.</p>
+<div class="row">
+<div class="field"><label for="lh">Layer height (mm)</label><input type="number" id="lh" value="0.2" step="any"></div>
+<div class="field"><label for="lw">Line width (mm)</label><input type="number" id="lw" value="0.4" step="any"></div>
+<div class="field"><label for="sp">Print speed (mm/s)</label><input type="number" id="sp" value="60" step="any"></div></div>
+<div class="row"><div class="field"><label for="max">Hotend limit (mm³/s)</label><select id="max"><option value="11">Stock V6-style (~11)</option><option value="15" selected>Stock Ender-type / MK8 (~15 at best, often ~12)</option><option value="24">Revo / Dragon (~24)</option><option value="35">Rapido / Dragonfly HF (~35)</option><option value="0">Custom / skip</option></select></div>
+<div class="field"><label for="cust">Custom limit (mm³/s)</label><input type="number" id="cust" value="15" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Requested flow</div><div class="value" id="flow">-</div></div>
+<div class="result-card"><div class="label">Verdict</div><div class="value" id="ok" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Max speed at this limit</div><div class="value" id="maxsp">-</div></div></div>
+<p class="note">Volumetric flow = layer height × line width × speed. 0.2 × 0.4 × 60 mm/s = 4.8 mm³/s, easy for any hotend. Ask for more than the hotend can melt and you get under-extrusion regardless of what the slicer says. The limits above are ballpark; PLA flows more than ABS/PETG at the same hotend.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is volumetric flow in 3D printing?</summary><p>The volume of plastic the hotend must melt per second: layer height × line width × print speed. At 0.2 mm layers, 0.4 mm lines and 60 mm/s that is 4.8 mm³/s. It is the real speed limit of a printer.</p></details>
+<details><summary>What happens if I exceed the hotend limit?</summary><p>The extruder pushes faster than the hotend can melt, so lines come out thin and weak (under-extrusion), often with clicking or skipping. If a fast profile prints badly, this is the first thing to check.</p></details>
+<details><summary>What limit does my hotend have?</summary><p>Ballpark: classic V6 or MK8-style around 11-15 mm³/s, Revo and Dragon around 24, high-flow units 30-40+. It also depends on material and temperature; the printed maximum is usually quoted for PLA.</p></details>
+</section>
+<script src="/tools/volumetric-flow/volumetric-flow.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

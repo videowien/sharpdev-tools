@@ -1,0 +1,100 @@
+/* Border Radius Generator — styles */
+.page { max-width: 960px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 28px; }
+
+.rad-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-bottom: 24px;
+}
+.rad-preview {
+  background:
+    linear-gradient(45deg, #0f0f0f 25%, transparent 25%) 0 0/20px 20px,
+    linear-gradient(-45deg, #0f0f0f 25%, transparent 25%) 0 10px/20px 20px,
+    #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 30px;
+  min-height: 320px;
+  display: flex; align-items: center; justify-content: center;
+}
+.rad-box {
+  width: 260px; height: 200px;
+  background: linear-gradient(135deg, #ff4444, #ff8080);
+  box-shadow: 0 10px 30px rgba(255, 68, 68, 0.25);
+  transition: border-radius 0.15s;
+}
+
+.rad-controls {
+  display: flex; flex-direction: column; gap: 14px;
+}
+.rad-options {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; background: #141414; border: 1px solid #262626;
+  border-radius: 999px; font-size: 12px; color: #aaa; cursor: pointer;
+  transition: all 0.15s; user-select: none;
+}
+.chip:hover { border-color: #444; color: #fff; }
+.chip input { accent-color: #ff4444; margin: 0; cursor: pointer; }
+.unit-select {
+  padding: 7px 12px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 12px;
+  border-radius: 999px; cursor: pointer;
+  font-family: inherit;
+}
+
+.rad-sliders { display: flex; flex-direction: column; gap: 10px; }
+.slider-row {
+  display: grid; grid-template-columns: 80px 1fr 50px;
+  align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 8px;
+}
+.slider-row label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.slider-row input[type=range] { width: 100%; accent-color: #ff4444; }
+.slider-row .val {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 13px; color: #fff; text-align: right;
+}
+
+.code-panel {
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.code-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #1f1f1f;
+  font-size: 12px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.copy-btn {
+  padding: 5px 12px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 12px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s; text-transform: none; letter-spacing: 0;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+pre#code-out {
+  padding: 16px; margin: 0;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace;
+  line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+}
+
+@media (max-width: 800px) {
+  .page h1 { font-size: 28px; }
+  .rad-layout { grid-template-columns: 1fr; }
+  .rad-preview { min-height: 240px; }
+  .rad-box { width: 200px; height: 160px; }
+}

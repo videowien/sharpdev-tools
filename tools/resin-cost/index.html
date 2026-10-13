@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Resin Print Cost Calculator (SLA / MSLA) | SharpDev.tools</title>
+<meta content="Free resin 3D print cost calculator. Enter the print volume in ml, the resin bottle price and size, and a waste allowance to get the cost per print. For SLA and MSLA printers. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/resin-cost/" rel="canonical"/>
+<meta content="Resin Print Cost Calculator (SLA / MSLA) | SharpDev.tools" property="og:title"/>
+<meta content="Free resin 3D print cost calculator. Enter the print volume in ml, the resin bottle price and size, and a waste allowance to get the cost per print. For SLA and MSLA printers. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/resin-cost/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Resin Print Cost Calculator (SLA / MSLA) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free resin 3D print cost calculator. Enter the print volume in ml, the resin bottle price and size, and a waste allowance to get the cost per print. For SLA and MSLA printers. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"Resin Print Cost Calculator","item":"https://sharpdev.tools/tools/resin-cost/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is resin print cost calculated?","acceptedAnswer":{"@type":"Answer","text":"Take the millilitres your slicer reports, add a waste allowance, and multiply by the bottle price divided by the bottle size. A 45 ml print with 10% waste from a 35-per-litre bottle costs about 1.73."}},{"@type":"Question","name":"What waste percentage should I use?","acceptedAnswer":{"@type":"Answer","text":"5-15% is typical. It covers the occasional failed print, resin that stays in the vat and on supports, and losses during washing. Raise it if you print tall thin models that fail more often."}},{"@type":"Question","name":"Does the slicer volume include supports?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you slice with supports enabled the reported volume includes them. Slice the final supported model before reading off the ml figure."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Resin Print Cost Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/resin-cost/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/resin-cost/resin-cost.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('resin-cost');</script>
+<div class="page">
+<h1>Resin Print Cost Calculator</h1>
+<p class="subtitle">Work out what a resin print costs from the slicer's ml estimate, your bottle price, and a waste allowance for supports, failures and the vat.</p>
+<div class="row">
+<div class="field"><label for="ml">Print volume (ml, from slicer)</label><input type="number" id="ml" value="45" step="any"></div>
+<div class="field"><label for="price">Bottle price</label><input type="number" id="price" value="35" step="any"></div>
+<div class="field"><label for="size">Bottle size (ml)</label><input type="number" id="size" value="1000" step="any"></div></div>
+<div class="row"><div class="field"><label for="waste">Waste allowance (%)</label><input type="number" id="waste" value="10" step="any" min="0"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Cost per print</div><div class="value" id="tot">-</div></div>
+<div class="result-card"><div class="label">Resin used incl. waste</div><div class="value" id="vol" style="font-size:16px;">-</div></div>
+<div class="result-card"><div class="label">Price per ml</div><div class="value" id="perml" style="font-size:15px;">-</div></div></div>
+<p class="note">Cost = print millilitres × (1 + waste) ÷ bottle size × bottle price. The slicer volume already includes supports if you sliced with them; the waste allowance covers failed prints, resin left in the vat and wash losses. IPA, gloves and filters are extra.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is resin print cost calculated?</summary><p>Take the millilitres your slicer reports, add a waste allowance, and multiply by the bottle price divided by the bottle size. A 45 ml print with 10% waste from a 35-per-litre bottle costs about 1.73.</p></details>
+<details><summary>What waste percentage should I use?</summary><p>5-15% is typical. It covers the occasional failed print, resin that stays in the vat and on supports, and losses during washing. Raise it if you print tall thin models that fail more often.</p></details>
+<details><summary>Does the slicer volume include supports?</summary><p>Yes, if you slice with supports enabled the reported volume includes them. Slice the final supported model before reading off the ml figure.</p></details>
+</section>
+<script src="/tools/resin-cost/resin-cost.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

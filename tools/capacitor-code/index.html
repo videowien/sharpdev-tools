@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Capacitor Code Calculator (3-Digit &amp; Letter) | SharpDev.tools</title>
+<meta content="Free capacitor code calculator. Decode the 3-digit EIA code on a ceramic capacitor (like 104 or 223) into capacitance in pF, nF and µF, with the optional tolerance letter. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/capacitor-code/" rel="canonical"/>
+<meta content="Capacitor Code Calculator (3-Digit &amp; Letter) | SharpDev.tools" property="og:title"/>
+<meta content="Free capacitor code calculator. Decode the 3-digit EIA code on a ceramic capacitor (like 104 or 223) into capacitance in pF, nF and µF, with the optional tolerance letter. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/capacitor-code/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Capacitor Code Calculator (3-Digit &amp; Letter) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free capacitor code calculator. Decode the 3-digit EIA code on a ceramic capacitor (like 104 or 223) into capacitance in pF, nF and µF, with the optional tolerance letter. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"Capacitor Code Calculator","item":"https://sharpdev.tools/tools/capacitor-code/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I read a capacitor's 3-digit code?","acceptedAnswer":{"@type":"Answer","text":"The first two digits are the significant figures and the third is how many zeros to add, giving a value in picofarads. For example 223 is 22 followed by three zeros = 22,000 pF = 22 nF."}},{"@type":"Question","name":"What does 104 mean?","acceptedAnswer":{"@type":"Answer","text":"10 followed by four zeros = 100,000 pF, which is 100 nF or 0.1 \u00b5F, one of the most common decoupling capacitor values. This tool converts any code into all three units."}},{"@type":"Question","name":"What is the letter after the code?","acceptedAnswer":{"@type":"Answer","text":"It is the tolerance. Common ones are J for \u00b15%, K for \u00b110% and M for \u00b120%. Smaller tolerances like F (\u00b11%) appear on precision parts."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Capacitor Code Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/capacitor-code/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/capacitor-code/capacitor-code.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('capacitor-code');</script>
+<div class="page">
+<h1>Capacitor Code Calculator</h1>
+<p class="subtitle">Decode the 3-digit code printed on ceramic capacitors into picofarads, nanofarads and microfarads. Includes the tolerance letter.</p>
+<div class="row">
+<div class="field"><label for="code">Code (e.g. 104)</label><input type="text" id="code" value="104" maxlength="3"></div>
+<div class="field"><label for="tol">Tolerance letter (optional)</label><select id="tol"><option value="">none</option><option value="J">J (±5%)</option><option value="K">K (±10%)</option><option value="M">M (±20%)</option><option value="F">F (±1%)</option><option value="G">G (±2%)</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Capacitance</div><div class="value" id="main" style="font-size:20px;">—</div></div>
+<div class="result-card"><div class="label">In pF</div><div class="value" id="pf" style="font-size:15px;">—</div></div>
+<div class="result-card"><div class="label">Tolerance</div><div class="value" id="tolout">—</div></div></div>
+<p class="note">The first two digits are significant figures and the third is the number of zeros (the multiplier), giving a value in picofarads. So 104 means 10 followed by four zeros = 100,000 pF = 100 nF = 0.1 µF. A trailing letter is the tolerance.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I read a capacitor's 3-digit code?</summary><p>The first two digits are the significant figures and the third is how many zeros to add, giving a value in picofarads. For example 223 is 22 followed by three zeros = 22,000 pF = 22 nF.</p></details>
+<details><summary>What does 104 mean?</summary><p>10 followed by four zeros = 100,000 pF, which is 100 nF or 0.1 µF, one of the most common decoupling capacitor values. This tool converts any code into all three units.</p></details>
+<details><summary>What is the letter after the code?</summary><p>It is the tolerance. Common ones are J for ±5%, K for ±10% and M for ±20%. Smaller tolerances like F (±1%) appear on precision parts.</p></details>
+</section>
+<script src="/tools/capacitor-code/capacitor-code.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

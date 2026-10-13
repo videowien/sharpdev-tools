@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SVG to PNG Converter (Rasterize SVG) | SharpDev.tools</title>
+<meta content="Free SVG to PNG converter. Paste SVG markup or upload an SVG file and rasterise it to a PNG at any width, with an optional transparent background. Runs in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/svg-to-png/" rel="canonical"/>
+<meta content="SVG to PNG Converter (Rasterize SVG) | SharpDev.tools" property="og:title"/>
+<meta content="Free SVG to PNG converter. Paste SVG markup or upload an SVG file and rasterise it to a PNG at any width, with an optional transparent background. Runs in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/svg-to-png/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SVG to PNG Converter (Rasterize SVG) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free SVG to PNG converter. Paste SVG markup or upload an SVG file and rasterise it to a PNG at any width, with an optional transparent background. Runs in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"SVG to PNG Converter","item":"https://sharpdev.tools/tools/svg-to-png/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert SVG to PNG?","acceptedAnswer":{"@type":"Answer","text":"Paste your SVG code into the box or upload an .svg file, set the output width, and the PNG preview updates. Click Download PNG to save it. Because SVG is vector, you can render it at any size without losing sharpness."}},{"@type":"Question","name":"Can I get a high-resolution PNG?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set a large output width, for example 2048 or 4096 pixels. The SVG is rasterised at that size, so the PNG stays crisp even when scaled up, unlike enlarging an existing raster image."}},{"@type":"Question","name":"Why is the background transparent?","acceptedAnswer":{"@type":"Answer","text":"SVGs usually have no background, and PNG supports transparency, so the default keeps it see-through. Untick the transparent option to render on a solid white background instead."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"SVG to PNG Converter \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/svg-to-png/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/svg-to-png/svg-to-png.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('svg-to-png');</script>
+<div class="page">
+<h1>SVG to PNG Converter</h1>
+<p class="subtitle">Paste SVG code or upload an SVG file and render it to a PNG at any size, with optional transparent background. Runs in your browser.</p>
+<div class="field"><label for="svg">SVG code</label><textarea id="svg" style="min-height:120px;font-family:'SF Mono',Menlo,monospace;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#ff4444"/></svg></textarea></div>
+<div class="row">
+<div class="field"><label for="w">Output width (px)</label><input type="number" id="w" value="512" min="16" max="4096"></div>
+<div class="field"><label for="upload" style="display:block;">Or upload .svg</label><input type="file" id="upload" accept=".svg,image/svg+xml"></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="trans" checked style="width:auto;"> Transparent background</label></div></div>
+<div class="actions"><button class="small-btn" id="render">Render</button><button class="small-btn" id="dl">Download PNG</button></div>
+<div class="img-prev"><canvas id="cv"></canvas></div>
+<p class="note">SVG is vector, so you can render it crisply at any resolution. Set a larger output width for a higher-resolution PNG. If your SVG has no viewBox or size, a square output is assumed.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert SVG to PNG?</summary><p>Paste your SVG code into the box or upload an .svg file, set the output width, and the PNG preview updates. Click Download PNG to save it. Because SVG is vector, you can render it at any size without losing sharpness.</p></details>
+<details><summary>Can I get a high-resolution PNG?</summary><p>Yes. Set a large output width, for example 2048 or 4096 pixels. The SVG is rasterised at that size, so the PNG stays crisp even when scaled up, unlike enlarging an existing raster image.</p></details>
+<details><summary>Why is the background transparent?</summary><p>SVGs usually have no background, and PNG supports transparency, so the default keeps it see-through. Untick the transparent option to render on a solid white background instead.</p></details>
+</section>
+<script src="/tools/svg-to-png/svg-to-png.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

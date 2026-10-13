@@ -1,0 +1,32 @@
+/* ROI — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-row { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.row { display: flex; gap: 8px; align-items: center; }
+.form-row input, .form-row select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 10px 12px; border-radius: 6px; font-size: 16px;
+  font-family: 'SF Mono', monospace;
+}
+.form-row select { width: 70px; padding: 10px 8px; }
+.form-row input { flex: 1; }
+.currency-mirror { color: #888; font-family: 'SF Mono', monospace; font-size: 16px; padding-left: 4px; }
+
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.result-block { padding: 16px; background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px; text-align: center; }
+.result-block.highlight { border-color: #ff4444; background: rgba(255, 68, 68, 0.06); }
+.result-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.result-value { font-size: 24px; font-weight: 700; color: #fff; font-family: 'SF Mono', monospace; }
+.result-value.pos { color: #4caf50; }
+.result-value.neg { color: #ff6666; }
+.result-sub { font-size: 11px; color: #666; margin-top: 4px; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .form-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Screen Resolution &amp; Display Info (What Is My Resolution?) | SharpDev.tools</title>
+<meta content="Free screen resolution checker. Instantly see your screen size, browser viewport, device pixel ratio, aspect ratio, color depth and orientation. Updates live when you resize the window. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/screen-info/" rel="canonical"/>
+<meta content="Screen Resolution &amp; Display Info (What Is My Resolution?) | SharpDev.tools" property="og:title"/>
+<meta content="Free screen resolution checker. Instantly see your screen size, browser viewport, device pixel ratio, aspect ratio, color depth and orientation. Updates live when you resize the window. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/screen-info/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Screen Resolution &amp; Display Info (What Is My Resolution?) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free screen resolution checker. Instantly see your screen size, browser viewport, device pixel ratio, aspect ratio, color depth and orientation. Updates live when you resize the window. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Browser & Device Tests","item":"https://sharpdev.tools/#browser-device-tests"},{"@type":"ListItem","position":3,"name":"Screen Resolution & Display Info","item":"https://sharpdev.tools/tools/screen-info/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between screen resolution and viewport?","acceptedAnswer":{"@type":"Answer","text":"Screen resolution is the full size of your display in CSS pixels. The viewport is the smaller area inside the browser window where the page is actually drawn, after toolbars and tabs are subtracted."}},{"@type":"Question","name":"Why does my resolution look smaller than advertised?","acceptedAnswer":{"@type":"Answer","text":"Browsers report sizes in CSS pixels, not hardware pixels. On a high-DPI or Retina display the device pixel ratio is 2 or 3, so a 2560-pixel-wide panel may report as 1280. Multiply by the pixel ratio for the physical resolution."}},{"@type":"Question","name":"Does it update when I resize?","acceptedAnswer":{"@type":"Answer","text":"Yes. The viewport, orientation and aspect ratio update live as you resize the window or rotate your device."}},{"@type":"Question","name":"Is any of this sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Everything is read from your browser locally and nothing is uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Screen Resolution & Display Info \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/screen-info/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/screen-info/screen-info.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('screen-info');</script>
+<div class="page">
+<h1>Screen Resolution & Display Info</h1>
+<p class="subtitle">Instantly see your screen resolution, browser viewport size, pixel ratio, aspect ratio and color depth. Updates live as you resize the window.</p>
+<div class="result-cards" id="cards">
+<div class="result-card hl"><div class="label">Screen resolution</div><div class="value" id="res" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Browser viewport</div><div class="value" id="vp" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Pixel ratio</div><div class="value" id="dpr">—</div></div>
+<div class="result-card"><div class="label">Aspect ratio</div><div class="value" id="ar">—</div></div>
+<div class="result-card"><div class="label">Color depth</div><div class="value" id="cd">—</div></div>
+<div class="result-card"><div class="label">Orientation</div><div class="value" id="ori" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Available screen</div><div class="value" id="avail" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Touch points</div><div class="value" id="touch">—</div></div></div>
+<p class="note">Screen resolution is your full display in CSS pixels. Multiply by the pixel ratio for the true hardware pixels (a 2x Retina display reports half its physical width here). The viewport is the part of the page your browser can draw in right now.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between screen resolution and viewport?</summary><p>Screen resolution is the full size of your display in CSS pixels. The viewport is the smaller area inside the browser window where the page is actually drawn, after toolbars and tabs are subtracted.</p></details>
+<details><summary>Why does my resolution look smaller than advertised?</summary><p>Browsers report sizes in CSS pixels, not hardware pixels. On a high-DPI or Retina display the device pixel ratio is 2 or 3, so a 2560-pixel-wide panel may report as 1280. Multiply by the pixel ratio for the physical resolution.</p></details>
+<details><summary>Does it update when I resize?</summary><p>Yes. The viewport, orientation and aspect ratio update live as you resize the window or rotate your device.</p></details>
+<details><summary>Is any of this sent to a server?</summary><p>No. Everything is read from your browser locally and nothing is uploaded.</p></details>
+</section>
+<script src="/tools/screen-info/screen-info.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

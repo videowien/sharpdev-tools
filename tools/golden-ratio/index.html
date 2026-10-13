@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Golden Ratio Calculator | SharpDev.tools</title>
+<meta content="Free golden ratio calculator. Divide a length into its golden sections (the longer and shorter parts in the ratio φ ≈ 1.618), or enter the longer or shorter part to find the others. Useful for layout, typography and design. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/golden-ratio/" rel="canonical"/>
+<meta content="Golden Ratio Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free golden ratio calculator. Divide a length into its golden sections (the longer and shorter parts in the ratio φ ≈ 1.618), or enter the longer or shorter part to find the others. Useful for layout, typography and design. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/golden-ratio/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Golden Ratio Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free golden ratio calculator. Divide a length into its golden sections (the longer and shorter parts in the ratio φ ≈ 1.618), or enter the longer or shorter part to find the others. Useful for layout, typography and design. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Golden Ratio Calculator","item":"https://sharpdev.tools/tools/golden-ratio/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the golden ratio?","acceptedAnswer":{"@type":"Answer","text":"The golden ratio, written with the Greek letter phi (\u03c6), is approximately 1.618. Two quantities are in the golden ratio when the whole is to the larger part as the larger part is to the smaller. It turns up in art, architecture, design and nature."}},{"@type":"Question","name":"How do I use it in design?","acceptedAnswer":{"@type":"Answer","text":"Split a layout, image or element so the two parts are in the golden ratio. For example, a 1000px wide section might be divided into about 618px and 382px. Many designers find these proportions naturally balanced."}},{"@type":"Question","name":"Can I work backwards?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch the mode to enter the longer or shorter part instead of the whole, and the tool finds the other two values so the proportion stays golden."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Golden Ratio Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/golden-ratio/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/golden-ratio/golden-ratio.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('golden-ratio');</script>
+<div class="page">
+<h1>Golden Ratio Calculator</h1>
+<p class="subtitle">Split a length into the golden ratio, or find the matching longer or shorter part. The golden ratio (φ ≈ 1.618) appears in design, art and nature.</p>
+<div class="row">
+<div class="field"><label for="mode">I know the</label><select id="mode"><option value="whole">Whole length</option><option value="long">Longer part</option><option value="short">Shorter part</option></select></div>
+<div class="field"><label for="val">Value</label><input type="number" id="val" value="100" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card"><div class="label">Whole</div><div class="value" id="whole">—</div></div>
+<div class="result-card hl"><div class="label">Longer part (a)</div><div class="value" id="long">—</div></div>
+<div class="result-card"><div class="label">Shorter part (b)</div><div class="value" id="short">—</div></div></div>
+<div class="ls-bar" id="bar" style="display:flex;height:30px;border-radius:6px;overflow:hidden;margin-top:14px;"><div id="bl" style="background:#ff4444;"></div><div id="bs" style="background:#3ddc84;"></div></div>
+<p class="note">In a golden division, the whole is to the longer part as the longer part is to the shorter, a ratio of about 1.618 to 1. It is widely used in layout, typography, logos and photography to create balanced, pleasing proportions. The bar shows the two parts to scale.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the golden ratio?</summary><p>The golden ratio, written with the Greek letter phi (φ), is approximately 1.618. Two quantities are in the golden ratio when the whole is to the larger part as the larger part is to the smaller. It turns up in art, architecture, design and nature.</p></details>
+<details><summary>How do I use it in design?</summary><p>Split a layout, image or element so the two parts are in the golden ratio. For example, a 1000px wide section might be divided into about 618px and 382px. Many designers find these proportions naturally balanced.</p></details>
+<details><summary>Can I work backwards?</summary><p>Yes. Switch the mode to enter the longer or shorter part instead of the whole, and the tool finds the other two values so the proportion stays golden.</p></details>
+</section>
+<script src="/tools/golden-ratio/golden-ratio.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

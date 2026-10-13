@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Exponent Calculator (Power, Base to the Exponent) | SharpDev.tools</title>
+<meta content="Free exponent (power) calculator. Raise a base to an exponent, with exact big-integer results for whole-number powers and scientific notation for very large or small values. Supports negative and fractional exponents. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/exponent-power/" rel="canonical"/>
+<meta content="Exponent Calculator (Power, Base to the Exponent) | SharpDev.tools" property="og:title"/>
+<meta content="Free exponent (power) calculator. Raise a base to an exponent, with exact big-integer results for whole-number powers and scientific notation for very large or small values. Supports negative and fractional exponents. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/exponent-power/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Exponent Calculator (Power, Base to the Exponent) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free exponent (power) calculator. Raise a base to an exponent, with exact big-integer results for whole-number powers and scientific notation for very large or small values. Supports negative and fractional exponents. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Exponent Calculator","item":"https://sharpdev.tools/tools/exponent-power/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the exponent mean?","acceptedAnswer":{"@type":"Answer","text":"The exponent tells you how many times to multiply the base by itself. So 2 to the 10th power means 2 multiplied by itself 10 times, which is 1,024. An exponent of 0 always gives 1."}},{"@type":"Question","name":"Can I use negative or decimal exponents?","acceptedAnswer":{"@type":"Answer","text":"Yes. A negative exponent gives a reciprocal, so 2 to the power of -1 is 0.5. A fractional exponent is a root, so 9 to the power of 0.5 is the square root of 9, which is 3."}},{"@type":"Question","name":"Why does it switch to scientific notation?","acceptedAnswer":{"@type":"Answer","text":"For whole-number powers the tool shows the exact full result. When a result is extremely large or extremely small, it also shows scientific notation so the magnitude stays readable."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Exponent Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/exponent-power/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/exponent-power/exponent-power.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('exponent-power');</script>
+<div class="page">
+<h1>Exponent Calculator</h1>
+<p class="subtitle">Raise any base to any exponent. Exact whole-number results for integer powers, with scientific notation for very large or very small values.</p>
+<div class="row">
+<div class="field"><label for="base">Base</label><input type="number" id="base" value="2" step="any"></div>
+<div class="field"><label for="exp">Exponent</label><input type="number" id="exp" value="10" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl"><div class="label">Result (base ^ exponent)</div><div class="value" id="res" style="font-size:22px;">—</div></div></div>
+<div class="actions" style="margin-top:12px;"><button class="copy-btn" id="copy">Copy result</button></div>
+<p class="note" id="sci" style="display:none;"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the exponent mean?</summary><p>The exponent tells you how many times to multiply the base by itself. So 2 to the 10th power means 2 multiplied by itself 10 times, which is 1,024. An exponent of 0 always gives 1.</p></details>
+<details><summary>Can I use negative or decimal exponents?</summary><p>Yes. A negative exponent gives a reciprocal, so 2 to the power of -1 is 0.5. A fractional exponent is a root, so 9 to the power of 0.5 is the square root of 9, which is 3.</p></details>
+<details><summary>Why does it switch to scientific notation?</summary><p>For whole-number powers the tool shows the exact full result. When a result is extremely large or extremely small, it also shows scientific notation so the magnitude stays readable.</p></details>
+</section>
+<script src="/tools/exponent-power/exponent-power.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

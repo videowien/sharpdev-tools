@@ -1,0 +1,50 @@
+.page { padding: 40px 20px; max-width: 1300px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 0; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.dir-bar {
+  display: inline-flex; background: #141414; border: 1px solid #2a2a2a;
+  border-radius: 8px; padding: 3px; gap: 2px; margin-bottom: 16px;
+}
+.dir-btn {
+  padding: 8px 16px; background: transparent; border: none; color: #aaa;
+  border-radius: 5px; font-size: 13px; font-weight: 600; cursor: pointer;
+  font-family: inherit;
+}
+.dir-btn:hover { color: #fff; }
+.dir-btn.active { background: #ff4444; color: #fff; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.col { display: flex; flex-direction: column; }
+.col-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+}
+.col-actions { display: flex; gap: 6px; }
+
+textarea {
+  width: 100%; min-height: 500px;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #e1e1e1; font-size: 13px; padding: 14px; outline: none;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  line-height: 1.5; resize: vertical; tab-size: 2;
+}
+textarea:focus { border-color: #ff4444; }
+#right { background: #0a0a0a; }
+
+.small-btn {
+  padding: 5px 12px; background: transparent; border: 1px solid #333;
+  color: #aaa; border-radius: 4px; font-size: 12px; cursor: pointer; transition: all 0.15s;
+  font-family: inherit;
+}
+.small-btn:hover { border-color: #ff4444; color: #fff; }
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+  textarea { min-height: 300px; }
+}

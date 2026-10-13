@@ -1,0 +1,52 @@
+/* Hourly Rate Calculator — Tool-specific styles */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.section-label {
+  font-size: 11px; color: #888; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin: 14px 0 8px;
+  padding-bottom: 4px; border-bottom: 1px solid #1f1f1f;
+}
+.section-label:first-child { margin-top: 0; }
+
+.input-row { display: flex; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.input-group { flex: 1; min-width: 140px; }
+.input-group label {
+  display: block; font-size: 12px; color: #aaa;
+  margin-bottom: 5px; font-weight: 500;
+}
+.input-group input {
+  width: 100%; padding: 9px 11px;
+  background: #0d0d0d; color: #fff;
+  border: 1px solid #2a2a2a; border-radius: 6px;
+  font-size: 14px;
+  font-family: 'SF Mono', Menlo, monospace;
+}
+.input-group input:focus { border-color: #ff4444; outline: none; }
+
+.results {
+  margin-top: 18px; padding-top: 16px;
+  border-top: 1px solid #1f1f1f;
+}
+.result-row {
+  display: flex; justify-content: space-between;
+  padding: 6px 0; font-size: 14px;
+}
+.result-label { color: #aaa; }
+.result-value { color: #fff; font-weight: 600; font-family: 'SF Mono', Menlo, monospace; }
+.result-row.hl {
+  margin-top: 8px; padding: 12px;
+  background: rgba(255,68,68,0.08);
+  border: 1px solid rgba(255,68,68,0.35);
+  border-radius: 6px;
+}
+.result-row.hl .result-label { color: #fff; font-weight: 600; }
+.result-row.hl .result-value { color: #ff6666; font-size: 22px; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .input-row { flex-direction: column; }
+}

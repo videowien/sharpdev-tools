@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Bars to Seconds Calculator (Sample Length &amp; Size) | SharpDev.tools</title>
+<meta content="Free bars to seconds calculator. Convert bars and beats at a BPM and time signature to seconds, samples and uncompressed file size. For loops, samples and edit maths. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/sample-length/" rel="canonical"/>
+<meta content="Bars to Seconds Calculator (Sample Length &amp; Size) | SharpDev.tools" property="og:title"/>
+<meta content="Free bars to seconds calculator. Convert bars and beats at a BPM and time signature to seconds, samples and uncompressed file size. For loops, samples and edit maths. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/sample-length/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bars to Seconds Calculator (Sample Length &amp; Size) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free bars to seconds calculator. Convert bars and beats at a BPM and time signature to seconds, samples and uncompressed file size. For loops, samples and edit maths. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Music","item":"https://sharpdev.tools/#music"},{"@type":"ListItem","position":3,"name":"Bars to Seconds Calculator","item":"https://sharpdev.tools/tools/sample-length/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is a bar in seconds?","acceptedAnswer":{"@type":"Answer","text":"One bar = beats-per-bar \u00d7 60 \u00f7 BPM. A 4/4 bar at 120 BPM is 2 seconds; at 90 BPM it is 2.67 seconds. Multiply by the bar count for loop lengths."}},{"@type":"Question","name":"How many samples is that?","acceptedAnswer":{"@type":"Answer","text":"Seconds \u00d7 sample rate. Eight seconds at 48 kHz is 384,000 samples per channel \u2014 useful when you need exact edit points or zero-crossing maths."}},{"@type":"Question","name":"How is the file size worked out?","acceptedAnswer":{"@type":"Answer","text":"Samples \u00d7 channels \u00d7 bytes per sample (bit depth \u00f7 8), the raw PCM size of a WAV/AIFF. Compressed formats like MP3 or FLAC are smaller and depend on the bitrate."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Bars to Seconds Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/sample-length/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/sample-length/sample-length.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('sample-length');</script>
+<div class="page">
+<h1>Bars to Seconds Calculator</h1>
+<p class="subtitle">How long is a loop? Bars and beats to seconds at your BPM and time signature, plus samples and file size at any sample rate.</p>
+<div class="row">
+<div class="field"><label for="bars">Bars</label><input type="number" id="bars" value="4" step="any"></div>
+<div class="field"><label for="bpm">Tempo (BPM)</label><input type="number" id="bpm" value="120" step="any"></div>
+<div class="field"><label for="sig">Beats per bar</label><select id="sig"><option>3</option><option selected>4</option><option>6</option><option>7</option></select></div></div>
+<div class="row">
+<div class="field"><label for="sr">Sample rate</label><select id="sr"><option value="44100">44.1 kHz</option><option value="48000" selected>48 kHz</option><option value="96000">96 kHz</option></select></div>
+<div class="field"><label for="bits">Bit depth</label><select id="bits"><option value="16">16-bit</option><option value="24" selected>24-bit</option><option value="32">32-bit float</option></select></div>
+<div class="field"><label for="ch">Channels</label><select id="ch"><option value="1">Mono</option><option value="2" selected>Stereo</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Duration</div><div class="value" id="dur">-</div></div>
+<div class="result-card"><div class="label">Samples</div><div class="value" id="smp" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Uncompressed size</div><div class="value" id="size" style="font-size:15px;">-</div></div></div>
+<p class="note">Duration = bars × beats-per-bar × 60 ÷ BPM. Four bars of 4/4 at 120 BPM is exactly 8 seconds — 384,000 samples at 48 kHz, about 2.2 MB as 24-bit stereo WAV. Handy for sizing loops, pre-rolls and sample edits.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long is a bar in seconds?</summary><p>One bar = beats-per-bar × 60 ÷ BPM. A 4/4 bar at 120 BPM is 2 seconds; at 90 BPM it is 2.67 seconds. Multiply by the bar count for loop lengths.</p></details>
+<details><summary>How many samples is that?</summary><p>Seconds × sample rate. Eight seconds at 48 kHz is 384,000 samples per channel — useful when you need exact edit points or zero-crossing maths.</p></details>
+<details><summary>How is the file size worked out?</summary><p>Samples × channels × bytes per sample (bit depth ÷ 8), the raw PCM size of a WAV/AIFF. Compressed formats like MP3 or FLAC are smaller and depend on the bitrate.</p></details>
+</section>
+<script src="/tools/sample-length/sample-length.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

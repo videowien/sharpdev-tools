@@ -1,0 +1,9 @@
+const $=id=>document.getElementById(id);
+let curFile=null;
+async function compute(){if(!curFile)return;$('out').value='computing…';$('match').textContent='—';try{const buf=await curFile.arrayBuffer();const h=await crypto.subtle.digest($('algo').value,buf);const hex=[...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('');$('out').value=hex;compare();}catch(e){$('out').value='Error: '+e.message;}}
+function compare(){const exp=$('expect').value.trim().toLowerCase().replace(/\s/g,'');const got=$('out').value.trim().toLowerCase();if(!exp){$('match').textContent='—';return;}$('match').innerHTML=exp===got?'<span style="color:#3ddc84;">Match ✓</span>':'<span style="color:#ff6666;">No match</span>';}
+function loadFile(f){if(!f)return;curFile=f;$('drop').style.display='none';$('editor').style.display='';$('fname').value=f.name+'  ('+(f.size<1048576?(f.size/1024).toFixed(1)+' KB':(f.size/1048576).toFixed(2)+' MB')+')';compute();}
+$('algo').addEventListener('change',compute);
+$('expect').addEventListener('input',compare);
+$('copy').addEventListener('click',()=>navigator.clipboard.writeText($('out').value));
+(function(){const drop=$('drop'),file=$('file');drop.addEventListener('click',()=>file.click());drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('over');});drop.addEventListener('dragleave',()=>drop.classList.remove('over'));drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('over');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);});file.addEventListener('change',()=>{if(file.files[0])loadFile(file.files[0]);});$('reset').addEventListener('click',()=>{curFile=null;$('editor').style.display='none';drop.style.display='';file.value='';});})();

@@ -1,0 +1,86 @@
+/* Instagram Carousel Splitter — Tool-specific styles */
+.page { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+.options-card { margin-top: 16px; }
+.file-info {
+  padding: 10px 14px; margin-bottom: 16px;
+  background: #161616; border: 1px solid #2a2a2a; border-radius: 6px;
+  font-size: 13px; color: #ccc;
+}
+.opt-row { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 18px; }
+.opt-group { flex: 1; min-width: 180px; }
+.opt-label {
+  display: block; font-size: 13px; color: #aaa;
+  margin-bottom: 8px; font-weight: 500;
+}
+.toggle-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.toggle { cursor: pointer; }
+.toggle input { display: none; }
+.toggle span {
+  display: inline-block; padding: 7px 14px;
+  background: #161616; border: 1px solid #2a2a2a; border-radius: 6px;
+  color: #aaa; font-size: 13px; transition: all 0.15s;
+}
+.toggle input:checked + span {
+  background: #2a0a0a; border-color: #ff4444; color: #fff;
+}
+.opt-group input[type=number] {
+  width: 100%; padding: 8px 10px;
+  background: #0d0d0d; color: #eee;
+  border: 1px solid #2a2a2a; border-radius: 6px;
+  font-size: 14px;
+}
+.opt-group input[type=number]:focus { border-color: #ff4444; outline: none; }
+
+.result-area { margin-top: 20px; }
+.result-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px; flex-wrap: wrap; gap: 10px;
+}
+.result-label { font-size: 13px; color: #aaa; }
+.result-actions { display: flex; gap: 8px; }
+.btn-sm { padding: 8px 14px; font-size: 12px; }
+
+.slides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.slide-card {
+  position: relative;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  padding: 8px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.slide-num {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(0,0,0,0.7); color: #fff;
+  font-weight: 600; font-size: 12px;
+  padding: 2px 8px; border-radius: 4px;
+}
+.slide-card img {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  background: #1a1a1a; border-radius: 4px;
+}
+.slide-info { font-size: 11px; color: #666; text-align: center; }
+.slide-dl { width: 100%; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

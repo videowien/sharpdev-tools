@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Flash Guide Number Calculator | SharpDev.tools</title>
+<meta content="Free flash guide number calculator. Enter the guide number and ISO, then solve for either the subject distance or the aperture for a correct flash exposure. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/flash-guide-number/" rel="canonical"/>
+<meta content="Flash Guide Number Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free flash guide number calculator. Enter the guide number and ISO, then solve for either the subject distance or the aperture for a correct flash exposure. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/flash-guide-number/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Flash Guide Number Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free flash guide number calculator. Enter the guide number and ISO, then solve for either the subject distance or the aperture for a correct flash exposure. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Flash Guide Number Calculator","item":"https://sharpdev.tools/tools/flash-guide-number/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a flash guide number?","acceptedAnswer":{"@type":"Answer","text":"It rates a flash output as GN = aperture times distance, quoted at ISO 100 in metres or feet. A bigger guide number means a more powerful flash that reaches further or allows a smaller aperture."}},{"@type":"Question","name":"How do I use it?","acceptedAnswer":{"@type":"Answer","text":"To find the aperture, divide the guide number by the distance. To find the reach, divide the guide number by the aperture. For 20 (m, ISO 100) at f/4, the subject distance is 20 / 4 = 5 metres."}},{"@type":"Question","name":"How does ISO change the guide number?","acceptedAnswer":{"@type":"Answer","text":"Light gathering scales with the square root of ISO, so the effective guide number is GN times the square root of (ISO / 100). Going from ISO 100 to ISO 400 doubles the effective guide number."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Flash Guide Number Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/flash-guide-number/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/flash-guide-number/flash-guide-number.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('flash-guide-number');</script>
+<div class="page">
+<h1>Flash Guide Number Calculator</h1>
+<p class="subtitle">Use a flash guide number to find the subject distance for a given aperture, or the aperture for a given distance, scaled for your ISO.</p>
+<div class="row">
+<div class="field"><label for="gn">Guide number (m, ISO 100)</label><input type="number" id="gn" value="20" step="any"></div>
+<div class="field"><label for="iso">ISO</label><input type="number" id="iso" value="100" step="any"></div>
+<div class="field"><label for="mode">Solve for</label><select id="mode"><option value="dist" selected>Distance (from aperture)</option><option value="aper">Aperture (from distance)</option></select></div>
+<div class="field"><label id="inlabel" for="val">Aperture f/</label><input type="number" id="val" value="4" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="outlabel">Subject distance</div><div class="value" id="out" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Effective GN at this ISO</div><div class="value" id="gniso" style="font-size:16px;">-</div></div></div>
+<p class="note">Guide number rates a flash: GN = aperture times distance at ISO 100. So distance = GN / f-number, and a higher ISO raises the effective GN by the square root of the ISO ratio. Use it to find the aperture or distance for a correct flash exposure.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a flash guide number?</summary><p>It rates a flash output as GN = aperture times distance, quoted at ISO 100 in metres or feet. A bigger guide number means a more powerful flash that reaches further or allows a smaller aperture.</p></details>
+<details><summary>How do I use it?</summary><p>To find the aperture, divide the guide number by the distance. To find the reach, divide the guide number by the aperture. For 20 (m, ISO 100) at f/4, the subject distance is 20 / 4 = 5 metres.</p></details>
+<details><summary>How does ISO change the guide number?</summary><p>Light gathering scales with the square root of ISO, so the effective guide number is GN times the square root of (ISO / 100). Going from ISO 100 to ISO 400 doubles the effective guide number.</p></details>
+</section>
+<script src="/tools/flash-guide-number/flash-guide-number.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

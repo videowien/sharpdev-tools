@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Query String Parser (URL Params ↔ JSON) | SharpDev.tools</title>
+<meta content="Free query string parser and builder. Turn a URL query string (the part after the question mark) into a JSON object, or build an encoded query string from JSON. Handles URL-encoding and repeated keys as arrays. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/query-string/" rel="canonical"/>
+<meta content="Query String Parser (URL Params ↔ JSON) | SharpDev.tools" property="og:title"/>
+<meta content="Free query string parser and builder. Turn a URL query string (the part after the question mark) into a JSON object, or build an encoded query string from JSON. Handles URL-encoding and repeated keys as arrays. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/query-string/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Query String Parser (URL Params ↔ JSON) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free query string parser and builder. Turn a URL query string (the part after the question mark) into a JSON object, or build an encoded query string from JSON. Handles URL-encoding and repeated keys as arrays. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Query String \u2194 JSON","item":"https://sharpdev.tools/tools/query-string/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this do?","acceptedAnswer":{"@type":"Answer","text":"It splits a URL query string (the key=value pairs after the question mark) into a clean JSON object so you can read it easily, and it can also build an encoded query string from a JSON object."}},{"@type":"Question","name":"How are repeated keys handled?","acceptedAnswer":{"@type":"Answer","text":"When a key appears more than once, like tag=a&tag=b, it becomes an array in the JSON ([\"a\",\"b\"]). Building the other way, an array value is expanded back into repeated keys."}},{"@type":"Question","name":"Does it handle URL encoding?","acceptedAnswer":{"@type":"Answer","text":"Yes. Parsing decodes percent-encoding and plus signs into normal characters, and building re-encodes special characters so the result is a valid query string you can paste into a URL."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Query String \u2194 JSON \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/query-string/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/query-string/query-string.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('query-string');</script>
+<div class="page">
+<h1>Query String ↔ JSON</h1>
+<p class="subtitle">Parse a URL query string into a readable JSON object, or build a query string from JSON. Handles URL-encoding and repeated keys. Runs in your browser.</p>
+<div class="field"><label for="in">Query string or full URL</label><textarea id="in" style="min-height:90px;">https://example.com/search?q=hello+world&page=2&tag=a&tag=b</textarea></div>
+<div class="actions"><button class="small-btn" id="toj">Parse → JSON</button><button class="small-btn" id="tos">JSON → query string</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does this do?</summary><p>It splits a URL query string (the key=value pairs after the question mark) into a clean JSON object so you can read it easily, and it can also build an encoded query string from a JSON object.</p></details>
+<details><summary>How are repeated keys handled?</summary><p>When a key appears more than once, like tag=a&tag=b, it becomes an array in the JSON (["a","b"]). Building the other way, an array value is expanded back into repeated keys.</p></details>
+<details><summary>Does it handle URL encoding?</summary><p>Yes. Parsing decodes percent-encoding and plus signs into normal characters, and building re-encodes special characters so the result is a valid query string you can paste into a URL.</p></details>
+</section>
+<script src="/tools/query-string/query-string.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

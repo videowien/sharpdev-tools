@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>ULID Generator (Sortable Unique IDs) | SharpDev.tools</title>
+<meta content="Free ULID generator. Create ULIDs, 26-character Crockford base32 identifiers that are lexicographically sortable by their embedded millisecond timestamp. A sortable, URL-safe alternative to UUIDs. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ulid/" rel="canonical"/>
+<meta content="ULID Generator (Sortable Unique IDs) | SharpDev.tools" property="og:title"/>
+<meta content="Free ULID generator. Create ULIDs, 26-character Crockford base32 identifiers that are lexicographically sortable by their embedded millisecond timestamp. A sortable, URL-safe alternative to UUIDs. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ulid/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ULID Generator (Sortable Unique IDs) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free ULID generator. Create ULIDs, 26-character Crockford base32 identifiers that are lexicographically sortable by their embedded millisecond timestamp. A sortable, URL-safe alternative to UUIDs. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"ULID Generator","item":"https://sharpdev.tools/tools/ulid/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a ULID and how is it different from a UUID?","acceptedAnswer":{"@type":"Answer","text":"A ULID is a Universally Unique Lexicographically Sortable Identifier. Like a UUID it is unique, but its first half is a timestamp, so ULIDs sort in creation order as plain strings. It is also shorter (26 characters) and uses a case-insensitive, URL-safe alphabet."}},{"@type":"Question","name":"Why is sortability useful?","acceptedAnswer":{"@type":"Answer","text":"Sortable IDs make great database primary keys because new rows naturally append in order, which keeps indexes efficient and lets you sort by ID instead of needing a separate timestamp column."}},{"@type":"Question","name":"Are these ULIDs secure and unique?","acceptedAnswer":{"@type":"Answer","text":"The 80 bits of randomness come from the Web Crypto API, making collisions astronomically unlikely even within the same millisecond. Generation is fully local and nothing is sent anywhere."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"ULID Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/ulid/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ulid/ulid.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ulid');</script>
+<div class="page">
+<h1>ULID Generator</h1>
+<p class="subtitle">Generate ULIDs: 26-character, lexicographically sortable unique identifiers with a millisecond timestamp. A sortable alternative to UUIDs.</p>
+<div class="row">
+<div class="field"><label for="count">How many?</label><input type="number" id="count" value="5" min="1" max="500"></div>
+<div class="field" style="display:flex;align-items:flex-end;gap:8px;"><button class="small-btn" id="gen" style="flex:1;">Generate</button><button class="copy-btn" id="copy">Copy</button></div></div>
+<div class="out-head"><label>ULIDs</label></div>
+<textarea class="output" id="out" readonly style="min-height:160px;"></textarea>
+<p class="note">A ULID is 48 bits of millisecond timestamp followed by 80 bits of randomness, encoded in Crockford base32. Because the timestamp comes first, ULIDs generated later sort after earlier ones as plain text. Randomness uses the Web Crypto API.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a ULID and how is it different from a UUID?</summary><p>A ULID is a Universally Unique Lexicographically Sortable Identifier. Like a UUID it is unique, but its first half is a timestamp, so ULIDs sort in creation order as plain strings. It is also shorter (26 characters) and uses a case-insensitive, URL-safe alphabet.</p></details>
+<details><summary>Why is sortability useful?</summary><p>Sortable IDs make great database primary keys because new rows naturally append in order, which keeps indexes efficient and lets you sort by ID instead of needing a separate timestamp column.</p></details>
+<details><summary>Are these ULIDs secure and unique?</summary><p>The 80 bits of randomness come from the Web Crypto API, making collisions astronomically unlikely even within the same millisecond. Generation is fully local and nothing is sent anywhere.</p></details>
+</section>
+<script src="/tools/ulid/ulid.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

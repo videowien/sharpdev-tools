@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Debt Payoff Calculator (Snowball &amp; Avalanche) | SharpDev.tools</title>
+<meta content="Free debt payoff calculator with snowball and avalanche strategies. Enter your debts and monthly budget to see the payoff order, the months to debt-free and the total interest. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/debt-payoff/" rel="canonical"/>
+<meta content="Debt Payoff Calculator (Snowball &amp; Avalanche) | SharpDev.tools" property="og:title"/>
+<meta content="Free debt payoff calculator with snowball and avalanche strategies. Enter your debts and monthly budget to see the payoff order, the months to debt-free and the total interest. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/debt-payoff/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Debt Payoff Calculator (Snowball &amp; Avalanche) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free debt payoff calculator with snowball and avalanche strategies. Enter your debts and monthly budget to see the payoff order, the months to debt-free and the total interest. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"Debt Payoff Calculator","item":"https://sharpdev.tools/tools/debt-payoff/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between snowball and avalanche?","acceptedAnswer":{"@type":"Answer","text":"The snowball method pays off the smallest balance first for quick wins and motivation. The avalanche method pays the highest interest rate first, which saves the most money overall. This tool shows the result of either."}},{"@type":"Question","name":"How does the calculator work?","acceptedAnswer":{"@type":"Answer","text":"It pays the minimum on every debt each month, then puts all the spare money from your budget onto one target debt (chosen by your strategy). When a debt is cleared, its payment rolls onto the next, which is what accelerates payoff."}},{"@type":"Question","name":"Why does it say my payment is too low?","acceptedAnswer":{"@type":"Answer","text":"If your total monthly payment is less than the sum of all minimum payments, the balances cannot shrink. Increase the monthly amount above the combined minimums to make progress."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Debt Payoff Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/debt-payoff/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/debt-payoff/debt-payoff.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('debt-payoff');</script>
+<div class="page">
+<h1>Debt Payoff Calculator</h1>
+<p class="subtitle">See how fast you can clear multiple debts and how much interest you will pay, using the snowball or avalanche method.</p>
+<div class="field"><label for="debts">Your debts (one per line: name, balance, APR%, minimum payment)</label><textarea id="debts" style="min-height:110px;">Credit Card, 5000, 19.99, 100
+Car Loan, 12000, 6.5, 250
+Store Card, 2000, 24.99, 50</textarea></div>
+<div class="row">
+<div class="field"><label for="budget">Total monthly payment</label><input type="number" id="budget" value="700" step="any"></div>
+<div class="field"><label for="strat">Strategy</label><select id="strat"><option value="avalanche">Avalanche (highest APR first)</option><option value="snowball">Snowball (smallest balance first)</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Time to debt-free</div><div class="value" id="time" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Total interest</div><div class="value" id="int">—</div></div>
+<div class="result-card"><div class="label">Total paid</div><div class="value" id="paid">—</div></div></div>
+<div class="out-head"><label>Payoff order</label></div>
+<textarea class="output" id="order" readonly style="min-height:80px;"></textarea>
+<p class="note" id="warn" style="display:none;"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between snowball and avalanche?</summary><p>The snowball method pays off the smallest balance first for quick wins and motivation. The avalanche method pays the highest interest rate first, which saves the most money overall. This tool shows the result of either.</p></details>
+<details><summary>How does the calculator work?</summary><p>It pays the minimum on every debt each month, then puts all the spare money from your budget onto one target debt (chosen by your strategy). When a debt is cleared, its payment rolls onto the next, which is what accelerates payoff.</p></details>
+<details><summary>Why does it say my payment is too low?</summary><p>If your total monthly payment is less than the sum of all minimum payments, the balances cannot shrink. Increase the monthly amount above the combined minimums to make progress.</p></details>
+</section>
+<script src="/tools/debt-payoff/debt-payoff.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

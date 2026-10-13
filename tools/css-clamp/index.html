@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS clamp() Generator (Fluid Typography &amp; Spacing) | SharpDev.tools</title>
+<meta content="Free CSS clamp() generator for fluid typography and spacing. Enter a minimum and maximum size and viewport range to get a responsive clamp() value in rem, with a live preview. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-clamp/" rel="canonical"/>
+<meta content="CSS clamp() Generator (Fluid Typography &amp; Spacing) | SharpDev.tools" property="og:title"/>
+<meta content="Free CSS clamp() generator for fluid typography and spacing. Enter a minimum and maximum size and viewport range to get a responsive clamp() value in rem, with a live preview. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-clamp/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS clamp() Generator (Fluid Typography &amp; Spacing) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free CSS clamp() generator for fluid typography and spacing. Enter a minimum and maximum size and viewport range to get a responsive clamp() value in rem, with a live preview. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS clamp() Generator","item":"https://sharpdev.tools/tools/css-clamp/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is CSS clamp() good for?","acceptedAnswer":{"@type":"Answer","text":"clamp() lets one value scale fluidly between a minimum and maximum instead of jumping at breakpoints. It is ideal for fluid typography (font sizes that grow with the screen) and for responsive spacing like padding and gaps."}},{"@type":"Question","name":"Why are the sizes in rem?","acceptedAnswer":{"@type":"Answer","text":"rem units respect the user's browser font-size setting, which is better for accessibility than fixed pixels. The tool converts your pixel inputs to rem assuming the usual 16px root size."}},{"@type":"Question","name":"How do the viewport values work?","acceptedAnswer":{"@type":"Answer","text":"Below the minimum viewport the size stays at your minimum, above the maximum viewport it stays at your maximum, and in between it scales linearly. Common breakpoints are 320px for small phones and 1280px or 1440px for large screens."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS clamp() Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/css-clamp/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-clamp/css-clamp.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-clamp');</script>
+<div class="page">
+<h1>CSS clamp() Generator</h1>
+<p class="subtitle">Build a fluid clamp() value that scales smoothly between two viewport widths. Set min and max sizes and breakpoints, then copy the CSS.</p>
+<div class="row">
+<div class="field"><label for="minf">Min size (px)</label><input type="number" id="minf" value="16" step="any"></div>
+<div class="field"><label for="maxf">Max size (px)</label><input type="number" id="maxf" value="32" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="minv">Min viewport (px)</label><input type="number" id="minv" value="320" step="any"></div>
+<div class="field"><label for="maxv">Max viewport (px)</label><input type="number" id="maxv" value="1280" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">Generated value</div><div class="value" id="out" style="font-size:15px;word-break:break-all;">—</div></div></div>
+<div class="actions" style="margin-top:10px;"><button class="copy-btn" id="copy">Copy CSS</button></div>
+<div class="clamp-prev">Live preview (resize your window): <span id="sample">Fluid text</span></div>
+<p class="note">clamp(min, preferred, max) scales a value smoothly with the viewport between your two breakpoints, then locks at the min below and the max above. Sizes are output in rem (assuming a 16px root) for accessibility. The preview uses the generated clamp, so it responds to your real window width.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is CSS clamp() good for?</summary><p>clamp() lets one value scale fluidly between a minimum and maximum instead of jumping at breakpoints. It is ideal for fluid typography (font sizes that grow with the screen) and for responsive spacing like padding and gaps.</p></details>
+<details><summary>Why are the sizes in rem?</summary><p>rem units respect the user's browser font-size setting, which is better for accessibility than fixed pixels. The tool converts your pixel inputs to rem assuming the usual 16px root size.</p></details>
+<details><summary>How do the viewport values work?</summary><p>Below the minimum viewport the size stays at your minimum, above the maximum viewport it stays at your maximum, and in between it scales linearly. Common breakpoints are 320px for small phones and 1280px or 1440px for large screens.</p></details>
+</section>
+<script src="/tools/css-clamp/css-clamp.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

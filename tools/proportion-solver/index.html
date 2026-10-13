@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Proportion Calculator (Solve a/b = c/d) | SharpDev.tools</title>
+<meta content="Free proportion calculator (rule of three). Solve a/b = c/d for any missing value by leaving one box empty. Uses cross-multiplication. Great for scaling recipes, maps and ratios. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/proportion-solver/" rel="canonical"/>
+<meta content="Proportion Calculator (Solve a/b = c/d) | SharpDev.tools" property="og:title"/>
+<meta content="Free proportion calculator (rule of three). Solve a/b = c/d for any missing value by leaving one box empty. Uses cross-multiplication. Great for scaling recipes, maps and ratios. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/proportion-solver/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Proportion Calculator (Solve a/b = c/d) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free proportion calculator (rule of three). Solve a/b = c/d for any missing value by leaving one box empty. Uses cross-multiplication. Great for scaling recipes, maps and ratios. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Proportion Calculator","item":"https://sharpdev.tools/tools/proportion-solver/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a proportion?","acceptedAnswer":{"@type":"Answer","text":"A proportion says two ratios are equal, written a/b = c/d. If you know three of the four values you can always find the fourth by cross-multiplication, which is the classic 'rule of three'."}},{"@type":"Question","name":"How do I use the solver?","acceptedAnswer":{"@type":"Answer","text":"Type any three of the four values and leave the unknown box empty. The tool detects the blank and solves for it instantly. If you fill all four or leave more than one empty, it tells you."}},{"@type":"Question","name":"What is it useful for?","acceptedAnswer":{"@type":"Answer","text":"Scaling recipes up or down, converting map distances, adjusting mixing ratios, working out unit pricing, and any everyday 'if this, then how much of that' question."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Proportion Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/proportion-solver/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/proportion-solver/proportion-solver.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('proportion-solver');</script>
+<div class="page">
+<h1>Proportion Calculator</h1>
+<p class="subtitle">Solve a proportion a/b = c/d for the missing value. Leave one box empty and the cross-multiplication is done for you (the rule of three).</p>
+<p style="color:#aaa;font-size:14px;margin-bottom:12px;">Fill in three boxes and leave the unknown one empty.</p>
+<div class="row" style="align-items:center;">
+<div class="field"><label for="a">a</label><input type="number" id="a" value="2" step="any"></div>
+<div style="font-size:24px;color:#888;padding-bottom:8px;">/</div>
+<div class="field"><label for="b">b</label><input type="number" id="b" value="5" step="any"></div>
+<div style="font-size:24px;color:#888;padding-bottom:8px;">=</div>
+<div class="field"><label for="c">c</label><input type="number" id="c" value="8" step="any"></div>
+<div style="font-size:24px;color:#888;padding-bottom:8px;">/</div>
+<div class="field"><label for="d">d</label><input type="number" id="d" value="" placeholder="?" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">Solution</div><div class="value" id="out" style="font-size:20px;">—</div></div></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a proportion?</summary><p>A proportion says two ratios are equal, written a/b = c/d. If you know three of the four values you can always find the fourth by cross-multiplication, which is the classic 'rule of three'.</p></details>
+<details><summary>How do I use the solver?</summary><p>Type any three of the four values and leave the unknown box empty. The tool detects the blank and solves for it instantly. If you fill all four or leave more than one empty, it tells you.</p></details>
+<details><summary>What is it useful for?</summary><p>Scaling recipes up or down, converting map distances, adjusting mixing ratios, working out unit pricing, and any everyday 'if this, then how much of that' question.</p></details>
+</section>
+<script src="/tools/proportion-solver/proportion-solver.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

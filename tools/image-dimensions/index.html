@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image Dimensions Checker (Size &amp; Aspect Ratio) | SharpDev.tools</title>
+<meta content="Free image dimensions checker. Drop an image to instantly see its width and height in pixels, aspect ratio, megapixels, file size and format. Runs in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/image-dimensions/" rel="canonical"/>
+<meta content="Image Dimensions Checker (Size &amp; Aspect Ratio) | SharpDev.tools" property="og:title"/>
+<meta content="Free image dimensions checker. Drop an image to instantly see its width and height in pixels, aspect ratio, megapixels, file size and format. Runs in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-dimensions/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Image Dimensions Checker (Size &amp; Aspect Ratio) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free image dimensions checker. Drop an image to instantly see its width and height in pixels, aspect ratio, megapixels, file size and format. Runs in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Image Dimensions Checker","item":"https://sharpdev.tools/tools/image-dimensions/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I check an image's dimensions?","acceptedAnswer":{"@type":"Answer","text":"Drop the image onto the box or click to choose one. Its width and height in pixels appear immediately, along with the aspect ratio, megapixels, file size, format and orientation."}},{"@type":"Question","name":"What is the aspect ratio?","acceptedAnswer":{"@type":"Answer","text":"It is the width-to-height proportion in simplest whole numbers, like 16:9 or 4:3. It is useful for checking whether an image fits a layout, a video frame or a print size without distortion."}},{"@type":"Question","name":"Is my image uploaded to check it?","acceptedAnswer":{"@type":"Answer","text":"No. The image is read locally in your browser to measure it, and nothing is sent to any server."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Image Dimensions Checker \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/image-dimensions/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-dimensions/image-dimensions.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-dimensions');</script>
+<div class="page">
+<h1>Image Dimensions Checker</h1>
+<p class="subtitle">Drop an image to see its width, height, aspect ratio, megapixels, file size and type instantly. Nothing is uploaded.</p>
+<div class="upload-area" id="drop"><input type="file" id="file" accept="image/*" hidden><p>Drop an image here or <b>click to choose</b></p><p class="hint">Read entirely in your browser. Nothing is uploaded.</p></div>
+<div id="editor" style="display:none;">
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Dimensions</div><div class="value" id="dim" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Aspect ratio</div><div class="value" id="ar">—</div></div>
+<div class="result-card"><div class="label">Megapixels</div><div class="value" id="mp">—</div></div>
+<div class="result-card"><div class="label">File size</div><div class="value" id="size" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Type</div><div class="value" id="type" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Orientation</div><div class="value" id="ori" style="font-size:16px;">—</div></div></div>
+<div class="actions"><button class="small-btn" id="reset">New image</button></div></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I check an image's dimensions?</summary><p>Drop the image onto the box or click to choose one. Its width and height in pixels appear immediately, along with the aspect ratio, megapixels, file size, format and orientation.</p></details>
+<details><summary>What is the aspect ratio?</summary><p>It is the width-to-height proportion in simplest whole numbers, like 16:9 or 4:3. It is useful for checking whether an image fits a layout, a video frame or a print size without distortion.</p></details>
+<details><summary>Is my image uploaded to check it?</summary><p>No. The image is read locally in your browser to measure it, and nothing is sent to any server.</p></details>
+</section>
+<script src="/tools/image-dimensions/image-dimensions.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

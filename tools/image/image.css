@@ -1,0 +1,91 @@
+.page { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+label {
+  display: block; font-size: 13px; font-weight: 600; color: #aaa;
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.drop-card {
+  border: 2px dashed #2a2a2a; text-align: center; padding: 40px 20px;
+  cursor: pointer; transition: all 0.15s;
+}
+.drop-card.dragover, .drop-card:hover { border-color: #ff4444; background: #171010; }
+.drop-icon { width: 40px; height: 40px; color: #666; margin-bottom: 12px; }
+.drop-inner p { color: #aaa; font-size: 14px; }
+.drop-inner .link { color: #ff4444; }
+.drop-inner .hint { color: #555; font-size: 12px; margin-top: 4px; }
+
+.options-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  padding: 20px;
+}
+.opt label { text-transform: none; font-weight: 500; letter-spacing: 0; font-size: 13px; }
+.opt input[type=number], .opt select {
+  width: 100%; background: #0d0d0d; border: 1px solid #2a2a2a;
+  color: #e1e1e1; border-radius: 6px; padding: 9px 12px; font-size: 13px;
+  outline: none; font-family: inherit;
+}
+.opt input[type=number]:focus, .opt select:focus { border-color: #ff4444; }
+.opt input[type=range] { width: 100%; accent-color: #ff4444; }
+.opt-toggle label {
+  display: flex; align-items: center; gap: 8px; color: #ddd;
+  text-transform: none; font-weight: 500; letter-spacing: 0; font-size: 13px;
+  margin: 0; cursor: pointer;
+}
+.opt-toggle { display: flex; align-items: flex-end; padding-bottom: 10px; }
+
+.seg { display: inline-flex; border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden; }
+.seg-btn {
+  background: #141414; border: none; color: #aaa; padding: 8px 14px;
+  font-size: 13px; cursor: pointer; font-family: inherit;
+}
+.seg-btn.active { background: #ff4444; color: #fff; }
+.seg-btn:not(.active):hover { background: #1f1f1f; color: #fff; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.actions .btn {
+  padding: 10px 18px; background: #141414; border: 1px solid #2a2a2a;
+  color: #ccc; border-radius: 6px; font-size: 13px; cursor: pointer; transition: all 0.15s;
+}
+.actions .btn:hover:not(:disabled) { border-color: #ff4444; color: #fff; background: #1f1f1f; }
+.actions .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-primary { background: #cc0000 !important; border-color: #cc0000 !important; color: #fff !important; }
+.btn-primary:hover:not(:disabled) { background: #ff1a1a !important; border-color: #ff1a1a !important; }
+.btn-reset { margin-left: auto; }
+
+.list { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+.row {
+  display: grid; grid-template-columns: 60px 1fr auto auto auto;
+  gap: 14px; align-items: center;
+  background: #141414; border: 1px solid #262626; border-radius: 10px;
+  padding: 10px 14px; cursor: pointer;
+}
+.row.selected { border-color: #ff4444; }
+.row .thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; background: #0a0a0a; }
+.row .meta { min-width: 0; }
+.row .fname { color: #fff; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .info { color: #888; font-size: 12px; font-family: 'SF Mono', Monaco, monospace; margin-top: 2px; }
+.row .reduction { color: #4ade80; font-size: 13px; font-weight: 600; font-family: 'SF Mono', Monaco, monospace; }
+.row .reduction.neg { color: #f87171; }
+.row .dl-btn {
+  background: transparent; border: 1px solid #333; color: #aaa;
+  padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;
+}
+.row .dl-btn:hover { border-color: #ff4444; color: #fff; }
+.row .status { font-size: 12px; color: #888; font-family: 'SF Mono', Monaco, monospace; }
+
+.compare { padding: 20px; }
+.compare h3 { color: #fff; font-size: 15px; margin-bottom: 12px; }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.compare-grid img { width: 100%; height: auto; border-radius: 8px; background: #0a0a0a; }
+.compare-label { color: #aaa; font-size: 13px; margin-bottom: 6px; font-family: 'SF Mono', Monaco, monospace; }
+.compare-label span { color: #666; }
+
+@media (max-width: 800px) {
+  .options-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-grid { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 50px 1fr auto; }
+  .row .reduction, .row .status { grid-column: 2; }
+}

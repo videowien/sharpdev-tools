@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Water Intake Calculator (Daily Water by Weight) | SharpDev.tools</title>
+<meta content="Free daily water intake calculator. Estimate how much water to drink per day from your body weight and exercise time, shown in litres, millilitres, cups and US fluid ounces. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/water-intake/" rel="canonical"/>
+<meta content="Water Intake Calculator (Daily Water by Weight) | SharpDev.tools" property="og:title"/>
+<meta content="Free daily water intake calculator. Estimate how much water to drink per day from your body weight and exercise time, shown in litres, millilitres, cups and US fluid ounces. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/water-intake/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Water Intake Calculator (Daily Water by Weight) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free daily water intake calculator. Estimate how much water to drink per day from your body weight and exercise time, shown in litres, millilitres, cups and US fluid ounces. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Daily Water Intake Calculator","item":"https://sharpdev.tools/tools/water-intake/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much water should I drink a day?","acceptedAnswer":{"@type":"Answer","text":"A common starting estimate is about 33 ml per kilogram of body weight, which is roughly 2.5 litres for a 75 kg person, plus extra for exercise. The old 'eight glasses' rule is just a rough version of this."}},{"@type":"Question","name":"Does coffee, tea or food count?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most drinks count toward hydration, and food (especially fruit and vegetables) provides a meaningful share too. The figure here is total water; you do not need to drink all of it as plain water."}},{"@type":"Question","name":"When do I need more?","acceptedAnswer":{"@type":"Answer","text":"Hot weather, high altitude, intense or long exercise, illness with fever, and pregnancy or breastfeeding all raise your needs. Thirst and pale-yellow urine are simple day-to-day guides."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Daily Water Intake Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/water-intake/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/water-intake/water-intake.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('water-intake');</script>
+<div class="page">
+<h1>Daily Water Intake Calculator</h1>
+<p class="subtitle">Estimate how much water to drink per day from your body weight and exercise, shown in litres, millilitres, cups and ounces.</p>
+<div class="row">
+<div class="field"><label for="wt">Weight (kg)</label><input type="number" id="wt" value="75" step="any"></div>
+<div class="field"><label for="ex">Exercise (minutes per day)</label><input type="number" id="ex" value="30" min="0" step="5"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Per day</div><div class="value" id="liters">—</div></div>
+<div class="result-card"><div class="label">Millilitres</div><div class="value" id="ml">—</div></div>
+<div class="result-card"><div class="label">Cups (250 ml)</div><div class="value" id="cups">—</div></div>
+<div class="result-card"><div class="label">US fl oz</div><div class="value" id="oz">—</div></div></div>
+<p class="note">Estimates total daily water from about 33 ml per kg of body weight, plus roughly 350 ml for every 30 minutes of exercise. Food provides some water too. Needs rise in heat, at altitude, and during illness or pregnancy. This is a general guide, not medical advice.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How much water should I drink a day?</summary><p>A common starting estimate is about 33 ml per kilogram of body weight, which is roughly 2.5 litres for a 75 kg person, plus extra for exercise. The old 'eight glasses' rule is just a rough version of this.</p></details>
+<details><summary>Does coffee, tea or food count?</summary><p>Yes. Most drinks count toward hydration, and food (especially fruit and vegetables) provides a meaningful share too. The figure here is total water; you do not need to drink all of it as plain water.</p></details>
+<details><summary>When do I need more?</summary><p>Hot weather, high altitude, intense or long exercise, illness with fever, and pregnancy or breastfeeding all raise your needs. Thirst and pale-yellow urine are simple day-to-day guides.</p></details>
+</section>
+<script src="/tools/water-intake/water-intake.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

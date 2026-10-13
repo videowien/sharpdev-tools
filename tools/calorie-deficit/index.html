@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Calorie Deficit Calculator (Daily Deficit to Reach a Goal) | SharpDev.tools</title>
+<meta content="Free calorie deficit calculator. Enter your current weight, goal weight and timeframe to get the daily calorie deficit and weekly loss rate needed, with a safe-rate check. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/calorie-deficit/" rel="canonical"/>
+<meta content="Calorie Deficit Calculator (Daily Deficit to Reach a Goal) | SharpDev.tools" property="og:title"/>
+<meta content="Free calorie deficit calculator. Enter your current weight, goal weight and timeframe to get the daily calorie deficit and weekly loss rate needed, with a safe-rate check. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/calorie-deficit/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Calorie Deficit Calculator (Daily Deficit to Reach a Goal) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free calorie deficit calculator. Enter your current weight, goal weight and timeframe to get the daily calorie deficit and weekly loss rate needed, with a safe-rate check. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Calorie Deficit Calculator","item":"https://sharpdev.tools/tools/calorie-deficit/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a calorie deficit?","acceptedAnswer":{"@type":"Answer","text":"A calorie deficit means eating fewer calories than your body burns, so it draws on stored fat for energy and you lose weight. The size of the deficit sets how fast you lose."}},{"@type":"Question","name":"How big should my deficit be?","acceptedAnswer":{"@type":"Answer","text":"Commonly 500 kcal a day for about 0.5 kg a week, or up to roughly 1,000 a day for faster loss. Bigger deficits are harder to stick to and risk muscle loss, so a moderate, sustainable deficit usually wins."}},{"@type":"Question","name":"Is the 7,700 kcal per kilogram exact?","acceptedAnswer":{"@type":"Answer","text":"It is a useful approximation (about 3,500 kcal per pound). Real results vary with water, muscle and how your metabolism adapts, so use it to plan and adjust based on what the scale actually does over a few weeks."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Calorie Deficit Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/calorie-deficit/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/calorie-deficit/calorie-deficit.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('calorie-deficit');</script>
+<div class="page">
+<h1>Calorie Deficit Calculator</h1>
+<p class="subtitle">Work out the daily calorie deficit needed to reach your goal weight in a chosen number of weeks, with a safety check.</p>
+<div class="row">
+<div class="field"><label for="cur">Current weight (kg)</label><input type="number" id="cur" value="80" step="any"></div>
+<div class="field"><label for="goal">Goal weight (kg)</label><input type="number" id="goal" value="72" step="any"></div>
+<div class="field"><label for="weeks">Timeframe (weeks)</label><input type="number" id="weeks" value="12" min="1" step="1"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Daily deficit</div><div class="value" id="daily">—</div></div>
+<div class="result-card"><div class="label">Weekly loss</div><div class="value" id="weekly">—</div></div>
+<div class="result-card"><div class="label">Total to lose</div><div class="value" id="total">—</div></div></div>
+<p class="note" id="note"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a calorie deficit?</summary><p>A calorie deficit means eating fewer calories than your body burns, so it draws on stored fat for energy and you lose weight. The size of the deficit sets how fast you lose.</p></details>
+<details><summary>How big should my deficit be?</summary><p>Commonly 500 kcal a day for about 0.5 kg a week, or up to roughly 1,000 a day for faster loss. Bigger deficits are harder to stick to and risk muscle loss, so a moderate, sustainable deficit usually wins.</p></details>
+<details><summary>Is the 7,700 kcal per kilogram exact?</summary><p>It is a useful approximation (about 3,500 kcal per pound). Real results vary with water, muscle and how your metabolism adapts, so use it to plan and adjust based on what the scale actually does over a few weeks.</p></details>
+</section>
+<script src="/tools/calorie-deficit/calorie-deficit.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

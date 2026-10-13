@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Limiting Magnitude Calculator (Telescope) | SharpDev.tools</title>
+<meta content="Free telescope limiting magnitude calculator. Enter the aperture to estimate the faintest stars visible and the light-gathering power versus the naked eye. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/limiting-magnitude/" rel="canonical"/>
+<meta content="Limiting Magnitude Calculator (Telescope) | SharpDev.tools" property="og:title"/>
+<meta content="Free telescope limiting magnitude calculator. Enter the aperture to estimate the faintest stars visible and the light-gathering power versus the naked eye. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/limiting-magnitude/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Limiting Magnitude Calculator (Telescope) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free telescope limiting magnitude calculator. Enter the aperture to estimate the faintest stars visible and the light-gathering power versus the naked eye. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"Limiting Magnitude Calculator","item":"https://sharpdev.tools/tools/limiting-magnitude/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How faint can my telescope see?","acceptedAnswer":{"@type":"Answer","text":"A common estimate is 7.7 + 5 \u00d7 log10(aperture in cm): about magnitude 12.7 for 100 mm, 13.6 for 150 mm and 14.7 for 250 mm, under dark skies with averted vision at moderate magnification."}},{"@type":"Question","name":"What is light grasp?","acceptedAnswer":{"@type":"Answer","text":"How much more light the aperture collects than your 7 mm dark-adapted pupil: (aperture \u00f7 7)\u00b2. A 150 mm scope gathers about 460 times more light than the naked eye."}},{"@type":"Question","name":"Why do published formulas differ?","acceptedAnswer":{"@type":"Answer","text":"Because the true limit depends on sky brightness, magnification, transparency, and the observer. Formulas differ by half a magnitude or so; treat any of them as a ballpark, not a guarantee."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Limiting Magnitude Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/limiting-magnitude/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/limiting-magnitude/limiting-magnitude.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('limiting-magnitude');</script>
+<div class="page">
+<h1>Limiting Magnitude Calculator</h1>
+<p class="subtitle">How faint your telescope can see: the classic 7.7 + 5·log10(aperture in cm) estimate, plus the light grasp versus the naked eye.</p>
+<div class="row"><div class="field"><label for="ap">Aperture (mm)</label><input type="number" id="ap" value="150" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Limiting magnitude</div><div class="value" id="lm">-</div></div>
+<div class="result-card"><div class="label">Light grasp vs 7 mm eye</div><div class="value" id="grasp">-</div></div></div>
+<p class="note">Classic estimate: limiting magnitude ≈ 7.7 + 5 × log10(aperture in cm). A 150 mm scope reaches about magnitude 13.6. Light grasp = (aperture ÷ 7 mm)². Real limits shift with sky darkness, magnification, transparency and your eyes; under bright suburban skies expect 1-2 magnitudes less.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How faint can my telescope see?</summary><p>A common estimate is 7.7 + 5 × log10(aperture in cm): about magnitude 12.7 for 100 mm, 13.6 for 150 mm and 14.7 for 250 mm, under dark skies with averted vision at moderate magnification.</p></details>
+<details><summary>What is light grasp?</summary><p>How much more light the aperture collects than your 7 mm dark-adapted pupil: (aperture ÷ 7)². A 150 mm scope gathers about 460 times more light than the naked eye.</p></details>
+<details><summary>Why do published formulas differ?</summary><p>Because the true limit depends on sky brightness, magnification, transparency, and the observer. Formulas differ by half a magnitude or so; treat any of them as a ballpark, not a guarantee.</p></details>
+</section>
+<script src="/tools/limiting-magnitude/limiting-magnitude.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

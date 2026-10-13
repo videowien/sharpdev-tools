@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Time-Lapse Calculator (Interval, Clip Length &amp; Storage) | SharpDev.tools</title>
+<meta content="Free time-lapse calculator. Enter the interval between shots, the total shooting time and the playback frame rate to get the number of frames, the final clip length and an estimated storage size. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/time-lapse/" rel="canonical"/>
+<meta content="Time-Lapse Calculator (Interval, Clip Length &amp; Storage) | SharpDev.tools" property="og:title"/>
+<meta content="Free time-lapse calculator. Enter the interval between shots, the total shooting time and the playback frame rate to get the number of frames, the final clip length and an estimated storage size. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/time-lapse/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Time-Lapse Calculator (Interval, Clip Length &amp; Storage) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free time-lapse calculator. Enter the interval between shots, the total shooting time and the playback frame rate to get the number of frames, the final clip length and an estimated storage size. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Time-Lapse Calculator","item":"https://sharpdev.tools/tools/time-lapse/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long a time-lapse do I get?","acceptedAnswer":{"@type":"Answer","text":"Frames = shooting time divided by the interval, then clip length = frames divided by the playback frame rate. Shooting for 60 minutes at a 5-second interval gives 720 frames, which is 30 seconds at 24fps."}},{"@type":"Question","name":"What interval should I choose?","acceptedAnswer":{"@type":"Answer","text":"Shorter intervals (1-3s) suit fast subjects like traffic and people; longer intervals (15-30s) suit clouds and sunsets; very long intervals (minutes) suit plants and construction. Shorter intervals mean smoother motion but more frames and storage."}},{"@type":"Question","name":"How is the storage estimated?","acceptedAnswer":{"@type":"Answer","text":"It multiplies the number of frames by an average file size you provide. Raw files are larger (often 20-40MB) than JPEGs (often 3-8MB), so set the figure to match how you shoot."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Time-Lapse Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/time-lapse/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/time-lapse/time-lapse.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('time-lapse');</script>
+<div class="page">
+<h1>Time-Lapse Calculator</h1>
+<p class="subtitle">From your shooting time, interval and playback frame rate, work out how many frames you will shoot, how long the final clip runs, and the storage needed.</p>
+<div class="row">
+<div class="field"><label for="iv">Interval between shots (s)</label><input type="number" id="iv" value="5" step="any"></div>
+<div class="field"><label for="dur">Shooting time (minutes)</label><input type="number" id="dur" value="60" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="fps">Playback frame rate (fps)</label><input type="number" id="fps" value="24" step="any"></div>
+<div class="field"><label for="mb">Avg photo size (MB, optional)</label><input type="number" id="mb" value="5" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Final clip length</div><div class="value" id="clip">-</div></div>
+<div class="result-card"><div class="label">Frames to shoot</div><div class="value" id="frames">-</div></div>
+<div class="result-card"><div class="label">Storage needed</div><div class="value" id="store">-</div></div></div>
+<p class="note">A time-lapse takes one frame every interval, then plays them back at the clip frame rate. Frames = shooting time / interval, and clip length = frames / fps. Storage is a rough estimate based on an average file size.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long a time-lapse do I get?</summary><p>Frames = shooting time divided by the interval, then clip length = frames divided by the playback frame rate. Shooting for 60 minutes at a 5-second interval gives 720 frames, which is 30 seconds at 24fps.</p></details>
+<details><summary>What interval should I choose?</summary><p>Shorter intervals (1-3s) suit fast subjects like traffic and people; longer intervals (15-30s) suit clouds and sunsets; very long intervals (minutes) suit plants and construction. Shorter intervals mean smoother motion but more frames and storage.</p></details>
+<details><summary>How is the storage estimated?</summary><p>It multiplies the number of frames by an average file size you provide. Raw files are larger (often 20-40MB) than JPEGs (often 3-8MB), so set the figure to match how you shoot.</p></details>
+</section>
+<script src="/tools/time-lapse/time-lapse.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

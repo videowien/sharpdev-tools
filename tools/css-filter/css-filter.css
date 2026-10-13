@@ -1,0 +1,91 @@
+/* CSS Filter Playground — styles */
+.page { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+
+.cf-dropzone {
+  position: relative;
+  border: 2px dashed #2a2a2a;
+  border-radius: 12px;
+  min-height: 280px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background:
+    linear-gradient(45deg, #0f0f0f 25%, transparent 25%) 0 0/20px 20px,
+    linear-gradient(-45deg, #0f0f0f 25%, transparent 25%) 0 10px/20px 20px,
+    #141414;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: border-color 0.15s;
+}
+.cf-dropzone:hover { border-color: #ff4444; }
+.cf-dropzone.dragging { border-color: #4ade80; }
+#cf-image {
+  max-width: 100%; max-height: 400px;
+  display: block;
+  transition: filter 0.15s;
+}
+.cf-drop-hint {
+  position: absolute;
+  bottom: 12px; left: 50%; transform: translateX(-50%);
+  color: #888; font-size: 12px;
+  background: rgba(15, 15, 15, 0.8);
+  padding: 4px 10px; border-radius: 999px;
+  pointer-events: none;
+}
+
+.cf-controls {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 12px; padding: 16px 18px;
+  margin-bottom: 14px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.cf-slider { display: grid; grid-template-columns: 110px 1fr 70px; align-items: center; gap: 12px; }
+.cf-slider label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.cf-slider input[type=range] { width: 100%; accent-color: #ff4444; }
+.cf-slider .val {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 12px; color: #fff; text-align: right;
+}
+
+.reset-btn {
+  margin-bottom: 20px;
+  padding: 8px 14px; background: transparent; border: 1px solid #2a2a2a;
+  color: #888; font-size: 12px; border-radius: 6px;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.reset-btn:hover { border-color: #ff4444; color: #fff; }
+
+.code-panel {
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.code-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px; border-bottom: 1px solid #1f1f1f;
+  font-size: 12px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.copy-btn {
+  padding: 5px 12px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 12px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s; text-transform: none; letter-spacing: 0;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+pre#code-out {
+  padding: 16px; margin: 0;
+  color: #e1e1e1; font-size: 13px;
+  font-family: 'SF Mono', Monaco, monospace;
+  line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .cf-slider { grid-template-columns: 90px 1fr 60px; gap: 8px; }
+}

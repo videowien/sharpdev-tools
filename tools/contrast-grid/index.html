@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Contrast Grid (WCAG Contrast Matrix for a Palette) | SharpDev.tools</title>
+<meta content="Free WCAG contrast grid. Paste a palette and see a matrix of the contrast ratio of every colour against every other, with AA and AAA pass/fail for each text-on-background pair. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/contrast-grid/" rel="canonical"/>
+<meta content="Contrast Grid (WCAG Contrast Matrix for a Palette) | SharpDev.tools" property="og:title"/>
+<meta content="Free WCAG contrast grid. Paste a palette and see a matrix of the contrast ratio of every colour against every other, with AA and AAA pass/fail for each text-on-background pair. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/contrast-grid/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Contrast Grid (WCAG Contrast Matrix for a Palette) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free WCAG contrast grid. Paste a palette and see a matrix of the contrast ratio of every colour against every other, with AA and AAA pass/fail for each text-on-background pair. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"Contrast Grid","item":"https://sharpdev.tools/tools/contrast-grid/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a contrast grid for?","acceptedAnswer":{"@type":"Answer","text":"When you have a palette, you often need to know which colours can sit on which as readable text. The grid shows the WCAG contrast ratio for every pairing at once, so you can pick accessible combinations without checking each pair by hand."}},{"@type":"Question","name":"What do AA and AAA mean?","acceptedAnswer":{"@type":"Answer","text":"They are WCAG accessibility levels. AA requires a contrast ratio of at least 4.5 for normal text (3 for large or bold text); AAA, the strictest, requires 7 (4.5 for large). Higher ratios are easier to read."}},{"@type":"Question","name":"Which colour is the text and which the background?","acceptedAnswer":{"@type":"Answer","text":"Each cell uses the row colour as the text and the column colour as the background, and the cell is actually painted in those colours so you can see the result. Contrast is symmetric, so the ratio is the same either way round."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Contrast Grid \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/contrast-grid/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/contrast-grid/contrast-grid.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('contrast-grid');</script>
+<div class="page">
+<h1>Contrast Grid</h1>
+<p class="subtitle">Check the WCAG contrast of every colour in a palette against every other, in one matrix. See at a glance which text-on-background pairs pass AA and AAA.</p>
+<div class="field"><label for="in">Palette (one colour per line: hex, rgb() or a CSS name)</label><textarea id="in" style="min-height:120px;">#ffffff
+#0d0d0d
+#ff4444
+#3ddc84
+#888888</textarea></div>
+<div class="cg-wrap" id="grid"></div>
+<p class="note">Each cell is the contrast ratio of the row colour as text on the column colour as background. AA needs 4.5 for normal text (3 for large); AAA needs 7 (4.5 for large). Green cells pass AAA, amber pass AA only, red fail.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a contrast grid for?</summary><p>When you have a palette, you often need to know which colours can sit on which as readable text. The grid shows the WCAG contrast ratio for every pairing at once, so you can pick accessible combinations without checking each pair by hand.</p></details>
+<details><summary>What do AA and AAA mean?</summary><p>They are WCAG accessibility levels. AA requires a contrast ratio of at least 4.5 for normal text (3 for large or bold text); AAA, the strictest, requires 7 (4.5 for large). Higher ratios are easier to read.</p></details>
+<details><summary>Which colour is the text and which the background?</summary><p>Each cell uses the row colour as the text and the column colour as the background, and the cell is actually painted in those colours so you can see the result. Contrast is symmetric, so the ratio is the same either way round.</p></details>
+</section>
+<script src="/tools/contrast-grid/contrast-grid.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

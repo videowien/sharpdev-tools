@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Voltage Divider Calculator | SharpDev.tools</title>
+<meta content="Free voltage divider calculator. Find the output voltage of a resistive divider from the input voltage and two resistors, or solve for a resistor to hit a target output, plus the current through the divider. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/voltage-divider/" rel="canonical"/>
+<meta content="Voltage Divider Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free voltage divider calculator. Find the output voltage of a resistive divider from the input voltage and two resistors, or solve for a resistor to hit a target output, plus the current through the divider. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/voltage-divider/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Voltage Divider Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free voltage divider calculator. Find the output voltage of a resistive divider from the input voltage and two resistors, or solve for a resistor to hit a target output, plus the current through the divider. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"Voltage Divider Calculator","item":"https://sharpdev.tools/tools/voltage-divider/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does a voltage divider work?","acceptedAnswer":{"@type":"Answer","text":"Two resistors in series split the input voltage in proportion to their values. The voltage across the lower resistor (R2) is Vin \u00b7 R2 / (R1 + R2). It is the simplest way to scale a voltage down."}},{"@type":"Question","name":"Why does my real circuit read lower than calculated?","acceptedAnswer":{"@type":"Answer","text":"Whatever you connect to the output draws current and acts like a third resistor in parallel with R2, pulling the output down. The formula assumes a light load, so design the divider to carry much more current than the load needs, or buffer it with an op-amp."}},{"@type":"Question","name":"Can I use it to power a circuit?","acceptedAnswer":{"@type":"Answer","text":"Not for anything that draws meaningful current. A divider wastes power as heat and sags under load. It is for reference voltages and sensing, not for supplying power, which needs a regulator."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Voltage Divider Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/voltage-divider/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/voltage-divider/voltage-divider.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('voltage-divider');</script>
+<div class="page">
+<h1>Voltage Divider Calculator</h1>
+<p class="subtitle">Calculate the output voltage of a two-resistor divider, or find the resistor needed for a target output. Shows the current drawn too.</p>
+<div class="row">
+<div class="field"><label for="vin">Vin (V)</label><input type="number" id="vin" value="12" step="any"></div>
+<div class="field"><label for="r1">R1 (Ω)</label><input type="number" id="r1" value="1000" step="any"></div>
+<div class="field"><label for="r2">R2 (Ω)</label><input type="number" id="r2" value="2000" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Vout</div><div class="value" id="vout">—</div></div>
+<div class="result-card"><div class="label">Current</div><div class="value" id="cur">—</div></div>
+<div class="result-card"><div class="label">Power (total)</div><div class="value" id="pwr">—</div></div></div>
+<p class="note">Vout is taken across R2: Vout = Vin · R2 / (R1 + R2). This holds when the load on the output draws far less current than flows through the divider; a heavy load pulls the output down, so keep the divider current well above the load current.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does a voltage divider work?</summary><p>Two resistors in series split the input voltage in proportion to their values. The voltage across the lower resistor (R2) is Vin · R2 / (R1 + R2). It is the simplest way to scale a voltage down.</p></details>
+<details><summary>Why does my real circuit read lower than calculated?</summary><p>Whatever you connect to the output draws current and acts like a third resistor in parallel with R2, pulling the output down. The formula assumes a light load, so design the divider to carry much more current than the load needs, or buffer it with an op-amp.</p></details>
+<details><summary>Can I use it to power a circuit?</summary><p>Not for anything that draws meaningful current. A divider wastes power as heat and sags under load. It is for reference voltages and sensing, not for supplying power, which needs a regulator.</p></details>
+</section>
+<script src="/tools/voltage-divider/voltage-divider.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

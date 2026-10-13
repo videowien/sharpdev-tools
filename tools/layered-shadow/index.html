@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Layered Box Shadow Generator (Smooth CSS Shadows) | SharpDev.tools</title>
+<meta content="Free layered box-shadow generator. Create smooth, realistic CSS shadows by stacking multiple shadow layers with increasing blur and decreasing opacity, the technique behind natural-looking elevation. Adjust depth and colour, copy the CSS. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/layered-shadow/" rel="canonical"/>
+<meta content="Layered Box Shadow Generator (Smooth CSS Shadows) | SharpDev.tools" property="og:title"/>
+<meta content="Free layered box-shadow generator. Create smooth, realistic CSS shadows by stacking multiple shadow layers with increasing blur and decreasing opacity, the technique behind natural-looking elevation. Adjust depth and colour, copy the CSS. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/layered-shadow/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Layered Box Shadow Generator (Smooth CSS Shadows) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free layered box-shadow generator. Create smooth, realistic CSS shadows by stacking multiple shadow layers with increasing blur and decreasing opacity, the technique behind natural-looking elevation. Adjust depth and colour, copy the CSS. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"Layered Shadow Generator","item":"https://sharpdev.tools/tools/layered-shadow/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why use a layered shadow instead of one?","acceptedAnswer":{"@type":"Answer","text":"Real shadows are not a single hard blur; they fade gradually. Stacking several box-shadow layers with progressively more blur and less opacity recreates that soft falloff, so elements look genuinely raised rather than having a flat grey halo."}},{"@type":"Question","name":"How do the controls map to elevation?","acceptedAnswer":{"@type":"Answer","text":"Distance and the number of layers together set how high the element feels off the page: more layers and a longer distance read as higher. Strength sets the overall darkness, and the colour lets you tint the shadow to match your background."}},{"@type":"Question","name":"Is the output plain CSS?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is a single box-shadow property with several comma-separated layers, which you can paste directly onto any element. No images, no libraries."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Layered Shadow Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/layered-shadow/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/layered-shadow/layered-shadow.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('layered-shadow');</script>
+<div class="page">
+<h1>Layered Shadow Generator</h1>
+<p class="subtitle">Generate smooth, realistic CSS box-shadows by stacking several layers. Far more natural than a single shadow. Copy the CSS.</p>
+<div class="ls-stage"><div class="ls-card" id="card"></div></div>
+<div class="row">
+<div class="field"><label for="depth">Depth (layers)</label><input type="range" id="depth" min="2" max="8" value="5"></div>
+<div class="field"><label for="dist">Distance</label><input type="range" id="dist" min="1" max="40" value="12"></div></div>
+<div class="row">
+<div class="field"><label for="alpha">Strength (%)</label><input type="range" id="alpha" min="2" max="30" value="11"></div>
+<div class="field"><label for="hue">Shadow colour</label><input type="color" id="hue" value="#1a1a2e"></div></div>
+<div class="out-head"><label>CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="code" readonly style="min-height:110px;"></textarea>
+<p class="note">A single box-shadow looks flat. Stacking several layers, each with a bit more blur and offset and a bit less opacity, mimics how real soft shadows fade, giving a much more natural sense of elevation. More layers and a longer distance read as higher off the page.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Why use a layered shadow instead of one?</summary><p>Real shadows are not a single hard blur; they fade gradually. Stacking several box-shadow layers with progressively more blur and less opacity recreates that soft falloff, so elements look genuinely raised rather than having a flat grey halo.</p></details>
+<details><summary>How do the controls map to elevation?</summary><p>Distance and the number of layers together set how high the element feels off the page: more layers and a longer distance read as higher. Strength sets the overall darkness, and the colour lets you tint the shadow to match your background.</p></details>
+<details><summary>Is the output plain CSS?</summary><p>Yes. It is a single box-shadow property with several comma-separated layers, which you can paste directly onto any element. No images, no libraries.</p></details>
+</section>
+<script src="/tools/layered-shadow/layered-shadow.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

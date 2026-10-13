@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>White Noise Generator (White, Pink &amp; Brown Noise) | SharpDev.tools</title>
+<meta content="Free white noise generator. Play continuous white, pink or brown noise for focus, sleep, tinnitus masking or blocking distractions, with volume control and an optional auto-stop timer. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/white-noise/" rel="canonical"/>
+<meta content="White Noise Generator (White, Pink &amp; Brown Noise) | SharpDev.tools" property="og:title"/>
+<meta content="Free white noise generator. Play continuous white, pink or brown noise for focus, sleep, tinnitus masking or blocking distractions, with volume control and an optional auto-stop timer. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/white-noise/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="White Noise Generator (White, Pink &amp; Brown Noise) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free white noise generator. Play continuous white, pink or brown noise for focus, sleep, tinnitus masking or blocking distractions, with volume control and an optional auto-stop timer. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"Noise Generator","item":"https://sharpdev.tools/tools/white-noise/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between white, pink and brown noise?","acceptedAnswer":{"@type":"Answer","text":"White noise has equal power across all frequencies and sounds bright, like static. Pink noise rolls off the highs so it sounds more balanced and natural (like steady rain). Brown noise has even more bass and sounds deep, like a waterfall or distant surf."}},{"@type":"Question","name":"What is noise good for?","acceptedAnswer":{"@type":"Answer","text":"Many people use it to focus, fall asleep, mask tinnitus, or cover distracting background sounds in an office or shared space. Pink and brown are popular for sleep; white is common for masking."}},{"@type":"Question","name":"Is the audio a file I am streaming?","acceptedAnswer":{"@type":"Answer","text":"No. The noise is generated live in your browser with the Web Audio API, so there is no download, no file and nothing is uploaded. The optional timer stops it automatically."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Noise Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/white-noise/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/white-noise/white-noise.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('white-noise');</script>
+<div class="page">
+<h1>Noise Generator</h1>
+<p class="subtitle">Generate white, pink or brown noise for focus, sleep or sound masking, with an optional timer. Runs in your browser, nothing is recorded.</p>
+<div class="row">
+<div class="field"><label for="type">Noise type</label><select id="type"><option value="white">White</option><option value="pink">Pink</option><option value="brown">Brown</option></select></div>
+<div class="field"><label for="vol">Volume</label><input type="range" id="vol" min="0" max="100" value="40"></div></div>
+<div class="row">
+<div class="field"><label for="mins">Auto-stop (minutes, 0 = off)</label><input type="number" id="mins" value="0" min="0" max="600"></div>
+<div class="field" style="display:flex;align-items:flex-end;"><button class="small-btn" id="toggle" style="width:100%;">Play</button></div></div>
+<p class="note">White noise is equal energy per frequency; pink and brown noise have progressively more low-end and sound softer or deeper. Generated live in your browser with the Web Audio API. Nothing is recorded or uploaded.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the difference between white, pink and brown noise?</summary><p>White noise has equal power across all frequencies and sounds bright, like static. Pink noise rolls off the highs so it sounds more balanced and natural (like steady rain). Brown noise has even more bass and sounds deep, like a waterfall or distant surf.</p></details>
+<details><summary>What is noise good for?</summary><p>Many people use it to focus, fall asleep, mask tinnitus, or cover distracting background sounds in an office or shared space. Pink and brown are popular for sleep; white is common for masking.</p></details>
+<details><summary>Is the audio a file I am streaming?</summary><p>No. The noise is generated live in your browser with the Web Audio API, so there is no download, no file and nothing is uploaded. The optional timer stops it automatically.</p></details>
+</section>
+<script src="/tools/white-noise/white-noise.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

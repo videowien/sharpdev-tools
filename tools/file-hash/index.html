@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>File Hash Calculator (SHA-256, SHA-1, SHA-512) | SharpDev.tools</title>
+<meta content="Free file hash calculator. Compute the SHA-256, SHA-1, SHA-384 or SHA-512 checksum of any file directly in your browser to verify downloads or integrity, and compare against an expected value. Nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/file-hash/" rel="canonical"/>
+<meta content="File Hash Calculator (SHA-256, SHA-1, SHA-512) | SharpDev.tools" property="og:title"/>
+<meta content="Free file hash calculator. Compute the SHA-256, SHA-1, SHA-384 or SHA-512 checksum of any file directly in your browser to verify downloads or integrity, and compare against an expected value. Nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/file-hash/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="File Hash Calculator (SHA-256, SHA-1, SHA-512) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free file hash calculator. Compute the SHA-256, SHA-1, SHA-384 or SHA-512 checksum of any file directly in your browser to verify downloads or integrity, and compare against an expected value. Nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"File Hash (Checksum) Calculator","item":"https://sharpdev.tools/tools/file-hash/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a file hash used for?","acceptedAnswer":{"@type":"Answer","text":"A hash (or checksum) is a short fingerprint of a file. The main use is verifying a download: compare the hash you compute here with the one the publisher posted. If they match, the file arrived intact and untampered."}},{"@type":"Question","name":"Which algorithm should I use?","acceptedAnswer":{"@type":"Answer","text":"SHA-256 is the modern default and what most projects publish. SHA-1 is older and only for matching legacy checksums. SHA-512 and SHA-384 are longer variants. MD5 is not offered because it is insecure and not provided by the browser's secure crypto."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The file is read and hashed entirely in your browser using the Web Crypto API. It never leaves your device, so even large or sensitive files are safe to check."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"File Hash (Checksum) Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/file-hash/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/file-hash/file-hash.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('file-hash');</script>
+<div class="page">
+<h1>File Hash (Checksum) Calculator</h1>
+<p class="subtitle">Compute the SHA-256, SHA-1 or SHA-512 checksum of a file in your browser, and optionally compare it against an expected hash. Nothing is uploaded.</p>
+<div class="upload-area" id="drop"><input type="file" id="file" hidden><p>Drop a file here or <b>click to choose</b></p><p class="hint">Hashed entirely in your browser. Nothing is uploaded.</p></div>
+<div id="editor" style="display:none;">
+<div class="row">
+<div class="field"><label for="algo">Algorithm</label><select id="algo"><option value="SHA-256" selected>SHA-256</option><option value="SHA-1">SHA-1</option><option value="SHA-384">SHA-384</option><option value="SHA-512">SHA-512</option></select></div>
+<div class="field"><label>File</label><input type="text" id="fname" readonly></div></div>
+<div class="out-head"><label>Hash (hex)</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="out" readonly style="min-height:60px;">computing…</textarea>
+<div class="field" style="margin-top:12px;"><label for="expect">Compare with expected hash (optional)</label><input type="text" id="expect" placeholder="paste a hash to verify"></div>
+<div class="result-cards"><div class="result-card" style="grid-column:1 / -1;"><div class="label">Match</div><div class="value" id="match" style="font-size:16px;">—</div></div></div>
+<div class="actions"><button class="small-btn" id="reset">New file</button></div>
+<p class="note">A hash is a fingerprint of a file. If two files have the same hash they are identical; a single changed byte produces a completely different hash. Use it to verify a download matches the checksum the publisher listed. SHA-256 is the usual choice.</p></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a file hash used for?</summary><p>A hash (or checksum) is a short fingerprint of a file. The main use is verifying a download: compare the hash you compute here with the one the publisher posted. If they match, the file arrived intact and untampered.</p></details>
+<details><summary>Which algorithm should I use?</summary><p>SHA-256 is the modern default and what most projects publish. SHA-1 is older and only for matching legacy checksums. SHA-512 and SHA-384 are longer variants. MD5 is not offered because it is insecure and not provided by the browser's secure crypto.</p></details>
+<details><summary>Is my file uploaded?</summary><p>No. The file is read and hashed entirely in your browser using the Web Crypto API. It never leaves your device, so even large or sensitive files are safe to check.</p></details>
+</section>
+<script src="/tools/file-hash/file-hash.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

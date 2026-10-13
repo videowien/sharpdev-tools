@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SVG Wave Generator (Section Divider Waves) | SharpDev.tools</title>
+<meta content="Free SVG wave generator. Create smooth wave dividers for section transitions, adjust the height and waviness, flip vertically, pick a colour, then copy or download the SVG. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/svg-wave/" rel="canonical"/>
+<meta content="SVG Wave Generator (Section Divider Waves) | SharpDev.tools" property="og:title"/>
+<meta content="Free SVG wave generator. Create smooth wave dividers for section transitions, adjust the height and waviness, flip vertically, pick a colour, then copy or download the SVG. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/svg-wave/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SVG Wave Generator (Section Divider Waves) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free SVG wave generator. Create smooth wave dividers for section transitions, adjust the height and waviness, flip vertically, pick a colour, then copy or download the SVG. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"SVG Wave Generator","item":"https://sharpdev.tools/tools/svg-wave/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are SVG waves for?","acceptedAnswer":{"@type":"Answer","text":"Wave dividers create a smooth, modern transition between two coloured sections of a page instead of a hard straight edge. They are placed at the top or bottom of a section, which is why a flip option is included."}},{"@type":"Question","name":"How do I use the wave on my site?","acceptedAnswer":{"@type":"Answer","text":"Copy the SVG and drop it into the section, or download the file and reference it. Set the path fill to match the next section's background colour. The preserveAspectRatio setting lets it stretch full width responsively."}},{"@type":"Question","name":"Can I get a different shape?","acceptedAnswer":{"@type":"Answer","text":"Yes. Randomise generates a fresh wave, the height slider controls the amplitude, and the waviness slider adds more peaks. Keep clicking Randomise until you get a curve you like."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"SVG Wave Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/svg-wave/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/svg-wave/svg-wave.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('svg-wave');</script>
+<div class="page">
+<h1>SVG Wave Generator</h1>
+<p class="subtitle">Create smooth SVG wave dividers for the top or bottom of a section. Adjust height and waviness, recolour, randomise, then copy or download.</p>
+<div class="row">
+<div class="field"><label for="color">Colour</label><input type="color" id="color" value="#ff4444"></div>
+<div class="field"><label for="amp">Height</label><input type="range" id="amp" min="10" max="100" value="55"></div>
+<div class="field"><label for="peaks">Waviness</label><input type="range" id="peaks" min="1" max="4" value="2" step="0.5"></div></div>
+<div class="row">
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="flip" style="width:auto;"> Flip vertically</label></div>
+<div class="field" style="display:flex;align-items:flex-end;"><button class="small-btn" id="regen" style="width:100%;">Randomise</button></div></div>
+<div class="wave-prev" id="prev"></div>
+<div class="out-head"><label>SVG code</label><span><button class="small-btn" id="dl">Download</button> <button class="copy-btn" id="copy">Copy</button></span></div>
+<textarea class="output" id="code" readonly style="min-height:90px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are SVG waves for?</summary><p>Wave dividers create a smooth, modern transition between two coloured sections of a page instead of a hard straight edge. They are placed at the top or bottom of a section, which is why a flip option is included.</p></details>
+<details><summary>How do I use the wave on my site?</summary><p>Copy the SVG and drop it into the section, or download the file and reference it. Set the path fill to match the next section's background colour. The preserveAspectRatio setting lets it stretch full width responsively.</p></details>
+<details><summary>Can I get a different shape?</summary><p>Yes. Randomise generates a fresh wave, the height slider controls the amplitude, and the waviness slider adds more peaks. Keep clicking Randomise until you get a curve you like.</p></details>
+</section>
+<script src="/tools/svg-wave/svg-wave.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

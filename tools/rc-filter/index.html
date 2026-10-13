@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>RC Filter Calculator (Cutoff Frequency) | SharpDev.tools</title>
+<meta content="Free RC filter calculator. Compute the -3dB cutoff frequency of a first-order RC low-pass or high-pass filter from R and C, or solve for the resistor or capacitor needed for a target cutoff. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/rc-filter/" rel="canonical"/>
+<meta content="RC Filter Calculator (Cutoff Frequency) | SharpDev.tools" property="og:title"/>
+<meta content="Free RC filter calculator. Compute the -3dB cutoff frequency of a first-order RC low-pass or high-pass filter from R and C, or solve for the resistor or capacitor needed for a target cutoff. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/rc-filter/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="RC Filter Calculator (Cutoff Frequency) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free RC filter calculator. Compute the -3dB cutoff frequency of a first-order RC low-pass or high-pass filter from R and C, or solve for the resistor or capacitor needed for a target cutoff. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"RC Filter Calculator","item":"https://sharpdev.tools/tools/rc-filter/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the cutoff frequency?","acceptedAnswer":{"@type":"Answer","text":"It is the frequency where an RC filter has reduced the signal by 3dB (to about 70% of its amplitude), marking the boundary between the pass band and the stop band. It is fc = 1 / (2\u03c0\u00b7R\u00b7C)."}},{"@type":"Question","name":"Low-pass or high-pass, what's the difference?","acceptedAnswer":{"@type":"Answer","text":"Both use the same R and C and the same cutoff. If you take the output across the capacitor you get a low-pass (passes low frequencies); across the resistor you get a high-pass (passes high frequencies)."}},{"@type":"Question","name":"What is the time constant?","acceptedAnswer":{"@type":"Answer","text":"\u03c4 = R\u00b7C is the time the filter takes to respond, roughly how long the capacitor takes to charge to 63%. A larger time constant means a lower cutoff frequency and a slower response."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"RC Filter Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/rc-filter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/rc-filter/rc-filter.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('rc-filter');</script>
+<div class="page">
+<h1>RC Filter Calculator</h1>
+<p class="subtitle">Find the cutoff frequency of a first-order RC low-pass or high-pass filter from the resistor and capacitor, or solve for a component to hit a target frequency.</p>
+<div class="row">
+<div class="field"><label for="r">R (Ω)</label><input type="number" id="r" value="1000" step="any"></div>
+<div class="field"><label for="c">C (µF)</label><input type="number" id="c" value="0.1" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Cutoff (−3dB)</div><div class="value" id="fc">—</div></div>
+<div class="result-card"><div class="label">Time constant τ</div><div class="value" id="tau" style="font-size:16px;">—</div></div></div>
+<p class="note">The cutoff frequency where the signal is attenuated by 3dB is fc = 1 / (2π·R·C). The same RC sets a low-pass (output across C) or high-pass (output across R) filter; the time constant τ = R·C is how fast it responds. First-order rolloff is 6dB per octave.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the cutoff frequency?</summary><p>It is the frequency where an RC filter has reduced the signal by 3dB (to about 70% of its amplitude), marking the boundary between the pass band and the stop band. It is fc = 1 / (2π·R·C).</p></details>
+<details><summary>Low-pass or high-pass, what's the difference?</summary><p>Both use the same R and C and the same cutoff. If you take the output across the capacitor you get a low-pass (passes low frequencies); across the resistor you get a high-pass (passes high frequencies).</p></details>
+<details><summary>What is the time constant?</summary><p>τ = R·C is the time the filter takes to respond, roughly how long the capacitor takes to charge to 63%. A larger time constant means a lower cutoff frequency and a slower response.</p></details>
+</section>
+<script src="/tools/rc-filter/rc-filter.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

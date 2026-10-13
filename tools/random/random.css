@@ -1,0 +1,15 @@
+.page { max-width: 720px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+.rn-config { background: #141414; border: 1px solid #262626; border-radius: 12px; padding: 16px 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.rn-field label { display: block; font-size: 11px; color: #aaa; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.rn-field input { width: 100%; padding: 10px 12px; background: #0d0d0d; border: 1px solid #262626; color: #e1e1e1; font-size: 15px; border-radius: 8px; outline: none; font-variant-numeric: tabular-nums; }
+.rn-field input:focus { border-color: #ff4444; }
+.rn-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #0d0d0d; border: 1px solid #262626; border-radius: 999px; font-size: 12px; color: #aaa; cursor: pointer; user-select: none; }
+.chip input { accent-color: #ff4444; margin: 0; cursor: pointer; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font-size: 14px; margin-bottom: 10px; }
+.err { min-height: 18px; font-size: 12px; color: #ff7070; margin-bottom: 10px; }
+.rn-output { background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 12px; padding: 18px; font-family: 'SF Mono', Monaco, monospace; font-size: 14px; color: #fff; word-break: break-word; min-height: 80px; white-space: pre-wrap; font-variant-numeric: tabular-nums; }
+.rn-output.empty { color: #555; }
+@media (max-width: 600px) { .page h1 { font-size: 28px; } .rn-config { grid-template-columns: 1fr; } }

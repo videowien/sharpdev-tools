@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Heart Rate Zones Calculator (Max HR &amp; Training Zones) | SharpDev.tools</title>
+<meta content="Free heart rate zones calculator. Find your maximum heart rate from age and five training zones in beats per minute. Enter resting heart rate for the more personalised Karvonen method. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/heart-rate-zones/" rel="canonical"/>
+<meta content="Heart Rate Zones Calculator (Max HR &amp; Training Zones) | SharpDev.tools" property="og:title"/>
+<meta content="Free heart rate zones calculator. Find your maximum heart rate from age and five training zones in beats per minute. Enter resting heart rate for the more personalised Karvonen method. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/heart-rate-zones/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Heart Rate Zones Calculator (Max HR &amp; Training Zones) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free heart rate zones calculator. Find your maximum heart rate from age and five training zones in beats per minute. Enter resting heart rate for the more personalised Karvonen method. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Heart Rate Zones Calculator","item":"https://sharpdev.tools/tools/heart-rate-zones/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is maximum heart rate calculated?","acceptedAnswer":{"@type":"Answer","text":"This tool uses the well-known estimate of 220 minus your age. It is a population average, so your real maximum can be 10 to 15 beats higher or lower. Only a supervised maximal test measures it exactly."}},{"@type":"Question","name":"What is the Karvonen method?","acceptedAnswer":{"@type":"Answer","text":"Karvonen sets zones using your heart-rate reserve, the gap between your resting and maximum heart rate. It is more personalised than plain percentages, so entering your resting heart rate gives more accurate zones, especially if you are very fit."}},{"@type":"Question","name":"What are the zones for?","acceptedAnswer":{"@type":"Answer","text":"Each zone targets a different adaptation. Lower zones build endurance and aid recovery, the middle zone develops aerobic fitness, and the top zones improve threshold and peak performance. Most training should sit in the lower zones."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Heart Rate Zones Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/heart-rate-zones/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/heart-rate-zones/heart-rate-zones.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('heart-rate-zones');</script>
+<div class="page">
+<h1>Heart Rate Zones Calculator</h1>
+<p class="subtitle">Find your maximum heart rate and five training zones from your age. Add your resting heart rate for personalised Karvonen zones.</p>
+<div class="row">
+<div class="field"><label for="age">Age</label><input type="number" id="age" value="30" min="5" max="120"></div>
+<div class="field"><label for="rest">Resting HR (optional)</label><input type="number" id="rest" placeholder="e.g. 60" min="30" max="120"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Max heart rate</div><div class="value" id="mhr">—</div></div>
+<div class="result-card"><div class="label">Method</div><div class="value" id="method" style="font-size:15px;">—</div></div></div>
+<div class="out-head"><label>Training zones</label></div>
+<div id="zones" class="calc-table" style="grid-template-columns:2fr 1fr 1.3fr;"></div>
+<p class="note">Maximum heart rate uses the common 220 minus age estimate. If you enter your resting heart rate, the zones use the Karvonen heart-rate-reserve method, which is more personalised. Zones are a guide; a lab test gives your true maximum.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is maximum heart rate calculated?</summary><p>This tool uses the well-known estimate of 220 minus your age. It is a population average, so your real maximum can be 10 to 15 beats higher or lower. Only a supervised maximal test measures it exactly.</p></details>
+<details><summary>What is the Karvonen method?</summary><p>Karvonen sets zones using your heart-rate reserve, the gap between your resting and maximum heart rate. It is more personalised than plain percentages, so entering your resting heart rate gives more accurate zones, especially if you are very fit.</p></details>
+<details><summary>What are the zones for?</summary><p>Each zone targets a different adaptation. Lower zones build endurance and aid recovery, the middle zone develops aerobic fitness, and the top zones improve threshold and peak performance. Most training should sit in the lower zones.</p></details>
+</section>
+<script src="/tools/heart-rate-zones/heart-rate-zones.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

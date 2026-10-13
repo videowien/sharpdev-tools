@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Macro Calculator (Protein, Carbs &amp; Fat by Goal) | SharpDev.tools</title>
+<meta content="Free macro calculator. Calculates your daily calories with the Mifflin-St Jeor equation and splits them into protein, carbs and fat grams by your goal and chosen macro ratio. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/macro-calculator/" rel="canonical"/>
+<meta content="Macro Calculator (Protein, Carbs &amp; Fat by Goal) | SharpDev.tools" property="og:title"/>
+<meta content="Free macro calculator. Calculates your daily calories with the Mifflin-St Jeor equation and splits them into protein, carbs and fat grams by your goal and chosen macro ratio. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/macro-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Macro Calculator (Protein, Carbs &amp; Fat by Goal) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free macro calculator. Calculates your daily calories with the Mifflin-St Jeor equation and splits them into protein, carbs and fat grams by your goal and chosen macro ratio. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Macro Calculator","item":"https://sharpdev.tools/tools/macro-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are macros?","acceptedAnswer":{"@type":"Answer","text":"Macros (macronutrients) are protein, carbohydrate and fat, the three nutrients that supply calories. Tracking them, not just total calories, helps with body composition because protein, carbs and fat do different jobs in the body."}},{"@type":"Question","name":"How are my calories worked out?","acceptedAnswer":{"@type":"Answer","text":"The tool estimates your resting metabolic rate with the Mifflin-St Jeor equation from your sex, age, weight and height, multiplies it by an activity factor for your daily activity, then adds or subtracts calories for your goal."}},{"@type":"Question","name":"Which macro ratio should I choose?","acceptedAnswer":{"@type":"Answer","text":"Balanced (30/40/30) suits most people. Lower-carb ratios suit some people for fat loss, higher-carb suits endurance training, and higher-protein supports muscle retention while dieting. They are starting points to adjust based on results."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Macro Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/macro-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/macro-calculator/macro-calculator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('macro-calculator');</script>
+<div class="page">
+<h1>Macro Calculator</h1>
+<p class="subtitle">Get your daily calories and a protein, carb and fat split based on your body, activity level and goal. Pick a macro ratio.</p>
+<div class="row">
+<div class="field"><label for="sex">Sex</label><select id="sex"><option value="m">Male</option><option value="f">Female</option></select></div>
+<div class="field"><label for="age">Age</label><input type="number" id="age" value="30" min="10" max="100"></div></div>
+<div class="row">
+<div class="field"><label for="wt">Weight (kg)</label><input type="number" id="wt" value="75" step="any"></div>
+<div class="field"><label for="ht">Height (cm)</label><input type="number" id="ht" value="178" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="act">Activity</label><select id="act"><option value="1.2">Sedentary (little or no exercise)</option><option value="1.375">Light (1 to 3 days a week)</option><option value="1.55" selected>Moderate (3 to 5 days a week)</option><option value="1.725">Active (6 to 7 days a week)</option><option value="1.9">Very active (hard daily or physical job)</option></select></div>
+<div class="field"><label for="goal">Goal</label><select id="goal"><option value="-500">Lose weight (-500 kcal)</option><option value="0" selected>Maintain</option><option value="300">Gain weight (+300 kcal)</option></select></div></div>
+<div class="row"><div class="field"><label for="split">Macro ratio (protein / carb / fat)</label><select id="split"><option value="30,40,30" selected>Balanced 30 / 40 / 30</option><option value="40,20,40">Low carb 40 / 20 / 40</option><option value="30,50,20">High carb 30 / 50 / 20</option><option value="40,40,20">High protein 40 / 40 / 20</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Calories / day</div><div class="value" id="cal">—</div></div>
+<div class="result-card"><div class="label">Protein</div><div class="value" id="p">—</div></div>
+<div class="result-card"><div class="label">Carbs</div><div class="value" id="c">—</div></div>
+<div class="result-card"><div class="label">Fat</div><div class="value" id="f">—</div></div></div>
+<p class="note">Calories use the Mifflin-St Jeor equation for resting metabolism, multiplied by your activity level, then adjusted for your goal. Macros split those calories at 4 kcal per gram of protein and carbs and 9 kcal per gram of fat. These are starting estimates, not medical advice.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are macros?</summary><p>Macros (macronutrients) are protein, carbohydrate and fat, the three nutrients that supply calories. Tracking them, not just total calories, helps with body composition because protein, carbs and fat do different jobs in the body.</p></details>
+<details><summary>How are my calories worked out?</summary><p>The tool estimates your resting metabolic rate with the Mifflin-St Jeor equation from your sex, age, weight and height, multiplies it by an activity factor for your daily activity, then adds or subtracts calories for your goal.</p></details>
+<details><summary>Which macro ratio should I choose?</summary><p>Balanced (30/40/30) suits most people. Lower-carb ratios suit some people for fat loss, higher-carb suits endurance training, and higher-protein supports muscle retention while dieting. They are starting points to adjust based on results.</p></details>
+</section>
+<script src="/tools/macro-calculator/macro-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

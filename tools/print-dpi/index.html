@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Print Size &amp; DPI Calculator (Pixels to Print) | SharpDev.tools</title>
+<meta content="Free print size and DPI calculator. Convert pixel dimensions to print size at a given DPI, or find the pixels and megapixels needed for a target print size. Inches and centimetres. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/print-dpi/" rel="canonical"/>
+<meta content="Print Size &amp; DPI Calculator (Pixels to Print) | SharpDev.tools" property="og:title"/>
+<meta content="Free print size and DPI calculator. Convert pixel dimensions to print size at a given DPI, or find the pixels and megapixels needed for a target print size. Inches and centimetres. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/print-dpi/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Print Size &amp; DPI Calculator (Pixels to Print) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free print size and DPI calculator. Convert pixel dimensions to print size at a given DPI, or find the pixels and megapixels needed for a target print size. Inches and centimetres. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Print Size & DPI Calculator","item":"https://sharpdev.tools/tools/print-dpi/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert pixels to print size?","acceptedAnswer":{"@type":"Answer","text":"Divide each pixel dimension by the DPI. At 300 DPI, a 6000 x 4000 pixel image prints at 20 x 13.3 inches (about 50.8 x 33.9 cm). Lower the DPI and the same file prints larger but with less detail."}},{"@type":"Question","name":"What DPI should I print at?","acceptedAnswer":{"@type":"Answer","text":"300 PPI is the usual standard for prints held at reading distance. Large prints viewed from further away look fine at 150-200 PPI, and billboards far lower, because the eye cannot resolve the detail at distance."}},{"@type":"Question","name":"How many megapixels do I need for a print?","acceptedAnswer":{"@type":"Answer","text":"Switch to print-size mode and enter the size and DPI: it multiplies the inch dimensions by the DPI to get the pixels, then the megapixels. An 8 x 10 inch print at 300 DPI needs about 7.2 megapixels."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Print Size & DPI Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/print-dpi/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/print-dpi/print-dpi.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('print-dpi');</script>
+<div class="page">
+<h1>Print Size & DPI Calculator</h1>
+<p class="subtitle">Convert pixel dimensions to a print size at a chosen DPI, or work out the pixels and megapixels a print needs. Switch direction with the mode selector.</p>
+<div class="row">
+<div class="field"><label for="mode">Mode</label><select id="mode"><option value="px2size" selected>Pixels to print size</option><option value="size2px">Print size to pixels</option></select></div>
+<div class="field"><label for="dpi">Resolution (DPI / PPI)</label><input type="number" id="dpi" value="300" step="any"></div></div>
+<div class="row" id="pxrow">
+<div class="field"><label for="pw">Width (px)</label><input type="number" id="pw" value="6000" step="any"></div>
+<div class="field"><label for="ph">Height (px)</label><input type="number" id="ph" value="4000" step="any"></div></div>
+<div class="row" id="sizerow" style="display:none;">
+<div class="field"><label for="sw">Width (inches)</label><input type="number" id="sw" value="8" step="any"></div>
+<div class="field"><label for="sh">Height (inches)</label><input type="number" id="sh" value="10" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="lbl1">Print size (inches)</div><div class="value" id="r1" style="font-size:18px;">-</div></div>
+<div class="result-card"><div class="label" id="lbl2">Print size (cm)</div><div class="value" id="r2" style="font-size:16px;">-</div></div>
+<div class="result-card"><div class="label" id="lbl3">Megapixels</div><div class="value" id="r3">-</div></div></div>
+<p class="note">Print resolution is pixels per inch (PPI, often called DPI). 300 is a common photo-quality target, 150 is fine for large prints viewed from further away. This converts between pixel dimensions, print size and resolution.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert pixels to print size?</summary><p>Divide each pixel dimension by the DPI. At 300 DPI, a 6000 x 4000 pixel image prints at 20 x 13.3 inches (about 50.8 x 33.9 cm). Lower the DPI and the same file prints larger but with less detail.</p></details>
+<details><summary>What DPI should I print at?</summary><p>300 PPI is the usual standard for prints held at reading distance. Large prints viewed from further away look fine at 150-200 PPI, and billboards far lower, because the eye cannot resolve the detail at distance.</p></details>
+<details><summary>How many megapixels do I need for a print?</summary><p>Switch to print-size mode and enter the size and DPI: it multiplies the inch dimensions by the DPI to get the pixels, then the megapixels. An 8 x 10 inch print at 300 DPI needs about 7.2 megapixels.</p></details>
+</section>
+<script src="/tools/print-dpi/print-dpi.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

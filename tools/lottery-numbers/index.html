@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Lottery Number Generator (Random Picks) | SharpDev.tools</title>
+<meta content="Free lottery number generator. Pick random lottery numbers with presets for popular games (6 from 49, EuroMillions, Powerball) or a custom range and bonus balls. Uses cryptographically secure randomness. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/lottery-numbers/" rel="canonical"/>
+<meta content="Lottery Number Generator (Random Picks) | SharpDev.tools" property="og:title"/>
+<meta content="Free lottery number generator. Pick random lottery numbers with presets for popular games (6 from 49, EuroMillions, Powerball) or a custom range and bonus balls. Uses cryptographically secure randomness. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/lottery-numbers/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Lottery Number Generator (Random Picks) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free lottery number generator. Pick random lottery numbers with presets for popular games (6 from 49, EuroMillions, Powerball) or a custom range and bonus balls. Uses cryptographically secure randomness. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://sharpdev.tools/#generators"},{"@type":"ListItem","position":3,"name":"Lottery Number Generator","item":"https://sharpdev.tools/tools/lottery-numbers/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How random are the numbers?","acceptedAnswer":{"@type":"Answer","text":"They use the Web Crypto API (crypto.getRandomValues), the same cryptographically secure source browsers use for encryption keys, so the draw is genuinely unpredictable, far better than ordinary random functions."}},{"@type":"Question","name":"What do the presets do?","acceptedAnswer":{"@type":"Answer","text":"They fill in the count and range for popular games, like 6 numbers from 1 to 49, or EuroMillions with 5 main numbers plus 2 bonus stars. Choose Custom to set any range yourself."}},{"@type":"Question","name":"Can this improve my chances of winning?","acceptedAnswer":{"@type":"Answer","text":"No. Every combination is equally likely in a fair lottery, so a random pick has exactly the same odds as any other. This tool is just a convenient, unbiased way to choose."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Lottery Number Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/lottery-numbers/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/lottery-numbers/lottery-numbers.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('lottery-numbers');</script>
+<div class="page">
+<h1>Lottery Number Generator</h1>
+<p class="subtitle">Generate random lottery numbers with presets for popular games, or set your own range and count. Uses secure browser randomness.</p>
+<div class="row"><div class="field"><label for="preset">Preset</label><select id="preset"><option value="custom">Custom</option><option value="6,49,0,0" selected>6 from 49</option><option value="5,50,2,12">EuroMillions (5/50 + 2/12)</option><option value="6,45,0,0">6 from 45</option><option value="5,69,1,26">Powerball (5/69 + 1/26)</option></select></div></div>
+<div class="row">
+<div class="field"><label for="count">Numbers</label><input type="number" id="count" value="6" min="1" max="20"></div>
+<div class="field"><label for="max">From 1 to</label><input type="number" id="max" value="49" min="2" max="999"></div>
+<div class="field"><label for="bcount">Bonus balls</label><input type="number" id="bcount" value="0" min="0" max="5"></div>
+<div class="field"><label for="bmax">Bonus 1 to</label><input type="number" id="bmax" value="0" min="0" max="999"></div></div>
+<div class="actions"><button class="small-btn" id="gen">Generate</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">Your numbers</div><div class="value" id="main" style="font-size:24px;">—</div></div></div>
+<div class="result-cards" id="bonuswrap" style="display:none;"><div class="result-card" style="grid-column:1 / -1;"><div class="label">Bonus</div><div class="value" id="bonus" style="font-size:22px;color:#ff8866;">—</div></div></div>
+<p class="note">Numbers are drawn with your browser's cryptographically secure random generator, the same source used for security keys. Each number in a draw is unique. This is for fun; it cannot improve real lottery odds.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How random are the numbers?</summary><p>They use the Web Crypto API (crypto.getRandomValues), the same cryptographically secure source browsers use for encryption keys, so the draw is genuinely unpredictable, far better than ordinary random functions.</p></details>
+<details><summary>What do the presets do?</summary><p>They fill in the count and range for popular games, like 6 numbers from 1 to 49, or EuroMillions with 5 main numbers plus 2 bonus stars. Choose Custom to set any range yourself.</p></details>
+<details><summary>Can this improve my chances of winning?</summary><p>No. Every combination is equally likely in a fair lottery, so a random pick has exactly the same odds as any other. This tool is just a convenient, unbiased way to choose.</p></details>
+</section>
+<script src="/tools/lottery-numbers/lottery-numbers.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

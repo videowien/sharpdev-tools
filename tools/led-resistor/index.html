@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>LED Resistor Calculator (Series Resistor) | SharpDev.tools</title>
+<meta content="Free LED resistor calculator. Work out the correct series resistor for an LED from supply voltage, forward voltage and forward current, with the nearest standard (E12) value and the resistor's power dissipation. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/led-resistor/" rel="canonical"/>
+<meta content="LED Resistor Calculator (Series Resistor) | SharpDev.tools" property="og:title"/>
+<meta content="Free LED resistor calculator. Work out the correct series resistor for an LED from supply voltage, forward voltage and forward current, with the nearest standard (E12) value and the resistor's power dissipation. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/led-resistor/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="LED Resistor Calculator (Series Resistor) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free LED resistor calculator. Work out the correct series resistor for an LED from supply voltage, forward voltage and forward current, with the nearest standard (E12) value and the resistor's power dissipation. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"LED Series Resistor Calculator","item":"https://sharpdev.tools/tools/led-resistor/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the LED resistor calculated?","acceptedAnswer":{"@type":"Answer","text":"The resistor carries the LED current and drops the leftover voltage: R = (supply voltage \u2212 LED forward voltage) \u00f7 current. For a 12V supply, a 2V LED and 20mA, that is (12 \u2212 2) \u00f7 0.02 = 500 ohms."}},{"@type":"Question","name":"What forward voltage and current should I use?","acceptedAnswer":{"@type":"Answer","text":"Use the values from the LED datasheet. As a rough guide, forward voltage is about 1.8V for red, 2.1V for yellow and green, and 3.2V for blue and white; 20mA is a common, safe current for standard 5mm LEDs."}},{"@type":"Question","name":"Why does the power rating matter?","acceptedAnswer":{"@type":"Answer","text":"The resistor turns the dropped voltage into heat. If that power exceeds the resistor's rating it will overheat. Pick a resistor rated comfortably above the figure shown, for example a quarter-watt part for anything under about 0.1W."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"LED Series Resistor Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/led-resistor/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/led-resistor/led-resistor.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('led-resistor');</script>
+<div class="page">
+<h1>LED Series Resistor Calculator</h1>
+<p class="subtitle">Find the series resistor for an LED from the supply voltage, the LED's forward voltage and current. Includes the nearest standard value and power rating.</p>
+<div class="row">
+<div class="field"><label for="vs">Supply voltage (V)</label><input type="number" id="vs" value="12" step="any"></div>
+<div class="field"><label for="vf">LED forward voltage (V)</label><input type="number" id="vf" value="2" step="any"></div>
+<div class="field"><label for="if">Forward current (mA)</label><input type="number" id="if" value="20" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Resistor</div><div class="value" id="r">—</div></div>
+<div class="result-card"><div class="label">Nearest E12</div><div class="value" id="e12">—</div></div>
+<div class="result-card"><div class="label">Power in resistor</div><div class="value" id="p">—</div></div></div>
+<p class="note" id="note">The resistor drops the difference between the supply and the LED forward voltage at the chosen current: R = (Vsupply − Vforward) / I. Use a resistor rated above the power shown. Typical LED forward voltages: red ~1.8V, yellow/green ~2.1V, blue/white ~3.2V.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the LED resistor calculated?</summary><p>The resistor carries the LED current and drops the leftover voltage: R = (supply voltage − LED forward voltage) ÷ current. For a 12V supply, a 2V LED and 20mA, that is (12 − 2) ÷ 0.02 = 500 ohms.</p></details>
+<details><summary>What forward voltage and current should I use?</summary><p>Use the values from the LED datasheet. As a rough guide, forward voltage is about 1.8V for red, 2.1V for yellow and green, and 3.2V for blue and white; 20mA is a common, safe current for standard 5mm LEDs.</p></details>
+<details><summary>Why does the power rating matter?</summary><p>The resistor turns the dropped voltage into heat. If that power exceeds the resistor's rating it will overheat. Pick a resistor rated comfortably above the figure shown, for example a quarter-watt part for anything under about 0.1W.</p></details>
+</section>
+<script src="/tools/led-resistor/led-resistor.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

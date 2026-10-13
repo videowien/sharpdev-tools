@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Significant Figures Counter &amp; Rounder | SharpDev.tools</title>
+<meta content="Free significant figures calculator. Count how many significant figures a number has, and round any number to a chosen number of significant figures, following the standard rules. Useful for science, engineering and chemistry homework. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/sig-figs/" rel="canonical"/>
+<meta content="Significant Figures Counter &amp; Rounder | SharpDev.tools" property="og:title"/>
+<meta content="Free significant figures calculator. Count how many significant figures a number has, and round any number to a chosen number of significant figures, following the standard rules. Useful for science, engineering and chemistry homework. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/sig-figs/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Significant Figures Counter &amp; Rounder | SharpDev.tools" name="twitter:title"/>
+<meta content="Free significant figures calculator. Count how many significant figures a number has, and round any number to a chosen number of significant figures, following the standard rules. Useful for science, engineering and chemistry homework. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Significant Figures Calculator","item":"https://sharpdev.tools/tools/sig-figs/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are significant figures?","acceptedAnswer":{"@type":"Answer","text":"Significant figures are the digits in a number that carry real, measured meaning. They include all non-zero digits, any zeros between them, and trailing zeros after a decimal point, but not leading zeros, which only set the decimal place."}},{"@type":"Question","name":"Why is 1200 ambiguous?","acceptedAnswer":{"@type":"Answer","text":"Without a decimal point, trailing zeros in a whole number could be placeholders or could be measured, so by the common convention they are not counted, giving 1200 two significant figures. Writing it as 1200. or 1.200 \u00d7 10\u00b3 makes the zeros significant."}},{"@type":"Question","name":"How does rounding to sig figs work?","acceptedAnswer":{"@type":"Answer","text":"It keeps the requested number of significant digits and rounds the rest, regardless of the decimal position. For example 0.004560 to 2 significant figures is 0.0046. This is common in science to match the precision of a measurement."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Significant Figures Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/sig-figs/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/sig-figs/sig-figs.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('sig-figs');</script>
+<div class="page">
+<h1>Significant Figures Calculator</h1>
+<p class="subtitle">Count the significant figures in a number, and round any number to a chosen number of significant figures. For science, engineering and homework.</p>
+<div class="field"><label for="num">Number</label><input type="text" id="num" value="0.004560"></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Significant figures</div><div class="value" id="count">—</div></div>
+<div class="result-card"><div class="label">Decimal places</div><div class="value" id="dp">—</div></div></div>
+<div class="row" style="margin-top:14px;"><div class="field"><label for="n">Round to this many sig figs</label><input type="number" id="n" value="2" min="1" max="15"></div>
+<div class="field"><label>Rounded result</label><input type="text" id="rounded" readonly></div></div>
+<p class="note">Rules used: non-zero digits are always significant; zeros between significant digits count; leading zeros never count; trailing zeros count only when there is a decimal point. So 0.004560 has 4 significant figures and 1200 has 2 (the trailing zeros are ambiguous without a decimal point).</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are significant figures?</summary><p>Significant figures are the digits in a number that carry real, measured meaning. They include all non-zero digits, any zeros between them, and trailing zeros after a decimal point, but not leading zeros, which only set the decimal place.</p></details>
+<details><summary>Why is 1200 ambiguous?</summary><p>Without a decimal point, trailing zeros in a whole number could be placeholders or could be measured, so by the common convention they are not counted, giving 1200 two significant figures. Writing it as 1200. or 1.200 × 10³ makes the zeros significant.</p></details>
+<details><summary>How does rounding to sig figs work?</summary><p>It keeps the requested number of significant digits and rounds the rest, regardless of the decimal position. For example 0.004560 to 2 significant figures is 0.0046. This is common in science to match the precision of a measurement.</p></details>
+</section>
+<script src="/tools/sig-figs/sig-figs.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

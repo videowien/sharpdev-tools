@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Grayscale Image Converter (Black &amp; White) | SharpDev.tools</title>
+<meta content="Free grayscale image converter. Turn any photo black and white directly in your browser, adjust the intensity, and download the result as PNG. Private: nothing is uploaded. Works with JPG, PNG and WebP." name="description"/>
+<link href="https://sharpdev.tools/tools/image-grayscale/" rel="canonical"/>
+<meta content="Grayscale Image Converter (Black &amp; White) | SharpDev.tools" property="og:title"/>
+<meta content="Free grayscale image converter. Turn any photo black and white directly in your browser, adjust the intensity, and download the result as PNG. Private: nothing is uploaded. Works with JPG, PNG and WebP." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-grayscale/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Grayscale Image Converter (Black &amp; White) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free grayscale image converter. Turn any photo black and white directly in your browser, adjust the intensity, and download the result as PNG. Private: nothing is uploaded. Works with JPG, PNG and WebP." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Grayscale Image Converter","item":"https://sharpdev.tools/tools/image-grayscale/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert an image to grayscale?","acceptedAnswer":{"@type":"Answer","text":"Drop or choose a photo, and it is converted to black and white instantly. Use the intensity slider for a partial desaturation, then click Download PNG to save it."}},{"@type":"Question","name":"Is my photo uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The conversion happens entirely in your browser using a canvas, so your image never leaves your device. Nothing is sent to a server."}},{"@type":"Question","name":"What does intensity do?","acceptedAnswer":{"@type":"Answer","text":"At 100% the image is fully black and white. Lower values blend the grayscale with the original colours, giving a faded or muted look rather than full desaturation."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Grayscale Image Converter \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/image-grayscale/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-grayscale/image-grayscale.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-grayscale');</script>
+<div class="page">
+<h1>Grayscale Image Converter</h1>
+<p class="subtitle">Turn a photo black and white in your browser. Adjust the intensity and download the result. Nothing is uploaded.</p>
+<div class="upload-area" id="drop"><input type="file" id="file" accept="image/*" hidden><p>Drop an image here or <b>click to choose</b></p><p class="hint">Processed entirely in your browser. Nothing is uploaded.</p></div>
+<div id="editor" style="display:none;">
+<div class="row"><div class="field"><label for="amt">Intensity</label><input type="range" id="amt" min="0" max="100" value="100"></div></div>
+<div class="img-prev"><canvas id="cv"></canvas></div>
+<div class="actions"><button class="small-btn" id="dl">Download PNG</button><button class="small-btn" id="reset">New image</button></div>
+</div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert an image to grayscale?</summary><p>Drop or choose a photo, and it is converted to black and white instantly. Use the intensity slider for a partial desaturation, then click Download PNG to save it.</p></details>
+<details><summary>Is my photo uploaded anywhere?</summary><p>No. The conversion happens entirely in your browser using a canvas, so your image never leaves your device. Nothing is sent to a server.</p></details>
+<details><summary>What does intensity do?</summary><p>At 100% the image is fully black and white. Lower values blend the grayscale with the original colours, giving a faded or muted look rather than full desaturation.</p></details>
+</section>
+<script src="/tools/image-grayscale/image-grayscale.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

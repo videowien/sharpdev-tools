@@ -1,0 +1,99 @@
+/* Coin Flip — styles */
+.page { max-width: 640px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; text-align: center; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 36px; line-height: 1.5; text-align: center; }
+
+.coin-stage {
+  display: flex; justify-content: center;
+  perspective: 800px;
+  margin-bottom: 18px;
+  min-height: 160px;
+}
+.coin {
+  width: 160px; height: 160px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(.33,.8,.4,1);
+}
+.coin.flipping { transition: transform 1.5s cubic-bezier(.25,.8,.3,1); }
+.coin-face {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 72px; font-weight: 800;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 -4px 10px rgba(0,0,0,0.35);
+  border: 4px solid;
+}
+.coin-heads {
+  background: radial-gradient(circle at 35% 35%, #ffe06e, #d89a2b 75%);
+  color: #5a3c00; border-color: #c28a20;
+}
+.coin-tails {
+  background: radial-gradient(circle at 35% 35%, #c7c7c7, #7d7d7d 75%);
+  color: #2a2a2a; border-color: #6c6c6c;
+  transform: rotateY(180deg);
+}
+
+.result-label {
+  text-align: center; font-size: 22px; font-weight: 700;
+  color: #fff; margin-bottom: 24px; min-height: 28px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+.actions {
+  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.actions .btn { padding: 12px 24px; font-size: 14px; }
+
+.stats-panel {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin-bottom: 28px;
+}
+.stat {
+  padding: 18px 12px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px; text-align: center;
+}
+.stat-num {
+  font-size: 28px; font-weight: 700; color: #fff;
+  font-variant-numeric: tabular-nums; margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 11px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.sequence-panel {
+  padding: 18px 22px;
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.sequence-panel h2 {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.sequence {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 13px; font-weight: 700;
+}
+.sequence .h {
+  color: #ffd24a;
+  display: inline-block; width: 20px; text-align: center;
+}
+.sequence .t {
+  color: #aaa;
+  display: inline-block; width: 20px; text-align: center;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .coin { width: 130px; height: 130px; }
+  .coin-face { font-size: 60px; }
+  .stats-panel { grid-template-columns: repeat(2, 1fr); }
+  .stat-num { font-size: 24px; }
+}

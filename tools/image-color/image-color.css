@@ -1,0 +1,81 @@
+/* Image Color Picker — Tool-specific styles */
+.page { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+.picker-grid {
+  display: grid; grid-template-columns: 1fr 320px;
+  gap: 18px; margin-top: 16px;
+}
+.canvas-card { padding: 12px; }
+#canvas {
+  display: block; max-width: 100%; height: auto;
+  cursor: crosshair; border-radius: 4px;
+}
+.hover-info {
+  margin-top: 8px; font-size: 12px; color: #888;
+  font-family: 'SF Mono', monospace;
+}
+
+.palette-card { padding: 14px; }
+.current-color {
+  display: flex; gap: 12px; margin-bottom: 16px;
+  padding-bottom: 14px; border-bottom: 1px solid #1f1f1f;
+}
+.current-swatch {
+  width: 70px; height: 70px;
+  background: #2a2a2a; border: 1px solid #333; border-radius: 6px;
+  flex-shrink: 0;
+}
+.current-values { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.cv-row { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.cv-label { color: #888; width: 30px; flex-shrink: 0; font-weight: 600; }
+.cv-row code {
+  flex: 1; padding: 4px 7px;
+  background: #0d0d0d; border-radius: 4px;
+  font-family: 'SF Mono', monospace; color: #eee;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.cv-copy {
+  background: transparent; border: 1px solid #333; border-radius: 4px;
+  color: #888; cursor: pointer; padding: 3px 6px; font-size: 12px;
+}
+.cv-copy:hover { color: #fff; border-color: #ff4444; }
+
+.palette-label { font-size: 11px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.palette {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 5px; margin-bottom: 12px;
+  min-height: 30px;
+}
+.pal-swatch {
+  aspect-ratio: 1; border: 1px solid #2a2a2a; border-radius: 4px;
+  cursor: pointer; transition: transform 0.12s, border-color 0.12s;
+}
+.pal-swatch:hover { transform: scale(1.1); border-color: #ff4444; }
+.pal-swatch.copied {
+  box-shadow: 0 0 0 2px #4caf50;
+}
+
+#clear-palette { width: 100%; padding: 8px; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .picker-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

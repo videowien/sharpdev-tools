@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Antenna Q &amp; Bandwidth Calculator | SharpDev.tools</title>
+<meta content="Free antenna Q and bandwidth calculator. Enter the centre frequency and the bandwidth to get the loaded Q and the fractional bandwidth. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/antenna-q/" rel="canonical"/>
+<meta content="Antenna Q &amp; Bandwidth Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free antenna Q and bandwidth calculator. Enter the centre frequency and the bandwidth to get the loaded Q and the fractional bandwidth. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/antenna-q/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Antenna Q &amp; Bandwidth Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free antenna Q and bandwidth calculator. Enter the centre frequency and the bandwidth to get the loaded Q and the fractional bandwidth. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Antenna Q & Bandwidth Calculator","item":"https://sharpdev.tools/tools/antenna-q/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is antenna Q?","acceptedAnswer":{"@type":"Answer","text":"Q (quality factor) is the centre frequency divided by the bandwidth: Q = f0 / BW. It describes how sharply tuned the antenna is. A short, loaded antenna has a high Q and narrow bandwidth; a full-size or fat-element antenna has a lower Q and wider bandwidth."}},{"@type":"Question","name":"How is the bandwidth defined?","acceptedAnswer":{"@type":"Answer","text":"For antennas it is usually the width between the points where the SWR rises to 2:1. So a 20m antenna centred on 14.2 MHz with 2:1 points at 14.0 and 14.4 MHz has a 0.4 MHz bandwidth and a Q of about 35."}},{"@type":"Question","name":"Why does Q matter?","acceptedAnswer":{"@type":"Answer","text":"A high-Q antenna needs retuning as you move across a band and is more easily detuned by its surroundings, but it rejects out-of-band signals better. Lower Q gives easy broadband operation at the cost of some selectivity."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Antenna Q & Bandwidth Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/antenna-q/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/antenna-q/antenna-q.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('antenna-q');</script>
+<div class="page">
+<h1>Antenna Q & Bandwidth Calculator</h1>
+<p class="subtitle">Find the loaded Q and fractional bandwidth of a resonant antenna or circuit from its centre frequency and bandwidth.</p>
+<div class="row">
+<div class="field"><label for="f0">Centre frequency (MHz)</label><input type="number" id="f0" value="14.2" step="any"></div>
+<div class="field"><label for="bw">Bandwidth (MHz)</label><input type="number" id="bw" value="0.4" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Loaded Q</div><div class="value" id="q" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Fractional bandwidth</div><div class="value" id="fb" style="font-size:16px;">-</div></div></div>
+<p class="note">Q is the ratio of centre frequency to bandwidth: Q = f0 / bandwidth, where bandwidth is usually measured between the 2:1 SWR points. A high Q means a narrow, sharply tuned antenna; a low Q means a broad one that covers more of the band without retuning.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is antenna Q?</summary><p>Q (quality factor) is the centre frequency divided by the bandwidth: Q = f0 / BW. It describes how sharply tuned the antenna is. A short, loaded antenna has a high Q and narrow bandwidth; a full-size or fat-element antenna has a lower Q and wider bandwidth.</p></details>
+<details><summary>How is the bandwidth defined?</summary><p>For antennas it is usually the width between the points where the SWR rises to 2:1. So a 20m antenna centred on 14.2 MHz with 2:1 points at 14.0 and 14.4 MHz has a 0.4 MHz bandwidth and a Q of about 35.</p></details>
+<details><summary>Why does Q matter?</summary><p>A high-Q antenna needs retuning as you move across a band and is more easily detuned by its surroundings, but it rejects out-of-band signals better. Lower Q gives easy broadband operation at the cost of some selectivity.</p></details>
+</section>
+<script src="/tools/antenna-q/antenna-q.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

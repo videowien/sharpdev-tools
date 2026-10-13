@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Dawes Limit Calculator (Telescope Resolution) | SharpDev.tools</title>
+<meta content="Free Dawes limit calculator. Enter your telescope aperture to get the Dawes and Rayleigh resolution limits in arcseconds, the closest double stars you can split. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/dawes-limit/" rel="canonical"/>
+<meta content="Dawes Limit Calculator (Telescope Resolution) | SharpDev.tools" property="og:title"/>
+<meta content="Free Dawes limit calculator. Enter your telescope aperture to get the Dawes and Rayleigh resolution limits in arcseconds, the closest double stars you can split. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/dawes-limit/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Dawes Limit Calculator (Telescope Resolution) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Dawes limit calculator. Enter your telescope aperture to get the Dawes and Rayleigh resolution limits in arcseconds, the closest double stars you can split. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"Dawes & Rayleigh Limit Calculator","item":"https://sharpdev.tools/tools/dawes-limit/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Dawes limit?","acceptedAnswer":{"@type":"Answer","text":"An empirical rule for the closest equal double star a telescope can split: 116 \u00f7 aperture in mm, in arcseconds. A 150 mm scope resolves about 0.77\u2033, a 250 mm about 0.46\u2033."}},{"@type":"Question","name":"Dawes vs Rayleigh, what is the difference?","acceptedAnswer":{"@type":"Answer","text":"Rayleigh (138 \u00f7 D at green light) comes from diffraction theory and is slightly more conservative; Dawes came from William Dawes' practical double-star observations. Real performance sits between them and depends on brightness and contrast."}},{"@type":"Question","name":"Why don't big scopes always show more detail?","acceptedAnswer":{"@type":"Answer","text":"Because the atmosphere blurs stars to 1-3\u2033 on typical nights, worse than the optical limit of anything above ~100-150 mm. Aperture still wins on brightness, and on rare steady nights the full resolution shows."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Dawes & Rayleigh Limit Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/dawes-limit/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/dawes-limit/dawes-limit.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('dawes-limit');</script>
+<div class="page">
+<h1>Dawes & Rayleigh Limit Calculator</h1>
+<p class="subtitle">The finest detail your aperture can resolve: Dawes limit 116/D and Rayleigh criterion 138/D, in arcseconds, from your aperture.</p>
+<div class="row"><div class="field"><label for="ap">Aperture (mm)</label><input type="number" id="ap" value="150" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Dawes limit</div><div class="value" id="dawes">-</div></div>
+<div class="result-card"><div class="label">Rayleigh criterion</div><div class="value" id="ray">-</div></div></div>
+<p class="note">Dawes limit = 116 ÷ aperture (mm) arcseconds, an empirical figure for splitting equal double stars; the Rayleigh criterion 138 ÷ D is the slightly more conservative optical-theory version (at ~550 nm). A 150 mm scope resolves about 0.77″. In practice atmospheric seeing (often 1-3″) is the real limit for larger apertures.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Dawes limit?</summary><p>An empirical rule for the closest equal double star a telescope can split: 116 ÷ aperture in mm, in arcseconds. A 150 mm scope resolves about 0.77″, a 250 mm about 0.46″.</p></details>
+<details><summary>Dawes vs Rayleigh, what is the difference?</summary><p>Rayleigh (138 ÷ D at green light) comes from diffraction theory and is slightly more conservative; Dawes came from William Dawes' practical double-star observations. Real performance sits between them and depends on brightness and contrast.</p></details>
+<details><summary>Why don't big scopes always show more detail?</summary><p>Because the atmosphere blurs stars to 1-3″ on typical nights, worse than the optical limit of anything above ~100-150 mm. Aperture still wins on brightness, and on rare steady nights the full resolution shows.</p></details>
+</section>
+<script src="/tools/dawes-limit/dawes-limit.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

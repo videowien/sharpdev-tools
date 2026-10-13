@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>One-Rep Max Calculator (1RM Estimator) | SharpDev.tools</title>
+<meta content="Free one-rep max (1RM) calculator. Estimate your max lift from the weight and reps of a set using the Epley and Brzycki formulas, with a percentage-of-1RM table for programming. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/one-rep-max/" rel="canonical"/>
+<meta content="One-Rep Max Calculator (1RM Estimator) | SharpDev.tools" property="og:title"/>
+<meta content="Free one-rep max (1RM) calculator. Estimate your max lift from the weight and reps of a set using the Epley and Brzycki formulas, with a percentage-of-1RM table for programming. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/one-rep-max/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="One-Rep Max Calculator (1RM Estimator) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free one-rep max (1RM) calculator. Estimate your max lift from the weight and reps of a set using the Epley and Brzycki formulas, with a percentage-of-1RM table for programming. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"One-Rep Max Calculator","item":"https://sharpdev.tools/tools/one-rep-max/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a one-rep max?","acceptedAnswer":{"@type":"Answer","text":"Your one-rep max (1RM) is the most weight you can lift for a single repetition of an exercise. It is the standard reference for how strong you are on a lift and for setting training loads as a percentage of it."}},{"@type":"Question","name":"How accurate is the estimate?","acceptedAnswer":{"@type":"Answer","text":"Rep-max formulas are good estimates, especially for sets of about 2 to 10 reps. Accuracy drops as the rep count rises, because endurance starts to matter more than pure strength. The tool averages the Epley and Brzycki formulas."}},{"@type":"Question","name":"How do I use the percentage table?","acceptedAnswer":{"@type":"Answer","text":"Training programs often prescribe a percentage of your 1RM, for example 5 sets of 5 at 80%. The table converts your estimated max into those working weights, with rough rep guides for each percentage."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"One-Rep Max Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/one-rep-max/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/one-rep-max/one-rep-max.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('one-rep-max');</script>
+<div class="page">
+<h1>One-Rep Max Calculator</h1>
+<p class="subtitle">Estimate your one-rep max from a set you can already lift, with a percentage table for planning your working sets.</p>
+<div class="row">
+<div class="field"><label for="wt">Weight lifted</label><input type="number" id="wt" value="100" step="any"></div>
+<div class="field"><label for="reps">Reps performed</label><input type="number" id="reps" value="5" min="1" max="20"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Estimated 1RM</div><div class="value" id="orm">—</div></div>
+<div class="result-card"><div class="label">Epley</div><div class="value" id="epley">—</div></div>
+<div class="result-card"><div class="label">Brzycki</div><div class="value" id="brzycki">—</div></div></div>
+<div class="out-head"><label>Training percentages</label></div>
+<div id="table" class="calc-table" style="grid-template-columns:1fr 1fr 1fr;"></div>
+<p class="note">Estimates your one-rep max from a set you can already do. Accuracy is best at about 10 reps or fewer. The percentage table is a common guide for planning working sets. The weight unit is whatever you type, kg or lb.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a one-rep max?</summary><p>Your one-rep max (1RM) is the most weight you can lift for a single repetition of an exercise. It is the standard reference for how strong you are on a lift and for setting training loads as a percentage of it.</p></details>
+<details><summary>How accurate is the estimate?</summary><p>Rep-max formulas are good estimates, especially for sets of about 2 to 10 reps. Accuracy drops as the rep count rises, because endurance starts to matter more than pure strength. The tool averages the Epley and Brzycki formulas.</p></details>
+<details><summary>How do I use the percentage table?</summary><p>Training programs often prescribe a percentage of your 1RM, for example 5 sets of 5 at 80%. The table converts your estimated max into those working weights, with rough rep guides for each percentage.</p></details>
+</section>
+<script src="/tools/one-rep-max/one-rep-max.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Antenna Takeoff Angle Calculator (Height Over Ground) | SharpDev.tools</title>
+<meta content="Free antenna takeoff angle calculator. Estimate the lowest radiation lobe elevation angle of a horizontal antenna from its height above ground and the frequency. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/takeoff-angle/" rel="canonical"/>
+<meta content="Antenna Takeoff Angle Calculator (Height Over Ground) | SharpDev.tools" property="og:title"/>
+<meta content="Free antenna takeoff angle calculator. Estimate the lowest radiation lobe elevation angle of a horizontal antenna from its height above ground and the frequency. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/takeoff-angle/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Antenna Takeoff Angle Calculator (Height Over Ground) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free antenna takeoff angle calculator. Estimate the lowest radiation lobe elevation angle of a horizontal antenna from its height above ground and the frequency. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Takeoff Angle Calculator","item":"https://sharpdev.tools/tools/takeoff-angle/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is takeoff angle?","acceptedAnswer":{"@type":"Answer","text":"It is the elevation angle of the strongest radiation lobe. A low takeoff angle (say 10 to 20 degrees) favours long-distance DX via the ionosphere; a high angle favours nearby regional contacts. For a horizontal antenna it depends mainly on height over ground."}},{"@type":"Question","name":"How does height change it?","acceptedAnswer":{"@type":"Answer","text":"The lowest lobe is at arcsin(wavelength / (4 times height)). Doubling the height roughly halves the angle. An antenna one wavelength up has a lowest lobe near 14 degrees, good for DX; at a quarter wave up it fires almost straight up."}},{"@type":"Question","name":"What is NVIS?","acceptedAnswer":{"@type":"Answer","text":"Near Vertical Incidence Skywave is high-angle radiation that goes nearly straight up and rains back down over a few hundred kilometres, ideal for regional coverage. A low horizontal antenna, under about a quarter wavelength high, is naturally an NVIS antenna."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Takeoff Angle Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/takeoff-angle/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/takeoff-angle/takeoff-angle.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('takeoff-angle');</script>
+<div class="page">
+<h1>Takeoff Angle Calculator</h1>
+<p class="subtitle">Estimate the lowest-lobe takeoff (elevation) angle of a horizontal antenna from its height above ground and the frequency.</p>
+<div class="row">
+<div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="14.2" step="any"></div>
+<div class="field"><label for="h">Height above ground (m)</label><input type="number" id="h" value="20" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Takeoff angle</div><div class="value" id="ang" style="font-size:20px;">-</div></div>
+<div class="result-card"><div class="label">Height in wavelengths</div><div class="value" id="hw" style="font-size:15px;">-</div></div></div>
+<p class="note">A horizontal antenna over ground has its lowest radiation lobe at an elevation angle of arcsin(wavelength / (4 times height)). Higher antennas give a lower angle, which is better for DX. Below a quarter wavelength high there is no low lobe; the antenna fires mostly upward (NVIS), good for regional contacts.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is takeoff angle?</summary><p>It is the elevation angle of the strongest radiation lobe. A low takeoff angle (say 10 to 20 degrees) favours long-distance DX via the ionosphere; a high angle favours nearby regional contacts. For a horizontal antenna it depends mainly on height over ground.</p></details>
+<details><summary>How does height change it?</summary><p>The lowest lobe is at arcsin(wavelength / (4 times height)). Doubling the height roughly halves the angle. An antenna one wavelength up has a lowest lobe near 14 degrees, good for DX; at a quarter wave up it fires almost straight up.</p></details>
+<details><summary>What is NVIS?</summary><p>Near Vertical Incidence Skywave is high-angle radiation that goes nearly straight up and rains back down over a few hundred kilometres, ideal for regional coverage. A low horizontal antenna, under about a quarter wavelength high, is naturally an NVIS antenna.</p></details>
+</section>
+<script src="/tools/takeoff-angle/takeoff-angle.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Audio File Info (Duration, Sample Rate, Channels) | SharpDev.tools</title>
+<meta content="Free audio file info tool. Drop an audio file (MP3, WAV, OGG, M4A, FLAC where the browser supports it) to read its duration, sample rate, channel count, sample length and estimated bitrate. Decoded locally in your browser; nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/audio-info/" rel="canonical"/>
+<meta content="Audio File Info (Duration, Sample Rate, Channels) | SharpDev.tools" property="og:title"/>
+<meta content="Free audio file info tool. Drop an audio file (MP3, WAV, OGG, M4A, FLAC where the browser supports it) to read its duration, sample rate, channel count, sample length and estimated bitrate. Decoded locally in your browser; nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/audio-info/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Audio File Info (Duration, Sample Rate, Channels) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free audio file info tool. Drop an audio file (MP3, WAV, OGG, M4A, FLAC where the browser supports it) to read its duration, sample rate, channel count, sample length and estimated bitrate. Decoded locally in your browser; nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"Audio File Info","item":"https://sharpdev.tools/tools/audio-info/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this tell me about an audio file?","acceptedAnswer":{"@type":"Answer","text":"It shows the duration, sample rate (e.g. 44,100 Hz), number of channels (mono or stereo), the total sample count, the file size, and an estimated bitrate. These are the core technical properties of any audio file."}},{"@type":"Question","name":"How is the bitrate estimated?","acceptedAnswer":{"@type":"Answer","text":"It divides the file size in bits by the duration in seconds. For constant-bitrate files this is very close to the real value; for variable-bitrate files it is an average. The sample rate and channel count are read exactly from the decoded audio."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The file is decoded locally with the Web Audio API to read its properties, so it never leaves your device. Note that browsers differ in which formats they can decode, so a few unusual formats may not open everywhere."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Audio File Info \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/audio-info/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/audio-info/audio-info.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('audio-info');</script>
+<div class="page">
+<h1>Audio File Info</h1>
+<p class="subtitle">Drop an audio file to see its duration, sample rate, channels, length and estimated bitrate. Decoded in your browser; nothing is uploaded.</p>
+<div class="upload-area" id="drop"><input type="file" id="file" accept="audio/*" hidden><p>Drop an audio file here or <b>click to choose</b></p><p class="hint">Decoded entirely in your browser. Nothing is uploaded.</p></div>
+<div id="editor" style="display:none;">
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Duration</div><div class="value" id="dur" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Sample rate</div><div class="value" id="sr" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Channels</div><div class="value" id="ch">—</div></div>
+<div class="result-card"><div class="label">Samples</div><div class="value" id="len" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">File size</div><div class="value" id="size" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Est. bitrate</div><div class="value" id="br" style="font-size:16px;">—</div></div></div>
+<div class="actions"><button class="small-btn" id="reset">New file</button></div></div>
+<p class="note">The file is decoded with the Web Audio API to read its true properties. Bitrate is estimated from file size and duration. Browser audio decoders vary, so some exotic formats (or some FLAC) may not decode everywhere.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does this tell me about an audio file?</summary><p>It shows the duration, sample rate (e.g. 44,100 Hz), number of channels (mono or stereo), the total sample count, the file size, and an estimated bitrate. These are the core technical properties of any audio file.</p></details>
+<details><summary>How is the bitrate estimated?</summary><p>It divides the file size in bits by the duration in seconds. For constant-bitrate files this is very close to the real value; for variable-bitrate files it is an average. The sample rate and channel count are read exactly from the decoded audio.</p></details>
+<details><summary>Is my file uploaded?</summary><p>No. The file is decoded locally with the Web Audio API to read its properties, so it never leaves your device. Note that browsers differ in which formats they can decode, so a few unusual formats may not open everywhere.</p></details>
+</section>
+<script src="/tools/audio-info/audio-info.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

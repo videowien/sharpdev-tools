@@ -1,0 +1,37 @@
+/* Keyword Density — tool-specific */
+.page { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+.form-row label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.form-row textarea {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 13px;
+  font-family: 'SF Mono', monospace; resize: vertical; line-height: 1.5;
+}
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+.checkbox-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; color: #ccc; }
+.checkbox-label input { accent-color: #ff4444; }
+.stat { font-size: 12px; color: #888; font-family: 'SF Mono', monospace; margin-left: auto; }
+
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 10px; }
+
+.results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.result-block { }
+
+.kd-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.kd-table tr { border-bottom: 1px solid #1f1f1f; }
+.kd-table td { padding: 6px 10px; }
+.kd-table td:first-child { color: #fff; font-family: 'SF Mono', monospace; word-break: break-word; }
+.kd-table td:nth-child(2) { color: #888; text-align: right; font-family: 'SF Mono', monospace; }
+.kd-table td:nth-child(3) { color: #ff8888; text-align: right; font-family: 'SF Mono', monospace; min-width: 50px; }
+
+@media (max-width: 800px) {
+  .results-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Vowel and Consonant Counter | SharpDev.tools</title>
+<meta content="Free vowel and consonant counter. Counts vowels, consonants, total letters and the vowel percentage in any text, live as you type. Useful for word games, teaching and linguistics. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/vowel-consonant/" rel="canonical"/>
+<meta content="Vowel and Consonant Counter | SharpDev.tools" property="og:title"/>
+<meta content="Free vowel and consonant counter. Counts vowels, consonants, total letters and the vowel percentage in any text, live as you type. Useful for word games, teaching and linguistics. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/vowel-consonant/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Vowel and Consonant Counter | SharpDev.tools" name="twitter:title"/>
+<meta content="Free vowel and consonant counter. Counts vowels, consonants, total letters and the vowel percentage in any text, live as you type. Useful for word games, teaching and linguistics. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Vowel & Consonant Counter","item":"https://sharpdev.tools/tools/vowel-consonant/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Y a vowel or a consonant here?","acceptedAnswer":{"@type":"Answer","text":"This tool counts Y as a consonant. In English Y can act as either depending on the word, but counting it as a consonant is the simplest consistent rule for a counter."}},{"@type":"Question","name":"Does it count accented letters?","acceptedAnswer":{"@type":"Answer","text":"No. Only the basic A to Z letters are counted. Accented characters and letters from other alphabets are ignored, so the letter total may be lower than the raw character count."}},{"@type":"Question","name":"What is the vowel percentage for?","acceptedAnswer":{"@type":"Answer","text":"It is the share of letters that are vowels. It is handy for word games, readability experiments, and comparing how vowel-heavy different texts or languages are."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Vowel & Consonant Counter \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/vowel-consonant/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/vowel-consonant/vowel-consonant.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('vowel-consonant');</script>
+<div class="page">
+<h1>Vowel & Consonant Counter</h1>
+<p class="subtitle">Count the vowels and consonants in your text, plus the total letters and the vowel-to-letter ratio. Updates as you type.</p>
+<div class="field"><label for="in">Text</label><textarea id="in">The quick brown fox jumps over the lazy dog.</textarea></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Vowels</div><div class="value" id="v">0</div></div>
+<div class="result-card"><div class="label">Consonants</div><div class="value" id="c">0</div></div>
+<div class="result-card"><div class="label">Letters</div><div class="value" id="l">0</div></div>
+<div class="result-card"><div class="label">Vowel %</div><div class="value" id="p">0%</div></div></div>
+<p class="note">Counts A, E, I, O and U as vowels and the remaining A to Z letters as consonants. Y is counted as a consonant. Accented and non-Latin letters are not counted.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Is Y a vowel or a consonant here?</summary><p>This tool counts Y as a consonant. In English Y can act as either depending on the word, but counting it as a consonant is the simplest consistent rule for a counter.</p></details>
+<details><summary>Does it count accented letters?</summary><p>No. Only the basic A to Z letters are counted. Accented characters and letters from other alphabets are ignored, so the letter total may be lower than the raw character count.</p></details>
+<details><summary>What is the vowel percentage for?</summary><p>It is the share of letters that are vowels. It is handy for word games, readability experiments, and comparing how vowel-heavy different texts or languages are.</p></details>
+</section>
+<script src="/tools/vowel-consonant/vowel-consonant.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

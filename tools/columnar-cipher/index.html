@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Columnar Transposition Cipher (Encode &amp; Decode) | SharpDev.tools</title>
+<meta content="Free columnar transposition cipher encoder and decoder. Text is written in rows beneath a keyword, then the columns are read out in the alphabetical order of the keyword's letters. A classic transposition cipher. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/columnar-cipher/" rel="canonical"/>
+<meta content="Columnar Transposition Cipher (Encode &amp; Decode) | SharpDev.tools" property="og:title"/>
+<meta content="Free columnar transposition cipher encoder and decoder. Text is written in rows beneath a keyword, then the columns are read out in the alphabetical order of the keyword's letters. A classic transposition cipher. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/columnar-cipher/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Columnar Transposition Cipher (Encode &amp; Decode) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free columnar transposition cipher encoder and decoder. Text is written in rows beneath a keyword, then the columns are read out in the alphabetical order of the keyword's letters. A classic transposition cipher. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Columnar Transposition Cipher","item":"https://sharpdev.tools/tools/columnar-cipher/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the columnar transposition cipher work?","acceptedAnswer":{"@type":"Answer","text":"You write the plaintext in rows under the letters of a keyword, then read the message off one column at a time, taking the columns in the alphabetical order of the keyword's letters. The keyword is the key, and only the order of letters changes."}},{"@type":"Question","name":"Why are spaces removed?","acceptedAnswer":{"@type":"Answer","text":"Classic transposition works on a continuous block of letters, so spaces are stripped before encoding. This is normal for the cipher and keeps the grid regular. The decoded text comes back without the original spaces."}},{"@type":"Question","name":"Is it strong?","acceptedAnswer":{"@type":"Answer","text":"A single columnar transposition is weak on its own, but applying it twice (double transposition) was historically considered quite strong. Here it is mainly for puzzles, learning and CTF challenges."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Columnar Transposition Cipher \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/columnar-cipher/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/columnar-cipher/columnar-cipher.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('columnar-cipher');</script>
+<div class="page">
+<h1>Columnar Transposition Cipher</h1>
+<p class="subtitle">Encode and decode the columnar transposition cipher using a keyword. Text is written in rows under the keyword and read out by columns in alphabetical key order.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">WEAREDISCOVEREDFLEEATONCE</textarea></div>
+<div class="row"><div class="field"><label for="key">Keyword</label><input type="text" id="key" value="ZEBRAS"></div></div>
+<div class="actions"><button class="small-btn" id="enc">Encode</button><button class="small-btn" id="dec">Decode</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does the columnar transposition cipher work?</summary><p>You write the plaintext in rows under the letters of a keyword, then read the message off one column at a time, taking the columns in the alphabetical order of the keyword's letters. The keyword is the key, and only the order of letters changes.</p></details>
+<details><summary>Why are spaces removed?</summary><p>Classic transposition works on a continuous block of letters, so spaces are stripped before encoding. This is normal for the cipher and keeps the grid regular. The decoded text comes back without the original spaces.</p></details>
+<details><summary>Is it strong?</summary><p>A single columnar transposition is weak on its own, but applying it twice (double transposition) was historically considered quite strong. Here it is mainly for puzzles, learning and CTF challenges.</p></details>
+</section>
+<script src="/tools/columnar-cipher/columnar-cipher.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

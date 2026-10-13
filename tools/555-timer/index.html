@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>555 Timer Calculator (Astable &amp; Monostable) | SharpDev.tools</title>
+<meta content="Free 555 timer calculator. Compute frequency, period and duty cycle for a 555 in astable mode, or the output pulse width in monostable (one-shot) mode, from R1, R2 and C. The classic timer IC. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/555-timer/" rel="canonical"/>
+<meta content="555 Timer Calculator (Astable &amp; Monostable) | SharpDev.tools" property="og:title"/>
+<meta content="Free 555 timer calculator. Compute frequency, period and duty cycle for a 555 in astable mode, or the output pulse width in monostable (one-shot) mode, from R1, R2 and C. The classic timer IC. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/555-timer/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="555 Timer Calculator (Astable &amp; Monostable) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free 555 timer calculator. Compute frequency, period and duty cycle for a 555 in astable mode, or the output pulse width in monostable (one-shot) mode, from R1, R2 and C. The classic timer IC. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"555 Timer Calculator","item":"https://sharpdev.tools/tools/555-timer/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is astable vs monostable mode?","acceptedAnswer":{"@type":"Answer","text":"Astable makes the 555 oscillate continuously, producing a square wave (used for blinkers, tones and clocks). Monostable produces a single timed pulse when triggered (used for one-shot delays and debouncing)."}},{"@type":"Question","name":"Why can't a basic 555 astable hit 50% duty?","acceptedAnswer":{"@type":"Answer","text":"Because the timing capacitor charges through R1 and R2 in series but discharges through R2 alone, the high time is always longer than the low time, so the duty cycle is above 50%. A diode across R2 or a different topology is needed for 50% or below."}},{"@type":"Question","name":"What component values should I use?","acceptedAnswer":{"@type":"Answer","text":"Keep resistors between about 1k and 1M and the capacitor above roughly 1nF for stable operation. Very small or very large values make the timing sensitive to leakage and tolerance."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"555 Timer Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/555-timer/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/555-timer/555-timer.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('555-timer');</script>
+<div class="page">
+<h1>555 Timer Calculator</h1>
+<p class="subtitle">Calculate the frequency, period and duty cycle of a 555 timer in astable mode, or the pulse width in monostable mode, from the resistor and capacitor values.</p>
+<div class="row"><div class="field"><label for="mode">Mode</label><select id="mode"><option value="astable" selected>Astable (oscillator)</option><option value="mono">Monostable (one-shot)</option></select></div></div>
+<div class="row">
+<div class="field"><label for="r1">R1 (kΩ)</label><input type="number" id="r1" value="1" step="any"></div>
+<div class="field" id="r2wrap"><label for="r2">R2 (kΩ)</label><input type="number" id="r2" value="10" step="any"></div>
+<div class="field"><label for="c">C (µF)</label><input type="number" id="c" value="1" step="any"></div></div>
+<div class="result-cards" id="cards"></div>
+<p class="note">Astable: frequency = 1.44 / ((R1 + 2·R2)·C), and the duty cycle is always above 50% because the capacitor charges through R1+R2 but discharges through R2 only. Monostable: pulse width = 1.1·R1·C. Standard formulas for the classic 555 IC.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is astable vs monostable mode?</summary><p>Astable makes the 555 oscillate continuously, producing a square wave (used for blinkers, tones and clocks). Monostable produces a single timed pulse when triggered (used for one-shot delays and debouncing).</p></details>
+<details><summary>Why can't a basic 555 astable hit 50% duty?</summary><p>Because the timing capacitor charges through R1 and R2 in series but discharges through R2 alone, the high time is always longer than the low time, so the duty cycle is above 50%. A diode across R2 or a different topology is needed for 50% or below.</p></details>
+<details><summary>What component values should I use?</summary><p>Keep resistors between about 1k and 1M and the capacitor above roughly 1nF for stable operation. Very small or very large values make the timing sensitive to leakage and tolerance.</p></details>
+</section>
+<script src="/tools/555-timer/555-timer.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

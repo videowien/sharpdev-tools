@@ -1,0 +1,54 @@
+/* Pixelate — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+.editor-card { margin-top: 16px; }
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 12px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-value { font-size: 12px; color: #888; font-family: 'SF Mono', monospace; }
+.opt-group input[type=range] { width: 160px; accent-color: #ff4444; }
+.counts { color: #fff; font-family: 'SF Mono', monospace; font-size: 14px; padding: 2px 6px; }
+
+.seg { display: inline-flex; gap: 0; border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden; }
+.seg-btn { background: #0d0d0d; color: #888; border: none; padding: 7px 14px; cursor: pointer; font-size: 12px; }
+.seg-btn:hover { background: #1a1a1a; color: #ccc; }
+.seg-btn.active { background: #ff4444; color: #fff; }
+
+.link-btn { background: none; border: none; color: #ff4444; cursor: pointer; font-size: 12px; padding: 0 4px; }
+.link-btn:hover { text-decoration: underline; }
+
+.canvas-wrap {
+  position: relative; background: #0a0a0a; padding: 12px;
+  border: 1px solid #2a2a2a; border-radius: 8px;
+  display: flex; justify-content: center;
+  max-height: 540px; overflow: auto;
+  cursor: crosshair;
+}
+#display { display: block; max-width: 100%; max-height: 500px; }
+
+.hint { color: #666; font-size: 12px; margin-top: 8px; }
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

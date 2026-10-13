@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Modulo Calculator (Remainder and Quotient) | SharpDev.tools</title>
+<meta content="Free modulo calculator. Get the remainder and quotient of a division, with both the programming-style remainder (sign follows the dividend) and the always-positive Euclidean modulo. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/modulo/" rel="canonical"/>
+<meta content="Modulo Calculator (Remainder and Quotient) | SharpDev.tools" property="og:title"/>
+<meta content="Free modulo calculator. Get the remainder and quotient of a division, with both the programming-style remainder (sign follows the dividend) and the always-positive Euclidean modulo. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/modulo/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Modulo Calculator (Remainder and Quotient) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free modulo calculator. Get the remainder and quotient of a division, with both the programming-style remainder (sign follows the dividend) and the always-positive Euclidean modulo. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Modulo Calculator","item":"https://sharpdev.tools/tools/modulo/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the modulo operation?","acceptedAnswer":{"@type":"Answer","text":"Modulo gives the remainder after dividing one number by another. For example 17 mod 5 is 2, because 5 goes into 17 three times with 2 left over. It is widely used in programming for wrapping, cycles and hashing."}},{"@type":"Question","name":"Why are there two results for negative numbers?","acceptedAnswer":{"@type":"Answer","text":"Programming languages like JavaScript make the remainder take the sign of the dividend, so -17 mod 5 is -3. Mathematicians usually prefer a result that is always zero or positive, the Euclidean modulo, which would give 2. The tool shows both."}},{"@type":"Question","name":"What does the quotient show?","acceptedAnswer":{"@type":"Answer","text":"It is how many whole times the divisor goes into the dividend, rounded down. Together the quotient and remainder reconstruct the original number: quotient times divisor plus remainder."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Modulo Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/modulo/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/modulo/modulo.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('modulo');</script>
+<div class="page">
+<h1>Modulo Calculator</h1>
+<p class="subtitle">Divide one number by another to get the remainder and the quotient. Shows both the programming remainder and the always-positive Euclidean modulo.</p>
+<div class="row">
+<div class="field"><label for="a">Dividend (a)</label><input type="number" id="a" value="17" step="any"></div>
+<div class="field"><label for="b">Divisor (b)</label><input type="number" id="b" value="5" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Remainder (a mod b)</div><div class="value" id="rem">—</div></div>
+<div class="result-card"><div class="label">Quotient (floor a/b)</div><div class="value" id="quo">—</div></div>
+<div class="result-card"><div class="label">Euclidean mod (always &ge; 0)</div><div class="value" id="emod">—</div></div></div>
+<p class="note">The remainder uses the programming convention, where the sign follows the dividend (the same as the % operator in JavaScript, C and Java). The Euclidean modulo is always zero or positive, which is the usual mathematical definition.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the modulo operation?</summary><p>Modulo gives the remainder after dividing one number by another. For example 17 mod 5 is 2, because 5 goes into 17 three times with 2 left over. It is widely used in programming for wrapping, cycles and hashing.</p></details>
+<details><summary>Why are there two results for negative numbers?</summary><p>Programming languages like JavaScript make the remainder take the sign of the dividend, so -17 mod 5 is -3. Mathematicians usually prefer a result that is always zero or positive, the Euclidean modulo, which would give 2. The tool shows both.</p></details>
+<details><summary>What does the quotient show?</summary><p>It is how many whole times the divisor goes into the dividend, rounded down. Together the quotient and remainder reconstruct the original number: quotient times divisor plus remainder.</p></details>
+</section>
+<script src="/tools/modulo/modulo.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

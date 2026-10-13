@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Logarithm Calculator (Log Base 10, e, 2 or Any Base) | SharpDev.tools</title>
+<meta content="Free logarithm calculator. Compute the log of a number in any base, with one-click presets for base 10, base e (natural log) and base 2. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/logarithm/" rel="canonical"/>
+<meta content="Logarithm Calculator (Log Base 10, e, 2 or Any Base) | SharpDev.tools" property="og:title"/>
+<meta content="Free logarithm calculator. Compute the log of a number in any base, with one-click presets for base 10, base e (natural log) and base 2. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/logarithm/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Logarithm Calculator (Log Base 10, e, 2 or Any Base) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free logarithm calculator. Compute the log of a number in any base, with one-click presets for base 10, base e (natural log) and base 2. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Logarithm Calculator","item":"https://sharpdev.tools/tools/logarithm/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a logarithm?","acceptedAnswer":{"@type":"Answer","text":"A logarithm answers the question: to what power must the base be raised to get this number? For example log base 10 of 1000 is 3, because 10 to the power 3 is 1000."}},{"@type":"Question","name":"What are the common bases?","acceptedAnswer":{"@type":"Answer","text":"Base 10 is the common log, used in science and engineering. Base e (about 2.718) is the natural log, written ln, common in maths and growth problems. Base 2 is used in computing and information theory. The preset buttons switch between them."}},{"@type":"Question","name":"Why is the log of zero or a negative number undefined?","acceptedAnswer":{"@type":"Answer","text":"No power of a positive base ever produces zero or a negative number, so the logarithm of zero or a negative value does not exist in the real numbers."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Logarithm Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/logarithm/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/logarithm/logarithm.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('logarithm');</script>
+<div class="page">
+<h1>Logarithm Calculator</h1>
+<p class="subtitle">Calculate the logarithm of a number in any base. One click for the common bases 10, e (natural log) and 2.</p>
+<div class="row">
+<div class="field"><label for="num">Number (x)</label><input type="number" id="num" value="1000" step="any"></div>
+<div class="field"><label for="base">Base (b)</label><input type="number" id="base" value="10" step="any"></div></div>
+<div class="actions" id="presets"><button class="small-btn" data-b="10">base 10</button><button class="small-btn" data-b="2.718281828459045">base e</button><button class="small-btn" data-b="2">base 2</button></div>
+<div class="result-cards"><div class="result-card hl"><div class="label">log base b of x</div><div class="value" id="res" style="font-size:22px;">—</div></div></div>
+<p class="note" id="note"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a logarithm?</summary><p>A logarithm answers the question: to what power must the base be raised to get this number? For example log base 10 of 1000 is 3, because 10 to the power 3 is 1000.</p></details>
+<details><summary>What are the common bases?</summary><p>Base 10 is the common log, used in science and engineering. Base e (about 2.718) is the natural log, written ln, common in maths and growth problems. Base 2 is used in computing and information theory. The preset buttons switch between them.</p></details>
+<details><summary>Why is the log of zero or a negative number undefined?</summary><p>No power of a positive base ever produces zero or a negative number, so the logarithm of zero or a negative value does not exist in the real numbers.</p></details>
+</section>
+<script src="/tools/logarithm/logarithm.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

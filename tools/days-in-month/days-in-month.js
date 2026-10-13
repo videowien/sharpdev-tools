@@ -1,0 +1,6 @@
+const $=id=>document.getElementById(id);
+const M=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+(function(){const sel=$('month');M.forEach((m,i)=>{const o=document.createElement('option');o.value=i+1;o.textContent=m;sel.appendChild(o);});const now=new Date();sel.value=now.getMonth()+1;$('year').value=now.getFullYear();})();
+function go(){const m=+$('month').value,y=+$('year').value;if(!(y>0)){return;}const days=new Date(y,m,0).getDate();$('days').textContent=days;$('first').textContent=DOW[new Date(y,m-1,1).getDay()];$('last').textContent=DOW[new Date(y,m,0).getDay()];const note=$('note');if(m===2){const leap=days===29;note.textContent=leap?(y+' is a leap year, so February has 29 days.'):(y+' is not a leap year, so February has 28 days.');}else note.textContent='';}
+['month','year'].forEach(id=>{$(id).addEventListener('input',go);$(id).addEventListener('change',go);});go();

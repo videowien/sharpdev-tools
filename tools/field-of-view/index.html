@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Field of View Calculator (Angle of View) | SharpDev.tools</title>
+<meta content="Free field of view (angle of view) calculator. Enter focal length and sensor format to get the horizontal, vertical and diagonal angle of view, and the frame width at a chosen distance. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/field-of-view/" rel="canonical"/>
+<meta content="Field of View Calculator (Angle of View) | SharpDev.tools" property="og:title"/>
+<meta content="Free field of view (angle of view) calculator. Enter focal length and sensor format to get the horizontal, vertical and diagonal angle of view, and the frame width at a chosen distance. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/field-of-view/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Field of View Calculator (Angle of View) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free field of view (angle of view) calculator. Enter focal length and sensor format to get the horizontal, vertical and diagonal angle of view, and the frame width at a chosen distance. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Field of View Calculator","item":"https://sharpdev.tools/tools/field-of-view/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is angle of view calculated?","acceptedAnswer":{"@type":"Answer","text":"Angle of view = 2 times arctan(sensor dimension / (2 times focal length)). The horizontal, vertical and diagonal values use the sensor width, height and diagonal respectively, so a 50mm lens on full frame gives about 40 degrees horizontally and 47 degrees diagonally."}},{"@type":"Question","name":"Why does the sensor matter?","acceptedAnswer":{"@type":"Answer","text":"The same lens projects the same image, but a smaller sensor crops into it, so it sees a narrower angle of view. That is the crop factor effect: a 50mm lens on APS-C frames like a 75-80mm lens on full frame."}},{"@type":"Question","name":"What is the frame width for?","acceptedAnswer":{"@type":"Answer","text":"It tells you how wide a slice of the scene fits in the frame at a given distance, which is handy for group photos, real-estate and product shots where you need to know if the subject fits."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Field of View Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/field-of-view/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/field-of-view/field-of-view.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('field-of-view');</script>
+<div class="page">
+<h1>Field of View Calculator</h1>
+<p class="subtitle">Find the horizontal, vertical and diagonal angle of view from your focal length and sensor, plus how wide the frame is at a given subject distance.</p>
+<div class="row">
+<div class="field"><label for="sensor">Sensor / format</label><select id="sensor"><option value="ff" selected>Full frame (36x24)</option><option value="apsc">APS-C 1.5x (Nikon / Sony)</option><option value="canon">APS-C 1.6x (Canon)</option><option value="mft">Micro 4/3 (2.0x)</option><option value="one">1-inch (2.7x)</option></select></div>
+<div class="field"><label for="f">Focal length (mm)</label><input type="number" id="f" value="50" step="any"></div>
+<div class="field"><label for="d">Subject distance (m, optional)</label><input type="number" id="d" value="5" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Diagonal AoV</div><div class="value" id="dg">-</div></div>
+<div class="result-card"><div class="label">Horizontal</div><div class="value" id="h">-</div></div>
+<div class="result-card"><div class="label">Vertical</div><div class="value" id="v">-</div></div>
+<div class="result-card"><div class="label">Frame width</div><div class="value" id="fw" style="font-size:16px;">-</div></div></div>
+<p class="note">Angle of view is how much of the scene the lens takes in, set by the focal length and the sensor dimensions. A longer lens or a smaller sensor narrows it. The frame width is how wide the scene is at the chosen subject distance.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is angle of view calculated?</summary><p>Angle of view = 2 times arctan(sensor dimension / (2 times focal length)). The horizontal, vertical and diagonal values use the sensor width, height and diagonal respectively, so a 50mm lens on full frame gives about 40 degrees horizontally and 47 degrees diagonally.</p></details>
+<details><summary>Why does the sensor matter?</summary><p>The same lens projects the same image, but a smaller sensor crops into it, so it sees a narrower angle of view. That is the crop factor effect: a 50mm lens on APS-C frames like a 75-80mm lens on full frame.</p></details>
+<details><summary>What is the frame width for?</summary><p>It tells you how wide a slice of the scene fits in the frame at a given distance, which is handy for group photos, real-estate and product shots where you need to know if the subject fits.</p></details>
+</section>
+<script src="/tools/field-of-view/field-of-view.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Bionic Reading Converter (Bold Text for Faster Reading) | SharpDev.tools</title>
+<meta content="Free bionic reading converter. Bolds the first part of each word to add fixation points that guide your eyes and can speed up reading. Adjustable strength, live preview, copyable HTML. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/bionic-reading/" rel="canonical"/>
+<meta content="Bionic Reading Converter (Bold Text for Faster Reading) | SharpDev.tools" property="og:title"/>
+<meta content="Free bionic reading converter. Bolds the first part of each word to add fixation points that guide your eyes and can speed up reading. Adjustable strength, live preview, copyable HTML. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/bionic-reading/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bionic Reading Converter (Bold Text for Faster Reading) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free bionic reading converter. Bolds the first part of each word to add fixation points that guide your eyes and can speed up reading. Adjustable strength, live preview, copyable HTML. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Bionic Reading Converter","item":"https://sharpdev.tools/tools/bionic-reading/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is bionic reading?","acceptedAnswer":{"@type":"Answer","text":"Bionic reading is a formatting style that makes the first few letters of each word bold. The bold parts act as fixation points, so your eyes jump word to word more efficiently and your brain fills in the rest. Some readers find it speeds them up."}},{"@type":"Question","name":"Does bionic reading actually make you read faster?","acceptedAnswer":{"@type":"Answer","text":"It helps some people and not others, and formal evidence is mixed. The best way to know is to try it on the live preview here and see whether it feels faster and more comfortable for you."}},{"@type":"Question","name":"How do I keep the bold formatting when I copy it?","acceptedAnswer":{"@type":"Answer","text":"Select the preview text with your mouse and copy it, then paste into a rich editor like Word or Google Docs, which keeps the bold. The Copy HTML button instead copies the underlying HTML markup for use on a web page."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Bionic Reading Converter \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/bionic-reading/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/bionic-reading/bionic-reading.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('bionic-reading');</script>
+<div class="page">
+<h1>Bionic Reading Converter</h1>
+<p class="subtitle">Bold the first part of every word to create fixation points that guide your eyes and can help you read faster. Paste text and read the preview.</p>
+<div class="field"><label for="in">Your text</label><textarea id="in" placeholder="Paste text to convert...">Bionic reading bolds the first part of each word to guide your eyes and help you read faster.</textarea></div>
+<div class="row">
+<div class="field"><label for="strength">Fixation strength</label><select id="strength"><option value="0.3">Light</option><option value="0.4" selected>Medium</option><option value="0.5">Strong</option></select></div>
+<div class="field" style="display:flex;align-items:flex-end;"><button class="copy-btn" id="copy" style="width:100%;">Copy HTML</button></div></div>
+<div class="out-head"><label>Preview</label></div>
+<div class="output" id="prev" style="min-height:120px;line-height:1.7;"></div>
+<p class="note">Bionic reading adds artificial fixation points by bolding the start of each word. Read the preview directly, or copy the HTML to embed it. To keep the bold when pasting into Word or Google Docs, select the preview text and copy it normally.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is bionic reading?</summary><p>Bionic reading is a formatting style that makes the first few letters of each word bold. The bold parts act as fixation points, so your eyes jump word to word more efficiently and your brain fills in the rest. Some readers find it speeds them up.</p></details>
+<details><summary>Does bionic reading actually make you read faster?</summary><p>It helps some people and not others, and formal evidence is mixed. The best way to know is to try it on the live preview here and see whether it feels faster and more comfortable for you.</p></details>
+<details><summary>How do I keep the bold formatting when I copy it?</summary><p>Select the preview text with your mouse and copy it, then paste into a rich editor like Word or Google Docs, which keeps the bold. The Copy HTML button instead copies the underlying HTML markup for use on a web page.</p></details>
+</section>
+<script src="/tools/bionic-reading/bionic-reading.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

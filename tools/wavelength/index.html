@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Wavelength Calculator (Frequency to Wavelength) | SharpDev.tools</title>
+<meta content="Free wavelength calculator. Convert any frequency to its wavelength in metres, feet and inches, plus the half and quarter wavelengths and the matching ham band. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/wavelength/" rel="canonical"/>
+<meta content="Wavelength Calculator (Frequency to Wavelength) | SharpDev.tools" property="og:title"/>
+<meta content="Free wavelength calculator. Convert any frequency to its wavelength in metres, feet and inches, plus the half and quarter wavelengths and the matching ham band. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/wavelength/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Wavelength Calculator (Frequency to Wavelength) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free wavelength calculator. Convert any frequency to its wavelength in metres, feet and inches, plus the half and quarter wavelengths and the matching ham band. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Wavelength Calculator","item":"https://sharpdev.tools/tools/wavelength/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert frequency to wavelength?","acceptedAnswer":{"@type":"Answer","text":"Wavelength in metres equals the speed of light (299.792458 million metres per second) divided by the frequency in hertz, which simplifies to 299.792458 divided by the frequency in MHz. So 14.2 MHz is about 21.1 metres, the 20m band."}},{"@type":"Question","name":"Why are antennas cut shorter than the wavelength?","acceptedAnswer":{"@type":"Answer","text":"Antenna elements have an end effect and travel slightly slower than free space, so a half-wave dipole is about 95 percent of a free-space half wavelength. That is why the dipole formula uses 468 rather than the free-space 492."}},{"@type":"Question","name":"What is the band name for?","acceptedAnswer":{"@type":"Answer","text":"Ham bands are traditionally named by their approximate wavelength, such as 20m for around 14 MHz or 2m for around 146 MHz. The tool shows which named band a frequency falls in."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Wavelength Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/wavelength/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/wavelength/wavelength.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('wavelength');</script>
+<div class="page">
+<h1>Wavelength Calculator</h1>
+<p class="subtitle">Convert a frequency to its wavelength in metres, feet and inches, with the half and quarter wavelengths and the ham band.</p>
+<div class="row"><div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="14.2" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Wavelength</div><div class="value" id="wl" style="font-size:16px;">-</div></div>
+<div class="result-card"><div class="label">Half wave</div><div class="value" id="hw" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Quarter wave</div><div class="value" id="qw" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Ham band</div><div class="value" id="bd">-</div></div></div>
+<p class="note">Wavelength in metres = 299.792458 / frequency in MHz (the speed of light divided by frequency). This is the free-space figure; real antenna elements are a few percent shorter. The half and quarter wavelengths are the basis of dipole and vertical antenna lengths.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I convert frequency to wavelength?</summary><p>Wavelength in metres equals the speed of light (299.792458 million metres per second) divided by the frequency in hertz, which simplifies to 299.792458 divided by the frequency in MHz. So 14.2 MHz is about 21.1 metres, the 20m band.</p></details>
+<details><summary>Why are antennas cut shorter than the wavelength?</summary><p>Antenna elements have an end effect and travel slightly slower than free space, so a half-wave dipole is about 95 percent of a free-space half wavelength. That is why the dipole formula uses 468 rather than the free-space 492.</p></details>
+<details><summary>What is the band name for?</summary><p>Ham bands are traditionally named by their approximate wavelength, such as 20m for around 14 MHz or 2m for around 146 MHz. The tool shows which named band a frequency falls in.</p></details>
+</section>
+<script src="/tools/wavelength/wavelength.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

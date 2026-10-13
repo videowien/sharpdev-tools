@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Text Censor (Mask Words with Asterisks) | SharpDev.tools</title>
+<meta content="Free text censor tool. Replace a list of words in your text with asterisks or any mask character, optionally keeping the first letter. Useful for redacting names, profanity or sensitive terms. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/text-censor/" rel="canonical"/>
+<meta content="Text Censor (Mask Words with Asterisks) | SharpDev.tools" property="og:title"/>
+<meta content="Free text censor tool. Replace a list of words in your text with asterisks or any mask character, optionally keeping the first letter. Useful for redacting names, profanity or sensitive terms. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/text-censor/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Text Censor (Mask Words with Asterisks) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free text censor tool. Replace a list of words in your text with asterisks or any mask character, optionally keeping the first letter. Useful for redacting names, profanity or sensitive terms. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Text Censor","item":"https://sharpdev.tools/tools/text-censor/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the censor choose what to hide?","acceptedAnswer":{"@type":"Answer","text":"It replaces whole-word matches of the terms you list, ignoring case. Word boundaries mean 'cat' will not match inside 'category', so only the words you intend are masked."}},{"@type":"Question","name":"Can I keep the first letter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tick 'Keep first letter' to turn 'secret' into 's*****' instead of '******', a common style for partially redacting names while keeping them recognisable."}},{"@type":"Question","name":"Is my text uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The censoring runs entirely in your browser, so sensitive text never leaves your device."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Text Censor \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/text-censor/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/text-censor/text-censor.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('text-censor');</script>
+<div class="page">
+<h1>Text Censor</h1>
+<p class="subtitle">Replace chosen words in your text with asterisks or any character. Useful for redacting names, profanity or sensitive terms.</p>
+<div class="field"><label for="in">Text</label><textarea id="in">This is a secret message from Alice to Bob.</textarea></div>
+<div class="field"><label for="words">Words to censor (comma or new-line separated)</label><input type="text" id="words" value="secret, Alice, Bob"></div>
+<div class="row">
+<div class="field"><label for="mask">Mask character</label><input type="text" id="mask" value="*" maxlength="1"></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="keep" style="width:auto;"> Keep first letter</label></div></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Censored text</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does the censor choose what to hide?</summary><p>It replaces whole-word matches of the terms you list, ignoring case. Word boundaries mean 'cat' will not match inside 'category', so only the words you intend are masked.</p></details>
+<details><summary>Can I keep the first letter?</summary><p>Yes. Tick 'Keep first letter' to turn 'secret' into 's*****' instead of '******', a common style for partially redacting names while keeping them recognisable.</p></details>
+<details><summary>Is my text uploaded?</summary><p>No. The censoring runs entirely in your browser, so sensitive text never leaves your device.</p></details>
+</section>
+<script src="/tools/text-censor/text-censor.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

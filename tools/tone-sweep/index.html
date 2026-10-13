@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Tone &amp; Frequency Sweep Generator | SharpDev.tools</title>
+<meta content="Free frequency sweep generator. Play a tone that sweeps from a start frequency to an end frequency over a chosen duration, with selectable waveform and linear or logarithmic sweep. Useful for audio tests, ear training and effects. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/tone-sweep/" rel="canonical"/>
+<meta content="Tone &amp; Frequency Sweep Generator | SharpDev.tools" property="og:title"/>
+<meta content="Free frequency sweep generator. Play a tone that sweeps from a start frequency to an end frequency over a chosen duration, with selectable waveform and linear or logarithmic sweep. Useful for audio tests, ear training and effects. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/tone-sweep/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Tone &amp; Frequency Sweep Generator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free frequency sweep generator. Play a tone that sweeps from a start frequency to an end frequency over a chosen duration, with selectable waveform and linear or logarithmic sweep. Useful for audio tests, ear training and effects. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"Frequency Sweep Generator","item":"https://sharpdev.tools/tools/tone-sweep/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a frequency sweep used for?","acceptedAnswer":{"@type":"Answer","text":"Sweeps (also called chirps or glides) are used to test speakers and headphones for buzzes or dead spots, to train your ear to recognise pitches, to find room resonances, and as a sound-design effect."}},{"@type":"Question","name":"What is the difference between linear and logarithmic?","acceptedAnswer":{"@type":"Answer","text":"A linear sweep changes by equal frequency steps, so it races through the high end quickly. A logarithmic sweep changes by equal musical intervals, matching human hearing, so it sounds smooth and even across the whole range."}},{"@type":"Question","name":"Why keep the volume down?","acceptedAnswer":{"@type":"Answer","text":"High frequencies and square or sawtooth waves can be harsh and surprisingly loud. Start quiet, especially with headphones, and raise it carefully."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Frequency Sweep Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/tone-sweep/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/tone-sweep/tone-sweep.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('tone-sweep');</script>
+<div class="page">
+<h1>Frequency Sweep Generator</h1>
+<p class="subtitle">Play a tone that glides from one frequency to another over a set time. Choose the waveform and a linear or logarithmic sweep. Useful for tests and effects.</p>
+<div class="row">
+<div class="field"><label for="f1">Start (Hz)</label><input type="number" id="f1" value="200" min="20" max="20000"></div>
+<div class="field"><label for="f2">End (Hz)</label><input type="number" id="f2" value="2000" min="20" max="20000"></div>
+<div class="field"><label for="dur">Duration (s)</label><input type="number" id="dur" value="5" min="0.5" max="60" step="0.5"></div></div>
+<div class="row">
+<div class="field"><label for="wave">Waveform</label><select id="wave"><option>sine</option><option>square</option><option>sawtooth</option><option>triangle</option></select></div>
+<div class="field"><label for="mode">Sweep</label><select id="mode"><option value="lin">Linear</option><option value="log" selected>Logarithmic</option></select></div>
+<div class="field" style="display:flex;align-items:flex-end;"><button class="small-btn" id="play" style="width:100%;">Play sweep</button></div></div>
+<p class="note">A logarithmic sweep matches how we perceive pitch, so it sounds more even across the range; a linear sweep moves faster through the highs. Generated live with the Web Audio API. Keep the volume moderate, especially for high frequencies.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a frequency sweep used for?</summary><p>Sweeps (also called chirps or glides) are used to test speakers and headphones for buzzes or dead spots, to train your ear to recognise pitches, to find room resonances, and as a sound-design effect.</p></details>
+<details><summary>What is the difference between linear and logarithmic?</summary><p>A linear sweep changes by equal frequency steps, so it races through the high end quickly. A logarithmic sweep changes by equal musical intervals, matching human hearing, so it sounds smooth and even across the whole range.</p></details>
+<details><summary>Why keep the volume down?</summary><p>High frequencies and square or sawtooth waves can be harsh and surprisingly loud. Start quiet, especially with headphones, and raise it carefully.</p></details>
+</section>
+<script src="/tools/tone-sweep/tone-sweep.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

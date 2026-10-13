@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Parallel &amp; Series Resistor Calculator | SharpDev.tools</title>
+<meta content="Free parallel and series resistor calculator. Enter any number of resistor values to get the total resistance in series (sum) and in parallel (reciprocal formula) at once. Works for any count of resistors. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/resistor-parallel/" rel="canonical"/>
+<meta content="Parallel &amp; Series Resistor Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free parallel and series resistor calculator. Enter any number of resistor values to get the total resistance in series (sum) and in parallel (reciprocal formula) at once. Works for any count of resistors. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/resistor-parallel/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Parallel &amp; Series Resistor Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free parallel and series resistor calculator. Enter any number of resistor values to get the total resistance in series (sum) and in parallel (reciprocal formula) at once. Works for any count of resistors. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"Parallel & Series Resistor Calculator","item":"https://sharpdev.tools/tools/resistor-parallel/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add resistors in series and parallel?","acceptedAnswer":{"@type":"Answer","text":"In series, total resistance is just the sum of all values. In parallel, you add the reciprocals and invert: 1/Rtotal = 1/R1 + 1/R2 + \u2026 This tool computes both from your list at once."}},{"@type":"Question","name":"Why is the parallel total smaller than any single resistor?","acceptedAnswer":{"@type":"Answer","text":"Adding a parallel path gives the current another route, which lowers overall resistance. The result is always less than the smallest resistor in the group; two equal resistors in parallel give exactly half."}},{"@type":"Question","name":"Can I mix series and parallel?","acceptedAnswer":{"@type":"Answer","text":"This tool handles a single group at a time. For a mixed network, reduce it step by step: combine each parallel cluster into one value, then add the series sections."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Parallel & Series Resistor Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/resistor-parallel/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/resistor-parallel/resistor-parallel.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('resistor-parallel');</script>
+<div class="page">
+<h1>Parallel & Series Resistor Calculator</h1>
+<p class="subtitle">Add up resistors in series, or combine them in parallel. Enter any number of values and get both totals at once.</p>
+<div class="field"><label for="in">Resistor values in Ω (separated by spaces, commas or new lines)</label><textarea id="in">1000, 1000, 2200</textarea></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Parallel total</div><div class="value" id="par">—</div></div>
+<div class="result-card"><div class="label">Series total</div><div class="value" id="ser">—</div></div>
+<div class="result-card"><div class="label">Count</div><div class="value" id="cnt">—</div></div></div>
+<p class="note">Series resistance is simply the sum. Parallel resistance uses 1/Rtotal = 1/R1 + 1/R2 + … and is always smaller than the smallest resistor. Two equal resistors in parallel give half their value.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I add resistors in series and parallel?</summary><p>In series, total resistance is just the sum of all values. In parallel, you add the reciprocals and invert: 1/Rtotal = 1/R1 + 1/R2 + … This tool computes both from your list at once.</p></details>
+<details><summary>Why is the parallel total smaller than any single resistor?</summary><p>Adding a parallel path gives the current another route, which lowers overall resistance. The result is always less than the smallest resistor in the group; two equal resistors in parallel give exactly half.</p></details>
+<details><summary>Can I mix series and parallel?</summary><p>This tool handles a single group at a time. For a mixed network, reduce it step by step: combine each parallel cluster into one value, then add the series sections.</p></details>
+</section>
+<script src="/tools/resistor-parallel/resistor-parallel.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

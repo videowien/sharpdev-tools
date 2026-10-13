@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Coax Stub &amp; Velocity Factor Calculator | SharpDev.tools</title>
+<meta content="Free coax stub calculator. Find the physical length of a quarter-wave or half-wave coax section for a frequency and cable velocity factor, in feet and metres. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/coax-stub/" rel="canonical"/>
+<meta content="Coax Stub &amp; Velocity Factor Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free coax stub calculator. Find the physical length of a quarter-wave or half-wave coax section for a frequency and cable velocity factor, in feet and metres. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/coax-stub/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Coax Stub &amp; Velocity Factor Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free coax stub calculator. Find the physical length of a quarter-wave or half-wave coax section for a frequency and cable velocity factor, in feet and metres. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Coax Stub Length Calculator","item":"https://sharpdev.tools/tools/coax-stub/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is a quarter-wave coax stub?","acceptedAnswer":{"@type":"Answer","text":"Physical length in feet is 246 times the cable velocity factor, divided by the frequency in MHz. For RG-213 (velocity factor 0.66) at 7.15 MHz that is about 22.7 feet. A half-wave section uses 492 instead of 246."}},{"@type":"Question","name":"What is velocity factor?","acceptedAnswer":{"@type":"Answer","text":"It is how fast a signal travels in the cable compared to free space, typically 0.66 for solid-dielectric coax and 0.80 to 0.85 for foam types. The dielectric slows the wave, so the physical cable is that fraction shorter than a free-space length."}},{"@type":"Question","name":"What are coax stubs used for?","acceptedAnswer":{"@type":"Answer","text":"Quarter-wave sections transform impedances (for example 75-ohm cable to match a loop or a vertical), half-wave sections repeat an impedance, and shorted or open stubs make traps and filters. The physical length must use the cable velocity factor."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Coax Stub Length Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/coax-stub/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/coax-stub/coax-stub.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('coax-stub');</script>
+<div class="page">
+<h1>Coax Stub Length Calculator</h1>
+<p class="subtitle">Find the physical length of a quarter-wave or half-wave coax stub or matching section, accounting for the cable velocity factor.</p>
+<div class="row">
+<div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="7.15" step="any"></div>
+<div class="field"><label for="type">Section</label><select id="type"><option value="246">Quarter wave</option><option value="492">Half wave</option></select></div></div>
+<div class="row">
+<div class="field"><label for="vfsel">Cable velocity factor</label><select id="vfsel"><option value="0.66" selected>Solid PE (RG-58/8/213) 0.66</option><option value="0.85">Foam PE (RG-8X/LMR) 0.85</option><option value="0.70">PTFE (RG-142/400) 0.70</option><option value="0.91">Ladder line 0.91</option><option value="custom">Custom...</option></select></div>
+<div class="field" id="vfwrap" style="display:none;"><label for="vf">Velocity factor</label><input type="number" id="vf" value="0.66" step="any" min="0.1" max="1"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">Physical length</div><div class="value" id="out" style="font-size:20px;">-</div></div></div>
+<p class="note">A coax stub or matching section is shorter than free space because the signal travels slower in the cable. Physical length in feet = (246 for a quarter wave, 492 for a half wave) times the velocity factor, divided by the frequency in MHz. Always confirm the velocity factor of your exact cable.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long is a quarter-wave coax stub?</summary><p>Physical length in feet is 246 times the cable velocity factor, divided by the frequency in MHz. For RG-213 (velocity factor 0.66) at 7.15 MHz that is about 22.7 feet. A half-wave section uses 492 instead of 246.</p></details>
+<details><summary>What is velocity factor?</summary><p>It is how fast a signal travels in the cable compared to free space, typically 0.66 for solid-dielectric coax and 0.80 to 0.85 for foam types. The dielectric slows the wave, so the physical cable is that fraction shorter than a free-space length.</p></details>
+<details><summary>What are coax stubs used for?</summary><p>Quarter-wave sections transform impedances (for example 75-ohm cable to match a loop or a vertical), half-wave sections repeat an impedance, and shorted or open stubs make traps and filters. The physical length must use the cable velocity factor.</p></details>
+</section>
+<script src="/tools/coax-stub/coax-stub.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

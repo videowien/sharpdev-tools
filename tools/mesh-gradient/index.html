@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Mesh Gradient Generator (CSS Multi-Color Gradients) | SharpDev.tools</title>
+<meta content="Free mesh gradient generator. Create trendy soft multi-colour backgrounds from layered CSS radial gradients, no images needed. Randomise and copy the pure-CSS result. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/mesh-gradient/" rel="canonical"/>
+<meta content="Mesh Gradient Generator (CSS Multi-Color Gradients) | SharpDev.tools" property="og:title"/>
+<meta content="Free mesh gradient generator. Create trendy soft multi-colour backgrounds from layered CSS radial gradients, no images needed. Randomise and copy the pure-CSS result. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mesh-gradient/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mesh Gradient Generator (CSS Multi-Color Gradients) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free mesh gradient generator. Create trendy soft multi-colour backgrounds from layered CSS radial gradients, no images needed. Randomise and copy the pure-CSS result. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"Mesh Gradient Generator","item":"https://sharpdev.tools/tools/mesh-gradient/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a mesh gradient?","acceptedAnswer":{"@type":"Answer","text":"A mesh gradient blends several colours from different points so they fade into one another, giving a soft, modern, almost painterly background. This tool fakes the effect with layered CSS radial gradients, so no image is needed."}},{"@type":"Question","name":"Is the output really just CSS?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is a base background-color plus a stack of radial-gradient layers in background-image. Paste it onto any element. Because it is CSS, it is resolution-independent and adds almost nothing to your page weight."}},{"@type":"Question","name":"How do I get a colour scheme I like?","acceptedAnswer":{"@type":"Answer","text":"Click Randomise for a fresh palette and layout, and change the number of colour points for more or less complexity. When you find one you like, copy the CSS."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Mesh Gradient Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/mesh-gradient/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mesh-gradient/mesh-gradient.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mesh-gradient');</script>
+<div class="page">
+<h1>Mesh Gradient Generator</h1>
+<p class="subtitle">Generate soft, multi-colour mesh gradients using layered CSS radial gradients. Randomise until you like it, then copy the CSS.</p>
+<div class="row">
+<div class="field"><label for="pts">Colour points</label><input type="range" id="pts" min="3" max="7" value="5"></div>
+<div class="field" style="display:flex;align-items:flex-end;"><button class="small-btn" id="regen" style="width:100%;">Randomise</button></div></div>
+<div class="mesh-prev" id="prev"></div>
+<div class="out-head"><label>CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="code" readonly style="min-height:90px;"></textarea>
+<p class="note">Mesh gradients are built from several radial gradients layered over a base colour. The result is pure CSS, so it scales to any size, needs no image, and stays crisp on every screen.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a mesh gradient?</summary><p>A mesh gradient blends several colours from different points so they fade into one another, giving a soft, modern, almost painterly background. This tool fakes the effect with layered CSS radial gradients, so no image is needed.</p></details>
+<details><summary>Is the output really just CSS?</summary><p>Yes. It is a base background-color plus a stack of radial-gradient layers in background-image. Paste it onto any element. Because it is CSS, it is resolution-independent and adds almost nothing to your page weight.</p></details>
+<details><summary>How do I get a colour scheme I like?</summary><p>Click Randomise for a fresh palette and layout, and change the number of colour points for more or less complexity. When you find one you like, copy the CSS.</p></details>
+</section>
+<script src="/tools/mesh-gradient/mesh-gradient.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

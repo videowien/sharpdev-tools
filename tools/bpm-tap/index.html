@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>BPM Tapper (Tap Tempo Counter) | SharpDev.tools</title>
+<meta content="Free BPM tapper (tap tempo tool). Tap along to any song to measure its tempo in beats per minute, averaged over your recent taps for a stable reading. No audio needed, runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/bpm-tap/" rel="canonical"/>
+<meta content="BPM Tapper (Tap Tempo Counter) | SharpDev.tools" property="og:title"/>
+<meta content="Free BPM tapper (tap tempo tool). Tap along to any song to measure its tempo in beats per minute, averaged over your recent taps for a stable reading. No audio needed, runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/bpm-tap/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="BPM Tapper (Tap Tempo Counter) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free BPM tapper (tap tempo tool). Tap along to any song to measure its tempo in beats per minute, averaged over your recent taps for a stable reading. No audio needed, runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"BPM Tapper (Tap Tempo)","item":"https://sharpdev.tools/tools/bpm-tap/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find a song's BPM?","acceptedAnswer":{"@type":"Answer","text":"Play the song and tap the button (or any key) in time with the beat. After a few taps the tool shows the tempo in beats per minute, both precise and rounded to the nearest whole number."}},{"@type":"Question","name":"Why does the reading change as I tap?","acceptedAnswer":{"@type":"Answer","text":"It averages the time between your recent taps, so each tap refines the estimate. Keep a steady rhythm for four or five taps and it settles. Uneven tapping makes it wobble."}},{"@type":"Question","name":"What counts as a typical tempo?","acceptedAnswer":{"@type":"Answer","text":"Most pop and rock sits around 100 to 130 BPM, ballads slower, dance and techno often 120 to 140. Tapping on the half or double beat will read half or twice the real tempo, so tap the main pulse."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"BPM Tapper (Tap Tempo) \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/bpm-tap/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/bpm-tap/bpm-tap.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('bpm-tap');</script>
+<div class="page">
+<h1>BPM Tapper (Tap Tempo)</h1>
+<p class="subtitle">Find the tempo of any song by tapping along. Tap the button or press a key to the beat and read the BPM, averaged over your last taps.</p>
+<div class="tap-zone" id="tap">Tap here (or press any key)</div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">BPM</div><div class="value" id="bpm">—</div></div>
+<div class="result-card"><div class="label">Taps</div><div class="value" id="taps">0</div></div>
+<div class="result-card"><div class="label">Rounded</div><div class="value" id="round">—</div></div></div>
+<div class="actions"><button class="small-btn" id="reset">Reset</button></div>
+<p class="note">Tap steadily along with the beat. The BPM is averaged over your recent taps, so it settles after four or five taps. Pause for two seconds and it resets automatically for a fresh count.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I find a song's BPM?</summary><p>Play the song and tap the button (or any key) in time with the beat. After a few taps the tool shows the tempo in beats per minute, both precise and rounded to the nearest whole number.</p></details>
+<details><summary>Why does the reading change as I tap?</summary><p>It averages the time between your recent taps, so each tap refines the estimate. Keep a steady rhythm for four or five taps and it settles. Uneven tapping makes it wobble.</p></details>
+<details><summary>What counts as a typical tempo?</summary><p>Most pop and rock sits around 100 to 130 BPM, ballads slower, dance and techno often 120 to 140. Tapping on the half or double beat will read half or twice the real tempo, so tap the main pulse.</p></details>
+</section>
+<script src="/tools/bpm-tap/bpm-tap.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

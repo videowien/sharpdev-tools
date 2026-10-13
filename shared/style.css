@@ -1,0 +1,697 @@
+/* SharpDev — Shared Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0a0a0a;
+  color: #e1e1e1;
+  min-height: 100vh;
+}
+
+a { color: #66aaff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- Shared Nav ---- */
+.sd-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  background: #111; border-bottom: 1px solid #222;
+  position: relative;
+}
+.sd-nav-brand {
+  font-size: 26px; font-weight: 800; color: #fff;
+  text-decoration: none; display: inline-flex;
+  align-items: center; gap: 8px;
+  letter-spacing: -0.5px;
+}
+.sd-nav-brand:hover { text-decoration: none; color: #fff; }
+.sd-nav-brand .accent { color: #ff4444; }
+.sd-nav-logo {
+  width: 30px; height: 30px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+.sd-nav-brand:hover .sd-nav-logo { transform: scale(1.08); }
+
+.sd-nav-toggle {
+  display: none;
+  background: transparent; border: 1px solid #2a2a2a; color: #ccc;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer;
+}
+.sd-nav-toggle:hover { border-color: #ff4444; color: #fff; }
+
+.sd-nav-links {
+  display: flex; align-items: center; gap: 6px;
+}
+.sd-nav-link {
+  color: #aaa; font-size: 14px; font-weight: 500; text-decoration: none;
+  padding: 8px 12px; border-radius: 6px; transition: all 0.15s;
+}
+.sd-nav-link:hover { color: #fff; background: #1a1a1a; text-decoration: none; }
+.sd-nav-link.active { color: #ff4444; }
+
+/* Dropdown */
+.sd-dropdown { position: relative; }
+.sd-dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: transparent; border: none;
+  color: #aaa; font-size: 14px; font-weight: 500;
+  padding: 8px 12px; border-radius: 6px; cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.sd-dropdown-toggle:hover { color: #fff; background: #1a1a1a; }
+.sd-dropdown-toggle svg { opacity: 0.7; transition: transform 0.15s; }
+.sd-dropdown.active .sd-dropdown-toggle { color: #ff4444; }
+
+.sd-dropdown-menu {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 220px; max-height: 76vh; overflow-y: auto;
+  background: #161616; border: 1px solid #2a2a2a; border-radius: 10px;
+  padding: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity 0.15s, transform 0.15s, visibility 0s linear 0.15s;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+/* Dropdown's parent needs its own stacking context so the menu's
+   z-index actually beats the absolutely-positioned action bar (tip-jar
+   + request pills) which has z-index 5 with its own stacking context. */
+.sd-dropdown { z-index: 50; }
+.sd-dropdown:hover, .sd-dropdown.open { z-index: 1001; }
+.sd-dropdown-menu a {
+  display: block; padding: 8px 12px; border-radius: 6px;
+  color: #bbb; font-size: 13px; text-decoration: none; transition: all 0.12s;
+}
+.sd-dropdown-menu a:hover {
+  background: #1f1f1f; color: #fff; text-decoration: none;
+}
+.sd-dropdown-menu a.active { color: #ff4444; background: #1a1a1a; }
+
+/* Desktop: hover */
+@media (min-width: 901px) {
+  .sd-dropdown:hover .sd-dropdown-menu,
+  .sd-dropdown:focus-within .sd-dropdown-menu {
+    opacity: 1; visibility: visible; transform: translateY(0);
+    transition-delay: 0s;
+  }
+  .sd-dropdown:hover .sd-dropdown-toggle svg { transform: rotate(180deg); }
+}
+
+/* Mobile: click-toggle via .open */
+.sd-dropdown.open .sd-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+  transition-delay: 0s;
+}
+.sd-dropdown.open .sd-dropdown-toggle svg { transform: rotate(180deg); }
+
+/* ---- In-Nav Action Bar (Tip jar + Request) ----
+   With 11 categories on the menu, an absolutely-centered action bar
+   collides with the dropdown labels. Action bar now always sits on its
+   own row below the main nav row (the nav itself uses flex-wrap so the
+   action bar wraps naturally to the next line). */
+.sd-nav { flex-wrap: wrap; }
+.sd-nav-actions {
+  order: 99;            /* always last → wraps to its own row */
+  flex-basis: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #1f1f1f;
+  z-index: 5;
+}
+.sd-nav-actions .coffee-btn,
+.sd-nav-actions .request-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: 999px;
+  background: #141414; border: 1px solid #262626;
+  color: #aaa; font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: all 0.15s;
+  white-space: nowrap;
+}
+.sd-nav-actions .coffee-btn:hover {
+  border-color: #ffce3a; color: #fff; background: #1a1a1a;
+  text-decoration: none;
+}
+.sd-nav-actions .coffee-btn .coffee-icon { color: #ffce3a; }
+.sd-nav-actions .request-btn:hover {
+  border-color: #ff4444; color: #fff; background: #1a1a1a;
+  text-decoration: none;
+}
+.sd-nav-actions .request-btn .arrow { color: #ff4444; }
+.sd-nav-actions .sd-request-details {
+  position: static;
+}
+.sd-nav-actions .sd-request-details summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: 999px;
+  background: #141414; border: 1px solid #262626;
+  color: #aaa; font-size: 13px; font-weight: 500;
+  transition: all 0.15s; white-space: nowrap;
+}
+.sd-nav-actions .sd-request-details summary::-webkit-details-marker { display: none; }
+.sd-nav-actions .sd-request-details summary:hover {
+  border-color: #ff4444; color: #fff; background: #1a1a1a;
+}
+.sd-nav-actions .sd-request-details summary .arrow {
+  color: #ff4444; transition: transform 0.2s;
+}
+.sd-nav-actions .sd-request-details[open] summary .arrow { transform: rotate(90deg); }
+/* Short text hidden by default (desktop shows the long friendly version) */
+.sd-req-short { display: none; }
+.sd-nav-actions .sd-request-details[open] summary {
+  border-color: #ff4444; color: #fff;
+  border-radius: 999px;
+}
+.sd-nav-actions .sd-request-card {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  max-width: calc(100vw - 40px);
+  background: #141414; border: 1px solid #ff4444; border-radius: 12px;
+  padding: 22px;
+  margin-top: 0;
+  z-index: 100;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+}
+
+/* At narrower widths, also swap the long "Missing a tool? Request one"
+   label for the short "Request a tool" so both pills stay one row. */
+@media (max-width: 1100px) {
+  .sd-nav-actions .sd-req-long { display: none; }
+  .sd-nav-actions .sd-req-short { display: inline; }
+  .sd-nav-actions .sd-request-card {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* ---- Shared Action Bar (Tip jar + Request a tool) ---- */
+.sd-action-bar {
+  max-width: 1280px; margin: 18px auto 28px; padding: 0 20px;
+  display: flex; justify-content: center; align-items: flex-start;
+  gap: 10px; flex-wrap: wrap;
+}
+.sd-action-bar .coffee-btn,
+.sd-action-bar .request-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 999px;
+  background: #141414; border: 1px solid #262626;
+  color: #aaa; font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: all 0.15s;
+  white-space: nowrap;
+}
+.sd-action-bar .coffee-btn:hover {
+  border-color: #ffce3a; color: #fff; background: #1a1a1a;
+  text-decoration: none;
+}
+.sd-action-bar .coffee-btn .coffee-icon { color: #ffce3a; }
+.sd-action-bar .request-btn:hover {
+  border-color: #ff4444; color: #fff; background: #1a1a1a;
+  text-decoration: none;
+}
+.sd-action-bar .request-btn .arrow { color: #ff4444; }
+.sd-request-details {
+  display: inline-block; max-width: 600px;
+  text-align: left;
+}
+.sd-request-details summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 999px;
+  background: #141414; border: 1px solid #262626;
+  color: #aaa; font-size: 13px; font-weight: 500;
+  transition: all 0.15s;
+}
+.sd-request-details summary::-webkit-details-marker { display: none; }
+.sd-request-details summary:hover {
+  border-color: #ff4444; color: #fff; background: #1a1a1a;
+}
+.sd-request-details summary .arrow {
+  color: #ff4444; transition: transform 0.2s;
+}
+.sd-request-details[open] summary .arrow { transform: rotate(90deg); }
+.sd-request-details[open] summary {
+  border-color: #ff4444; color: #fff;
+  border-radius: 12px 12px 0 0; border-bottom: none;
+}
+.sd-request-card {
+  background: #141414; border: 1px solid #ff4444; border-radius: 0 12px 12px 12px;
+  padding: 24px; margin-top: -1px;
+}
+.sd-request-form { display: flex; flex-direction: column; gap: 12px; }
+.sd-request-form label {
+  font-size: 12px; font-weight: 600; color: #aaa;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: -4px;
+}
+.sd-request-form .lead {
+  color: #888; font-size: 13px; margin-bottom: 4px; line-height: 1.55;
+}
+.sd-request-form .optional {
+  color: #555; font-weight: 400; text-transform: none; letter-spacing: 0;
+}
+.sd-request-form input, .sd-request-form textarea {
+  width: 100%; background: #0d0d0d; border: 1px solid #2a2a2a;
+  color: #e1e1e1; font-size: 14px; padding: 10px 12px; border-radius: 8px;
+  font-family: inherit; outline: none; transition: border-color 0.15s;
+}
+.sd-request-form textarea { min-height: 90px; resize: vertical; line-height: 1.5; }
+.sd-request-form input:focus, .sd-request-form textarea:focus { border-color: #ff4444; }
+.sd-request-form button {
+  align-self: flex-start; padding: 10px 22px; background: #cc0000;
+  border: none; color: #fff; font-size: 14px; font-weight: 600;
+  border-radius: 8px; cursor: pointer; transition: background 0.15s;
+}
+.sd-request-form button:hover { background: #ff1a1a; }
+.sd-request-form button:disabled { background: #333; cursor: not-allowed; }
+.sd-request-form .hint { font-size: 12px; color: #555; }
+.sd-request-status {
+  font-size: 13px; padding: 10px 12px; border-radius: 8px; display: none;
+}
+.sd-request-status.success {
+  color: #4ade80; background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+.sd-request-status.error {
+  color: #f87171; background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* ---- Bug Report (auto-rendered on tool pages) ---- */
+.sd-bug-wrap {
+  max-width: 700px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+  text-align: center; /* centers the inline-flex summary pill */
+}
+.sd-bug-card { text-align: left; /* restore left-align for form content */ }
+.sd-bug-details summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 18px;
+  background: #0f0f0f; border: 1px solid #262626;
+  color: #888; font-size: 13px; font-weight: 500;
+  border-radius: 999px;
+  transition: all 0.15s;
+}
+.sd-bug-details summary::-webkit-details-marker { display: none; }
+.sd-bug-details summary:hover {
+  border-color: #ff4444; color: #fff; background: #141414;
+}
+.sd-bug-details summary .sd-bug-icon {
+  font-size: 15px; filter: grayscale(1) brightness(1.3);
+  transition: filter 0.15s;
+}
+.sd-bug-details[open] summary { border-color: #ff4444; color: #fff; }
+.sd-bug-details[open] summary .sd-bug-icon { filter: none; }
+.sd-bug-card {
+  margin-top: 12px;
+  background: #141414; border: 1px solid #ff4444;
+  border-radius: 12px; padding: 22px;
+}
+.sd-bug-form { display: flex; flex-direction: column; gap: 12px; }
+.sd-bug-form label {
+  font-size: 12px; font-weight: 600; color: #aaa;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: -4px;
+}
+.sd-bug-form .lead {
+  color: #888; font-size: 13px; margin-bottom: 4px; line-height: 1.55;
+}
+.sd-bug-form .optional {
+  color: #555; font-weight: 400; text-transform: none; letter-spacing: 0;
+}
+.sd-bug-form input, .sd-bug-form textarea {
+  width: 100%; background: #0d0d0d; border: 1px solid #2a2a2a;
+  color: #e1e1e1; font-size: 14px; padding: 10px 12px; border-radius: 8px;
+  font-family: inherit; outline: none; transition: border-color 0.15s;
+}
+.sd-bug-form textarea { min-height: 100px; resize: vertical; line-height: 1.5; }
+.sd-bug-form input:focus, .sd-bug-form textarea:focus { border-color: #ff4444; }
+.sd-bug-form button {
+  align-self: flex-start; padding: 10px 22px; background: #cc0000;
+  border: none; color: #fff; font-size: 14px; font-weight: 600;
+  border-radius: 8px; cursor: pointer; transition: background 0.15s;
+  font-family: inherit;
+}
+.sd-bug-form button:hover { background: #ff1a1a; }
+.sd-bug-form button:disabled { background: #333; cursor: not-allowed; }
+.sd-bug-form .hint { font-size: 12px; color: #555; }
+.sd-bug-status {
+  font-size: 13px; padding: 10px 12px; border-radius: 8px; display: none;
+}
+.sd-bug-status.success {
+  color: #4ade80; background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+.sd-bug-status.error {
+  color: #f87171; background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+@media (max-width: 600px) {
+  .sd-bug-wrap { margin-top: 40px; padding: 0 16px; }
+  .sd-bug-details summary { font-size: 12px; padding: 9px 14px; }
+  .sd-bug-card { padding: 18px; }
+}
+
+/* ---- Shared Footer ---- */
+/* When a bug-wrap is present it supplies the 60px top spacing; when it isn't
+   (homepage, about, etc.) the footer provides its own 60px margin. */
+.sd-footer {
+  text-align: center; padding: 32px 24px;
+  border-top: 1px solid #1a1a1a; margin-top: 60px;
+  font-size: 13px; color: #555;
+}
+.sd-bug-wrap + .sd-footer { margin-top: 40px; }
+.sd-footer a { color: #666; margin: 0 12px; }
+.sd-footer a:hover { color: #aaa; }
+.sd-footer .footer-links { margin-bottom: 8px; }
+.sd-footer .footer-copy { color: #444; }
+
+/* ---- Container ---- */
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+/* ---- Card ---- */
+.card {
+  background: #141414; border: 1px solid #262626;
+  border-radius: 12px; padding: 24px; margin-bottom: 20px;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px; color: #fff; font-size: 15px; font-weight: 600;
+  border: none; border-radius: 8px; cursor: pointer; transition: all 0.2s;
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: #cc0000; }
+.btn-primary:hover { background: #ff1a1a; }
+.btn-secondary { background: #333; }
+.btn-secondary:hover { background: #444; }
+.btn:disabled { background: #222 !important; cursor: not-allowed; color: #555; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .sd-nav { padding: 12px 16px; flex-wrap: wrap; }
+  .sd-nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .sd-nav-links {
+    display: none;
+    flex-direction: column; align-items: stretch;
+    width: 100%; gap: 2px; margin-top: 12px;
+    padding-top: 12px; border-top: 1px solid #222;
+  }
+  .sd-nav-links.open { display: flex; }
+  .sd-nav-link { padding: 10px 12px; }
+
+  /* Pills inline break to their own row below brand+toggle, side-by-side */
+  .sd-nav-actions {
+    position: static;
+    transform: none;
+    order: 1;
+    flex-basis: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #222;
+  }
+  /* Shrink the pills a touch so they comfortably fit next to each other */
+  .sd-nav-actions .coffee-btn,
+  .sd-nav-actions .sd-request-details summary {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .sd-nav-actions .sd-request-card {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .sd-dropdown { width: 100%; }
+  .sd-dropdown-toggle {
+    width: 100%; justify-content: space-between;
+    padding: 10px 12px;
+  }
+  .sd-dropdown-menu {
+    position: static; min-width: 0;
+    margin-top: 2px; margin-left: 12px;
+    box-shadow: none; background: #0f0f0f;
+    border-color: #1f1f1f;
+    display: none;
+  }
+  .sd-dropdown.open .sd-dropdown-menu { display: block; }
+  /* Disable hover-open on mobile */
+  .sd-dropdown:not(.open) .sd-dropdown-menu {
+    opacity: 0; visibility: hidden;
+  }
+  .sd-dropdown.open .sd-dropdown-menu {
+    opacity: 1; visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 12px; }
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   .info-block — appended to tool pages for SEO-relevant explanatory
+   copy. Visually quiet, sits below the actual tool UI.
+   ─────────────────────────────────────────────────────────────── */
+.info-block {
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: 0 20px;
+  color: #bbb;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.info-block h2 {
+  color: #eee;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 36px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #222;
+}
+.info-block h2:first-child {
+  margin-top: 0;
+}
+.info-block p {
+  margin: 0 0 14px;
+}
+.info-block ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+.info-block ul li {
+  margin-bottom: 6px;
+}
+.info-block code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  color: #ddd;
+}
+.info-block strong { color: #ddd; }
+.info-block em { color: #9af; font-style: normal; }
+.info-block dl.case-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px 16px;
+}
+.info-block dl.case-list dt {
+  font-weight: 600;
+  color: #eee;
+  margin-top: 10px;
+}
+.info-block dl.case-list dd {
+  margin: 0 0 0 0;
+  padding-left: 8px;
+  border-left: 2px solid #2a2a2a;
+}
+@media (min-width: 720px) {
+  .info-block dl.case-list {
+    grid-template-columns: max-content 1fr;
+  }
+  .info-block dl.case-list dt {
+    margin-top: 0;
+    align-self: start;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   .sd-related — auto-rendered "More tools in this category" block
+   appears between tool content and the bug-report form on every
+   tool page (driven by components.js renderRelated()).
+   ─────────────────────────────────────────────────────────────── */
+.sd-related {
+  max-width: 1000px;
+  margin: 50px auto 30px;
+  padding: 0 20px;
+}
+.sd-related-title {
+  color: #ddd;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #222;
+}
+.sd-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.sd-related-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 8px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14.5px;
+  transition: background .15s, border-color .15s, transform .15s;
+}
+.sd-related-card:hover {
+  background: #1a1a1a;
+  border-color: #2c2c2c;
+  transform: translateY(-1px);
+}
+.sd-related-name { color: #eee; }
+.sd-related-arrow {
+  color: #666;
+  font-size: 18px;
+  transition: color .15s, transform .15s;
+}
+.sd-related-card:hover .sd-related-arrow {
+  color: #ff4444;
+  transform: translateX(3px);
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   Clickable category header on the homepage
+   ─────────────────────────────────────────────────────────────── */
+.category-header h2 a.cat-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.category-header h2 a.cat-link:hover {
+  color: #ff4444;
+  text-decoration: none;
+}
+.category-header h2 a.cat-link::after {
+  content: " \2192";
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
+  display: inline-block;
+  margin-left: 4px;
+  color: #ff4444;
+  transform: translateX(-4px);
+}
+.category-header h2 a.cat-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* "View all N X tools →" entry at the top of each nav dropdown */
+.sd-dropdown-menu .sd-dropdown-all {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ff4444 !important;
+  border-bottom: 1px solid #1f1f1f;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+.sd-dropdown-menu .sd-dropdown-all:hover {
+  background: rgba(255, 68, 68, 0.08);
+  color: #fff !important;
+}
+
+/* ---- Site search (command palette) ---- */
+.sd-search-trigger {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  color: #888; font-size: 13px; font-family: inherit; cursor: pointer;
+  padding: 8px 12px; transition: all 0.15s; white-space: nowrap;
+}
+.sd-search-trigger:hover { border-color: #ff4444; color: #fff; }
+.sd-search-trigger svg { color: #666; flex-shrink: 0; }
+.sd-search-trigger:hover svg { color: #ff4444; }
+.sd-search-trigger-kbd {
+  border: 1px solid #2a2a2a; border-radius: 4px; padding: 0 6px;
+  font-size: 11px; color: #777; font-family: 'SF Mono', Monaco, monospace;
+}
+
+.sd-search-overlay {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0, 0, 0, 0.62); backdrop-filter: blur(2px);
+  padding: 80px 16px 16px;
+}
+.sd-search-overlay.open { display: block; }
+.sd-search-box {
+  max-width: 560px; margin: 0 auto;
+  background: #141414; border: 1px solid #2a2a2a; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); overflow: hidden;
+}
+.sd-search-inputwrap {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px; border-bottom: 1px solid #222;
+}
+.sd-search-mag { color: #666; flex-shrink: 0; }
+.sd-search-input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: #fff; font-size: 17px; font-family: inherit; min-width: 0;
+}
+.sd-search-input::placeholder { color: #555; }
+.sd-search-esc {
+  background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 5px;
+  color: #888; font-size: 11px; padding: 3px 8px; cursor: pointer;
+  font-family: 'SF Mono', Monaco, monospace; flex-shrink: 0;
+}
+.sd-search-esc:hover { color: #fff; border-color: #444; }
+.sd-search-list { max-height: 52vh; overflow-y: auto; padding: 6px; }
+.sd-search-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; border-radius: 8px;
+  text-decoration: none; color: #ddd; font-size: 14px;
+}
+.sd-search-item .cat {
+  color: #666; font-size: 11px; font-family: 'SF Mono', Monaco, monospace;
+  flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.sd-search-item:hover, .sd-search-item.sel {
+  background: #1f1f1f; color: #fff; text-decoration: none;
+}
+.sd-search-item:hover .cat, .sd-search-item.sel .cat { color: #ff6666; }
+.sd-search-empty { padding: 22px 16px; text-align: center; color: #777; font-size: 14px; }
+.sd-search-foot {
+  display: flex; gap: 16px; justify-content: center;
+  padding: 10px; border-top: 1px solid #222; color: #666; font-size: 11px;
+}
+.sd-search-foot kbd {
+  background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 3px;
+  padding: 1px 5px; font-family: 'SF Mono', Monaco, monospace; margin-right: 2px;
+}
+@media (max-width: 600px) {
+  .sd-search-trigger-label, .sd-search-trigger-kbd { display: none; }
+  .sd-search-trigger { padding: 8px 10px; }
+  .sd-search-overlay { padding: 60px 10px 10px; }
+  .sd-search-input { font-size: 16px; }
+}

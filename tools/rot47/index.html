@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>ROT47 Encoder / Decoder | SharpDev.tools</title>
+<meta content="Free ROT47 encoder and decoder. Rotate all printable ASCII characters by 47, a stronger relative of ROT13 that also scrambles digits and punctuation. ROT47 is its own inverse. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/rot47/" rel="canonical"/>
+<meta content="ROT47 Encoder / Decoder | SharpDev.tools" property="og:title"/>
+<meta content="Free ROT47 encoder and decoder. Rotate all printable ASCII characters by 47, a stronger relative of ROT13 that also scrambles digits and punctuation. ROT47 is its own inverse. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/rot47/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ROT47 Encoder / Decoder | SharpDev.tools" name="twitter:title"/>
+<meta content="Free ROT47 encoder and decoder. Rotate all printable ASCII characters by 47, a stronger relative of ROT13 that also scrambles digits and punctuation. ROT47 is its own inverse. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"ROT47 Cipher","item":"https://sharpdev.tools/tools/rot47/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is ROT47?","acceptedAnswer":{"@type":"Answer","text":"ROT47 is a simple substitution cipher that shifts every visible ASCII character (codes 33 to 126) forward by 47 positions, wrapping around. Unlike ROT13, which only touches letters, ROT47 also scrambles numbers and punctuation."}},{"@type":"Question","name":"How do I decode ROT47?","acceptedAnswer":{"@type":"Answer","text":"ROT47 is its own inverse: applying it twice returns the original text. So the same button both encodes and decodes. Just paste the scrambled text and run it again."}},{"@type":"Question","name":"Is ROT47 secure?","acceptedAnswer":{"@type":"Answer","text":"No. Like ROT13 it offers no real security and is trivial to reverse. It is used for light obfuscation, puzzles and hiding spoilers, not for protecting sensitive data."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"ROT47 Cipher \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/rot47/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/rot47/rot47.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('rot47');</script>
+<div class="page">
+<h1>ROT47 Cipher</h1>
+<p class="subtitle">Encode or decode text with ROT47, which rotates all visible ASCII characters by 47. Like ROT13 but covers letters, digits and symbols.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">Hello, World! 123</textarea></div>
+<div class="actions"><button class="small-btn" id="run">Encode / Decode</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is ROT47?</summary><p>ROT47 is a simple substitution cipher that shifts every visible ASCII character (codes 33 to 126) forward by 47 positions, wrapping around. Unlike ROT13, which only touches letters, ROT47 also scrambles numbers and punctuation.</p></details>
+<details><summary>How do I decode ROT47?</summary><p>ROT47 is its own inverse: applying it twice returns the original text. So the same button both encodes and decodes. Just paste the scrambled text and run it again.</p></details>
+<details><summary>Is ROT47 secure?</summary><p>No. Like ROT13 it offers no real security and is trivial to reverse. It is used for light obfuscation, puzzles and hiding spoilers, not for protecting sensitive data.</p></details>
+</section>
+<script src="/tools/rot47/rot47.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

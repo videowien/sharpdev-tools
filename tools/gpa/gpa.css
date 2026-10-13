@@ -1,0 +1,53 @@
+/* GPA — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+.seg { display: inline-flex; gap: 0; border: 1px solid #2a2a2a; border-radius: 6px; overflow: hidden; }
+.seg-btn { background: #0d0d0d; color: #888; border: none; padding: 8px 14px; cursor: pointer; font-size: 13px; }
+.seg-btn:hover { background: #1a1a1a; color: #ccc; }
+.seg-btn.active { background: #ff4444; color: #fff; }
+
+.course-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+.course-table th { text-align: left; padding: 8px 10px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.course-table td { padding: 6px 4px; }
+.course-table input, .course-table select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 6px 10px; border-radius: 4px; font-size: 13px; width: 100%;
+}
+.course-table input.numeric { font-family: 'SF Mono', monospace; text-align: center; }
+.course-table .x { background: transparent; border: none; color: #555; cursor: pointer; font-size: 16px; padding: 4px 8px; }
+.course-table .x:hover { color: #ff4444; }
+.course-table th:nth-child(1) { width: 40%; }
+.course-table th:nth-child(2) { width: 20%; }
+.course-table th:nth-child(3) { width: 15%; }
+.course-table th:nth-child(4) { width: 20%; }
+
+.add-btn {
+  background: transparent; border: 1px dashed #2a2a2a; color: #888;
+  padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px;
+}
+.add-btn:hover { border-color: #ff4444; color: #ff4444; }
+
+.result-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.result-block { padding: 16px; background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px; text-align: center; }
+.result-block.highlight { border-color: #ff4444; background: rgba(255, 68, 68, 0.06); }
+.result-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.result-value { font-size: 28px; font-weight: 700; color: #fff; font-family: 'SF Mono', monospace; }
+.result-sub { font-size: 11px; color: #666; margin-top: 4px; }
+
+.scale-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.scale-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.scale-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.scale-table td:not(:first-child) { font-family: 'SF Mono', monospace; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .course-table th:nth-child(1), .course-table th:nth-child(4) { display: none; }
+  .course-table td:nth-child(1), .course-table td:nth-child(4) { display: none; }
+}

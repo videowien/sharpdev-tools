@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Ideal Weight Calculator (Devine, Robinson, Miller, Hamwi) | SharpDev.tools</title>
+<meta content="Free ideal weight calculator. Estimate a healthy body weight from height and sex using the Devine, Robinson, Miller and Hamwi formulas, plus the healthy BMI weight range. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/ideal-weight/" rel="canonical"/>
+<meta content="Ideal Weight Calculator (Devine, Robinson, Miller, Hamwi) | SharpDev.tools" property="og:title"/>
+<meta content="Free ideal weight calculator. Estimate a healthy body weight from height and sex using the Devine, Robinson, Miller and Hamwi formulas, plus the healthy BMI weight range. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ideal-weight/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ideal Weight Calculator (Devine, Robinson, Miller, Hamwi) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free ideal weight calculator. Estimate a healthy body weight from height and sex using the Devine, Robinson, Miller and Hamwi formulas, plus the healthy BMI weight range. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Ideal Weight Calculator","item":"https://sharpdev.tools/tools/ideal-weight/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why are there four different formulas?","acceptedAnswer":{"@type":"Answer","text":"Ideal body weight formulas were developed at different times for clinical use, mostly to dose medication. Devine (1974) is the most cited, with Robinson, Miller and Hamwi as refinements. They give slightly different numbers, so seeing all four shows a sensible range."}},{"@type":"Question","name":"Is ideal weight the same as a healthy weight?","acceptedAnswer":{"@type":"Answer","text":"Not exactly. These formulas estimate an average healthy weight for a height but ignore muscle, frame size and body composition. The healthy BMI range shown alongside is a broader, widely used guide."}},{"@type":"Question","name":"Why does it only ask for height and sex?","acceptedAnswer":{"@type":"Answer","text":"These classic formulas depend only on height and sex by design. For a fuller picture, combine the result with body-fat percentage and how you actually look and feel."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Ideal Weight Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/ideal-weight/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ideal-weight/ideal-weight.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ideal-weight');</script>
+<div class="page">
+<h1>Ideal Weight Calculator</h1>
+<p class="subtitle">Estimate a healthy body weight for your height and sex using four classic clinical formulas, plus the healthy BMI range.</p>
+<div class="row">
+<div class="field"><label for="sex">Sex</label><select id="sex"><option value="m">Male</option><option value="f">Female</option></select></div>
+<div class="field"><label for="ht">Height (cm)</label><input type="number" id="ht" value="178" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Devine</div><div class="value" id="devine">—</div></div>
+<div class="result-card"><div class="label">Robinson</div><div class="value" id="robinson">—</div></div>
+<div class="result-card"><div class="label">Miller</div><div class="value" id="miller">—</div></div>
+<div class="result-card"><div class="label">Hamwi</div><div class="value" id="hamwi">—</div></div></div>
+<p class="note" id="bminote"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Why are there four different formulas?</summary><p>Ideal body weight formulas were developed at different times for clinical use, mostly to dose medication. Devine (1974) is the most cited, with Robinson, Miller and Hamwi as refinements. They give slightly different numbers, so seeing all four shows a sensible range.</p></details>
+<details><summary>Is ideal weight the same as a healthy weight?</summary><p>Not exactly. These formulas estimate an average healthy weight for a height but ignore muscle, frame size and body composition. The healthy BMI range shown alongside is a broader, widely used guide.</p></details>
+<details><summary>Why does it only ask for height and sex?</summary><p>These classic formulas depend only on height and sex by design. For a fuller picture, combine the result with body-fat percentage and how you actually look and feel.</p></details>
+</section>
+<script src="/tools/ideal-weight/ideal-weight.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

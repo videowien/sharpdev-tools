@@ -1,0 +1,82 @@
+/* Merge PDF — Tool-specific styles */
+
+.page { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+/* Upload */
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+.upload-hint { font-size: 12px; color: #444; }
+
+/* PDFs list */
+.pdfs-card { margin-top: 16px; }
+.pdfs-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.pdf-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px;
+  cursor: grab;
+  transition: border-color 0.15s, transform 0.15s, opacity 0.15s;
+}
+.pdf-card:hover { border-color: #444; }
+.pdf-card.dragging { opacity: 0.4; cursor: grabbing; }
+.pdf-card.drag-over { border-color: #ff4444; transform: scale(1.01); }
+.pdf-card-idx {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: #2a0a0a; color: #fff;
+  font-weight: 600; font-size: 13px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.pdf-card-icon {
+  flex-shrink: 0; color: #888;
+}
+.pdf-card-icon svg { width: 24px; height: 24px; }
+.pdf-card-meta {
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.pdf-card-name {
+  color: #eee; font-size: 14px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pdf-card-stat { color: #888; font-size: 12px; }
+.pdf-card-remove {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: transparent; color: #888;
+  border: 1px solid #333; border-radius: 50%;
+  font-size: 16px; line-height: 22px;
+  cursor: pointer; padding: 0;
+  transition: all 0.15s;
+}
+.pdf-card-remove:hover { background: #ff4444; color: #fff; border-color: #ff4444; }
+
+/* Summary */
+.merge-summary {
+  font-size: 13px; color: #888;
+  padding: 8px 0 16px;
+  text-align: center;
+}
+
+/* Action row */
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.err { color: #ff6666; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

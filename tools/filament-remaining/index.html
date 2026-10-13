@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Filament Remaining Calculator (Weigh Your Spool) | SharpDev.tools</title>
+<meta content="Free filament remaining calculator. Weigh your spool, enter the empty spool weight and material, and get the grams and metres of filament left, plus whether a planned print fits. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/filament-remaining/" rel="canonical"/>
+<meta content="Filament Remaining Calculator (Weigh Your Spool) | SharpDev.tools" property="og:title"/>
+<meta content="Free filament remaining calculator. Weigh your spool, enter the empty spool weight and material, and get the grams and metres of filament left, plus whether a planned print fits. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/filament-remaining/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Filament Remaining Calculator (Weigh Your Spool) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free filament remaining calculator. Weigh your spool, enter the empty spool weight and material, and get the grams and metres of filament left, plus whether a planned print fits. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"Filament Remaining Calculator","item":"https://sharpdev.tools/tools/filament-remaining/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I know how much filament is left on a spool?","acceptedAnswer":{"@type":"Answer","text":"Weigh the spool on a kitchen scale and subtract the empty spool weight. A spool weighing 750 g with a 250 g core has 500 g of filament left, which is about 168 m of 1.75 mm PLA."}},{"@type":"Question","name":"What does an empty spool weigh?","acceptedAnswer":{"@type":"Answer","text":"Commonly 130-150 g for cardboard spools and 200-260 g for plastic ones, but it varies by brand. Many manufacturers print the spool weight on the label or list it online; weighing a spare empty spool of the same brand is the most accurate."}},{"@type":"Question","name":"Will my next print fit?","acceptedAnswer":{"@type":"Answer","text":"Enter the grams your slicer estimates for the print. The tool compares it to what is left and shows the spare margin, so you can decide whether to risk it or start a fresh spool."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Filament Remaining Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/filament-remaining/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/filament-remaining/filament-remaining.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('filament-remaining');</script>
+<div class="page">
+<h1>Filament Remaining Calculator</h1>
+<p class="subtitle">Weigh a part-used spool, subtract the empty spool, and see how many grams and metres of filament are actually left — and whether your next print fits.</p>
+<div class="row">
+<div class="field"><label for="gross">Spool weighs now (g)</label><input type="number" id="gross" value="750" step="any"></div>
+<div class="field"><label for="tare">Empty spool weight (g)</label><input type="number" id="tare" value="250" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="mat">Material</label><select id="mat"><option value="pla" selected>PLA (1.24 g/cm³)</option><option value="petg">PETG (1.27)</option><option value="abs">ABS (1.04)</option><option value="asa">ASA (1.07)</option><option value="tpu">TPU (1.21)</option><option value="nylon">Nylon (1.14)</option><option value="pc">Polycarbonate (1.20)</option><option value="custom">Custom...</option></select></div>
+<div class="field" id="rhowrap" style="display:none;"><label for="rho">Density (g/cm³)</label><input type="number" id="rho" value="1.24" step="any"></div>
+<div class="field"><label for="dia">Diameter</label><select id="dia"><option value="1.75" selected>1.75 mm</option><option value="2.85">2.85 mm</option></select></div>
+<div class="field"><label for="need">Next print needs (g, optional)</label><input type="number" id="need" value="120" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Filament left</div><div class="value" id="left">-</div></div>
+<div class="result-card"><div class="label">Length left</div><div class="value" id="len">-</div></div>
+<div class="result-card"><div class="label">Next print</div><div class="value" id="fits" style="font-size:15px;">-</div></div></div>
+<p class="note">Remaining filament = what the spool weighs now minus the empty spool. Empty spools typically weigh 130-150 g (cardboard) or 200-260 g (plastic); the exact figure is often printed on the spool or listed by the manufacturer. The length uses the same cylinder maths as the length-weight converter.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I know how much filament is left on a spool?</summary><p>Weigh the spool on a kitchen scale and subtract the empty spool weight. A spool weighing 750 g with a 250 g core has 500 g of filament left, which is about 168 m of 1.75 mm PLA.</p></details>
+<details><summary>What does an empty spool weigh?</summary><p>Commonly 130-150 g for cardboard spools and 200-260 g for plastic ones, but it varies by brand. Many manufacturers print the spool weight on the label or list it online; weighing a spare empty spool of the same brand is the most accurate.</p></details>
+<details><summary>Will my next print fit?</summary><p>Enter the grams your slicer estimates for the print. The tool compares it to what is left and shows the spare margin, so you can decide whether to risk it or start a fresh spool.</p></details>
+</section>
+<script src="/tools/filament-remaining/filament-remaining.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

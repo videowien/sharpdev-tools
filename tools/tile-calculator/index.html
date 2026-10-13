@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Tile Calculator (How Many Tiles Do I Need?) | SharpDev.tools</title>
+<meta content="Free tile calculator. Work out how many tiles you need from the area to cover and the tile size, with an adjustable waste allowance for cuts and breakages. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/tile-calculator/" rel="canonical"/>
+<meta content="Tile Calculator (How Many Tiles Do I Need?) | SharpDev.tools" property="og:title"/>
+<meta content="Free tile calculator. Work out how many tiles you need from the area to cover and the tile size, with an adjustable waste allowance for cuts and breakages. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/tile-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Tile Calculator (How Many Tiles Do I Need?) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free tile calculator. Work out how many tiles you need from the area to cover and the tile size, with an adjustable waste allowance for cuts and breakages. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Tile Calculator","item":"https://sharpdev.tools/tools/tile-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate the number of tiles?","acceptedAnswer":{"@type":"Answer","text":"Divide the area you are covering by the area of one tile, then add a waste allowance. For example a 30 by 30 cm tile covers 0.09 m\u00b2, so a 12 m\u00b2 floor needs about 134 tiles before waste."}},{"@type":"Question","name":"How much waste should I allow?","acceptedAnswer":{"@type":"Answer","text":"Around 10 percent is normal to cover edge cuts and breakages. Increase it to 15 percent or more for diagonal or herringbone layouts, small rooms with many cuts, or large-format tiles."}},{"@type":"Question","name":"Should I buy from the same batch?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tile colour can vary slightly between production batches, so buying all you need at once, including the waste, helps the finish stay consistent."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Tile Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/tile-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/tile-calculator/tile-calculator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('tile-calculator');</script>
+<div class="page">
+<h1>Tile Calculator</h1>
+<p class="subtitle">Calculate how many tiles you need for a floor or wall from the area and tile size, including a waste allowance for cuts and breakages.</p>
+<div class="row">
+<div class="field"><label for="area">Area to tile (m²)</label><input type="number" id="area" value="12" step="any"></div>
+<div class="field"><label for="tw">Tile width (cm)</label><input type="number" id="tw" value="30" step="any"></div>
+<div class="field"><label for="th">Tile height (cm)</label><input type="number" id="th" value="30" step="any"></div></div>
+<div class="row"><div class="field"><label for="waste">Waste allowance (%)</label><input type="number" id="waste" value="10" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card"><div class="label">Tiles (exact)</div><div class="value" id="exact">—</div></div>
+<div class="result-card hl"><div class="label">Tiles to buy</div><div class="value" id="buy">—</div></div>
+<div class="result-card"><div class="label">Per m²</div><div class="value" id="perm">—</div></div></div>
+<p class="note">The waste allowance covers cut tiles at edges and the occasional breakage. Ten percent is typical for a simple layout; use 15 percent or more for diagonal patterns or rooms with many corners.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I calculate the number of tiles?</summary><p>Divide the area you are covering by the area of one tile, then add a waste allowance. For example a 30 by 30 cm tile covers 0.09 m², so a 12 m² floor needs about 134 tiles before waste.</p></details>
+<details><summary>How much waste should I allow?</summary><p>Around 10 percent is normal to cover edge cuts and breakages. Increase it to 15 percent or more for diagonal or herringbone layouts, small rooms with many cuts, or large-format tiles.</p></details>
+<details><summary>Should I buy from the same batch?</summary><p>Yes. Tile colour can vary slightly between production batches, so buying all you need at once, including the waste, helps the finish stay consistent.</p></details>
+</section>
+<script src="/tools/tile-calculator/tile-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

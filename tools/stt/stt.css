@@ -1,0 +1,48 @@
+/* STT — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.warn {
+  background: rgba(255,167,38,0.08); border-left: 3px solid #ffa726;
+  padding: 12px 14px; color: #ffa726; border-radius: 4px;
+  font-size: 13px; margin: 0;
+}
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 14px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-group select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+  min-width: 200px;
+}
+
+.record-btn {
+  background: #ff4444; color: #fff; border: none;
+  padding: 10px 24px; border-radius: 999px; font-size: 14px;
+  font-weight: 600; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+}
+.record-btn:hover { background: #ff5555; }
+.record-btn.recording { background: #4caf50; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3); animation: pulse 1.2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.form-row textarea {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  resize: vertical; line-height: 1.5;
+}
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; color: #888; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.busy { color: #ffa726; }
+.status-msg.error { color: #ff6666; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

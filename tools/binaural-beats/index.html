@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Binaural Beats Generator (Delta, Theta, Alpha, Beta) | SharpDev.tools</title>
+<meta content="Free binaural beats generator. Play a slightly different frequency in each ear to create a binaural beat, with presets for delta, theta, alpha, beta and gamma bands or custom frequencies. Headphones required. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/binaural-beats/" rel="canonical"/>
+<meta content="Binaural Beats Generator (Delta, Theta, Alpha, Beta) | SharpDev.tools" property="og:title"/>
+<meta content="Free binaural beats generator. Play a slightly different frequency in each ear to create a binaural beat, with presets for delta, theta, alpha, beta and gamma bands or custom frequencies. Headphones required. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/binaural-beats/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Binaural Beats Generator (Delta, Theta, Alpha, Beta) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free binaural beats generator. Play a slightly different frequency in each ear to create a binaural beat, with presets for delta, theta, alpha, beta and gamma bands or custom frequencies. Headphones required. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"Binaural Beats Generator","item":"https://sharpdev.tools/tools/binaural-beats/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do binaural beats work?","acceptedAnswer":{"@type":"Answer","text":"When each ear hears a slightly different pure tone (say 200 Hz and 210 Hz), the brain perceives a third, pulsing tone at the difference (10 Hz). That perceived pulse is the binaural beat. It only happens with headphones, because each ear must hear only its own tone."}},{"@type":"Question","name":"What are the brainwave bands?","acceptedAnswer":{"@type":"Answer","text":"The presets map the beat frequency to EEG bands often associated with mental states: delta with deep sleep, theta with meditation, alpha with relaxed focus, beta with alertness and gamma with concentration. Pick a band or set the carrier and beat yourself."}},{"@type":"Question","name":"Are binaural beats scientifically proven?","acceptedAnswer":{"@type":"Answer","text":"Evidence is mixed and effects are subtle and individual. Treat them as a relaxation or focus aid to experiment with, not a medical treatment. Keep the volume comfortable."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Binaural Beats Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/binaural-beats/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/binaural-beats/binaural-beats.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('binaural-beats');</script>
+<div class="page">
+<h1>Binaural Beats Generator</h1>
+<p class="subtitle">Generate binaural beats by playing a slightly different tone in each ear. Pick a brainwave band or set the frequencies yourself. Use headphones.</p>
+<div class="row">
+<div class="field"><label for="preset">Band</label><select id="preset"><option value="2">Delta (2 Hz) – deep sleep</option><option value="6">Theta (6 Hz) – meditation</option><option value="10" selected>Alpha (10 Hz) – relaxed focus</option><option value="20">Beta (20 Hz) – alertness</option><option value="40">Gamma (40 Hz) – concentration</option></select></div>
+<div class="field"><label for="base">Carrier (Hz)</label><input type="number" id="base" value="200" min="50" max="500"></div></div>
+<div class="row">
+<div class="field"><label for="beat">Beat frequency (Hz)</label><input type="number" id="beat" value="10" min="1" max="40" step="0.5"></div>
+<div class="field" style="display:flex;align-items:flex-end;gap:8px;"><button class="small-btn" id="toggle" style="flex:1;">Play</button></div></div>
+<div class="result-cards"><div class="result-card"><div class="label">Left ear</div><div class="value" id="lf" style="font-size:18px;">—</div></div><div class="result-card"><div class="label">Right ear</div><div class="value" id="rf" style="font-size:18px;">—</div></div></div>
+<p class="note">Binaural beats only work with headphones: each ear hears a slightly different frequency and the brain perceives the difference as a pulsing beat. This is a relaxation and focus aid, not a medical treatment. Generated live in your browser; nothing is recorded.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do binaural beats work?</summary><p>When each ear hears a slightly different pure tone (say 200 Hz and 210 Hz), the brain perceives a third, pulsing tone at the difference (10 Hz). That perceived pulse is the binaural beat. It only happens with headphones, because each ear must hear only its own tone.</p></details>
+<details><summary>What are the brainwave bands?</summary><p>The presets map the beat frequency to EEG bands often associated with mental states: delta with deep sleep, theta with meditation, alpha with relaxed focus, beta with alertness and gamma with concentration. Pick a band or set the carrier and beat yourself.</p></details>
+<details><summary>Are binaural beats scientifically proven?</summary><p>Evidence is mixed and effects are subtle and individual. Treat them as a relaxation or focus aid to experiment with, not a medical treatment. Keep the volume comfortable.</p></details>
+</section>
+<script src="/tools/binaural-beats/binaural-beats.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

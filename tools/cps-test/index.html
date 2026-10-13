@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CPS Test (Click Speed Test, Clicks Per Second) | SharpDev.tools</title>
+<meta content="Free CPS test (click speed test). Measure your clicks per second over 1, 5 or 10 seconds, see your CPS score, total clicks and personal best. Runs entirely in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/cps-test/" rel="canonical"/>
+<meta content="CPS Test (Click Speed Test, Clicks Per Second) | SharpDev.tools" property="og:title"/>
+<meta content="Free CPS test (click speed test). Measure your clicks per second over 1, 5 or 10 seconds, see your CPS score, total clicks and personal best. Runs entirely in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/cps-test/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CPS Test (Click Speed Test, Clicks Per Second) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free CPS test (click speed test). Measure your clicks per second over 1, 5 or 10 seconds, see your CPS score, total clicks and personal best. Runs entirely in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Browser & Device Tests","item":"https://sharpdev.tools/#browser-device-tests"},{"@type":"ListItem","position":3,"name":"Click Speed Test (CPS)","item":"https://sharpdev.tools/tools/cps-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a CPS test?","acceptedAnswer":{"@type":"Answer","text":"A CPS (clicks per second) test measures how fast you can click a mouse button. You click as many times as you can within a fixed time, and the tool divides your clicks by the seconds to get your CPS score."}},{"@type":"Question","name":"What is a good CPS score?","acceptedAnswer":{"@type":"Answer","text":"Most people score around 5 to 7 CPS. Above 8 is fast, and competitive clickers using techniques like jitter or butterfly clicking can exceed 10 to 12 CPS."}},{"@type":"Question","name":"Does this work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. On a phone or tablet each tap counts as a click, so it doubles as a tap-speed test."}},{"@type":"Question","name":"Is anything tracked?","acceptedAnswer":{"@type":"Answer","text":"No. The whole test runs in your browser and no clicks or scores are sent anywhere."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Click Speed Test (CPS) \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/cps-test/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/cps-test/cps-test.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('cps-test');</script>
+<div class="page">
+<h1>Click Speed Test (CPS)</h1>
+<p class="subtitle">Test how many clicks per second you can do. Pick a duration, click as fast as you can, and see your CPS score and personal best.</p>
+<div class="actions" id="durs">
+<button class="small-btn" data-d="1">1 second</button>
+<button class="small-btn" data-d="5">5 seconds</button>
+<button class="small-btn" data-d="10">10 seconds</button>
+<button class="small-btn" id="reset">Reset</button></div>
+<div id="zone" class="cps-zone">Click here to start</div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">CPS</div><div class="value" id="cps">0.0</div></div>
+<div class="result-card"><div class="label">Clicks</div><div class="value" id="clicks">0</div></div>
+<div class="result-card"><div class="label">Time left</div><div class="value" id="tleft">5.0s</div></div>
+<div class="result-card"><div class="label">Best CPS</div><div class="value" id="best">0.00</div></div></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a CPS test?</summary><p>A CPS (clicks per second) test measures how fast you can click a mouse button. You click as many times as you can within a fixed time, and the tool divides your clicks by the seconds to get your CPS score.</p></details>
+<details><summary>What is a good CPS score?</summary><p>Most people score around 5 to 7 CPS. Above 8 is fast, and competitive clickers using techniques like jitter or butterfly clicking can exceed 10 to 12 CPS.</p></details>
+<details><summary>Does this work on mobile?</summary><p>Yes. On a phone or tablet each tap counts as a click, so it doubles as a tap-speed test.</p></details>
+<details><summary>Is anything tracked?</summary><p>No. The whole test runs in your browser and no clicks or scores are sent anywhere.</p></details>
+</section>
+<script src="/tools/cps-test/cps-test.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

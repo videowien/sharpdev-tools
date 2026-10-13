@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Focal Ratio Calculator (f/number, Telescope) | SharpDev.tools</title>
+<meta content="Free telescope focal ratio calculator. Enter any two of focal length, aperture and f/number to solve for the third. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/focal-ratio/" rel="canonical"/>
+<meta content="Focal Ratio Calculator (f/number, Telescope) | SharpDev.tools" property="og:title"/>
+<meta content="Free telescope focal ratio calculator. Enter any two of focal length, aperture and f/number to solve for the third. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/focal-ratio/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Focal Ratio Calculator (f/number, Telescope) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free telescope focal ratio calculator. Enter any two of focal length, aperture and f/number to solve for the third. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"Focal Ratio Calculator","item":"https://sharpdev.tools/tools/focal-ratio/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a telescope's focal ratio?","acceptedAnswer":{"@type":"Answer","text":"The focal length divided by the aperture: 1200 mm of focal length through a 150 mm aperture is f/8. It describes the light cone, exactly like the f-number of a camera lens."}},{"@type":"Question","name":"Fast or slow, which is better?","acceptedAnswer":{"@type":"Answer","text":"Neither, they suit different jobs. Fast (f/4-f/5) means a wider, brighter field and shorter astrophoto exposures but harder-to-make optics and more coma. Slow (f/10+) means narrow bright views that excel on planets, and it is gentler on cheap eyepieces."}},{"@type":"Question","name":"Does focal ratio change brightness for visual use?","acceptedAnswer":{"@type":"Answer","text":"For extended objects the exit pupil (aperture \u00f7 magnification) sets surface brightness at the eye, not the f-ratio itself. Where f-ratio directly matters is imaging exposure time, which scales with the square of the ratio."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Focal Ratio Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/focal-ratio/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/focal-ratio/focal-ratio.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('focal-ratio');</script>
+<div class="page">
+<h1>Focal Ratio Calculator</h1>
+<p class="subtitle">Solve the telescope triangle: focal ratio = focal length ÷ aperture. Enter any two and get the third.</p>
+<div class="row">
+<div class="field"><label for="solve">Solve for</label><select id="solve"><option value="f" selected>Focal ratio (f/)</option><option value="fl">Focal length</option><option value="ap">Aperture</option></select></div></div>
+<div class="row">
+<div class="field" id="flwrap"><label for="fl">Focal length (mm)</label><input type="number" id="fl" value="1200" step="any"></div>
+<div class="field" id="apwrap"><label for="ap">Aperture (mm)</label><input type="number" id="ap" value="150" step="any"></div>
+<div class="field" id="frwrap" style="display:none;"><label for="fr">Focal ratio (f/)</label><input type="number" id="fr" value="8" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label" id="olabel">Focal ratio</div><div class="value" id="out" style="font-size:24px;">-</div></div></div>
+<p class="note">Focal ratio = focal length ÷ aperture. A 1200 mm scope with 150 mm aperture is f/8. Fast scopes (f/4-f/5) give wide bright fields for deep sky and short exposures; slow scopes (f/10+) give comfortable high magnification for planets and the Moon.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a telescope's focal ratio?</summary><p>The focal length divided by the aperture: 1200 mm of focal length through a 150 mm aperture is f/8. It describes the light cone, exactly like the f-number of a camera lens.</p></details>
+<details><summary>Fast or slow, which is better?</summary><p>Neither, they suit different jobs. Fast (f/4-f/5) means a wider, brighter field and shorter astrophoto exposures but harder-to-make optics and more coma. Slow (f/10+) means narrow bright views that excel on planets, and it is gentler on cheap eyepieces.</p></details>
+<details><summary>Does focal ratio change brightness for visual use?</summary><p>For extended objects the exit pupil (aperture ÷ magnification) sets surface brightness at the eye, not the f-ratio itself. Where f-ratio directly matters is imaging exposure time, which scales with the square of the ratio.</p></details>
+</section>
+<script src="/tools/focal-ratio/focal-ratio.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

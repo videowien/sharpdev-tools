@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Polybius Square Cipher (Encode &amp; Decode) | SharpDev.tools</title>
+<meta content="Free Polybius square cipher encoder and decoder. Each letter becomes a pair of digits giving its row and column in a 5x5 grid (I and J share a cell). A classic cipher and the basis of many others. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/polybius-square/" rel="canonical"/>
+<meta content="Polybius Square Cipher (Encode &amp; Decode) | SharpDev.tools" property="og:title"/>
+<meta content="Free Polybius square cipher encoder and decoder. Each letter becomes a pair of digits giving its row and column in a 5x5 grid (I and J share a cell). A classic cipher and the basis of many others. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/polybius-square/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Polybius Square Cipher (Encode &amp; Decode) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Polybius square cipher encoder and decoder. Each letter becomes a pair of digits giving its row and column in a 5x5 grid (I and J share a cell). A classic cipher and the basis of many others. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Polybius Square Cipher","item":"https://sharpdev.tools/tools/polybius-square/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Polybius square?","acceptedAnswer":{"@type":"Answer","text":"It is a 5 by 5 grid filled with the alphabet, used to turn each letter into the two digits of its row and column. Because the grid has 25 cells and the alphabet has 26 letters, I and J share one cell."}},{"@type":"Question","name":"How do I read the output?","acceptedAnswer":{"@type":"Answer","text":"Each letter becomes a two-digit number: the first digit is the row (1 to 5) and the second is the column. For example with the standard grid, H is 23. Decoding pairs the digits back into letters."}},{"@type":"Question","name":"What is it used for?","acceptedAnswer":{"@type":"Answer","text":"On its own it is a simple cipher, but the Polybius square is the foundation of more advanced ciphers like the bifid, trifid and the ADFGVX cipher, and it was historically used for tap codes."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Polybius Square Cipher \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/polybius-square/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/polybius-square/polybius-square.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('polybius-square');</script>
+<div class="page">
+<h1>Polybius Square Cipher</h1>
+<p class="subtitle">Encode and decode the Polybius square, turning each letter into a pair of digits from a 5×5 grid. I and J share a cell. A classic cipher.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">HELLO</textarea></div>
+<div class="actions"><button class="small-btn" id="enc">Text → Digits</button><button class="small-btn" id="dec">Digits → Text</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Polybius square?</summary><p>It is a 5 by 5 grid filled with the alphabet, used to turn each letter into the two digits of its row and column. Because the grid has 25 cells and the alphabet has 26 letters, I and J share one cell.</p></details>
+<details><summary>How do I read the output?</summary><p>Each letter becomes a two-digit number: the first digit is the row (1 to 5) and the second is the column. For example with the standard grid, H is 23. Decoding pairs the digits back into letters.</p></details>
+<details><summary>What is it used for?</summary><p>On its own it is a simple cipher, but the Polybius square is the foundation of more advanced ciphers like the bifid, trifid and the ADFGVX cipher, and it was historically used for tap codes.</p></details>
+</section>
+<script src="/tools/polybius-square/polybius-square.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

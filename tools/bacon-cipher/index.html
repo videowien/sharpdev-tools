@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Bacon Cipher (Baconian Cipher Encode &amp; Decode) | SharpDev.tools</title>
+<meta content="Free Bacon cipher (Baconian cipher) encoder and decoder. Each letter is represented by a five-character group of A's and B's. Originally hidden in two typefaces, it is a classic steganographic cipher. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/bacon-cipher/" rel="canonical"/>
+<meta content="Bacon Cipher (Baconian Cipher Encode &amp; Decode) | SharpDev.tools" property="og:title"/>
+<meta content="Free Bacon cipher (Baconian cipher) encoder and decoder. Each letter is represented by a five-character group of A's and B's. Originally hidden in two typefaces, it is a classic steganographic cipher. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/bacon-cipher/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bacon Cipher (Baconian Cipher Encode &amp; Decode) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Bacon cipher (Baconian cipher) encoder and decoder. Each letter is represented by a five-character group of A's and B's. Originally hidden in two typefaces, it is a classic steganographic cipher. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Bacon Cipher","item":"https://sharpdev.tools/tools/bacon-cipher/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Bacon cipher?","acceptedAnswer":{"@type":"Answer","text":"Devised by Francis Bacon, it encodes each letter as a group of five symbols drawn from just two options, here A and B. So A is AAAAA, B is AAAAB, and so on. This tool uses the 26-letter version where every letter has a unique code."}},{"@type":"Question","name":"Why is it called a steganographic cipher?","acceptedAnswer":{"@type":"Answer","text":"Bacon's idea was to hide the A's and B's in something innocent, such as two slightly different typefaces or upright versus italic letters, so the message looked like ordinary text. The hidden pattern carries the secret."}},{"@type":"Question","name":"How do I decode it?","acceptedAnswer":{"@type":"Answer","text":"Paste the A's and B's and the tool groups them in fives and converts each group back to a letter. Any other characters are ignored, so spacing does not matter."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Bacon Cipher \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/bacon-cipher/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/bacon-cipher/bacon-cipher.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('bacon-cipher');</script>
+<div class="page">
+<h1>Bacon Cipher</h1>
+<p class="subtitle">Encode and decode the Baconian cipher, where each letter becomes a five-character group of A's and B's. A classic steganographic cipher.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">HELLO</textarea></div>
+<div class="actions"><button class="small-btn" id="enc">Text → Bacon</button><button class="small-btn" id="dec">Bacon → Text</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Bacon cipher?</summary><p>Devised by Francis Bacon, it encodes each letter as a group of five symbols drawn from just two options, here A and B. So A is AAAAA, B is AAAAB, and so on. This tool uses the 26-letter version where every letter has a unique code.</p></details>
+<details><summary>Why is it called a steganographic cipher?</summary><p>Bacon's idea was to hide the A's and B's in something innocent, such as two slightly different typefaces or upright versus italic letters, so the message looked like ordinary text. The hidden pattern carries the secret.</p></details>
+<details><summary>How do I decode it?</summary><p>Paste the A's and B's and the tool groups them in fives and converts each group back to a letter. Any other characters are ignored, so spacing does not matter.</p></details>
+</section>
+<script src="/tools/bacon-cipher/bacon-cipher.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Yagi Antenna Calculator (Element Lengths &amp; Spacing) | SharpDev.tools</title>
+<meta content="Free Yagi antenna calculator. Enter a frequency and element count for starting-point reflector, driven and director lengths, element spacing and boom length. A design starting point to optimise by modelling. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/yagi/" rel="canonical"/>
+<meta content="Yagi Antenna Calculator (Element Lengths &amp; Spacing) | SharpDev.tools" property="og:title"/>
+<meta content="Free Yagi antenna calculator. Enter a frequency and element count for starting-point reflector, driven and director lengths, element spacing and boom length. A design starting point to optimise by modelling. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/yagi/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Yagi Antenna Calculator (Element Lengths &amp; Spacing) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Yagi antenna calculator. Enter a frequency and element count for starting-point reflector, driven and director lengths, element spacing and boom length. A design starting point to optimise by modelling. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Yagi Antenna Calculator","item":"https://sharpdev.tools/tools/yagi/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the Yagi element lengths?","acceptedAnswer":{"@type":"Answer","text":"As a starting point the driven element in feet is 468 / MHz, the reflector about 5 percent longer (492 / MHz) and each director about 4 percent shorter (450 / MHz). Spacing is roughly 0.2 wavelength, or 197 / MHz feet."}},{"@type":"Question","name":"Are these dimensions exact?","acceptedAnswer":{"@type":"Answer","text":"No. They are a proven starting point. A real Yagi is tuned for the best gain, front-to-back ratio and SWR using antenna-modelling software, which adjusts the lengths and spacing for the wire diameter and boom. Expect to trim from here."}},{"@type":"Question","name":"How much gain does a Yagi have?","acceptedAnswer":{"@type":"Answer","text":"Roughly 5 to 6 dBi for two elements, 7 to 8 for three, and about 1 dB more for each added director with diminishing returns. The gain shown here is a typical figure; the exact value depends on the optimised design."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Yagi Antenna Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/yagi/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/yagi/yagi.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('yagi');</script>
+<div class="page">
+<h1>Yagi Antenna Calculator</h1>
+<p class="subtitle">Get starting-point element lengths and spacing for a Yagi beam: reflector, driven element and directors, plus boom length, for any frequency.</p>
+<div class="row">
+<div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="14.2" step="any"></div>
+<div class="field"><label for="n">Elements</label><select id="n"><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Driven element</div><div class="value" id="dr" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Reflector</div><div class="value" id="rf" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Director(s)</div><div class="value" id="di" style="font-size:15px;">-</div></div>
+<div class="result-card"><div class="label">Spacing / boom</div><div class="value" id="bm" style="font-size:14px;">-</div></div>
+<div class="result-card"><div class="label">Typical gain</div><div class="value" id="gn" style="font-size:15px;">-</div></div></div>
+<p class="note">Starting-point Yagi dimensions: driven element (feet) = 468 / MHz, reflector about 5 percent longer (492 / MHz), directors about 4 percent shorter (450 / MHz), element spacing about 0.2 wavelength (197 / MHz). These get you close; real Yagis are optimised with antenna-modelling software. Gain is a rough typical figure.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are the Yagi element lengths?</summary><p>As a starting point the driven element in feet is 468 / MHz, the reflector about 5 percent longer (492 / MHz) and each director about 4 percent shorter (450 / MHz). Spacing is roughly 0.2 wavelength, or 197 / MHz feet.</p></details>
+<details><summary>Are these dimensions exact?</summary><p>No. They are a proven starting point. A real Yagi is tuned for the best gain, front-to-back ratio and SWR using antenna-modelling software, which adjusts the lengths and spacing for the wire diameter and boom. Expect to trim from here.</p></details>
+<details><summary>How much gain does a Yagi have?</summary><p>Roughly 5 to 6 dBi for two elements, 7 to 8 for three, and about 1 dB more for each added director with diminishing returns. The gain shown here is a typical figure; the exact value depends on the optimised design.</p></details>
+</section>
+<script src="/tools/yagi/yagi.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

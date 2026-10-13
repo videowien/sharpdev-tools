@@ -1,0 +1,57 @@
+/* PDF Redact — tool-specific */
+.page { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+
+.editor-card { margin-top: 16px; }
+.file-info {
+  background: #0d0d0d; border: 1px solid #2a2a2a;
+  padding: 12px; border-radius: 6px; margin-bottom: 16px;
+  font-size: 13px; color: #ccc;
+}
+.file-info .filename { color: #fff; font-family: 'SF Mono', monospace; }
+
+.opt-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: end; margin-bottom: 12px; }
+.opt-group { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-group input[type=number] {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+  width: 90px; text-align: center; font-family: 'SF Mono', monospace;
+}
+.counts { color: #fff; font-family: 'SF Mono', monospace; font-size: 14px; }
+.link-btn { background: none; border: none; color: #ff4444; cursor: pointer; font-size: 12px; padding: 0; }
+.link-btn:hover { text-decoration: underline; }
+.hint { color: #666; font-size: 12px; }
+
+.canvas-wrap {
+  background: #0a0a0a; padding: 12px;
+  border: 1px solid #2a2a2a; border-radius: 8px;
+  display: flex; justify-content: center;
+  max-height: 540px; overflow: auto;
+  cursor: crosshair;
+}
+#display { background: #fff; max-width: 100%; max-height: 500px; display: block; }
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+.status-msg.busy { color: #ffa726; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

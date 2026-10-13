@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Pattern Generator (Dots, Grid, Stripes, Checkerboard) | SharpDev.tools</title>
+<meta content="Free CSS pattern generator. Create pure-CSS background patterns (dots, grid, diagonal stripes, vertical lines, checkerboard) with custom colours and size, no images. Copy the CSS. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-pattern/" rel="canonical"/>
+<meta content="CSS Pattern Generator (Dots, Grid, Stripes, Checkerboard) | SharpDev.tools" property="og:title"/>
+<meta content="Free CSS pattern generator. Create pure-CSS background patterns (dots, grid, diagonal stripes, vertical lines, checkerboard) with custom colours and size, no images. Copy the CSS. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-pattern/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Pattern Generator (Dots, Grid, Stripes, Checkerboard) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free CSS pattern generator. Create pure-CSS background patterns (dots, grid, diagonal stripes, vertical lines, checkerboard) with custom colours and size, no images. Copy the CSS. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Background Pattern Generator","item":"https://sharpdev.tools/tools/css-pattern/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these patterns really pure CSS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every pattern is made from CSS gradients (linear, radial or conic) with a background-size, so there are no image files to load. That keeps your page light and the pattern sharp at any zoom level."}},{"@type":"Question","name":"How do I make the pattern bigger or smaller?","acceptedAnswer":{"@type":"Answer","text":"Use the size field. It sets the tile size in pixels, so larger values spread dots, grid lines or checks further apart. Stripe and line patterns use it for their spacing too."}},{"@type":"Question","name":"Can I use a transparent background?","acceptedAnswer":{"@type":"Answer","text":"The preview uses two solid colours, but in your own CSS you can drop the background-color line to let the pattern sit over whatever is behind it, since the gaps use transparent."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Background Pattern Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/css-pattern/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-pattern/css-pattern.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-pattern');</script>
+<div class="page">
+<h1>CSS Background Pattern Generator</h1>
+<p class="subtitle">Generate pure-CSS background patterns: dots, grid, stripes, lines and checkerboard. Set colours and size, then copy the CSS.</p>
+<div class="row">
+<div class="field"><label for="type">Pattern</label><select id="type"><option value="dots">Dots</option><option value="grid">Grid</option><option value="stripes">Diagonal stripes</option><option value="vlines">Vertical lines</option><option value="checker">Checkerboard</option></select></div>
+<div class="field"><label for="size">Size (px)</label><input type="number" id="size" value="24" min="4" max="200"></div></div>
+<div class="row">
+<div class="field"><label for="fg">Pattern colour</label><input type="color" id="fg" value="#ff4444"></div>
+<div class="field"><label for="bg">Background</label><input type="color" id="bg" value="#0d0d0d"></div></div>
+<div class="pat-prev" id="prev"></div>
+<div class="out-head"><label>CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="code" readonly style="min-height:80px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Are these patterns really pure CSS?</summary><p>Yes. Every pattern is made from CSS gradients (linear, radial or conic) with a background-size, so there are no image files to load. That keeps your page light and the pattern sharp at any zoom level.</p></details>
+<details><summary>How do I make the pattern bigger or smaller?</summary><p>Use the size field. It sets the tile size in pixels, so larger values spread dots, grid lines or checks further apart. Stripe and line patterns use it for their spacing too.</p></details>
+<details><summary>Can I use a transparent background?</summary><p>The preview uses two solid colours, but in your own CSS you can drop the background-color line to let the pattern sit over whatever is behind it, since the gaps use transparent.</p></details>
+</section>
+<script src="/tools/css-pattern/css-pattern.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

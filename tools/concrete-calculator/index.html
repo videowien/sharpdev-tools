@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Concrete Calculator (Volume &amp; Bags) | SharpDev.tools</title>
+<meta content="Free concrete calculator. Work out the volume of concrete for a slab or footing from its dimensions and how many bags of pre-mix you need, for 20, 25 or 40 kg bags. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/concrete-calculator/" rel="canonical"/>
+<meta content="Concrete Calculator (Volume &amp; Bags) | SharpDev.tools" property="og:title"/>
+<meta content="Free concrete calculator. Work out the volume of concrete for a slab or footing from its dimensions and how many bags of pre-mix you need, for 20, 25 or 40 kg bags. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/concrete-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Concrete Calculator (Volume &amp; Bags) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free concrete calculator. Work out the volume of concrete for a slab or footing from its dimensions and how many bags of pre-mix you need, for 20, 25 or 40 kg bags. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Concrete Calculator","item":"https://sharpdev.tools/tools/concrete-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate concrete volume?","acceptedAnswer":{"@type":"Answer","text":"Multiply length by width by thickness, all in the same units. For a slab 3 m by 3 m and 10 cm thick that is 3 \u00d7 3 \u00d7 0.10 = 0.9 cubic metres. This tool converts the thickness from centimetres for you."}},{"@type":"Question","name":"How many bags of concrete per cubic metre?","acceptedAnswer":{"@type":"Answer","text":"It depends on the bag, but a rough guide is about 110 \u00d7 20 kg bags, 88 \u00d7 25 kg bags, or 55 \u00d7 40 kg bags per cubic metre of set concrete. The exact yield is on the bag."}},{"@type":"Question","name":"When should I order ready-mix instead?","acceptedAnswer":{"@type":"Answer","text":"Bags are convenient for small jobs, but mixing many by hand is hard work and inconsistent. For roughly half a cubic metre or more, a ready-mix delivery is usually easier, stronger and cheaper."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Concrete Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/concrete-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/concrete-calculator/concrete-calculator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('concrete-calculator');</script>
+<div class="page">
+<h1>Concrete Calculator</h1>
+<p class="subtitle">Calculate the volume of concrete for a slab or footing and how many bags of pre-mix you need.</p>
+<div class="row">
+<div class="field"><label for="len">Length (m)</label><input type="number" id="len" value="3" step="any"></div>
+<div class="field"><label for="wid">Width (m)</label><input type="number" id="wid" value="3" step="any"></div>
+<div class="field"><label for="thick">Thickness (cm)</label><input type="number" id="thick" value="10" step="any"></div></div>
+<div class="row"><div class="field"><label for="bag">Bag size</label><select id="bag"><option value="20">20 kg</option><option value="25" selected>25 kg</option><option value="40">40 kg</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Volume</div><div class="value" id="vol">—</div></div>
+<div class="result-card"><div class="label">Bags needed</div><div class="value" id="bags">—</div></div>
+<div class="result-card"><div class="label">Total weight</div><div class="value" id="wt">—</div></div></div>
+<p class="note">Volume is length × width × thickness. Bag counts assume a typical pre-mix yield of roughly 0.45 litres of set concrete per kilogram, so they are an estimate; check your product, and order a little extra. For large pours, ready-mix delivery is usually cheaper than bags.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I calculate concrete volume?</summary><p>Multiply length by width by thickness, all in the same units. For a slab 3 m by 3 m and 10 cm thick that is 3 × 3 × 0.10 = 0.9 cubic metres. This tool converts the thickness from centimetres for you.</p></details>
+<details><summary>How many bags of concrete per cubic metre?</summary><p>It depends on the bag, but a rough guide is about 110 × 20 kg bags, 88 × 25 kg bags, or 55 × 40 kg bags per cubic metre of set concrete. The exact yield is on the bag.</p></details>
+<details><summary>When should I order ready-mix instead?</summary><p>Bags are convenient for small jobs, but mixing many by hand is hard work and inconsistent. For roughly half a cubic metre or more, a ready-mix delivery is usually easier, stronger and cheaper.</p></details>
+</section>
+<script src="/tools/concrete-calculator/concrete-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

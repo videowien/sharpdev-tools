@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>DTMF Tone Generator (Phone Dial Tones) | SharpDev.tools</title>
+<meta content="Free DTMF tone generator. Play the touch-tone (dual-tone multi-frequency) sounds of a phone keypad: press individual keys or dial a whole sequence. Shows the exact frequency pair for each key. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/dtmf/" rel="canonical"/>
+<meta content="DTMF Tone Generator (Phone Dial Tones) | SharpDev.tools" property="og:title"/>
+<meta content="Free DTMF tone generator. Play the touch-tone (dual-tone multi-frequency) sounds of a phone keypad: press individual keys or dial a whole sequence. Shows the exact frequency pair for each key. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/dtmf/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="DTMF Tone Generator (Phone Dial Tones) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free DTMF tone generator. Play the touch-tone (dual-tone multi-frequency) sounds of a phone keypad: press individual keys or dial a whole sequence. Shows the exact frequency pair for each key. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"DTMF Tone Generator","item":"https://sharpdev.tools/tools/dtmf/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is DTMF?","acceptedAnswer":{"@type":"Answer","text":"DTMF stands for dual-tone multi-frequency, the signalling system behind touch-tone phones. Each key plays two pure tones at once, one from a low-frequency group and one from a high-frequency group, and the phone system decodes the pair back into the digit."}},{"@type":"Question","name":"Can I dial a real number with this?","acceptedAnswer":{"@type":"Answer","text":"It plays the same tones a phone keypad makes, which some old systems, intercoms or IVR menus can recognise if held to a microphone, but results vary. It is mainly for learning, testing and nostalgia."}},{"@type":"Question","name":"Why two tones per key?","acceptedAnswer":{"@type":"Answer","text":"Using two simultaneous frequencies makes each key unambiguous and hard to fake with ordinary speech or background noise, which is why the system has been reliable since the 1960s."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"DTMF Tone Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/dtmf/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/dtmf/dtmf.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('dtmf');</script>
+<div class="page">
+<h1>DTMF Tone Generator</h1>
+<p class="subtitle">Play the dual-tone (DTMF) sounds of a telephone keypad. Press keys or play a whole number. Each key is the classic pair of low and high frequencies.</p>
+<div class="dtmf-pad" id="pad"></div>
+<div class="out-head"><label>Dialed</label></div>
+<input type="text" id="dialed" class="output" readonly style="min-height:auto;padding:10px;font-size:18px;">
+<div class="actions"><button class="small-btn" id="playseq">Play sequence</button><button class="small-btn" id="clear">Clear</button></div>
+<p class="note">DTMF (dual-tone multi-frequency) is how a phone keypad signals: each key plays two pure tones at once, one from a low group and one from a high group. Generated live with the Web Audio API; nothing is recorded.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is DTMF?</summary><p>DTMF stands for dual-tone multi-frequency, the signalling system behind touch-tone phones. Each key plays two pure tones at once, one from a low-frequency group and one from a high-frequency group, and the phone system decodes the pair back into the digit.</p></details>
+<details><summary>Can I dial a real number with this?</summary><p>It plays the same tones a phone keypad makes, which some old systems, intercoms or IVR menus can recognise if held to a microphone, but results vary. It is mainly for learning, testing and nostalgia.</p></details>
+<details><summary>Why two tones per key?</summary><p>Using two simultaneous frequencies makes each key unambiguous and hard to fake with ordinary speech or background noise, which is why the system has been reliable since the 1960s.</p></details>
+</section>
+<script src="/tools/dtmf/dtmf.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

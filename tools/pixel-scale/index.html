@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Pixel Scale Calculator (Astrophotography Sampling) | SharpDev.tools</title>
+<meta content="Free astrophotography pixel scale calculator. Compute arcsec/pixel from pixel size and focal length, the sensor field of view, and whether you are over- or under-sampled for your seeing. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/pixel-scale/" rel="canonical"/>
+<meta content="Pixel Scale Calculator (Astrophotography Sampling) | SharpDev.tools" property="og:title"/>
+<meta content="Free astrophotography pixel scale calculator. Compute arcsec/pixel from pixel size and focal length, the sensor field of view, and whether you are over- or under-sampled for your seeing. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/pixel-scale/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Pixel Scale Calculator (Astrophotography Sampling) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free astrophotography pixel scale calculator. Compute arcsec/pixel from pixel size and focal length, the sensor field of view, and whether you are over- or under-sampled for your seeing. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"Pixel Scale Calculator","item":"https://sharpdev.tools/tools/pixel-scale/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is pixel scale calculated?","acceptedAnswer":{"@type":"Answer","text":"206.265 \u00d7 pixel size in microns \u00f7 focal length in mm gives arcseconds per pixel. A 3.76 \u00b5m camera on a 530 mm scope works at 1.46\u2033/px."}},{"@type":"Question","name":"What pixel scale should I aim for?","acceptedAnswer":{"@type":"Answer","text":"For deep sky, about a third to a half of your seeing: with typical 2\u2033 seeing that is 0.67-1\u2033/px. Planetary imaging with lucky-imaging techniques goes far finer (0.1-0.25\u2033/px) because video stacking beats the seeing."}},{"@type":"Question","name":"What does over- and undersampled mean?","acceptedAnswer":{"@type":"Answer","text":"Oversampled means many pixels per star: no extra detail (the atmosphere is the blur), just dimmer pixels and bigger files. Undersampled means stars land on too few pixels and look square. Well sampled keeps detail and sensitivity in balance."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Pixel Scale Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/pixel-scale/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/pixel-scale/pixel-scale.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('pixel-scale');</script>
+<div class="page">
+<h1>Pixel Scale Calculator</h1>
+<p class="subtitle">Arcseconds per pixel from your camera's pixel size and telescope focal length, with sensor field of view and a seeing-based sampling verdict.</p>
+<div class="row">
+<div class="field"><label for="px">Pixel size (µm)</label><input type="number" id="px" value="3.76" step="any"></div>
+<div class="field"><label for="fl">Focal length (mm)</label><input type="number" id="fl" value="530" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="w">Sensor width (px, optional)</label><input type="number" id="w" value="6248" step="any"></div>
+<div class="field"><label for="h">Sensor height (px)</label><input type="number" id="h" value="4176" step="any"></div>
+<div class="field"><label for="see">Typical seeing (″)</label><input type="number" id="see" value="2" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Pixel scale</div><div class="value" id="scale">-</div></div>
+<div class="result-card"><div class="label">Field of view</div><div class="value" id="fov" style="font-size:14px;">-</div></div>
+<div class="result-card"><div class="label">Sampling</div><div class="value" id="samp" style="font-size:13px;">-</div></div></div>
+<p class="note">Pixel scale = 206.265 × pixel size (µm) ÷ focal length (mm), in arcseconds per pixel. For deep-sky work aim to sample the seeing at about a third to a half (Nyquist): with 2″ seeing, a scale of 0.67-1″/px is ideal. Much finer is oversampled (wasted resolution, dimmer pixels); much coarser is undersampled (blocky stars).</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is pixel scale calculated?</summary><p>206.265 × pixel size in microns ÷ focal length in mm gives arcseconds per pixel. A 3.76 µm camera on a 530 mm scope works at 1.46″/px.</p></details>
+<details><summary>What pixel scale should I aim for?</summary><p>For deep sky, about a third to a half of your seeing: with typical 2″ seeing that is 0.67-1″/px. Planetary imaging with lucky-imaging techniques goes far finer (0.1-0.25″/px) because video stacking beats the seeing.</p></details>
+<details><summary>What does over- and undersampled mean?</summary><p>Oversampled means many pixels per star: no extra detail (the atmosphere is the blur), just dimmer pixels and bigger files. Undersampled means stars land on too few pixels and look square. Well sampled keeps detail and sensitivity in balance.</p></details>
+</section>
+<script src="/tools/pixel-scale/pixel-scale.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

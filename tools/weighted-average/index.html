@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Weighted Average Calculator | SharpDev.tools</title>
+<meta content="Free weighted average calculator. Enter values and matching weights to get the weighted mean, the sum of weights and the plain average for comparison. Great for grades and weighted scores. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/weighted-average/" rel="canonical"/>
+<meta content="Weighted Average Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free weighted average calculator. Enter values and matching weights to get the weighted mean, the sum of weights and the plain average for comparison. Great for grades and weighted scores. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/weighted-average/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Weighted Average Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free weighted average calculator. Enter values and matching weights to get the weighted mean, the sum of weights and the plain average for comparison. Great for grades and weighted scores. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Weighted Average Calculator","item":"https://sharpdev.tools/tools/weighted-average/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a weighted average?","acceptedAnswer":{"@type":"Answer","text":"A weighted average lets some values count more than others. Each value is multiplied by its weight, the results are added up, and the total is divided by the sum of the weights. A course where the final exam is worth 50% is a classic example."}},{"@type":"Question","name":"Do the weights have to add up to 1 or 100?","acceptedAnswer":{"@type":"Answer","text":"No. Weights can be any numbers, like 3, 2 and 1. The tool divides by the sum of the weights, so the scale does not matter. Percentages and fractions both work."}},{"@type":"Question","name":"Why is the plain average different?","acceptedAnswer":{"@type":"Answer","text":"The plain average treats every value equally. The weighted average shifts toward the values with bigger weights, so the two match only when all weights are equal."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Weighted Average Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/weighted-average/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/weighted-average/weighted-average.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('weighted-average');</script>
+<div class="page">
+<h1>Weighted Average Calculator</h1>
+<p class="subtitle">Calculate a weighted mean from a list of values and their weights. Handy for grades, scores and any average where some items count more.</p>
+<div class="row">
+<div class="field"><label for="vals">Values</label><textarea id="vals" style="min-height:90px;">90, 80, 95</textarea></div>
+<div class="field"><label for="wts">Weights</label><textarea id="wts" style="min-height:90px;">0.5, 0.2, 0.3</textarea></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Weighted average</div><div class="value" id="wavg">—</div></div>
+<div class="result-card"><div class="label">Sum of weights</div><div class="value" id="sw">—</div></div>
+<div class="result-card"><div class="label">Plain average</div><div class="value" id="pa">—</div></div></div>
+<p class="note" id="warn" style="display:none;"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a weighted average?</summary><p>A weighted average lets some values count more than others. Each value is multiplied by its weight, the results are added up, and the total is divided by the sum of the weights. A course where the final exam is worth 50% is a classic example.</p></details>
+<details><summary>Do the weights have to add up to 1 or 100?</summary><p>No. Weights can be any numbers, like 3, 2 and 1. The tool divides by the sum of the weights, so the scale does not matter. Percentages and fractions both work.</p></details>
+<details><summary>Why is the plain average different?</summary><p>The plain average treats every value equally. The weighted average shifts toward the values with bigger weights, so the two match only when all weights are equal.</p></details>
+</section>
+<script src="/tools/weighted-average/weighted-average.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

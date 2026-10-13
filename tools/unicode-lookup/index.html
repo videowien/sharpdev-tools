@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Unicode Character Inspector (Code Points &amp; Encodings) | SharpDev.tools</title>
+<meta content="Free Unicode character inspector. Paste text to break it into characters and see each one's Unicode code point (U+), decimal value, HTML entity, and UTF-8 and UTF-16 hex encodings. Handles emoji and astral characters. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/unicode-lookup/" rel="canonical"/>
+<meta content="Unicode Character Inspector (Code Points &amp; Encodings) | SharpDev.tools" property="og:title"/>
+<meta content="Free Unicode character inspector. Paste text to break it into characters and see each one's Unicode code point (U+), decimal value, HTML entity, and UTF-8 and UTF-16 hex encodings. Handles emoji and astral characters. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/unicode-lookup/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Unicode Character Inspector (Code Points &amp; Encodings) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Unicode character inspector. Paste text to break it into characters and see each one's Unicode code point (U+), decimal value, HTML entity, and UTF-8 and UTF-16 hex encodings. Handles emoji and astral characters. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Unicode Character Inspector","item":"https://sharpdev.tools/tools/unicode-lookup/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this show for each character?","acceptedAnswer":{"@type":"Answer","text":"For every Unicode code point in your text it shows the character itself, its code point (the U+ value), the decimal number, the numeric HTML entity, and the raw bytes in UTF-8 and UTF-16. It is handy for debugging stray or invisible characters."}},{"@type":"Question","name":"Why does one emoji sometimes show several rows?","acceptedAnswer":{"@type":"Answer","text":"Many emoji are sequences of several code points (for example a base emoji plus a skin-tone modifier, joined by a zero-width joiner). The tool lists each code point on its own row, which is exactly how the text is encoded."}},{"@type":"Question","name":"Why are character names not shown?","acceptedAnswer":{"@type":"Answer","text":"The official Unicode name for every character (like LATIN SMALL LETTER A) needs a large lookup database that would bloat the page. This tool focuses on code points and encodings, which run instantly with no data download."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Unicode Character Inspector \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/unicode-lookup/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/unicode-lookup/unicode-lookup.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('unicode-lookup');</script>
+<div class="page">
+<h1>Unicode Character Inspector</h1>
+<p class="subtitle">Paste any text to see each character's Unicode code point, HTML entity, and UTF-8 and UTF-16 byte encodings. Great for debugging odd characters.</p>
+<div class="field"><label for="in">Text</label><input type="text" id="in" value="Aé😀"></div>
+<div class="uc-wrap"><table class="uc-table" id="out"></table></div>
+<p class="note">Each row is one Unicode code point (so an emoji made of several code points shows as several rows). The code point is the U+ value; the HTML entity works in web pages; UTF-8 and UTF-16 are the byte sequences used to store the character. Character names are not shown (that needs a large database).</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does this show for each character?</summary><p>For every Unicode code point in your text it shows the character itself, its code point (the U+ value), the decimal number, the numeric HTML entity, and the raw bytes in UTF-8 and UTF-16. It is handy for debugging stray or invisible characters.</p></details>
+<details><summary>Why does one emoji sometimes show several rows?</summary><p>Many emoji are sequences of several code points (for example a base emoji plus a skin-tone modifier, joined by a zero-width joiner). The tool lists each code point on its own row, which is exactly how the text is encoded.</p></details>
+<details><summary>Why are character names not shown?</summary><p>The official Unicode name for every character (like LATIN SMALL LETTER A) needs a large lookup database that would bloat the page. This tool focuses on code points and encodings, which run instantly with no data download.</p></details>
+</section>
+<script src="/tools/unicode-lookup/unicode-lookup.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

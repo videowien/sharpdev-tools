@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Microphone Test (Check Your Mic Online) | SharpDev.tools</title>
+<meta content="Free online microphone test. Check your mic works by watching a live input level meter respond as you speak. Runs entirely in your browser; nothing is recorded, sent or uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/mic-test/" rel="canonical"/>
+<meta content="Microphone Test (Check Your Mic Online) | SharpDev.tools" property="og:title"/>
+<meta content="Free online microphone test. Check your mic works by watching a live input level meter respond as you speak. Runs entirely in your browser; nothing is recorded, sent or uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mic-test/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Microphone Test (Check Your Mic Online) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free online microphone test. Check your mic works by watching a live input level meter respond as you speak. Runs entirely in your browser; nothing is recorded, sent or uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Browser & Device Tests","item":"https://sharpdev.tools/#browser-device-tests"},{"@type":"ListItem","position":3,"name":"Microphone Test","item":"https://sharpdev.tools/tools/mic-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my microphone audio recorded?","acceptedAnswer":{"@type":"Answer","text":"No. The sound is analysed in real time only to drive the level meter, and is never recorded, stored or uploaded. Everything happens locally in your browser."}},{"@type":"Question","name":"The meter does not move when I speak, why?","acceptedAnswer":{"@type":"Answer","text":"Your system may be using a different microphone, the input may be muted, or access was blocked. Check your operating system's sound input settings and the microphone permission in the browser's address bar."}},{"@type":"Question","name":"Does it work for testing a headset or USB mic?","acceptedAnswer":{"@type":"Answer","text":"Yes. It tests whichever microphone your browser uses by default. Select the device you want as the default input in your system settings, then start the test."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Microphone Test \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/mic-test/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mic-test/mic-test.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mic-test');</script>
+<div class="page">
+<h1>Microphone Test</h1>
+<p class="subtitle">Check that your microphone works and picks up sound. Speak and watch the live input level meter. Nothing is recorded or uploaded.</p>
+<div class="actions"><button class="small-btn" id="start">Start microphone</button><button class="small-btn" id="stop" disabled>Stop</button></div>
+<div id="micstatus">Click “Start microphone” and allow access when your browser asks.</div>
+<div class="out-head"><label>Input level</label><span id="pct" style="color:#888;font-size:12px;">0%</span></div>
+<div class="meter"><div class="meter-fill" id="fill"></div></div>
+<div class="bars" id="bars"></div>
+<p class="note">The audio is analysed live in your browser and never recorded or uploaded. If the meter stays flat while you speak, check that the right microphone is selected in your system settings and that access was not blocked in the address bar.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>Is my microphone audio recorded?</summary><p>No. The sound is analysed in real time only to drive the level meter, and is never recorded, stored or uploaded. Everything happens locally in your browser.</p></details>
+<details><summary>The meter does not move when I speak, why?</summary><p>Your system may be using a different microphone, the input may be muted, or access was blocked. Check your operating system's sound input settings and the microphone permission in the browser's address bar.</p></details>
+<details><summary>Does it work for testing a headset or USB mic?</summary><p>Yes. It tests whichever microphone your browser uses by default. Select the device you want as the default input in your system settings, then start the test.</p></details>
+</section>
+<script src="/tools/mic-test/mic-test.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>500 Rule Calculator (Max Shutter for Stars) | SharpDev.tools</title>
+<meta content="Free 500 rule calculator for astrophotography. Enter focal length and sensor format to get the longest shutter speed before stars trail, using the 300, 500 or 600 rule. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/500-rule/" rel="canonical"/>
+<meta content="500 Rule Calculator (Max Shutter for Stars) | SharpDev.tools" property="og:title"/>
+<meta content="Free 500 rule calculator for astrophotography. Enter focal length and sensor format to get the longest shutter speed before stars trail, using the 300, 500 or 600 rule. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/500-rule/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="500 Rule Calculator (Max Shutter for Stars) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free 500 rule calculator for astrophotography. Enter focal length and sensor format to get the longest shutter speed before stars trail, using the 300, 500 or 600 rule. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"500 Rule Calculator","item":"https://sharpdev.tools/tools/500-rule/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the 500 rule?","acceptedAnswer":{"@type":"Answer","text":"It estimates the longest shutter speed before the Earth rotation turns stars into streaks: seconds = 500 / (focal length times crop factor). A 14mm lens on full frame gives about 35 seconds; the same lens on APS-C gives about 24 seconds."}},{"@type":"Question","name":"Why are there 300, 500 and 600 versions?","acceptedAnswer":{"@type":"Answer","text":"They trade strictness for brightness. 500 is the common balance; 300 keeps stars sharper at the pixel level on high-resolution sensors; 600 lets in more light at the cost of slight trailing. Pick the one that matches how closely you pixel-peep."}},{"@type":"Question","name":"Is the NPF rule better?","acceptedAnswer":{"@type":"Answer","text":"Yes, the NPF rule is more accurate because it accounts for aperture and pixel pitch, but it needs more inputs. The 500 rule is the quick field estimate that gets you close."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"500 Rule Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/500-rule/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/500-rule/500-rule.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('500-rule');</script>
+<div class="page">
+<h1>500 Rule Calculator</h1>
+<p class="subtitle">Find the longest shutter speed before stars start to trail, from your focal length and sensor. Choose the 300, 500 or 600 variant.</p>
+<div class="row">
+<div class="field"><label for="sensor">Sensor / format</label><select id="sensor"><option value="ff" selected>Full frame (36x24)</option><option value="apsc">APS-C 1.5x (Nikon / Sony)</option><option value="canon">APS-C 1.6x (Canon)</option><option value="mft">Micro 4/3 (2.0x)</option><option value="one">1-inch (2.7x)</option></select></div>
+<div class="field"><label for="f">Focal length (mm)</label><input type="number" id="f" value="14" step="any"></div>
+<div class="field"><label for="rule">Rule</label><select id="rule"><option value="300">300 (strict)</option><option value="500" selected>500 (standard)</option><option value="600">600 (lenient)</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Max shutter (no trails)</div><div class="value" id="out" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Full-frame equivalent</div><div class="value" id="eff">-</div></div></div>
+<p class="note">The 500 rule estimates the longest shutter before stars trail: seconds = rule / (focal length times crop factor). 500 is the common value; 300 is stricter for sharp pixel-level stars, 600 is more lenient. The NPF rule is more precise but needs aperture and pixel pitch.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the 500 rule?</summary><p>It estimates the longest shutter speed before the Earth rotation turns stars into streaks: seconds = 500 / (focal length times crop factor). A 14mm lens on full frame gives about 35 seconds; the same lens on APS-C gives about 24 seconds.</p></details>
+<details><summary>Why are there 300, 500 and 600 versions?</summary><p>They trade strictness for brightness. 500 is the common balance; 300 keeps stars sharper at the pixel level on high-resolution sensors; 600 lets in more light at the cost of slight trailing. Pick the one that matches how closely you pixel-peep.</p></details>
+<details><summary>Is the NPF rule better?</summary><p>Yes, the NPF rule is more accurate because it accounts for aperture and pixel pitch, but it needs more inputs. The 500 rule is the quick field estimate that gets you close.</p></details>
+</section>
+<script src="/tools/500-rule/500-rule.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

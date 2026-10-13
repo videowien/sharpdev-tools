@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Nano ID Generator (Short URL-Safe IDs) | SharpDev.tools</title>
+<meta content="Free Nano ID generator. Create compact, URL-safe random identifiers with a custom length and alphabet (URL-safe, alphanumeric or numeric). A smaller alternative to UUIDs, using secure randomness. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/nanoid/" rel="canonical"/>
+<meta content="Nano ID Generator (Short URL-Safe IDs) | SharpDev.tools" property="og:title"/>
+<meta content="Free Nano ID generator. Create compact, URL-safe random identifiers with a custom length and alphabet (URL-safe, alphanumeric or numeric). A smaller alternative to UUIDs, using secure randomness. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/nanoid/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Nano ID Generator (Short URL-Safe IDs) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Nano ID generator. Create compact, URL-safe random identifiers with a custom length and alphabet (URL-safe, alphanumeric or numeric). A smaller alternative to UUIDs, using secure randomness. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Nano ID Generator","item":"https://sharpdev.tools/tools/nanoid/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Nano ID?","acceptedAnswer":{"@type":"Answer","text":"Nano ID is a tiny, secure, URL-friendly unique ID format. It is popular as a smaller alternative to UUIDs: at 21 characters it offers similar collision safety while being shorter and safe to drop straight into URLs and filenames."}},{"@type":"Question","name":"Which alphabet should I use?","acceptedAnswer":{"@type":"Answer","text":"URL-safe is the default and works everywhere. Alphanumeric avoids the underscore and hyphen, lowercase-plus-digits is handy for case-insensitive systems, and numbers-only or hex suit specific needs. Shorter alphabets need more length for the same uniqueness."}},{"@type":"Question","name":"Are they cryptographically random?","acceptedAnswer":{"@type":"Answer","text":"Yes. The bytes come from the Web Crypto API, the browser's secure random source, and everything runs locally so no ID is ever transmitted."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Nano ID Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/nanoid/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/nanoid/nanoid.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('nanoid');</script>
+<div class="page">
+<h1>Nano ID Generator</h1>
+<p class="subtitle">Generate compact, URL-safe random IDs. Choose the length and alphabet. A smaller, faster alternative to UUIDs.</p>
+<div class="row">
+<div class="field"><label for="size">Length</label><input type="number" id="size" value="21" min="2" max="64"></div>
+<div class="field"><label for="alpha">Alphabet</label><select id="alpha"><option value="url">URL-safe (A-Za-z0-9_-)</option><option value="alnum">Alphanumeric (A-Za-z0-9)</option><option value="lower">Lowercase + digits</option><option value="num">Numbers only</option><option value="hex">Hex (0-9a-f)</option></select></div>
+<div class="field"><label for="count">How many?</label><input type="number" id="count" value="5" min="1" max="500"></div></div>
+<div class="actions"><button class="small-btn" id="gen">Generate</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Nano IDs</label></div>
+<textarea class="output" id="out" readonly style="min-height:150px;"></textarea>
+<p class="note">Nano IDs use a hardware random generator (Web Crypto) and a URL-safe alphabet by default, so they need no encoding in links or filenames. At the default length of 21 they are about as collision-safe as a UUID, in fewer characters.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a Nano ID?</summary><p>Nano ID is a tiny, secure, URL-friendly unique ID format. It is popular as a smaller alternative to UUIDs: at 21 characters it offers similar collision safety while being shorter and safe to drop straight into URLs and filenames.</p></details>
+<details><summary>Which alphabet should I use?</summary><p>URL-safe is the default and works everywhere. Alphanumeric avoids the underscore and hyphen, lowercase-plus-digits is handy for case-insensitive systems, and numbers-only or hex suit specific needs. Shorter alphabets need more length for the same uniqueness.</p></details>
+<details><summary>Are they cryptographically random?</summary><p>Yes. The bytes come from the Web Crypto API, the browser's secure random source, and everything runs locally so no ID is ever transmitted.</p></details>
+</section>
+<script src="/tools/nanoid/nanoid.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

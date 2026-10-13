@@ -1,0 +1,23 @@
+.page { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 22px; }
+.hg-search { margin-bottom: 16px; }
+#hg-in { width: 100%; padding: 14px 18px; background: #141414; border: 1px solid #262626; color: #e1e1e1; font-size: 15px; border-radius: 10px; outline: none; transition: border-color 0.15s; }
+#hg-in:focus { border-color: #ff4444; }
+.hg-suggested { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+.hg-chip { padding: 6px 14px; background: #141414; border: 1px solid #262626; color: #aaa; font-size: 13px; border-radius: 999px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+.hg-chip:hover { border-color: #ff4444; color: #fff; }
+.hg-output { background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 12px; padding: 18px 22px; }
+.hg-head h2 { font-size: 13px; color: #aaa; font-weight: 500; text-transform: none; letter-spacing: 0; margin-bottom: 14px; font-family: inherit; }
+.hg-head h2 span { color: #ff4444; font-weight: 700; }
+.hg-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.hg-tag { padding: 6px 12px; background: #141414; border: 1px solid #262626; color: #aaa; font-size: 13px; border-radius: 999px; cursor: pointer; font-family: 'SF Mono', Monaco, monospace; transition: all 0.15s; user-select: none; }
+.hg-tag:hover { border-color: #ff4444; color: #fff; }
+.hg-tag.on { background: #1a1a1a; border-color: #ff4444; color: #ff4444; }
+.hg-tag.niche { border-style: dashed; }
+.hg-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.copy-btn { padding: 7px 14px; background: #1f1f1f; border: 1px solid #333; color: #ccc; font-size: 13px; font-weight: 500; border-radius: 6px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+.hint { font-size: 12px; color: #666; margin-top: 10px; }
+@media (max-width: 600px) { .page h1 { font-size: 28px; } }

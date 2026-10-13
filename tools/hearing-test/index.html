@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Online Hearing Test (Frequency Range) | SharpDev.tools</title>
+<meta content="Free online hearing test. Play a pure tone and slide the frequency up to find the highest pitch you can hear, with age-related reference points. A rough self-check of high-frequency hearing, not a medical diagnosis. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/hearing-test/" rel="canonical"/>
+<meta content="Online Hearing Test (Frequency Range) | SharpDev.tools" property="og:title"/>
+<meta content="Free online hearing test. Play a pure tone and slide the frequency up to find the highest pitch you can hear, with age-related reference points. A rough self-check of high-frequency hearing, not a medical diagnosis. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/hearing-test/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Online Hearing Test (Frequency Range) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free online hearing test. Play a pure tone and slide the frequency up to find the highest pitch you can hear, with age-related reference points. A rough self-check of high-frequency hearing, not a medical diagnosis. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Audio","item":"https://sharpdev.tools/#audio"},{"@type":"ListItem","position":3,"name":"Hearing Frequency Range Test","item":"https://sharpdev.tools/tools/hearing-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I take the hearing test?","acceptedAnswer":{"@type":"Answer","text":"Set a comfortable volume, start the tone at a low frequency, then slowly slide it up. The highest frequency you can still hear is roughly your upper limit. Slide back down to confirm where it reappears."}},{"@type":"Question","name":"What is a normal frequency range?","acceptedAnswer":{"@type":"Answer","text":"Healthy young ears hear roughly 20 Hz to 20 kHz. The top end falls with age and noise exposure, so many adults top out around 15 to 17 kHz, and tones above 17 kHz (the so-called mosquito tone) are often inaudible to older listeners."}},{"@type":"Question","name":"Is this a real hearing test?","acceptedAnswer":{"@type":"Answer","text":"No. It is a rough, fun self-check that depends entirely on your speakers or headphones and volume, which cannot reproduce all frequencies evenly. For any real concern about your hearing, see an audiologist."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Hearing Frequency Range Test \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/hearing-test/","applicationCategory":"MultimediaApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/hearing-test/hearing-test.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('hearing-test');</script>
+<div class="page">
+<h1>Hearing Frequency Range Test</h1>
+<p class="subtitle">Find the highest frequency you can hear. Slide up slowly until the tone disappears. A rough, fun check of your high-frequency hearing, not a medical test.</p>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">Frequency</div><div class="value" id="hz" style="font-size:30px;">12000 Hz</div></div></div>
+<div class="field"><label for="freq">Frequency (20 Hz – 20 kHz)</label><input type="range" id="freq" min="20" max="20000" value="12000"></div>
+<div class="row">
+<div class="field"><label for="vol">Volume</label><input type="range" id="vol" min="0" max="100" value="30"></div>
+<div class="field" style="display:flex;align-items:flex-end;"><button class="small-btn" id="toggle" style="width:100%;">Play tone</button></div></div>
+<p class="note" id="ref">Typical limits: most adults hear up to about 15–17 kHz; this drops with age (often ~17 kHz at 20, ~14 kHz at 40, ~12 kHz at 50+). Mosquito-tone territory is 17 kHz and up. This is a rough self-check, not a hearing assessment, and depends heavily on your speakers and volume.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I take the hearing test?</summary><p>Set a comfortable volume, start the tone at a low frequency, then slowly slide it up. The highest frequency you can still hear is roughly your upper limit. Slide back down to confirm where it reappears.</p></details>
+<details><summary>What is a normal frequency range?</summary><p>Healthy young ears hear roughly 20 Hz to 20 kHz. The top end falls with age and noise exposure, so many adults top out around 15 to 17 kHz, and tones above 17 kHz (the so-called mosquito tone) are often inaudible to older listeners.</p></details>
+<details><summary>Is this a real hearing test?</summary><p>No. It is a rough, fun self-check that depends entirely on your speakers or headphones and volume, which cannot reproduce all frequencies evenly. For any real concern about your hearing, see an audiologist.</p></details>
+</section>
+<script src="/tools/hearing-test/hearing-test.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

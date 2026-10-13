@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>3D Print Cost Calculator (Filament &amp; Electricity) | SharpDev.tools</title>
+<meta content="Free 3D print cost calculator. Enter the filament used, spool price, print time, printer power and electricity rate to get the material, electricity and total cost per print. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/filament-cost/" rel="canonical"/>
+<meta content="3D Print Cost Calculator (Filament &amp; Electricity) | SharpDev.tools" property="og:title"/>
+<meta content="Free 3D print cost calculator. Enter the filament used, spool price, print time, printer power and electricity rate to get the material, electricity and total cost per print. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/filament-cost/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="3D Print Cost Calculator (Filament &amp; Electricity) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free 3D print cost calculator. Enter the filament used, spool price, print time, printer power and electricity rate to get the material, electricity and total cost per print. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"3D Print Cost Calculator","item":"https://sharpdev.tools/tools/filament-cost/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the cost of a 3D print calculated?","acceptedAnswer":{"@type":"Answer","text":"Filament cost is the grams your slicer reports divided by 1000, times the spool price per kg. Electricity is the printer's average wattage times the print hours times your kWh rate. 100 g on a 25-per-kg spool plus 5 hours at 150 W and 0.30 per kWh comes to about 2.73."}},{"@type":"Question","name":"What wattage should I enter?","acceptedAnswer":{"@type":"Answer","text":"Average draw, not peak. A typical bed-slinger averages 100-180 W once warmed up (more with a heated chamber or large bed). If you want it exact, a cheap plug-in power meter over one full print gives you the true kWh."}},{"@type":"Question","name":"Why add a failure allowance?","acceptedAnswer":{"@type":"Answer","text":"Some prints fail and that filament and power is spent anyway. Adding 5-15% spreads those losses across successful prints, which is essential if you price prints for other people."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"3D Print Cost Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/filament-cost/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/filament-cost/filament-cost.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('filament-cost');</script>
+<div class="page">
+<h1>3D Print Cost Calculator</h1>
+<p class="subtitle">Work out what a print really costs: filament used, electricity, and an optional failure allowance. Slicer gives you the grams; this gives you the money.</p>
+<div class="row">
+<div class="field"><label for="g">Filament used (g, from slicer)</label><input type="number" id="g" value="100" step="any"></div>
+<div class="field"><label for="spool">Spool price (per kg)</label><input type="number" id="spool" value="25" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="h">Print time (hours)</label><input type="number" id="h" value="5" step="any"></div>
+<div class="field"><label for="w">Printer power (W avg)</label><input type="number" id="w" value="150" step="any"></div>
+<div class="field"><label for="kwh">Electricity (per kWh)</label><input type="number" id="kwh" value="0.30" step="any"></div></div>
+<div class="row"><div class="field"><label for="fail">Failure allowance (%)</label><input type="number" id="fail" value="10" step="any" min="0"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Total per print</div><div class="value" id="tot">-</div></div>
+<div class="result-card"><div class="label">Filament</div><div class="value" id="matc">-</div></div>
+<div class="result-card"><div class="label">Electricity</div><div class="value" id="elec">-</div></div></div>
+<p class="note">Material cost = grams used ÷ 1000 × spool price. Electricity = printer wattage ÷ 1000 × hours × your rate. The failure allowance spreads the cost of the occasional failed print across the good ones. Amounts are in whatever currency you enter. Wear parts (nozzles, sheets) and labour are extra.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the cost of a 3D print calculated?</summary><p>Filament cost is the grams your slicer reports divided by 1000, times the spool price per kg. Electricity is the printer's average wattage times the print hours times your kWh rate. 100 g on a 25-per-kg spool plus 5 hours at 150 W and 0.30 per kWh comes to about 2.73.</p></details>
+<details><summary>What wattage should I enter?</summary><p>Average draw, not peak. A typical bed-slinger averages 100-180 W once warmed up (more with a heated chamber or large bed). If you want it exact, a cheap plug-in power meter over one full print gives you the true kWh.</p></details>
+<details><summary>Why add a failure allowance?</summary><p>Some prints fail and that filament and power is spent anyway. Adding 5-15% spreads those losses across successful prints, which is essential if you price prints for other people.</p></details>
+</section>
+<script src="/tools/filament-cost/filament-cost.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

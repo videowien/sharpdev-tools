@@ -1,0 +1,6 @@
+const $=id=>document.getElementById(id);
+function gen(){let s='root = true\n\n[*]\n';s+='indent_style = '+$('istyle').value+'\n';if($('istyle').value==='space')s+='indent_size = '+(parseInt($('isize').value)||2)+'\n';s+='end_of_line = '+$('eol').value+'\ncharset = utf-8\n';s+='trim_trailing_whitespace = '+($('trim').checked?'true':'false')+'\n';s+='insert_final_newline = '+($('finalnl').checked?'true':'false')+'\n';const ml=parseInt($('maxlen').value)||0;if(ml>0)s+='max_line_length = '+ml+'\n';if($('mdtrim').checked)s+='\n[*.md]\ntrim_trailing_whitespace = false\n';$('out').value=s;}
+['istyle','isize','eol','maxlen','trim','finalnl','mdtrim'].forEach(id=>{$(id).addEventListener('input',gen);$(id).addEventListener('change',gen);});
+$('copy').addEventListener('click',()=>navigator.clipboard.writeText($('out').value));
+$('dl').addEventListener('click',()=>{const b=new Blob([$('out').value],{type:'text/plain'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='.editorconfig';a.click();URL.revokeObjectURL(u);});
+gen();

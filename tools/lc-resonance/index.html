@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>LC Resonant Frequency Calculator | SharpDev.tools</title>
+<meta content="Free LC resonance calculator. Compute the resonant frequency of an inductor-capacitor (LC) tank circuit from L and C, or solve for the inductor or capacitor needed to tune to a target frequency. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/lc-resonance/" rel="canonical"/>
+<meta content="LC Resonant Frequency Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free LC resonance calculator. Compute the resonant frequency of an inductor-capacitor (LC) tank circuit from L and C, or solve for the inductor or capacitor needed to tune to a target frequency. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/lc-resonance/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="LC Resonant Frequency Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free LC resonance calculator. Compute the resonant frequency of an inductor-capacitor (LC) tank circuit from L and C, or solve for the inductor or capacitor needed to tune to a target frequency. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Electronics","item":"https://sharpdev.tools/#electronics"},{"@type":"ListItem","position":3,"name":"LC Resonant Frequency Calculator","item":"https://sharpdev.tools/tools/lc-resonance/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is LC resonance?","acceptedAnswer":{"@type":"Answer","text":"An inductor and capacitor exchange energy back and forth, and at one particular frequency they reinforce each other: the resonant frequency, f = 1 / (2\u03c0\u00b7\u221a(L\u00b7C)). It is how radios tune to a station and how many oscillators set their frequency."}},{"@type":"Question","name":"What units does this use?","acceptedAnswer":{"@type":"Answer","text":"Inductance in microhenries (\u00b5H) and capacitance in picofarads (pF), which are the practical ranges for radio-frequency work. The tool converts internally and shows the frequency in Hz up to GHz."}},{"@type":"Question","name":"How do I tune to a specific frequency?","acceptedAnswer":{"@type":"Answer","text":"Pick one component you have, then adjust the other until the resonant frequency matches your target. Larger L or C gives a lower frequency, smaller gives higher."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"LC Resonant Frequency Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/lc-resonance/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/lc-resonance/lc-resonance.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('lc-resonance');</script>
+<div class="page">
+<h1>LC Resonant Frequency Calculator</h1>
+<p class="subtitle">Find the resonant frequency of an LC tank circuit from the inductance and capacitance, or solve for a component to tune to a target frequency.</p>
+<div class="row">
+<div class="field"><label for="l">Inductance L (µH)</label><input type="number" id="l" value="100" step="any"></div>
+<div class="field"><label for="c">Capacitance C (pF)</label><input type="number" id="c" value="100" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">Resonant frequency</div><div class="value" id="f" style="font-size:24px;">—</div></div></div>
+<p class="note">An inductor and capacitor together resonate at f = 1 / (2π·√(L·C)). This is the basis of radio tuning, oscillators and filters. Increasing either L or C lowers the resonant frequency.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is LC resonance?</summary><p>An inductor and capacitor exchange energy back and forth, and at one particular frequency they reinforce each other: the resonant frequency, f = 1 / (2π·√(L·C)). It is how radios tune to a station and how many oscillators set their frequency.</p></details>
+<details><summary>What units does this use?</summary><p>Inductance in microhenries (µH) and capacitance in picofarads (pF), which are the practical ranges for radio-frequency work. The tool converts internally and shows the frequency in Hz up to GHz.</p></details>
+<details><summary>How do I tune to a specific frequency?</summary><p>Pick one component you have, then adjust the other until the resonant frequency matches your target. Larger L or C gives a lower frequency, smaller gives higher.</p></details>
+</section>
+<script src="/tools/lc-resonance/lc-resonance.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* Net Worth — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.opt-row { display: flex; gap: 12px; align-items: center; }
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+.opt-row select {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 6px; font-size: 14px;
+}
+
+.section-title { font-size: 14px; color: #fff; margin-bottom: 12px; font-weight: 600; }
+.section-title .muted { color: #888; font-weight: 400; font-size: 12px; }
+
+.line-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+.line { display: grid; grid-template-columns: 1fr 130px 36px; gap: 8px; align-items: center; }
+.line input {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 8px 10px; border-radius: 4px; font-size: 13px;
+}
+.line input[type=number] { font-family: 'SF Mono', monospace; text-align: right; }
+.line button {
+  background: transparent; border: none; color: #555; cursor: pointer; font-size: 16px;
+}
+.line button:hover { color: #ff4444; }
+
+.add-btn {
+  background: transparent; border: 1px dashed #2a2a2a; color: #888;
+  padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;
+}
+.add-btn:hover { border-color: #ff4444; color: #ff4444; }
+
+.subtotal { font-size: 14px; color: #ccc; margin-top: 10px; text-align: right; font-family: 'SF Mono', monospace; }
+.subtotal span { color: #fff; font-weight: 600; }
+
+.result-card { text-align: center; padding: 28px 20px; }
+.result-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+.result-value { font-size: 44px; font-weight: 700; color: #fff; font-family: 'SF Mono', monospace; margin-top: 10px; }
+.result-value.pos { color: #4caf50; }
+.result-value.neg { color: #ff6666; }
+.result-sub { font-size: 13px; color: #888; margin-top: 8px; }
+
+.ref-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.ref-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.ref-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.ref-table td:not(:first-child) { font-family: 'SF Mono', monospace; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+  .result-value { font-size: 32px; }
+}

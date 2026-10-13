@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>J-Pole Antenna Calculator | SharpDev.tools</title>
+<meta content="Free J-pole antenna calculator. Enter a frequency to get the long radiator and the quarter-wave matching stub lengths, in inches, feet and metres. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/j-pole/" rel="canonical"/>
+<meta content="J-Pole Antenna Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free J-pole antenna calculator. Enter a frequency to get the long radiator and the quarter-wave matching stub lengths, in inches, feet and metres. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/j-pole/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="J-Pole Antenna Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free J-pole antenna calculator. Enter a frequency to get the long radiator and the quarter-wave matching stub lengths, in inches, feet and metres. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"J-Pole Antenna Calculator","item":"https://sharpdev.tools/tools/j-pole/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the J-pole dimensions?","acceptedAnswer":{"@type":"Answer","text":"The long radiator is three quarters of a wavelength and the short matching stub is a quarter, each with a 0.95 velocity factor. For 2m at 146 MHz that is about 57.6 inches long and 19.2 inches short, the classic J-pole numbers."}},{"@type":"Question","name":"Why does a J-pole need no radials?","acceptedAnswer":{"@type":"Answer","text":"The quarter-wave stub is an impedance-matching section that transforms the end-fed half-wave radiator down to 50 ohms, so the antenna is self-contained and end-fed. That makes it a favourite for masts and portable VHF/UHF use."}},{"@type":"Question","name":"Where does the coax connect?","acceptedAnswer":{"@type":"Answer","text":"The feed taps onto the two stub conductors an inch or two above the bottom short. Start low and slide the tap up for the lowest SWR; the exact point depends on tubing size and spacing."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"J-Pole Antenna Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/j-pole/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/j-pole/j-pole.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('j-pole');</script>
+<div class="page">
+<h1>J-Pole Antenna Calculator</h1>
+<p class="subtitle">Find the radiator and matching-stub lengths for a J-pole antenna, the classic no-radials VHF/UHF vertical, at any frequency.</p>
+<div class="row"><div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="146" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Long element</div><div class="value" id="lng" style="font-size:16px;">-</div></div>
+<div class="result-card"><div class="label">Matching stub (short)</div><div class="value" id="sht" style="font-size:16px;">-</div></div></div>
+<p class="note">A J-pole is a half-wave radiator fed by a quarter-wave matching stub, so it needs no radials. The long element is three quarters of a wavelength, the short stub is a quarter, both with a 0.95 velocity factor. The feed taps onto the stub an inch or two up; slide it for lowest SWR.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What are the J-pole dimensions?</summary><p>The long radiator is three quarters of a wavelength and the short matching stub is a quarter, each with a 0.95 velocity factor. For 2m at 146 MHz that is about 57.6 inches long and 19.2 inches short, the classic J-pole numbers.</p></details>
+<details><summary>Why does a J-pole need no radials?</summary><p>The quarter-wave stub is an impedance-matching section that transforms the end-fed half-wave radiator down to 50 ohms, so the antenna is self-contained and end-fed. That makes it a favourite for masts and portable VHF/UHF use.</p></details>
+<details><summary>Where does the coax connect?</summary><p>The feed taps onto the two stub conductors an inch or two above the bottom short. Start low and slide the tap up for the lowest SWR; the exact point depends on tubing size and spacing.</p></details>
+</section>
+<script src="/tools/j-pole/j-pole.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

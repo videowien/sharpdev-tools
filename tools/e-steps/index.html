@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>E-Steps Calibration Calculator (Extruder Steps/mm) | SharpDev.tools</title>
+<meta content="Free e-steps calibration calculator. Enter your current steps/mm, the requested extrusion and the measured actual extrusion to get the corrected extruder steps/mm (M92). Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/e-steps/" rel="canonical"/>
+<meta content="E-Steps Calibration Calculator (Extruder Steps/mm) | SharpDev.tools" property="og:title"/>
+<meta content="Free e-steps calibration calculator. Enter your current steps/mm, the requested extrusion and the measured actual extrusion to get the corrected extruder steps/mm (M92). Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/e-steps/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="E-Steps Calibration Calculator (Extruder Steps/mm) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free e-steps calibration calculator. Enter your current steps/mm, the requested extrusion and the measured actual extrusion to get the corrected extruder steps/mm (M92). Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"E-Steps Calibration Calculator","item":"https://sharpdev.tools/tools/e-steps/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calibrate e-steps?","acceptedAnswer":{"@type":"Answer","text":"Heat the hotend, mark the filament a known distance above the extruder (say 120 mm), tell the printer to extrude 100 mm slowly, then measure the distance left to the mark. If 96 mm actually went in, new e-steps = current \u00d7 100 \u00f7 96."}},{"@type":"Question","name":"How do I find my current e-steps?","acceptedAnswer":{"@type":"Answer","text":"Send M503 in a terminal and look for the M92 line; the E value is your current steps/mm. Common defaults are 93 for many Creality bobbins-style extruders and 415 for geared extruders like the BMG."}},{"@type":"Question","name":"How do I save the new value?","acceptedAnswer":{"@type":"Answer","text":"Send M92 E followed by the new number, then M500 to store it to EEPROM. On Klipper, set rotation_distance instead; the same measurement drives the correction the other way around."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"E-Steps Calibration Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/e-steps/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/e-steps/e-steps.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('e-steps');</script>
+<div class="page">
+<h1>E-Steps Calibration Calculator</h1>
+<p class="subtitle">Calibrate your extruder: mark filament, extrude 100 mm, measure what actually moved, and get the corrected steps/mm to save with M92.</p>
+<div class="row">
+<div class="field"><label for="cur">Current e-steps (steps/mm, M503)</label><input type="number" id="cur" value="93" step="any"></div>
+<div class="field"><label for="req">Requested extrusion (mm)</label><input type="number" id="req" value="100" step="any"></div>
+<div class="field"><label for="act">Actually extruded (mm)</label><input type="number" id="act" value="96" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">New e-steps</div><div class="value" id="new" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Current error</div><div class="value" id="err">-</div></div>
+<div class="result-card"><div class="label">Save with</div><div class="value" id="cmd" style="font-size:13px;">-</div></div></div>
+<p class="note">New e-steps = current × requested ÷ actual. Mark the filament (e.g. 120 mm above the extruder entry), extrude 100 mm at low speed with the hotend at temperature, then measure the remaining distance to the mark to get the actual figure. Save with M92 E… then M500.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I calibrate e-steps?</summary><p>Heat the hotend, mark the filament a known distance above the extruder (say 120 mm), tell the printer to extrude 100 mm slowly, then measure the distance left to the mark. If 96 mm actually went in, new e-steps = current × 100 ÷ 96.</p></details>
+<details><summary>How do I find my current e-steps?</summary><p>Send M503 in a terminal and look for the M92 line; the E value is your current steps/mm. Common defaults are 93 for many Creality bobbins-style extruders and 415 for geared extruders like the BMG.</p></details>
+<details><summary>How do I save the new value?</summary><p>Send M92 E followed by the new number, then M500 to store it to EEPROM. On Klipper, set rotation_distance instead; the same measurement drives the correction the other way around.</p></details>
+</section>
+<script src="/tools/e-steps/e-steps.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

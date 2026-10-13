@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Camelot Key Wheel (Harmonic Mixing Keys) | SharpDev.tools</title>
+<meta content="Free Camelot wheel key converter for harmonic mixing. Convert any key to its Camelot code and see the compatible keys to mix into (energy up, down and relative switch). Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/camelot-key/" rel="canonical"/>
+<meta content="Camelot Key Wheel (Harmonic Mixing Keys) | SharpDev.tools" property="og:title"/>
+<meta content="Free Camelot wheel key converter for harmonic mixing. Convert any key to its Camelot code and see the compatible keys to mix into (energy up, down and relative switch). Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/camelot-key/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Camelot Key Wheel (Harmonic Mixing Keys) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Camelot wheel key converter for harmonic mixing. Convert any key to its Camelot code and see the compatible keys to mix into (energy up, down and relative switch). Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Music","item":"https://sharpdev.tools/#music"},{"@type":"ListItem","position":3,"name":"Camelot Key Wheel","item":"https://sharpdev.tools/tools/camelot-key/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Camelot wheel?","acceptedAnswer":{"@type":"Answer","text":"A DJ-friendly relabelling of the circle of fifths: each key gets a code from 1 to 12 plus A (minor) or B (major). Neighbouring codes share most of their notes, so mixing between them sounds harmonic."}},{"@type":"Question","name":"Which keys can I mix together?","acceptedAnswer":{"@type":"Answer","text":"From any track: stay on the same code, move one number up or down with the same letter, or flip the letter at the same number (relative major/minor). From 8B (C major): 7B, 9B and 8A all work."}},{"@type":"Question","name":"Does the +1 direction change the energy?","acceptedAnswer":{"@type":"Answer","text":"DJs describe +1 (clockwise) as lifting the energy and -1 as calming it. The +2 jump is a stronger lift that still shares enough notes to work on many tracks."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Camelot Key Wheel \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/camelot-key/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/camelot-key/camelot-key.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('camelot-key');</script>
+<div class="page">
+<h1>Camelot Key Wheel</h1>
+<p class="subtitle">Convert between musical keys and Camelot codes, and see which keys mix harmonically: same number, one step around the wheel, or the relative switch.</p>
+<div class="row"><div class="field"><label for="key">Key</label><select id="key"></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Camelot code</div><div class="value" id="code" style="font-size:24px;">-</div></div>
+<div class="result-card"><div class="label">Mix down (-1)</div><div class="value" id="down" style="font-size:14px;">-</div></div>
+<div class="result-card"><div class="label">Mix up (+1)</div><div class="value" id="up" style="font-size:14px;">-</div></div>
+<div class="result-card"><div class="label">Relative switch</div><div class="value" id="rel" style="font-size:14px;">-</div></div></div>
+<p class="note">The Camelot wheel numbers the circle of fifths 1-12, with B for major keys and A for their relative minors. Tracks mix smoothly into the same code, one number up or down (same letter), or the same number with the other letter (relative major/minor). 8B is C major; 8A is A minor.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Camelot wheel?</summary><p>A DJ-friendly relabelling of the circle of fifths: each key gets a code from 1 to 12 plus A (minor) or B (major). Neighbouring codes share most of their notes, so mixing between them sounds harmonic.</p></details>
+<details><summary>Which keys can I mix together?</summary><p>From any track: stay on the same code, move one number up or down with the same letter, or flip the letter at the same number (relative major/minor). From 8B (C major): 7B, 9B and 8A all work.</p></details>
+<details><summary>Does the +1 direction change the energy?</summary><p>DJs describe +1 (clockwise) as lifting the energy and -1 as calming it. The +2 jump is a stronger lift that still shares enough notes to work on many tracks.</p></details>
+</section>
+<script src="/tools/camelot-key/camelot-key.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

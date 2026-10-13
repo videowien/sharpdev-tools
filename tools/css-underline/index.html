@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>CSS Underline Generator (Wavy, Double, Dotted Underlines) | SharpDev.tools</title>
+<meta content="Free CSS underline generator. Style text underlines using modern text-decoration properties: wavy, double, dotted or dashed, with colour, thickness, offset and skip-ink control. Live preview and copyable CSS. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/css-underline/" rel="canonical"/>
+<meta content="CSS Underline Generator (Wavy, Double, Dotted Underlines) | SharpDev.tools" property="og:title"/>
+<meta content="Free CSS underline generator. Style text underlines using modern text-decoration properties: wavy, double, dotted or dashed, with colour, thickness, offset and skip-ink control. Live preview and copyable CSS. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/css-underline/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CSS Underline Generator (Wavy, Double, Dotted Underlines) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free CSS underline generator. Style text underlines using modern text-decoration properties: wavy, double, dotted or dashed, with colour, thickness, offset and skip-ink control. Live preview and copyable CSS. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"CSS Underline Generator","item":"https://sharpdev.tools/tools/css-underline/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a wavy underline used for?","acceptedAnswer":{"@type":"Answer","text":"A wavy underline adds a playful or hand-drawn feel and is often used to highlight links or key phrases. Modern CSS makes it a one-line style with text-decoration-style: wavy, which this tool builds for you."}},{"@type":"Question","name":"What does skip-ink do?","acceptedAnswer":{"@type":"Answer","text":"Skip-ink controls whether the underline breaks around the descenders of letters like g, y and p. Auto skips them for a cleaner look, while none draws a continuous line straight through."}},{"@type":"Question","name":"Will these styles work in all browsers?","acceptedAnswer":{"@type":"Answer","text":"The core text-decoration properties are widely supported in current browsers. Thickness and offset are supported almost everywhere now; very old browsers ignore them and simply show a default underline."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Underline Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/css-underline/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/css-underline/css-underline.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('css-underline');</script>
+<div class="page">
+<h1>CSS Underline Generator</h1>
+<p class="subtitle">Style text underlines with CSS: wavy, double, dotted or dashed, with custom colour, thickness, offset and ink-skipping. Copy the CSS.</p>
+<div class="row">
+<div class="field"><label for="style">Style</label><select id="style"><option value="solid">Solid</option><option value="double">Double</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="wavy" selected>Wavy</option></select></div>
+<div class="field"><label for="color">Colour</label><input type="color" id="color" value="#ff4444"></div></div>
+<div class="row">
+<div class="field"><label for="thick">Thickness (px)</label><input type="number" id="thick" value="2" min="1" max="12"></div>
+<div class="field"><label for="offset">Offset (px)</label><input type="number" id="offset" value="4" min="0" max="20"></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="skip" checked style="width:auto;"> Skip ink (descenders)</label></div></div>
+<div class="ul-prev"><span id="sample">The quick brown fox jumps over the lazy dog</span></div>
+<div class="out-head"><label>CSS</label><button class="copy-btn" id="copy">Copy</button></div>
+<textarea class="output" id="code" readonly style="min-height:90px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a wavy underline used for?</summary><p>A wavy underline adds a playful or hand-drawn feel and is often used to highlight links or key phrases. Modern CSS makes it a one-line style with text-decoration-style: wavy, which this tool builds for you.</p></details>
+<details><summary>What does skip-ink do?</summary><p>Skip-ink controls whether the underline breaks around the descenders of letters like g, y and p. Auto skips them for a cleaner look, while none draws a continuous line straight through.</p></details>
+<details><summary>Will these styles work in all browsers?</summary><p>The core text-decoration properties are widely supported in current browsers. Thickness and offset are supported almost everywhere now; very old browsers ignore them and simply show a default underline.</p></details>
+</section>
+<script src="/tools/css-underline/css-underline.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

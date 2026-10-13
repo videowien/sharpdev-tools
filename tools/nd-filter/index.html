@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>ND Filter Calculator (Long Exposure Shutter Speed) | SharpDev.tools</title>
+<meta content="Free ND filter calculator. Enter your base shutter speed and the ND filter strength (by stops or filter number) to get the new long-exposure shutter speed. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/nd-filter/" rel="canonical"/>
+<meta content="ND Filter Calculator (Long Exposure Shutter Speed) | SharpDev.tools" property="og:title"/>
+<meta content="Free ND filter calculator. Enter your base shutter speed and the ND filter strength (by stops or filter number) to get the new long-exposure shutter speed. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/nd-filter/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="ND Filter Calculator (Long Exposure Shutter Speed) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free ND filter calculator. Enter your base shutter speed and the ND filter strength (by stops or filter number) to get the new long-exposure shutter speed. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"ND Filter Calculator","item":"https://sharpdev.tools/tools/nd-filter/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does an ND filter change the shutter speed?","acceptedAnswer":{"@type":"Answer","text":"Each stop of ND doubles the exposure time. The new shutter speed is the base speed times 2 to the power of the stops. A 10-stop ND turns 1/100s into about 10 seconds (1/100 times 1024)."}},{"@type":"Question","name":"What stop value does each ND filter have?","acceptedAnswer":{"@type":"Answer","text":"The ND number is roughly 2 to the power of the stops: ND8 is 3 stops, ND64 is 6 stops, ND1000 is about 10 stops. Pick the filter from the list and the stops fill in, or type your own."}},{"@type":"Question","name":"Can I stack ND filters?","acceptedAnswer":{"@type":"Answer","text":"Yes. Stacked filters add their stops, so an ND8 (3 stops) plus an ND64 (6 stops) gives 9 stops. Enter the total stops to get the combined shutter speed."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"ND Filter Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/nd-filter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/nd-filter/nd-filter.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('nd-filter');</script>
+<div class="page">
+<h1>ND Filter Calculator</h1>
+<p class="subtitle">Find the new shutter speed after fitting a neutral-density filter. Pick a common filter or enter the number of stops, and read off the long exposure time.</p>
+<div class="row">
+<div class="field"><label for="base">Base shutter (s)</label><input type="text" id="base" value="1/100"></div>
+<div class="field"><label for="nd">ND filter</label><select id="nd"><option value="">Pick a filter...</option><option value="1">ND2 (1 stop)</option><option value="2">ND4 (2 stops)</option><option value="3">ND8 (3 stops)</option><option value="4">ND16 (4 stops)</option><option value="5">ND32 (5 stops)</option><option value="6">ND64 (6 stops)</option><option value="7">ND128 (7 stops)</option><option value="8">ND256 (8 stops)</option><option value="9">ND512 (9 stops)</option><option value="10" selected>ND1000 (10 stops)</option></select></div>
+<div class="field"><label for="stops">Stops</label><input type="number" id="stops" value="10" step="any"></div></div>
+<div class="result-cards"><div class="result-card hl" style="grid-column:1 / -1;"><div class="label">New shutter speed</div><div class="value" id="out" style="font-size:24px;">-</div></div></div>
+<p class="note">An ND filter blocks light so you can use a longer shutter for motion blur in daylight. Each stop doubles the exposure time, so a 10-stop filter multiplies it by 1024. Pick a filter or enter the stops directly.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How does an ND filter change the shutter speed?</summary><p>Each stop of ND doubles the exposure time. The new shutter speed is the base speed times 2 to the power of the stops. A 10-stop ND turns 1/100s into about 10 seconds (1/100 times 1024).</p></details>
+<details><summary>What stop value does each ND filter have?</summary><p>The ND number is roughly 2 to the power of the stops: ND8 is 3 stops, ND64 is 6 stops, ND1000 is about 10 stops. Pick the filter from the list and the stops fill in, or type your own.</p></details>
+<details><summary>Can I stack ND filters?</summary><p>Yes. Stacked filters add their stops, so an ND8 (3 stops) plus an ND64 (6 stops) gives 9 stops. Enter the total stops to get the combined shutter speed.</p></details>
+</section>
+<script src="/tools/nd-filter/nd-filter.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

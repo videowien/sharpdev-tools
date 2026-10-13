@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Square Root &amp; Nth Root Calculator | SharpDev.tools</title>
+<meta content="Free square root and nth root calculator. Compute the square root, cube root or any nth root of a number, with handling for negative inputs and a verification step. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/square-root/" rel="canonical"/>
+<meta content="Square Root &amp; Nth Root Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free square root and nth root calculator. Compute the square root, cube root or any nth root of a number, with handling for negative inputs and a verification step. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/square-root/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Square Root &amp; Nth Root Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free square root and nth root calculator. Compute the square root, cube root or any nth root of a number, with handling for negative inputs and a verification step. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Square Root & Nth Root Calculator","item":"https://sharpdev.tools/tools/square-root/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an nth root?","acceptedAnswer":{"@type":"Answer","text":"The nth root of a number is the value that, multiplied by itself n times, gives that number. The 2nd root is the square root, the 3rd root is the cube root, and so on. Set the root field to choose n."}},{"@type":"Question","name":"Can I take the root of a negative number?","acceptedAnswer":{"@type":"Answer","text":"An odd root of a negative number is a real negative value, for example the cube root of -8 is -2. An even root of a negative number is not a real number, so the tool says 'not real'."}},{"@type":"Question","name":"What is the check value for?","acceptedAnswer":{"@type":"Answer","text":"It raises the result back to the nth power so you can confirm it returns your original number. Small rounding differences can appear because roots are often irrational."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Square Root & Nth Root Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/square-root/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/square-root/square-root.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('square-root');</script>
+<div class="page">
+<h1>Square Root & Nth Root Calculator</h1>
+<p class="subtitle">Find the square root, cube root or any nth root of a number, with a check that squares the result back.</p>
+<div class="row">
+<div class="field"><label for="num">Number</label><input type="number" id="num" value="144" step="any"></div>
+<div class="field"><label for="deg">Root (n)</label><input type="number" id="deg" value="2" min="1" step="1"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">nth root</div><div class="value" id="res" style="font-size:22px;">—</div></div>
+<div class="result-card"><div class="label">Check (root ^ n)</div><div class="value" id="chk">—</div></div></div>
+<p class="note" id="note"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is an nth root?</summary><p>The nth root of a number is the value that, multiplied by itself n times, gives that number. The 2nd root is the square root, the 3rd root is the cube root, and so on. Set the root field to choose n.</p></details>
+<details><summary>Can I take the root of a negative number?</summary><p>An odd root of a negative number is a real negative value, for example the cube root of -8 is -2. An even root of a negative number is not a real number, so the tool says 'not real'.</p></details>
+<details><summary>What is the check value for?</summary><p>It raises the result back to the nth power so you can confirm it returns your original number. Small rounding differences can appear because roots are often irrational.</p></details>
+</section>
+<script src="/tools/square-root/square-root.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

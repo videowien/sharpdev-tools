@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Affine Cipher (Encode &amp; Decode) | SharpDev.tools</title>
+<meta content="Free affine cipher encoder and decoder. The affine cipher maps each letter with the formula (a times x plus b) mod 26, where the multiplier a must be coprime with 26. Decoding uses the modular inverse. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/affine-cipher/" rel="canonical"/>
+<meta content="Affine Cipher (Encode &amp; Decode) | SharpDev.tools" property="og:title"/>
+<meta content="Free affine cipher encoder and decoder. The affine cipher maps each letter with the formula (a times x plus b) mod 26, where the multiplier a must be coprime with 26. Decoding uses the modular inverse. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/affine-cipher/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Affine Cipher (Encode &amp; Decode) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free affine cipher encoder and decoder. The affine cipher maps each letter with the formula (a times x plus b) mod 26, where the multiplier a must be coprime with 26. Decoding uses the modular inverse. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Security & Crypto","item":"https://sharpdev.tools/#security-crypto"},{"@type":"ListItem","position":3,"name":"Affine Cipher","item":"https://sharpdev.tools/tools/affine-cipher/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the affine cipher?","acceptedAnswer":{"@type":"Answer","text":"It is a substitution cipher where each letter's position x is transformed by the formula (a times x plus b) mod 26. The Caesar cipher is the special case where a is 1. Both a and b together form the key."}},{"@type":"Question","name":"Why must a be coprime with 26?","acceptedAnswer":{"@type":"Answer","text":"Decryption needs the modular inverse of a, which only exists when a shares no factors with 26. Valid choices are 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23 and 25. The tool warns you if you pick an invalid a."}},{"@type":"Question","name":"How is it decoded?","acceptedAnswer":{"@type":"Answer","text":"Decoding applies the inverse formula using the modular inverse of a, which the tool computes for you. As long as a is valid, encoding then decoding returns the original text."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Affine Cipher \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/affine-cipher/","applicationCategory":"SecurityApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/affine-cipher/affine-cipher.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('affine-cipher');</script>
+<div class="page">
+<h1>Affine Cipher</h1>
+<p class="subtitle">Encode and decode the affine cipher, E(x) = (a·x + b) mod 26. The multiplier a must be coprime with 26. A classic substitution cipher.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">AFFINE CIPHER</textarea></div>
+<div class="row">
+<div class="field"><label for="a">a (coprime with 26)</label><input type="number" id="a" value="5"></div>
+<div class="field"><label for="b">b (shift)</label><input type="number" id="b" value="8"></div></div>
+<p class="note" id="warn" style="display:none;"></p>
+<div class="actions"><button class="small-btn" id="enc">Encode</button><button class="small-btn" id="dec">Decode</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the affine cipher?</summary><p>It is a substitution cipher where each letter's position x is transformed by the formula (a times x plus b) mod 26. The Caesar cipher is the special case where a is 1. Both a and b together form the key.</p></details>
+<details><summary>Why must a be coprime with 26?</summary><p>Decryption needs the modular inverse of a, which only exists when a shares no factors with 26. Valid choices are 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23 and 25. The tool warns you if you pick an invalid a.</p></details>
+<details><summary>How is it decoded?</summary><p>Decoding applies the inverse formula using the modular inverse of a, which the tool computes for you. As long as a is valid, encoding then decoding returns the original text.</p></details>
+</section>
+<script src="/tools/affine-cipher/affine-cipher.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Cents Calculator (Musical Interval &amp; Frequency Ratio) | SharpDev.tools</title>
+<meta content="Free cents calculator. Compute the interval between two frequencies in cents and semitones, or convert cents to a frequency ratio. For tuning, sample tuning and microtonality. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/cents/" rel="canonical"/>
+<meta content="Cents Calculator (Musical Interval &amp; Frequency Ratio) | SharpDev.tools" property="og:title"/>
+<meta content="Free cents calculator. Compute the interval between two frequencies in cents and semitones, or convert cents to a frequency ratio. For tuning, sample tuning and microtonality. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/cents/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Cents Calculator (Musical Interval &amp; Frequency Ratio) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free cents calculator. Compute the interval between two frequencies in cents and semitones, or convert cents to a frequency ratio. For tuning, sample tuning and microtonality. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Music","item":"https://sharpdev.tools/#music"},{"@type":"ListItem","position":3,"name":"Cents & Interval Calculator","item":"https://sharpdev.tools/tools/cents/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a cent in music?","acceptedAnswer":{"@type":"Answer","text":"A hundredth of an equal-tempered semitone, so an octave is 1200 cents. It is the standard unit for tuning: guitar tuners typically show how many cents sharp or flat a string is."}},{"@type":"Question","name":"How are cents calculated?","acceptedAnswer":{"@type":"Answer","text":"Cents = 1200 \u00d7 log2 of the frequency ratio. From 440 to 466.16 Hz is 100 cents (one semitone); a 3:2 ratio is 701.96 cents, the pure perfect fifth."}},{"@type":"Question","name":"How many cents can people hear?","acceptedAnswer":{"@type":"Answer","text":"Trained listeners notice about 5-10 cents on sustained tones; around 20-25 cents sounds clearly out of tune to most ears. Vibrato and short notes hide more."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Cents & Interval Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/cents/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/cents/cents.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('cents');</script>
+<div class="page">
+<h1>Cents & Interval Calculator</h1>
+<p class="subtitle">The interval between two frequencies in cents and semitones, or turn a cents value back into a frequency ratio. 100 cents = 1 semitone.</p>
+<div class="row"><div class="field"><label for="mode">Convert</label><select id="mode"><option value="f2c" selected>Two frequencies → cents</option><option value="c2r">Cents → ratio</option></select></div></div>
+<div class="row" id="frow">
+<div class="field"><label for="f1">Frequency 1 (Hz)</label><input type="number" id="f1" value="440" step="any"></div>
+<div class="field"><label for="f2">Frequency 2 (Hz)</label><input type="number" id="f2" value="466.16" step="any"></div></div>
+<div class="row" id="crow" style="display:none;"><div class="field"><label for="c">Cents</label><input type="number" id="c" value="702" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label" id="olabel">Interval</div><div class="value" id="out" style="font-size:18px;">-</div></div>
+<div class="result-card"><div class="label" id="l2">Ratio</div><div class="value" id="out2" style="font-size:16px;">-</div></div></div>
+<p class="note">Cents = 1200 × log2(f2 ÷ f1); 100 cents is one equal-tempered semitone, 1200 a full octave. A pure perfect fifth (ratio 3:2) is 701.96 cents, two cents wider than the equal-tempered fifth — the gap temperament smooths over.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is a cent in music?</summary><p>A hundredth of an equal-tempered semitone, so an octave is 1200 cents. It is the standard unit for tuning: guitar tuners typically show how many cents sharp or flat a string is.</p></details>
+<details><summary>How are cents calculated?</summary><p>Cents = 1200 × log2 of the frequency ratio. From 440 to 466.16 Hz is 100 cents (one semitone); a 3:2 ratio is 701.96 cents, the pure perfect fifth.</p></details>
+<details><summary>How many cents can people hear?</summary><p>Trained listeners notice about 5-10 cents on sustained tones; around 20-25 cents sounds clearly out of tune to most ears. Vibrato and short notes hide more.</p></details>
+</section>
+<script src="/tools/cents/cents.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

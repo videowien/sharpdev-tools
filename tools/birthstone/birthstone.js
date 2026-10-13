@@ -1,0 +1,6 @@
+const $=id=>document.getElementById(id);
+const M=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DATA=[['Garnet','Carnation','protection and lasting friendship'],['Amethyst','Violet','calm, clarity and sincerity'],['Aquamarine','Daffodil','courage and serenity'],['Diamond','Daisy','strength and everlasting love'],['Emerald','Lily of the Valley','rebirth, wisdom and growth'],['Pearl','Rose','purity and loyalty'],['Ruby','Larkspur','passion, protection and vitality'],['Peridot','Gladiolus','strength and good fortune'],['Sapphire','Aster','wisdom, nobility and truth'],['Opal','Marigold','hope, creativity and inspiration'],['Topaz','Chrysanthemum','joy, friendship and abundance'],['Turquoise','Narcissus','protection, healing and good fortune']];
+(function(){const sel=$('month');M.forEach((m,i)=>{const o=document.createElement('option');o.value=i;o.textContent=m;sel.appendChild(o);});sel.value=new Date().getMonth();})();
+function go(){const i=+$('month').value;const d=DATA[i];$('stone').textContent=d[0];$('flower').textContent=d[1];$('meaning').textContent=M[i]+'’s birthstone, the '+d[0]+', symbolises '+d[2]+'. The birth flower is the '+d[1]+'.';}
+$('month').addEventListener('change',go);go();

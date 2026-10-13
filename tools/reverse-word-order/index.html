@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Reverse Word Order (Flip the Order of Words) | SharpDev.tools</title>
+<meta content="Free reverse word order tool. Flips the order of words in each line so the last word comes first, line by line. Different from reversing characters. Runs in your browser, nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/reverse-word-order/" rel="canonical"/>
+<meta content="Reverse Word Order (Flip the Order of Words) | SharpDev.tools" property="og:title"/>
+<meta content="Free reverse word order tool. Flips the order of words in each line so the last word comes first, line by line. Different from reversing characters. Runs in your browser, nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/reverse-word-order/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Reverse Word Order (Flip the Order of Words) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free reverse word order tool. Flips the order of words in each line so the last word comes first, line by line. Different from reversing characters. Runs in your browser, nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Reverse Word Order","item":"https://sharpdev.tools/tools/reverse-word-order/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is this different from reversing text?","acceptedAnswer":{"@type":"Answer","text":"Reversing text flips every character, so 'cat' becomes 'tac'. This tool keeps each word spelled normally but reverses their order, so 'the big cat' becomes 'cat big the'."}},{"@type":"Question","name":"Does it work on multiple lines?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each line is reversed on its own, and blank lines and line breaks are kept, so the overall shape of your text stays the same."}},{"@type":"Question","name":"What happens to extra spaces?","acceptedAnswer":{"@type":"Answer","text":"Words are separated by single spaces in the output. Leading, trailing and repeated spaces inside a line are collapsed to keep the result clean."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Reverse Word Order \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/reverse-word-order/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/reverse-word-order/reverse-word-order.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('reverse-word-order');</script>
+<div class="page">
+<h1>Reverse Word Order</h1>
+<p class="subtitle">Flip the order of the words in each line, so the last word comes first. Different from reversing the letters.</p>
+<div class="field"><label for="in">Text (one or more lines)</label><textarea id="in">The quick brown fox
+jumps over the lazy dog</textarea></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Words reversed (per line)</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is this different from reversing text?</summary><p>Reversing text flips every character, so 'cat' becomes 'tac'. This tool keeps each word spelled normally but reverses their order, so 'the big cat' becomes 'cat big the'.</p></details>
+<details><summary>Does it work on multiple lines?</summary><p>Yes. Each line is reversed on its own, and blank lines and line breaks are kept, so the overall shape of your text stays the same.</p></details>
+<details><summary>What happens to extra spaces?</summary><p>Words are separated by single spaces in the output. Leading, trailing and repeated spaces inside a line are collapsed to keep the result clean.</p></details>
+</section>
+<script src="/tools/reverse-word-order/reverse-word-order.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Flow Rate Calibration Calculator (Extrusion Multiplier) | SharpDev.tools</title>
+<meta content="Free flow rate calibration calculator. Enter your current flow, the expected wall thickness (line width) and the measured wall thickness to get the corrected extrusion multiplier. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/flow-rate/" rel="canonical"/>
+<meta content="Flow Rate Calibration Calculator (Extrusion Multiplier) | SharpDev.tools" property="og:title"/>
+<meta content="Free flow rate calibration calculator. Enter your current flow, the expected wall thickness (line width) and the measured wall thickness to get the corrected extrusion multiplier. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/flow-rate/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Flow Rate Calibration Calculator (Extrusion Multiplier) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free flow rate calibration calculator. Enter your current flow, the expected wall thickness (line width) and the measured wall thickness to get the corrected extrusion multiplier. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"Flow Rate Calibration Calculator","item":"https://sharpdev.tools/tools/flow-rate/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calibrate flow rate?","acceptedAnswer":{"@type":"Answer","text":"Print a single-wall cube with a known line width (say 0.45 mm), measure the walls with calipers and average them, then new flow = current flow \u00d7 expected \u00f7 measured. Measuring 0.48 mm against an expected 0.45 at 100% flow gives 93.75%."}},{"@type":"Question","name":"What is the difference between e-steps and flow?","acceptedAnswer":{"@type":"Answer","text":"E-steps calibrate the extruder hardware (how many motor steps push 1 mm of filament) and live in the firmware. Flow is a per-material fudge factor in the slicer on top of that. Calibrate e-steps once per printer, then flow once per filament type."}},{"@type":"Question","name":"Where do I set it?","acceptedAnswer":{"@type":"Answer","text":"Cura calls it Flow (percent), PrusaSlicer and SuperSlicer call it Extrusion Multiplier (1.00 = 100%), OrcaSlicer has Flow Ratio. Enter the new value there and reslice."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Flow Rate Calibration Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/flow-rate/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/flow-rate/flow-rate.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('flow-rate');</script>
+<div class="page">
+<h1>Flow Rate Calibration Calculator</h1>
+<p class="subtitle">Print a single-wall cube, measure the wall with calipers, and get the corrected flow rate (extrusion multiplier) for your slicer.</p>
+<div class="row">
+<div class="field"><label for="cur">Current flow (%)</label><input type="number" id="cur" value="100" step="any"></div>
+<div class="field"><label for="exp">Expected wall (mm, = line width)</label><input type="number" id="exp" value="0.45" step="any"></div>
+<div class="field"><label for="meas">Measured wall (mm)</label><input type="number" id="meas" value="0.48" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">New flow</div><div class="value" id="new" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Deviation</div><div class="value" id="dev">-</div></div></div>
+<p class="note">New flow = current flow × expected ÷ measured. Print a single-wall object (vase-mode cube) with a known line width, measure each side with calipers and average them. Calibrate e-steps first; flow fine-tunes on top of a correct extruder. In Cura this is Flow, in PrusaSlicer Extrusion Multiplier (1.00 = 100%).</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I calibrate flow rate?</summary><p>Print a single-wall cube with a known line width (say 0.45 mm), measure the walls with calipers and average them, then new flow = current flow × expected ÷ measured. Measuring 0.48 mm against an expected 0.45 at 100% flow gives 93.75%.</p></details>
+<details><summary>What is the difference between e-steps and flow?</summary><p>E-steps calibrate the extruder hardware (how many motor steps push 1 mm of filament) and live in the firmware. Flow is a per-material fudge factor in the slicer on top of that. Calibrate e-steps once per printer, then flow once per filament type.</p></details>
+<details><summary>Where do I set it?</summary><p>Cura calls it Flow (percent), PrusaSlicer and SuperSlicer call it Extrusion Multiplier (1.00 = 100%), OrcaSlicer has Flow Ratio. Enter the new value there and reslice.</p></details>
+</section>
+<script src="/tools/flow-rate/flow-rate.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

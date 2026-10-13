@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Paint Calculator (How Much Paint Do I Need?) | SharpDev.tools</title>
+<meta content="Free paint calculator. Estimate how much wall paint you need from room dimensions, number of coats and paint coverage, with an allowance for doors and windows. Results in litres and US gallons. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/paint-calculator/" rel="canonical"/>
+<meta content="Paint Calculator (How Much Paint Do I Need?) | SharpDev.tools" property="og:title"/>
+<meta content="Free paint calculator. Estimate how much wall paint you need from room dimensions, number of coats and paint coverage, with an allowance for doors and windows. Results in litres and US gallons. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/paint-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Paint Calculator (How Much Paint Do I Need?) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free paint calculator. Estimate how much wall paint you need from room dimensions, number of coats and paint coverage, with an allowance for doors and windows. Results in litres and US gallons. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Paint Calculator","item":"https://sharpdev.tools/tools/paint-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much paint do I need for a room?","acceptedAnswer":{"@type":"Answer","text":"Multiply the room perimeter by the wall height for the wall area, subtract the doors and windows, then multiply by the number of coats and divide by the paint's coverage. This tool does it for you from the room dimensions."}},{"@type":"Question","name":"What coverage should I use?","acceptedAnswer":{"@type":"Answer","text":"Most wall paints cover about 10 to 12 square metres per litre per coat, and the exact figure is on the tin. Rough or porous surfaces and strong colour changes need more, so round up."}},{"@type":"Question","name":"Should I add extra?","acceptedAnswer":{"@type":"Answer","text":"Yes. Buy a little more than the estimate for touch-ups and a second look at patchy areas, and keep a small amount for future repairs so the colour matches."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Paint Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/paint-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/paint-calculator/paint-calculator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('paint-calculator');</script>
+<div class="page">
+<h1>Paint Calculator</h1>
+<p class="subtitle">Work out how much paint you need for a room from its dimensions, number of coats and paint coverage. Subtracts doors and windows.</p>
+<div class="row">
+<div class="field"><label for="len">Room length (m)</label><input type="number" id="len" value="5" step="any"></div>
+<div class="field"><label for="wid">Room width (m)</label><input type="number" id="wid" value="4" step="any"></div>
+<div class="field"><label for="hgt">Wall height (m)</label><input type="number" id="hgt" value="2.5" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="coats">Coats</label><input type="number" id="coats" value="2" min="1" max="6"></div>
+<div class="field"><label for="cov">Coverage (m² per litre)</label><input type="number" id="cov" value="10" step="any"></div>
+<div class="field"><label for="open">Doors + windows</label><input type="number" id="open" value="2" min="0"></div></div>
+<div class="result-cards">
+<div class="result-card"><div class="label">Wall area</div><div class="value" id="area">—</div></div>
+<div class="result-card hl"><div class="label">Paint needed</div><div class="value" id="litres">—</div></div>
+<div class="result-card"><div class="label">US gallons</div><div class="value" id="gal">—</div></div></div>
+<p class="note">Wall area is the room perimeter times the height, minus about 2 m² for each door or window. Coverage is usually printed on the tin (about 10 to 12 m² per litre per coat is typical). Buy a little extra for touch-ups.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How much paint do I need for a room?</summary><p>Multiply the room perimeter by the wall height for the wall area, subtract the doors and windows, then multiply by the number of coats and divide by the paint's coverage. This tool does it for you from the room dimensions.</p></details>
+<details><summary>What coverage should I use?</summary><p>Most wall paints cover about 10 to 12 square metres per litre per coat, and the exact figure is on the tin. Rough or porous surfaces and strong colour changes need more, so round up.</p></details>
+<details><summary>Should I add extra?</summary><p>Yes. Buy a little more than the estimate for touch-ups and a second look at patchy areas, and keep a small amount for future repairs so the colour matches.</p></details>
+</section>
+<script src="/tools/paint-calculator/paint-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

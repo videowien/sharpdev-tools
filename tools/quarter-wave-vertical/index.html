@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Quarter-Wave Vertical Antenna Calculator (Ground Plane) | SharpDev.tools</title>
+<meta content="Free quarter-wave vertical (ground plane) antenna calculator. Enter a frequency to get the radiator and radial lengths in feet and metres. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/quarter-wave-vertical/" rel="canonical"/>
+<meta content="Quarter-Wave Vertical Antenna Calculator (Ground Plane) | SharpDev.tools" property="og:title"/>
+<meta content="Free quarter-wave vertical (ground plane) antenna calculator. Enter a frequency to get the radiator and radial lengths in feet and metres. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/quarter-wave-vertical/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Quarter-Wave Vertical Antenna Calculator (Ground Plane) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free quarter-wave vertical (ground plane) antenna calculator. Enter a frequency to get the radiator and radial lengths in feet and metres. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Quarter-Wave Vertical Calculator","item":"https://sharpdev.tools/tools/quarter-wave-vertical/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is a quarter-wave vertical?","acceptedAnswer":{"@type":"Answer","text":"The radiator in feet is 234 divided by the frequency in MHz, which is half a dipole leg. At 14.2 MHz that is about 16.5 feet (5.0 m). Radials are usually cut about 5 percent longer than the radiator."}},{"@type":"Question","name":"Do I need radials?","acceptedAnswer":{"@type":"Answer","text":"Yes. A vertical works against a ground plane. Elevated verticals need at least two to four radials; ground-mounted ones benefit from many (16 to 32 or more) shallow radials, because they carry the return current and set the efficiency."}},{"@type":"Question","name":"Why choose a vertical?","acceptedAnswer":{"@type":"Answer","text":"A vertical radiates at a low angle from a small footprint, which is good for DX and where there is no room or height for a dipole. The trade-off is more man-made noise pickup and a dependence on the ground system."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Quarter-Wave Vertical Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/quarter-wave-vertical/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/quarter-wave-vertical/quarter-wave-vertical.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('quarter-wave-vertical');</script>
+<div class="page">
+<h1>Quarter-Wave Vertical Calculator</h1>
+<p class="subtitle">Find the radiator and radial lengths for a quarter-wave vertical or ground-plane antenna at any frequency.</p>
+<div class="row"><div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="14.2" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Radiator</div><div class="value" id="rad" style="font-size:18px;">-</div></div>
+<div class="result-card"><div class="label">Radials (~5% longer)</div><div class="value" id="rdl" style="font-size:16px;">-</div></div></div>
+<p class="note">A quarter-wave vertical needs a ground plane of radials or earth to work against. Radiator length in feet = 234 / frequency in MHz; the radials are cut about 5 percent longer. More radials, or longer ones over poor ground, improve efficiency.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long is a quarter-wave vertical?</summary><p>The radiator in feet is 234 divided by the frequency in MHz, which is half a dipole leg. At 14.2 MHz that is about 16.5 feet (5.0 m). Radials are usually cut about 5 percent longer than the radiator.</p></details>
+<details><summary>Do I need radials?</summary><p>Yes. A vertical works against a ground plane. Elevated verticals need at least two to four radials; ground-mounted ones benefit from many (16 to 32 or more) shallow radials, because they carry the return current and set the efficiency.</p></details>
+<details><summary>Why choose a vertical?</summary><p>A vertical radiates at a low angle from a small footprint, which is good for DX and where there is no room or height for a dipole. The trade-off is more man-made noise pickup and a dependence on the ground system.</p></details>
+</section>
+<script src="/tools/quarter-wave-vertical/quarter-wave-vertical.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

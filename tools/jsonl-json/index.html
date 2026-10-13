@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>JSONL ↔ JSON Converter (NDJSON to JSON Array) | SharpDev.tools</title>
+<meta content="Free JSONL to JSON converter (and back). Turn JSON Lines / NDJSON (one JSON value per line) into a single JSON array, or split a JSON array into JSON Lines. Common for logs, exports and data pipelines. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/jsonl-json/" rel="canonical"/>
+<meta content="JSONL ↔ JSON Converter (NDJSON to JSON Array) | SharpDev.tools" property="og:title"/>
+<meta content="Free JSONL to JSON converter (and back). Turn JSON Lines / NDJSON (one JSON value per line) into a single JSON array, or split a JSON array into JSON Lines. Common for logs, exports and data pipelines. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/jsonl-json/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="JSONL ↔ JSON Converter (NDJSON to JSON Array) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free JSONL to JSON converter (and back). Turn JSON Lines / NDJSON (one JSON value per line) into a single JSON array, or split a JSON array into JSON Lines. Common for logs, exports and data pipelines. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"JSONL \u2194 JSON Converter","item":"https://sharpdev.tools/tools/jsonl-json/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JSONL / NDJSON?","acceptedAnswer":{"@type":"Answer","text":"JSON Lines (also called NDJSON, newline-delimited JSON) puts one complete JSON value on each line, with no surrounding array. It is popular for logs, streaming and large exports because you can read and append one record at a time without parsing the whole file."}},{"@type":"Question","name":"Why convert between the two?","acceptedAnswer":{"@type":"Answer","text":"Many tools expect a single JSON array, while data pipelines, log files and bulk APIs use JSON Lines. This tool moves data between the two formats so you can use whichever a given tool needs."}},{"@type":"Question","name":"Does it validate each line?","acceptedAnswer":{"@type":"Answer","text":"Yes. Converting to an array parses every line, so a malformed line produces a clear error. Converting the other way requires the input to be a JSON array."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"JSONL \u2194 JSON Converter \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/jsonl-json/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/jsonl-json/jsonl-json.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('jsonl-json');</script>
+<div class="page">
+<h1>JSONL ↔ JSON Converter</h1>
+<p class="subtitle">Convert JSON Lines (NDJSON), one JSON object per line, into a JSON array, or split a JSON array back into JSON Lines. Common for logs and data pipelines.</p>
+<div class="field"><label for="in">Input (JSONL or a JSON array)</label><textarea id="in" style="min-height:130px;">{"id":1,"ok":true}
+{"id":2,"ok":false}
+{"id":3,"ok":true}</textarea></div>
+<div class="actions"><button class="small-btn" id="toarr">JSONL → array</button><button class="small-btn" id="tojsonl">array → JSONL</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is JSONL / NDJSON?</summary><p>JSON Lines (also called NDJSON, newline-delimited JSON) puts one complete JSON value on each line, with no surrounding array. It is popular for logs, streaming and large exports because you can read and append one record at a time without parsing the whole file.</p></details>
+<details><summary>Why convert between the two?</summary><p>Many tools expect a single JSON array, while data pipelines, log files and bulk APIs use JSON Lines. This tool moves data between the two formats so you can use whichever a given tool needs.</p></details>
+<details><summary>Does it validate each line?</summary><p>Yes. Converting to an array parses every line, so a malformed line produces a clear error. Converting the other way requires the input to be a JSON array.</p></details>
+</section>
+<script src="/tools/jsonl-json/jsonl-json.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

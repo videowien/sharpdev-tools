@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Mortgage Calculator (Payment, Interest, Escrow) | SharpDev.tools</title>
+<meta content="Free mortgage calculator. Estimate the monthly payment with principal and interest, plus optional property tax, home insurance and PMI for the full housing payment, and see total interest over the loan. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/mortgage/" rel="canonical"/>
+<meta content="Mortgage Calculator (Payment, Interest, Escrow) | SharpDev.tools" property="og:title"/>
+<meta content="Free mortgage calculator. Estimate the monthly payment with principal and interest, plus optional property tax, home insurance and PMI for the full housing payment, and see total interest over the loan. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/mortgage/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mortgage Calculator (Payment, Interest, Escrow) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free mortgage calculator. Estimate the monthly payment with principal and interest, plus optional property tax, home insurance and PMI for the full housing payment, and see total interest over the loan. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"Mortgage Payment Calculator","item":"https://sharpdev.tools/tools/mortgage/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is included in the monthly payment?","acceptedAnswer":{"@type":"Answer","text":"The all-in figure adds principal and interest (the loan itself) to the monthly share of property tax, home insurance and PMI. Lenders often bundle the last three into an escrow account, so this reflects what actually leaves your bank each month."}},{"@type":"Question","name":"What is PMI?","acceptedAnswer":{"@type":"Answer","text":"Private mortgage insurance is usually required when your down payment is under 20%. It protects the lender, not you, and typically ends once you reach 20% equity, so set it to zero if it does not apply."}},{"@type":"Question","name":"Why is the total interest so high?","acceptedAnswer":{"@type":"Answer","text":"Over a long term like 30 years, interest compounds on a large balance for a long time. Shortening the term or paying extra toward principal can cut the total interest dramatically."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Payment Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/mortgage/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/mortgage/mortgage.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('mortgage');</script>
+<div class="page">
+<h1>Mortgage Payment Calculator</h1>
+<p class="subtitle">Estimate your monthly mortgage payment including principal, interest, property tax, insurance and PMI, plus the total interest over the loan.</p>
+<div class="row">
+<div class="field"><label for="amt">Loan amount</label><input type="number" id="amt" value="300000" step="any"></div>
+<div class="field"><label for="rate">Interest rate (%)</label><input type="number" id="rate" value="6.5" step="any"></div>
+<div class="field"><label for="years">Term (years)</label><input type="number" id="years" value="30" min="1" max="50"></div></div>
+<div class="row">
+<div class="field"><label for="tax">Property tax / year</label><input type="number" id="tax" value="3600" step="any"></div>
+<div class="field"><label for="ins">Home insurance / year</label><input type="number" id="ins" value="1200" step="any"></div>
+<div class="field"><label for="pmi">PMI / year</label><input type="number" id="pmi" value="0" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Monthly payment (all in)</div><div class="value" id="total" style="font-size:20px;">—</div></div>
+<div class="result-card"><div class="label">Principal &amp; interest</div><div class="value" id="pi">—</div></div>
+<div class="result-card"><div class="label">Tax + ins + PMI</div><div class="value" id="escrow">—</div></div>
+<div class="result-card"><div class="label">Total interest</div><div class="value" id="totint">—</div></div></div>
+<p class="note">Principal and interest are fixed for the loan. Property tax, insurance and PMI are estimates that change over time and are usually collected monthly into an escrow account. PMI typically drops off once you reach 20% equity.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is included in the monthly payment?</summary><p>The all-in figure adds principal and interest (the loan itself) to the monthly share of property tax, home insurance and PMI. Lenders often bundle the last three into an escrow account, so this reflects what actually leaves your bank each month.</p></details>
+<details><summary>What is PMI?</summary><p>Private mortgage insurance is usually required when your down payment is under 20%. It protects the lender, not you, and typically ends once you reach 20% equity, so set it to zero if it does not apply.</p></details>
+<details><summary>Why is the total interest so high?</summary><p>Over a long term like 30 years, interest compounds on a large balance for a long time. Shortening the term or paying extra toward principal can cut the total interest dramatically.</p></details>
+</section>
+<script src="/tools/mortgage/mortgage.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

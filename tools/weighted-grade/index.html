@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Weighted Grade Calculator | SharpDev.tools</title>
+<meta content="Free weighted grade calculator. Enter each category's score and weight (homework, quizzes, exams) to get your overall weighted grade, with a check that the weights add up. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/weighted-grade/" rel="canonical"/>
+<meta content="Weighted Grade Calculator | SharpDev.tools" property="og:title"/>
+<meta content="Free weighted grade calculator. Enter each category's score and weight (homework, quizzes, exams) to get your overall weighted grade, with a check that the weights add up. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/weighted-grade/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Weighted Grade Calculator | SharpDev.tools" name="twitter:title"/>
+<meta content="Free weighted grade calculator. Enter each category's score and weight (homework, quizzes, exams) to get your overall weighted grade, with a check that the weights add up. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Weighted Grade Calculator","item":"https://sharpdev.tools/tools/weighted-grade/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is a weighted grade calculated?","acceptedAnswer":{"@type":"Answer","text":"Each category's score is multiplied by its weight, the results are added up, and the total is divided by the sum of the weights. A category worth 35% therefore affects your grade far more than one worth 10%."}},{"@type":"Question","name":"Do the weights have to total 100?","acceptedAnswer":{"@type":"Answer","text":"Ideally yes, and the tool shows the total so you can check. If they do not add to 100, it still divides by the actual total so the result stays sensible, which is handy when you are partway through a course."}},{"@type":"Question","name":"Can I see what I need on a remaining category?","acceptedAnswer":{"@type":"Answer","text":"For a single remaining exam, the final grade calculator is the quicker tool. Use this one when you want the overall grade from several completed categories."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Weighted Grade Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/weighted-grade/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/weighted-grade/weighted-grade.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('weighted-grade');</script>
+<div class="page">
+<h1>Weighted Grade Calculator</h1>
+<p class="subtitle">Calculate your overall grade from categories with different weights, such as homework, quizzes, a midterm and a final.</p>
+<div class="field"><label for="rows">Categories (one per line: name, score%, weight%)</label><textarea id="rows" style="min-height:120px;">Homework, 92, 20
+Quizzes, 85, 20
+Midterm, 78, 25
+Final, 88, 35</textarea></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Overall grade</div><div class="value" id="grade">—</div></div>
+<div class="result-card"><div class="label">Letter</div><div class="value" id="letter">—</div></div>
+<div class="result-card"><div class="label">Total weight</div><div class="value" id="tw">—</div></div></div>
+<p class="note" id="note">Each category contributes its score times its weight. If the weights add up to 100, the result is your final grade; if not, the tool divides by the total weight so it still works.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is a weighted grade calculated?</summary><p>Each category's score is multiplied by its weight, the results are added up, and the total is divided by the sum of the weights. A category worth 35% therefore affects your grade far more than one worth 10%.</p></details>
+<details><summary>Do the weights have to total 100?</summary><p>Ideally yes, and the tool shows the total so you can check. If they do not add to 100, it still divides by the actual total so the result stays sensible, which is handy when you are partway through a course.</p></details>
+<details><summary>Can I see what I need on a remaining category?</summary><p>For a single remaining exam, the final grade calculator is the quicker tool. Use this one when you want the overall grade from several completed categories.</p></details>
+</section>
+<script src="/tools/weighted-grade/weighted-grade.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

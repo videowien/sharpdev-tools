@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Shrinkage Compensation Calculator (3D Printing) | SharpDev.tools</title>
+<meta content="Free 3D printing shrinkage compensation calculator. Enter the target dimension and material shrinkage percentage to get the compensated dimension and slicer scale factor. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/shrinkage/" rel="canonical"/>
+<meta content="Shrinkage Compensation Calculator (3D Printing) | SharpDev.tools" property="og:title"/>
+<meta content="Free 3D printing shrinkage compensation calculator. Enter the target dimension and material shrinkage percentage to get the compensated dimension and slicer scale factor. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/shrinkage/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Shrinkage Compensation Calculator (3D Printing) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free 3D printing shrinkage compensation calculator. Enter the target dimension and material shrinkage percentage to get the compensated dimension and slicer scale factor. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"3D Printing","item":"https://sharpdev.tools/#3d-printing"},{"@type":"ListItem","position":3,"name":"Shrinkage Compensation Calculator","item":"https://sharpdev.tools/tools/shrinkage/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I compensate for shrinkage?","acceptedAnswer":{"@type":"Answer","text":"Divide the target size by (1 \u2212 shrinkage). For a 100 mm part in ABS shrinking 0.8%, model or scale it to 100.81 mm (100.81%). Apply the scale in X and Y; Z usually shrinks less because layers cool progressively."}},{"@type":"Question","name":"How much do materials shrink?","acceptedAnswer":{"@type":"Answer","text":"Rough figures: PLA about 0.3%, PETG 0.4%, ASA 0.7%, ABS 0.8%, nylon 1.5% and polypropylene up to about 2%. Exact shrinkage depends on the brand, the part shape and how warm the chamber is."}},{"@type":"Question","name":"How do I measure my real shrinkage?","acceptedAnswer":{"@type":"Answer","text":"Print a calibration part (like a 100 mm bar) in the final material and orientation, let it cool fully, and measure it. Shrinkage = (designed \u2212 measured) \u00f7 designed \u00d7 100. Feed that percentage into this calculator for the next print."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Shrinkage Compensation Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/shrinkage/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/shrinkage/shrinkage.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('shrinkage');</script>
+<div class="page">
+<h1>Shrinkage Compensation Calculator</h1>
+<p class="subtitle">Scale your model up so it shrinks down to the right size: compensated dimensions and the scale factor to type into your slicer, per material.</p>
+<div class="row">
+<div class="field"><label for="target">Target dimension (mm)</label><input type="number" id="target" value="100" step="any"></div>
+<div class="field"><label for="matsel">Material (typical shrinkage)</label><select id="matsel"><option value="0.3">PLA (~0.3%)</option><option value="0.4">PETG (~0.4%)</option><option value="0.8" selected>ABS (~0.8%)</option><option value="0.7">ASA (~0.7%)</option><option value="1.5">Nylon (~1.5%)</option><option value="1.8">Polypropylene (~1.8%)</option><option value="custom">Custom...</option></select></div>
+<div class="field" id="swrap" style="display:none;"><label for="s">Shrinkage (%)</label><input type="number" id="s" value="0.8" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Model / print at</div><div class="value" id="comp" style="font-size:20px;">-</div></div>
+<div class="result-card"><div class="label">Slicer scale factor</div><div class="value" id="scale">-</div></div></div>
+<p class="note">Compensated size = target ÷ (1 − shrinkage). To get a true 100 mm in ABS at 0.8% shrinkage, print at 100.81 mm, i.e. scale to 100.81%. Shrinkage varies with brand, part geometry and enclosure temperature, so for precision parts measure a test print of YOUR filament and feed the real percentage back in.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I compensate for shrinkage?</summary><p>Divide the target size by (1 − shrinkage). For a 100 mm part in ABS shrinking 0.8%, model or scale it to 100.81 mm (100.81%). Apply the scale in X and Y; Z usually shrinks less because layers cool progressively.</p></details>
+<details><summary>How much do materials shrink?</summary><p>Rough figures: PLA about 0.3%, PETG 0.4%, ASA 0.7%, ABS 0.8%, nylon 1.5% and polypropylene up to about 2%. Exact shrinkage depends on the brand, the part shape and how warm the chamber is.</p></details>
+<details><summary>How do I measure my real shrinkage?</summary><p>Print a calibration part (like a 100 mm bar) in the final material and orientation, let it cool fully, and measure it. Shrinkage = (designed − measured) ÷ designed × 100. Feed that percentage into this calculator for the next print.</p></details>
+</section>
+<script src="/tools/shrinkage/shrinkage.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

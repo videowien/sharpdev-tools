@@ -1,0 +1,50 @@
+/* PDF to Word — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.honest {
+  background: rgba(255,167,38,0.08); border-left: 3px solid #ffa726;
+  padding: 10px 14px; color: #ffa726; font-size: 13px;
+  margin-bottom: 16px;
+}
+.honest strong { color: #ffb84d; }
+
+.upload-area {
+  border: 2px dashed #333; border-radius: 12px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.upload-area:hover { border-color: #555; background: #0d0d0d; }
+.upload-area.dragover { border-color: #ff4444; background: #1a0000; }
+.upload-content { padding: 48px 20px; }
+.upload-icon { width: 40px; height: 40px; color: #444; margin-bottom: 12px; }
+.upload-content p { color: #666; font-size: 14px; margin-bottom: 4px; }
+.upload-link { color: #ff4444; cursor: pointer; }
+
+.file-info {
+  background: #0d0d0d; border: 1px solid #2a2a2a;
+  padding: 12px; border-radius: 6px; margin-bottom: 14px;
+  font-size: 13px; color: #ccc;
+}
+.file-info .filename { color: #fff; font-family: 'SF Mono', monospace; }
+
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 8px; }
+
+.preview {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #ccc;
+  padding: 14px; border-radius: 6px; font-family: 'SF Mono', monospace;
+  font-size: 12px; line-height: 1.5; max-height: 320px; overflow-y: auto;
+  white-space: pre-wrap; margin: 0 0 14px;
+}
+
+.action-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status-msg { font-size: 13px; margin-left: 8px; }
+.status-msg.ok { color: #4caf50; }
+.status-msg.error { color: #ff6666; }
+.status-msg.busy { color: #ffa726; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

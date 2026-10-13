@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Add Prefix &amp; Suffix to Each Line | SharpDev.tools</title>
+<meta content="Free add prefix and suffix to lines tool. Add text to the start and end of every line at once, ideal for quoting lists, building SQL values, adding HTML tags, bullets or trailing commas. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/add-prefix-suffix/" rel="canonical"/>
+<meta content="Add Prefix &amp; Suffix to Each Line | SharpDev.tools" property="og:title"/>
+<meta content="Free add prefix and suffix to lines tool. Add text to the start and end of every line at once, ideal for quoting lists, building SQL values, adding HTML tags, bullets or trailing commas. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/add-prefix-suffix/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Add Prefix &amp; Suffix to Each Line | SharpDev.tools" name="twitter:title"/>
+<meta content="Free add prefix and suffix to lines tool. Add text to the start and end of every line at once, ideal for quoting lists, building SQL values, adding HTML tags, bullets or trailing commas. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Text","item":"https://sharpdev.tools/#text"},{"@type":"ListItem","position":3,"name":"Add Prefix & Suffix to Each Line","item":"https://sharpdev.tools/tools/add-prefix-suffix/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can I use this for?","acceptedAnswer":{"@type":"Answer","text":"Anything that needs the same text added to every line: wrapping a list of values in quotes for SQL or JSON, adding HTML tags around each line, prepending bullets or dashes, or appending a trailing comma to each item."}},{"@type":"Question","name":"Does it handle empty lines?","acceptedAnswer":{"@type":"Answer","text":"By default empty lines are left untouched so you do not get stray prefixes and suffixes on blank rows. Untick the option to wrap every line including empty ones."}},{"@type":"Question","name":"Is the text processed privately?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything runs in your browser and nothing is uploaded."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Add Prefix & Suffix to Each Line \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/add-prefix-suffix/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/add-prefix-suffix/add-prefix-suffix.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('add-prefix-suffix');</script>
+<div class="page">
+<h1>Add Prefix & Suffix to Each Line</h1>
+<p class="subtitle">Wrap every line of your text with a prefix and a suffix. Handy for quoting lists, adding bullets, commas, tags or SQL values.</p>
+<div class="field"><label for="in">Lines</label><textarea id="in">apple
+banana
+cherry</textarea></div>
+<div class="row">
+<div class="field"><label for="pre">Prefix (start of each line)</label><input type="text" id="pre" value="&quot;"></div>
+<div class="field"><label for="suf">Suffix (end of each line)</label><input type="text" id="suf" value="&quot;,"></div></div>
+<div class="field"><label style="display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="skip" checked style="width:auto;"> Skip empty lines</label></div>
+<div class="actions"><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Result</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What can I use this for?</summary><p>Anything that needs the same text added to every line: wrapping a list of values in quotes for SQL or JSON, adding HTML tags around each line, prepending bullets or dashes, or appending a trailing comma to each item.</p></details>
+<details><summary>Does it handle empty lines?</summary><p>By default empty lines are left untouched so you do not get stray prefixes and suffixes on blank rows. Untick the option to wrap every line including empty ones.</p></details>
+<details><summary>Is the text processed privately?</summary><p>Yes. Everything runs in your browser and nothing is uploaded.</p></details>
+</section>
+<script src="/tools/add-prefix-suffix/add-prefix-suffix.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

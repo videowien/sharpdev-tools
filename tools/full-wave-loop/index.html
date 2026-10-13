@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Full-Wave Loop Antenna Calculator (Delta &amp; Quad) | SharpDev.tools</title>
+<meta content="Free full-wave loop antenna calculator for delta loops and quad loops. Enter a frequency and shape to get the total length and each side, in feet and metres. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/full-wave-loop/" rel="canonical"/>
+<meta content="Full-Wave Loop Antenna Calculator (Delta &amp; Quad) | SharpDev.tools" property="og:title"/>
+<meta content="Free full-wave loop antenna calculator for delta loops and quad loops. Enter a frequency and shape to get the total length and each side, in feet and metres. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/full-wave-loop/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Full-Wave Loop Antenna Calculator (Delta &amp; Quad) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free full-wave loop antenna calculator for delta loops and quad loops. Enter a frequency and shape to get the total length and each side, in feet and metres. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"Full-Wave Loop Calculator","item":"https://sharpdev.tools/tools/full-wave-loop/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is a full-wave loop?","acceptedAnswer":{"@type":"Answer","text":"Total length in feet is 1005 divided by the frequency in MHz, which is one wavelength of wire allowing for the loop. At 14.2 MHz that is about 70.8 feet (21.6 m) total."}},{"@type":"Question","name":"Delta loop or quad loop?","acceptedAnswer":{"@type":"Answer","text":"A delta loop is a triangle and needs only one support, so it is popular for wire antennas. A quad loop is a square and is the basis of the cubical quad beam. Both are full-wave loops with similar performance for a single element."}},{"@type":"Question","name":"How is a loop fed?","acceptedAnswer":{"@type":"Answer","text":"Feeding at the bottom or a side corner gives horizontal polarisation; feeding a quarter of the way around gives vertical polarisation. A full-wave loop has a feed impedance near 100 to 120 ohms, so a quarter-wave 75-ohm matching section is common."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Full-Wave Loop Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/full-wave-loop/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/full-wave-loop/full-wave-loop.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('full-wave-loop');</script>
+<div class="page">
+<h1>Full-Wave Loop Calculator</h1>
+<p class="subtitle">Find the total wire length and side length of a full-wave loop, as a triangle (delta loop) or a square (quad), for any frequency.</p>
+<div class="row">
+<div class="field"><label for="f">Frequency (MHz)</label><input type="number" id="f" value="14.2" step="any"></div>
+<div class="field"><label for="shape">Shape</label><select id="shape"><option value="3">Triangle (delta loop)</option><option value="4">Square (quad loop)</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Total loop length</div><div class="value" id="tot" style="font-size:18px;">-</div></div>
+<div class="result-card"><div class="label">Each side</div><div class="value" id="side" style="font-size:18px;">-</div></div></div>
+<p class="note">A full-wave loop is one wavelength of wire. Total length in feet = 1005 / frequency in MHz. A delta loop is a triangle (each side is a third of the total); a quad loop is a square (each side a quarter). Loops are quiet on receive and have useful gain over a dipole.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How long is a full-wave loop?</summary><p>Total length in feet is 1005 divided by the frequency in MHz, which is one wavelength of wire allowing for the loop. At 14.2 MHz that is about 70.8 feet (21.6 m) total.</p></details>
+<details><summary>Delta loop or quad loop?</summary><p>A delta loop is a triangle and needs only one support, so it is popular for wire antennas. A quad loop is a square and is the basis of the cubical quad beam. Both are full-wave loops with similar performance for a single element.</p></details>
+<details><summary>How is a loop fed?</summary><p>Feeding at the bottom or a side corner gives horizontal polarisation; feeding a quarter of the way around gives vertical polarisation. A full-wave loop has a feed impedance near 100 to 120 ohms, so a quarter-wave 75-ohm matching section is common.</p></details>
+</section>
+<script src="/tools/full-wave-loop/full-wave-loop.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Remove EXIF &amp; Metadata from Photos (Privacy) | SharpDev.tools</title>
+<meta content="Free EXIF and metadata remover. Strip GPS location, camera info and other EXIF metadata from a photo by re-encoding it cleanly in your browser, then download. Protects your privacy before sharing. Nothing is uploaded." name="description"/>
+<link href="https://sharpdev.tools/tools/strip-exif/" rel="canonical"/>
+<meta content="Remove EXIF &amp; Metadata from Photos (Privacy) | SharpDev.tools" property="og:title"/>
+<meta content="Free EXIF and metadata remover. Strip GPS location, camera info and other EXIF metadata from a photo by re-encoding it cleanly in your browser, then download. Protects your privacy before sharing. Nothing is uploaded." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/strip-exif/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Remove EXIF &amp; Metadata from Photos (Privacy) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free EXIF and metadata remover. Strip GPS location, camera info and other EXIF metadata from a photo by re-encoding it cleanly in your browser, then download. Protects your privacy before sharing. Nothing is uploaded." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Remove EXIF & Metadata","item":"https://sharpdev.tools/tools/strip-exif/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What metadata does this remove?","acceptedAnswer":{"@type":"Answer","text":"It removes EXIF data, which can include the GPS coordinates where a photo was taken, the camera or phone model, the date and time, and camera settings. Re-encoding the image discards all of it."}},{"@type":"Question","name":"Why should I strip EXIF before sharing?","acceptedAnswer":{"@type":"Answer","text":"Photos straight from a phone often contain the exact location they were taken. Posting them can reveal your home or routine. Stripping the metadata removes that hidden information while keeping the picture identical."}},{"@type":"Question","name":"Does it change image quality?","acceptedAnswer":{"@type":"Answer","text":"Choosing PNG keeps the pixels lossless. Choosing JPEG re-compresses at the quality you set, which is usually visually identical at 90% or higher and gives a smaller file. Either way the metadata is gone."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Remove EXIF & Metadata \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/strip-exif/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/strip-exif/strip-exif.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('strip-exif');</script>
+<div class="page">
+<h1>Remove EXIF & Metadata</h1>
+<p class="subtitle">Strip EXIF, GPS location and other metadata from a photo by re-encoding it in your browser. Protect your privacy before sharing. Nothing is uploaded.</p>
+<div class="upload-area" id="drop"><input type="file" id="file" accept="image/*" hidden><p>Drop a photo here or <b>click to choose</b></p><p class="hint">Processed entirely in your browser. Nothing is uploaded.</p></div>
+<div id="editor" style="display:none;">
+<div class="result-cards">
+<div class="result-card"><div class="label">Dimensions</div><div class="value" id="dim" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Original size</div><div class="value" id="osize" style="font-size:18px;">—</div></div>
+<div class="result-card hl"><div class="label">Cleaned size</div><div class="value" id="csize" style="font-size:18px;">—</div></div>
+<div class="result-card"><div class="label">Metadata</div><div class="value" id="meta" style="font-size:14px;">—</div></div></div>
+<div class="row">
+<div class="field"><label for="fmt">Output format</label><select id="fmt"><option value="image/jpeg">JPEG</option><option value="image/png">PNG</option></select></div>
+<div class="field"><label for="q">JPEG quality</label><input type="range" id="q" min="50" max="100" value="92"></div></div>
+<canvas id="cv" style="display:none;"></canvas>
+<div class="actions"><button class="small-btn" id="dl">Download cleaned image</button><button class="small-btn" id="reset">New image</button></div>
+<p class="note">Photos from phones and cameras often embed the GPS location where they were taken, the device model and a timestamp. Re-encoding the pixels through a canvas produces a fresh file with none of that metadata. The pixels are unchanged; only the hidden data is dropped.</p></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What metadata does this remove?</summary><p>It removes EXIF data, which can include the GPS coordinates where a photo was taken, the camera or phone model, the date and time, and camera settings. Re-encoding the image discards all of it.</p></details>
+<details><summary>Why should I strip EXIF before sharing?</summary><p>Photos straight from a phone often contain the exact location they were taken. Posting them can reveal your home or routine. Stripping the metadata removes that hidden information while keeping the picture identical.</p></details>
+<details><summary>Does it change image quality?</summary><p>Choosing PNG keeps the pixels lossless. Choosing JPEG re-compresses at the quality you set, which is usually visually identical at 90% or higher and gives a smaller file. Either way the metadata is gone.</p></details>
+</section>
+<script src="/tools/strip-exif/strip-exif.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

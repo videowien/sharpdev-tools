@@ -1,0 +1,50 @@
+/* LinkedIn Newsletter Counter — tool-specific */
+.page { padding: 40px 20px; max-width: 720px; margin: 0 auto; }
+.page h1 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.page .subtitle { color: #888; margin-bottom: 20px; font-size: 14px; }
+
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+.form-row label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.form-row label .hint { text-transform: none; color: #666; font-weight: 400; letter-spacing: 0; margin-left: 4px; }
+.form-row input[type=text], .form-row textarea {
+  background: #0d0d0d; border: 1px solid #2a2a2a; color: #fff;
+  padding: 12px; border-radius: 6px; font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.form-row textarea { resize: vertical; line-height: 1.5; font-family: 'SF Mono', monospace; font-size: 13px; }
+
+.counter-row { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+.counter { font-size: 12px; color: #888; font-family: 'SF Mono', monospace; }
+.counter.warn { color: #ffa726; }
+.counter.over { color: #ff4444; font-weight: 600; }
+.counter-bar { flex: 1; margin-left: 12px; height: 4px; background: #0d0d0d; border-radius: 2px; overflow: hidden; max-width: 200px; }
+.counter-fill { display: block; height: 100%; width: 0%; background: #4caf50; transition: width 0.15s, background 0.15s; }
+.counter-fill.warn { background: #ffa726; }
+.counter-fill.over { background: #ff4444; }
+
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 16px; }
+.stat { background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 8px; padding: 12px; text-align: center; }
+.stat-label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.stat-val { font-size: 18px; color: #fff; font-weight: 600; font-family: 'SF Mono', monospace; }
+
+.opt-label { font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 10px; }
+
+.preview-newsletter {
+  background: #fff; color: #000; border-radius: 8px;
+  padding: 20px; border: 1px solid #2a2a2a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.preview-label { font-size: 11px; color: #0a66c2; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; margin-bottom: 8px; }
+.preview-title { font-size: 18px; font-weight: 700; color: #000; line-height: 1.3; margin-bottom: 8px; }
+.preview-snippet { font-size: 14px; color: #444; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+.preview-cta { font-size: 13px; color: #0a66c2; font-weight: 600; margin-top: 12px; }
+
+.lk-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.lk-table th { text-align: left; padding: 6px 12px; color: #888; font-weight: 500; border-bottom: 1px solid #2a2a2a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.lk-table td { padding: 6px 12px; border-bottom: 1px solid #1f1f1f; color: #ccc; }
+.lk-table td:nth-child(2) { font-family: 'SF Mono', monospace; color: #fff; }
+
+@media (max-width: 600px) {
+  .page { padding: 24px 12px; }
+  .page h1 { font-size: 22px; }
+}

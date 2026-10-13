@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Base85 / Ascii85 Encode &amp; Decode | SharpDev.tools</title>
+<meta content="Free Base85 (Ascii85) encoder and decoder. Convert text to Ascii85, which packs 4 bytes into 5 characters and is more compact than Base64, and decode it back. UTF-8 aware, runs entirely in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/base85/" rel="canonical"/>
+<meta content="Base85 / Ascii85 Encode &amp; Decode | SharpDev.tools" property="og:title"/>
+<meta content="Free Base85 (Ascii85) encoder and decoder. Convert text to Ascii85, which packs 4 bytes into 5 characters and is more compact than Base64, and decode it back. UTF-8 aware, runs entirely in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/base85/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Base85 / Ascii85 Encode &amp; Decode | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Base85 (Ascii85) encoder and decoder. Convert text to Ascii85, which packs 4 bytes into 5 characters and is more compact than Base64, and decode it back. UTF-8 aware, runs entirely in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Developers","item":"https://sharpdev.tools/#developers"},{"@type":"ListItem","position":3,"name":"Base85 / Ascii85 Encoder & Decoder","item":"https://sharpdev.tools/tools/base85/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Base85 / Ascii85?","acceptedAnswer":{"@type":"Answer","text":"Base85 (the Ascii85 variant) is a binary-to-text encoding that packs every 4 bytes into 5 printable ASCII characters. It is about 25% more compact than Base64 (which uses 4 characters per 3 bytes), at the cost of using more punctuation characters."}},{"@type":"Question","name":"Where is it used?","acceptedAnswer":{"@type":"Answer","text":"Ascii85 is used inside Adobe PostScript and PDF files to embed binary data as text, and in some version-control and email contexts. It is handy when you need text-safe encoding that is smaller than Base64."}},{"@type":"Question","name":"Is my input uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Encoding and decoding run entirely in your browser. The tool is UTF-8 aware, so text with accents and emoji round-trips correctly."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Base85 / Ascii85 Encoder & Decoder \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/base85/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/base85/base85.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('base85');</script>
+<div class="page">
+<h1>Base85 / Ascii85 Encoder & Decoder</h1>
+<p class="subtitle">Encode text to Ascii85 (Base85) or decode it back. More compact than Base64. UTF-8 aware, runs in your browser.</p>
+<div class="field"><label for="in">Input</label><textarea id="in">Hello, World!</textarea></div>
+<div class="actions"><button class="small-btn" id="enc">Encode →</button><button class="small-btn" id="dec">← Decode</button><button class="copy-btn" id="copy">Copy</button></div>
+<div class="out-head"><label>Output</label></div>
+<textarea class="output" id="out" readonly></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is Base85 / Ascii85?</summary><p>Base85 (the Ascii85 variant) is a binary-to-text encoding that packs every 4 bytes into 5 printable ASCII characters. It is about 25% more compact than Base64 (which uses 4 characters per 3 bytes), at the cost of using more punctuation characters.</p></details>
+<details><summary>Where is it used?</summary><p>Ascii85 is used inside Adobe PostScript and PDF files to embed binary data as text, and in some version-control and email contexts. It is handy when you need text-safe encoding that is smaller than Base64.</p></details>
+<details><summary>Is my input uploaded?</summary><p>No. Encoding and decoding run entirely in your browser. The tool is UTF-8 aware, so text with accents and emoji round-trips correctly.</p></details>
+</section>
+<script src="/tools/base85/base85.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

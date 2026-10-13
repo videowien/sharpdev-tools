@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Flooring Calculator (Boxes of Laminate or Vinyl) | SharpDev.tools</title>
+<meta content="Free flooring calculator. Calculate how many boxes of laminate, vinyl, hardwood or engineered flooring you need from the room area and the coverage per box, with a waste allowance. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/flooring-calculator/" rel="canonical"/>
+<meta content="Flooring Calculator (Boxes of Laminate or Vinyl) | SharpDev.tools" property="og:title"/>
+<meta content="Free flooring calculator. Calculate how many boxes of laminate, vinyl, hardwood or engineered flooring you need from the room area and the coverage per box, with a waste allowance. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/flooring-calculator/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Flooring Calculator (Boxes of Laminate or Vinyl) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free flooring calculator. Calculate how many boxes of laminate, vinyl, hardwood or engineered flooring you need from the room area and the coverage per box, with a waste allowance. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Flooring Calculator","item":"https://sharpdev.tools/tools/flooring-calculator/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many boxes of flooring do I need?","acceptedAnswer":{"@type":"Answer","text":"Find the room area (length times width), add a waste allowance, then divide by the coverage printed on each box and round up. This tool does it and also shows the total area the boxes will cover."}},{"@type":"Question","name":"Why add a waste allowance?","acceptedAnswer":{"@type":"Answer","text":"Boards are cut to fit at walls and around obstacles, and the offcuts often cannot be reused. Around 10 percent extra is standard, rising to 15 percent or more for diagonal patterns or rooms with lots of corners."}},{"@type":"Question","name":"Should I buy an extra box?","acceptedAnswer":{"@type":"Answer","text":"It is wise to keep one spare box from the same batch. If a board is damaged later, a batch match avoids visible colour or texture differences across the floor."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Flooring Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/flooring-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/flooring-calculator/flooring-calculator.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('flooring-calculator');</script>
+<div class="page">
+<h1>Flooring Calculator</h1>
+<p class="subtitle">Work out how many boxes of laminate, vinyl or hardwood flooring you need from the room area and the coverage per box.</p>
+<div class="row">
+<div class="field"><label for="len">Room length (m)</label><input type="number" id="len" value="5" step="any"></div>
+<div class="field"><label for="wid">Room width (m)</label><input type="number" id="wid" value="4" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="box">Coverage per box (m²)</label><input type="number" id="box" value="2.2" step="any"></div>
+<div class="field"><label for="waste">Waste allowance (%)</label><input type="number" id="waste" value="10" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card"><div class="label">Floor area</div><div class="value" id="area">—</div></div>
+<div class="result-card hl"><div class="label">Boxes to buy</div><div class="value" id="boxes">—</div></div>
+<div class="result-card"><div class="label">Area covered</div><div class="value" id="covered">—</div></div></div>
+<p class="note">Coverage per box is printed on the packaging (around 2 to 2.5 m² is common for laminate). A 10 percent waste allowance covers cuts and the offcuts you cannot reuse; increase it for diagonal layouts or busy room shapes.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How many boxes of flooring do I need?</summary><p>Find the room area (length times width), add a waste allowance, then divide by the coverage printed on each box and round up. This tool does it and also shows the total area the boxes will cover.</p></details>
+<details><summary>Why add a waste allowance?</summary><p>Boards are cut to fit at walls and around obstacles, and the offcuts often cannot be reused. Around 10 percent extra is standard, rising to 15 percent or more for diagonal patterns or rooms with lots of corners.</p></details>
+<details><summary>Should I buy an extra box?</summary><p>It is wise to keep one spare box from the same batch. If a board is damaged later, a batch match avoids visible colour or texture differences across the floor.</p></details>
+</section>
+<script src="/tools/flooring-calculator/flooring-calculator.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

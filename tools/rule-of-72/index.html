@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Rule of 72 Calculator (Doubling Time) | SharpDev.tools</title>
+<meta content="Free Rule of 72 calculator. Estimate how many years an investment takes to double (and triple and quadruple) at a given annual return, or the return needed to double in a set number of years. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/rule-of-72/" rel="canonical"/>
+<meta content="Rule of 72 Calculator (Doubling Time) | SharpDev.tools" property="og:title"/>
+<meta content="Free Rule of 72 calculator. Estimate how many years an investment takes to double (and triple and quadruple) at a given annual return, or the return needed to double in a set number of years. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/rule-of-72/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Rule of 72 Calculator (Doubling Time) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free Rule of 72 calculator. Estimate how many years an investment takes to double (and triple and quadruple) at a given annual return, or the return needed to double in a set number of years. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Money & Finance","item":"https://sharpdev.tools/#money-finance"},{"@type":"ListItem","position":3,"name":"Rule of 72 Calculator","item":"https://sharpdev.tools/tools/rule-of-72/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Rule of 72?","acceptedAnswer":{"@type":"Answer","text":"It is a simple way to estimate how long money takes to double at compound interest: just divide 72 by the annual percentage return. At 8% a year, money doubles in about 72 / 8 = 9 years."}},{"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"It is a close approximation for typical returns of roughly 5% to 12%. At very high or very low rates it drifts from the exact figure, but it is excellent for quick mental maths without a calculator."}},{"@type":"Question","name":"What are the rules of 114 and 144?","acceptedAnswer":{"@type":"Answer","text":"They extend the same idea: divide 114 by the rate for the years to triple your money, and 144 for the years to quadruple it."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Rule of 72 Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/rule-of-72/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/rule-of-72/rule-of-72.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('rule-of-72');</script>
+<div class="page">
+<h1>Rule of 72 Calculator</h1>
+<p class="subtitle">Estimate how long an investment takes to double, triple or quadruple at a given rate, or the rate needed to double in a set time.</p>
+<div class="row"><div class="field"><label for="rate">Annual rate of return (%)</label><input type="number" id="rate" value="8" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Years to double</div><div class="value" id="dbl">—</div></div>
+<div class="result-card"><div class="label">Years to triple (rule of 114)</div><div class="value" id="tpl">—</div></div>
+<div class="result-card"><div class="label">Years to quadruple (rule of 144)</div><div class="value" id="quad">—</div></div></div>
+<div class="row" style="margin-top:18px;"><div class="field"><label for="yrs">Or: I want to double in this many years</label><input type="number" id="yrs" value="10" step="any"></div></div>
+<div class="result-cards"><div class="result-card" style="grid-column:1 / -1;"><div class="label">Required annual return</div><div class="value" id="reqrate">—</div></div></div>
+<p class="note">The Rule of 72 is a quick mental shortcut: divide 72 by the annual percentage return to estimate the years to double. It is most accurate for returns between about 5% and 12%. The 114 and 144 rules extend it to tripling and quadrupling.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is the Rule of 72?</summary><p>It is a simple way to estimate how long money takes to double at compound interest: just divide 72 by the annual percentage return. At 8% a year, money doubles in about 72 / 8 = 9 years.</p></details>
+<details><summary>How accurate is it?</summary><p>It is a close approximation for typical returns of roughly 5% to 12%. At very high or very low rates it drifts from the exact figure, but it is excellent for quick mental maths without a calculator.</p></details>
+<details><summary>What are the rules of 114 and 144?</summary><p>They extend the same idea: divide 114 by the rate for the years to triple your money, and 144 for the years to quadruple it.</p></details>
+</section>
+<script src="/tools/rule-of-72/rule-of-72.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

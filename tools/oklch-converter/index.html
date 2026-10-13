@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>OKLCH Color Converter (OKLCH, OKLab, LAB, LCH, HWB) | SharpDev.tools</title>
+<meta content="Free OKLCH color converter. Convert any colour into the modern CSS colour functions OKLCH, OKLab, LAB, LCH and HWB (plus hex and RGB), with a live swatch and one-click copy. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/oklch-converter/" rel="canonical"/>
+<meta content="OKLCH Color Converter (OKLCH, OKLab, LAB, LCH, HWB) | SharpDev.tools" property="og:title"/>
+<meta content="Free OKLCH color converter. Convert any colour into the modern CSS colour functions OKLCH, OKLab, LAB, LCH and HWB (plus hex and RGB), with a live swatch and one-click copy. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/oklch-converter/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="OKLCH Color Converter (OKLCH, OKLab, LAB, LCH, HWB) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free OKLCH color converter. Convert any colour into the modern CSS colour functions OKLCH, OKLab, LAB, LCH and HWB (plus hex and RGB), with a live swatch and one-click copy. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"OKLCH & Modern Color Converter","item":"https://sharpdev.tools/tools/oklch-converter/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is OKLCH?","acceptedAnswer":{"@type":"Answer","text":"OKLCH is a modern, perceptually uniform colour space available in CSS. Its lightness, chroma and hue match human perception better than HSL, so equal numeric steps look like equal visual steps. That makes it excellent for building harmonious palettes and smooth gradients."}},{"@type":"Question","name":"How is OKLCH different from LCH and LAB?","acceptedAnswer":{"@type":"Answer","text":"LAB and LCH are the older CIE spaces; OKLab and OKLCH are a newer revision that fixes some perceptual issues, especially around blues. This tool shows all of them so you can use whichever your tools or browsers support."}},{"@type":"Question","name":"Can I use these in CSS today?","acceptedAnswer":{"@type":"Answer","text":"Yes. oklch(), oklab(), lab(), lch() and hwb() are supported in all current major browsers. For older browsers, keep a hex or rgb fallback, which this tool also gives you."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"OKLCH & Modern Color Converter \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/oklch-converter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/oklch-converter/oklch-converter.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('oklch-converter');</script>
+<div class="page">
+<h1>OKLCH & Modern Color Converter</h1>
+<p class="subtitle">Convert a colour into the modern CSS colour spaces: OKLCH, OKLab, LAB, LCH and HWB. Paste a hex or pick a colour and copy any format.</p>
+<div class="row">
+<div class="field"><label for="in">Colour (hex, rgb() or name)</label><input type="text" id="in" value="#ff4444"></div>
+<div class="field" style="max-width:80px;"><label for="pick">Pick</label><input type="color" id="pick" value="#ff4444"></div></div>
+<div class="oklch-swatch" id="swatch"></div>
+<div id="formats"></div>
+<p class="note">OKLCH and OKLab are perceptually uniform colour spaces now supported in CSS, great for building even-looking palettes and smooth gradients. LCH and LAB are the older CIE equivalents; HWB is an intuitive hue-whiteness-blackness model. Click any value to copy it.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is OKLCH?</summary><p>OKLCH is a modern, perceptually uniform colour space available in CSS. Its lightness, chroma and hue match human perception better than HSL, so equal numeric steps look like equal visual steps. That makes it excellent for building harmonious palettes and smooth gradients.</p></details>
+<details><summary>How is OKLCH different from LCH and LAB?</summary><p>LAB and LCH are the older CIE spaces; OKLab and OKLCH are a newer revision that fixes some perceptual issues, especially around blues. This tool shows all of them so you can use whichever your tools or browsers support.</p></details>
+<details><summary>Can I use these in CSS today?</summary><p>Yes. oklch(), oklab(), lab(), lch() and hwb() are supported in all current major browsers. For older browsers, keep a hex or rgb fallback, which this tool also gives you.</p></details>
+</section>
+<script src="/tools/oklch-converter/oklch-converter.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

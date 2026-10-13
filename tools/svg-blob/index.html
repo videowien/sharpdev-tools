@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SVG Blob Generator (Organic Blob Shapes) | SharpDev.tools</title>
+<meta content="Free SVG blob generator. Create smooth organic blob shapes, adjust the number of points and randomness, pick a colour, then copy the SVG or download it. Great for backgrounds, avatars and hero sections. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/svg-blob/" rel="canonical"/>
+<meta content="SVG Blob Generator (Organic Blob Shapes) | SharpDev.tools" property="og:title"/>
+<meta content="Free SVG blob generator. Create smooth organic blob shapes, adjust the number of points and randomness, pick a colour, then copy the SVG or download it. Great for backgrounds, avatars and hero sections. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/svg-blob/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SVG Blob Generator (Organic Blob Shapes) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free SVG blob generator. Create smooth organic blob shapes, adjust the number of points and randomness, pick a colour, then copy the SVG or download it. Great for backgrounds, avatars and hero sections. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Design & CSS","item":"https://sharpdev.tools/#design-css"},{"@type":"ListItem","position":3,"name":"SVG Blob Generator","item":"https://sharpdev.tools/tools/svg-blob/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an SVG blob used for?","acceptedAnswer":{"@type":"Answer","text":"Organic blob shapes are popular as soft backgrounds, decorative section accents, avatar masks and hero-image frames. Because the output is SVG, it stays crisp at any size and the file is tiny."}},{"@type":"Question","name":"How do the controls work?","acceptedAnswer":{"@type":"Answer","text":"More points create a more complex outline, and higher randomness makes it more irregular and organic. Randomise reshuffles the shape, and the colour picker recolours it. Every change updates the preview and the code instantly."}},{"@type":"Question","name":"Can I edit the colour later in CSS?","acceptedAnswer":{"@type":"Answer","text":"Yes. The shape is a single path, so you can change the fill in the SVG or with CSS, animate it, or use it as a clip-path. Download the file or copy the markup straight into your HTML."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"SVG Blob Generator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/svg-blob/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/svg-blob/svg-blob.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('svg-blob');</script>
+<div class="page">
+<h1>SVG Blob Generator</h1>
+<p class="subtitle">Generate smooth, organic blob shapes as SVG. Tune the points and randomness, recolour, and download or copy the SVG.</p>
+<div class="row">
+<div class="field"><label for="color">Colour</label><input type="color" id="color" value="#ff4444"></div>
+<div class="field"><label for="pts">Points</label><input type="range" id="pts" min="3" max="12" value="6"></div>
+<div class="field"><label for="vary">Randomness</label><input type="range" id="vary" min="0" max="80" value="35"></div></div>
+<div class="actions"><button class="small-btn" id="regen">Randomise blob</button><button class="small-btn" id="dl">Download SVG</button><button class="copy-btn" id="copy">Copy SVG</button></div>
+<div class="blob-prev" id="prev"></div>
+<div class="out-head"><label>SVG code</label></div>
+<textarea class="output" id="code" readonly style="min-height:80px;"></textarea>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is an SVG blob used for?</summary><p>Organic blob shapes are popular as soft backgrounds, decorative section accents, avatar masks and hero-image frames. Because the output is SVG, it stays crisp at any size and the file is tiny.</p></details>
+<details><summary>How do the controls work?</summary><p>More points create a more complex outline, and higher randomness makes it more irregular and organic. Randomise reshuffles the shape, and the colour picker recolours it. Every change updates the preview and the code instantly.</p></details>
+<details><summary>Can I edit the colour later in CSS?</summary><p>Yes. The shape is a single path, so you can change the fill in the SVG or with CSS, animate it, or use it as a clip-path. Download the file or copy the markup straight into your HTML.</p></details>
+</section>
+<script src="/tools/svg-blob/svg-blob.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

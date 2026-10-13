@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>True Field of View Calculator (Eyepiece TFoV) | SharpDev.tools</title>
+<meta content="Free true field of view calculator for telescope eyepieces. Enter telescope and eyepiece focal lengths and the apparent field to get the true field in degrees and arcminutes. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/true-field-of-view/" rel="canonical"/>
+<meta content="True Field of View Calculator (Eyepiece TFoV) | SharpDev.tools" property="og:title"/>
+<meta content="Free true field of view calculator for telescope eyepieces. Enter telescope and eyepiece focal lengths and the apparent field to get the true field in degrees and arcminutes. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/true-field-of-view/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="True Field of View Calculator (Eyepiece TFoV) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free true field of view calculator for telescope eyepieces. Enter telescope and eyepiece focal lengths and the apparent field to get the true field in degrees and arcminutes. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Astronomy","item":"https://sharpdev.tools/#astronomy"},{"@type":"ListItem","position":3,"name":"True Field of View Calculator","item":"https://sharpdev.tools/tools/true-field-of-view/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is true field of view?","acceptedAnswer":{"@type":"Answer","text":"The actual patch of sky visible in the eyepiece. Estimate it by dividing the eyepiece's apparent field by the magnification: a 50\u00b0 eyepiece at 120x shows about 0.42\u00b0, roughly 25 arcminutes."}},{"@type":"Question","name":"What is apparent field of view?","acceptedAnswer":{"@type":"Answer","text":"The angular size of the visible circle inside the eyepiece itself, printed on the barrel: Pl\u00f6ssls are typically 50-52\u00b0, wide-angles 68-82\u00b0, ultra-wides up to 100\u00b0. Bigger apparent field means more sky at the same magnification."}},{"@type":"Question","name":"How big are common targets?","acceptedAnswer":{"@type":"Answer","text":"The full Moon is about 0.52\u00b0, the Pleiades about 2\u00b0, the Andromeda galaxy about 3\u00b0 long. For large objects you need a low-power, wide-field combination; this calculator tells you if the target fits."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"True Field of View Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/true-field-of-view/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/true-field-of-view/true-field-of-view.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('true-field-of-view');</script>
+<div class="page">
+<h1>True Field of View Calculator</h1>
+<p class="subtitle">How much sky an eyepiece actually shows: true field = apparent field ÷ magnification, in degrees and arcminutes, with a Moon comparison.</p>
+<div class="row">
+<div class="field"><label for="fl">Telescope focal length (mm)</label><input type="number" id="fl" value="1200" step="any"></div>
+<div class="field"><label for="ep">Eyepiece focal length (mm)</label><input type="number" id="ep" value="10" step="any"></div>
+<div class="field"><label for="afov">Apparent field of view (°)</label><input type="number" id="afov" value="50" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">True field of view</div><div class="value" id="tfov" style="font-size:20px;">-</div></div>
+<div class="result-card"><div class="label">Magnification</div><div class="value" id="mag">-</div></div>
+<div class="result-card"><div class="label">Fits across the field</div><div class="value" id="moon" style="font-size:14px;">-</div></div></div>
+<p class="note">True field ≈ apparent field ÷ magnification. A 50° eyepiece at 120x shows 0.42° of sky, a bit less than one full Moon (0.52°). Wide-angle eyepieces (68-100° apparent) show proportionally more. The eyepiece field-stop method is slightly more exact, but this classic estimate is within a few percent.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is true field of view?</summary><p>The actual patch of sky visible in the eyepiece. Estimate it by dividing the eyepiece's apparent field by the magnification: a 50° eyepiece at 120x shows about 0.42°, roughly 25 arcminutes.</p></details>
+<details><summary>What is apparent field of view?</summary><p>The angular size of the visible circle inside the eyepiece itself, printed on the barrel: Plössls are typically 50-52°, wide-angles 68-82°, ultra-wides up to 100°. Bigger apparent field means more sky at the same magnification.</p></details>
+<details><summary>How big are common targets?</summary><p>The full Moon is about 0.52°, the Pleiades about 2°, the Andromeda galaxy about 3° long. For large objects you need a low-power, wide-field combination; this calculator tells you if the target fits.</p></details>
+</section>
+<script src="/tools/true-field-of-view/true-field-of-view.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

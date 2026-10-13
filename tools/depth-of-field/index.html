@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Depth of Field Calculator (DoF, Near / Far / Hyperfocal) | SharpDev.tools</title>
+<meta content="Free depth of field calculator. Enter focal length, aperture, focus distance and sensor format to get the near and far limits, total depth of field and the hyperfocal distance. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/depth-of-field/" rel="canonical"/>
+<meta content="Depth of Field Calculator (DoF, Near / Far / Hyperfocal) | SharpDev.tools" property="og:title"/>
+<meta content="Free depth of field calculator. Enter focal length, aperture, focus distance and sensor format to get the near and far limits, total depth of field and the hyperfocal distance. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/depth-of-field/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Depth of Field Calculator (DoF, Near / Far / Hyperfocal) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free depth of field calculator. Enter focal length, aperture, focus distance and sensor format to get the near and far limits, total depth of field and the hyperfocal distance. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Depth of Field Calculator","item":"https://sharpdev.tools/tools/depth-of-field/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is depth of field calculated?","acceptedAnswer":{"@type":"Answer","text":"From the hyperfocal distance H = f squared / (N times c) + f, where f is focal length, N the f-number and c the circle of confusion for the sensor. The near and far limits are then s(H-f)/(H+s-2f) and s(H-f)/(H-s), with s the focus distance."}},{"@type":"Question","name":"What is the circle of confusion?","acceptedAnswer":{"@type":"Answer","text":"It is the largest blur spot that still looks sharp in a print, and it scales with sensor size. This tool uses standard values such as 0.029mm for full frame and 0.019mm for APS-C, which is why a smaller sensor shows more depth of field at the same settings."}},{"@type":"Question","name":"How do I get more depth of field?","acceptedAnswer":{"@type":"Answer","text":"Use a smaller aperture (a higher f-number), a wider (shorter) focal length, or focus further away. Focusing at the hyperfocal distance gives the maximum possible depth of field for a given lens and aperture."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Depth of Field Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/depth-of-field/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/depth-of-field/depth-of-field.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('depth-of-field');</script>
+<div class="page">
+<h1>Depth of Field Calculator</h1>
+<p class="subtitle">Find the near limit, far limit and total depth of field from your focal length, aperture, focus distance and sensor size. Shows the hyperfocal distance too.</p>
+<div class="row">
+<div class="field"><label for="sensor">Sensor / format</label><select id="sensor"><option value="ff" selected>Full frame (36x24)</option><option value="apsc">APS-C 1.5x (Nikon / Sony)</option><option value="canon">APS-C 1.6x (Canon)</option><option value="mft">Micro 4/3 (2.0x)</option><option value="one">1-inch (2.7x)</option></select></div>
+<div class="field"><label for="f">Focal length (mm)</label><input type="number" id="f" value="50" step="any"></div></div>
+<div class="row">
+<div class="field"><label for="N">Aperture f/</label><input type="number" id="N" value="8" step="any"></div>
+<div class="field"><label for="s">Focus distance (m)</label><input type="number" id="s" value="3" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Total depth of field</div><div class="value" id="total">-</div></div>
+<div class="result-card"><div class="label">Near limit</div><div class="value" id="near">-</div></div>
+<div class="result-card"><div class="label">Far limit</div><div class="value" id="far">-</div></div>
+<div class="result-card"><div class="label">Hyperfocal</div><div class="value" id="hyp">-</div></div></div>
+<p class="note">Depth of field is the zone that looks acceptably sharp. It depends on focal length, aperture, focus distance and the sensor size (through the circle of confusion). Smaller apertures (higher f-numbers), wider lenses and greater distances all increase it.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is depth of field calculated?</summary><p>From the hyperfocal distance H = f squared / (N times c) + f, where f is focal length, N the f-number and c the circle of confusion for the sensor. The near and far limits are then s(H-f)/(H+s-2f) and s(H-f)/(H-s), with s the focus distance.</p></details>
+<details><summary>What is the circle of confusion?</summary><p>It is the largest blur spot that still looks sharp in a print, and it scales with sensor size. This tool uses standard values such as 0.029mm for full frame and 0.019mm for APS-C, which is why a smaller sensor shows more depth of field at the same settings.</p></details>
+<details><summary>How do I get more depth of field?</summary><p>Use a smaller aperture (a higher f-number), a wider (shorter) focal length, or focus further away. Focusing at the hyperfocal distance gives the maximum possible depth of field for a given lens and aperture.</p></details>
+</section>
+<script src="/tools/depth-of-field/depth-of-field.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

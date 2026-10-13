@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Add Border to Image (Frame an Image) | SharpDev.tools</title>
+<meta content="Free add-border-to-image tool. Put a solid colour border or frame around a photo, choose the width and colour, and download as PNG. Private: nothing is uploaded. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/image-border/" rel="canonical"/>
+<meta content="Add Border to Image (Frame an Image) | SharpDev.tools" property="og:title"/>
+<meta content="Free add-border-to-image tool. Put a solid colour border or frame around a photo, choose the width and colour, and download as PNG. Private: nothing is uploaded. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/image-border/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Add Border to Image (Frame an Image) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free add-border-to-image tool. Put a solid colour border or frame around a photo, choose the width and colour, and download as PNG. Private: nothing is uploaded. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Images & Media","item":"https://sharpdev.tools/#images-media"},{"@type":"ListItem","position":3,"name":"Add a Border to an Image","item":"https://sharpdev.tools/tools/image-border/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add a border to a photo?","acceptedAnswer":{"@type":"Answer","text":"Choose an image, set the border width in pixels and pick a colour. The border is added around the outside, so the image keeps its full content, and the canvas grows to fit. Then download the PNG."}},{"@type":"Question","name":"Can I make a white frame for Instagram?","acceptedAnswer":{"@type":"Answer","text":"Yes. A common look is a thick white border to fit a non-square photo into a square post. Set a generous width and white colour; for an exact square you can then run it through a resize or crop tool."}},{"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The border is drawn in your browser on a canvas and the image never leaves your device."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Add a Border to an Image \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/image-border/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/image-border/image-border.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('image-border');</script>
+<div class="page">
+<h1>Add a Border to an Image</h1>
+<p class="subtitle">Add a solid colour border or frame around an image and download it. Choose the width and colour. Nothing is uploaded.</p>
+<div class="upload-area" id="drop"><input type="file" id="file" accept="image/*" hidden><p>Drop an image here or <b>click to choose</b></p><p class="hint">Processed entirely in your browser. Nothing is uploaded.</p></div>
+<div id="editor" style="display:none;">
+<div class="row">
+<div class="field"><label for="bw">Border width (px)</label><input type="number" id="bw" value="20" min="0" max="400"></div>
+<div class="field"><label for="col">Border colour</label><input type="color" id="col" value="#ffffff"></div></div>
+<div class="img-prev"><canvas id="cv"></canvas></div>
+<div class="actions"><button class="small-btn" id="dl">Download PNG</button><button class="small-btn" id="reset">New image</button></div>
+</div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How do I add a border to a photo?</summary><p>Choose an image, set the border width in pixels and pick a colour. The border is added around the outside, so the image keeps its full content, and the canvas grows to fit. Then download the PNG.</p></details>
+<details><summary>Can I make a white frame for Instagram?</summary><p>Yes. A common look is a thick white border to fit a non-square photo into a square post. Set a generous width and white colour; for an exact square you can then run it through a resize or crop tool.</p></details>
+<details><summary>Is anything uploaded?</summary><p>No. The border is drawn in your browser on a canvas and the image never leaves your device.</p></details>
+</section>
+<script src="/tools/image-border/image-border.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

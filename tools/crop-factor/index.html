@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Crop Factor Calculator (Equivalent Focal Length) | SharpDev.tools</title>
+<meta content="Free crop factor calculator. Convert any focal length to its 35mm-equivalent and find the equivalent aperture for depth-of-field comparisons, for full frame, APS-C, Micro 4/3, 1-inch or a custom crop factor. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/crop-factor/" rel="canonical"/>
+<meta content="Crop Factor Calculator (Equivalent Focal Length) | SharpDev.tools" property="og:title"/>
+<meta content="Free crop factor calculator. Convert any focal length to its 35mm-equivalent and find the equivalent aperture for depth-of-field comparisons, for full frame, APS-C, Micro 4/3, 1-inch or a custom crop factor. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/crop-factor/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Crop Factor Calculator (Equivalent Focal Length) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free crop factor calculator. Convert any focal length to its 35mm-equivalent and find the equivalent aperture for depth-of-field comparisons, for full frame, APS-C, Micro 4/3, 1-inch or a custom crop factor. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Photography","item":"https://sharpdev.tools/#photography"},{"@type":"ListItem","position":3,"name":"Crop Factor Calculator","item":"https://sharpdev.tools/tools/crop-factor/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is crop factor?","acceptedAnswer":{"@type":"Answer","text":"It is the ratio of a sensor diagonal to a full-frame (35mm) sensor. APS-C is about 1.5x (1.6x for Canon), Micro 4/3 is 2.0x. Multiply a lens focal length by the crop factor to get the full-frame equivalent angle of view."}},{"@type":"Question","name":"What is equivalent aperture?","acceptedAnswer":{"@type":"Answer","text":"Multiplying the f-number by the crop factor gives the full-frame aperture that produces the same depth of field and gathers the same total light. So an f/1.8 lens on Micro 4/3 behaves like f/3.6 on full frame for depth of field, even though it exposes at f/1.8."}},{"@type":"Question","name":"Does crop factor change exposure?","acceptedAnswer":{"@type":"Answer","text":"No. The f-number for exposure stays the same on any sensor. Crop factor only changes the framing (equivalent focal length) and the depth-of-field comparison (equivalent aperture)."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Crop Factor Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/crop-factor/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/crop-factor/crop-factor.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('crop-factor');</script>
+<div class="page">
+<h1>Crop Factor Calculator</h1>
+<p class="subtitle">Convert a lens to its full-frame (35mm) equivalent focal length, and the equivalent aperture for depth-of-field comparisons, for any sensor.</p>
+<div class="row">
+<div class="field"><label for="sensor">Sensor / format</label><select id="sensor"><option value="ff">Full frame (1.0x)</option><option value="apsc" selected>APS-C 1.5x (Nikon / Sony)</option><option value="canon">APS-C 1.6x (Canon)</option><option value="mft">Micro 4/3 (2.0x)</option><option value="one">1-inch (2.7x)</option><option value="custom">Custom...</option></select></div>
+<div class="field" id="cfwrap" style="display:none;"><label for="cf">Crop factor</label><input type="number" id="cf" value="1.5" step="any"></div>
+<div class="field"><label for="f">Focal length (mm)</label><input type="number" id="f" value="35" step="any"></div>
+<div class="field"><label for="N">Aperture f/ (optional)</label><input type="number" id="N" value="1.8" step="any"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Equivalent focal length</div><div class="value" id="eq" style="font-size:22px;">-</div></div>
+<div class="result-card"><div class="label">Equivalent aperture (DoF)</div><div class="value" id="aper">-</div></div></div>
+<p class="note">Crop factor compares a sensor to full frame (35mm). The equivalent focal length is the full-frame lens that frames the same view. The equivalent aperture scales the f-number by the same factor for depth-of-field and light-gathering comparisons.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What is crop factor?</summary><p>It is the ratio of a sensor diagonal to a full-frame (35mm) sensor. APS-C is about 1.5x (1.6x for Canon), Micro 4/3 is 2.0x. Multiply a lens focal length by the crop factor to get the full-frame equivalent angle of view.</p></details>
+<details><summary>What is equivalent aperture?</summary><p>Multiplying the f-number by the crop factor gives the full-frame aperture that produces the same depth of field and gathers the same total light. So an f/1.8 lens on Micro 4/3 behaves like f/3.6 on full frame for depth of field, even though it exposes at f/1.8.</p></details>
+<details><summary>Does crop factor change exposure?</summary><p>No. The f-number for exposure stays the same on any sensor. Crop factor only changes the framing (equivalent focal length) and the depth-of-field comparison (equivalent aperture).</p></details>
+</section>
+<script src="/tools/crop-factor/crop-factor.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

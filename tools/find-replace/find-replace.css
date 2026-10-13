@@ -1,0 +1,77 @@
+/* Find & Replace — styles */
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; }
+.page > label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+#text-in, #out {
+  width: 100%; min-height: 140px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 14px; padding: 14px;
+  border-radius: 10px; font-family: 'SF Mono', Monaco, monospace;
+  resize: vertical; line-height: 1.55; outline: none;
+}
+#text-in:focus { border-color: #ff4444; }
+#out { background: #0f0f0f; }
+
+.fr-controls {
+  margin-top: 16px;
+  background: #141414; border: 1px solid #262626;
+  padding: 14px 16px; border-radius: 10px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.fr-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.fr-row input {
+  width: 100%; padding: 10px 14px;
+  background: #0d0d0d; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 14px; border-radius: 8px;
+  font-family: 'SF Mono', Monaco, monospace;
+  outline: none; transition: border-color 0.15s;
+}
+.fr-row input:focus { border-color: #ff4444; }
+
+.fr-opts {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; background: #0d0d0d; border: 1px solid #262626;
+  border-radius: 999px; font-size: 12px; color: #aaa; cursor: pointer;
+  transition: all 0.15s; user-select: none;
+}
+.chip:hover { border-color: #444; color: #fff; }
+.chip input { accent-color: #ff4444; cursor: pointer; margin: 0; }
+.match-count {
+  margin-left: auto;
+  font-size: 13px; color: #888;
+  font-variant-numeric: tabular-nums;
+}
+.match-count.hit { color: #4ade80; }
+
+.err { min-height: 18px; margin-top: 10px; font-size: 12px; color: #ff7070; }
+
+.out-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: 16px; margin-bottom: 8px;
+}
+.out-head label {
+  font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin: 0;
+}
+.copy-btn {
+  padding: 6px 14px; background: #1f1f1f; border: 1px solid #333;
+  color: #ccc; font-size: 13px; font-weight: 500;
+  border-radius: 6px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s;
+}
+.copy-btn:hover { background: #2a2a2a; border-color: #444; color: #fff; }
+.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .fr-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>How Many Days in a Month? | SharpDev.tools</title>
+<meta content="Free days-in-a-month checker. Pick any month and year to see the number of days, the first and last weekday of the month, and whether February has 28 or 29 days. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/days-in-month/" rel="canonical"/>
+<meta content="How Many Days in a Month? | SharpDev.tools" property="og:title"/>
+<meta content="Free days-in-a-month checker. Pick any month and year to see the number of days, the first and last weekday of the month, and whether February has 28 or 29 days. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/days-in-month/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How Many Days in a Month? | SharpDev.tools" name="twitter:title"/>
+<meta content="Free days-in-a-month checker. Pick any month and year to see the number of days, the first and last weekday of the month, and whether February has 28 or 29 days. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Days in a Month","item":"https://sharpdev.tools/tools/days-in-month/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many days are in each month?","acceptedAnswer":{"@type":"Answer","text":"January, March, May, July, August, October and December have 31 days. April, June, September and November have 30. February has 28, or 29 in a leap year. This tool shows it for any month and year."}},{"@type":"Question","name":"How do I know if February has 29 days?","acceptedAnswer":{"@type":"Answer","text":"A year is a leap year if it is divisible by 4, except century years which must be divisible by 400. Pick February and a year and the tool tells you directly."}},{"@type":"Question","name":"What are the first and last weekday for?","acceptedAnswer":{"@type":"Answer","text":"They are handy for planning, for example knowing a month starts on a Monday or ends on a weekend, when laying out calendars, rotas or pay periods."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Days in a Month \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/days-in-month/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/days-in-month/days-in-month.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('days-in-month');</script>
+<div class="page">
+<h1>Days in a Month</h1>
+<p class="subtitle">Pick a month and year to see exactly how many days it has, the first and last weekday, and whether it is a leap February.</p>
+<div class="row">
+<div class="field"><label for="month">Month</label><select id="month"></select></div>
+<div class="field"><label for="year">Year</label><input type="number" id="year" value="2026" min="1" max="4000"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Days</div><div class="value" id="days">—</div></div>
+<div class="result-card"><div class="label">First day</div><div class="value" id="first" style="font-size:16px;">—</div></div>
+<div class="result-card"><div class="label">Last day</div><div class="value" id="last" style="font-size:16px;">—</div></div></div>
+<p class="note" id="note"></p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How many days are in each month?</summary><p>January, March, May, July, August, October and December have 31 days. April, June, September and November have 30. February has 28, or 29 in a leap year. This tool shows it for any month and year.</p></details>
+<details><summary>How do I know if February has 29 days?</summary><p>A year is a leap year if it is divisible by 4, except century years which must be divisible by 400. Pick February and a year and the tool tells you directly.</p></details>
+<details><summary>What are the first and last weekday for?</summary><p>They are handy for planning, for example knowing a month starts on a Monday or ends on a weekend, when laying out calendars, rotas or pay periods.</p></details>
+</section>
+<script src="/tools/days-in-month/days-in-month.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

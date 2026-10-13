@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Touch Screen Test (Multi-Touch Tester) | SharpDev.tools</title>
+<meta content="Free online touch screen test. Touch, click or drag in the test area to see each contact point tracked live with its coordinates, plus a multi-touch counter. Works with touchscreens, trackpads and mice. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/touch-test/" rel="canonical"/>
+<meta content="Touch Screen Test (Multi-Touch Tester) | SharpDev.tools" property="og:title"/>
+<meta content="Free online touch screen test. Touch, click or drag in the test area to see each contact point tracked live with its coordinates, plus a multi-touch counter. Works with touchscreens, trackpads and mice. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/touch-test/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Touch Screen Test (Multi-Touch Tester) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free online touch screen test. Touch, click or drag in the test area to see each contact point tracked live with its coordinates, plus a multi-touch counter. Works with touchscreens, trackpads and mice. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Browser & Device Tests","item":"https://sharpdev.tools/#browser-device-tests"},{"@type":"ListItem","position":3,"name":"Touch Screen Test","item":"https://sharpdev.tools/tools/touch-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the touch test show?","acceptedAnswer":{"@type":"Answer","text":"Every point of contact (a finger on a touchscreen, or your mouse or trackpad pointer) appears as a circle while it is down. The counters show how many points are active at once and the most you have reached, so you can check multi-touch."}},{"@type":"Question","name":"How do I test multi-touch?","acceptedAnswer":{"@type":"Answer","text":"On a touchscreen, place several fingers in the area at the same time. The active-points counter rises with each finger, confirming how many simultaneous touches your screen supports. Most phones handle five or ten."}},{"@type":"Question","name":"Can I find dead zones on my screen?","acceptedAnswer":{"@type":"Answer","text":"Yes. Slowly drag a finger across the whole area. If the circle stops following in a particular spot, that part of the digitiser may not be registering touch."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Touch Screen Test \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/touch-test/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/touch-test/touch-test.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('touch-test');</script>
+<div class="page">
+<h1>Touch Screen Test</h1>
+<p class="subtitle">Test your touchscreen or trackpad. Touch, click or drag in the box to see each point tracked live, with coordinates and a multi-touch counter.</p>
+<div class="result-cards"><div class="result-card hl"><div class="label">Active points</div><div class="value" id="count">0</div></div><div class="result-card"><div class="label">Max seen</div><div class="value" id="max">0</div></div><div class="result-card"><div class="label">Last point</div><div class="value" id="last" style="font-size:15px;">—</div></div></div>
+<div class="touch-area" id="area"><div class="hint">Touch, click or drag here</div></div>
+<p class="note">Each finger or pointer shows as a circle while it touches the area. The multi-touch counter shows how many points your device registers at once, which is handy for checking dead zones or how many simultaneous touches a screen supports. Everything runs locally.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does the touch test show?</summary><p>Every point of contact (a finger on a touchscreen, or your mouse or trackpad pointer) appears as a circle while it is down. The counters show how many points are active at once and the most you have reached, so you can check multi-touch.</p></details>
+<details><summary>How do I test multi-touch?</summary><p>On a touchscreen, place several fingers in the area at the same time. The active-points counter rises with each finger, confirming how many simultaneous touches your screen supports. Most phones handle five or ten.</p></details>
+<details><summary>Can I find dead zones on my screen?</summary><p>Yes. Slowly drag a finger across the whole area. If the circle stops following in a particular spot, that part of the digitiser may not be registering touch.</p></details>
+</section>
+<script src="/tools/touch-test/touch-test.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Ovulation Calculator (Fertile Window &amp; Next Period) | SharpDev.tools</title>
+<meta content="Free ovulation calculator. Estimate your fertile window, ovulation date and upcoming periods from the first day of your last period and your cycle length. Runs in your browser, nothing is stored." name="description"/>
+<link href="https://sharpdev.tools/tools/ovulation/" rel="canonical"/>
+<meta content="Ovulation Calculator (Fertile Window &amp; Next Period) | SharpDev.tools" property="og:title"/>
+<meta content="Free ovulation calculator. Estimate your fertile window, ovulation date and upcoming periods from the first day of your last period and your cycle length. Runs in your browser, nothing is stored." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/ovulation/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Ovulation Calculator (Fertile Window &amp; Next Period) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free ovulation calculator. Estimate your fertile window, ovulation date and upcoming periods from the first day of your last period and your cycle length. Runs in your browser, nothing is stored." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://sharpdev.tools/#calculators"},{"@type":"ListItem","position":3,"name":"Ovulation Calculator","item":"https://sharpdev.tools/tools/ovulation/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the ovulation date estimated?","acceptedAnswer":{"@type":"Answer","text":"It assumes ovulation happens about 14 days before your next period starts. The next period is your last period plus your cycle length, so a longer cycle pushes ovulation later. This is the standard calendar estimate."}},{"@type":"Question","name":"What is the fertile window?","acceptedAnswer":{"@type":"Answer","text":"It is the days when conception is most likely: the five days leading up to ovulation plus ovulation day itself. Sperm can survive several days, which is why the window starts before ovulation."}},{"@type":"Question","name":"Can I rely on this for birth control?","acceptedAnswer":{"@type":"Answer","text":"No. Calendar estimates are approximate and cycles vary month to month, so this tool must not be used as contraception or to diagnose pregnancy. For those, use a medical method or speak to a healthcare professional."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Ovulation Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/ovulation/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/ovulation/ovulation.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('ovulation');</script>
+<div class="page">
+<h1>Ovulation Calculator</h1>
+<p class="subtitle">Estimate your most fertile days, your ovulation date and your next few periods from your last period and cycle length.</p>
+<div class="row">
+<div class="field"><label for="last">First day of last period</label><input type="date" id="last"></div>
+<div class="field"><label for="cyc">Cycle length (days)</label><input type="number" id="cyc" value="28" min="20" max="45"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Estimated ovulation</div><div class="value" id="ovu" style="font-size:15px;">—</div></div>
+<div class="result-card"><div class="label">Fertile window</div><div class="value" id="fert" style="font-size:14px;">—</div></div>
+<div class="result-card"><div class="label">Next period</div><div class="value" id="next" style="font-size:15px;">—</div></div></div>
+<div class="out-head"><label>Next 3 cycles</label></div>
+<textarea class="output" id="future" readonly style="min-height:70px;"></textarea>
+<p class="note">Ovulation is estimated about 14 days before your next period, and the fertile window covers the five days before ovulation plus the day itself. This assumes a regular cycle and is an estimate only. It must not be used as contraception or to diagnose pregnancy.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How is the ovulation date estimated?</summary><p>It assumes ovulation happens about 14 days before your next period starts. The next period is your last period plus your cycle length, so a longer cycle pushes ovulation later. This is the standard calendar estimate.</p></details>
+<details><summary>What is the fertile window?</summary><p>It is the days when conception is most likely: the five days leading up to ovulation plus ovulation day itself. Sperm can survive several days, which is why the window starts before ovulation.</p></details>
+<details><summary>Can I rely on this for birth control?</summary><p>No. Calendar estimates are approximate and cycles vary month to month, so this tool must not be used as contraception or to diagnose pregnancy. For those, use a medical method or speak to a healthcare professional.</p></details>
+</section>
+<script src="/tools/ovulation/ovulation.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

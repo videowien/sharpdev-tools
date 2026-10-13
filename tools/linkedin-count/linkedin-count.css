@@ -1,0 +1,88 @@
+/* LinkedIn Post Counter — styles */
+.page { max-width: 800px; margin: 32px auto; padding: 0 20px; }
+.page h1 { font-size: 36px; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+.page .subtitle { color: #888; font-size: 15px; margin-bottom: 24px; line-height: 1.55; }
+.page label {
+  display: block; font-size: 12px; color: #aaa; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+#text-in {
+  width: 100%; min-height: 180px;
+  background: #141414; border: 1px solid #262626;
+  color: #e1e1e1; font-size: 15px; padding: 16px;
+  border-radius: 10px; font-family: inherit;
+  resize: vertical; line-height: 1.55; outline: none;
+  transition: border-color 0.15s;
+}
+#text-in:focus { border-color: #ff4444; }
+
+.li-meter {
+  margin-top: 14px; padding: 14px 18px;
+  background: #141414; border: 1px solid #262626;
+  border-radius: 10px;
+  display: flex; align-items: center; gap: 18px;
+}
+.li-bar-wrap {
+  flex: 1; height: 8px; background: #222; border-radius: 999px;
+  overflow: visible; position: relative;
+}
+.li-bar {
+  height: 100%; width: 0; background: #0077b5;
+  transition: width 0.15s, background 0.15s;
+  border-radius: 999px;
+}
+.li-bar.warn { background: #ffce3a; }
+.li-bar.over { background: #ff4444; }
+.li-hook-mark {
+  position: absolute;
+  top: -4px; bottom: -4px;
+  left: 7%; /* 210/3000 */
+  width: 2px;
+  background: #ffce3a;
+  border-radius: 2px;
+}
+.li-hook-mark::after {
+  content: '210';
+  position: absolute; top: -16px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px; color: #ffce3a;
+  font-family: 'SF Mono', Monaco, monospace;
+}
+
+.li-stats {
+  font-size: 14px; color: #bbb;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.li-stats .li-sep { margin: 0 8px; color: #444; }
+.li-stats #li-count { font-weight: 600; color: #fff; }
+.li-meter.over #li-count { color: #ff4444; }
+
+.li-preview {
+  margin-top: 24px; padding: 18px 22px;
+  background: #0f0f0f; border: 1px solid #1f1f1f;
+  border-radius: 12px;
+}
+.li-preview-head {
+  font-size: 11px; color: #888; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.li-preview-body {
+  color: #e1e1e1; font-size: 15px; line-height: 1.55;
+  white-space: pre-wrap; word-break: break-word;
+}
+.li-preview-body.empty { color: #555; }
+.li-preview-body .cutoff {
+  color: #0077b5; font-weight: 500;
+}
+.li-preview-meta {
+  margin-top: 12px; font-size: 12px; color: #666;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .page h1 { font-size: 28px; }
+  .li-meter { flex-direction: column; align-items: stretch; gap: 14px; }
+  .li-stats { text-align: center; }
+}

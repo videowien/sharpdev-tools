@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>What Quarter Is It? (Calendar &amp; Fiscal Quarter) | SharpDev.tools</title>
+<meta content="Free quarter finder. See which quarter (Q1 to Q4) any date falls in, for the calendar year or a custom fiscal year start, with the quarter's date range and days remaining. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/fiscal-quarter/" rel="canonical"/>
+<meta content="What Quarter Is It? (Calendar &amp; Fiscal Quarter) | SharpDev.tools" property="og:title"/>
+<meta content="Free quarter finder. See which quarter (Q1 to Q4) any date falls in, for the calendar year or a custom fiscal year start, with the quarter's date range and days remaining. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/fiscal-quarter/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="What Quarter Is It? (Calendar &amp; Fiscal Quarter) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free quarter finder. See which quarter (Q1 to Q4) any date falls in, for the calendar year or a custom fiscal year start, with the quarter's date range and days remaining. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Time & Date","item":"https://sharpdev.tools/#time-date"},{"@type":"ListItem","position":3,"name":"Quarter of the Year Finder","item":"https://sharpdev.tools/tools/fiscal-quarter/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are quarters defined?","acceptedAnswer":{"@type":"Answer","text":"A quarter is a three-month block of the year. For the calendar year Q1 is January to March, Q2 April to June, Q3 July to September and Q4 October to December. This tool shows which one any date falls in."}},{"@type":"Question","name":"What is a fiscal quarter?","acceptedAnswer":{"@type":"Answer","text":"Many organisations run a financial year that does not start in January. If yours starts in, say, April, then April to June is fiscal Q1. Pick your fiscal year start and the quarters shift accordingly."}},{"@type":"Question","name":"What do the day-of and days-remaining figures mean?","acceptedAnswer":{"@type":"Answer","text":"They show how far through the current quarter your date is and how many days are left in it, which is useful for tracking targets and deadlines."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"Quarter of the Year Finder \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/fiscal-quarter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/fiscal-quarter/fiscal-quarter.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('fiscal-quarter');</script>
+<div class="page">
+<h1>Quarter of the Year Finder</h1>
+<p class="subtitle">Find which quarter any date falls in, for the calendar year or a fiscal year starting in any month. See the quarter's date range and days remaining.</p>
+<div class="row">
+<div class="field"><label for="date">Date</label><input type="date" id="date"></div>
+<div class="field"><label for="fy">Fiscal year starts</label><select id="fy"><option value="1" selected>January (calendar)</option><option value="4">April</option><option value="7">July</option><option value="10">October</option></select></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Quarter</div><div class="value" id="q" style="font-size:22px;">—</div></div>
+<div class="result-card"><div class="label">Quarter range</div><div class="value" id="range" style="font-size:13px;">—</div></div>
+<div class="result-card"><div class="label">Day of quarter</div><div class="value" id="dayof">—</div></div>
+<div class="result-card"><div class="label">Days remaining</div><div class="value" id="left">—</div></div></div>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>How are quarters defined?</summary><p>A quarter is a three-month block of the year. For the calendar year Q1 is January to March, Q2 April to June, Q3 July to September and Q4 October to December. This tool shows which one any date falls in.</p></details>
+<details><summary>What is a fiscal quarter?</summary><p>Many organisations run a financial year that does not start in January. If yours starts in, say, April, then April to June is fiscal Q1. Pick your fiscal year start and the quarters shift accordingly.</p></details>
+<details><summary>What do the day-of and days-remaining figures mean?</summary><p>They show how far through the current quarter your date is and how many days are left in it, which is useful for tracking targets and deadlines.</p></details>
+</section>
+<script src="/tools/fiscal-quarter/fiscal-quarter.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>

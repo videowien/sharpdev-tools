@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SWR Calculator (Return Loss &amp; Reflected Power) | SharpDev.tools</title>
+<meta content="Free SWR calculator. Enter a standing wave ratio to get the reflection coefficient, return loss, mismatch loss and the percentage of power reflected and delivered. Runs in your browser." name="description"/>
+<link href="https://sharpdev.tools/tools/swr/" rel="canonical"/>
+<meta content="SWR Calculator (Return Loss &amp; Reflected Power) | SharpDev.tools" property="og:title"/>
+<meta content="Free SWR calculator. Enter a standing wave ratio to get the reflection coefficient, return loss, mismatch loss and the percentage of power reflected and delivered. Runs in your browser." property="og:description"/>
+<meta content="https://sharpdev.tools/tools/swr/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sharpdev.tools/og-image.png" property="og:image"/>
+<meta content="SharpDev.tools" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SWR Calculator (Return Loss &amp; Reflected Power) | SharpDev.tools" name="twitter:title"/>
+<meta content="Free SWR calculator. Enter a standing wave ratio to get the reflection coefficient, return loss, mismatch loss and the percentage of power reflected and delivered. Runs in your browser." name="twitter:description"/>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sharpdev.tools/"},{"@type":"ListItem","position":2,"name":"Ham Radio","item":"https://sharpdev.tools/#ham-radio"},{"@type":"ListItem","position":3,"name":"SWR Calculator","item":"https://sharpdev.tools/tools/swr/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does SWR tell me?","acceptedAnswer":{"@type":"Answer","text":"The standing wave ratio measures how well an antenna or load is matched to the feedline. 1:1 is perfect; higher numbers mean more power is reflected back instead of radiated. The reflection coefficient is (SWR - 1) / (SWR + 1)."}},{"@type":"Question","name":"Is a 2:1 SWR bad?","acceptedAnswer":{"@type":"Answer","text":"Not really. A 2:1 SWR reflects about 11 percent of the power and adds only about 0.5 dB of mismatch loss, which is barely noticeable. Most rigs run happily up to 2:1; above that the transmitter may fold back its power."}},{"@type":"Question","name":"What is the difference between return loss and mismatch loss?","acceptedAnswer":{"@type":"Answer","text":"Return loss is how far down the reflected signal is, in dB. Mismatch loss is how much of your forward power is actually lost because of the reflection. A high return loss (good match) means a very low mismatch loss."}}]},{"@context":"https://schema.org","@type":"WebApplication","name":"SWR Calculator \u2014 SharpDev.tools","url":"https://sharpdev.tools/tools/swr/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"SharpDev.tools","url":"https://sharpdev.tools/"}}]</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/shared/style.css?v=20260616a" rel="stylesheet"/>
+<link href="/tools/swr/swr.css" rel="stylesheet"/>
+<!-- The live site uses cookieless Plausible analytics here; the snippet is intentionally omitted from this public source. -->
+</head>
+<body>
+<noscript><p style="color:#aaa;text-align:center;padding:40px;">This site requires JavaScript to function.</p></noscript>
+<script src="/shared/components.js?v=20260616a"></script>
+<script>renderNav('swr');</script>
+<div class="page">
+<h1>SWR Calculator</h1>
+<p class="subtitle">Convert SWR to reflection coefficient, return loss, mismatch loss and the percentage of power reflected and transmitted.</p>
+<div class="row"><div class="field"><label for="swr">SWR (n : 1)</label><input type="number" id="swr" value="2" step="any" min="1"></div></div>
+<div class="result-cards">
+<div class="result-card hl"><div class="label">Power reflected</div><div class="value" id="ref">-</div></div>
+<div class="result-card"><div class="label">Return loss</div><div class="value" id="rl">-</div></div>
+<div class="result-card"><div class="label">Mismatch loss</div><div class="value" id="ml">-</div></div>
+<div class="result-card"><div class="label">Reflection coeff.</div><div class="value" id="g">-</div></div></div>
+<p class="note">From the standing wave ratio: reflection coefficient = (SWR - 1) / (SWR + 1). Return loss = -20 log of that, mismatch loss = -10 log of (1 minus coefficient squared), and the fraction of power reflected is the coefficient squared. An SWR of 2:1 reflects only 11 percent of the power, a 0.5 dB loss.</p>
+</div>
+<section class="tool-info">
+<h2>Frequently asked questions</h2>
+<details><summary>What does SWR tell me?</summary><p>The standing wave ratio measures how well an antenna or load is matched to the feedline. 1:1 is perfect; higher numbers mean more power is reflected back instead of radiated. The reflection coefficient is (SWR - 1) / (SWR + 1).</p></details>
+<details><summary>Is a 2:1 SWR bad?</summary><p>Not really. A 2:1 SWR reflects about 11 percent of the power and adds only about 0.5 dB of mismatch loss, which is barely noticeable. Most rigs run happily up to 2:1; above that the transmitter may fold back its power.</p></details>
+<details><summary>What is the difference between return loss and mismatch loss?</summary><p>Return loss is how far down the reflected signal is, in dB. Mismatch loss is how much of your forward power is actually lost because of the reflection. A high return loss (good match) means a very low mismatch loss.</p></details>
+</section>
+<script src="/tools/swr/swr.js"></script>
+<script>renderFooter();</script>
+</body>
+</html>
