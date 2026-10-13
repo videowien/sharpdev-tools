@@ -926,7 +926,7 @@ function renderNav(activePage, options) {
     '<svg class="sd-nav-logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">' +
       '<text x="16" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="18" font-weight="700" fill="#ff4444" text-anchor="middle">&lt;/&gt;</text>' +
     '</svg>' +
-    '<span class="sd-nav-brand-text">SharpDev<span class="accent">.</span>Tools</span>' +
+    '<span class="sd-nav-brand-text">SharpDev<span class="accent">.</span>tools</span>' +
   '</a>';
 
   // Mobile hamburger

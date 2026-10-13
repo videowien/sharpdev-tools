@@ -3,7 +3,8 @@
  */
 
 const MAX = 30;
-const WORKER_URL = 'https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.worker.js';
+// Workers must be same-origin, so the gif.js worker is served from our vendor folder (unmodified 0.2.0).
+const WORKER_URL = '/shared/vendor/gif.worker.js';
 
 const uploadArea = document.getElementById('upload-area');
 const fileInput = document.getElementById('file-input');
